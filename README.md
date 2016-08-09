@@ -19,6 +19,10 @@ The documentation can be further split up. This will be shown on the documentati
 
 For example `/en/ContentBlocks/1.x/Fields.md` or `/ru/Commerce/0.x/Modules/EUVat.md`. 
 
+## File Format
+
+Every document starts with a simple annotation 
+
 ## Contributing
 
 You're invited to help us improve the documentation. For this we use git and pull requests on github to manage changes. If you're new to git and need a bit more help getting set up, don't hesitate to ask for help. 
