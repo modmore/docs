@@ -13,11 +13,11 @@ This repository has a fairly deep folder structure. This is because we'd like to
 
 The basic structure is:
 
-`/Language/Topic/Major Version/Documentation.md`
+`/Language/Topic/v{Major Version}.x/Documentation.md`
 
 The documentation can be further split up. This will be shown on the documentation website in a tree view. 
 
-For example `/en/ContentBlocks/1.x/Fields.md` or `/ru/Commerce/0.x/Modules/EUVat.md`. 
+For example `/en/ContentBlocks/v1.x/Fields.md` or `/ru/Commerce/v0.x/Modules/EUVat.md`. 
 
 ## File Format
 
