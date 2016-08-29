@@ -55,6 +55,8 @@ Let's go over how we set this up.
 
 [![](https://assets.modmore.com/uploads/2014/11/repeater_edit_field.png)](https://assets.modmore.com/uploads/2014/11/repeater_edit_field.png)
 
+Save the field, and right click it in the Fields grid and choose Update. Reloading the window after saving is needed to enable the Group field on the Properties tab. 
+
 On the **Properties** tab let's first look at the **Group**. The Group is where you configure which input types are used in the rows, and also how they are shown in terms of width and alignment. Basically, together with the Template this is where the Repeater magic happens.
 
 Let's add the first field to the group, the name. Click the **Add Field button**. In the modal that popped up..
