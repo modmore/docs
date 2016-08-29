@@ -6,4 +6,4 @@ checkout:
 # After running the tests, we run it again on different versions of PHP
 test:
   override:
-    - cd .. && daux
+    - cd .. && docs/vendor/justinwalsh/daux.io/daux.phar
