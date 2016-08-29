@@ -1,6 +1,3 @@
-title: Orders
-summary: A technical description of Orders in Commerce, and the APIs they expose. 
-
 # Orders
 An Order is a cart that has gone through the checkout. 
 

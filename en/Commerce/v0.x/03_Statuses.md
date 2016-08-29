@@ -1,7 +1,3 @@
-title: Statuses in Commerce
-summary: Learn about the statuses in Commerce, and how you can set up a workflow to meet your business requirements.
------
-
 Commerce contains a very flexible system to allow custom status workflows. These are primarily meant to make the system match your business requirements for the fulfillment stage. 
 
 Basically, everything between when a customer checks out and when the order is marked as completed in the back-end.
