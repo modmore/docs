@@ -2,7 +2,7 @@
 title: ContentBlocks Configuration
 ---
 
-Most configuration for ContentBlocks is done through the Component (and the [fields](Fields/), [layouts](Layouts/) and [templates](Templates/) that makes available), however there are also a number of System Settings available that can be used to change the way ContentBlocks works.
+Most configuration for ContentBlocks is done through the Component (and the [fields](Fields), [layouts](Layouts) and [templates](Templates) that makes available), however there are also a number of System Settings available that can be used to change the way ContentBlocks works.
 
 All of these settings are created automatically when installing ContentBlocks. They can also be added manually to Users, User Groups or Contexts to override their values for specific users or contexts. To do that, add a new setting with the mentioned key (including the `contentblocks.` prefix!) and the desired value.
 
@@ -13,7 +13,7 @@ All of these settings are created automatically when installing ContentBlocks. T
 
 Comma separated list of the resource types ContentBlocks should be enabled on. There are built in resource types in MODX like modDocument, but other extras may also provide them in a way that ContentBlocks can support. This includes for example MoreGallery, [Collections](http://modx.com/extras/package/collections), [GoodNews](http://www.bitego.com/extras/goodnews) and [SimpleCart](https://www.modmore.com/simplecart/).
 
-For instructions about using ContentBlocks on custom resource types, please visit the [Custom Resources](Custom_Resources/) documentation.
+For instructions about using ContentBlocks on custom resource types, please visit the [Custom Resources](Custom_Resources) documentation.
 
 **Default:**`modDocument, mgResource, Article, CollectionContainer, GridContainer, GoodNewsResourceContainer, GoodNewsResourceMailing, scCategoryResource, scProductResource`
 
@@ -33,10 +33,11 @@ Used alongside the Custom Icon Path setting, this setting should contain the (we
 
 ### Debug (`contentblocks.debug`) 
 
-When enabled ContentBlocks will load unminified assets to help debug issues. Typically you wont have to use this, unless you're experience a javascript or css related bug. In which case [we want to know about it](mailto:support@modmore.com)!
+When enabled ContentBlocks will load unminified assets to help debug issues. Typically you wont have to use this, unless you're experience a javascript or css related bug. In which case please let us know via support@modmore.com.
 
 ### Disabled (`contentblocks.disabled`) 
 
+When this setting is turned on, ContentBlocks will no longer be used. This setting in particular is useful to only selectively enable ContentBlocks per context, as you can disable ContentBlocks globally through this system setting, and then enable it on a specific context by adding a context setting with the same key.
 When this setting is turned on, ContentBlocks will no longer be used. This setting in particular is useful to only selectively enable ContentBlocks per context, as you can disable ContentBlocks globally through this system setting, and then enable it on a specific context by adding a context setting with the same key.
 
 **Default:**`0 (false)`

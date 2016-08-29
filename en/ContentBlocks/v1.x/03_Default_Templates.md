@@ -1,7 +1,7 @@
 
-Defaults, or more verbosely _Default Templates_, is a feature introduced in ContentBlocks 1.2. It enables you to configure a standard set of [Layouts](Layouts/) and [Fields](Fields/) (combined into a [Template](Templates/)) to use when creating a new resource, or editing a resource that was created before you started using ContentBlocks.
+Defaults, or more verbosely _Default Templates_, is a feature introduced in ContentBlocks 1.2. It enables you to configure a standard set of [Layouts](Layouts) and [Fields](Fields) (combined into a [Template](Templates)) to use when creating a new resource, or editing a resource that was created before you started using ContentBlocks.
 
-If you haven't worked with Templates before, be sure to [read more about Templates first](Templates/).
+If you haven't worked with Templates before, be sure to [read more about Templates first](Templates).
 
 To manage your default templates, go to _Extras_ (or _Components_ pre-2.3) in the top navigation and choose ContentBlocks in the drop down. Open the Defaults tab.
 

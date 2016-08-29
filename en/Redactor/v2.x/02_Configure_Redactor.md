@@ -6,6 +6,8 @@ With 150 or so settings, there is a lot you can configure with Redactor. On this
 
 All of these settings are created automatically when installing Redactor. They can also be added manually to Users, User Groups or Contexts to override their values for specific users or contexts. To do that, add a new setting with the mentioned key (including the `redactor.` prefix!) and the desired value.
 
+[TOC]
+
 ## Configuration: Advanced
 
 ### Additional Plugins (`redactor.additionalPlugins`) 
@@ -707,7 +709,7 @@ Commemorates [Rebecca Meyer](http://www.zeldman.com/2014/06/10/the-color-purple/
 
 ### Formatting Tags (`redactor.formattingTags`) (tv)
 
-The options you get when clicking the formatting button in the Redactor toolbar. Defaults to: p, blockquote, pre, h1, h2, h3, h4 which are the only currently supported formatting tags. (Need more? [Let us know!](mailto:support@modmore.com?subject=I+need+more+formatting+tags+for+Redactor+because))
+The options you get when clicking the formatting button in the Redactor toolbar. Defaults to: p, blockquote, pre, h1, h2, h3, h4 which are the only currently supported formatting tags. 
 
 **Default:**`p,blockquote,pre,h1,h2,h3,h4`
 

@@ -45,6 +45,6 @@ Despite its reputation, the MODX ACL system isn't _that_ bad, is it?
 
 You can now tweak your access policy further. Keep in mind when testing that you should use a different browser, and that you should flush the permissions after each change to the policy or user group (either Manage > Flush Your Permissions if you're logged in as the editor, or Manage > Logout All Users from an admin account).
 
-Having issues setting it up to your liking? [Send us a message](mailto:support@modmore.com) and we'll get you sorted.
+Having issues setting it up to your liking? E-mail us at support@modmore.com and we'll get you sorted.
 
  [ ![](https://assets.modmore.com/uploads/2016/04/contentblocks_limited_access.png)](https://assets.modmore.com/uploads/2016/04/contentblocks_limited_access.png)

@@ -28,7 +28,7 @@ On the General tab, you can edit the basic information for this field. That incl
 
 [![](https://assets.modmore.com/galleries/inline-418/2015/contentblocks_component_field_properties.png)](https://assets.modmore.com/galleries/inline-418/2015/contentblocks_component_field_properties.png)
 
-The properties tab consists input-specific properties. All inputs have a template, which typically has a `[[+value]]`  placeholder but depending on the [input type](Input_Types/) there can be more or different placeholders, templates and other properties. By hovering over the properties you will get a tooltip with more information about the property, which typically includes the available placeholders along with general instructions.
+The properties tab consists input-specific properties. All inputs have a template, which typically has a `[[+value]]`  placeholder but depending on the [input type](Input_Types) there can be more or different placeholders, templates and other properties. By hovering over the properties you will get a tooltip with more information about the property, which typically includes the available placeholders along with general instructions.
 
  
 
@@ -58,7 +58,7 @@ When fields are, based on the conditions, not allowed to be used, existing insta
 
 [![](https://assets.modmore.com/galleries/inline-418/2015/contentblocks_component_field_settings.png)](https://assets.modmore.com/galleries/inline-418/2015/contentblocks_component_field_settings.png)
 
-Settings are, [just like Layout Settings](Layouts/#jump_tab:_settings), configuration options that you can add to a field which the Editor can then change when adding content to it. Settings are added as placeholders to the field's template so you can easily pass, for example, a class or inline style to a fields template. In the image above we have defined a "Class" setting (which will fill the `[[class]]` placeholder in our template, defined on the Properties tab) with a select field type and a couple of values.
+Settings are, [just like Layout Settings](Layouts), configuration options that you can add to a field which the Editor can then change when adding content to it. Settings are added as placeholders to the field's template so you can easily pass, for example, a class or inline style to a fields template. In the image above we have defined a "Class" setting (which will fill the `[[class]]` placeholder in our template, defined on the Properties tab) with a select field type and a couple of values.
 
 There's also an option called _Expose Fields_. This option allows you to define how the setting is made available to the editor, which is one of the following:
 

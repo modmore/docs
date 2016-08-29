@@ -4,7 +4,7 @@ title: Layout Input Type
 
 The Nested Layout input type provides you with the opportunity to add layouts from within a field. This enables you to further split up the page into multiple columns or to provide different wrappers.   
   
- Input types like the [Repeater](Input_Types/Repeater) also support embedding Layout fields, allowing you to add layouts where normally you would only be able of adding fields.  
+ Input types like the [Repeater](Repeater) also support embedding Layout fields, allowing you to add layouts where normally you would only be able of adding fields.  
   
  While editing a layout through the ContentBlocks component, you can tick a checkbox on the Availability tab to make the layout only available through a Layout field. This way you can set up layouts that only appear when in a layout field. Through the layout field properties itself, you can also choose which layouts and templates should be available.
 

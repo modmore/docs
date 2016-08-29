@@ -2,7 +2,7 @@
 title: cbHasField Snippet
 ---
 
-The cbHasField snippet, distributed with the core ContentBlocks package, is a simple utility snippet that lets you check if a specific field is in use on a resource, and if that is the case (or if it's not), return a specific value. This is useful for [loading field-specific resources](Tips_Tricks/Load_Field_Specific_Resources) or other tweaks you may want to make to a resource/template depending on the presence of a field.
+The cbHasField snippet, distributed with the core ContentBlocks package, is a simple utility snippet that lets you check if a specific field is in use on a resource, and if that is the case (or if it's not), return a specific value. This is useful for [loading field-specific resources](../Tips_Tricks/Load_Field_Specific_Assets) or other tweaks you may want to make to a resource/template depending on the presence of a field.
 
 By default it will check the current resource, however by passing a `&resource` property you can also run it for other resources. The cbHasField snippet should always be called cached.
 

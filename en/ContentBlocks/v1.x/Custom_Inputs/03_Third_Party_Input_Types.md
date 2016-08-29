@@ -2,7 +2,7 @@
 title: Available Third Party Input Types
 ---
 
-Interested in using more than just the [built in input types](https://www.modmore.com/contentblocks/documentation/input-types/)? This page contains a list of the input types you can install that we know off. Know of any others? [Let us know](mailto:support@modmore.com)!
+Interested in using more than just the [built in input types](https://www.modmore.com/contentblocks/documentation/input-types/)? This page contains a list of the input types you can install that we know off. Know of any others? Let us know!
 
 ## oEmbed Input
 

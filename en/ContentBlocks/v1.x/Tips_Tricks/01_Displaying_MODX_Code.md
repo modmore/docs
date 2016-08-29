@@ -39,4 +39,4 @@ When you want to syntax highlight using Prism, it's important to note that while
 ````
 ## Going Beyond
 
-When you have this all set up, you could go beyond and only load the syntax highlight scripts/styles when they are required. How? [With the cbHasField snippet!](Tips_Tricks/Load_Field_Specific_Resources/)
+When you have this all set up, you could go beyond and only load the syntax highlight scripts/styles when they are required. How? [With the cbHasField snippet!](Load_Field_Specific_Assets)

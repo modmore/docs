@@ -73,7 +73,7 @@ It is possible to define conditions based on the following fields, all of the fi
 - Context: allow this layout to be used on specific contexts
 - User Group (name): allow this layout to be used by specific user groups.
 
-You can also restrict the number of times a layout is allowed to exist on a page. If you have layouts that are intended to work with the [Nested Layout input type](Input_Types/layout), you can also tick the "Only allow as nested layout" checkbox; that way it will only show up if the editor tries to add a layout in a layout field.
+You can also restrict the number of times a layout is allowed to exist on a page. If you have layouts that are intended to work with the [Nested Layout input type](Input_Types/Layout), you can also tick the "Only allow as nested layout" checkbox; that way it will only show up if the editor tries to add a layout in a layout field.
 
 [![](https://assets.modmore.com/galleries/inline-418/2015/contentblocks_component_layout_availability.png)](https://assets.modmore.com/galleries/inline-418/2015/contentblocks_component_layout_availability.png)
 

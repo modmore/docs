@@ -1,6 +1,6 @@
 The dropdown input allows the user to select an option in, well, the dropdown.   
 
- Aside from being useful as a more restrictive alternative for the Chunk or Snippet input type (i.e. no properties), it is also perfect for in a [Repeater group](Input_Types/Repeater).
+ Aside from being useful as a more restrictive alternative for the Chunk or Snippet input type (i.e. no properties), it is also perfect for in a [Repeater group](Repeater).
 
  
 

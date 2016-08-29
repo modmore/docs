@@ -2,14 +2,14 @@
 title: Available Input Types
 ---
 
-This page contains an **alphabetical** list of the _built-in_ input types for [ContentBlocks](https://www.modmore.com/contentblocks/). For information on building custom input types for things that are not included, check out the [Custom Inputs documentation](Custom_Inputs/Developing_Custom_Inputs) and see the [List of Available Custom Input Types](Custom_Inputs/Available) for custom input types you can use.
+This page contains an **alphabetical** list of the _built-in_ input types for [ContentBlocks](https://www.modmore.com/contentblocks/). For information on building custom input types for things that are not included, check out the [Custom Inputs documentation](../Custom_Inputs/Developing_Custom_Inputs) and see the [List of Available Custom Input Types](../Custom_Inputs/Third_Party_Input_Types) for custom input types you can use.
 
 
 ## Field vs Input
 
 Inputs, or Input Types, control how a piece of content is managed and displayed in the front-end. From a user perspective, it's a certain type of content.
 
-Using these Input Types, the site builder (that's probably you) can define [Fields](Fields). A Field has a name ("Introduction"), an icon and an input type attached to it. The input type enables certain properties (such as templates) that affect how the user interacts with it, or how it is displayed in the front-end.
+Using these Input Types, the site builder (that's probably you) can define [Fields](../Fields). A Field has a name ("Introduction"), an icon and an input type attached to it. The input type enables certain properties (such as templates) that affect how the user interacts with it, or how it is displayed in the front-end.
 
 A single input type can be reused in multiple configurations (for example with different templates) by defining multiple fields with the input type.
 
@@ -27,7 +27,7 @@ The chunk input type has no template. If your chunk relies on certain styling, y
 
 
 
-[![](/assets/uploads/7595c06a23a490d4b6e805f21c62d277.png)](/assets/uploads/7595c06a23a490d4b6e805f21c62d277.png)
+[![](https://www.modmore.com/assets/uploads/7595c06a23a490d4b6e805f21c62d277.png)](https://www.modmore.com/assets/uploads/7595c06a23a490d4b6e805f21c62d277.png)
 
  
 
@@ -46,13 +46,13 @@ The chunk input type has no template. If your chunk relies on certain styling, y
 
 The `contentblocks.code.theme` setting allows you to change the theme that is used for the syntax highlighting. You can try different themes [here](http://ace.c9.io/build/kitchen-sink.html).
 
-Also see this tip for [Displaying (MODX) Code](Tips_Tricks/Displaying_MODX_Code).
+Also see this tip for [Displaying (MODX) Code](../Tips_Tricks/Displaying_MODX_Code).
 
  
 
 
 
-[![](/assets/uploads/e280ca4db15226f2778c7e119dc1600d.png)](/assets/uploads/e280ca4db15226f2778c7e119dc1600d.png)
+[![](https://www.modmore.com/assets/uploads/e280ca4db15226f2778c7e119dc1600d.png)](https://www.modmore.com/assets/uploads/e280ca4db15226f2778c7e119dc1600d.png)
 
  
 
@@ -68,7 +68,7 @@ The template property is used for each individual image (placeholders: `[[+idx]]
 
 
 
-[![](/assets/uploads/6b2273fa0b7ea82850c83f94a3e70ef8.png)](/assets/uploads/6b2273fa0b7ea82850c83f94a3e70ef8.png)
+[![](https://www.modmore.com/assets/uploads/6b2273fa0b7ea82850c83f94a3e70ef8.png)](https://www.modmore.com/assets/uploads/6b2273fa0b7ea82850c83f94a3e70ef8.png)
 
  
 
@@ -78,13 +78,13 @@ The template property is used for each individual image (placeholders: `[[+idx]]
 
 The heading input is a simple one, but extremely useful. It combines a drop down for different levels, with a text input. The default template outputs a simple heading tag, however with a bit of creativity it's possible to make them more useful.
 
-For example, a template could contain a link and and anchor to [automatically link headings](Tips_Tricks/Auto_Linked_Headers), like we're doing on modmore.com.
+For example, a template could contain a link and and anchor to [automatically link headings](../Tips_Tricks/Auto_Linked_Headers), like we're doing on modmore.com.
 
  
 
 
 
-[![](/assets/uploads/cf0526ac66123db933a73b506130c053.png)](/assets/uploads/cf0526ac66123db933a73b506130c053.png)
+[![](https://www.modmore.com/assets/uploads/cf0526ac66123db933a73b506130c053.png)](https://www.modmore.com/assets/uploads/cf0526ac66123db933a73b506130c053.png)
 
  
 
@@ -116,9 +116,9 @@ The image is available through the `[[+url]]` placeholder in the template, and w
 
 
 
-[![](/assets/uploads/82308bae9d682e0df6aa26c8f29cf2e7.png)](/assets/uploads/82308bae9d682e0df6aa26c8f29cf2e7.png)
+[![](https://www.modmore.com/assets/uploads/82308bae9d682e0df6aa26c8f29cf2e7.png)](https://www.modmore.com/assets/uploads/82308bae9d682e0df6aa26c8f29cf2e7.png)
 
-[![](/assets/uploads/226117876a28868059b4da1b0e3a93b5.png)](/assets/uploads/226117876a28868059b4da1b0e3a93b5.png)
+[![](https://www.modmore.com/assets/uploads/226117876a28868059b4da1b0e3a93b5.png)](https://www.modmore.com/assets/uploads/226117876a28868059b4da1b0e3a93b5.png)
 
  
 
@@ -132,7 +132,7 @@ Need to make complex lists? The List (and Ordered List) input type have you cove
 
 
 
-[![](/assets/uploads/0600fcde539a94c22b1864d5bbb69adb.png)](/assets/uploads/0600fcde539a94c22b1864d5bbb69adb.png)
+[![](https://www.modmore.com/assets/uploads/0600fcde539a94c22b1864d5bbb69adb.png)](https://www.modmore.com/assets/uploads/0600fcde539a94c22b1864d5bbb69adb.png)
 
  
 
@@ -146,7 +146,7 @@ The Quote input type combines a simple textfield with a smaller input field to a
 
 
 
-[![](/assets/uploads/f30c46c28bb0725ed917ad29344a824b.png)](/assets/uploads/f30c46c28bb0725ed917ad29344a824b.png)
+[![](https://www.modmore.com/assets/uploads/f30c46c28bb0725ed917ad29344a824b.png)](https://www.modmore.com/assets/uploads/f30c46c28bb0725ed917ad29344a824b.png)
 
  
 
@@ -160,7 +160,7 @@ The rich text input uses the installed rich text editor, such as [Redactor](http
 
 
 
-[![](/assets/uploads/1cd44c5242245bf7754332f2ea6e8743.png)](/assets/uploads/1cd44c5242245bf7754332f2ea6e8743.png)
+[![](https://www.modmore.com/assets/uploads/1cd44c5242245bf7754332f2ea6e8743.png)](https://www.modmore.com/assets/uploads/1cd44c5242245bf7754332f2ea6e8743.png)
 
  
 
@@ -178,7 +178,7 @@ It is possible to filter the available snippets based on name/IDs as well as cat
 
 
 
-[![](/assets/uploads/a9e5ae3f5f9b8770a1c28e9fd0455c27.png)](/assets/uploads/a9e5ae3f5f9b8770a1c28e9fd0455c27.png)
+[![](https://www.modmore.com/assets/uploads/a9e5ae3f5f9b8770a1c28e9fd0455c27.png)](https://www.modmore.com/assets/uploads/a9e5ae3f5f9b8770a1c28e9fd0455c27.png)
 
  
 
@@ -192,7 +192,7 @@ Docs to be added.
 
 
 
-[![](/assets/uploads/76fde4cb13d90fb56d43c301f03af29a.png)](/assets/uploads/76fde4cb13d90fb56d43c301f03af29a.png)
+[![](https://www.modmore.com/assets/uploads/76fde4cb13d90fb56d43c301f03af29a.png)](https://www.modmore.com/assets/uploads/76fde4cb13d90fb56d43c301f03af29a.png)
 
  
 
@@ -201,12 +201,6 @@ Docs to be added.
 ## Texarea & Textfield
 
 Docs to be added.
-
- 
-
-
-
-![]()
 
  
 
@@ -220,4 +214,4 @@ The Video input allows the user to either paste in a YouTube URL, or to search p
 
 
 
-[![](/assets/uploads/12ec4e5848bf5df6ddd62a916b977b6c.png)](/assets/uploads/12ec4e5848bf5df6ddd62a916b977b6c.png)
+[![](https://www.modmore.com/assets/uploads/12ec4e5848bf5df6ddd62a916b977b6c.png)](https://www.modmore.com/assets/uploads/12ec4e5848bf5df6ddd62a916b977b6c.png)

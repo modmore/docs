@@ -104,7 +104,7 @@ The following tax related placeholders are available:
 - `[[+product_tax_price]]`: the amount of tax that was added to the price (the difference between the price excluding and including tax), unformatted. Use `[[+product_tax_price_formatted]]` for a formatted value.
 - `[[+product_tax_rate]]`: the unformatted tax rate percentage. 
 
-The formatting of price related placeholders can be configured through the [currencies](Manager/Currencies) in SimpleCart.
+The formatting of price related placeholders can be configured through the [currencies](../../Manager/Currencies) in SimpleCart.
 
 ## Adding products to the cart
 
@@ -121,7 +121,7 @@ There are a couple of properties you can set for this snippet call, and the most
 
 Just change "**123**" into the ID of the respirce where you put the shopping cart. 
 
-[Read more about the "scAddProduct" snippet here](Snippets/scAddProduct).
+[Read more about the "scAddProduct" snippet here](../../Snippets/scAddProduct).
 
 ## Apply pagination to your template
 

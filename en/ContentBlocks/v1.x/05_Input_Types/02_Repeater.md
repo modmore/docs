@@ -41,7 +41,7 @@ What you're seeing, with the green outline, is the item or row in the repeater. 
 Each row is build up from 4 different fields (inputs) outlined in red:
 
 - a textfield input for the name
-- a link input to get a url for the staff member ([more about the link input type here](Input_Types/Link))
+- a link input to get a url for the staff member ([more about the link input type here](Link))
 - a rich text input, using our own Redactor, for the biography
 - an image input type for a staff photo, or some stock photography
 
@@ -84,7 +84,7 @@ Now add the rest of the fields. This works the same, except we use different inp
 - Link: 
   - General Tab:  
 
-    - Input Type: [Link](Input_Types/Link)
+    - Input Type: [Link](Link)
     - Key: link (so the placeholder will be `[[+link]]` in our Repeater template)
     - Width: 40% (so together with the name, this will fill 100% of the width)
     - Name: Link

@@ -1,6 +1,6 @@
 So you've got ContentBlocks all set up, and you're happily inserting images into your blog posts or other type of content. Now you want to set the proper image meta tags so Twitter and Facebook can use them when your page gets shared.
 
-This is a very typical scenario, where structured content really shines, as you can easily extract certain information from the content. To aid this use case, we've provided a snippet called [cbGetFIeldContent](hSnippets/cbGetFieldContent) (as of v1.2).
+This is a very typical scenario, where structured content really shines, as you can easily extract certain information from the content. To aid this use case, we've provided a snippet called [cbGetFieldContent](../Snippets/cbGetFieldContent) (as of v1.2).
 
 The markup we're looking to add is the following, for both Facebook and Twitter Cards:
 ```` HTML
@@ -55,4 +55,4 @@ We can also add a default image, in case there are no image fields in the conten
 <meta name=”twitter:image” 
       content=”[[++site_url]][[+first_image]]” /> 
 ````
-And that's it! You can do this with any kind of field. Checkout the [cbGetFieldContent documentation](Snippets/cbGetFieldContent) for more information about the features and available properties on the snippet.
+And that's it! You can do this with any kind of field. Checkout the [cbGetFieldContent documentation](../Snippets/cbGetFieldContent) for more information about the features and available properties on the snippet.

@@ -24,6 +24,6 @@ There are three import modes available, each with their own use cases and caveat
 2. **Overwrite** In Overwrite mode, before a new field or layout is created, the script will check a field/layout with the same ID as the current one. If it exists, it will be overwritten, but if it doesn't exist a new field/layout will be created. This compromise can limit the number of duplicates if your export is very similar to the existing data, however it does introduce the risk that unrelated fields are overwritten causing content issues. Example: if before the import the field with ID 5 was a snippet field, but after the import field ID is suddenly a heading field, the heading field wont know what to do with the data from the snippet field and that data will be lost on the next save.
 3. **Replace** The most nuclear option, Replace first clears the Field or Layout table and then imports the data from the file, keeping all of the IDs as defined in the export file. This has the highest chance of breaking content but is in some cases the most appropriate option.
 
-If you need help figuring out the right import mode for your situation, please don't hesitate to get in touch with [support@modmore.com](mailto:support@modmore.com).
+If you need help figuring out the right import mode for your situation, please don't hesitate to get in touch with support@modmore.com.
 
 [![](https://assets.modmore.com/uploads/2015/12/contentblocks_import.png)](https://assets.modmore.com/uploads/2015/12/contentblocks_import.png)
