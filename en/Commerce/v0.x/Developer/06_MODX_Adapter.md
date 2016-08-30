@@ -1,8 +1,8 @@
-The Adapter is a link between the MODX core and the Commerce extra. Should the MODX core change in a way that is not backwards compatible in the future, we hope the adapter will be able of accommodating those changes without rewriting the core or modules. 
+The Adapter is a link between the MODX core and the Commerce extra. Should the MODX core change in a way that is not backwards compatible in the future (e.g. MODX 3), we hope the adapter will be able of _adapting_ to those changes without needing to rewrite the Commerce core or modules. 
 
-If you can, use the adapter in your modules rather than relying on the xPDO or modX objects directly. 
+Use the adapter in your modules rather than relying on the xPDO or modX objects directly to also benefit from that. 
 
-The adapter exposes the following contract and is typically available via either `$commerce->adapter` or `$this->adapter` in models.
+The adapter exposes the following contract and is typically available via either `$commerce->adapter`, or `$this->adapter` in model classes.
 
 ```` php
 <?php
@@ -128,24 +128,13 @@ interface AdapterInterface
     public function loadLexicon();
 
     /**
-     * Reads from the configured cache handler.
+     * Loads a PSR-6 compatible caching pool.
      *
-     * @param $key
-     * @param array $cacheOptions
-     * @return mixed
+     * @param string $provider The name of a caching provider/partition to use
+     * @param array $options Optional options to provide to a caching implementation
+     * @return \Psr\Cache\CacheItemPoolInterface
      */
-    public function readCache($key, array $cacheOptions = array());
-
-    /**
-     * Writes to the configured cache handler.
-     *
-     * @param $key
-     * @param $var
-     * @param int $lifetime
-     * @param array $options
-     * @return mixed
-     */
-    public function writeCache($key, $var, $lifetime= 0, $options= array());
+    public function getCacheService($provider, array $options = array());
 
     /**
      * Calls a (static) method on a xPDO Package class.
@@ -195,4 +184,4 @@ interface AdapterInterface
 }
 ````
 
-Commerce ships with one implementation of the adapter, which is `Revolution` and provides mostly one-on-one links to the MODX core methods with the same name as the adapter.
+Commerce ships with one implementation of the adapter, which is `Revolution`. This adapter is automatically instantiated in the Commerce constructor and provides mostly one-on-one links to the MODX core methods with the same name as the adapter.
