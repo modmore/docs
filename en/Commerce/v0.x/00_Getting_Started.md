@@ -26,7 +26,7 @@ If you've enabled some modules, let's start on your front-end.
 
 The cart is very important in a webshop. To set it up, create a new resource in the site to hold your cart and give it the following content:
 
-````
+```` html
 [[!commerce.cart]]
 ````
 
@@ -47,7 +47,14 @@ To get you started, we'll just create a product record directly. Go to Extras > 
 Add a form like this anywhere on your site, replacing 1 with the ID of the newly created product if needed.
 
 ````
-<insert form here>
+<form method="post" action="[[~[[++commerce.cart_resource]]]]">
+    <input type="hidden" name="add_to_cart" value="1">
+    
+    <label for="add-quantity">Quantity</label>
+    <input id="add-quantity" type="number" name="products[1][quantity]" value="1">
+    
+    <input type="submit" value="Add to Cart">
+</form>
 ````
 
 Visit that page in the front-end, hit the Add to Cart button and voila - you should have the product in your cart!
@@ -68,7 +75,9 @@ Visit Extras > Commerce and then Configuration > Payment Methods and Shipping Me
 
 ## Step 6: Make it your own!
 
-At this point you should have a basic, but functional shop. You're not done though! You'll probably want to build up a larger catalog, tweak the design of the cart and checkout or explore the different modules you can use.
+At this point you should have a basic, but functional shop. 
+
+You're not done though! You'll probably want to build up a larger catalog, tweak the design of the cart and checkout or explore the different modules you can use.
 
 If you're unsure on how to approach certain features, or have any other questions about Commerce, please do reach out to our team. We have a community forum and email support and we would love to help you make the most out of Commerce in either of those venues.
 
