@@ -1,7 +1,3 @@
-title: Orders
-summary: A technical description of Orders in Commerce, and the APIs they expose. 
-
-# Orders
 An Order is a cart that has gone through the checkout. 
 
 Orders always are a comOrder derivative, depending on the distinct state it is in. When an order changes state, it also changes the class it is in. The current state of an order is available via `$order->getState()`, which returns one of the `comOrder::STATE_* constants`.

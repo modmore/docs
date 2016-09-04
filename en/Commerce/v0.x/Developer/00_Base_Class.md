@@ -1,7 +1,3 @@
-title: Base Class
-summary: Every object in Commerce extends the comSimpleObject class. This provides a number of convenience methods and features.
------
-
 Every data object in Commerce extends the `comSimpleObject` object. This extends the `xPDOSimpleObject` class, but provides various convenience methods and under-the-hood magic to make the code easier to maintain and more flexible.
 
 The `comSimpleObject` object also uses feature of xPDO to allow derivative objects (basically, sub-classes of the models). This is done by setting the derivative `class_key` field on an object instance, available on every object in Commerce, which then automatically loads the right object based on the class key when it is retrieved. The most common example of this feature is the `modResource` object which has `modDocument`, `modWebLink` and other derivatives.

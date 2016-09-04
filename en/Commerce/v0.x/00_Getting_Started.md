@@ -1,7 +1,3 @@
-title: Getting Started with Commerce
-summary: Here's what you need to know for setting up a shop with Commerce.
------
-
 Commerce is a full featured ecommerce solution for MODX, but you have to start somewhere! This document will guide you through the necessary steps on a fairly high level. If you get stuck on a certain step, click through to read more in depth documentation about the topic.
 
 ## Step 1: Install the Package
