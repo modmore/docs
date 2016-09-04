@@ -1,5 +1,5 @@
 ---
-title: Dealing with Taxes in SimpleCart
+title: Dealing with Taxes
 ---
 
 SimpleCart offers a flexible way of defining taxes, however it does have its limitations. In this document, we will try to explain what is possible and how the different options are connected since 2.3.0.
