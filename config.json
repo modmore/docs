@@ -1,0 +1,13 @@
+{
+    "title": "modmore documentation",
+    "html": {
+    	"theme": "modmore",
+    	"inherit_index": true,
+    	"toggle_code": false,
+    	"edit_on_github": "modmore/Docs/master"
+    },
+	"ignore": {
+		"files": ["build.sh", ".gitignore", "README.md", "html.zip"],
+		"folders": ["html", ".idea", "themes"]
+	}
+}
