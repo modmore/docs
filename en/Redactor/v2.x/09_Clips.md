@@ -10,7 +10,17 @@ title: Using the Clips Plugin
 
 Aside from the `title` and `clip` element, you can also specify a `tag` element to categorize clips. When you have tags specified, a dropdown will appear above the list of clips that allows you to quickly filter the available clips.
 
-  [ { "title":"Buy Button", "clip":"[Buy this product now](https://www.modmore.com/extras/)." }, { "title":"Copyright", "clip":"©2013 modmore." } ] Once you have your JSON ready to go, simply paste the value into your redactor.clipsJson System Setting or the Clips Input Option when working with [Custom Redactor TVs.](https://www.modmore.com/redactor/documentation/uploadcare/)
+````
+[{
+  "title":"Buy Button",
+  "clip":"<a href='https://www.modmore.com/extras/' class='buy'>Buy this product now</a>."
+},{
+  "title":"Copyright",
+  "clip":"©2013 modmore."
+}]
+````  
+
+Once you have your JSON ready to go, simply paste the value into your redactor.clipsJson System Setting or the Clips Input Option when working with [Custom Redactor TVs.](https://www.modmore.com/redactor/documentation/uploadcare/)
 
 ### Currency Glyphs
 ```` js
