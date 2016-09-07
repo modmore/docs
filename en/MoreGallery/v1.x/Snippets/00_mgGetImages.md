@@ -67,9 +67,17 @@ Set to `1` to make resource fields available in the `&imageTpl` and `&singleImag
  
 The resource fields will be made available as placeholders prefixed by "resource". For example `[[+resource.pagetitle]]`. 
 
-When calling mgGetImages on the Gallery resource itself, this isn't typically needed as you could just use the `Snippet: mgGetImages` resource fields, but with [multiple galleries](../Multiple_Galleries) this is useful to enable. 
+When calling mgGetImages on the Gallery resource itself, this isn't typically needed as you could just use the `[[*pagetitle]]` resource fields, but with [multiple galleries](../Multiple_Galleries) this is useful to enable. 
 
-Added in 1.0.1.  
+Added in 1.0.1.
+
+#### `&getResourceContent`
+
+Set to `1` to also load the resource content into the `[[+resource.content]]` placeholder in the image chunks. 
+
+#### `&getResourceProperties`
+
+Set to `1` to also load the resource properties into the `[[+resource.properties.NAMESPACE_HERE.KEY_HERE]]` placeholders. 
 
 #### `&getResourceTVs`   
 
@@ -83,7 +91,21 @@ Added in 1.0.1.
 
 #### `&imageTpl`   
 
-The name of a chunk to use for each image in the result set. See further down this page for the default and placeholders for this chunk. Individual images will be joined together by the value of the `&imageSeparator` property.  
+The name of a chunk to use for each image in the result set. 
+
+See further down this page for the default and placeholders for this chunk. 
+
+Individual images will be joined together by the value of the `&imageSeparator` property.  
+
+If you're using [videos](../Video) in MoreGallery, there are `&youtubeTpl` and `&vimeoTpl` properties that follow the same structure as the `&imageTpl`, but which are are applied to YouTube and Vimeo video records respectively. 
+
+#### `&youtubeTpl`
+
+The name of a chunk to use for templating a [YouTube video](../Video). Works identical to `&imageTpl` for videos from YouTube.
+
+#### `&vimeoTpl`
+
+The name of chunk to use for templating a [Vimeo video](../Video). Works identical to `&imageTpl` for videos from Vimeo. 
 
 #### `&imageSeparator`   
 
@@ -97,7 +119,7 @@ The name of a chunk to use for each tag for each image, only if `&getTags` is en
 
 ```` html
 <a href="[[~[[*id]]? &tag=`[[+id]]`]]" class="th" title="View all images tagged [[+display]]">
-[   [+display]]
+    [[+display]]
 </a> 
 ````
 
@@ -124,6 +146,16 @@ Set to `1` to enable the single image view, or `0` to disable it. When enabled, 
 #### `&singleImageTpl`   
 
 The name of a chunk to use for the single image view. See further down this page for the default and placeholders for this chunk.  
+
+There are also `&singleYoutubeTpl` and `&singleVimeoTpl` properties for [YouTube and Vimeo videos](../Video) respectively, which both follow the same behaviour as the `&singleImageTpl`. 
+
+#### `&singleYoutubeTpl`
+
+The name of a chunk to use for a single YouTube video embed. Works identical to `&singleImageTpl` for YouTube videos. 
+
+#### `&singleVimeoTpl`
+
+The name of a chunk to use for a single Vimeo video embed. Works identical to `&singleImageTpl` for Vimeo videos. 
 
 #### `&singleImageParam`   
 
@@ -183,6 +215,16 @@ By default mgGetImages will only show active images, but if you also want hidden
 
 **Default**: 1  
 
+#### `&debug`
+
+When set to `1`, MoreGallery will output a debug log showing how it processed the snippet call and ended up with the results it showed. This debug information is appended to the output of the snippet. 
+
+#### `&timing`
+
+When set to `1`, MoreGallery will output the total time it took to process the snippet. This will be appended to the end of the snippet. Useful when combined with `&debug` to identify performance bottlenecks. 
+
+The expected timing for a cached result (so a repeat request) is expected to be around 5-10ms, while the uncached result strongy depends on the number of images that are loaded and the complexity of your templates. 
+
 ---
 
 ## &imageTpl Chunk
@@ -190,18 +232,28 @@ By default mgGetImages will only show active images, but if you also want hidden
 The default chunk used in the imageTpl property is the following:
 
 ```` html
+<li class="mg-image">
+    <a href="[[+view_url]]" title="[[+name]]">
+        <img src="[[+mgr_thumb]]" alt="[[+name]]">
+    </a>
+</li>
+````
+
+Before v1.5, this used to be:
+
+```` html
 <a href="[[+view_url]]" class="th">
     <img src="[[+file_path:phpthumbof=`w=200`]]" class="img-polaroid" alt="[[+name]]">
 </a>
 ````
 
-As you can see, the default uses phpthumbof to resize the file to a smaller thumbnail. You are encouraged to change this tpl to meet your specific needs. While we're using the `[[+file_path]]` value to pass to phpthumbof, you can also use the `[[+file_url]]` instead. 
+To show the image, the main placeholders to use are `[[+file_url]]`, `[[+file_path]]` in combination with a thumbnail snippet like pthumb, `[[+view_url]]` for the single image view or `[[+mgr_thumb]]` for the thumbnail also used in the manager. 
 
-This is mostly a matter of preference as it should work either way. If you're not using a thumbnailing snippet, you should use `[[+file_url]]`.
+[When using video](../Video) the `[[+video_id]]` placeholder contains the unique video ID for the service that can be used to create an embed code to suit your needs. The `[[+service]]` placeholder contains either `youtube` or `vimeo`. The chunk names for video are specified in either the `&youtubeTpl` or `&vimeoTpl` properties. 
 
 Our [Demo Site](http://demo.modmore.com/) contains an example implementation of MoreGallery.
 
-The placeholders you can use are below:
+The placeholders you can use in the chunks for `&imageTpl`, `&youtubeTpl`, `&vimeoTpl`, `&singleImageTpl` (see the next section), `&singleYoutubeTpl` and `&singleVimeoTpl` are listed below:
 
 #### `[[+idx]]`   
 
@@ -250,6 +302,68 @@ The width of the uploaded image in pixels. Added in v1.3
 #### `[[+height]]`   
 
 The height of the uploaded image in pixels. Added in v1.3  
+
+#### `[[+uploadedon]]`
+
+The time, as defined by an integer unix timestamp, that the image was added to the gallery. Can be formatted into a user-readable date with the `date` output filter. 
+
+#### `[[+uploadedby]]`
+
+The ID of the MODX User Account that added the image to the gallery. This can be used with the `userinfo` output filter to show information about that user, for example:
+ 
+````
+[[+uploadedby:userinfo=`username`]]
+````
+
+#### `[[+editedon]]`
+
+The time, as defined by an integer unix timestamp, that the image was last edited. Note that dragging an image across the gallery may affect the editedon date for a large part of the gallery. 
+ 
+Can be formatted into a user-readable date with the `date` output filter.
+ 
+ 
+#### `[[+editedby]]`
+
+The ID of the MODX User Account that last edited the image record. This can be used with the `userinfo` output filter to show information about that user, for example:
+ 
+````
+[[+uploadedby:userinfo=`username`]]
+````
+
+#### `[[+class_key]]`
+
+The type of image. This is usually `mgImage`, but when using [Video](../Video) this can also be `mgYouTubeVideo` or `mgVimeoVideo`. Added in v1.5
+
+**Example**: `mgImage`
+
+#### `[[+video_id]]`
+
+For use in the `&youtubeTpl` or `&vimeoTpl` chunks, this contains the unique ID for the [video](../Video) service. The standard `<iframe>` embed urls can be formed like this:
+
+- YouTube: `//www.youtube.com/embed/[[+video_id]]`
+- Vimeo: `//player.vimeo.com/video/[[+video_id]]`
+
+For more information about working with Videos, see the [Videos documentation](../Video).
+
+#### `[[+service]]`
+
+For use in the `&youtubeTpl` or `&vimeoTpl` chunks, this contains either the string `youtube` or `vimeo`. 
+
+For more information about working with Videos, see the [Videos documentation](../Video).
+
+#### `[[+resource]]`
+
+The ID of the resource this image was uploaded to.
+
+#### `[[+resource.KEY_HERE]]`
+
+If the `&getResourceFields` property was set as 1, the resource fields are available with the `resource` prefix. For example `[[+resource.pagetitle]]`, `[[+resource.uri]]` or `[[+resource.introtext]]`. 
+
+The `[[+resource.content]]` placeholder is available if `&getResourceContent` is enabled.
+
+The `[[+resource.properties.NAMESPACE_HERE.KEY_HERE]]` placeholders are available if `&getResourceProperties` is enabled. 
+
+If a comma separated list of TV names is provided to `&getResourceTVs`, those values are available as `[[+resource.TV_NAME_HERE]]`. 
 
 #### `[[+exif.KEY_HERE]]`   
 
