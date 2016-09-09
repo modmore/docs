@@ -66,7 +66,7 @@ if ($params['html']['piwik_analytics']) {
 <?php if ($params['html']['search']) {
     ?>
     <!-- Tipue Search -->
-    <script type="text/javascript" src="<?php echo $base_url; ?>tipuesearch/tipuesearch.js"></script>
+    <script type="text/javascript" src="<?php echo $base_url; ?>themes/modmore/js/tipuesearch.js"></script>
 
     <script>
         window.onunload = function(){}; // force $(document).ready to be called on back/forward navigation in firefox
