@@ -7,6 +7,7 @@
     <title><?= $page['title']; ?> <?php if ($page['title'] != $params['title']) {
             echo '- ' . $params['title'];
         } ?></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="<?= $params['tagline']; ?>" />
     <meta name="author" content="<?= $params['author']; ?>">
     <meta charset="UTF-8">
