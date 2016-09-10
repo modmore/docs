@@ -18,7 +18,6 @@ aside.sidebar {
 }
 
 /* Sidebar navigation */
-
 .Nav {
     margin: 0;
     padding: 0
@@ -33,13 +32,13 @@ aside.sidebar {
     position: absolute;
     display: block;
     content: "";
-    margin: -.25em 0 0 -.4em;
+    margin: -.3em 0 0 -.4em;
     left: 50%;
     top: 50%;
     width: .5em;
     height: .5em;
-    border-right: .15em solid #3f4657;
-    border-top: .15em solid #3f4657;
+    border-right: .15em solid #fff;
+    border-top: .15em solid #fefefe;
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
     -webkit-transition-duration: .3s;
@@ -51,36 +50,27 @@ aside.sidebar {
 .Nav__item a {
     display: block;
 }
-.Nav__item a:hover {
-    color: #3f4657;
-    text-shadow: none;
-    background-color: #c5c5cb
-}
 .Nav .Nav {
     display: none;
-    margin-left: 15px
 }
-.Nav .Nav .Nav__item a {
-    margin-left: -15px;
-    opacity: .7
-}
-.Nav .Nav .Nav__item a:hover {
-    opacity: 1
-}
-.Nav .Nav .Nav__item--active a {
-    color: #3f4657;
-}
-.Nav__item--active>a,
-.Nav__item--open>a {
-    background-color: #c5c5cb
+nav.pagenav .Nav__item--active>a,
+nav.pagenav .Nav__item--open>a {
+    font-weight: bold;
+    color: #ff8f0d;
 }
 .Nav__item--open>.Nav {
     display: block
 }
 .Nav__item--open>a>.Nav__arrow:before {
-    margin-left: -.25em;
     -webkit-transform: rotate(135deg);
-    transform: rotate(135deg)
+    transform: rotate(135deg);
+    margin-top: -0.5em;
+}
+/* Give the first level some extra breathing room between the arrow and title */
+.pagenav > .Nav > .Nav__item > a > .Nav__arrow {
+    margin-left: -20px;
+    width: 16px;
+    margin-right: 4px;
 }
 
 /* JavaScript powered tipuesearch */
