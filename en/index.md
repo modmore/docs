@@ -8,7 +8,7 @@ The navigation on the side allows you to browse the documentation hierarchically
 
 ## Get help
 
-If you still have questions, let us know via [support@modmore.com](mailto:support@modmore.com). We're here to help! 
+If you still have questions, let us know via support@modmore.com. We're here to help! 
 
 ## Improve the documentation
 
