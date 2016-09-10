@@ -1,9 +1,3 @@
-li {
-    font-size: .875rem;
-    line-height: 1.6;
-    text-rendering: optimizeLegibility;
-}
-
 /* Header / Breadcrumbs */
 .Page__Header svg {
     width: 0.4em;
@@ -29,6 +23,11 @@ aside.sidebar {
 .s-content iframe,
 .s-content pre {
     max-width: 100%;
+}
+.s-content li {
+    font-size: .875rem;
+    line-height: 1.6;
+    text-rendering: optimizeLegibility;
 }
 
 /* Sidebar navigation */
