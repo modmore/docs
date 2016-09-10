@@ -8,6 +8,6 @@
     },
 	"ignore": {
 		"files": ["build.sh", ".gitignore", "README.md", "html.zip"],
-		"folders": ["html", ".idea", "themes"]
+		"folders": ["html", ".idea", "themes", "vendor"]
 	}
 }
