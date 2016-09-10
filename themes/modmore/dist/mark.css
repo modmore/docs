@@ -1,3 +1,10 @@
+li {
+    font-size: .875rem;
+    line-height: 1.6;
+    text-rendering: optimizeLegibility;
+}
+
+/* Header / Breadcrumbs */
 .Page__Header svg {
     width: 0.4em;
 }
@@ -15,6 +22,13 @@
 /* Sidebar scrolling */
 aside.sidebar {
     overflow-y: scroll;
+}
+
+/* Element overflow */
+.s-content img,
+.s-content iframe,
+.s-content pre {
+    max-width: 100%;
 }
 
 /* Sidebar navigation */
@@ -71,6 +85,45 @@ nav.pagenav .Nav__item--open>a {
     margin-left: -20px;
     width: 16px;
     margin-right: 4px;
+}
+
+/* Pagers */
+.Pager {
+    padding-left: 0;
+    margin: 1em 0;
+    list-style: none;
+    text-align: center;
+    clear: both;
+}
+.Pager:after,
+.Pager:before {
+    content: " ";
+    display: table;
+}
+.Pager:after {
+    clear: both;
+}
+.Pager li {
+    display: inline;
+}
+.Pager li>a {
+    display: inline-block;
+    padding: 5px 14px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    transition: all .2s ease-in-out;
+}
+.Pager li>a:focus,
+.Pager li>a:hover {
+    text-decoration: none;
+    border-color: #ff8f0d;
+}
+.Pager--next>a {
+    float: right
+}
+.Pager--prev>a {
+    float: left
 }
 
 /* JavaScript powered tipuesearch */

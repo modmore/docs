@@ -11,11 +11,11 @@
 <nav>
     <ul class="Pager">
         <?php if (!empty($page['prev'])) {
-    ?><li class=Pager--prev><a href="<?= $base_url . $page['prev']->getUrl() ?>">Previous</a></li><?php
+    ?><li class=Pager--prev><a href="<?= $base_url . $page['prev']->getUrl() ?>">&laquo; <?= $page['prev']->getTitle() ?></a></li><?php
 
 } ?>
         <?php if (!empty($page['next'])) {
-    ?><li class=Pager--next><a href="<?= $base_url . $page['next']->getUrl() ?>">Next</a></li><?php
+    ?><li class=Pager--next><a href="<?= $base_url . $page['next']->getUrl() ?>"><?= $page['next']->getTitle() ?> &raquo;</a></li><?php
 
 } ?>
     </ul>
