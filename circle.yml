@@ -2,8 +2,8 @@
 checkout:
   post:
     # install MODX from git
-    - composer require justinwalsh/daux.io
+    - composer require justinwalsh/daux.io:dev-development
 # After running the tests, we run it again on different versions of PHP
 test:
   override:
-    - cd .. && docs/vendor/justinwalsh/daux.io/daux.phar
+    - vendor/justinwalsh/daux.io/daux.phar generate --source=. --destination=html
