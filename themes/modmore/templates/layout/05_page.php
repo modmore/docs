@@ -18,9 +18,26 @@
 <div class="pagewrapper">
     <div id="pagecontent" class="pagecontent">
         <header class="pageheader">
+            <!-- JavaScript-only search...
+                Pros:
+                    - Instant
+                    - Offline
+                    - Works with the static site generation
+                Cons:
+                    - Not accessible >:(
+                    - Only searches docs, not other modmore content
+                    - No tracking
+
+                Use this temporarily, set up something like an elasticsearch server in the future that reads
+                out the static content for accessible search capability that also searches site/forums etc.
+                Perhaps keep this available one-way or another (check if offline?) for local copies.
+            -->
             <form method="get" action="/search" class="docsearch">
-                <input type="search" id="tipue_search_input" name="query" placeholder="Search documentation...">
-                <button type="submit" class="button"><svg role="presentation"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="<?= $base_url; ?>themes/modmore/dist/sprite.svg#search" title="search"></use></svg></button>
+                <script>
+                    document.write('\
+                    <input type="search" id="tipue_search_input" name="query" placeholder="Search documentation...">\
+                    <button type="submit" class="button"><svg role="presentation"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="<?= $base_url; ?>themes/modmore/dist/sprite.svg#search" title="search"></use></svg></button>');
+                </script>
             </form>
             <div class="headerlinks">
                 <a href="mailto:support@modmore.com">Contact Support</a>
