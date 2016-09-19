@@ -7,7 +7,7 @@
     	"edit_on_github": "modmore/Docs/master"
     },
 	"ignore": {
-		"files": ["build.sh", ".gitignore", "README.md", "html.zip"],
+		"files": ["build.sh", ".gitignore", "README.md", "html.zip", "circle.yml"],
 		"folders": ["html", ".idea", "themes", "vendor"]
 	},
 	"languages": { "en": "English" }
