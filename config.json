@@ -8,7 +8,7 @@
     },
 	"ignore": {
 		"files": ["build.sh", ".gitignore", "README.md", "html.zip", "circle.yml"],
-		"folders": ["html", ".idea", "themes", "vendor"]
+		"folders": ["html", ".idea", "themes", "vendor", "Commerce"]
 	},
 	"languages": { "en": "English" }
 }
