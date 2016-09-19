@@ -7,7 +7,7 @@ then
 fi
 
 # Generate the docs using daux.io
-daux generate --source=. --destination=html
+vendor/bin/daux generate --source=. --destination=html
 
 # Remove the empty placeholder file from the generated html folder
 if [ -f html/modmore-documentation.zip ];

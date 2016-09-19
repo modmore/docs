@@ -1,9 +1,3 @@
-# Install Daux.io
-checkout:
-  post:
-    # install MODX from git
-    - composer require justinwalsh/daux.io:dev-development
-# After running the tests, we run it again on different versions of PHP
 test:
   override:
     - touch modmore-documentation.zip
