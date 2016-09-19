@@ -10,9 +10,19 @@ The navigation on the side allows you to browse the documentation hierarchically
 
 If you still have questions, let us know via support@modmore.com. We're here to help! 
 
+## Browse the documentation offline
+
+It's possible to [download a full archive of this website](modmore-documentation.zip) to browse it offline. After downloading, unpack the zip file into a memorable place. 
+
+The best results are when you can serve the files on a local web server (apache/nginx). This will allow you to use the entire documentation site exactly like it works on [docs.modmore.com](https://docs.modmore.com/). 
+
+Alternatively, you can also browse the site by just opening the html files in your browser. This uses the `file://` protocol, which has some restrictions. Most notably the search function will not work, and some images and other assets may not show up. 
+
+When relying on a local copy of the documentation, be sure to update the files every now and then, as we do fix and add documentation regularly. 
+
 ## Improve the documentation
 
-If you're already comfortable with our extras (or you just spotted a typo!), you can help us improving this documentation through GitHub. 
+If you're already comfortable with our extras (or you just spotted a typo!), you can help us improving this documentation through [GitHub](https://github.com/modmore/docs). 
 
 To propose changes, you will need a GitHub account, but you don't have to know much about git.
 
