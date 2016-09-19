@@ -60,15 +60,15 @@
 
         <nav class="pagenav">
             <?php
-            $rendertree = $tree;
-            $path = '';
+            $rendertree = $tree['en'];
+            $path = 'en';
 
             if ($page['language'] !== '') {
-                $rendertree = $tree->value[$page['language']];
+                $rendertree = $tree[$page['language']];
                 $path = $page['language'];
             }
 
-            echo $this->get_navigation($rendertree['en'], 'en', isset($params['request']) ? $params['request'] : '', $base_page, $params['mode']);
+            echo $this->get_navigation($rendertree, $path, isset($params['request']) ? $params['request'] : '', $base_page, $params['mode']);
             ?>
 
         </nav>
