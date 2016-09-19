@@ -64,7 +64,7 @@
             }
         ?>
         <p class="logo">
-            <a href="<?php echo $base_url . $path . '/'; ?>" title="modmore documentation"><strong>modmore documentation</strong></a>
+            <a href="<?php echo $base_url . $path; ?>/index.html" title="modmore documentation"><strong>modmore documentation</strong></a>
         </p>
 
         <nav class="pagenav">
