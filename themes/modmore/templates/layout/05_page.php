@@ -54,12 +54,7 @@
         </main>
     </div>
     <aside id="sidebar" class="sidebar">
-        <p class="logo">
-            <strong>modmore docs</strong>
-        </p>
-
-        <nav class="pagenav">
-            <?php
+        <?php
             $rendertree = $tree['en'];
             $path = 'en';
 
@@ -67,7 +62,13 @@
                 $rendertree = $tree[$page['language']];
                 $path = $page['language'];
             }
+        ?>
+        <p class="logo">
+            <a href="<?php echo $base_url . $path . '/'; ?>" title="modmore documentation"><strong>modmore documentation</strong></a>
+        </p>
 
+        <nav class="pagenav">
+            <?php
             echo $this->get_navigation($rendertree, $path, isset($params['request']) ? $params['request'] : '', $base_page, $params['mode']);
             ?>
 
