@@ -6,4 +6,5 @@ checkout:
 # After running the tests, we run it again on different versions of PHP
 test:
   override:
+    - touch modmore-documentation.zip
     - vendor/justinwalsh/daux.io/daux.phar generate --source=. --destination=html
