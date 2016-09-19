@@ -31,6 +31,9 @@ aside.sidebar {
 }
 
 /* Sidebar navigation */
+nav.pagenav li li li li li a {
+    padding-left: 5.4rem;
+}
 .Nav {
     margin: 0;
     padding: 0
