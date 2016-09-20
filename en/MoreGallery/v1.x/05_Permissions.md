@@ -1,5 +1,3 @@
-## Permissions
-
 As of MoreGallery 1.5, you have fine grained control over the available features and options in a Gallery. This uses the Access Control Lists features of MODX, that allows you to assign sets of permissions to a user group.
 
 During installation a Policy Template with the name `MoreGalleryTemplate` is created. This contains all the permissions for MoreGallery, 11 at latest count, which you can add to Access Policies through that template. The full list can be seen in your manager, along with a brief description of each, by browsing to _System_ > _Access Control Lists_ > _Policy Templates_ > _MoreGalleryTemplate_.
@@ -10,11 +8,11 @@ These permissions will stack. So someone first needs the `moregallery_view_galle
 
 Similarly, to toggle the active/hidden state on an image, the user needs `moregallery_image_active` and also `moregallery_image_edit` permission. To add new tags on top of the ones that already exist, the user needs `moregallery_image_tags_new` permission as well as `moregallery_image_tags` permission.
 
-## Limiting Access to the Galleries
-
 Knowing what permissions are available, here's a step-by-step tutorial on setting up limited access to a Gallery for an editor user.
 
-### Step 1: Create the Access Policy
+[TOC]
+
+## Step 1: Create the Access Policy
 
 The first thing to do is creating an access policy. Go to _System_ > _Access Control Lists_ and hop into the _Access Policies_ tab. Click on _Create Access Policy_ and fill in the window. Enter a name and description that describes your policy (e.g. "MoreGallery Basic Access"), but most importantly **select MoreGalleryTemplate as the policy template**. Save the new Policy.
 

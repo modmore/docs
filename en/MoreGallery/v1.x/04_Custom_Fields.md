@@ -2,6 +2,8 @@ Custom Fields were introduced in MoreGallery 1.4 and allow you to add additional
 
 To manage the custom fields you'll need to write some JSON and store that in the `moregallery.custom_fields` system setting (or context setting). Additionally, it's also possible to set up custom fields per MoreGallery resource on the Settings tab.
 
+[TOC]
+
 ## Example Custom Fields Configuration
 
 

@@ -1,5 +1,3 @@
-## Gallery with Pagination
-
 MoreGallery is designed to work with [getPage](http://rtfm.modx.com/display/ADDON/getPage). After installing [getPage from MODX.com](http://modx.com/extras/package/getpage), you will be able of paginating through your gallery by simply wrapping the mgGetImages snippet with getPage.
 
 The minimal usage for a paginated gallery with getPage is as follows:

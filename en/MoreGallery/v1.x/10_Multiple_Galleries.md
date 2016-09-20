@@ -1,8 +1,10 @@
-## Multiple Galleries
-
 With MoreGallery, each Resource is a single Gallery or Album. This means that if you want multiple galleries, or albums, you will need to create multiple Gallery resources. 
 
-To show covers for a number of galleries, or to show all images in each of the galleries on a single page, the suggested method is to use getResources to loop over each of the Gallery Resources. Inside the getResources template, you can then call the [mgGetImages snippet](https://www.modmore.com/moregallery/documentation/snippets/mggetimages/) which will provide you with the image(s) you would like. By re-using the getResources addon for looping over Resources, you get a lot of flexibility.
+To show cover images for a number of galleries, or to show all images in each of the galleries on a single page, the suggested method is to use getResources to loop over each of the Gallery Resources. Inside the getResources template, you can then call the [mgGetImages snippet](Snippets/mgGetImages) which will provide you with the image(s) you would like. 
+
+By re-using the getResources addon for looping over Resources, you get a lot of flexibility.
+
+[TOC]
 
 ## getResources Call
 

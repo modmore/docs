@@ -10,6 +10,8 @@ MoreGallery parses this data to ensure it only contains valid UTF-8 characters (
 
 As EXIF is fairly loosely defined, there is no guarantee a certain field is available, so using this data should be done carefully.
 
+[TOC]
+
 ## Identifying available data
 
 Since MoreGallery 1.4, we provide two new placeholders, `[[+exif_dump]]` and `[[+exif_json]]`, that allow you to inspect all available exif data for an image. 

@@ -2,6 +2,8 @@ So you've installed MoreGallery and want to know what to do next? You've come to
 
 In this getting started document we'll walk you through the basic set up for MoreGallery. Setting up your first gallery should ony take a minute or two.
 
+[TOC]
+
 ## Prerequisite: Installing MoreGallery
 
 If you haven't yet, the first step is to install the MoreGallery. You'll need a modmore.com account and follow the instructions [found in the Purchases section of the site](https://www.modmore.com/account/purchases/).

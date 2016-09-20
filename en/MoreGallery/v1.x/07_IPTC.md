@@ -28,6 +28,8 @@ A collection of known keys are normalised, as detailed below.
 
 Any IPTC keys that are not in the list above are available through their numerical key in your templates.
 
+[TOC]
+
 ## Identifying available data
 
 To see what IPTC data has been extracted from an image, you can use the `[[+iptc_dump]]` and `[[+iptc_json]]` placeholders in the chunk called by the `&imageTpl` property on the mgGetImages snippet.

@@ -1,10 +1,8 @@
-## Cropping
-
 As of MoreGallery 1.3, it is possible to set up region-of-interest cropping. With this feature, the designer or developer defines the different crops that should be available and the end user then selects the right part of the image when it has been uploaded.
 
 The crops can optionally specify the aspect ratio it should use, as well as the size of the output image. 
 
-<!--This document deals with setting up available crops. For instructions about working with crops for end-users, [please see the User Guide](https://www.modmore.com/moregallery/documentation/userguide/#cropping).-->
+[TOC]
 
 ## Setting up Crops
 

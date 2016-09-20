@@ -1,5 +1,7 @@
 MoreGallery allows embedding videos from YouTube and Vimeo since version 1.5. This made it the first Gallery Extra for MODX that also supports video natively.
 
+[TOC]
+
 ## Adding videos to a Gallery
 
 To add a video to a Gallery resource, click the _Add Video_ button in the toolbar of the gallery. In the popup, you can paste in the link to a video on YouTube or Vimeo. It will automatically recognise the link, extract its unique video ID, and use that to talk to the YouTube/Vimeo APIs to retrieve a thumbnail.

@@ -1,10 +1,10 @@
-## User Guide
-
 This user guide is meant for the end-users of the MoreGallery add-on. For information about front-end implementation, please review the [documentation](https://www.modmore.com/moregallery/documentation/).
 
-    Please note that your designer or developer has the tools to customise MoreGallery to your exact needs. Because of that, not all information in this document may apply to your specific situation. 
+**Please note** that your designer or developer has the tools to customise MoreGallery to your exact needs. Because of that, not all information in this document may apply to your specific situation. 
 
 MoreGallery is a special type of document that lets you manage image or photo galleries from an easy to use interface. It appears in the Resource tree with an icon representing an image.
+
+[TOC]
 
 ## Creating a Gallery
 

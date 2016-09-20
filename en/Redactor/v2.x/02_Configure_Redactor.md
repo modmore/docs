@@ -1,5 +1,5 @@
 ---
-title: Redactor Configuration Options 
+title: Configuration
 ---
 
 With 150 or so settings, there is a lot you can configure with Redactor. On this page you will find a complete list of all these settings, what they do and links to additional relevant documentation where applicable.
