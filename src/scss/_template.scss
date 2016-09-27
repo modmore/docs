@@ -1,0 +1,69 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: $body-background;
+}
+body {
+    visibility: visible;
+    opacity: 1;
+    -webkit-font-smoothing: antialiased;
+    font-size: $body-font-size;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.browserupgrade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+    text-align: center;
+}
+
+.pagewrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.pagecontent {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: rem(300);
+    width: auto;
+    padding-top: rem(56);
+    box-sizing: content-box;
+
+    @include breakpoint(large) {
+        left: auto;
+        padding-right: calc((100% - #{rem(1024)})/2);
+        width: rem(724);
+    }
+}
+
+.maincontent {
+    padding: rem(0 30);
+}
+
+aside.sidebar {
+    box-sizing: content-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: rem(300);
+    height: 100%;
+
+    @include breakpoint(large) {
+        padding-left: calc((100% - #{rem(1024)})/2);
+    }
+}

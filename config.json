@@ -7,8 +7,8 @@
     	"edit_on_github": "modmore/Docs/master"
     },
 	"ignore": {
-		"files": ["build.sh", ".gitignore", "README.md", "html.zip", "circle.yml"],
-		"folders": ["html", ".idea", "themes", "vendor", "Commerce"]
+		"files": [".bower-postinstall.sh", ".bowerrc", "bower.json", "build.sh", ".gitignore", "README.md", "html.zip", "circle.yml", "package.json"],
+		"folders": ["html", "node_modules", "src", ".idea", "themes", "vendor", "Commerce"]
 	},
 	"languages": { "en": "English" }
 }

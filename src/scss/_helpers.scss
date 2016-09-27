@@ -1,0 +1,81 @@
+.clearfix {
+    @include clearfix;
+}
+
+html.js {
+    .no-js, .hide-with-js {
+        display: none;
+    }
+}
+
+html.no-js {
+    .js, .hide-with-nojs {
+        display: none;
+    }
+}
+
+.no-margin-bottom {
+    margin-bottom: 0 !important;
+}
+
+.no-margin-top {
+    margin-top: 0 !important;
+}
+
+.no-margin {
+    margin: 0 !important;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.visuallyhidden {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px; width: 1px;
+    margin: -1px; padding: 0; border: 0;
+}
+
+.show-on-focus {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    color: $primary-color;
+
+    &:active, &:focus {
+        z-index: 9999;
+        position: static !important;
+        height: auto;
+        width: auto;
+        overflow: visible;
+        clip: auto;
+    }
+
+    &:hover {
+        color: $primary-color;
+    }
+
+    &.skiplink:active, &.skiplink:focus {
+        position: absolute !important;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: auto;
+        text-align: center;
+        line-height: 1;
+        padding: 10px;
+        background: #fff;
+    }
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
