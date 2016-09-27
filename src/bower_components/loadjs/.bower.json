@@ -1,0 +1,14 @@
+{
+  "name": "loadjs",
+  "homepage": "https://github.com/filamentgroup/loadJS",
+  "version": "1.0.0",
+  "_release": "1.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.0.0",
+    "commit": "3a14b5fe7c143dcbfd46e03ed255a6c3ea753e27"
+  },
+  "_source": "https://github.com/filamentgroup/loadJS.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/filamentgroup/loadJS.git"
+}

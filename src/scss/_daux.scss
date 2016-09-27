@@ -1,0 +1,14 @@
+/* Header / Breadcrumbs */
+.Page__Header svg {
+  width: 0.4em;
+}
+.Page__Header svg:last-of-type {
+  display: none;
+}
+.Page__Header a {
+  font-size: 70%;
+}
+.Page__Header a:last-of-type {
+  display: block;
+  font-size: 100%;
+}

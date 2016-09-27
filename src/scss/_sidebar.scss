@@ -1,0 +1,166 @@
+aside.sidebar {
+    background-color: $primary-color;
+    color: #fff;
+    text-shadow: 0 0 rem(15) rgba(0,0,0,0.15);
+}
+
+.logo {
+    display: block;
+    width: rem(200);
+    height: rem(45);
+    margin: rem(35) auto rem(30) rem(15);
+    background: transparent url(https://assets.modmore.com/img/tpl/logo-modmore-20130403.png) no-repeat center center;
+    background-size: 100%;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
+nav.pagenav {
+    ul {
+        display: block;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-size: rem(16);
+        //border-top: 1px solid rgba(0,0,0, 0.2);
+    }
+
+    svg {
+        fill: #fff;
+        width: rem(22);
+        height: rem(22);
+        vertical-align: middle;
+        position: relative;
+        top: -2px;
+        margin-right: 2px;
+    }
+
+    > ul {
+        > li {
+            // 1st level link
+            > a {
+                padding-top: rem(9);
+                font-weight: $global-weight-bold;
+            }
+            > ul {
+                //background: rgba(0, 0, 0, 0.2);
+                //box-shadow: inset rem(0 10 13 -10) rgba(0, 0, 0, 0.2), inset rem(0 -10 13 -10) rgba(0, 0, 0, 0.2);
+            }
+        }
+    }
+
+    li {
+        display: block;
+        margin: 0;
+        padding: 0;
+        //border-bottom: 1px solid rgba(0,0,0, 0.2);
+
+        &:last-child {
+            //border-bottom: none;
+        }
+    }
+
+    // general nav link styles
+    a {
+        display: block;
+        padding: rem(6 15);
+        color: #fff;
+
+        &.active {
+            //background: $body-background;
+            //color: $primary-color;
+            //box-shadow: 0 0 5px 1px rgba(0,0,0,0.15);
+        }
+
+        &:hover {
+            color: $secondary-color;
+        }
+    }
+
+    // 2nd level link
+    > ul > li > ul > li > a {
+        padding-left: rem(45);
+        font-size: rem(12);
+        text-transform: uppercase;
+        //background-image: #{"url(\"data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' width='216' height='146' viewBox='0 0 216 146' fill='#fff'><path d='M144.988 65.667l-53.12-53.04c-1.955-2.063-4.398-3.095-7.332-3.095s-5.377 1.033-7.333 3.096l-6.192 6.11c-2.01 2.01-3.014 4.454-3.014 7.333 0 2.825 1.005 5.297 3.015 7.415L110.608 73 71.01 112.596c-2.01 2.01-3.015 4.454-3.015 7.334 0 2.823 1.005 5.295 3.015 7.414l6.192 6.11c2.01 2.01 4.455 3.015 7.333 3.015 2.88 0 5.324-1.007 7.333-3.017l53.12-53.04c2.01-2.117 3.016-4.59 3.016-7.413 0-2.88-1.006-5.323-3.016-7.333z'/></svg>\")"};
+       // background-size: rem(13);
+        //background-repeat: no-repeat;
+        //background-position: rem(14 8);
+        //background-color: rgba(255,255,255,0.15);
+        //box-shadow: 0 0 5px 1px rgba(0,0,0,0.15);
+    }
+
+    // 3rd level link
+    li li li a {
+        padding-left: rem(60);
+        font-size: rem(12);
+        font-weight: $global-weight-normal;
+    }
+
+    // 4th level link (inherits 3rd level styles)
+    li li li li a {
+        padding-left: rem(75);
+    }
+
+    // 5th level link (inherits 3rd level styles)
+    li li li li li a {
+        padding-left: rem(90);
+    }
+}
+
+.Nav {
+    margin: 0;
+    padding: 0
+}
+.Nav__arrow {
+    display: inline-block;
+    position: relative;
+    width: 16px;
+    margin-left: -16px
+}
+.Nav__arrow:before {
+    position: absolute;
+    display: block;
+    content: "";
+    margin: -.3em 0 0 -.4em;
+    left: 50%;
+    top: 50%;
+    width: .5em;
+    height: .5em;
+    border-right: .15em solid #fff;
+    border-top: .15em solid #fefefe;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transition-duration: .3s;
+    transition-duration: .3s
+}
+.Nav__item {
+    display: block
+}
+.Nav__item a {
+    display: block;
+}
+.Nav .Nav {
+    display: none;
+}
+nav.pagenav .Nav__item--active>a,
+nav.pagenav .Nav__item--open>a {
+    font-weight: bold;
+    color: #ff8f0d;
+}
+.Nav__item--open>.Nav {
+    display: block
+}
+.Nav__item--open>a>.Nav__arrow:before {
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+    margin-top: -0.5em;
+}
+/* Give the first level some extra breathing room between the arrow and title */
+.pagenav > .Nav > .Nav__item > a > .Nav__arrow {
+    margin-left: -20px;
+    width: 16px;
+    margin-right: 4px;
+}

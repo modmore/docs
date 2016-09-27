@@ -1,0 +1,5 @@
+// Prevent FOUC since we're loading the main stylesheet async
+body{
+    visibility: hidden;
+    opacity: 0;
+}
