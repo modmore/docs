@@ -21,14 +21,28 @@ For example `/en/ContentBlocks/v1.x/Fields.md` or `/ru/Commerce/v0.x/Modules/EUV
 
 ## File Format
 
-Every document starts with a simple annotation 
+If needed, a custom title can be set per page by using [Front matter](http://daux.io/Features/Front_Matter) at the top of a file. 
 
 ## Contributing
 
 You're invited to help us improve the documentation. For this we use git and pull requests on github to manage changes. If you're new to git and need a bit more help getting set up, don't hesitate to ask for help. 
 
-When suggesting content changes, please limit yourself to one topic (extra) per pull request. For typos a single pull request across the entire repository is fine.
+When suggesting content changes, please limit yourself to one extra per pull request so we can more easily review the changes. For typos a single pull request across different sections is fine. 
 
-## Previewing changes
+## Building the static site
 
-When writing this, we haven't finished setting up docs.modmore.com so we don't have guidelines yet on how to test/preview changes. If you stick to standard markdown, everything should look good. 
+Turning the markdown files into a static site is done with [Daux](http://daux.io/). When you have the repository checked out or downloaded locally, install Daux by running `composer install` in the root of the repository. This uses [composer](https://getcomposer.org/) which is assumed to be installed globally.
+
+With Daux installed, you can run `./build.sh`. This script will call Daux with the right parameters to build the documentation into the `html/` directory. This build step usually takes no more than a few seconds. 
+
+From there you can preview the site by pointing your browser to the html directory.
+
+## Building assets
+
+The site uses NPM scripts for compiling sass into css, and compiling a couple of small javascript files. All asset related source files can be found in the `src` folder of the repository. 
+
+The first time you want to build the assets, you'll need to run `npm install` in the root of the repository. This process may take some time. 
+
+To build the CSS and to preview the changes, run `npm run build:css` and rebuild the static site using `./build.sh`. Likewise `npm run build:js` will build the javascript and `npm run build` will build all different things managed with npm. 
+
+
