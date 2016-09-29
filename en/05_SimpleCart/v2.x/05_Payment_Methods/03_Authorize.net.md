@@ -1,7 +1,3 @@
----
-title: Authorize.net Gateway for SimpleCart
----
-
 The Authorize.net Gateway for SimpleCart is free to install from the modmore.com package provider. Its source code can be found on [GitHub](https://github.com/modmore/SimpleCart_Stripe) and development was sponsored by Roger Sullivan, Founder of [Snow Day Code](http://snowdaycode.com/). Thanks, Roger!
 
 After installing the gateway, it will show up in the Payment Methods tab in the SimpleCart > Administer component.

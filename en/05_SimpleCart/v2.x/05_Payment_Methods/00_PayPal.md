@@ -1,7 +1,3 @@
----
-title: PayPal Gateway for SimpleCart
----
-
 The PayPal Gateway for SimpleCart is free to install from the modmore.com package provider. Its source code can be found on [GitHub](https://github.com/modmore/SimpleCart_PayPal).
 
 After installing the gateway, it will show up in the Payment Methods tab in the SimpleCart > Administer component.
