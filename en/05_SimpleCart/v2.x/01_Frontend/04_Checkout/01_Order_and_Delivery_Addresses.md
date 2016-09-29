@@ -1,19 +1,16 @@
-Within SimpleCart you have the ability to use multiple addresses for the order itself and the delivery of the goods.
+Within SimpleCart you have the ability to use multiple addresses for the order itself and the delivery.
 
 ## Checkout form setup
 
-To use a separated delivery address in your shop you should keep in mind that all fields in the checkout form are submitted at the same time. As you probably can imagine, the field names cannot be the same for both address fields because on submit they will overwrite each other. A good setup for this is to use field prefixes. Let's dive into that.
+To request the additional delivery address, you'll need to add some fields to the same checkout form. These fields typically use a prefix `delivery_`, so you get `delivery_firstname`, `delivery_lastname`, `delivery_street`, `delivery_number` and so on. 
 
-Let's say you already have your order address fields named like; "firstname", "lastname", "street", "number", "zipcode", "city" and "country".  
-Now you want to have the same fields for the delivery, but you cannot use those names again... Prefix them, for example, with; "delivery\_". In that case, your delivery fields will get names like; "delivery\_firstname", "delivery\_lastname", "delivery\_street" and so on.  
-SimpleCart doesn't know those fields, and that's why you need to map the fields in your checkout form processor to let SimpleCart know the fields.
+As SimpleCart doesn't know what these fields are out of the box, you need to add them to the field mapping on the FormIt call. 
 
 ## Mapping the address fields
 
-When you use other field names than SimpleCart knows about, then you need to map those fields into SimpleCart fields. The most easy thing to use, is using the same field names as SimpleCart does, then a mapping isn't necessary anymore. This is only required, if your [checkout form](https://www.modmore.com/simplecart/documentation/frontend/checkout/) has fields that cannot be parsed by SimpleCart automatically.
+Without mapping the address fields, SimpleCart will treat new fields as [custom order fields](Custom_Order_Fields). 
 
-In SimpleCarts default checkout form (provided to you in the [scCheckoutForm](https://www.modmore.com/simplecart/documentation/chunks/sccheckoutform/) chunk), there are two fields which are not default to SimpleCart. Those having the names "street" and "number". Which representing the street name and the house number for the customers addres. In the same default chunk, there is also a mapping for that. Let's take a look;
-
+In the default checkout form ([discussed here](../Checkout)), it uses two address fields which are mapped to a different field already. These are `street` and `number`, and the mapping for that looks like this:
 
 ```` html   
 [[!FormIt?
@@ -25,7 +22,7 @@ In SimpleCarts default checkout form (provided to you in the [scCheckoutForm](ht
  
 As you can see, in this mapping parameter the fields "street" and "number" are mapped to SimpleCarts "address1" and "address2" fields. Multiple form fields can be separated by a comma. 
 
-Mapping multiple checkout form fields into one SimpleCart field is very easy, just continue writing colon signs after each form field, like "address1:street:number". Each field will be added separated by a space.
+Mapping multiple checkout form fields into one SimpleCart field is also possible by adding additional fields after a colon, for example `address1:street:number`. Each field will be added separated by a space.
 
 The mapping key for the delivery address is done the same way, but with `&deliveryAddress`. For example:
 
@@ -61,14 +58,11 @@ Below a list of all available address fields in SimpleCart which can be used in 
 - `mobile` An optional mobile phone number field
 - `email` The customers email address field (required)
 
-## Using extra validation on FormIt
+## Conditional validation
 
-When your checkout form has (for example) a checkbox to let your customers decide whether or not to enter another delivery address, it can be useful to make FormIts validation work with that option too.
+For use cases where you have a checkbox to allow a user to enter a different delivery address, you'll need a conditional validator. [You can find a custom requiredIf validator here](https://gist.github.com/bertoost/4000623), to use that add it to MODX as a snippet. 
 
-
-Let's say that you have a checkbox with the name `use_delivery_address`. This checkbox is provided with some fancy javascript (jQuery) code to toggle the visibility of the delivery address fields. When the checkbox is enabled, and the delivery fields become required, then you should have this validator too. 
-
-[Find the requiredIf custom validator here](https://gist.github.com/bertoost/4000623) to get custom validator for FormIt to achieve extra validation on delivery fields. Create it as a normal snippet in your MODX install.
+Here's an example of how you would use the requiredIf validator to only validate delivery fields if a checkbox `use_delivery_address` has a non-empty value. 
 
 ```` html   
 [[!FormIt?
