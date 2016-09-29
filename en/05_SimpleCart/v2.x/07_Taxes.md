@@ -29,6 +29,6 @@ Finally, if none of the three levels above can be applied, SimpleCart will go ov
 
 ## More about Taxes
 
-- [Tax Rates](Manager/Taxes)
-- [Sets & Rules](Manager/Tax_Sets_and_Rules)
+- [Tax Rates](Manager/Administration/Tax_Rates)
+- [Tax Sets & Rules](Manager/Administration/Tax_Sets_Rules)
 
