@@ -1,4 +1,4 @@
-To make the checkout faster for your customers, you can choose to have a one-page checkout. This can be done with SimpleCart by submitting all the right values in one form, which is handled by the FormIt with the `scCreateOrder` hook. 
+To make the checkout faster for your customers, you can choose to have a one-page checkout. This can be done with SimpleCart by submitting all the right values in one form, which is handled by the FormIt with the `scCreateOrder` hook. You still need the [Thank you page](../Frontend/Checkout/Thank_You) to complete the order. 
 
 Start by showing the cart with your chunks:
 
