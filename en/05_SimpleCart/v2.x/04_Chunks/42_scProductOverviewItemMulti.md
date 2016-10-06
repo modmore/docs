@@ -1,4 +1,4 @@
-The Product Overview Item Multi chunk is being used by the [scGetCart Snippet](../Snippets/scGetCart) 
+The scProductOverviewItemMulti chunk is used with getResources in the standard templates created on install for listing product items where there is one add to cart button at the bottom of the page. 
 
 ## Default scProductOverviewItemMulti chunk
 

@@ -1,4 +1,4 @@
-The Payment Method chunk is being used by the [scGetCart Snippet](../Snippets/scGetCart) 
+The scPaymentMethod chunk is used by the [scPaymentMethods Snippet](../Snippets/scPaymentMethods) in the [scCheckoutForm Chunk](scCheckoutForm). 
 
 ## Default scPaymentMethod chunk
 

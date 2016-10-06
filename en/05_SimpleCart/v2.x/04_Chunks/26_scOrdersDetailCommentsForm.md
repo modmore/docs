@@ -1,4 +1,4 @@
-The Orders Detail Comments Fotm is being used by the [scGetCart Snippet](../Snippets/scGetCart) to generate a Form to add comments to an order
+The scOrdersDetailCommentsForm chunk is used by the [scGetOrders Snippet](../Snippets/scGetOrders) to show a form for adding a comment to a specific order. It is processed by the [scCreateComment snippet as FormIt hook](../Snippets/scCreateComment). 
 
 ## Default scOrdersDetailCommentsForm chunk
 

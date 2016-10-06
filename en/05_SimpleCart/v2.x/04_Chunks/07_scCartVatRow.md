@@ -1,4 +1,4 @@
-The Cart Vat Row is being used by the [scGetCart Snippet](../Snippets/scGetCart) 
+The scCartVatRow chunk is used by the [scGetCart Snippet](../Snippets/scGetCart)  in the `&vatRowTpl` property.
 
 ## Default scCartVatRow chunk
 

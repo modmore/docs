@@ -1,4 +1,4 @@
-The Orders chunk is being used by the [scGetCart Snippet](../Snippets/scGetCart) to display orders
+The scOrders chunk is used by the [scGetOrders Snippet](../Snippets/scGetOrders) to display a list of orders.
 
 ## Default scOrders chunk
 

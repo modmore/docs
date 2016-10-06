@@ -1,4 +1,4 @@
-The Checkout Form is being used by the [scGetCart Snippet](../Snippets/scGetCart) 
+The Checkout Form is used for the [Checkout page](../Frontend/Checkout).
 
 ## Default scCheckoutForm chunk
 

@@ -1,4 +1,4 @@
-The scCart chunk is being used by the [scGetCart Snippet](../Snippets/scGetCart) to wrap the cart in. It's configured in the `&tpl` property of the snippet.
+The scCart chunk is used by the [scGetCart Snippet](../Snippets/scGetCart) to wrap the cart in. It's configured in the `&tpl` property of the snippet.
 
 ## Available placeholders
 

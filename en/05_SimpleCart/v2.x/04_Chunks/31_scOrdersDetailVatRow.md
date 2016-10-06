@@ -1,4 +1,4 @@
-The Orders Detail Vat Row is being used by the [scGetCart Snippet](../Snippets/scGetCart)  to display the VAT for an order
+The scOrdersDetailVatRow chunk is used by the [scGetOrders Snippet](../Snippets/scGetOrders) to show the VAT totals on a specific order. 
 
 ## Default scOrdersDetailVatRow chunk
 

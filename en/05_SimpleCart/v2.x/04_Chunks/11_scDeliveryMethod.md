@@ -1,4 +1,4 @@
-The Delivery Method chunk is being used by the [scGetCart Snippet](../Snippets/scGetCart) 
+The scDeliveryMethod chunk is used by the [scDeliveryMethods Snippet](../Snippets/scDeliveryMethods) in its `&tpl` property. 
 
 ## Default scDeliveryMethod chunk
 

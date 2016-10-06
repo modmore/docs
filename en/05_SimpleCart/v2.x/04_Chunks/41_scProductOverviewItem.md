@@ -1,4 +1,4 @@
-The Product Overview Item is being used by the [scGetCart Snippet](../Snippets/scGetCart) to generate part of the product overview 
+The scProductOverviewItem chunk is used with getResources in the standard templates created on install for listing product items with an add-to-cart button on each product.
 
 ## Default scProductOverviewItem chunk
 

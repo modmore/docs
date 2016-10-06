@@ -1,6 +1,6 @@
-The Email Order Vat Row is being used by the [scGetCart Snippet](../Snippets/scGetCart) 
+The scEmailOrderVatRow chunk is used by the [Email Configuration](../Manager/Administration/Emails) for showing total VAT prices. 
 
-## Default scCart chunk
+## Default scEmailOrderVatRow chunk
 
 ```` html
 

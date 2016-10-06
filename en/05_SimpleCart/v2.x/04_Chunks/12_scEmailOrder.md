@@ -1,4 +1,4 @@
-The Email order chunk is being used by the [scGetCart Snippet](../Snippets/scGetCart) 
+The scEmailOrder chunk is used by the [Email Configuration](../Manager/Administration/Emails).
 
 ## Default scEmailOrder chunk
 

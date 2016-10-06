@@ -1,4 +1,4 @@
-The Recently chunk is being used by the [scGetCart Snippet](../Snippets/scGetCart) to display recent items
+The scRecently chunk is used as wrapper for the [scRecentlyViewed Snippet](../Snippets/scRecentlyViewed) to display products the customer recently visited. 
 
 ## Default scRecently chunk
 

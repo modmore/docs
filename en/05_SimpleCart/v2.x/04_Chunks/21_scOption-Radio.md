@@ -1,4 +1,4 @@
-The Option Radio is being used by the [scGetCart Snippet](../Snippets/scGetCart) for option inputtype Radio
+The scOption-Radio chunk is used for formatting [Product Options](../Frontend/Products/Options) with radio buttons. 
 
 ## Default scOption-Radio chunk
 

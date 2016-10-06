@@ -1,4 +1,4 @@
-The Recently Row chunk is being used by the [scGetCart Snippet](../Snippets/scGetCart) to display a row of recently viewed
+The scRecentlyRpw chunk is used in the [scRecentlyViewed Snippet](../Snippets/scRecentlyViewed) to display products the customer recently visited. 
 
 ## Default scRecentlyRow chunk
 

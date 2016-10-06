@@ -1,4 +1,4 @@
-The Cart Empty chunk is being used by the [scGetCart Snippet](../Snippets/scGetCart) 
+The Cart Empty chunk is used by the [scGetCart Snippet](../Snippets/scGetCart) in the `&emptyTpl` property.
 
 ## Default scCartEmpty chunk
 

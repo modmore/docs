@@ -4,7 +4,7 @@ As you can see below there are four default statuses on installation. These stat
 
 [ ![The default list of statuses available to use out of the box](https://assets.modmore.com/uploads/2015/12/statuses_overview.png)](https://assets.modmore.com/uploads/2015/12/statuses_overview.png "The default list of statuses available to use out of the box")
 
-- Draft: This status is being used by new orders, created by you via MODX Manager
+- Draft: This status is used by new orders, created by you via the MODX Manager
 - New order: This is the status on new orders being placed by customers. 
 - Finished order: This is the status that will be set to the order when the order was placed and payment was received. 
 - Payment failed: This status will be used when the payment failed. The order log typically contains more information about why the payment failed if this happens. 

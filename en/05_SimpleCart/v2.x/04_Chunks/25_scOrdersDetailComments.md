@@ -1,4 +1,4 @@
-The orders Detail Comments chunk is being used by the [scGetCart Snippet](../Snippets/scGetCart) to display order comments
+The scOrdersDetailComments chunk is used by the [scGetOrders Snippet](../Snippets/scGetOrders) to show comments on a specific order. 
 
 ## Default scOrdersDetailComments chunk
 

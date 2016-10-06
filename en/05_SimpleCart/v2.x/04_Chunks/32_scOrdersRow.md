@@ -1,4 +1,4 @@
-The Orders Row is being used by the [scGetCart Snippet](../Snippets/scGetCart) 
+The scOrdersRow chunk is used by the [scGetOrders Snippet](../Snippets/scGetOrders) to show an order in the list. 
 
 ## Default scOrdersRow chunk
 

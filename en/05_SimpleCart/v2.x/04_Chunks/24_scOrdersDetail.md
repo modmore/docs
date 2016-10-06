@@ -1,4 +1,4 @@
-The Orders Detail chunk is being used by the [scGetCart Snippet](../Snippets/scGetCart) to parse order details
+The scOrdersDetail chunk is used by the [scGetOrders Snippet](../Snippets/scGetOrders) to show the details of a single order. 
 
 ## Default scOrdersDetail chunk
 

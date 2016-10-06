@@ -1,4 +1,4 @@
-The Coupon Result chunk is being used by the [scGetCart Snippet](../Snippets/scGetCart) 
+The scCouponResult chunk is used by the [scCouponCode Snippet](../Snippets/scCouponCode) snippet when a coupon code was added to the order successfully.
 
 ## Default scCouponResult chunk
 

@@ -1,4 +1,4 @@
-The Email Order Row Field chunk is being used by the [scGetCart Snippet](../Snippets/scGetCart) 
+The scEmailOrderRowField chunk is used by the [Email Configuration](../Manager/Administration/Emails) for formatting custom product fields. 
 
 ## Default scEmailOrderRowField chunk
 

@@ -1,4 +1,4 @@
-The Option Select chunk is being used by the [scGetCart Snippet](../Snippets/scGetCart) for option inputtype Select
+The scOption-Checks chunk is used for formatting [Product Options](../Frontend/Products/Options) with a select box. 
 
 ## Default scOption-Select chunk
 

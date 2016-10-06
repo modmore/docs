@@ -1,4 +1,4 @@
-The Email order ROw is being used by the [scGetCart Snippet](../Snippets/scGetCart) 
+The scEmailOrderRow chunk is used by the [Email Configuration](../Manager/Administration/Emails) for iterating over purchased products. 
 
 ## Default scEmailOrderRow chunk
 

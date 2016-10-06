@@ -1,4 +1,4 @@
-The Option Checks chunk is being used by the [scGetCart Snippet](../Snippets/scGetCart) for option checkboxes
+The scOption-Checks chunk is used for formatting [Product Options](../Frontend/Products/Options) with checkboxes. 
 
 ## Default scOption-Checks chunk
 

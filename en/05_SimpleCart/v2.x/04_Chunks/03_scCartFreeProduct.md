@@ -1,4 +1,4 @@
-The Cart free Product chunk is being used by the [scGetCart Snippet](../Snippets/scGetCart) 
+The Cart free Product chunk is used by the [scGetCart Snippet](../Snippets/scGetCart) in the `&freeProductTpl` property. 
 
 ## Default scCartFree Product chunk
 

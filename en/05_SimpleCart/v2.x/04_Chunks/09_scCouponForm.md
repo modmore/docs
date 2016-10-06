@@ -1,4 +1,4 @@
-The Coupon Form chunk is being used by the [scGetCart Snippet](../Snippets/scGetCart) to process coupon codes
+The scCouponForm chunk is used by the [scCouponCode Snippet](../Snippets/scCouponCode) snippet to enter and validate coupon codes. 
 
 ## Default coupon form chunk
 

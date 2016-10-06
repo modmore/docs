@@ -1,4 +1,4 @@
-The Orders Detail Comments Row chunk is being used by the [scGetCart Snippet](../Snippets/scGetCart) 
+The scOrdersDetailCommentsRow chunk is used by the [scGetOrders Snippet](../Snippets/scGetOrders) to show a specific comments on a specific order. 
 
 ## Default scOrdersDetailCommentsRow chunk
 

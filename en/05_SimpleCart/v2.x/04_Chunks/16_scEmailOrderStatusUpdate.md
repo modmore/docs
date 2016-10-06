@@ -1,6 +1,6 @@
-The Email Order Status Update chunk is being used by the [scGetCart Snippet](../Snippets/scGetCart) to email status updates
+The scEmailOrderStatusUpdate chunk is used when sending a [status update](../Manager/Orders/Update_Status)
 
-## Default scCart chunk
+## Default scEmailOrderStatusUpdate chunk
 
 ```` html
 <p>[[%simplecart.email.salutation]]</p>

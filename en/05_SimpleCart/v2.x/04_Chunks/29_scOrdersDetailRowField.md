@@ -1,4 +1,4 @@
-The Orders Detail Row Field chunk is being used by the [scGetCart Snippet](../Snippets/scGetCart) 
+The scOrdersDetailRowField chunk is used by the [scGetOrders Snippet](../Snippets/scGetOrders) to show the custom product fields, on a product row, in a specific order. 
 
 ## Default scOrdersDetailRowField chunk
 

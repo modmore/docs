@@ -1,4 +1,4 @@
-The Orders Detail Row Options chunk is being used by the [scGetCart Snippet](../Snippets/scGetCart) 
+The scOrdersDetailRowOptions chunk is used by the [scGetOrders Snippet](../Snippets/scGetOrders) to show the chosen product options, on a product row, in a specific order. 
 
 ## Default scOrdersDetailRowOptions chunk
 
