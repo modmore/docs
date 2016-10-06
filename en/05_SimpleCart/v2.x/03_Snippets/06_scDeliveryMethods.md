@@ -26,7 +26,7 @@ Default: `paymentMethod`
 
 Default: `scDeliveryMethod`
 
-The name of a chunk to display each of the delivery methods with. [See the default chunk here](../scDeliveryMethod). 
+The name of a chunk to display each of the delivery methods with. [See the default chunk here](../Chunks/scDeliveryMethod). 
 
 The available placeholders include:
 
