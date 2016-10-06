@@ -38,11 +38,11 @@ Default: [scCartRowField](../Chunks/scCartRowField)
 
 ### freeProductTpl
 
-Default: [scCartRow](../Chunks/scCartRow)
+Default: [scCartFreeProduct](../Chunks/scCartFreeProduct)
 
 ### emptyTpl
 
-Default: [scCartRow](../Chunks/scCartRow)
+Default: [scCartEmpty](../Chunks/scCartEmpty)
 
 ### outputSeparator
 
