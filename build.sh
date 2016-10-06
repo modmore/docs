@@ -7,13 +7,17 @@ then
 fi
 
 # Generate the docs using daux.io
-vendor/bin/daux generate --source=. --destination=html
+if vendor/bin/daux generate --source=. --destination=html ; then
 
-# Remove the empty placeholder file from the generated html folder
-if [ -f html/modmore-documentation.zip ];
-then
-    rm html/modmore-documentation.zip;
+    # Remove the empty placeholder file from the generated html folder
+    if [ -f html/modmore-documentation.zip ];
+    then
+        rm html/modmore-documentation.zip;
+    fi
+
+    # Generate a zip file containing the complete static site, placing it inside the html folder again
+    zip -r html/modmore-documentation.zip html
+else
+    echo "Failed generating documentation";
+    exit 1;
 fi
-
-# Generate a zip file containing the complete static site, placing it inside the html folder again
-zip -r html/modmore-documentation.zip html
