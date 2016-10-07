@@ -14,13 +14,15 @@ If you still have questions, let us know via support@modmore.com. We're here to 
 
 ## Browse the documentation offline
 
-It's possible to [download a full archive of this website](modmore-documentation.zip) to browse it offline. After downloading, unpack the zip file into a memorable place. 
+It's possible to [download a full archive of this website](modmore-documentation.zip) (around 1,5MB) to browse it offline. After downloading, unpack the zip file into a memorable place. 
 
-The best results are when you can serve the files on a local web server (apache/nginx). This will allow you to use the entire documentation site exactly like it works on [docs.modmore.com](https://docs.modmore.com/). 
+You'll get the best results when serving the files on a local web server (apache/nginx). This will allow you to use the entire documentation site exactly like it works on [docs.modmore.com](https://docs.modmore.com/), including a functional search. 
 
 Alternatively, you can also browse the site by just opening the html files in your browser. This uses the `file://` protocol, which has some restrictions. Most notably the search function will not work, and some images and other assets may not show up. 
 
-When relying on a local copy of the documentation, be sure to update the files every now and then, as we do fix and add documentation regularly. 
+When relying on a local copy of the documentation, be sure to update the files every now and then.
+
+**Note**: Not all images are included in the download. This means that if you're actually offline you might not see relevant screenshots. 
 
 ## Improve the documentation
 
