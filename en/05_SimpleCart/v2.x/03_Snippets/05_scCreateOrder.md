@@ -36,7 +36,7 @@ The name of a POST parameter that contains the ID of the chosen payment method.
 
 [See Order & Delivery Addresses](../Frontend/Checkout/Order_and_Delivery_Addresses).
 
-### deliveryAddress
+### deliverAddress
 
 [See Order & Delivery Addresses](../Frontend/Checkout/Order_and_Delivery_Addresses).
 

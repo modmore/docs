@@ -1,4 +1,4 @@
-Most settings in SimpleCart can be found under System > System Settings when choosing` simplecart` in the namespace dropdown. A selection of the settings are also available under Extras > SimpleCart > Administer > Settings. 
+Most settings in SimpleCart can be found under System > System Settings when choosing `simplecart` in the namespace dropdown. A selection of the settings are also available under Extras > SimpleCart > Administer > Settings. 
 
 Many settings can be created as context settings as well, to have context-specific values or configuration. 
 
@@ -34,7 +34,17 @@ Some of the settings on this page may not exist by default, but will work when c
 
 ### Order number format
 
-`simplecart.ordernr_format` The format for the order number is parsed like a chunk. You can use output filters too. Available placeholders: = order nr, = context key, = logged-in user (or 0)= 2-digits year, = 4-digits year, = month without leading zeros, = month with leading zeros, = day without leading zeros, = day with leading zeros.
+`simplecart.ordernr_format` The format for the order number is parsed like a chunk. You can use output filters too. Available placeholders: 
+
+- `[[+nr]]`: order number
+- `[[+user]]`: the ID of the currently logged in user, or 0 if there's no user logged in.
+- `[[+ctx]]`: the current context key
+- `[[+yy]]`: two digit year, e.g. 16
+- `[[+yyyy]]`: four digit year, e.g. 2016
+- `[[+m]]`: month number without leading zero for under 10
+- `[[+mm]]`: month number with a leading zero for under 10
+- `[[+d]]`: day without leading zero
+- `[[+dd]]`: day with leading zero
 
 ### Order start number
 
