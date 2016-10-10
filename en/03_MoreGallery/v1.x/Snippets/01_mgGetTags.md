@@ -36,7 +36,9 @@ The list below contains all properties available for use with the mgGetTags snip
 
 #### `&resource`   
 
-Defaulting to the current resource, the `&resource` property allows you to choose what resource (by its ID) to load the tags for. Setting this to 0 (or empty) will result in all tags across the entire site being loaded.   
+Defaulting to the current resource, the `&resource` property allows you to choose what resource (by its ID) to load the tags for. 
+
+Leave empty to use the current resource. Set to `0` to search across the entire site. 
 
 **Default**: Current Resource  
 
@@ -44,7 +46,7 @@ Defaulting to the current resource, the `&resource` property allows you to choos
 
 Decides the field to sort the tags on. This can be one of three options: `display` (the tag itself), `id`, `createdon` (the first time the tag was added to an image) or `createdby` (the user ID of the person that used this tag the first time).  
 
-**Default**: `display  ``
+**Default**: `display`
 
 #### `&sortDir`   
 
