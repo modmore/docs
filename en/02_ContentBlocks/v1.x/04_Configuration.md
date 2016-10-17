@@ -6,6 +6,7 @@ Most configuration for ContentBlocks is done through the Component (and the [fie
 
 All of these settings are created automatically when installing ContentBlocks. They can also be added manually to Users, User Groups or Contexts to override their values for specific users or contexts. To do that, add a new setting with the mentioned key (including the `contentblocks.` prefix!) and the desired value.
 
+[TOC]
 
 ## Core
 

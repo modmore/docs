@@ -4,6 +4,7 @@ title: Available Input Types
 
 This page contains an **alphabetical** list of the _built-in_ input types for [ContentBlocks](https://www.modmore.com/contentblocks/). For information on building custom input types for things that are not included, check out the [Custom Inputs documentation](../Custom_Inputs/Developing_Custom_Inputs) and see the [List of Available Custom Input Types](../Custom_Inputs/Third_Party_Input_Types) for custom input types you can use.
 
+[TOC]
 
 ## Field vs Input
 
