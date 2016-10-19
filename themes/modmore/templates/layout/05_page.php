@@ -32,12 +32,18 @@
                 out the static content for accessible search capability that also searches site/forums etc.
                 Perhaps keep this available one-way or another (check if offline?) for local copies.
             -->
-            <form method="get" action="/search" class="docsearch">
-                <script>
-                    document.write('\
-                    <input type="search" id="tipue_search_input" name="query" placeholder="Search documentation...">\
-                    <button type="submit" class="button"><svg role="presentation"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="<?= $base_url; ?>themes/modmore/dist/sprite.svg#search" title="search"></use></svg></button>');
-                </script>
+            <form method="get" action="https://google.com/search" target="_modmoredocsgoogle" class="docsearch">
+              <label for="tipue_search_input">Search documentation</label>
+              <input type="search" id="tipue_search_input" name="q" placeholder="Content Blocks">
+              <input type="hidden" name="as_sitesearch" value="docs.modmore.com">
+              <button type="submit" class="button"><svg role="presentation"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../themes/modmore/dist/sprite.svg#search" title="search"></use></svg></button>
+              <script>
+                var searchInput = document.getElementById('tipue_search_input');
+                searchInput.setAttribute('name','query');
+                searchInput.parentNode.removeAttribute('action');
+                searchInput.parentNode.removeAttribute('target');
+                document.querySelector('input[name="as_sitesearch"]').remove();
+              </script>
             </form>
             <div class="headerlinks">
                 <a href="mailto:support@modmore.com">Contact Support</a>

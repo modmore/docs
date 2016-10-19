@@ -35,6 +35,10 @@ form.docsearch {
     margin: 0;
     padding: 0;
 
+    label[for="tipue_search_input"] {
+      @extend %accessibly-hidden;
+    }
+
     input[type="search"] {
         display: block;
         width: 100%;
