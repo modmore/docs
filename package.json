@@ -3,14 +3,16 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "npm-build-tools": "christianseel/npm-build-tools",
     "bower": "1.x.x",
-    "watch": "0.x.x",
-    "rimraf": "latest",
-    "parallelshell": "2.0.x",
+    "esprima": "^3.1.0",
     "jshint": "latest",
+    "live-reload": "1.x.x",
+    "mkdirp": "^0.5.1",
+    "npm-build-tools": "christianseel/npm-build-tools",
+    "parallelshell": "2.0.x",
+    "rimraf": "latest",
     "svg-sprite": "1.0.x",
-    "live-reload": "1.x.x"
+    "watch": "0.x.x"
   },
   "scripts": {
     "clean": "rimraf dist/*",
@@ -27,5 +29,9 @@
     "gitify": "watch \"Gitify build\" _gitify",
     "live-reload": "live-reload --port 9091 --delay 1000 themes/modmore/dist/",
     "start": "npm run live-reload -s & npm run watch -s"
+  },
+  "devDependencies": {
+    "node-sass": "^3.10.1",
+    "node-uuid": "^1.4.7"
   }
 }
