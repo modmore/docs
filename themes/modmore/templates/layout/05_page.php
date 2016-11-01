@@ -83,30 +83,3 @@
         </nav>
     </aside>
 </div>
-
-<!--
-<script defer src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script>
-    onContentLoaded(function() {
-        if (!window.jQuery) {
-            loadJS('/assets/templates/docs/src/bower_components/jquery/dist/jquery.min.js', false, function () {
-                loadJS('/assets/templates/docs/dist/main.js', true);
-            });
-        } else {
-            loadJS('/assets/templates/docs/dist/main.js', true);
-        }
-
-        // load image related scripts async
-        loadJS('/assets/templates/docs/dist/images.js', function(){
-            window.lazySizes.init();
-        });
-    });
-</script>
--->
-
-<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -/->
-<script>
-    window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
-    ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
-</script>
-<script src="https://www.google-analytics.com/analytics.js" async defer></script>-->

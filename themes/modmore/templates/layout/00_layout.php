@@ -8,10 +8,10 @@
             echo '- ' . $params['title'];
         } ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="<?= $params['tagline']; ?>" />
-    <meta name="author" content="<?= $params['author']; ?>">
+    <meta name="description" content="The official documentation for modmore extras." />
+    <meta name="author" content="The modmore team &amp; contributors">
     <meta charset="UTF-8">
-    <link rel="icon" href="<?= $params['theme']['favicon']; ?>" type="image/x-icon">
+    <link rel="icon" href="https://assets.modmore.com/icon_180x180.png" type="image/x-icon">
     <!-- Mobile -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,22 +33,39 @@
         <?php
 
     } */ ?>
-
-    <!--[if lt IE 9]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
 </head>
 <body class="<?= $params['html']['float'] ? 'with-float' : ''; ?>">
 <?= $this->section('content'); ?>
 
-<?php
-if ($params['html']['google_analytics']) {
-    $this->insert('theme::partials/google_analytics', ['analytics' => $params['html']['google_analytics'], 'host' => array_key_exists('host', $params) ? $params['host'] : '']);
-}
-if ($params['html']['piwik_analytics']) {
-    $this->insert('theme::partials/piwik_analytics', ['url' => $params['html']['piwik_analytics'], 'id' => $params['html']['piwik_analytics_id']]);
-}
-?>
+<!--
+<script defer src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script>
+    onContentLoaded(function() {
+        if (!window.jQuery) {
+            loadJS('/assets/templates/docs/src/bower_components/jquery/dist/jquery.min.js', false, function () {
+                loadJS('/assets/templates/docs/dist/main.js', true);
+            });
+        } else {
+            loadJS('/assets/templates/docs/dist/main.js', true);
+        }
+
+        // load image related scripts async
+        loadJS('/assets/templates/docs/dist/images.js', function(){
+            window.lazySizes.init();
+        });
+    });
+</script>
+-->
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-39365923-5', 'auto');
+    ga('send', 'pageview');
+</script>
 
 <!-- jQuery -->
 <script src="<?= $base_url; ?>themes/modmore/js/jquery-1.11.3.min.js"></script>
