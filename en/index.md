@@ -47,5 +47,3 @@ Here's how it works.
 6. With the pull request created, we've been notified about your changes and some automatic tests will run that verify if links are correct and that the markdown is valid. If the tests fail, you can click through for more information. 
  
 7. Once we've reviewed your changes, we'll accept the Pull Request. Within a few minutes after that your changes will be live on the site!
-
-If you have any questions about this process, please let us know. If you'd like to preview the changes, or keep a local copy of the entire documentation you can [find out more in the readme on GitHub](https://github.com/modmore/docs/blob/master/README.md) 
