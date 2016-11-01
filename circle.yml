@@ -2,3 +2,6 @@ test:
   override:
     - touch modmore-documentation.zip
     - vendor/justinwalsh/daux.io/daux.phar generate --source=. --destination=html
+dependencies:
+  override:
+    - composer install --prefer-dist --no-interaction --no-dev
