@@ -39,10 +39,9 @@ From there you can preview the site by pointing your browser to the html directo
 
 ## Building assets
 
-The site uses NPM scripts for compiling sass into css, and compiling a couple of small javascript files. All asset related source files can be found in the `src` folder of the repository. 
+The site uses NPM scripts for compiling sass into css, and compiling a couple of small javascript files. All asset related source files can be found in the `src` folder of the repository, and write distribution files to `themes/modmore/dist/`. 
 
 The first time you want to build the assets, you'll need to run `npm install` in the root of the repository. This process may take some time. 
 
-To build the CSS and to preview the changes, run `npm run build:css` and rebuild the static site using `./build.sh`. Likewise `npm run build:js` will build the javascript and `npm run build` will build all different things managed with npm. 
-
+To build the CSS and to preview the changes, run `npm run build:css` and rebuild the static site using `./build.sh`. Likewise `npm run build:js` will build the javascript and `npm run build` will build all different things managed with npm. Rebuilding the static site is necessary on every change to the assets, as these are copied into the html folder and served from there.
 
