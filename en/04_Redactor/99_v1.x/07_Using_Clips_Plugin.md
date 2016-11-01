@@ -1,14 +1,12 @@
+The page you're currently looking at contains information related to Redactor 1.x. Please visit [Clips](../v2.x/Clips) for the relevant information for Redactor 2.x.
+
 ---
-title: Using the Clips Plugin
----
 
- Clips is a [Redactor Plugin](http://imperavi.com/redactor/docs/plugins/) that adds a drop-down list of pre-defined "clips" (or "snips") that you can create to save time, such as intro or footer text. Creating your own clipboards is easy. As long as you are familiar with JSON that is. To make sure your clips are valid JSON you can use the [JSONLint Validator](http://jsonlint.com/). If not, well that is what [we are here for](mailto:support@modmore.com?&subject=Clips JSON Help).
+Clips is a [Redactor Plugin](http://imperavi.com/redactor/docs/plugins/) that adds a drop-down list of pre-defined "clips" (or "snips") that you can create to save time, such as intro or footer text. Creating your own clipboards is easy. As long as you are familiar with JSON that is. To make sure your clips are valid JSON you can use the [JSONLint Validator](http://jsonlint.com/). If not, well that is what [we are here for](mailto:support@modmore.com?&subject=Clips JSON Help).
 
- [ ![An Example Currency Clipboard](https://assets.modmore.com/img/uploads/redactor_currency.png)](https://assets.modmore.com/img/uploads/redactor_currency.png "An Example Currency Clipboard")
+[ ![An Example Currency Clipboard](https://assets.modmore.com/img/uploads/redactor_currency.png)](https://assets.modmore.com/img/uploads/redactor_currency.png "An Example Currency Clipboard")
 
- Below you will find several preconfigured examples, but you can create your own clips however you want. Make sure that each clip is a valid JSON Object, meaning it needs to be wrapped in curly braces. The properties and property values need to be wrapped in double quotes. Each clip should be seperated by a comma and everything should be wrapped in square brackets. To make sure your clips are valid JSON you can use the [JSONLint Validator](http://jsonlint.com/).
-
-Aside from the `title` and `clip` element, you can also specify a `tag` element to categorize clips. When you have tags specified, a dropdown will appear above the list of clips that allows you to quickly filter the available clips.
+Below you will find several preconfigured examples, but you can create your own clips however you want. Make sure that each clip is a valid JSON Object, meaning it needs to be wrapped in curly braces. The properties and property values need to be wrapped in double quotes. Each clip should be seperated by a comma and everything should be wrapped in square brackets. To make sure your clips are valid JSON you can use the [JSONLint Validator](http://jsonlint.com/).
 
 ````
 [{
@@ -20,7 +18,7 @@ Aside from the `title` and `clip` element, you can also specify a `tag` element 
 }]
 ````  
 
-Once you have your JSON ready to go, simply paste the value into your redactor.clipsJson System Setting or the Clips Input Option when working with [Custom Redactor TVs.](https://www.modmore.com/redactor/documentation/uploadcare/)
+Once you have your JSON ready to go, simply paste the value into your redactor.clipsJson System Setting or the Clips Input Option when working with [Custom Redactor TVs.](Custom_Template_Variable)
 
 ### Currency Glyphs
 ```` js
