@@ -20,7 +20,7 @@
         <header class="pageheader">
             <!-- JavaScript-only search...
                 Pros:
-                    - Instant
+                    - Instant result
                     - Offline
                     - Works with the static site generation
                 Cons:
@@ -31,22 +31,24 @@
                 Use this temporarily, set up something like an elasticsearch server in the future that reads
                 out the static content for accessible search capability that also searches site/forums etc.
                 Perhaps keep this available one-way or another (check if offline?) for local copies.
+
+                For no-js it falls back to a google search. Better than nothing.
             -->
-            <form method="get" action="https://google.com/search" target="_modmoredocsgoogle" class="docsearch">
+            <form method="get" action="https://google.com/search" target="_modmoredocsgoogle" class="docsearch" id="search-form">
               <label for="tipue_search_input">Search documentation</label>
-              <input type="search" id="tipue_search_input" name="q" placeholder="Content Blocks">
+              <input type="search" id="tipue_search_input" name="q" placeholder="Search Documentation">
               <input type="hidden" name="as_sitesearch" value="docs.modmore.com">
               <button type="submit" class="button"><svg role="presentation"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../themes/modmore/dist/sprite.svg#search" title="search"></use></svg></button>
-              <script>
+            </form>
+            <script>
                 var searchInput = document.getElementById('tipue_search_input');
                 searchInput.setAttribute('name','query');
                 searchInput.parentNode.removeAttribute('action');
                 searchInput.parentNode.removeAttribute('target');
                 document.querySelector('input[name="as_sitesearch"]').remove();
-              </script>
-            </form>
+            </script>
             <div class="headerlinks">
-                <a href="mailto:support@modmore.com">Contact Support</a>
+                <a href="https://support.modmore.com/">Contact Support</a>
             </div>
         </header>
         <main class="maincontent" role="main" itemprop="mainContentOfPage">
