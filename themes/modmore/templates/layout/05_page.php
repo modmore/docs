@@ -38,7 +38,7 @@
               <label for="tipue_search_input">Search documentation</label>
               <input type="search" id="tipue_search_input" name="q" placeholder="Search Documentation">
               <input type="hidden" name="as_sitesearch" value="docs.modmore.com">
-              <button type="submit" class="button"><svg role="presentation"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../themes/modmore/dist/sprite.svg#search" title="search"></use></svg></button>
+              <button type="submit" class="button"><svg role="presentation"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="<?php echo $base_url; ?>themes/modmore/dist/sprite.svg#search" title="search"></use></svg></button>
             </form>
             <script>
                 var searchInput = document.getElementById('tipue_search_input');
