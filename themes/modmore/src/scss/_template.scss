@@ -62,7 +62,11 @@ body {
 }
 
 .maincontent {
-    padding: rem(0 30);
+    padding: rem(0 20);
+
+    @include breakpoint(large) {
+        padding: rem(0 30);
+    }
 }
 
 aside.sidebar {
@@ -75,5 +79,11 @@ aside.sidebar {
         width: rem(300);
         height: 100%;
         padding-left: calc((100% - #{rem(1024)})/2);
+    }
+}
+
+.editfooter {
+    p {
+        font-size: $small-font-size;
     }
 }

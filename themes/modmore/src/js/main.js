@@ -23,6 +23,27 @@ $(function(){
 	$(document).foundation();
 
 
+	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+	 *	mobile navigation toggle / hamburger
+	 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+	var $nav = $('.pagenav'),
+		$menuButton = $('.open-nav'),
+		$triggerWord = $('.trigger-status');
+
+	$menuButton.on('click', function(){
+		$(this).toggleClass('active');
+		$nav.toggleClass('active');
+
+		if ($nav.hasClass('active') === true) {
+			$(this).attr('aria-expanded','true');
+			$triggerWord.text('Close');
+		} else {
+			$(this).attr('aria-expanded','false');
+			$triggerWord.text('Open');
+		}
+	});
+
     /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
      *	scroll to id from url hash
      * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */

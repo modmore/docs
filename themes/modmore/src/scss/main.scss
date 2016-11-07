@@ -79,13 +79,6 @@ $imagePath: '../img' !default;
 @import 'tipuesearch';
 
 
-/* Clickable logo */
-.logo a {
-    display: block;
-    width: 100%;
-    height: 100%;
-}
-
 /* Sidebar scrolling */
 aside.sidebar {
     overflow-y: scroll;

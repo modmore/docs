@@ -1,27 +1,120 @@
 aside.sidebar {
-    background-color: $primary-color;
+    background: $primary-color; // linear-gradient(to bottom,#2d5586 0,#1d4475 100%);
     color: #fff;
     text-shadow: 0 0 rem(15) rgba(0,0,0,0.15);
+
+    @include breakpoint(large) {
+        border-right: 3px solid #132843;
+    }
 }
 
 .logo {
     display: block;
-    width: rem(200);
-    height: rem(45);
-    margin: rem(15) auto;
-    background: transparent url(https://assets.modmore.com/img/tpl/logo-modmore-20130403.png) no-repeat center center;
-    background-size: 100%;
+    margin: 0;
     text-indent: 100%;
     white-space: nowrap;
     overflow: hidden;
 
-    @include breakpoint(large) {
-        margin: rem(35) auto rem(30) rem(15);
+    a {
+        display: block;
+        width: rem(176);
+        height: rem(38);
+        margin: rem(15) auto rem(15 30);
+
+        background: transparent url(https://assets.modmore.com/img/tpl/logo-modmore-20130403.png) no-repeat center center;
+        background-size: 100%;
+
+        @include breakpoint(large) {
+            width: rem(200);
+            height: rem(45);
+            margin: rem(35) auto rem(30) rem(15);
+        }
     }
 }
 
 
+button.open-nav {
+    z-index: 999;
+    display: block;
+    background: $primary-color;
+    padding: rem(18px 18px 20px 21px);
+    width: rem(66);
+    height: rem(66);
+    position: fixed;
+    top: 0;
+    right: 0;
+    border: none;
+    box-shadow: none;
+    cursor: pointer;
+
+    @include breakpoint(large) {
+        display: none;
+    }
+
+    .trigger-status {
+        position: absolute;
+        left: -99999px;
+        width:1px;
+        height: 1px;
+    }
+
+    span {
+        color: #fff;
+        text-transform: uppercase;
+        font-size: rem(9);
+        display: inline-block;
+    }
+
+    svg {
+        fill: #fff;
+    }
+
+    &.active {
+        .menu {
+            position: absolute;
+            left: -99999px;
+            width:1px;
+            height: 1px;
+        }
+        .trigger-status {
+            position: static;
+            width: auto;
+            height: auto;
+        }
+        .line-1 {
+            transform: rotate(45deg) translate(5px, -5px);
+        }
+        .line-2 {
+            opacity: 0;
+        }
+        .line-3 {
+            transform: rotate(-45deg) translate(-14px, -3px);
+        }
+    }
+}
+
 nav.pagenav {
+    display: none;
+
+    &.active {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+        background: $primary-color;
+        padding: rem(30);
+    }
+
+    @include breakpoint(large) {
+        display: block;
+    }
+
     ul {
         display: block;
         margin: 0;

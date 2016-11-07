@@ -7,16 +7,21 @@ $pageheader-font-color: #555;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
-    padding: rem(0 45);
+    padding: rem(0 30);
     color: $pageheader-font-color;
 
     background: $pageheader-color;
     border-bottom: 1px solid rgba(0,0,0, 0.05);
 
     .headerlinks {
-        display: flex;
+        display: none;
         align-items: center;
         white-space: nowrap;
+        font-size: rem(14);
+
+        @include breakpoint(large) {
+            display: flex;
+        }
     }
 
     @include breakpoint(large) {
@@ -24,6 +29,7 @@ $pageheader-font-color: #555;
         top: 0;
         left: 0;
         right: 0;
+        padding: rem(0 45);
     }
 }
 
@@ -42,6 +48,7 @@ form.docsearch {
         display: block;
         width: 100%;
         min-width: rem(150);
+        height: 100%;
         padding: rem(17 17 17 30);
         border: 3px solid $pageheader-color;
         transition: border-color .2s ease-in-out;

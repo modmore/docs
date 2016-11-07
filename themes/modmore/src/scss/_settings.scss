@@ -44,7 +44,7 @@
 // ---------
 
 $global-font-size: 100%;
-$body-font-size: rem-calc(14);
+$body-font-size: 100%;
 $global-width: rem-calc(664);
 $global-lineheight: 1.5;
 $foundation-palette: (
@@ -127,7 +127,7 @@ $header-color: inherit;
 $header-lineheight: 1.4;
 $header-margin-bottom: 0.5rem;
 $header-text-rendering: optimizeLegibility;
-$small-font-size: 85%;
+$small-font-size: 80%;
 $header-small-font-color: $medium-gray;
 $paragraph-lineheight: 1.6;
 $paragraph-margin-bottom: 1rem;

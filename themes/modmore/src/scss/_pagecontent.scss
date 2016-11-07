@@ -24,7 +24,7 @@ h1 {
 
 p {
     margin: 0 0 $paragraph-margin-bottom;
-    font-size: $body-font-size;
+    font-size: rem(15);
     line-height: $paragraph-lineheight;
     text-rendering: $paragraph-text-rendering;
 }

@@ -75,6 +75,11 @@
             <a href="<?php echo $base_url . $path; ?>/index.html" title="modmore documentation"><strong>modmore documentation</strong></a>
         </p>
 
+        <button aria-expanded="false" class="open-nav">
+            <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 33 25" class='hamburger'><rect class="cls-1 line-1" width="33" height="3.07"></rect><rect class="cls-1 line-2" y="10.96" width="33" height="3.07"></rect><rect class="cls-1 line-3" y="21.93" width="33" height="3.07"></rect></svg>
+            <span class="show-for-sr trigger-status">Open</span> <span class="menu">menu</span>
+        </button>
+
         <nav class="pagenav">
             <?php
             echo $this->get_navigation($rendertree, $path, isset($params['request']) ? $params['request'] : '', $base_page, $params['mode']);
