@@ -28,24 +28,34 @@ body {
 }
 
 .pagewrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    height: 100%;
+
+    @include breakpoint(large) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+    }
 }
 
 .pagecontent {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: rem(300);
-    width: auto;
-    padding-top: rem(56);
+    width: 100%;
     box-sizing: content-box;
 
+    @include breakpoint(small only) {
+        order: 2;
+    }
+
     @include breakpoint(large) {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: rem(300);
+        width: auto;
         left: auto;
+        padding-top: rem(56);
         padding-right: calc((100% - #{rem(1024)})/2);
         width: rem(724);
     }
@@ -57,13 +67,13 @@ body {
 
 aside.sidebar {
     box-sizing: content-box;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: rem(300);
-    height: 100%;
 
     @include breakpoint(large) {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: rem(300);
+        height: 100%;
         padding-left: calc((100% - #{rem(1024)})/2);
     }
 }

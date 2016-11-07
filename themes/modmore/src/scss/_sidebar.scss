@@ -8,12 +8,16 @@ aside.sidebar {
     display: block;
     width: rem(200);
     height: rem(45);
-    margin: rem(35) auto rem(30) rem(15);
+    margin: rem(15) auto;
     background: transparent url(https://assets.modmore.com/img/tpl/logo-modmore-20130403.png) no-repeat center center;
     background-size: 100%;
     text-indent: 100%;
     white-space: nowrap;
     overflow: hidden;
+
+    @include breakpoint(large) {
+        margin: rem(35) auto rem(30) rem(15);
+    }
 }
 
 

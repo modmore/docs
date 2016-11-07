@@ -7,7 +7,7 @@
   "private": true,
   "dependencies": {
     "html5shiv": "latest",
-    "jquery": "2.x.x",
+    "jquery": "3.1.1",
     "loadcss": "1.x.x",
     "loadjs": "https://github.com/filamentgroup/loadJS.git",
     "foundation-sites": "6.2.x",
@@ -16,5 +16,8 @@
     "moment": "^2.13.0",
     "respimage": "1.x.x",
     "svg4everybody": "2.x.x"
+  },
+  "resolutions": {
+    "jquery": "3.1.1"
   }
 }
