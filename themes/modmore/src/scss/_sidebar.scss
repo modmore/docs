@@ -37,15 +37,16 @@ button.open-nav {
     z-index: 999;
     display: block;
     background: $primary-color;
-    padding: rem(18px 18px 20px 21px);
-    width: rem(66);
-    height: rem(66);
+    padding: rem(18px 19px 20px 21px);
+    width: rem(68);
+    height: rem(68);
     position: fixed;
     top: 0;
     right: 0;
     border: none;
     box-shadow: none;
     cursor: pointer;
+    outline: none;
 
     @include breakpoint(large) {
         display: none;
@@ -62,7 +63,8 @@ button.open-nav {
         color: #fff;
         text-transform: uppercase;
         font-size: rem(9);
-        display: inline-block;
+        display: block;
+        margin-top: rem(1);
     }
 
     svg {
