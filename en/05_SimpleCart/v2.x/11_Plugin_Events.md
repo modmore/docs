@@ -6,7 +6,7 @@ This event is fired before the payment is processed during checkout, but after t
 
 The created order is available with `$order`, which allows you to get the products and other information from the order. 
 
-If you need to process something when an order is paid and confirmed, you need a [Finished Order Hook](Frontend/Checkout/Finished_order_hooks). 
+If you need to process something when an order is paid and confirmed, you need a [Finished Order Hook](Frontend/Checkout/Finished_Order_Hooks). 
 
 ## OnSimpleCartOrderStatusUpdate
 
