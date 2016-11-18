@@ -1,0 +1,42 @@
+{
+  "name": "svg4everybody",
+  "description": "Use external SVG spritemaps in any browser",
+  "authors": [
+    "Jonathan Neal <jonathantneal@hotmail.com> (http://jonathantneal.com)"
+  ],
+  "homepage": "https://github.com/jonathantneal/svg4everybody",
+  "license": "CC0 1.0",
+  "keywords": [
+    "svgs",
+    "sprites",
+    "spritemaps",
+    "symbols",
+    "defs",
+    "uses",
+    "oldies",
+    "ie8s",
+    "ie9s",
+    "safaris",
+    "externals",
+    "icons",
+    "fallbacks"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:jonathantneal/svg4everybody.git"
+  },
+  "main": [
+    "dist/svg4everybody.js",
+    "dist/svg4everybody.legacy.js"
+  ],
+  "version": "2.1.1",
+  "_release": "2.1.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v2.1.1",
+    "commit": "77348e395d11d8904b7db6fb49604a1d3fe19a21"
+  },
+  "_source": "https://github.com/jonathantneal/svg4everybody.git",
+  "_target": "2.x.x",
+  "_originalSource": "svg4everybody"
+}
