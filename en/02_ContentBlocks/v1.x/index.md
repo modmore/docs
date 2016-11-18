@@ -1,5 +1,6 @@
 ---
 title: ContentBlocks
+description: Documentation for ContentBlocks, a premium extra from modmore for MODX. 
 ---
 
 [ContentBlocks](https://www.modmore.com/contentblocks/) is a powerful content manager for MODX allowing editors to create modular, multi-column content.

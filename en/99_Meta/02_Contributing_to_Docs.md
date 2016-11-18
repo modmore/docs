@@ -1,5 +1,6 @@
 ---
 title: Contributing to the Documentation
+description: It's possible to contribute to the modmore documentation through the source markdown files, hosted on GitHub. 
 ---
 
 The content on this site is written in Markdown, one file per page. These content files are stored on the [modmore/Docs](https://github.com/modmore/docs) repository on GitHub. You'll need a GitHub account to suggest improvements, but little knowledge about using git is necessary. 
