@@ -1,6 +1,8 @@
-# Troubleshooting
-
 Having issues with Gitify? Please read all entries in this guide and search the [issues on Github](https://github.com/modmore/Gitify/issues). If you don't find an answer you might want to [open a new issue](https://github.com/modmore/Gitify/issues/new).
+
+## MySQL errors 
+
+If you're getting MySQL errors when trying to extract or build a site, you'll probably need to add some paths to your PATH so the right binaries are used. See the [Windows](Installation/Windows) or [Mac](Installation/Mac) installation documentation. 
 
 ## MIGX
 

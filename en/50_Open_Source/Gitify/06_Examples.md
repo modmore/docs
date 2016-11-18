@@ -1,3 +1,5 @@
+[TOC]
+
 ## Default
 
 When using `Gitify init` and answering Yes to all questions, and keeping the data directory as the default, this is the `.gitify` file you and up with:
