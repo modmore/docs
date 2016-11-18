@@ -8,7 +8,16 @@
             echo '- ' . $params['title'];
         } ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="The official documentation for modmore extras." />
+    <?php
+    $desc = $params->getCurrentPage()->getAttribute('description');
+    if (!empty($desc)) {
+        echo '<meta name="description" content="' . htmlentities($desc, ENT_QUOTES, 'UTF-8') . '" />';
+    }
+    else {
+        echo '<meta name="description" content="The official documentation for modmore extras." />';
+    }
+    ?>
+
     <meta name="author" content="The modmore team &amp; contributors">
     <meta charset="UTF-8">
     <link rel="icon" href="https://assets.modmore.com/icon_180x180.png" type="image/x-icon">
@@ -36,7 +45,6 @@
 </head>
 <body class="<?= $params['html']['float'] ? 'with-float' : ''; ?>">
 <?= $this->section('content'); ?>
-
 <!--
 <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script>
