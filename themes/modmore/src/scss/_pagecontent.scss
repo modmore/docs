@@ -1,0 +1,41 @@
+.pagecontent {
+    background-color: $body-background;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    margin-top: $paragraph-margin-bottom * 1.5;
+    margin-bottom: $paragraph-margin-bottom;
+    font-family: $header-font-family;
+    font-weight: 600;
+    line-height: $header-lineheight;
+    text-rendering: $header-text-rendering;
+    color: $primary-color;
+}
+
+@for $i from 1 through 6 {
+    h#{$i} {
+        font-size: rem(30 - ($i*2));
+    }
+}
+
+h1 {
+    margin-top: $paragraph-margin-bottom * 2.5;
+}
+
+p {
+    margin: 0 0 $paragraph-margin-bottom;
+    font-size: rem(15);
+    line-height: $paragraph-lineheight;
+    text-rendering: $paragraph-text-rendering;
+}
+
+a {
+    color: $primary-color;
+    cursor: pointer;
+    font-weight: $global-weight-bold;
+    text-decoration: none;
+    transition: color .2s ease-in-out;
+    &:hover {
+        color: $secondary-color;
+    }
+}
