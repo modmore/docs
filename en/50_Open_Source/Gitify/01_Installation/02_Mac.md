@@ -20,10 +20,18 @@ sudo mkdir /var/mysql/
 
 ## 2. Use the right PHP binary
 
-The recommended approach would be to make sure that you're using the right PHP binary in the first place. This can be done by editing your `.bash_profile` file in your user directory, and adding the following line:
+The recommended approach would be to make sure that you're using the right PHP binary in the first place. This can be done by editing your `.bash_profile` or `.zshrc` file in your user directory, and adding the following line:
 
-```
+````
 export PATH=/Applications/MAMP/bin/php/php5.6.7/bin:$PATH
-```
+````
 
 replacing the path with the right path for your PHP install. 
+
+## 3. Use the right mysqldump and mysql binaries
+
+If you'd like to use the [backup] and [restore] commands, you'll also need to add the mysqldump and mysql binaries to your PATH. 
+
+````
+export PATH=/Applications/MAMP/Library/bin
+````
