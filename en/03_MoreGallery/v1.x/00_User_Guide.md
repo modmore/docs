@@ -55,6 +55,12 @@ When the edit pane opened, you can edit the information in the fields. When you 
 
 In this window you may also find the ability to tag images and to create crops or thumbnails of the image. 
 
+## Publishing / Hiding and Removing images
+
+When hovering over an image in the main view, you can see a number of options. By clicking on the eye symbol it will hide the image from the gallery, allowing you to bring it back in view with another click. The trashcan icon will remove the image (and its relevant files) completely. Clicking anywhere else on the image will show you a large preview. 
+
+![Hovering over an image shows options to show or hide an image, as well as to remove it completely.](images/user-guide_image-meta.png)
+
 ## Viewing large images
 
 To view a large version of an image in the Manager, click the small image preview. A modal window will pop up showing a large version of the image.
