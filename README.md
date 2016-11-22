@@ -43,5 +43,7 @@ The site uses NPM scripts for compiling sass into css, and compiling a couple of
 
 The first time you want to build the assets, you'll need to run `npm install` in the root of the repository. This process may take some time. 
 
-To build the CSS and to preview the changes, run `npm run build:css` and rebuild the static site using `./build.sh`. Likewise `npm run build:js` will build the javascript and `npm run build` will build all different things managed with npm. Rebuilding the static site is necessary on every change to the assets, as these are copied into the html folder and served from there.
+When building the site with `./build.sh`, it will create a symlink between html/themes/ and /themes/, allowing you view changes to the dist files without requiring to rebuild the site on every change. 
+
+To build the CSS and to preview the changes, run `npm run build:css`. Likewise `npm run build:js` will build the javascript and `npm run build` will build all different things managed with npm. 
 

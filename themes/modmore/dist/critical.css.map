@@ -2,7 +2,7 @@
 	"version": 3,
 	"file": "critical.css",
 	"sources": [
-		"../src/scss/critical.scss"
+		"../../../src/scss/critical.scss"
 	],
 	"mappings": "AACA,AAAA,IAAI,AAAA,CACA,UAAU,CAAE,MAAO,CACnB,OAAO,CAAE,CAAE,CACd",
 	"names": []

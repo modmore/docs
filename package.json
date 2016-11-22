@@ -15,19 +15,19 @@
     "watch": "0.x.x"
   },
   "scripts": {
-    "clean": "rimraf dist/*",
+    "clean": "rimr4af themes/modmore/dist/*",
     "lint": "jshint src/js",
     "prebuild:js": "npm run lint",
-    "build:js": "node node_modules/npm-build-tools/index.js --path \"src/js/\" --ext \"js\" --outputDir \"dist/\"",
-    "build:css": "node node_modules/npm-build-tools/index.js --path \"src/scss/\" --ext \"scss\" --outputDir \"dist/\" --outputStyle \"compressed\" --browsers \"['> 2%', 'last 2 versions', 'ie >= 9', 'and_chr >= 2.3']\"",
-    "build:svg": "svg-sprite --symbol --symbol-dest dist --symbol-sprite sprite.svg src/svg/*.svg",
+    "build:js": "node node_modules/npm-build-tools/index.js --path \"src/js/\" --ext \"js\" --outputDir \"themes/modmore/dist/\"",
+    "build:css": "node node_modules/npm-build-tools/index.js --path \"src/scss/\" --ext \"scss\" --outputDir \"themes/modmore/dist/\" --outputStyle \"compressed\" --browsers \"['> 2%', 'last 2 versions', 'ie >= 9', 'and_chr >= 2.3']\"",
+    "build:svg": "svg-sprite --symbol --symbol-dest themes/modmore/dist --symbol-sprite sprite.svg src/svg/*.svg",
     "build": "npm run build:js && npm run build:css && npm run build:svg",
     "watch": "parallelshell \"npm run watch:css\" \"npm run watch:js\" \"npm run watch:svg\"",
     "watch:css": "watch \"npm run build:css\" src/scss",
     "watch:js": "watch \"npm run build:js\" src/js",
     "watch:svg": "watch \"npm run build:svg\" src/svg",
     "gitify": "watch \"Gitify build\" _gitify",
-    "live-reload": "live-reload --port 9091 --delay 1000 dist/",
+    "live-reload": "live-reload --port 9091 --delay 1000 themes/modmore/dist/",
     "start": "npm run live-reload -s & npm run watch -s"
   },
   "devDependencies": {
