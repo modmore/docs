@@ -153,7 +153,7 @@ Then this would be our Repeater Template:
 </div>
 </div>
 ````
-The **placeholders** in the template correspond with the keys we assigned to the **fields** in the **Group**. The value in those placeholders have been processed already by their input types, so for example the `[[+image]]` placeholder already contains an `<img src=".."> ` tag.
+The **placeholders** in the template correspond with the keys we assigned to the **fields** in the **Group**. The value in those placeholders have been processed already by their input types, so for example the `[[+image]]` placeholder already contains an `<img src=".."> ` tag. The `[[+total]]` placeholder is also available with the total number of items in the repeater.
 
 To make sure the rows actually show up, we also set the Wrapper Template to `[[+rows]]`.
 
