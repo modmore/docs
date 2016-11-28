@@ -24,7 +24,8 @@ You can update the title, price and description of the default delivery method t
 - Title: The human readable name for the delivery method. Stored as MODX Lexicon in the chosen language. 
 - Description: The general description. Used on the frontend to inform customers about this method
 - Order Description: This description is shown in the confirmation email.
-- Price: The price that should be calculated for this methodLanguageSelect the language of the Title and Descriptions. Note: only SimpleCart languages available here
+- Price: The price that should be calculated for this method
+- Language: Select the language of the Title and Descriptions. Note: only SimpleCart languages available here
 
 ## Don't need a delivery method?
 
