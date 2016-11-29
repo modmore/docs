@@ -13,7 +13,7 @@ To manage the configuration of the gateway, including the API connection to PayP
 We'll go over these options now.
 
 - Currency: set this to the 3 character code of currencies to use. This should match the currency configured as default on the Currencies tab.
-- Disable PayPal Shipping: when set to 1, PayPal will not ask for shipping details. When set to 0, customers will be asked to choose or provide their address when paying with PayPal. As shipping details will already be collected by PayPal, setting this to 1 is typically the recommended action.
+- Disable PayPal Shipping: when set to 1, PayPal will not ask for shipping details. When set to 0, customers will be asked to choose or provide their address when paying with PayPal. As shipping details will already be collected by SimpleCart, setting this to 1 is typically the recommended action.
 - API Password, Username and Signature: please see below on how to get these.
 - Sandbox Mode: when set to 1, the gateway will operate on the sandbox APIs. This is useful while testing, but make sure to set this to 0 when you're going live. Make sure your API password, username and signature match the environment too.
 
