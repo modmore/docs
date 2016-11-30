@@ -4,24 +4,25 @@ Usually you don't have to set up additional payment methods. When installing a p
 
 If you're building your own gateway, you will need to add it manually. The name you enter must match with the name of the payment class, which should be located in `core/components/simplecart_{NAME}/{NAME}.class.php`. [See GitHub for example gateways](https://github.com/modmore/?utf8=%E2%9C%93&query=simplecart_).
 
-##Custom Payment Methods
+The documentation about the [Delivery Methods](Delivery_Methods) also apply to Payment Methods. 
 
-Sometimes it could be necessary to setup a **custom payment** method without actually using a specific payment provider. For instance you would like to give customers the possibility to pay by cash on delivery. Or you have a physical store (beside your web shop) and customers can pick up the ordered products in store and pay by cash there.
+## Custom Payment Methods
 
-SimpleCart comes preinstalled with a **default** payment method which is not bound to a payment provider like PayPal, Mollie, Stripe or something else. On your website - within the checkout process, this **default** payment method is listed as "Bank Transfer" (on english language sites).
+Sometimes it may be useful to add a custom payment method that doesn't actually use a payment provider. For example if you would like to give customers the option to pay by cash on delivery. Or if you have a physical store and customers can pick up the ordered products in store and pay by cash there.
 
-###Now let's create a new payment option for allowing **cash on delivery**:
+SimpleCart comes preinstalled with a `default` payment method which is not bound to a payment provider like PayPal, Mollie, Stripe or something else. It just marks the order as successful. In the checkout, this `default` payment method is listed as "Bank Transfer" by default.
 
-1. within SimpleCart Configuration page open the tab **Payment methods**
-2. create a new payment method here and enter **cashondelivery** into the **Name** field (this needs to be a unique name)
-3. now enter **Cash On Delivery** into the **Title** field and fill in all other fields as needed. Please note: the **Title**, **Description** and **Order Descriptiom** fields are stored in MODX lexicon to enable multi language usage.
-4. save this new payment method
-5. for the next step please navigate to the web-root of your MODX installation (e.g. via FTP) and go to folder: /core/components/simplecart/gateways
-6. locate the folder **default** and duplicate it - including it's content
-7. rename the duplicated folder to **cashondelivery**
-8. open this folder and rename the file within to **cashondelivery.class.php**
-9. open this file with an editor an change the class name from **SimpleCartDefaultPaymentGateway** to **SimpleCartCashOnDeliveryPaymentGateway**
+### Create "Cash on Delivery" method
+
+With these steps you can add an additional payment method that does not charge the user online. 
+
+1. Go to Extras > SimpleCart > Administration and open the tab **Payment methods**
+2. Create a new payment method with the Name set to `cashondelivery`. The name needs to be unique, so if you need even more options, repeat it with a different name. 
+3. Next enter `Cash On Delivery` into the Title field and fill in all other fields as desired. The **Title**, **Description** and **Order Description** fields are stored in MODX lexicon to enable multilingual usage.
+4. Save the payment method.
+5. Using FTP/SSH, browse to `core/components/simplecart/gateways/`
+6. Duplicate the `default` folder, including the file it contains. Name the new directory `cashondelivery` - the same as your method name.
+7. Rename the file it contains from `default.class.php` to `cashondelivery.class.php`, again the same as your method name.
+8. Edit the file with an editor and change the class name from **SimpleCartDefaultPaymentGateway** to **SimpleCartCashOnDeliveryPaymentGateway**
 
 That's it! The new payment option is now listed within the SimpleCart checkout process. Repeat above steps to create further custom payment methods as needed. 
-
-The documentation about the [Delivery Methods](Delivery_Methods) also apply to Payment Methods. 
