@@ -18,7 +18,7 @@ Both input types work the same aside from the addition of the title field.
 
 ## Related Settings
 
-See the [System Setting](../System_Settings) documentation for a description of the available settings. 
+See the [Configuration](../Configuration) documentation for a description of the available settings. 
 
 - `contentblocks.base_url_mode`
 - `contentblocks.image.hash_name`
@@ -38,11 +38,11 @@ When adding or editing a field with the Image or Image with Title input type, th
 
 ### Media Source Override
 
-By default image fields will use the media source configured in the `contentblocks.image.source` [System Setting](../System_Settings). By setting the Media Source Override you can choose a media source specific to this field.
+By default image fields will use the media source configured in the `contentblocks.image.source` [Configuration](../Configuration). By setting the Media Source Override you can choose a media source specific to this field.
 
 ### Directory
 
-The directory within the chosen media source where images get uploaded to. If the value is empty, it will fallback to the value of the `contentblocks.image.upload_path` [System Setting](../System_Settings).
+The directory within the chosen media source where images get uploaded to. If the value is empty, it will fallback to the value of the `contentblocks.image.upload_path` [Configuration](../Configuration).
 
 Within the directory option (and the setting) it's possible to use the following placeholders. 
 

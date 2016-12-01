@@ -1,5 +1,5 @@
 ---
-title: ContentBlocks on Custom Resources
+title: Custom Resources
 ---
 
 As of ContentBlocks 1.1 it is possible to use it on a variety of custom resource types.

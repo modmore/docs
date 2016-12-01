@@ -1,5 +1,5 @@
 ---
-title: ContentBlocks Configuration
+title: Configuration
 ---
 
 Most configuration for ContentBlocks is done through the Component (and the [fields](Fields), [layouts](Layouts) and [templates](Templates) that makes available), however there are also a number of System Settings available that can be used to change the way ContentBlocks works.
