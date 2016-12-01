@@ -42,6 +42,7 @@ if (!($sc instanceof SimpleCart)) {
     $modx->log(modX::LOG_LEVEL_ERROR, '[CartHookFinished] Cannot load SimpleCart classes...');
     return false;
 }
+return true;
 ````
 
 To load the order, you can call `$hook->getValue('order')`:
@@ -52,7 +53,10 @@ $order =& $hook->getValue('order');
 if ($order instanceof simpleCartOrder) {
     // Do what you need to do
 }
+return true;
 ````
+
+Note that it's important to end the snippet with `return true;` if it was successful; that will tell SimpleCart it is okay to process other hooks. With `return false;` it will stop processing hooks.
 
 ## Pre Hooks
 
@@ -97,6 +101,8 @@ if ($order instanceof simpleCartOrder) {
         // now doing your mailing application stuff here
     }
 }
+// Always end with return true if the hook was successful
+return true;
 ````
 
 To retrieve the purchased products, use something like this:
@@ -123,6 +129,8 @@ if ($order instanceof simpleCartOrder) {
         }
     }
 }
+// Always end with return true if the hook was successful
+return true;
 ````   
 
 ## Fail Hooks
