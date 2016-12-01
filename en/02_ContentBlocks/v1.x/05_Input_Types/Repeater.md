@@ -10,8 +10,6 @@ In the example image below you can see a Staff Repeater, where each row (item) i
 
 The items can be sorted by drag & drop and the maximum number of items is also configurable.
 
-[ ![Repeater](https://assets.modmore.com/assets/uploads/images/repeater_2.png)](https://assets.modmore.com/assets/uploads/images/repeater_2.png)
-
 - **Key** repeater 
 - **Template Placeholders** `[[+idx]]` and more depending on your configured group
 - **Requirements** ContentBlocks v1.2 
@@ -19,6 +17,10 @@ The items can be sorted by drag & drop and the maximum number of items is also c
 ## On this page
 
 [TOC]
+
+## Example
+
+[ ![Repeater](https://assets.modmore.com/assets/uploads/images/repeater_2.png)](https://assets.modmore.com/assets/uploads/images/repeater_2.png)
 
 ## Use Cases
 
