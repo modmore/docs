@@ -1,34 +1,68 @@
 ---
-title: Repeater Input Type
+title: Repeater
 ---
 
-The Repeater input type is a truly powerful one, that allows you to create groups of fields (supporting all other input types), arranging them in a nice row, and then repeating that group multiple times. Each individual field is parsed using its input type parser, making sure that even input-specific processing is done as expected.   
+The Repeater input type is a truly powerful input type, that allows you to create groups of fields (supporting all other input types), arranging them in a nice row, and then repeating that group multiple times. Each individual field is parsed using its input type parser, making sure that even input-specific processing is done as expected. 
 
-Kind of like MIGX, but a lot prettier and right inside your ContentBlocks canvas.  
+Kind of like MIGX, but prettier and right inside your ContentBlocks canvas.  
 
-In the example image you can see a Staff Repeater, where each row (item) is a staff member. The configured group has a textfield, link, richtext and image field to provide a complete picture of the staff member. By hitting the Add Item button, more rows are added when the team grows.  
+In the example image below you can see a Staff Repeater, where each row (item) is a staff member. The configured group has a textfield, link, richtext and image field to provide a complete picture of the staff member. By hitting the Add Item button, more rows are added when the team grows.  
 
 The items can be sorted by drag & drop and the maximum number of items is also configurable.
 
 [ ![Repeater](https://assets.modmore.com/assets/uploads/images/repeater_2.png)](https://assets.modmore.com/assets/uploads/images/repeater_2.png)
 
-**Key** repeater 
+- **Key** repeater 
+- **Template Placeholders** `[[+idx]]` and more depending on your configured group
+- **Requirements** ContentBlocks v1.2 
 
-**Template Placeholders** Depends on your configuration, keep reading! 
+## On this page
 
-**Requirements** ContentBlocks v1.2 
+[TOC]
 
-## Example Use Cases
+## Use Cases
 
 - Documentation (list of properties / settings / other tabular-ish data)
 - Sliders / Banners where each row is a frame
-- A  element where multiple images can be uploaded for specific sizes
+- A element where multiple images can be uploaded for specific sizes
 - Staff pages where each staff member is a row in the repeater
 - Anything you may have stored in MIGX previously
 
-## Limitations
+## Available Properties
 
-- Settings are not supported on individual fields within the group or on row level
+### Template
+
+The template for each row of the repeater. This caon use the `[[+idx]]` placeholder, as well as `[[+total]]`, and the placeholder for each of the fields in the repeater group. 
+
+### Wrapper Template
+
+The wrapper template is _wrapped_ around the output of all rows. It has a `[[+rows]]` placeholder which contains all the rows of content, as well as a `[[+total]]` placeholder. 
+
+### Group
+
+The group contains all the fields that make up the repeater. All the fields have a key, which matches a placeholder that can be used in the Template property, and a width, which determines how the field is shown in the backend. 
+
+Read the next section (Setting up a Repeater) to learn how to use a repeater. 
+
+### Row Separator
+
+A string to use between each row of content. 
+
+### Maximum number of Items
+
+The maximum number of rows that can be added to the repeater. If the editor reaches this limit, the _Add Item_ button is removed from view until a row is deleted anymore. 
+
+Tip: set both the minimum and maximum to 1 to use the Repeater as a "group" instead of a repeater. Since ContentBlocks 1.6 this will also streamline the interface. 
+
+### Minimum number of Items:
+
+The minimum number of rows that need to be in the repeater. The delete button is removed from view if this number of items exist in the repeater. 
+
+Tip: set both the minimum and maximum to 1 to use the Repeater as a "group" instead of a repeater. Since ContentBlocks 1.6 this will also streamline the interface. 
+
+### Automatically add first item:
+
+When set to yes/true, an empty first item is automatically added when the repeater is inserted into the page. 
 
 ## Setting up a Repeater
 
@@ -118,9 +152,6 @@ All set? Great! Let's see the defined group and how it should show up in the can
 
 [ ![This is the result of that group in the content canvas. We've added the keys in blue so you can see they align with the group. ](https://assets.modmore.com/uploads/2014/11/repeater_highlighted_1.png)](https://assets.modmore.com/uploads/2014/11/repeater_highlighted_1.png "This is the result of that group in the content canvas. We've added the keys in blue so you can see they align with the group. ")
 
-
-If it doesn't quite look the same to you and you have no idea why, let us know! We're here to help and available via support@modmore.com.
-
 Now let's move on to the Template. The Template is how each row in the repeater is displayed, while the Wrapper Template is used as a wrapper. As we built our site with Zurb's Foundation we'll use markup and classes for that, but you can of course use this with any type of markup/css.
 
 This is what we'd like our repeater to look like (though you can probably design something a lot prettier!):
@@ -132,25 +163,25 @@ Basically it's two simple columns. The left column contains a heading tag with t
 Using the field **keys** we configured when setting up the Group, we can put the data into the repeater Template where we want it to show up. So let's assume this is the target markup for Foundation 4/5 and our design:
 ```` HTML
 <div class="row">
-<div class="small-8 columns">
-    <h2 class="subheader"><a href="https://www.markhamstra.com">Mark Hamstra</a></h2>
-    <p>Mark is the CEA at modmore and in charge of making sure modmore rules the world one day.</p>
-</div>
-<div class="small-4 columns">
-    <img src="/assets/uploads/path/to/image.jpg">
-</div>
+    <div class="small-8 columns">
+        <h2 class="subheader"><a href="https://www.markhamstra.com">Mark Hamstra</a></h2>
+        <p>Mark is the CEA at modmore and in charge of making sure modmore rules the world one day.</p>
+    </div>
+    <div class="small-4 columns">
+        <img src="/assets/uploads/path/to/image.jpg">
+    </div>
 </div>
 ````
 Then this would be our Repeater Template:
 ```` HTML
 <div class="row">
-<div class="small-8 columns">
-    <h2 class="subheader"><a href="[[+link]]">[[+name]]</a></h2>
-    [[+bio]]
-</div>
-<div class="small-4 columns">
-    [[+image]]
-</div>
+    <div class="small-8 columns">
+        <h2 class="subheader"><a href="[[+link]]">[[+name]]</a></h2>
+        [[+bio]]
+    </div>
+    <div class="small-4 columns">
+        [[+image]]
+    </div>
 </div>
 ````
 The **placeholders** in the template correspond with the keys we assigned to the **fields** in the **Group**. The value in those placeholders have been processed already by their input types, so for example the `[[+image]]` placeholder already contains an `<img src=".."> ` tag. The `[[+total]]` placeholder is also available with the total number of items in the repeater.
@@ -161,4 +192,6 @@ To make sure the rows actually show up, we also set the Wrapper Template to `[[+
 
 And that's it. Save everything, edit a resource and insert the repeater. Add content, save the resource and see the magic on the front end of your site.
 
-If at any point you got stuck, do reach out and let us know via support@modmore.com - we're here to help!
+## Limitations
+
+- Settings are not supported on individual fields within the group or on row level
