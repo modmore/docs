@@ -1,4 +1,4 @@
-Since announcing Commerce in 2015, the question we received most was if people should wait for Commerce, or use [SimpleCart](../../SimpleCart) (the other ecommerce plugin we have available)for their projects. 
+Since announcing Commerce in 2015, the question we received most was if people should wait for Commerce, or use [SimpleCart](../../../SimpleCart) (the other ecommerce plugin we have available)for their projects. 
 
 Until we released Commerce that was easy to answer: use SimpleCart, as Commerce isn't ready to go, and there is no release date just yet.
 
@@ -14,8 +14,8 @@ We're continuing to maintain SimpleCart, even now that Commerce is available, so
 
 If your shop has grown beyond what SimpleCart can offer, moving it over to Commerce may make sense. There's a few options you could consider. 
 
-1. First, you could leave your [catalog](Product_Catalog) in place, using SimpleCart. Combined with a few changes to your templates, cart, checkout and customer section this option will save you a lot of content migrations, while benefiting from the more advanced and flexible Commerce features. It's possible to move along your order history as well if needed. 
-2. The second option is to move your products into a new catalog as well. Look into the [different ways of managing your catalog in Commerce](Product_Catalog) for comparisons to find what best suits your shop. By moving the catalog, you might get additional benefits or features available that your shop needs. 
+1. First, you could leave your [catalog](../Product_Catalog) in place, using SimpleCart. Combined with a few changes to your templates, cart, checkout and customer section this option will save you a lot of content migrations, while benefiting from the more advanced and flexible Commerce features. It's possible to move along your order history as well if needed. 
+2. The second option is to move your products into a new catalog as well. Look into the [different ways of managing your catalog in Commerce](../Product_Catalog) for comparisons to find what best suits your shop. By moving the catalog, you might get additional benefits or features available that your shop needs. 
 3. The most radical option is to start with a clean slate. Perhaps the shop could use a redesign or rebuild? You get to pick the best tool for the job, which is probably Commerce. 
 
 ## High-level Requirements
@@ -45,7 +45,7 @@ SimpleCart supports the following payment providers:
 - PayPal Express
 - Stripe
 
-For a current list of the supported payment methods in Commerce see [Modules](Modules). At time of writing, the following are supported in Commerce:
+For a current list of the supported payment methods in Commerce see [Modules](../Modules). At time of writing, the following are supported in Commerce:
 
 - Braintree
 - Mollie
