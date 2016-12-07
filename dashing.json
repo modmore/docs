@@ -1,0 +1,20 @@
+{
+    "name": "Extras from modmore",
+    "package": "modmore",
+    "index": "html/en/index.html",
+    "externalURL": "https://docs.modmore.com/",
+    "ExternalURL": "https://docs.modmore.com/",
+    "selectors": {
+        "h1.Page__Header": {
+            "type":"Entry",
+            "matchpath": "html/*.html",
+            "regexp": " <svg .*></svg> ",
+            "replacement": "-"
+        }
+    },
+    "ignore": [
+        ""
+    ],
+    "icon32x32": "icon.png",
+    "allowJS": true
+}

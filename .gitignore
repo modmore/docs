@@ -6,3 +6,4 @@ node_modules/
 .htaccess
 yarn.lock
 modmore-documentation.zip
+modmore.docset

@@ -7,8 +7,8 @@
     	"edit_on_github": "modmore/Docs/master"
     },
 	"ignore": {
-		"files": [".bower-postinstall.sh", ".bowerrc", "bower.json", "build.sh", ".gitignore", "README.md", "html.zip", "circle.yml", "package.json", "composer.json", "composer.lock", "deploy.sh", "error_log"],
-		"folders": ["html", "node_modules", "src", ".idea", "themes", "vendor", "01_Commerce"]
+		"files": [".bower-postinstall.sh", ".bowerrc", "bower.json", "build.sh", ".gitignore", "README.md", "html.zip", "circle.yml", "package.json", "composer.json", "composer.lock", "deploy.sh", "error_log", "dashing.json", "docsets.sh"],
+		"folders": ["html", "node_modules", "src", ".idea", "themes", "vendor", "01_Commerce", "modmore.docset"]
 	},
 	"languages": { "en": "English" }
 }
