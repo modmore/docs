@@ -22,6 +22,10 @@ If your shop has grown beyond what SimpleCart can offer, moving it over to Comme
 
 There's a few high level requirements that will lead you to either products. 
 
+### Product Prices inclusive of Taxes/VAT
+
+If you need to configure your products to have prices including taxes or VAT, then Commerce is the way to go. Commerce, like SimpleCart, defaults to prices exclusive of taxes, however Commerce offers a setting to toggle to an inclusive calculation instead. [Read more about taxes in Commerce](../Taxes).
+
 ### Dynamic shipping costs
 
 If you need to calculate shipping costs based on an integration with a postal service, or based on custom business logic involving product weight, size, or quantity, then you'll need to use Commerce.
@@ -30,7 +34,7 @@ SimpleCart is rather restricted in how it allows shipping methods to be priced. 
 
 The flexibility of Commerce will allow you to manage shipping costs in various ways.
 
-1. For each shipping method you can provide a fixed or percentage price out of the box. Each method also has restrictions on the order total you can set, making sure shipping methods are only available as an option until, between, or after a certain order total. Simple business rules like "€5 shipping under €25, €3 from €25-50, free from €50+" can be implemented with these options. 
+1. For each shipping method you can provide a fixed or percentage price out of the box. Each method also has restrictions on the order total you can set, making sure shipping methods are only available as an option until, between, or after a certain order total. Simple business rules like "€5 shipping under €25, €3 from €25-50, free from €50+" can be easily implemented with these options. 
 2. You can use an existing [Module](Modules) to integrate with a third party postal service. These modules can be configured on a module and shipping method level with various options to automatically offer the right rates to your customers. 
 3. If no existing module is available for your use case, you can build one or contract a developer to build it for you. When building a custom shipping method module, you have full control over the calculation, making it possible to implement any business rule. 
 
@@ -53,10 +57,7 @@ For a current list of the supported payment methods in Commerce see [Modules](..
 - PaymentSense
 - Stripe
 
-If the payment provider you need is not on either lists, Commerce is the better option. Implementing gateways is a lot easier in Commerce thanks to the use of the OmniPay library. If a _driver_ exists for the Payment Provider you need, we'll be able of integrating it with Commerce much quicker. 
+If the payment provider you need is not on either lists, Commerce is the better option. Implementing gateways is a lot easier in Commerce thanks to the use of the OmniPay library. If a "driver" exists for the Payment Provider you need, we'll be able of integrating it with Commerce much quicker. 
 
-Let us know which payment provider you need, and we might try to squeeze an integration into our normal release cycle. 
-
-To commission a payment provider because you need it right now, please contact Mark via support@modmore.com for an estimate. 
-
+Be sure to request the payment provider you need well ahead of time, and we might be able of adding it in our regular release cycle if there is sufficient demand. To commission a payment provider because you need it short term, please contact Mark via support@modmore.com for an estimate. 
 

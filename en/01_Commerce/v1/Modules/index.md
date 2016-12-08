@@ -9,6 +9,7 @@ Choose one of the following categories to see the matching modules:
 - Payments
 - Shipping
 - Communication
+- Taxes
 - Other
 
 **Note**: not all the modules are actually be exposed as modules in the Commerce admin area. For example payment providers and shipping integrations that are provided with the Commerce package are not shown as modules, instead they are just available when creating a payment or shipping method. 
