@@ -1,7 +1,7 @@
 modmore documentation
 =====================
 
-This repository contains the Markdown source for the modmore documentation. Eventually this will live at docs.modmore.com and will be the canonical place for documentation on all modmore extras.
+This repository contains the Markdown source for the modmore documentation. The live version of this site can be found at [docs.modmore.com](https://docs.modmore.com/en/index.html).
 
 Contributions to this documentation are very welcome!
 
