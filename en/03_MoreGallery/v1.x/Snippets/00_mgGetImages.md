@@ -73,15 +73,15 @@ Added in 1.0.1.
 
 #### &getResourceContent
 
-Set to `1` to also load the resource content into the `[[+resource.content]]` placeholder in the image chunks. 
+Set to `1` to also load the resource content into the `[[+resource.content]]` placeholder in the image chunks. `&getResourceFields` needs to be set to 1 for this property to work.
 
 #### &getResourceProperties
 
-Set to `1` to also load the resource properties into the `[[+resource.properties.NAMESPACE_HERE.KEY_HERE]]` placeholders. 
+Set to `1` to also load the resource properties into the `[[+resource.properties.NAMESPACE_HERE.KEY_HERE]]` placeholders. `&getResourceFields` needs to be set to 1 for this property to work.
 
 #### &getResourceTVs
 
-Set to a comma separated list of TV names to make available in the `&imageTpl` and `&singleImageTpl` chunks. 
+Set to a comma separated list of TV names to make available in the `&imageTpl` and `&singleImageTpl` chunks. `&getResourceFields` needs to be set to 1 for this property to work.
 
 The TVs will be made available as placeholders prefixed by "resource". For example for a TV called "superlongtitle", the placeholder would be `[[+resource.superlongtitle]]`. 
 
