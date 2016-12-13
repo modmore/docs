@@ -17,7 +17,7 @@ You should always call mgGetImages uncached, as it manages caching internally. T
 ## Snippet Properties
 
 
-#### `&resource`   
+#### &resource 
 
 The ID of the MoreGallery resource to get images from. By default, this will use the current resource, so you wont need to specify this if you want to show images from the current resource. 
 
@@ -25,19 +25,19 @@ As of 1.5.0, you can also specify a comma separated list of resource IDs to get 
 
 **Default**: current resource ID  
 
-#### `&sortBy`   
+#### &sortBy
 
 The field to sort images on. This can be one of the following: `filename`, `name`, `sortorder`, `uploadedon`, `editedon` or `random` to randomise the order of the images.  
 
 **Default**: `sortorder`
 
-#### `&sortDir`   
+#### &sortDir
 
 Used with the `&sortBy` property, this will decide in what direction (ASC: ascending or DESC: descending) the results will be sorted.  
 
 **Default**: `ASC` 
 
-#### `&tags`   
+#### &tags
 
 Specify a comma separated list of tag names or IDs to filter the resulting images on. 
 
@@ -47,11 +47,11 @@ While similar in naming, has no relation to `&getTags`. If you would like to acc
 
 **Default**: 
 
-#### `&tagsFromUrl`   
+#### &tagsFromUrl
 
 When not empty, the snippet will look for an URL parameter with the specified name (so if you set this property to "tag" it will look for an URL parameter called "tag") and filter image results on the value of that parameter, which can be a tag ID or actual tag display name. Added in 1.1.0.  
 
-#### `&getTags`   
+#### &getTags
 
 Set to `1` to load tags for each image and to parse them through the chunk specified in the `&tagTpl` property. 
 
@@ -61,7 +61,7 @@ Added in 1.1.0.
 
 **Default**: 1
 
-#### `&getResourceFields`   
+#### &getResourceFields
 
 Set to `1` to make resource fields available in the `&imageTpl` and `&singleImageTpl` chunks.
  
@@ -71,15 +71,15 @@ When calling mgGetImages on the Gallery resource itself, this isn't typically ne
 
 Added in 1.0.1.
 
-#### `&getResourceContent`
+#### &getResourceContent
 
 Set to `1` to also load the resource content into the `[[+resource.content]]` placeholder in the image chunks. 
 
-#### `&getResourceProperties`
+#### &getResourceProperties
 
 Set to `1` to also load the resource properties into the `[[+resource.properties.NAMESPACE_HERE.KEY_HERE]]` placeholders. 
 
-#### `&getResourceTVs`   
+#### &getResourceTVs
 
 Set to a comma separated list of TV names to make available in the `&imageTpl` and `&singleImageTpl` chunks. 
 
@@ -89,7 +89,7 @@ When calling mgGetImages on the Gallery resource this isn't typically needed as 
 
 Added in 1.0.1. 
 
-#### `&imageTpl`   
+#### &imageTpl
 
 The name of a chunk to use for each image in the result set. 
 
@@ -99,21 +99,21 @@ Individual images will be joined together by the value of the `&imageSeparator` 
 
 If you're using [videos](../Video) in MoreGallery, there are `&youtubeTpl` and `&vimeoTpl` properties that follow the same structure as the `&imageTpl`, but which are are applied to YouTube and Vimeo video records respectively. 
 
-#### `&youtubeTpl`
+#### &youtubeTpl
 
 The name of a chunk to use for templating a [YouTube video](../Video). Works identical to `&imageTpl` for videos from YouTube.
 
-#### `&vimeoTpl`
+#### &vimeoTpl
 
 The name of chunk to use for templating a [Vimeo video](../Video). Works identical to `&imageTpl` for videos from Vimeo. 
 
-#### `&imageSeparator`   
+#### &imageSeparator
 
 A string to be used between images parsed through the chunk specified in `&imageTpl`.   
 
 **Default**: linebreak (`\n`)  
 
-#### `&tagTpl`   
+#### &tagTpl
 
 The name of a chunk to use for each tag for each image, only if `&getTags` is enabled. Individual tags will be joined together by the value of the `&tagSeparator` property. The default chunk is stored in the filesystem to prevent changes which are overwritten on upgrade, but looks like this:   
 
@@ -131,73 +131,73 @@ Placeholders in the tagTpl are `[[+id]]`, `[[+display]]` (the tag itself), `[[+c
 
 Added in 1.1.0.
 
-#### `&tagSeparator`   
+#### &tagSeparator
 
 A string to be used between tags parsed through the chunk specified in `&tagTpl`. Added in 1.1.0.  
 
 **Default**: linebreak (`\n`)  
 
-#### `&singleImageEnabled`   
+#### &singleImageEnabled
 
 Set to `1` to enable the single image view, or `0` to disable it. When enabled, the snippet will automatically show a single image with a different template (see `&singleImageTpl`) if the `&singleImageParam` is present in the URL. Useful for accessible image galleries. The single image view has been available since v1.0, the singleImageEnabled property was added in v1.4.  
 
 **Default**: `1`  
 
-#### `&singleImageTpl`   
+#### &singleImageTpl
 
 The name of a chunk to use for the single image view. See further down this page for the default and placeholders for this chunk.  
 
 There are also `&singleYoutubeTpl` and `&singleVimeoTpl` properties for [YouTube and Vimeo videos](../Video) respectively, which both follow the same behaviour as the `&singleImageTpl`. 
 
-#### `&singleYoutubeTpl`
+#### &singleYoutubeTpl
 
 The name of a chunk to use for a single YouTube video embed. Works identical to `&singleImageTpl` for YouTube videos. 
 
-#### `&singleVimeoTpl`
+#### &singleVimeoTpl
 
 The name of a chunk to use for a single Vimeo video embed. Works identical to `&singleImageTpl` for Vimeo videos. 
 
-#### `&singleImageParam`   
+#### &singleImageParam
 
 The URL param to use for the single image view. This will contain the ID of an image inside the gallery that needs to be shown with the `&singleImageTpl` chunk. The single image view has been available since v1.0, but this property was added in v1.4. This setting inherits from the `moregallery.single_image_url_param` setting if left empty.  
 
 **Default**: `iid` 
 
-#### `&wrapperTpl`   
+#### &wrapperTpl
 
 The name of a chunk to use as wrapper template. See further down this page for the default and placeholders for this chunk.  
 
-#### `&wrapperIfEmpty`   
+#### &wrapperIfEmpty
 
 Set to `0` to return an empty result instead of the `&wrapperTpl` chunk when there are no (matching) images. Added in v1.4.  
 
 **Default**: 1  
 
-#### `&toPlaceholder`   
+#### &toPlaceholder
 
 The name of a placeholder to set the result to. When empty it will return the result directly where called.  
 
-#### `&totalVar`   
+#### &totalVar
 
 Name of a placeholder to set the total amount of images to. ([Primarily used for paginating results](../Pagination))  
 
 **Default**: `total`
 
-#### `&limit`   
+#### &limit
 
 The amount of images to return ([optionally per page](../Pagination)) when listing images.  
 
-#### `&offset`   
+#### &offset
 
 Indicates starting at what index the results should be returned ([primarily used for paginating results](../Pagination)). 
 
 **Note:** if you're specifying an offset, you also need to specify a limit larger than 0. This can be a crazy big amount if you want all images, but without a limit offset wont work. 
 
-#### `&scheme`   
+#### &scheme
 
 The scheme to be used in url generation when the `url` field of an image is a resource ID. Defaults to the value of the `link_tag_scheme` (core) system setting.  
 
-#### `&cache`   
+#### &cache
 
 When enabled, mgGetImages will cache the images on various levels. 
 
@@ -205,21 +205,21 @@ There really is no need to turn this off since 0.9.6. Changes to chunks and snip
 
 **Default**: 1  
 
-#### `&where`   
+#### &where
 
 A JSON object for generic filtering. For example you can use this to get a specific image by passing `{"id":5}`.  
 
-#### `&activeOnly`   
+#### &activeOnly
 
 By default mgGetImages will only show active images, but if you also want hidden images to be returned you can set this property to `0`.  
 
 **Default**: 1  
 
-#### `&debug`
+#### &debug
 
 When set to `1`, MoreGallery will output a debug log showing how it processed the snippet call and ended up with the results it showed. This debug information is appended to the output of the snippet. 
 
-#### `&timing`
+#### &timing
 
 When set to `1`, MoreGallery will output the total time it took to process the snippet. This will be appended to the end of the snippet. Useful when combined with `&debug` to identify performance bottlenecks. 
 
@@ -255,59 +255,59 @@ Our [Demo Site](http://demo.modmore.com/) contains an example implementation of 
 
 The placeholders you can use in the chunks for `&imageTpl`, `&youtubeTpl`, `&vimeoTpl`, `&singleImageTpl` (see the next section), `&singleYoutubeTpl` and `&singleVimeoTpl` are listed below:
 
-#### `[[+idx]]`   
+#### [[+idx]]
 
 The index of the image in the total set.  
 
 **Example**: `1` 
 
-#### `[[+id]]`   
+#### [[+id]]
 
 The ID of the image.  
 
 **Example**: `64`  
 
-#### `[[+filename]]`   
+#### [[+filename]]
 
 The filename of the originally uploaded image. MoreGallery prepends the image ID to a filename when uploading, however this field does not include that.  
 
 **Example**: `my-beautiful-image.png`  
 
-#### `[[+file]]`   
+#### [[+file]]
 
 The actual filename, relative to the location of the configured media source and this gallery its folder.   
 
 **Example**: `64_my-beautiful-image.png`  
 
-#### `[[+file_url]]`   
+#### [[+file_url]]
 
 A fully qualified url to the image based on the configured media source.  
 
 **Example**: `/assets/galleries/6/64_my-beautiful-image.png`  
 
-#### `[[+file_path]]`   
+#### [[+file_path]]
 
 A fully qualified path to the image based on the configured media source.   
 
 **Example**: `/home/user/public_html/assets/galleries/6/64_my-beautiful-image.png`  
 
-#### `[[+mgr_thumb]]`   
+#### [[+mgr_thumb]]
 
 A fully qualified url to a resized thumbnail used in the manager, retaining the aspect ratio within a maximum size of 250px by 250px.
 
-#### `[[+width]]`   
+#### [[+width]]
 
 The width of the uploaded image in pixels. Added in v1.3  
 
-#### `[[+height]]`   
+#### [[+height]]
 
 The height of the uploaded image in pixels. Added in v1.3  
 
-#### `[[+uploadedon]]`
+#### [[+uploadedon]]
 
 The time, as defined by an integer unix timestamp, that the image was added to the gallery. Can be formatted into a user-readable date with the `date` output filter. 
 
-#### `[[+uploadedby]]`
+#### [[+uploadedby]]
 
 The ID of the MODX User Account that added the image to the gallery. This can be used with the `userinfo` output filter to show information about that user, for example:
  
@@ -315,14 +315,14 @@ The ID of the MODX User Account that added the image to the gallery. This can be
 [[+uploadedby:userinfo=`username`]]
 ````
 
-#### `[[+editedon]]`
+#### [[+editedon]]
 
 The time, as defined by an integer unix timestamp, that the image was last edited. Note that dragging an image across the gallery may affect the editedon date for a large part of the gallery. 
  
 Can be formatted into a user-readable date with the `date` output filter.
  
  
-#### `[[+editedby]]`
+#### [[+editedby]]
 
 The ID of the MODX User Account that last edited the image record. This can be used with the `userinfo` output filter to show information about that user, for example:
  
@@ -330,13 +330,13 @@ The ID of the MODX User Account that last edited the image record. This can be u
 [[+uploadedby:userinfo=`username`]]
 ````
 
-#### `[[+class_key]]`
+#### [[+class_key]]
 
 The type of image. This is usually `mgImage`, but when using [Video](../Video) this can also be `mgYouTubeVideo` or `mgVimeoVideo`. Added in v1.5
 
 **Example**: `mgImage`
 
-#### `[[+video_id]]`
+#### [[+video_id]]
 
 For use in the `&youtubeTpl` or `&vimeoTpl` chunks, this contains the unique ID for the [video](../Video) service. The standard `<iframe>` embed urls can be formed like this:
 
@@ -345,17 +345,17 @@ For use in the `&youtubeTpl` or `&vimeoTpl` chunks, this contains the unique ID 
 
 For more information about working with Videos, see the [Videos documentation](../Video).
 
-#### `[[+service]]`
+#### [[+service]]
 
 For use in the `&youtubeTpl` or `&vimeoTpl` chunks, this contains either the string `youtube` or `vimeo`. 
 
 For more information about working with Videos, see the [Videos documentation](../Video).
 
-#### `[[+resource]]`
+#### [[+resource]]
 
 The ID of the resource this image was uploaded to.
 
-#### `[[+resource.KEY_HERE]]`
+#### [[+resource.KEY_HERE]]
 
 If the `&getResourceFields` property was set as 1, the resource fields are available with the `resource` prefix. For example `[[+resource.pagetitle]]`, `[[+resource.uri]]` or `[[+resource.introtext]]`. 
 
@@ -365,63 +365,63 @@ The `[[+resource.properties.NAMESPACE_HERE.KEY_HERE]]` placeholders are availabl
 
 If a comma separated list of TV names is provided to `&getResourceTVs`, those values are available as `[[+resource.TV_NAME_HERE]]`. 
 
-#### `[[+exif.KEY_HERE]]`   
+#### [[+exif.KEY_HERE]]
 
 An array containing the raw EXIF data extracted from the uploaded image. [Learn more about using EXIF in MoreGallery](../Exif).  
 
-#### `[[+exif_dump]]`   
+#### [[+exif_dump]]
 
 A readable dump of the EXIF data extracted from the uploaded image. It's best to wrap this in a `pre` tag for better legibility. [Learn more about using EXIF in MoreGallery](../Exif). Added in v1.4.  
 
-#### `[[+exif_json]]`   
+#### [[+exif_json]]
 
 A JSON formatted object of the EXIF data extracted from the uploaded image. [Learn more about using EXIF in MoreGallery](../Exif). Added in v1.4.  
 
-#### `[[+iptc.KEY_HERE]]`   
+#### [[+iptc.KEY_HERE]]
 
 An array containing the IPTC data extracted from the uploaded image, processed to use normalised names for known elements. [Learn more about using IPTC in MoreGallery](../IPTC). Added in v1.4.  
 
-#### `[[+iptc_dump]]`   
+#### [[+iptc_dump]]
 
 A readable dump of the IPTC data extracted from the uploaded image. It's best to wrap this in a `pre` tag for better legibility. [Learn more about using IPTC in MoreGallery](../IPTC). Added in v1.4.  
 
-#### `[[+iptc_json]]`   
+#### [[+iptc_json]]
 
 A JSON formatted object of the IPTC data extracted from the uploaded image. [Learn more about using IPTC in MoreGallery](../IPTC). Added in v1.4.  
 
-#### `[[+name]]`   
+#### [[+name]]
 
 The name as entered by the user in the backend.  
 
 **Example**: My Beautiful Image  
 
-#### `[[+description]]`   
+#### [[+description]]
 
 The description as entered by the user in the backend.  
 
-#### `[[+url]]`   
+#### [[+url]]
 
 The URL as entered by the user in the backend. If a resource ID was entered, this will contain a generated url to the resource. 
 
-#### `[[+sortorder]]`   
+#### [[+sortorder]]
 
 The sort order as managed by the user in the backend through drag & drop. 
 
-#### `[[+view_url]]`   
+#### [[+view_url]]
 
 An URL to the Gallery resource with the `&iid` URL parameter with the image's ID as value. This is used for image detail pages, instead of linking to the image file directly.  
 
 This is also called the single image view. 
 
-#### `[[+prev.KEY_HERE]]`   
+#### [[+prev.KEY_HERE]]
 
 An array containing all the same fields above, but then for the image that was before this one in the result set. For example `[[+prev.name]]`.
 
-#### `[[+next.KEY_HERE]]`   
+#### [[+next.KEY_HERE]]
 
 An array containing all the same fields above, but then for the image that is next in the result set. For example`[[+next.name]]`.  
 
-#### `[[+custom.KEY_HERE]]`   
+#### [[+custom.KEY_HERE]]
 
 An array containing custom field values. [Read more about Custom Fields](../Custom_Fields). Added in v1.4.  
 
