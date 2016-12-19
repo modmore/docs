@@ -8,28 +8,28 @@ By viewing this as separate, we allow you the flexibility to build your catalog 
 
 ## Minimal Catalog
 
-For the simplest catalog, you can simple reuse the products defined in the Commerce admin on the front-end. This is best for small webshops with simple products that do not need product pages or different variations and prices. 
+For the simplest catalogs, you can simply reuse the products defined in the Commerce admin on the front-end. This is best for small webshops with simple products that do not need product pages or different variations and prices. 
 
 There are snippets available to help you create a minimal catalog. **Alpha Note**: These snippets will be made available prior to the 1.0 release but may not be out yet when you're reading this.
 
 ## Resource-based Catalog
 
-The resource-based catalog is likely to be the most common. In this case the front-end is built where every product has a resource in the tree. 
+The resource-based catalog is likely to be the most common. In this case, the front-end is built where every product has a resource in the tree. 
 
-To create the link between the catalog and the product in Commerce, you can use use an add to cart snippet that automatically creates a product record for the resource if it doesn't exist yet, or you can use an approach where products are created in Commerce whenever you create the resource.
+To create the link between the catalog and the product in Commerce, you can use an Add to Cart snippet that automatically creates a product record for the resource if it doesn't exist yet, or, you can use an approach where products are created in Commerce whenever you create the resource.
  
 The resource-based catalog offers you more freedom to set up the products as you need them. For a larger number of products, this can be used with extras like Collections and Tagger to provide powerful categorization and tagging. 
 
 ## SimpleCart-based Catalog
 
-SimpleCart provides a custom resource type for both products and categories. Where the resource-based catalog requires you to build most yourself, SimpleCart already offers an ecommerce-centric resource interface. 
+SimpleCart provides a custom resource type for both products and categories. Where the resource-based catalog requires you to build most of the catalog yourself, SimpleCart already offers an ecommerce-centric resource interface. 
 
 **Alpha Note**: We're planning to release a separate package prior to the 1.0 release that integrates SimpleCart with Commerce. This will be, together with some documentation, the recommended approach for migrating a SimpleCart webshop to Commerce.
 
 ## Minishop2-based Catalog
 
-Minishop2 is an ecommerce solution developed by the Russian community. It also offers custom resource types like SimpleCart, but is more focused on categorization/filtering and product variations. As Commerce is more focused on the merchant-side, they might just be a great match. We're planning to investigate a separate package to easily link Minishop2 products with Commerce after the 1.0 release. 
+Minishop2 is an ecommerce solution developed by the Russian community. It also offers custom resource types like SimpleCart, but is more focused on categorization/filtering and product variations. Commerce is more focused on the merchant-side, these two platforms just might be a great match. We're planning to investigate a separate package to easily link Minishop2 products with Commerce after the 1.0 release. 
 
 ## Custom Catalog
 
-If your products come from an external system or API, Commerce will let you integrate with that with custom product classes. Maybe you'll read out an XML feed, request product information on demand from an API, have a separate manager component where your products are managed, or you deal with unique products built to customer spec. The sky is the limit, [reading up on the technical details of products is the start](Developer/Products). 
+If your products come from an external system or API, Commerce will let you integrate that system with custom product classes. Maybe you'll read out an XML feed, request product information on demand from an API, have a separate manager component where your products are managed, or you deal with unique products built to customer spec. The sky is the limit, [reading up on the technical details of products is the start](Developer/Products). 
