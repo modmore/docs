@@ -3,7 +3,7 @@ Commerce has the following minimum server requirements to run.
 - All requirements to run MODX Revolution 2.5+
 - PHP 5.4.4+, version 5.5.x, 5.6.x or 7.x _strongly_ encouraged. 
 
-Payment gateways communicate over a HTTPS connection, as do some other integrations, so your server needs to be capable of opening secure connections. If you're able of downloading Commerce from the modmore package provider that's a good sign.
+Payment gateways communicate over a HTTPS connection, as do some other integrations, so your server needs to be capable of opening secure connections. If you're able to download Commerce from the modmore package provider that's a good sign.
 
 - OpenSSL 1.0.1 or higher (or similar compatible extension)
 - cURL 7.34.0 or higher
