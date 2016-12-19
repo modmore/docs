@@ -1,6 +1,6 @@
-Taxes in Commerce are usually handled automatically. For example the EUVat module will automatically apply the proper tax rate to an order. It's possible to create your own modules that handle tax rates.
+Taxes in Commerce are usually handled automatically. For example the EUVat module will automatically apply the proper tax rate to an order. It's possible to create your own modules that handle tax rates too.
 
-Taxes are always handled with the following in mind. This is a fairly technical list of considerations. 
+Taxes are always handled with the following in mind: (This is a fairly technical list of considerations) 
 
 - Modules provide tax **rates**, not the actual calculation of how much tax is on an order.  
 - Taxes are applied for each item in the cart individually. This is then summed up for the total tax on the order. 
@@ -15,4 +15,4 @@ By configuring the `commerce.tax_calculation` system setting to `inclusive`, thi
 
 Prices including taxes are most commonly used in business-to-consumer shops. 
 
-**Note:** changing the `tax_calculation` setting will only affect new orders. Existing orders remain unchanged. If you're in the cart/checkout process and want to see the result of changing the setting, you can append `_commerce_recalculate=1` to force a recalculation. It is possible to get caching issues in this scenario, so manually removing the contents of `core/cache/commerce/` can be necessary. 
+**Note:** changing the `tax_calculation` setting will only affect new orders. Existing orders remain unchanged. If you're in the cart/checkout process and want to see the result of changing the setting, you can append `_commerce_recalculate=1` to the url to force a recalculation. It is possible to get caching issues in this scenario, so manually removing the contents of `core/cache/commerce/` can be necessary. 
