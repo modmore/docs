@@ -1,12 +1,12 @@
 The Commerce front-end and admin are both built with the Twig templating language. 
 
-Twig is similar to the MODX template language, however it's more powerful as it allows conditionals, loops and custom functions. With these features you get more flexibility in output, while drastically reducing the number of individual themplates needed.
+Twig is similar to the MODX template language, however it's more powerful as it allows conditionals, loops and custom functions. With these features you get more flexibility in output, while drastically reducing the number of individual templates needed.
 
 Twig templates are also stored in files, which makes it easier to edit with an IDE like WebStorm/PhpStorm, Sublime Text or Notepad++. Files are also easier to include in version control systems like git.
 
 This document will explain on a high level how theming works. For instructions on customising specific aspects of the user experience please review the documentation related to that. 
 
-**Alpha Note**: We have some ideas on adding an interface to manage your theme via the Commerce admin in the MODX manager, however it's unsure if this will be included in the 1.0 release or not. 
+**Alpha Note**: We have some ideas on adding an interface to manage your theme via the Commerce admin in the MODX manager, however, it's unclear if this will be included in the 1.0 release or not. 
 
 ## Default Template Files
 
@@ -39,11 +39,11 @@ Assuming `commerce.theme` is set to `webshop` and `commerce.themes_path` is set 
 2. `{core_path}components/commerce/templates/webshop/`
 3. `{core_path}components/commerce/templates/default/`
 
-If it found the requested template file, it stops there, otherwise it checks the next path. This means you only have to copy the templates you're actually customising; any others will simply fall back to the default. 
+If it finds the requested template file, it stops there, otherwise it checks the next path. This means you only have to copy the templates you're actually customising; any others will simply fall back to the default. 
 
 ## Different themes per Context
 
-With Contexts in MODX, you can use different Commerc ethemes for different contexts. To use this, create `commerce.theme` and/or `commerce.themes_path` context settings for the specific context. 
+With Contexts in MODX, you can use different Commerce themes for different contexts. To use this, create `commerce.theme` and/or `commerce.themes_path` context settings for the specific context. 
 
 Note that the Commerce admin area will not use context-specific themes unless you specify the setting on the `mgr` context. 
 
