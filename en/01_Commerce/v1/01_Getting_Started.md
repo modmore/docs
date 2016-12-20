@@ -4,13 +4,13 @@ Commerce is a full featured ecommerce solution for MODX, but you have to start s
 
 Without the package, none of the other steps will make sense! So purchase a license (or [use a free development license](https://www.modmore.com/free-development-licenses/)) and install the Commerce transport package in your MODX Revolution site. 
 
-Keep an eye on the Server Requirements as Commerce demands slightly more than our other packages.
+Keep an eye on the [Requirements](Requirements) as Commerce demands slightly more than our other packages.
 
 Once installed, you're ready to start building your webshop.
 
 ## Step 2: Choose your Modules
 
-Many of the Commerce features are implemented as Modules. While they are tightly integrated, they are all optional so you can use as little or as many as you'd like.
+Many of the Commerce features are implemented as [Modules](Modules). While they are tightly integrated, they are all optional so you can use as little or as many as you'd like.
 
 Many modules ship with the core package. Others can be installed separately and may require an additional purchase. 
 
@@ -38,11 +38,11 @@ Let's now create some products to add to the cart.
 
 ## Step 4: Create your first Product
 
-Commerce allows you to build and manage your catalog in various ways, but they all share one thing. This is the Product record. 
+Commerce allows you to build and manage your catalog in various ways, but they all share one thing. This is the Product record. To understand the difference between a _product_ and your _catalog_, [read the Product Catalog documentation](Product_Catalog).
 
 In some cases you might automatically create the Commerce Product records based on information in your catalog. For simple shops you might use the provided Product and Category features for your catalog as well.
 
-To get you started, we'll just create a product record directly. Go to Extras > Commerce and click the Add new Product button on the Products page. In the popup enter the product details, and click save.
+To get you started, we'll just create a product record directly. Go to Extras > Commerce and click the Add new Product button on the Products tab. In the popup enter the product details, and click save.
 
 Add a form like this anywhere on your site, replacing 1 with the ID of the newly created product if needed.
 
@@ -58,6 +58,8 @@ Add a form like this anywhere on your site, replacing 1 with the ID of the newly
 ````
 
 Visit that page in the front-end, click the Add to Cart button and voila - you should have the product in your cart!
+
+Obviously this is not the best way to manage your catalog. The [Product Catalog](Product_Catalog) page has more information on the different options available to you with Commerce. 
 
 ## Step 5: Checking out
 
@@ -79,5 +81,4 @@ At this point you should have a basic, but functional shop.
 
 You're not done though! You'll probably want to build up a larger catalog, tweak the design of the cart and checkout or explore the different modules you can use.
 
-If you're unsure on how to approach certain features, or have any other questions about Commerce, please reach out to our team. We have a community forum, as well as email support, and we would love to help you make the most out of Commerce in either of those venues.
-
+If you're unsure on how to approach certain features, or have any other questions about Commerce, please reach out to our team. We have a [community forum](https://forum.modmore.com/c/commerce), [FAQs](https://support.modmore.com/faq/13-commerce), as well as email support once you've purchased a license, and we would love to help you make the most out of Commerce.

@@ -8,7 +8,7 @@
     },
 	"ignore": {
 		"files": [".bower-postinstall.sh", ".bowerrc", "bower.json", "build.sh", ".gitignore", "README.md", "html.zip", "circle.yml", "package.json", "composer.json", "composer.lock", "deploy.sh", "error_log"],
-		"folders": ["html", "node_modules", "src", ".idea", "themes", "vendor", "01_Commerce"]
+		"folders": ["html", "node_modules", "src", ".idea", "themes", "vendor"]
 	},
 	"languages": { "en": "English" }
 }

@@ -1,4 +1,4 @@
-The EUVat Module is shipped with the Commerce core. It needs to be enabled before use via Configuration > Modules. 
+The CombineProducts Module is shipped with the Commerce core. It needs to be enabled before use via Configuration > Modules. 
 
 The CombineProducts module runs when products are added to the cart, and makes sure that there is only ever a single row of a specific product (based on SKU and price) in the cart. Additional products are combined into a single cart row.
 

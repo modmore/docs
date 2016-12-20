@@ -45,7 +45,7 @@ If it finds the requested template file, it stops there, otherwise it checks the
 
 With Contexts in MODX, you can use different Commerce themes for different contexts. To use this, create `commerce.theme` and/or `commerce.themes_path` context settings for the specific context. 
 
-Note that the Commerce admin area will not use context-specific themes unless you specify the setting on the `mgr` context. 
+Note that the Commerce admin area will not use context-specific themes unless you specify the setting on the `mgr` context. We don't recommend making changes to the manager dashboard for now, to ensure things don't break in a weird way while we continue to evolve that.
 
 ## Different themes for User (Groups)
 
