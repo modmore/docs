@@ -143,6 +143,20 @@ Set to `1` to enable the single image view, or `0` to disable it. When enabled, 
 
 **Default**: `1`  
 
+#### &singleImageParam
+
+The URL param to use for the single image view. This will contain the ID of an image inside the gallery that needs to be shown with the `&singleImageTpl` chunk. The single image view has been available since v1.0, but this property was added in v1.4. This setting inherits from the `moregallery.single_image_url_param` setting if left empty.  
+
+**Default**: `iid` 
+
+#### &singleImageResource
+
+For advanced setups where you may be retrieving images from a different resource, but need the single image view to happen on the current resource, you can specify this property. For example you may list images from &resource=15, but provide &singleImageResource=[[*id]] so the single images open on the current resource.
+
+Added in 1.5.0.
+
+**Default**: the value of `&resource`
+
 #### &singleImageTpl
 
 The name of a chunk to use for the single image view. See further down this page for the default and placeholders for this chunk.  
@@ -157,11 +171,6 @@ The name of a chunk to use for a single YouTube video embed. Works identical to 
 
 The name of a chunk to use for a single Vimeo video embed. Works identical to `&singleImageTpl` for Vimeo videos. 
 
-#### &singleImageParam
-
-The URL param to use for the single image view. This will contain the ID of an image inside the gallery that needs to be shown with the `&singleImageTpl` chunk. The single image view has been available since v1.0, but this property was added in v1.4. This setting inherits from the `moregallery.single_image_url_param` setting if left empty.  
-
-**Default**: `iid` 
 
 #### &wrapperTpl
 
