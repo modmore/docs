@@ -28,7 +28,7 @@ class AddOrderButton extends BaseModule
         return 'Adds a button to the order detail view to manage the used coupon.';
     }
 
-    public function registerListeners(EventDispatcher $dispatcher)
+    public function initialize(EventDispatcher $dispatcher)
     {
         $dispatcher->addListener(\comOrder::EVENT_GET_ORDER_ACTIONS, array($this, 'addButton'));
     }

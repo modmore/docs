@@ -28,7 +28,7 @@ class SubscriptionsPage extends BaseModule
         return 'Example of a module that loads an additional page into the menu and generator.';
     }
 
-    public function registerListeners(EventDispatcher $dispatcher)
+    public function initialize(EventDispatcher $dispatcher)
     {
         $dispatcher->addListener(Generator::COLLECT_PAGES_EVENT, array($this, 'loadPage'));
         $dispatcher->addListener(Generator::COLLECT_MENU_EVENT, array($this, 'loadMenuItem'));

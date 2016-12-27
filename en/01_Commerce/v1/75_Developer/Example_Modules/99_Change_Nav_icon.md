@@ -27,7 +27,7 @@ class ChangeIcon extends BaseModule
         return 'Changes the menu items to suit Isaac\'s preferences better.';
     }
 
-    public function registerListeners(EventDispatcher $dispatcher)
+    public function initialize(EventDispatcher $dispatcher)
     {
         $dispatcher->addListener(Generator::COLLECT_MENU_EVENT, array($this, 'loadMenuItem'));
     }

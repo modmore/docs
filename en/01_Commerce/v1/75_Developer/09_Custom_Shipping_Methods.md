@@ -6,15 +6,32 @@ At that point you'll need to look at developing a custom shipping method.
 
 A custom shipping method is a derivative of the comShippingMethod object. This derivative would override the `getPrice(comOrder $order, $orderTotal)` method to use its own price logic instead.
 
-Loading your custom shipping method class is done with a [Module](Modules).
+You can use a [Module](Modules) to load the package containing your xPDO model. Just call `$this->adapter->loadPackage($name, $path)` in the `initialize` method to make xPDO aware of your derivative. 
 
 ## Example
 
-In the annotated example below, we calculate a shipping price where each item in the cart is a flat €5, plus €1 for each quantity of that item. This is an unlikely scenario, but just there to give you an idea of how it would work.
+In the annotated example below, we calculate a shipping price where each item in the cart is a flat €5, plus €1 for each quantity of that item. 
+
+This is an unlikely scenario, but just there to give you an idea of how it would work.
+
+First, you'll need to define your [xPDO schema](https://docs.modx.com/xpdo/2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/defining-the-database-and-tables). It could be located in `core/components/my_shipping_method/schema/` and look somewhat like this:
+
+```` xml
+<?xml version="1.0" encoding="UTF-8"?>
+<model package="my_shipping_method" baseClass="comSimpleObject" platform="mysql" defaultEngine="MyISAM" version="1.1">
+    <object class="mySampleShippingMethod" extends="comShippingMethod" inherit="single" />
+</model>
+````
+
+Next, [build the model files from the schema](https://docs.modx.com/xpdo/2.x/getting-started/creating-a-model-with-xpdo/generating-the-model-code) using a standard schema build script. 
+
+Once you've done that, you can find your custom shipping method in `core/components/my_shipping_method/model/my_shipping_method/mysampleshippingmethod.class.php`. 
+
+Edit that file and add the `getPrice` method override. 
 
 ```` php
 <?php
-class comShippingMethodSample extends comShippingMethod
+class mySampleShippingMethod extends comShippingMethod
 {
     public function getPrice(comOrder $order, $orderTotal = 0)
     {
@@ -35,3 +52,27 @@ class comShippingMethodSample extends comShippingMethod
     }
 }
 ````
+
+If your shipping method needs to define additional options for the merchant to configure, you can do that by providing a getModelFields method. For example like this:
+
+```` php
+
+<?php
+class mySampleShippingMethod extends comShippingMethod
+{
+    // ... other methods ...
+    public function getModelFields()
+    {
+        $fields = [];
+        $fields[] = new \modmore\Commerce\Admin\Widgets\Form\TextField($this->commerce, [
+            'label' => 'API Key',
+            'name' => 'properties[api_key]',
+            'value' => $this->getProperty('api_key'),
+        ]);
+        return $fields;
+    }
+````
+
+Any field instance can be used, and you can also use the built-in validation. [See Forms & Fields](Admin/Form_Fields) for more information on defining fields. 
+
+Commerce ships with the standard `comShippingMethod` ("Standard Shipping Method") and a country-based `comShippingMethodByCountry` ("Country-Specific Shipping Method") shipping method class. The latter can also serve as a useful example. 
