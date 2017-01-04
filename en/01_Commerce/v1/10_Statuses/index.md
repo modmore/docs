@@ -12,4 +12,4 @@ There are a couple of core concepts when it comes to the status workflow in Comm
 
 These three concepts are strongly related to each other. They are also managed from the same page in the Commerce admin area, under Status Workflow.
 
-For relevant technical information, please see [Orders](Developer/Orders), [Modules](Developer/Modules) and [Status Change Actions](Developer/Status_Change_Actions) in the Developers Reference.
+For relevant technical information, please see [Orders](../Developer/Orders), [Modules](../Developer/Modules) and [Status Change Actions](../Developer/Status_Change_Actions) in the Developers Reference.
