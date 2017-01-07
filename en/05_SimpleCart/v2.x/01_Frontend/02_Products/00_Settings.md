@@ -6,7 +6,14 @@ By clicking on the settings tab on the product edit page, you will see a couple 
 
 ## Product tab
 
-The product tab contains the product stock option. When you use product stock, this number will be automatically lowered on every sale. 
+The product tab contains
+
+- the product volume weight
+- and the product stock option
+
+To enable **dynamic shipping prices** calculation you need to set a volume weight for the product here (read more about this in Dynamic Shipping Prices documentation).
+
+When you use **product stock**, this number will be automatically lowered on every sale. 
 
 ## Tax Setup tab
 

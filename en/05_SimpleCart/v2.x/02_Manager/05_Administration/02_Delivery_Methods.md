@@ -1,4 +1,4 @@
-You can have multiple delivery methods to offer different prices for different types of shipping. SimpleCart does not currently support dynamic shipping prices based on product weight or target location out of the box. 
+You can have multiple delivery methods to offer different prices for different types of shipping. SimpleCart also supports [Dynamic Shipping Prices](Dynamic Shipping Prices "Go to Dynamic Shipping Prices documentation") based on product weight and target location. 
 
 You can manage delivery methods at Extras > SimpleCart > Administer on the Delivery Methods tab.
 
@@ -37,4 +37,6 @@ Instead of calling the `[[!scDeliveryMethods]]` snippet in the cart (that's in t
 <input type="hidden" name="deliveryMethod" value="1" />
 ````
 
-Make sure the ID in the value is correct with your delivery method. With this change to the form, the order will always be created with that specific delivery method. 
+Make sure the ID in the value is correct with your delivery method. With this change to the form, the order will always be created with that specific delivery method.
+
+Please note: if you like to use Dynamic Shipping Costs calculation, it is not recommended to "hide" the delivery method for the customer! 
