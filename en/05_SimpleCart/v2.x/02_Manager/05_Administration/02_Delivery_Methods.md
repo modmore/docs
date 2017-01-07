@@ -1,4 +1,4 @@
-You can have multiple delivery methods to offer different prices for different types of shipping. SimpleCart does not currently support dynamic shipping prices based on product weight or target location out of the box. 
+You can have multiple delivery methods to offer different prices for different types of shipping. SimpleCart also supports [Dynamic Shipping Prices](Dynamic Shipping Prices "Go to Dynamic Shipping Prices documentation") based on product weight and target location. 
 
 You can manage delivery methods at Extras > SimpleCart > Administer on the Delivery Methods tab.
 
