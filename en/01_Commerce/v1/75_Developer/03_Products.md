@@ -2,7 +2,7 @@ Products (`comProduct` class) are the internal representation of the products yo
 
 It's an really quite simple object, so you will typically use an extended object such as `comResourceProduct` to tie it to a more extended catalog front-end product. By keeping the Product object simple and not dictating how you manage your catalog, we believe this allows more flexible and complete ecommerce solutions. You can also have different types of product classes in the database at the same time.
 
-The goal of the `comProduct` object is to provide the necessary information to add an Item to a Cart. The information it provides is the `sku` (product code), `name`, `description`, `price`, front-end `link` and an `edit_link` for editing the product in the back-end.
+The goal of the `comProduct` object is to provide the necessary information to add an Item to a Cart. The information it provides is the `sku` (product code), `name`, `description`, `price`, `stock`, front-end `link` and an `edit_link` for editing the product in the back-end.
  
 Most everything else is presentational and does not belong in the Product object, but in your Catalog.
 
@@ -17,21 +17,27 @@ The following values are stored in the `comProduct` object:
 - `sku`: the product code. Use `$product->getSku()` to get this value.
 - `name`: the name of the product as it would appear in the cart, order and invoice. Use `$product->getName()` to get this value.
 - `description`: the description of the product as it would appear in the cart, order and invoice. Use `$product->getDescription()` to get this value.
-- `price`: the price for one quantity of this product, as defined in cents (e.g. `€12,34` would be stored as `1234`). Use `$product->getPrice()` to get this value, or `$product->get('price_formatted')` to get the formatted price.
+- `price`: the price for one quantity of this product, as defined in cents (e.g. `€12,34` would be stored as `1234`). Use `$product->get('price_formatted')` to get the formatted price. In code (e.g. modules), use `$product->getPrice()` to get  a `modmore\Commerce\Products\Price` object containing different the product price along with their currency. 
+- `stock`: the quantity of items currently in stock
 - `target`: an integer reference to another object that represents the product in the catalog, for use in extended product types primarily. For example when using the `comResourceProduct` derivative (discussed below) this will contain the resource ID. The target can be loaded by the `$product->getTarget()` method, but this may return false, null or an empty array depending on the derivative, so validate the return value. Products may not have a target at all.
 - `properties`: an array of extended information. Don't interact with it directly, instead use the `$product->getProperty($key, $default = null)` and `$product->setProperty($key, $value)` methods.
 
-Important: because the comProduct derivatives may use other logic for getting the needed information (e.g. loading from a third party API on demand, or being imported nightly) it is important to **always** use the `getSku`, `getName`, `getDescription` and `getPrice` methods when interacting with products, instead of grabbing those fields via `$product->get()` directly. If you fail to do this, you may encounter stale data.
+Important: because the comProduct derivatives may use other logic for getting the needed information (e.g. loading from a third party API on demand, or being imported nightly) it is important to **always** use the `getSku`, `getName`, `getDescription`, `getPrice` and `getStock` methods when interacting with products, instead of grabbing those fields via `$product->get()` directly. If you fail to do this, you may encounter stale data.
 
 The following methods are available on the base `comProduct` object:
 
 - `getSku()`
 - `getName()`
 - `getDescription()`
-- `getPrice()`
+- `getPrice()`: returns an instance of `modmore\Commerce\Products\Price` with the price(s) for the product along with the [currency](../Currencies)
+- `getStock()`: returns the quantity of products in stock currently
+- `updateStock($quantitySold = 0, $quantitySupplied = 0)`: used for updating the stock. 
 - `getTarget()`
 - `getLink()`: returns `false` or a link where the product can be seen by the site visitors.
 - `getEditLink()`: returns `false` or a link in the manager where the product can be edited.
+- `synchronise()`: mostly useful for custom product types to "cluster" updates in a single request. 
+
+As with [all objects in Commerce](Base_Class), you can also use `setProperty` and `getProperty` to get additional information.
 
 ## comResourceProduct
 
@@ -45,6 +51,7 @@ The following system settings are used for the `comResourceProducts`:
 - `commerce.resourceproduct.name_field`: defaults to `pagetitle`, used for the product name.
 - `commerce.resourceproduct.description_field`: defaults to `description`, used for the product description.
 - `commerce.resourceproduct.price_field`: defaults to `tv.price` (a TV with the key of price), used for filling the product price. Remember this needs to be defined in cents!
+- `commerce.resourceproduct.stock_field`: defaults to `tv.stock` (a TV with the key of stock) that maintains the stock level.
 
 Aside from the methods available on the `comProduct` object, the `comResourceProduct` also exposes the following methods:
 
@@ -52,6 +59,6 @@ Aside from the methods available on the `comProduct` object, the `comResourcePro
 
 ## Custom Product Types
 
-Do you need to integrate with a third party API for your product details, or want to load it from another table? All that Commerce cares about is that you provide it a `comProduct` derivative which exposes the `getSku`, `getName`, `getDescription` and `getPrice` methods. Look at the `comResourceProduct` class for inspiration on how you might do that.
+Do you need to integrate with a third party API for your product details, or want to load it from another table? All that Commerce cares about is that you provide it a `comProduct` derivative which exposes the `getSku`, `getName`, `getDescription`, `getPrice`, and `getStock` methods. Look at the `comResourceProduct` class for inspiration on how you might do that.
 
 If you need to load data from a slow third party api or have a ton of data to sift through, it might be better to use a cron job to update the data nightly. You could still create a custom product type as way of namespacing (so you could do `$adapter->getCollection('comImportedProduct')` in your import script to only update products that were imported, and not those that were manually created), but in that case you likely don't have to override any methods on the class.
