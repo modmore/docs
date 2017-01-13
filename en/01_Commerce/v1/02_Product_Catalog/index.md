@@ -1,4 +1,4 @@
-In Commerce you'll find that the Products are rather simple. This is by design (for the technical inclined, [read more here](../Developer/Products)).
+In Commerce you'll find that the Products are rather simple. This is by design (for the technically inclined, [read more here](../Developer/Products)).
 
 The distinction that we make is that there are _Products_, and there is a _Catalog_. To Commerce, Products are simple objects with a name, SKU (product code), a price and a few other values. The catalog on the other hand is how your products are managed and displayed to the customer browsing your shop.
 
