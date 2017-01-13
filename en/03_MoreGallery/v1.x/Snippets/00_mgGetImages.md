@@ -442,19 +442,21 @@ The singleImageTpl is used when viewing a single image (with the `&iid` URL para
 The default chunk used in the singleImageTpl property is the following:
 
 ```` html
+<p>
+    <a href="[[+file_url]]">
+        <img src="[[+file_url]]" class="img-polaroid" alt="[[+name]]">
+    </a>
+</p>
+
+<p>
 [[+prev.id:notempty=`
-    <a href="[[+prev.view_url]]" class="th">
-        <img src="[[+prev.file_path:phpthumbof=`w=200`]]" class="img-polaroid" alt="[[+prev.name]]">
-    </a>
+    <a href="[[+prev.view_url]]">&laquo; [[+prev.name]]</a>
 `]]
-<a href="[[+file_url]]" class="th">
-    <img src="[[+file_path:phpthumbof=`w=500`]]" class="img-polaroid" alt="[[+name]]">
-</a>
+    <span class="text-center center">[[+name]]</span>
 [[+next.id:notempty=`
-    <a href="[[+next.view_url]]" class="th">
-        <img src="[[+next.file_path:phpthumbof=`w=200`]]" class="img-polaroid" alt="[[+next.name]]">
-    </a>
+    <a href="[[+next.view_url]]" class="text-right right">[[+next.name]] &raquo;</a>
 `]]
+</p>
 ````
 
 The placeholders you can use are exactly the same as the placeholders for the imageTpl chunk, listed above.
