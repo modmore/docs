@@ -33,8 +33,8 @@ The Dropdown input type needs to have a set of options configured via the field 
 Here are the different formats which are supported. The _value_ is the actual value for a selection, and the _Displayed Value_ is what the editor sees in the dropdown. Both are also available in the field template. Each format is specified on a single line, separated by a line break (\\n).
 
 - `value==Displayed Value`  
-Simple static value definition. Note the use of the double equal signs, this is similar to how you would define
-- `Displayed Value=value` - _Deprecated_  
+Simple static value definition. Note the use of the double equal signs, this is similar to how you would define template variables.
+- `Displayed Value=value` - _Deprecated_  
 The single equal sign indicates this uses the reversed order. Prior to ContentBlocks 1.5 this was the recommended format for select field settings as well, however we decided to deprecate this behaviour in favour of `value==Displayed Value`. You can use either of those until ContentBlocks 2.0, at which point the `Displayed Value=value` format will be removed.
 - `value`  
 By only adding the value (no equal signs), the value will be used also for the displayed value.
