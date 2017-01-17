@@ -19,6 +19,8 @@ The following values are stored in the `comProduct` object:
 - `description`: the description of the product as it would appear in the cart, order and invoice. Use `$product->getDescription()` to get this value.
 - `price`: the price for one quantity of this product, as defined in cents (e.g. `€12,34` would be stored as `1234`). Use `$product->get('price_formatted')` to get the formatted price. In code (e.g. modules), use `$product->getPrice()` to get  a `modmore\Commerce\Products\Price` object containing different the product price along with their currency. 
 - `stock`: the quantity of items currently in stock
+- `weight`: the weight for one product item, as float with up to 3 decimals. 
+- `weight_unit`: a unit for the weight, such as `g`, `kg`, `lb` or `oz`. 
 - `target`: an integer reference to another object that represents the product in the catalog, for use in extended product types primarily. For example when using the `comResourceProduct` derivative (discussed below) this will contain the resource ID. The target can be loaded by the `$product->getTarget()` method, but this may return false, null or an empty array depending on the derivative, so validate the return value. Products may not have a target at all.
 - `properties`: an array of extended information. Don't interact with it directly, instead use the `$product->getProperty($key, $default = null)` and `$product->setProperty($key, $value)` methods.
 
@@ -31,13 +33,14 @@ The following methods are available on the base `comProduct` object:
 - `getDescription()`
 - `getPrice()`: returns an instance of `modmore\Commerce\Products\Price` with the price(s) for the product along with the [currency](../Currencies)
 - `getStock()`: returns the quantity of products in stock currently
+- `getWeight()`: returns an instance of `PhpUnitsOfMeasure\PhysicalQuantity\Mass` which is created with both the weight and weight_unit value.
 - `updateStock($quantitySold = 0, $quantitySupplied = 0)`: used for updating the stock. 
 - `getTarget()`
 - `getLink()`: returns `false` or a link where the product can be seen by the site visitors.
 - `getEditLink()`: returns `false` or a link in the manager where the product can be edited.
 - `synchronise()`: mostly useful for custom product types to "cluster" updates in a single request. 
 
-As with [all objects in Commerce](Base_Class), you can also use `setProperty` and `getProperty` to get additional information.
+As with [all objects in Commerce](Base_Class), you can also use `setProperty` and `getProperty`/`getProperties` to get additional information.
 
 ## comResourceProduct
 
@@ -50,8 +53,10 @@ The following system settings are used for the `comResourceProducts`:
 - `commerce.resourceproduct.sku_field`: defaults to `alias`, used for the sku.
 - `commerce.resourceproduct.name_field`: defaults to `pagetitle`, used for the product name.
 - `commerce.resourceproduct.description_field`: defaults to `description`, used for the product description.
-- `commerce.resourceproduct.price_field`: defaults to `tv.price` (a TV with the key of price), used for filling the product price. Remember this needs to be defined in cents!
+- `commerce.resourceproduct.price_field`: defaults to `tv.price` (a TV with the key of price), used for filling the product price. Remember this needs to be defined as an integer in cents!
 - `commerce.resourceproduct.stock_field`: defaults to `tv.stock` (a TV with the key of stock) that maintains the stock level.
+- `commerce.resourceproduct.weight_field`: defaults to `tv.weight` (a TV with the key of weight) that holds the weight. This can be a float with up to 3 decimals. 
+- `commerce.resourceproduct.weight_unit_field`: defaults to `tv.weight_unit` (a TV with the key of weight_unit) holds the weight unit for the product weight. 
 
 Aside from the methods available on the `comProduct` object, the `comResourceProduct` also exposes the following methods:
 
@@ -59,6 +64,6 @@ Aside from the methods available on the `comProduct` object, the `comResourcePro
 
 ## Custom Product Types
 
-Do you need to integrate with a third party API for your product details, or want to load it from another table? All that Commerce cares about is that you provide it a `comProduct` derivative which exposes the `getSku`, `getName`, `getDescription`, `getPrice`, and `getStock` methods. Look at the `comResourceProduct` class for inspiration on how you might do that.
+Do you need to integrate with a third party API for your product details, or want to load it from another table? All that Commerce cares about is that you provide it a `comProduct` derivative which exposes the `getSku`, `getName`, `getDescription`, `getPrice`, `getStock`, `getWeight` and `updateStock` methods. Look at the `comResourceProduct` class for inspiration on how you might do that.
 
 If you need to load data from a slow third party api or have a ton of data to sift through, it might be better to use a cron job to update the data nightly. You could still create a custom product type as way of namespacing (so you could do `$adapter->getCollection('comImportedProduct')` in your import script to only update products that were imported, and not those that were manually created), but in that case you likely don't have to override any methods on the class.

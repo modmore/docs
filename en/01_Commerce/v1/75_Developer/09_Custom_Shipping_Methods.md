@@ -1,6 +1,4 @@
-If your shipping costs are dynamically generated based on product weight, size or quantity, the standard shipping method in Commerce which offers fixed or percentage prices may not be flexible enough. Or perhaps you'd like to integrate with the API of a shipping partner to calculate the right total.
-
-At that point you'll need to look at developing a custom shipping method. 
+If your shipping costs are dynamically generated based on product weight, size or quantity, and the [standard shipping methods](../Shipping_Methods) in Commerce are not flexible enough, or  if you'd like to integrate with the API of a shipping partner to calculate the right total, you can develop a custom shipping method.
 
 ## Basics
 
@@ -53,6 +51,8 @@ class mySampleShippingMethod extends comShippingMethod
 }
 ````
 
+With the [$order object](Orders) you can easy retrieve the order items (`$order->getItems()`), the shipping address (`$order->getShippingAddress()`) and more. To retrieve products, loop over `$order->getItems()` and call `$item->getProduct()`. That will give you the [comProduct instance](Products), which you can use to grab things like the weight (`$product->getWeight()`). 
+
 If your shipping method needs to define additional options for the merchant to configure, you can do that by providing a getModelFields method. For example like this:
 
 ```` php
@@ -75,4 +75,4 @@ class mySampleShippingMethod extends comShippingMethod
 
 Any field instance can be used, and you can also use the built-in validation. [See Forms & Fields](Admin/Form_Fields) for more information on defining fields. 
 
-Commerce ships with the standard `comShippingMethod` ("Standard Shipping Method") and a country-based `comShippingMethodByCountry` ("Country-Specific Shipping Method") shipping method class. The latter can also serve as a useful example. 
+Commerce ships with the standard `comShippingMethod` ("Standard Shipping Method"), a country-based `comShippingMethodByCountry` ("Country-Specific Shipping Method"), and the `comShippingMethodByWeight` ("Weight-Specific Shipping Method") shipping method class. These can be useful for inspiration.
