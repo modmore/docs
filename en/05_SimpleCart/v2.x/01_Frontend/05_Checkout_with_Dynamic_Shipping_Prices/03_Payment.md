@@ -68,17 +68,4 @@
         </div>
     </fieldset>
 </form>
-<aside class="foot-notes" role="note">
-    <dl class="dl-horizontal">
-        <dt id="fn-prices">Preise</dt>
-        <dd>
-            <p>Alle Preisangaben verstehen sich inklusive MWSt</p>
-        </dd>
-        <dt id="fn-shipment">Versandkosten</dt>
-        <dd>
-            <p>Die Versandkosten werden beim Bezahlprozess ausgewiesen</p>
-        </dd>
-    </dl>
-</aside>
-
 ````
