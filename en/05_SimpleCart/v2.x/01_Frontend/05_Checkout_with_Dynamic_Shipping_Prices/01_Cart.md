@@ -9,7 +9,7 @@
     <li class="active"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart</a></li>
     <li><i class="fa fa-truck" aria-hidden="true"></i> Delivery</li>
     <li><i class="fa fa-money" aria-hidden="true"></i> Payment</li>
-    <li><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> Review</li>
+    <li><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> Verify</li>
     <li><i class="fa fa-check-circle-o" aria-hidden="true"></i> Finished</li>
 </ol>
 [[!FormIt?
