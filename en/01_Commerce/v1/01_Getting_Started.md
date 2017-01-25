@@ -1,50 +1,66 @@
 Commerce is a full featured ecommerce solution for MODX, but you have to start somewhere! This document will guide you through the necessary steps on a fairly high level. If you get stuck on a certain step, click through to read more in depth documentation about the topic.
 
-## Step 1: Install the Package
+[TOC]
 
-Without the package, none of the other steps will make sense! So purchase a license (or [use a free development license](https://www.modmore.com/free-development-licenses/)) and install the Commerce transport package in your MODX Revolution site. 
+## Install the Package
 
-Keep an eye on the [Requirements](Requirements) as Commerce demands slightly more than our other packages.
+First of all you'll need to install Commerce. It's available from the modmore.com [package provider](https://www.modmore.com/about/package-provider/), so you'll need to create an [api key](https://www.modmore.com/account/api-keys/) and add that to your MODX site to get started.
+ 
+Next, you'll need a license. [Free development licenses](https://www.modmore.com/free-development-licenses/) are available if you're on a development domain (`localhost`, `site.dev`, `dev.site.com` etc.), otherwise you'll need to buy a license. [See the Commerce Pricing](https://www.modmore.com/commerce/pricing/) for information on licenses and prices.
+
+Go to Extras > Installer in your MODX manager and open the modmore.com package provider by clicking the arrow on the _Download Extras_ button, choosing _Select a Provider_ in the menu, and choosing modmore.com in the window. 
+
+Find Commerce in the provider under Premium Extras > Commerce and choose Download.
+
+**Alpha/Beta Note**: If you don't see Commerce in the list, make sure that you enabled the Commerce channel on your [API key](https://www.modmore.com/account/api-keys/).
+
+**Note:** Commerce is a rather big package which takes some time to be packaged on our server and then downloaded. It may take up to 30 seconds. 
+
+Once downloaded you can install Commerce. During the installation you can choose to automatically create a bunch of things for you, including currencies, a default shipping method, and cart/checkout resources. You can change all of these things after installation if needed, so it's recommended that you keep all boxes ticked. 
+
+The installation will also check if your server meets the most important [Requirements](Requirements). This includes the MODX version and PHP version. If your site/server doesn't meet those requirements, the installation will not complete. Other requirements (such as serving the site over HTTPS) are only enforced when you want to set the shop to live mode.
 
 Once installed, you're ready to start building your webshop.
 
-## Step 2: Choose your Modules
+## Choose your Modules
 
-Many of the Commerce features are implemented as [Modules](Modules). While they are tightly integrated, they are all optional so you can use as little or as many as you'd like.
-
-Many modules ship with the core package. Others can be installed separately and may require an additional purchase. 
+Many of the Commerce features are implemented as [Modules](Modules). While they are tightly integrated, they are all optional, so you can use as little or as many as you'd like. At the moment almost all modules are shipped with the Commerce package.
 
 By default all modules are disabled. To enable the modules you wish to use, go to Extras > Commerce and navigate to Configuration > Modules.
 
-You'll see a full list of all the available modules, and the option to enable them on test and live mode. Some modules also allow you to enter configuration options. At this point in time your shop is in test mode, so enable the modules you want to use for test mode. 
+You'll see a full list of all the available modules. Click on their name to see the module configuration and to enable them in test and/or live mode. At this point in time your shop is in test mode, so enable the modules you want to use for test mode. 
 
-Some modules might require changes to your templates, so keep an eye out for additional instructions in the module description.
+It's recommended to enable these modules:
 
-If you've enabled some modules, let's start on your front-end.
+- [Basic Address Validation](Modules/Address_Validation/Basic): to make sure the customer address is filled in during the checkout. Without an address validation module, the customer could checkout without providing an address.
+- [Coupons](Modules/Cart/Coupons): enables the coupons functionality, including a new Coupons tab in the dashboard where they can be managed.
+- [Combine Products](Modules/Cart/CombineProducts): combines multiple order rows with the same product into a single order row. 
 
-## Step 3: Create the Cart
+For dealing with [Taxes](Taxes) you can choose:
 
-The cart is very important in a webshop. To set it up, create a new resource in the site to hold your cart and give it the following content:
+- [EU VAT](Modules/Taxes/EUVat) for destination-based VAT rates in the European Union. This module automatically loads current VAT rates and is useful for (among others) digital products and many services. 
+- [TaxJar](Modules/Taxes/TaxJar) for an integration with the [TaxJar SmartCalcs API](https://www.taxjar.com/smartcalcs/) for fully automated and highly accurate US Sales Tax calculations. TaxJar requires a subscription.
+- [Manual Tax Rules](Modules/Taxes/Manual_Tax_Rules) for defining manual tax rules and rates. This is useful for simpler tax integrations.
 
-```` html
-[[!commerce.cart]]
-````
+Some modules might require changes to your templates to work, so keep an eye out for additional instructions in the module description, shown when you edit the module. 
 
-**Make sure the snippet call is uncached**. If you go to the cart resource, you should see a notice that your cart is empty. 
+If you've enabled some modules, let's create some products.
 
-To make sure Commerce knows where your cart is, update the `commerce.cart_resource` setting with the ID of your Cart resource.
+## Creating Products
 
-Let's now create some products to add to the cart.
+In Commerce, the [Products and the Catalog](Product_Catalog) are two different things. Simply put:
 
-## Step 4: Create your first Product
+- The **Products** are simple objects that provide Commerce only with the information it needs to handle an order: a name, SKU, price, weight, stock etc. 
+- The **Catalog** is the front-end presentation of those products, which may include additional features like reviews, product variations, photos and videos etc.
 
-Commerce allows you to build and manage your catalog in various ways, but they all share one thing. This is the Product record. To understand the difference between a _product_ and your _catalog_, [read the Product Catalog documentation](Product_Catalog).
+Commerce is only concerned with the **Products**. How you build your **Catalog** is up to you. There's a few common options:
 
-In some cases you might automatically create the Commerce Product records based on information in your catalog. For simple shops you might use the provided Product and Category features for your catalog as well.
+- For shops with only a few products, you can build a [Minimal Catalog](Product_Catalog/Minimal) based on the products in Commerce. The benefit is that you only have a single place where products are managed (the Commerce dashboard), but it doesn't allow for much advanced features.
+- The [Resource Catalog](Product_Catalog/Resource) is a bit more flexible. Rather than editing products in the Commerce dashboard, each resource is a product, and Commerce retrieves its product information from template variables automatically. 
 
-To get you started, we'll just create a product record directly. Go to Extras > Commerce and click the Add new Product button on the Products tab. In the popup enter the product details, and click save.
+Note that Commerce does not currently offer product options/variations out of the box. The idea behind that is that each unique product you have in stock has its own Product record in Commerce. 
 
-Add a form like this anywhere on your site, replacing 1 with the ID of the newly created product if needed.
+For a quick test run, you can create a product via Extras > Commerce, on the Products tab. Create a standard product record, and use the cart form below on a resource somewhere.
 
 ````
 <form method="post" action="[[~[[++commerce.cart_resource]]]]">
@@ -57,28 +73,44 @@ Add a form like this anywhere on your site, replacing 1 with the ID of the newly
 </form>
 ````
 
-Visit that page in the front-end, click the Add to Cart button and voila - you should have the product in your cart!
+Note the hidden input with name `add_to_cart`, and replace the number "1" in the quantity field with the ID of the product record. 
 
-Obviously this is not the best way to manage your catalog. The [Product Catalog](Product_Catalog) page has more information on the different options available to you with Commerce. 
+## Create the Cart Page
 
-## Step 5: Checking out
+If you chose to create a cart resource during the installation, you can skip this step. 
 
-While carts are useful, you will also need a checkout to allow people to pay. Create a new Checkout resource, and place the following uncached snippet call in it:
+To set up a cart, create a new resource and give it the following content:
+
+```` html
+[[!commerce.cart]]
+````
+
+**Make sure the snippet call is uncached**. If you go to the cart resource, you should see a notice that your cart is empty. 
+
+To make sure Commerce knows where your cart is, update the `commerce.cart_resource` system setting with the ID of your Cart resource.
+
+## Create the Checkout Page
+
+If you chose to create a checkout resource during the installation, you can skip this step. 
+
+While carts are useful, you will also need a checkout to allow people to place their order. Create a new Checkout resource, and place the following uncached snippet call in it:
 
 ````
 [[!commerce.checkout]]
 ````
 
-Also, update the `commerce.checkout_resource` setting with the ID of your checkout resource. This way Commerce knows where to point your users that wish to place their order.
+Also, update the `commerce.checkout_resource` system setting with the ID of your checkout resource. This way Commerce knows where to point your users that wish to place their order.
 
-At this point your checkout should be up and running, however you don't have any payment or shipping methods yet, so people won't be able to complete their checkout.
- 
-Visit Extras > Commerce and then Configuration > Payment Methods and Shipping Methods to set them up. You'll most likely need some API Keys for the payment methods, you can find more information on how to retrieve those in the documentation.
+## Create Shipping & Payment Methods
 
-## Step 6: Make it your own!
+To make sure your checkout works from start to finish, you'll need to have at least one shipping and payment method available. If you didn't create these during the installation, head to Extras > Commerce and Configuration > Payment Methods and Shipping Methods to set them up.
+
+For the payment gateways you'll often need API credentials and (test) merchant accounts. If you don't have any yet, you can use the _Manual_ Gateway for testing.
+
+## Ready to go!
 
 At this point you should have a basic, but functional shop. 
 
-You're not done though! You'll probably want to build up a larger catalog, tweak the design of the cart and checkout or explore the different modules you can use.
+You're not done though! You'll probably want to build up a larger [catalog](Product_Catalog), tweak the [design of the cart and checkout](Front-end_Theming) or explore all the different [modules](Modules) that are available.
 
-If you're unsure on how to approach certain features, or have any other questions about Commerce, please reach out to our team. We have a [community forum](https://forum.modmore.com/c/commerce), [FAQs](https://support.modmore.com/faq/13-commerce), as well as email support once you've purchased a license, and we would love to help you make the most out of Commerce.
+If you're unsure on how to approach certain features, or have any other questions about Commerce, please reach out to our team. We have a [community forum](https://forum.modmore.com/c/commerce), [FAQs](https://support.modmore.com/faq/13-commerce), as well as email support if you've purchased a license, and we would love to help you make the most out of Commerce.
