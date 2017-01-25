@@ -1,12 +1,14 @@
 The Commerce front-end and admin are both built with the Twig templating language. 
 
-Twig is similar to the MODX template language, however it's more powerful as it allows conditionals, loops and custom functions. With these features you get more flexibility in output, while drastically reducing the number of individual templates needed.
+Twig is similar to the MODX template language, however it's more powerful as it allows conditionals, loops and custom functions. With these features you get more flexibility in output, while drastically reducing the number of individual templates needed. [Learn more about the Twig syntax and features here](http://twig.sensiolabs.org/doc/2.x/templates.html). 
 
-Twig templates are also stored in files, which makes it easier to edit with an IDE like WebStorm/PhpStorm, Sublime Text or Notepad++. Files are also easier to include in version control systems like git.
+The Commerce templates are stored in files, which makes it easier to edit with an IDE like WebStorm/PhpStorm, Sublime Text or Notepad++. Files are also easier to include in version control systems like git.
 
-This document will explain on a high level how theming works. For instructions on customising specific aspects of the user experience please review the documentation related to that. 
+[TOC]
 
-**Alpha Note**: We have some ideas on adding an interface to manage your theme via the Commerce admin in the MODX manager, however, it's unclear if this will be included in the 1.0 release or not. 
+## Disabling the Default CSS
+
+Commerce includes a very simple cart and checkout design out of the box. To disable it, set the `commerce.register_checkout_css` system setting to 0. 
 
 ## Default Template Files
 
