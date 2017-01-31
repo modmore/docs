@@ -18,6 +18,7 @@ Now we can add some settings in the Settings tab. Simply click the _Add Setting_
 - **field type**: decides how the field is displayed. There are many different options for you to choose from, which are all documented in the Field Types documentation.
 - **value**: shortcut to setting the value of the setting.
 - **field options**: only visible when you chose the Selectbox field type, this allows you to specify options for in the drop down. See the Field Types documentation.
+- **source**: only visible when you chose the file or image type, this allows you to specify the media source to use for selecting the file or image.
 - **required**: when enabled, the user cannot save the settings unless this field is set.
 
 After having added a few settings, click the To Client View button in the top right to get to the interface that your client will manage settings with. You will see the settings are in the tabs you defined, and super easy for your client to maintain.

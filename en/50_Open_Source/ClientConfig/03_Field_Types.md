@@ -4,9 +4,11 @@ You can choose a number of field types for your configurations. The xtype in bra
 - Textarea (xtype: textarea)
 - Rich Text
 - Image (xtype: modx-panel-tv-image)
+- File (xtype: modx-panel-tv-file)
 - Number (xtype: numberfield)
 - Color picker (xtype: colorpickerfield)
 - Checkbox (xtype: xcheckbox)
+- Password (xtype: textfield with inputType password)
 - Date (xtype: datefield)
 - Time (xtype: timefield)
 - Selectbox (xtype: modx-combo); properties: Text==value||Text2==value
@@ -32,9 +34,13 @@ The Rich Text field is a simple multi-line textfield that will get enhanced to a
 
 ## Image
 
-Provides an input that opens the MODX Browser to select an image.
+Provides an input that opens the MODX Browser to select an image. Can be configured to a specific media source. 
 
 ![](https://www.modmore.com/assets/uploads/2014/02/4.png)
+
+## File
+
+Provides an input that opens the MODX Browser to select any file. Can be configured to a specific media source. 
 
 ## Number
 
@@ -56,6 +62,10 @@ Allows a user to toggle something on or off.
 
 ![](https://www.modmore.com/assets/uploads/2014/02/2.png)
 
+## Password
+
+Allows a user to enter a secret value that is masked, for API Keys and the likes. Note that the value should not be considered securely stored, it can still be read in plain text. 
+
 ## Datefield
 
 Pick a date.
@@ -71,10 +81,10 @@ Pick a time.
 ## Selectbox
 
 Combined with the Field Options setting, you can create a dropdown for your users to choose between any of a number of options. Specify the options like you would set input options for template variables:  
-Display==Value,Other Display==OtherValue
+`Display==Value,Other Display==OtherValue`
 
 ![](https://www.modmore.com/assets/uploads/2014/02/10.png)
 
 ## Google Font List
 
-To use the Google Font List input type, you need to set the _clientconfig.google\_fonts\_api\_key_ setting with your API Key from Google.
+To use the Google Font List input type, you need to set the `clientconfig.google_fonts_api_key` setting with your API Key from Google.
