@@ -4,7 +4,7 @@ We're collecting the questions we get most often into a list of FAQs. If your qu
 Make sure that you marked your form as Published, and then add the following snippet call where you want the form to appear (without the spaces):
 
 ```` html
-[[renderForm? &form=`FORM ID HERE`]]
+[[!renderForm? &form=`FORM ID HERE`]]
 ````
 
 You can also use a template variable to select the form, and to place the template variable value in the form property.
