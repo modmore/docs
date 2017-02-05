@@ -45,3 +45,5 @@ In the Advanced tab you can add FormIt prehooks, posthooks and custom parameters
 Now is the time to put a form on a page! This can be done by going to a page and select a template you assigned the _formalicious_ Template Variable to. From there, select the Formalicious form you wish to show on that page.
 
 ![Select a Formalicious form in a page](../images/resource.png)
+
+Alternatively, if you use [ContentBlocks](https://www.modmore.com/contentblocks/), you can also create a _Formalicious Form Selector_ field and insert that into your page. 
