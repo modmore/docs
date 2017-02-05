@@ -8,25 +8,12 @@ With a (very) minimal catalog, the products store in Commerce are the catalog. T
 ## Cons
 
 - (Alpha) No snippets available yet to load product information into your frontend.
-- Very basic, only a SKU, name, description and price are available per product.
+- Only the basic fields (SKU, name, description, price, weight) are available per product, unless you add something else and connect the products manually.
 
 ## Setup
 
-For the minimal product catalog, you'll create your product records in Commerce > Products as standard products. 
+For the minimal product catalog, you'll create your product records in Commerce > Products as standard products. Then you can use TVs or manually create the add to cart forms to 
 
 ## Add to cart form
 
-Somewhere on your site (a "shop" page?), add the following add to cart form, replacing `123` on line 5 below with the ID of your created product. 
-
-You can repeat the form for additional products. 
-
-```` html
-<form method="post" action="[[~[[++commerce.cart_resource]]]]">
-    <input type="hidden" name="add_to_cart" value="1">
-    
-    <label for="add-quantity">Quantity:</label>
-    <input type="number" name="products[123][quantity]" value="1">
-    
-    <input type="submit" value="Add to Cart">
-</form>
-````
+[See _Add to Cart Form_.](Add_to_Cart_Form) 

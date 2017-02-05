@@ -33,9 +33,43 @@ Once setup, product information is synchronised when a product is added to the c
 
 ## Add to cart form
 
-As with other catalog types, you'll need to provide Commerce with the product ID to add it to the cart. This is not the resource ID, but the ID of the associated product record in Commerce.
+[See _Add to Cart Form_](Add_to_Cart_Form) for the general form and information about how it works.
 
-Commerce has the [commerce.get_resource_product_id snippet](../Snippets/get_resource_product_id) to help you retrieve that ID on the fly. Using that snippet, here's what your basic add-to-cart form looks like:
+When you're using the resource product catalog approach, you can use the [commerce.get_resource_product_id snippet](../Snippets/get_resource_product_id) to retrieve the product ID in your template.
+
+It will also create the resource product records for you automatically if there isn't one available. This can be disabled on the snippet if needed. 
+
+```` html
+<form method="post" action="[[~[[++commerce.cart_resource]]]]">
+    <input type="hidden" name="add_to_cart" value="1">
+    <input type="hidden" name="product"
+        value="[[commerce.get_resource_product_id]]">
+    
+    <label for="add-quantity">Quantity:</label>
+    <input type="number" name="quantity" value="1">
+    
+    <input type="submit" value="Add to Cart">
+</form>
+````
+
+Should you need to use an add to cart form on a collection page, where the product ID for a different resource should be fetched, you can provide the `&resource` property. For example in a getResources chunk you might do:
+
+```` html
+<form method="post" action="[[~[[++commerce.cart_resource]]]]">
+    <input type="hidden" name="add_to_cart" value="1">
+    <input type="hidden" name="product"
+        value="[[commerce.get_resource_product_id? &resource=`[[+id]]`]]">
+    
+    <label for="add-quantity">Quantity:</label>
+    <input type="number" name="quantity" value="1">
+    
+    <input type="submit" value="Add to Cart">
+</form>
+````
+
+You can also use the multiple products add to cart form structure. That would look like this:
+
+
 
 ```` html
 <form method="post" action="[[~[[++commerce.cart_resource]]]]">
@@ -48,9 +82,7 @@ Commerce has the [commerce.get_resource_product_id snippet](../Snippets/get_reso
 </form>
 ````
 
-If a product for the current resource does not exist, it will be automatically created. This can be disabled on the snippet if you prefer. 
-
-Should you need to use an add to cart form on a collection page, where the product ID for a different resource should be fetched, you can provide the `&resource` property. For example in a getResources chunk you might do:
+or this for a different resource:
 
 ```` html
 <form method="post" action="[[~[[++commerce.cart_resource]]]]">
