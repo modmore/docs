@@ -93,11 +93,33 @@ Added in 1.0.1.
 
 The name of a chunk to use for each image in the result set. 
 
-See further down this page for the default and placeholders for this chunk. 
+**See further down this page for the default and placeholders for this chunk.**
 
 Individual images will be joined together by the value of the `&imageSeparator` property.  
 
-If you're using [videos](../Video) in MoreGallery, there are `&youtubeTpl` and `&vimeoTpl` properties that follow the same structure as the `&imageTpl`, but which are are applied to YouTube and Vimeo video records respectively. 
+If you're using [videos](../Video) in MoreGallery, you also need the `&youtubeTpl` and `&vimeoTpl` properties. They follow the same structure as the `&imageTpl`, but which are are applied to YouTube and Vimeo video records respectively. See below.
+
+#### &mediaTpl
+
+The name of a chunk to use for each image imported from Sterc's Media Manager. If not specified, this will use the same chunk as provided in the `&imageTpl`. 
+
+You can use the same placeholders as the `&imageTpl`, but you can also use the following placeholders that are specific to Sterc's media manager:
+
+- `[[+media.id]]` or `[[+media_manager_id]]`: the ID of the file record in the media manager.
+- `[[+media.media_sources_id]]`: the ID of the media source that the media manager keeps the file in.
+- `[[+media.name]]`: the name of the file
+- `[[+media.path]]`: the path to the file, including the file name, relative to the media source root. The MoreGallery-provided `[[+file_url]]` and `[[+file_path]]` are already ready-to-use with the full url/path to the image where the Media Manager uploaded it.
+- `[[+media.version]]`: ??
+- `[[+media.file_type]]`: the file type/extension
+- `[[+media.file_size]]`: the file size in bytes
+- `[[+media.file_dimensions]]`: a string in the form of `{width}x{height}` representing the dimensions of the file. These are also available in MoreGallery's standard `[[+width]]` and `[[+height]]` placeholders.
+- `[[+media.file_hash]]`: ??
+- `[[+media.upload_date]]`: a date string in the format `Y-m-d H:i:s` when the file was uploaded to the media manager. MoreGallery also provides `[[+uploadedon]]`, which is an integer unix timestamp representing when the file was imported to the Gallery.
+- `[[+media.uploaded_by]]`: ID of the user that uploaded the image to the media manager. MoreGallery also provides `[[+uploadedby]]`, which is the ID of the user that imported the image to the Gallery.
+- `[[+media.edited_on]]`: a date string in the format `Y-m-d H:i:s` when the file was last edited in the media manager. MoreGallery also provides `[[+editedon]]`, which is an integer unix timestamp representing when the image record in MoreGallery was last updated.
+- `[[+media.edited_by]]`: ID of the user that last edited the file. MoreGallery also provides `[[+uploadedby]]`, which is the ID of the user that last edited the image record in the gallery.
+- `[[+media.is_archived]]`: a boolean representing if the file was archived.
+- `[[+media.archive_date]]`: a date string or null representing when the file was archived.
 
 #### &youtubeTpl
 
@@ -256,7 +278,7 @@ Before v1.5, this used to be:
 </a>
 ````
 
-To show the image, the main placeholders to use are `[[+file_url]]`, `[[+file_path]]` in combination with a thumbnail snippet like pthumb, `[[+view_url]]` for the single image view or `[[+mgr_thumb]]` for the thumbnail also used in the manager. 
+To show the image, the main placeholders to use are `[[+file_url]]`, `[[+file_path]]` in combination with a thumbnail snippet like pthumb, `[[+view_url]]` for the single image view, or `[[+mgr_thumb]]` for the thumbnail also used in the manager. 
 
 [When using video](../Video) the `[[+video_id]]` placeholder contains the unique video ID for the service that can be used to create an embed code to suit your needs. The `[[+service]]` placeholder contains either `youtube` or `vimeo`. The chunk names for video are specified in either the `&youtubeTpl` or `&vimeoTpl` properties. 
 
