@@ -1,5 +1,7 @@
 ContentBlocks was built with custom input types in mind - custom inputs are developed in the exact same way as core input types, with the exception of the plugin to register custom input types to the system. This document will walk you through developing a custom plugin.
 
+[TOC]
+
 ## In a Nutshell
 
 A custom ContentBlocks input requires the following pieces:
