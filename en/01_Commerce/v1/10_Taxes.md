@@ -1,3 +1,5 @@
+**Note February 9th: Taxes are currently being refactored. This document still describes the old situation. In the next couple of days this documentation will be updated with new information.**
+
 Taxes in Commerce are usually handled automatically. For example the EUVat module will automatically apply the proper tax rate to an order. It's possible to create your own modules that handle tax rates too.
 
 Taxes are always handled with the following in mind: (This is a fairly technical list of considerations) 
