@@ -16,9 +16,14 @@ It looks at the src attribute of all images in your content. Let's say it finds 
 
 What it does depends on the mode you have set in the redactor.baseurls\_mode setting:
 
-- `relative` (default). In the manager panel, it will use the url including the base url. This way, the image is working in the manager. When viewing the source, or saving the content, it changes the src attribute to be relative. So the saved image url is then `assets/uploads/image.png`.
-- `absolute`. In the manager panel, it will use the url including the base url. This way, the image works in the manager. For viewing the source and saving the content, it sets the src attribute to be absolute including the base url. So the saved image url is `/dev/assets/uploads/image.png`.
-- `full`. Both the url in the manager and in the source view or when the page is saved are rewritten to be a full url, including the site url. So the image url might then be `localhost/dev/assets/uploads/image.png`
+- `relative` (default). In the manager panel, it will use the url including the base url. This way, the image is working in the manager. When viewing the source, or saving the content, it changes the src attribute to be relative. So the saved image url is then `assets/uploads/image.png`. This is suitable **for most single-context use cases**, as it allows maximum portability and finds its way to the right file based on your `<base href>`. 
+
+- `root-relative`. In both the manager and the frontend, the relative url will be used, but prefixed with a `/` slash so the urls go to the root of the site. The image url would be `/assets/uploads/image.png`. This setting is meant for **subdirectory based contexts**, where all assets in the shared root. (Added in v2.2.1)
+
+- `absolute`. In the manager panel, it will use the url including the context-specific base url. This way, the image works in the manager. For viewing the source and saving the content, it sets the src attribute to be absolute including the base url. So the saved image url is `/dev/assets/uploads/image.png`. This setting is primarily for **subdirectory based contexts** where assets are stored in separate physical folders per the configured base_url.
+
+- `full`. Both the url in the manager and in the source view or when the page is saved are rewritten to be a full url, including the contexts' site url. So the image url might then be `localhost/dev/assets/uploads/image.png`. This is similar to the `absolute` setting, but hardcodes the full site url instead of just the base url, making it also suitable for **(sub)domain based contexts** with assets stored in different physical folders.
+
 - `off` (or left empty). The base urls plugin does nothing, which probably breaks your images. Unless you have a very specific use case, we don't recommend disabling this plugin.
 
-By default the baseurl plugin uses the relative mode. This is the most portable approach that makes moving a site easiest, while also making sure images show up properly at all times.
+By default the baseurl plugin uses the relative mode. This is the most portable approach that makes moving a site easiest, while also making sure images show up properly at all times. For multi-context sites, you'll need one of the other modes depending on how they are set up.
