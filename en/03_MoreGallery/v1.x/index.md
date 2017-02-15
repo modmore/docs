@@ -8,5 +8,6 @@ description: Documentation for MoreGallery, a premium extra from modmore for MOD
 # Recommended Reading
 
 - [Getting Started](Getting_Started)
+- [Configuration](Configuration)
 - [mgGetImages Snippet](Snippets/mgGetImages)
 - [mgGetTags Snippet](Snippets/mgGetTags)
