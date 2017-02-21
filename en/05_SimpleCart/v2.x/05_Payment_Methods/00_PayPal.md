@@ -15,7 +15,7 @@ We'll go over these options now.
 - Currency: set this to the 3 character code of currencies to use. This should match the currency configured as default on the Currencies tab.
 - Disable PayPal Shipping: when set to 1, PayPal will not ask for shipping details. When set to 0, customers will be asked to choose or provide their address when paying with PayPal. As shipping details will already be collected by SimpleCart, setting this to 1 is typically the recommended action.
 - API Password, Username and Signature: please see below on how to get these.
-- Sandbox Mode: when set to 1, the gateway will operate on the sandbox APIs. This is useful while testing, but make sure to set this to 0 when you're going live. Make sure your API password, username and signature match the environment too.
+- Sandbox Mode: when set to 1, the gateway will operate on the sandbox APIs. This is useful while testing, but make sure to set this to 0 when you're going live. **Note**: live and sandbox modes both have their own unique credentials. See instructions below to retrieve the appropriate credentials.
 
 When you're happy with the configuration, close the window. Double click the value in the Active column to enable the gateway for your customers.
 
@@ -34,3 +34,9 @@ To get your Live API Keys, login to the PayPal dashboard. Go to Tools in the top
  [ ![](https://assets.modmore.com/uploads/2015/06/Screen_Shot_2015_06_11_at_17.30.33.png)](https://assets.modmore.com/uploads/2015/06/Screen_Shot_2015_06_11_at_17.30.33.png)
 
 Under Integrated Carts, find the link that says Request API Signature and follow the instructions until you get the API Username, Password and Signature. Enter those values into the gateway configuration to set up your cart.
+
+## Getting Sandbox API Keys
+
+Login to the [PayPal Developer Site](https://developer.paypal.com/developer/accounts/), and browse to Sandbox > Accounts. Create a new account with type Business (Merchant Account). In the list of accounts, expand the merchant account and click on Profile. In the modal window, you can find the Username, Password and Signature on the _API Credentials_ tab.
+
+![PayPal Sandbox](../../images/paypal-sandbox.jpg)
