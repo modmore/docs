@@ -74,7 +74,7 @@
 ]]
 <form action="[[~[[*id]]]]" method="post">
     <input type="hidden" name="checkout" value="1">
-    <input type="hidden" name="checkoutprogress" value="1">
+    <input type="hidden" name="checkoutprogress" value="0">
     
     <input type="hidden" name="deliveryMethod" value="[[!+order.deliveryMethod]]">
     <input type="hidden" name="paymentMethod" value="[[!+order.paymentMethod]]">
