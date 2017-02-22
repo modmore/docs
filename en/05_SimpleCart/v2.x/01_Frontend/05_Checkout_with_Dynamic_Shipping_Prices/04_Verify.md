@@ -16,7 +16,7 @@
 <div class="row">
     <div class="col-md-6 margin-bottom20">
         <div class="checkout-address-label">
-            <strong>Rechnungsadresse</strong>
+            <strong>Payment Address</strong>
             <span>
                 [[!+order.firstname]] [[!+order.lastname]], [[!+order.street]] [[!+order.nr]], [[!+order.zip]] [[!+order.city]], [[!+order.country]]
             </span>
@@ -24,7 +24,7 @@
     </div>
     <div class="col-md-6 margin-bottom40">
         <div class="checkout-address-label">
-            <strong>Lieferadresse</strong>
+            <strong>Delivery Address</strong>
             <span>
                 [[!+order.firstname2]] [[!+order.lastname2]], [[!+order.street2]] [[!+order.nr2]], [[!+order.zip2]] [[!+order.city2]], [[!+order.country2]]
             </span>
