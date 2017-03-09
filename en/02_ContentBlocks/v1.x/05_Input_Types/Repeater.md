@@ -34,7 +34,7 @@ The items can be sorted by drag & drop and the maximum number of items is also c
 
 ### Template
 
-The template for each row of the repeater. This caon use the `[[+idx]]` placeholder, as well as `[[+total]]`, and the placeholder for each of the fields in the repeater group. 
+The template for each row of the repeater. This can use the `[[+idx]]` placeholder, as well as `[[+total]]`, and the placeholder for each of the fields in the repeater group. 
 
 ### Wrapper Template
 
