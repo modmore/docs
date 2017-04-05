@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 
+if [ -f .deploy_in_progress ];
+then
+    echo "Deploy already in progress";
+    exit 0;
+fi
+
+touch .deploy_in_progress;
+
 # Trick daux.io into thinking there's a zip file it can link to
 if [ ! -f modmore-documentation.zip ];
 then
@@ -21,7 +29,10 @@ if vendor/bin/daux generate --source=. --destination=html_tmp ; then
     # Remove the html folder
     rm -rf html/;
     mv html_tmp/ html;
+
+    rm .deploy_in_progress;
 else
     echo "Failed generating documentation";
+    rm .deploy_in_progress;
     exit 1;
 fi
