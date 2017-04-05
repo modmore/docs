@@ -1,3 +1,7 @@
+---
+title: Upload & Import Options
+---
+
 MoreGallery comes with a couple of options for uploading or importing images into the gallery. This page explains them, and their main differences.
 
 [TOC]
