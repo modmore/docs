@@ -62,10 +62,6 @@ The number of images to prefetch as base64 images. This is set to 20 by default.
 
 When enabled, the allowed file extensions will be checked against the media source. When disabled (the default for legacy reasons) will only be checked against the system configuration. The media source may still deny an upload even when this setting is off.
 
-### bulk_batches
-
-See [Bulk Processing](Bulk_Processing). 
-
 ### add_icon_to_toolbar
 
 When enabled, an image icon will be added to the resource toolbar in the manager sidebar to quickly create a gallery in the root of the site.
