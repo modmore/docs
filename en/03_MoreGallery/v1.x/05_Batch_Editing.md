@@ -2,9 +2,9 @@ MoreGallery 1.6 introduced batch actions for activating (showing), deactivating 
 
 Start by ticking the checkbox shown in the top right of images. This can also be done [from the keyboard](Accessibility) by focusing on the image and hitting `space`. When at least one image is selected, the bulk toolbar will show up at the bottom of your screen which can be focused with `alt`+`b`.
 
-The bulk toolbar looks like this:
+The batch actions toolbar looks like this:
 
-![Bulk Toolbar](images/bulk-toolbar.jpg)
+![Batch actions Toolbar](images/bulk-toolbar.jpg)
 
 From left to right, these are the provided functions in the toolbar.
 
