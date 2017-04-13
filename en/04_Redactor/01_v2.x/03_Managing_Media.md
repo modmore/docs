@@ -53,7 +53,7 @@ By default Redactor will attempt to dynamically generate thumbnail previews of i
 
 ### Eureka Media Browser
 
- [ ![Eureka Media Browse as seen in Redactor 2.0 for MODX](https://assets.modmore.com/uploads/2015/08/Screen Shot 2015-08-06 at 3.59.10 PM.png)](https://assets.modmore.com/uploads/2015/08/Screen Shot 2015-08-06 at 3.59.10 PM.png "Eureka Media Browse as seen in Redactor 2.0 for MODX")
+ ![Eureka Media Browse as seen in Redactor 2.0 for MODX](https://assets.modmore.com/uploads/2015/08/Screen%20Shot%202015-08-06%20at%203.59.10%20PM.png)
 
 Redactor 2.0 introduces a new Media Browser powered by [Eureka](https://github.com/jpdevries/eureka#eureka). By default the Eureka Media Browser is just used for browsing, but it supports uploading as well. Set the [Eureka Upload](Configure_Redactor) Setting to Yes and users will be able to upload files and images to any directory.
 
