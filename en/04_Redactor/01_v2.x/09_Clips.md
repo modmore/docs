@@ -2,7 +2,7 @@
 title: Using the Clips Plugin
 ---
 
- Clips is a [Redactor Plugin](http://imperavi.com/redactor/docs/plugins/) that adds a drop-down list of pre-defined "clips" (or "snips") that you can create to save time, such as intro or footer text. Creating your own clipboards is easy. As long as you are familiar with JSON that is. To make sure your clips are valid JSON you can use the [JSONLint Validator](http://jsonlint.com/). If not, well that is what [we are here for](mailto:support@modmore.com?&subject=Clips JSON Help).
+ Clips is a [Redactor Plugin](http://imperavi.com/redactor/docs/plugins/) that adds a drop-down list of pre-defined "clips" (or "snips") that you can create to save time, such as intro or footer text. Creating your own clipboards is easy. As long as you are familiar with JSON that is. To make sure your clips are valid JSON you can use the [JSONLint Validator](http://jsonlint.com/). If not, well that is what [we are here for](mailto:support@modmore.com?&subject=Clips%20JSON%20Help).
 
  [ ![An Example Currency Clipboard](https://assets.modmore.com/img/uploads/redactor_currency.png)](https://assets.modmore.com/img/uploads/redactor_currency.png "An Example Currency Clipboard")
 
