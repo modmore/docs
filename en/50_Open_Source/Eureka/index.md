@@ -53,7 +53,7 @@ Sighted mouse users may benefit from familiar drag 'n drop functionality and, in
 ### Visual Considerations
 
 **Disabled**  
-Eureka supports standard high contrast modes. Based off user agent settings, such as Microsoft Windows High Contrast settings, Eureka will automatically switch to white-on-black or black-on-white themes. 
+Eureka supports standard high contrast modes. Based off user agent settings, such as Microsoft Windows High Contrast settings, Eureka will automatically switch to white-on-black or black-on-white themes. Eureka's data table is progressively enhanced and leverages the implicit accessibiilty provided by the HTML `<table>` element, allowing assisitive technology users to navigate and consume the data table in a familiar, standard, and comfortable manor.
 
 **Abled**  
 Eureka supports theming via CSS Properties. Sighted users can set CSS Properties in their own stylesheets to customize the look and feel of the Eureka interface. The Fullscreen API is leveraged to give sighted users more pixels to browse with. Four different view modes give sighted users options for how they view Eureka. A Masonry view mode is available to maximize the viewing area of thumbnails for sighted users. 
