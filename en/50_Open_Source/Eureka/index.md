@@ -73,6 +73,14 @@ By default, Eureka will welcome new users, upon their first visit, with a friend
 **Abled**  
 Local Storage is used to allow Eureka to open back up to wherever it was you left off. This is a connivence as well as an accessibility consideration for the cognitively disabled. If you'd rather not be reminded where you last were browsing, set `eureka.useLocalStorage` to `false` to always open Eureka to the root of the default media source. 
 
+### Economic Considerations
+
+**Disabled**  
+Eureka supports detects the `Save-Data` header to serve a reasonably smaller payload. For example, if we detect the `Save-Data` header being sent smaller thumbnails will be delivered.
+
+**Abled**  
+Supporting the `Save-Data` header isn't just about serving a lighter payload &mdash; it is about responding to when we know we can afford to serve a gluteneous one. Eureka leverages this by serving high quality thumbnails when the `Save-Data` header is not detected. 
+
 **Keyboard Shortcuts**  
 As part of our accessibility and power&ndash;user considerations, Eureka provides the following keyboard shortcuts. 
 
