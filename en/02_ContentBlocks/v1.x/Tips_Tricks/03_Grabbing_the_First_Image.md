@@ -18,14 +18,9 @@ It's important to know the ID of your Image field. In this example, we'll assume
     &field=`5`
 ]]
 ````
+
 That will return the first image in the current resource, however it will be parsed through the defined field template. As we just want the image url, we'll need to specify a chunk to use as template.
-```` HTML
-[[cbGetFieldContent?
-    &field=`5`
-    &tpl=`firstImageTpl`
-]]
-````
-Create a chunk called firstImageTpl. As we just want the image url, the chunk is super simple:
+
 ```` HTML
 [[cbGetFieldContent?
     &field=`5`
@@ -33,7 +28,14 @@ Create a chunk called firstImageTpl. As we just want the image url, the chunk is
 ]]
 ````
 
+Create a chunk called firstImageTpl. As we just want the image url, the chunk is super simple:
+
+```` HTML
+[[+value]]
+````
+
 Now we've extracted just the url from the first image field. Awesome! Let's insert it into our meta tags, using a little trick to make sure we only have to call the snippet once with the toPlaceholder output modifier.
+
 ```` HTML
 [[cbGetFieldContent:toPlaceholder=`first_image`?
     &field=`5`
@@ -44,7 +46,9 @@ Now we've extracted just the url from the first image field. Awesome! Let's inse
 <meta name=”twitter:image” 
       content=”[[++site_url]][[+first_image]]” />
 ````
+
 We can also add a default image, in case there are no image fields in the content, like this:
+
 ```` HTML
 [[cbGetFieldContent:default=`assets/images/logo.jpg`:toPlaceholder=`first_image`?
     &field=`5`
@@ -55,4 +59,5 @@ We can also add a default image, in case there are no image fields in the conten
 <meta name=”twitter:image” 
       content=”[[++site_url]][[+first_image]]” /> 
 ````
+
 And that's it! You can do this with any kind of field. Checkout the [cbGetFieldContent documentation](../Snippets/cbGetFieldContent) for more information about the features and available properties on the snippet.
