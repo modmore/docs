@@ -142,6 +142,9 @@ The upload path can contain a number of different placeholders (in the format `[
 - `[[++site_url]]`: the full site url for the current context (1.3+) or MODX installation (<1.3)
 - `[[++base_url]]`: the base url for the current context (1.3+) or MODX installation (<1.3)
 - `[[+resource]]`: the ID of the current resource
+- `[[+ultimate_parent_alias]]`: the alias of the top-level resource parent. Empty if the resource is in the root.
+- `[[+ultimate_parent]]`: the ID of the top-level resource parent.
+- `[[+parent_alias]]`: the alias of the resource parent. Empty if the resource is in the root.
 
 You can also use any resource fields (such as `[[+pagetitle]]`, `[[+alias]]` and `[[+description]]`), as well as TV values by prefixing the TV name with `tv.`, for example `[[+tv.my_awesome_tv]]`.
 
