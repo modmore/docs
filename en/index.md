@@ -14,7 +14,7 @@ If you still have questions, let us know via support@modmore.com or [post on our
 
 ## Browse the documentation offline
 
-It's possible to [download a full archive of this website](modmore-documentation.zip) (around 3MB) to browse it offline. After downloading, unpack the zip file into a memorable place. 
+It's possible to [download a full archive of this website](modmore-documentation.zip) (around 6MB) to browse it offline. After downloading, unpack the zip file into a memorable place. 
 
 You'll get the best results when serving the files on a local web server (apache/nginx). This will allow you to use the entire documentation site exactly like it works on [docs.modmore.com](https://docs.modmore.com/), including a functional search. 
 
