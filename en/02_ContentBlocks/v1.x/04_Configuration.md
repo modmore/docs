@@ -101,6 +101,18 @@ The Ace theme to use for the code input. [See the full list of available themes 
 
 Most of the settings related to image uploads will also have an effect on the gallery and file input types. Also check the field properties for possibilities to override these values per field instance.
 
+### Base URL Mode (`contentblocks.base_url_mode`)
+
+ContentBlocks will treat image URLs differently based on the value of this setting. In most cases the default value, `relative` is what you need as it makes image URLs in the front-end relative to your site's `<base>` tag. 
+
+Here are the different modes, the examples assume that your site's base_url is `/modx/` on the domain `site.dev`.
+
+- `relative`: the output url is set to `assets/foo/bar.png`, making it relative from your site's `<base>` tag if set. This is the most portable option, and the default.
+- `absolute`: the output url is set to `/modx/assets/foo/bar.png`, making it suitable if your site does not use a base tag. But this does mean you'll need to edit and save your resource again (rebuild content does not work) if you ever need to move the site to a different directory. 
+- `full`: the output url is set to `http://site.dev/modx/assets/foo/bar.png`. Not portable at all.
+
+**Default:** `relative`
+
 ### Hash Name (`contentblocks.image.hash_name`) 
 
 When enabled, uploaded image file names will be hashed so the original name is obfuscated.
