@@ -22,9 +22,17 @@ Reports may also offer a set of options, such as a time period or type of data t
 
 Reports are grouped into categories. Some reports need a module to be installed and enabled for their reports to show up.
 
+### Discounts Reports
+
+The **Coupon Codes** report is only available if the [Coupons module](Modules/Cart/Coupons) is enabled. It will export a list of coupon codes, created in a certain timeframe, including how often they were used to date.
+
 ### Financial Reports
 
-The **Sales** report summarises the daily shop revenue over a period of time. The report allows selecting a period for which to load the data, varying from 24 hours to 1 year, or all sales. The Sales report offers a Sales Chart, which is a line chart showing the sales data.
+The **Daily Sales** report summarises the daily shop revenue over a period of time. The report allows selecting a period for which to load the data, varying from 24 hours to 1 year, or all sales. The Sales report offers a Sales Chart, which is a line chart showing the sales data.
+
+The **Taxes Collected** report will create an export containing all individual order item tax records (i.e. the tax charged on each individual order item). 
+
+The **Transactions** report creates an export with all transactions during a certain timeframe.
 
 ### Order Reports
 
