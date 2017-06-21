@@ -1,5 +1,3 @@
-**Note: this document has been updated for the rewritten tax handling since Commerce 0.4.** This version will be made available within a few days while we finish testing and final pieces of the implementation. [An older version of this page for v0.3 can be found here](https://github.com/modmore/docs/blob/96019ccb1c9b3eb29451c405d72bdfbee69301cf/en/01_Commerce/v1/10_Taxes.md).
-
 Commerce uses **Tax Groups** to define tax rates. Each product is assigned to a tax group, so you can have a tax group for physical products, digital products, products with an exemption status and so on. 
 
 Within a Tax Group are **Tax Rules**. These are simple logical rules, with conditions like `if the country is the netherlands`. If all conditions on a rule are valid, the tax rule returns a **Rate Provider**, with some **Rate Provider Options**. 
