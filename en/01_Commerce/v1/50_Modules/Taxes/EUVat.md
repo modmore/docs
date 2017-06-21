@@ -1,8 +1,16 @@
+---
+title: Enforce Stock Levels
+---
+
 The EU Vat Module is shipped with the Commerce core. It needs to be enabled before use via Configuration > Modules. 
 
-The EU VAT Module is used to apply the standard VAT rate for the customer's country to all items in the cart. It retrieves the current VAT rates from [euvatrates.com](https://euvatrates.com/) and caches them for 3 days. 
+When enabled, the EU VAT Rate Provider is available to use in your [Tax Rules](../../Taxes).
+
+The EU VAT Rate Provider is used to apply a VAT rate for the customer's country to all items in the cart. It retrieves the current VAT rates from [jsonvat.com](https://jsonvat.com/) and caches them for 3 days. 
 
 ## Properties
+
+These properties are set on a tax rule, not on the module itself.
 
 - **Applied Tax Rate**: which rate to use. For most types of products you'll need the _Standard Rate_, but exempted products may use a different rate. Not all countries have all of the rates available in the dropdown.
 - **Use Reverse Charge Mechanism?**: check this to use the _Reverse Charge Mechanism_, see below.

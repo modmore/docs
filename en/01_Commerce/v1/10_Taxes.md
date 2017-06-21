@@ -71,6 +71,8 @@ Used for retrieving VAT rates in the EU. In the rate provider options you can pr
 
 This provider gets its VAT rates data from [jsonvat.com](https://jsonvat.com/). 
 
+The [EUVat Module](Modules/Taxes/EUVat) needs to be enabled for this rate provider to be available.
+
 There are several use cases for this provider. 
 
 - It can be used for destination-based VAT rates (e.g. for compliance with the 2015 EU VAT regulations) where the customer is charged their local VAT rate. This is typically used in combination with MOSS (_Mini One Stop Shop_) reporting. 
@@ -80,6 +82,8 @@ There are several use cases for this provider.
 ### TaxJar United States Sales Tax provider
 
 For sales tax in the United States we've integrated with the [TaxJar](https://taxjar.com) SmartCalcs API. You can provide your Nexus via the MODX system settings, or in the SmartCalcs dashboard, and the system will then apply the proper sales tax automatically. Where possible, it will apply state, county and city tax separately to ease your reporting.
+
+The [TaxJar Module](Modules/Taxes/TaxJar) needs to be enabled for this rate provider to be available.
 
 In the provider options you can provide a product tax code. This is used for product category specific sales tax exemptions or reductions. While there are tons of possible codes, you only need to specify this for products with an exemption or reducation. [There's a list of those product categories here](https://developers.taxjar.com/api/reference/#categories). 
 
