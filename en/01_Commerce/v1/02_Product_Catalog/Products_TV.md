@@ -140,3 +140,16 @@ With the following in chunk `product_all_at_once`:
     <input type="number" name="products[ [[+id]] ][quantity]" value="0">
 </div>
 ````
+
+## Tip: use Form Customization to move the TV
+
+You can move the Products TV to the main "Document" tab of a resource using form customization. To do this, go to System (cog icon in the top right) > Manager Customization.
+
+Create a profile, and a set within the profile if you don't already have one. 
+
+When editing the form customization set, open the _Template Variables_ tab and find your products TV in the list. Double click the value in the "Region" column, and set it to `modx-resource-main-left`. 
+
+Now, open your resource that has the template variable, and voila! 
+
+(Note: you may see some excess spacing on the left of the TV. This has been fixed in MODX 2.6.)
+
