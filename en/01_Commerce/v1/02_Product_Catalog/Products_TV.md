@@ -26,6 +26,8 @@ The _Edit Product_ button allows you to change the product information. With _Un
 
 Creating the Products TV is really simple. Just go to Elements > Template Variables in your MODX installation and create a new TV. 
 
+Give it a name of `products`, and a caption of `Products` or something similar. If you use a different name, make sure to also change the add to cart form (see below) accordingly. 
+
 On the _Input Options_ tab, set the _Input Type_ to _commerce_products_. 
 
 If desired, you can set the maximum amount of products as well. This allows you to restrict a products TV to just one product for example. When the maximum has been reached, the _Add Product_ and _Link Existing Product_ buttons are hidden from view. 
@@ -36,13 +38,13 @@ If desired, you can set the maximum amount of products as well. This allows you 
 
 Depending on how you want your add to cart form to look, you can use different methods to show the different products assigned to a resource.
 
-All of these methods use the [commerce.get_products snippet](../Snippets/get_products). Take a look at that snippet for more information on how you could output the product information.
+All of these methods use the [commerce.get_products snippet](../Snippets/get_products). Take a look at that snippet for more information on how you could output the product information. There are also a few examples included below. 
 
 For generic instructions in adding products to the cart, see [Add to Cart Form](Add_to_Cart_Form). That covers the two main ways to draft your forms, as well as some example code to do it with AJAX.
  
 ### Radio Buttons
 
-To show product options as radio buttons, you can use something like this. This assumes the template variable is named `products`, change accordingly.
+To show product options as radio buttons, you can use something like this. **Note**: This assumes the template variable is named `products`, change accordingly.
 
 ```` html
 <form method="post" action="[[~[[++commerce.cart_resource]]]]">
