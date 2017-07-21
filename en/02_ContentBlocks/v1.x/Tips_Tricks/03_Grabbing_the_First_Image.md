@@ -31,10 +31,12 @@ That will return the first image in the current resource, however it will be par
 Create a chunk called firstImageTpl. As we just want the image url, the chunk is super simple:
 
 ```` HTML
-[[+value]]
+[[+url]]
 ````
 
-Now we've extracted just the url from the first image field. Awesome! Let's insert it into our meta tags, using a little trick to make sure we only have to call the snippet once with the toPlaceholder output modifier.
+Now we've extracted just the url from the first image field. Awesome! If you'd like to resize the image, you can use any of the phpthumb packages, like pthumb, to resize the image. 
+
+Let's insert it into our meta tags, using a little trick to make sure we only have to call the snippet once with the toPlaceholder output modifier.
 
 ```` HTML
 [[cbGetFieldContent:toPlaceholder=`first_image`?

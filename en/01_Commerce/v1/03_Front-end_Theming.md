@@ -31,11 +31,11 @@ The setting you'll need to update for this is `commerce.themes_path`. Set this t
 To give an example, if you want your theme files in `assets/templates/webshop/`, you would set:
 
 - `commerce.theme` to `webshop`
-- `commerce.themes_path` to `{base_path}assets/templates/`
+- `commerce.themes_path` to `{base_path}assets/templates/` - note the trailing slash is required.
 
 ## Theme inheritance
 
-Assuming `commerce.theme` is set to `webshop` and `commerce.themes_path` is set to `{base_path}assets/templates`, Commerce will check for matching template files in the following order. 
+Assuming `commerce.theme` is set to `webshop` and `commerce.themes_path` is set to `{base_path}assets/templates/`, Commerce will check for matching template files in the following order. 
 
 1. `{base_path}assets/templates/webshop/`
 2. `{core_path}components/commerce/templates/webshop/`

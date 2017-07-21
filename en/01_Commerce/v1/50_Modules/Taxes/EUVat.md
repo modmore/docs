@@ -1,5 +1,5 @@
 ---
-title: Enforce Stock Levels
+title: EU VAT
 ---
 
 The EU Vat Module is shipped with the Commerce core. It needs to be enabled before use via Configuration > Modules. 

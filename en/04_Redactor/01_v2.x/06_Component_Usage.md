@@ -79,6 +79,11 @@ this.on('activate', function() {
 });
 ````
 
+Also you should add this option to your MODx.Window to prevent Redactor from double initialization.
+```javascript
+closeAction: 'close'
+```
+
 ## Done!
 
 This requires at least Redactor 1.2. This method should also work for other editors that are available for MODX, however your mileage may vary. Consult the documentation or ask the developer to see if other editors you prefer to use supports this approach. Or, you know, [buy Redactor](https://www.modmore.com/redactor/pricing/). ;)
