@@ -29,7 +29,7 @@ class Products extends BaseModule
 
     public function initialize(EventDispatcher $dispatcher)
     {
-        $dispatcher->addListener(ReportInterface::EVENT_GET_REPORTS, [$this, 'addReport']);
+        $dispatcher->addListener(\Commerce::EVENT_DASHBOARD_REPORTS_GET_REPORTS, [$this, 'addReport']);
     }
 
     public function addReport(Reports $event)

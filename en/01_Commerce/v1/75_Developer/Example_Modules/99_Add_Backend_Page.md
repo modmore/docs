@@ -30,8 +30,8 @@ class SubscriptionsPage extends BaseModule
 
     public function initialize(EventDispatcher $dispatcher)
     {
-        $dispatcher->addListener(Generator::COLLECT_PAGES_EVENT, array($this, 'loadPage'));
-        $dispatcher->addListener(Generator::COLLECT_MENU_EVENT, array($this, 'loadMenuItem'));
+        $dispatcher->addListener(\Commerce::EVENT_DASHBOARD_GET_PAGES, array($this, 'loadPage'));
+        $dispatcher->addListener(\Commerce::EVENT_DASHBOARD_GET_MENU, array($this, 'loadMenuItem'));
     }
 
     public function loadPage(GeneratorEvent $event)
