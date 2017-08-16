@@ -429,7 +429,7 @@ This setting allows users to drag and drop images from their computers into Reda
 
 When disabled, turns off the ability to upload files using drag and drop.
 
-**Default:**`truer`
+**Default:**`true`
 
 ### Dynamic Thumbs (`redactor.dynamicThumbs`) 
 
