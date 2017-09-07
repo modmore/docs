@@ -1,4 +1,4 @@
-_This document is about the Stripe Gateway for SimpleCart version 2. [Information about version 1 is here](Stripe).
+_This document is about the Stripe Gateway for SimpleCart version 2. [Information about version 1 is here](Stripe)_.
 
 The Stripe Gateway for SimpleCart is free to install from the modmore.com package provider. Its source code can be found on [GitHub](https://github.com/modmore/SimpleCart_Stripe).
 
@@ -23,6 +23,7 @@ Here's what you need to do.
 3. Open the webhook in the dashboard, and copy the *Signing Secret* into the `simplecart_stripe.webhook_secret` system setting, located under the `simplecart_stripe` namespace.
 4. Back in the Stripe Dashboard, click on `Send test webhook` in the top right corner. Leave it on the default event type, and click on _Send test webhook_ button. Make sure the response looks like JSON, and has a message of `Unsupported event type, ignoring request`. If you get a different response, that means you might not have copied the webhook secret properly, and you wont be able of accepting payments.
 5. Head back to the Payment Methods tab in the SimpleCart > Administer component. Click the cog icon next to each of the gateways and make sure that the _Secret Key_ is filled with your [Stripe Secret Key](https://dashboard.stripe.com/account/apikeys).
+6. Activate the gateways you'd like to use.
 
 ## Managing Gateway Configuration
 

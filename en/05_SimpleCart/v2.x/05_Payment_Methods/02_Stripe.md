@@ -1,4 +1,4 @@
-_This document is about the Stripe Gateway for SimpleCart version 1. [Information about version 2 is here](StripeV2).
+_This document is about the Stripe Gateway for SimpleCart version 1. [Information about version 2 is here](StripeV2)_.
 
 The Stripe Gateway for SimpleCart is free to install from the modmore.com package provider. Its source code can be found on [GitHub](https://github.com/modmore/SimpleCart_Stripe).
 
