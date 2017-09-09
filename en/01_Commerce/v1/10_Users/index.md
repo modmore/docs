@@ -6,8 +6,7 @@ Commerce uses the standard user system in MODX.
 
 The standard checkout process includes an Account step where customers are given the choice of logging in, signing up for an account, or continuing the checkout as a guest. When customers log in or signup, their orders will be assigned to their account automatically.
 
-For the login and registration to work, you need to set up a login and register resource with the standard [Login extra](https://modx.com/extras/package/login). Once setup, update the `	
-commerce.login_resource` and `commerce.register_resource` system settings with the IDs of the Login and Register resource respectively. 
+For the login and registration to work, you need to set up a login and register resource with the standard [Login extra](https://modx.com/extras/package/login). Once setup, update the `commerce.login_resource` and `commerce.register_resource` system settings with the IDs of the Login and Register resource respectively. 
 
 Read more about creating a [Login Resource](Login_Resource) and a [Register Resource](Register_Resource). 
 
