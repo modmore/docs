@@ -32,6 +32,7 @@ When an event is fired, it will provide you with an event object in your callbac
 |`\Commerce::EVENT_DASHBOARD_REPORTS_GET_REPORTS`|`Reports`| | |
 |`\Commerce::EVENT_CHECKOUT_BEFORE_STEP`|`Checkout`| | |
 |`\Commerce::EVENT_CHECKOUT_AFTER_STEP`|`Checkout`| | |
+|`\Commerce::EVENT_GET_PAYMENT_GATEWAYS`|`Gateway`|Administrator listing available gateways when creating or editing payment methods.|Registering custom payment gateways.|
 
 ## Event Classes
 

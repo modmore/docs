@@ -1,5 +1,6 @@
 Commerce uses the PHP OmniPay library (v2) to integrate with payment gateways, without reinventing the wheel for every gateway individually. Commerce requires a small wrapper class, example included below, to be made aware of a payment gateway and to know what configuration to ask from the merchant when setting up the gateway.
 
+Note the difference between a Payment Gateway (discussed here, the code that handles talking to payment providers) and [Payment Methods](../Payment_Methods) (admin-configured instances of a gateway, each with their own configuration). Technically speaking, gateways are an instance of `\modmore\Commerce\Gateways\BaseGateway`, while payment methods are xPDO objects of type `\comPaymentMethod`. 
 
 ## Example Gateway Classes
 
@@ -61,4 +62,63 @@ Depending on the type of gateway, you might find the following samples interesti
 
 ## Registering the gateway
 
-It's not yet possible in v0.7 to register a custom gateway. This will be implemented using a [Module](Modules) soon.
+To tell Commerce about your gateway, you will need to create a [Module](Modules). In this module you will provide the class name and the label to show for it in the back-end. 
+
+(Note: this requires at least Commerce v0.10.)
+
+Here's an example module that loads a "MultiSafePay" gateway. 
+
+```` php
+<?php
+
+namespace modmore\Commerce\Modules\Gateways;
+
+use modmore\Commerce\Events\Gateways;
+use modmore\Commerce\Modules\BaseModule;
+use Symfony\Component\EventDispatcher\EventDispatcher;
+
+class GatewayName extends BaseModule
+{
+    public function getName()
+    {
+        return 'GatewayName';
+    }
+
+    public function getAuthor()
+    {
+        return 'My Name';
+    }
+
+    public function getDescription()
+    {
+        return 'Description of GatewayName';
+    }
+
+    public function initialize(EventDispatcher $dispatcher)
+    {
+        // Listen to the event
+        $dispatcher->addListener(\Commerce::EVENT_GET_PAYMENT_GATEWAYS, array($this, 'registerGateways'));
+        
+        // Also include your autoloader, or do a `require_once` to make your gateway class available in memory
+        // While you could also do it at the top of the module file, doing it in the initialize method
+        // allows finer control over when it is included.
+    }
+
+    public function registerGateways(Gateways $event)
+    {
+        // Add the GatewayName gateway, and log an error if the class couldn't be found.
+        if (!$event->addGateway('modmore\Commerce\Gateways\GatewayName', 'GatewayName')) {
+            $this->adapter->log(1, 'Could not add GatewayName - the class was probably not found');
+        }
+    }
+}
+
+````
+
+[Learn more about modules here](Modules).
+
+**Important: the module's registerGateways method will only run when an admin user adds or edits a payment method**. 
+
+After the gateway is selected, the class name is stored on the payment method, and Commerce will load that gateway class when showing payment methods to the customer. That's why you need to include the logic to load your gateway class (which can be an autoloader, like Composer, or a simple `require_once` call) in your `initialize()` method, and not in the `registerGateways` method. 
+
+Also, you should not be using the `modmore\Commerce\Gateways` namespace in custom code, to prevent future conflicts. Make it `YourCompany\CommerceGatewayName` or something instead. 
