@@ -4,7 +4,10 @@ To add a product to the cart, you'll need to submit the product record ID (not t
 
 With the single products form only one product can be added to the cart per request. As the structure of the form is a little easier than the multiple products form, it is easier to use this when providing different products as variations in your catalog. 
 
-Include an `add_to_cart` hidden input with value 1, provide the product ID in a `product` input, and provide the quantity in a `quantity` input. 
+The form includes:
+- an `add_to_cart` hidden input with value 1, this is used to trigger the add to cart logic.
+- the product ID in a hidden `product` input. This should be made dynamic, for example with the commerce.get_resource_product_id snippet, a TV holding the product ID(s) (like the Commerce Products TV), or a different way that you establish a products' ID.
+- the quantity in a `quantity` input
 
 ```` html
 <form method="post" action="[[~[[++commerce.cart_resource]]]]">
