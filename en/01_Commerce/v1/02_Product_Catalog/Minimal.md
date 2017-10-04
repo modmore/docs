@@ -12,7 +12,9 @@ With a (very) minimal catalog, the products store in Commerce are the catalog. T
 
 ## Setup
 
-For the minimal product catalog, you'll create your product records in Commerce > Products as standard products. Then you can use TVs or manually create the add to cart forms to 
+For the minimal product catalog, you'll create your product records in Commerce > Products as standard products. You can use a TVs to select the product or enter the product ID directly.
+
+You can also use the [get_products](../Snippets/get_products) and [get_product](../Snippets/get_product) snippets with the minimal catalog to show product information.
 
 ## Add to cart form
 
