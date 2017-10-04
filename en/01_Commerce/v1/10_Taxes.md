@@ -61,7 +61,7 @@ Three rate providers are available in the core Commerce package.
 
 ### Manual rate provider
 
-Uused when you want to define the tax rate yourself. Its option accepts the rate (percentage), rate key (unique reference for reporting) and name (shown to the customer). There's very little magic in the Manual rate provider, it just returns what you put into it.
+Used when you want to define the tax rate yourself. Its option accepts the rate (percentage), rate key (unique reference for reporting) and name (shown to the customer). There's very little magic in the Manual rate provider, it just returns what you put into it.
 
 ### European Union VAT Rates provider
 
@@ -103,7 +103,7 @@ Tax Rates can be reviewed, but not edited, under Configuration > Tax Rates.
 
 ## Showing Taxes before the customer enters their address
 
-To show the expected amount of taxes for an order before the customer entered their details in the checkout, you can use modules like [AutoFillGeoIP](Modules/Cart/AutoFillGeoIP), and [UserProfileAddress](Modules/Cart/UserProfileAddress). These pre-fill an _Expected Address_ on the order based on the customers' IP Address and MODX User profile respectively, which is available to the Tax Rules to attempt to make an early tax rate determination.
+To show the expected amount of taxes for an order before the customer entered their details in the checkout, you can use modules like [AutoFillGeoIP](Modules/Cart/AutoFillGeoIP), and [UserProfileAddress](Modules/Cart/UserProfileAddress). These pre-fill an _Expected Address_ on the order based on the customer's IP Address and MODX User profile respectively, which is available to the Tax Rules to attempt to make an early tax rate determination.
 
 Only if all details used in the tax rule conditions is available, will its rate provider lookup be processed. 
 
