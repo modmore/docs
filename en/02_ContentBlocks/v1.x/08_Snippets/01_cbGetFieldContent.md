@@ -6,7 +6,9 @@ The cbGetFieldContent snippet, distributed with the core ContentBlocks package s
 
 By default it will check the current resource, but with the `&resource` property you can also retrieve information from a different resource.
 
-**Note:** if you're using nested layouts, cbGetFieldContent does not currently retrieve data from within nested layouts.
+**Note:** if you're using nested layouts, cbGetFieldContent does not currently retrieve data from within those layouts. Only top-level fields are supported.
+
+[TOC]
 
 ## Snippet Usage
 
@@ -24,6 +26,8 @@ The snippet is easy to use but very powerful. Pass the field ID via the `&field`
 - `&fieldSettingFilter`: allows filtering by == or != of a field setting. Only items matching the filter will be returned.
 - `&limit`: allows limiting the number of matched fields. Runs after `&fieldSettingFilter`.
 - `&offset`: allows skipping the first n matched fields
+- `&innerLimit`: for container fields like galleries and repeaters, you can set a limit for the number or images/rows to be returned from each container. 
+- `&innerOffset`: for container fields like galleries and repeaters, you can set an offset for the number of images/rows in each container.
 - `&tpl`: a chunk name defining a template to use for your field. If not set, the ContentBlocks template for the field will be used.
 - `&wrapTpl`: a chunk name defining a template to use for your field wrapper. If not set, the ContentBlocks wrapper template for the field will be used. Applies only to multi-value inputs (galleries, files, etc.)
 - `&returnAsJSON`: return values of the selected field as JSON. Filters, offsets, and limits will be applied, but templates will be disregarded.
@@ -47,6 +51,7 @@ This will return all video fields included on document 5.
     &limit=`1`
 ]]
 ````
+
  This will return only a single result (because of the ``&limit=`1`` parameter) — the first video field contained in a resource. ContentBlocks stores data from top to bottom, left to right. This means that a video in a left column will be before video in a right column within the same layout.
 
 ### Return contents of the second video field
@@ -73,7 +78,8 @@ This will return only a single result (because of the ``&limit=`1`` parameter), 
 
 ### Return a single image filtered by a setting, passed through a different template
 
-### Snippet call
+Snippet call:
+
 ```` HTML
 [[!cbGetFieldContent?
     &field=`6` [[- ID of image field]]
@@ -84,15 +90,19 @@ This will return only a single result (because of the ``&limit=`1`` parameter), 
 ]]
 ```` 
 
-#### Chunk: specialImageTpl
+specialImageTpl chunk:
+
 ```` HTML
 <div class="specialTemplate">
     <img src="[[+url:phpthumbof=`w=500&h=250&zc=1`]]" />
 </div>
 ````
-This will get the first image with a `class` setting of `keyImage`, but instead of using the template set within ContentBlocks, will use our special template. This could be used to make a listing of documents that includes image thumbnails using getResources, where you might want to use the key image from the page but at a different size or aspect ratio.
+This will get the first image with a `class` setting of `keyImage`, but instead of using the template set within ContentBlocks, will use our special template. 
+
+This could be used to make a listing of documents that includes image thumbnails using getResources, where you might want to use the key image from the page but at a different size or aspect ratio.
 
 ### Return JSON for further processing
+
 ```` HTML
 [[!cbGetFieldContent:processJSON?
     &field=`7` [[- ID of gallery field]]
@@ -101,4 +111,33 @@ This will get the first image with a `class` setting of `keyImage`, but instead 
     &returnAsJSON=`1`
 ]]
 ````
- This will retrieve 1 gallery field from resource 3. Instead of returning templated results, it will return a JSON string, which, in this case, would be processed through a snippet called `processJSON`. Within `processJSON`, you might further filter these results to only include the first item, to include only items with titles, or something similar. If this were a file field, you could filter to only include `.xls` files or `.txt` files. Your processing snippet would be responsible for handling templating the results.
+ This will retrieve 1 gallery field from resource 3.
+ 
+ Instead of returning templated results, it will return a JSON string, which, in this case, would be processed through a snippet called `processJSON`. 
+ 
+ Within `processJSON`, you might further filter these results to only include the first item, to include only items with titles, or something similar. 
+ 
+ If this were a file field, you could filter to only include `.xls` files or `.txt` files. Your processing snippet would be responsible for handling templating the results.
+ 
+### Return a specific field in repeater rows
+
+If you want to extract a specific fields' value from each of the rows in a repeater, you can use something like this. 
+
+
+```` HTML
+[[!cbGetFieldContent?
+    &field=`9` [[- ID of repeater field]]
+    &limit=`1` [[- we only want a single repeater instance ]]
+    &tpl=`specialRepeaterTpl`
+]]
+```` 
+
+The specialRepeaterTpl chunk will be used to override the template set on the repeater, the one that is used for each row.
+
+So if you want all images, which have a key of `img`, can set it to something like this:
+
+```` html
+<div class="image">
+    <img src="[[+img]]" alt="[[+title:htmlent]]">
+</div>
+````
