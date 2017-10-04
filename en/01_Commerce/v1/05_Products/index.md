@@ -16,10 +16,10 @@ That does not mean that your _catalog_ can't support product variations. You jus
 
 There are custom product types, such as the [Resource Products](Resource_Products), where the product information is actually managed elsewhere. When you edit or create such a product in Commerce it only lets you edit the target that holds the information. 
 
-These product storage types are useful in cases where you already have a catalog built, and you want to easily integrate Commerce with it. In cases where as a result you don't need the Products tab in teh dashboard at all, the [Hide Products Module](../Modules/Admin/HideProducts) can be useful to remove the tab. 
+These product storage types are useful in cases where you already have a catalog built, and you want to easily integrate Commerce with it. In cases where as a result you don't need the Products tab in the dashboard at all, the [Hide Products Module](../Modules/Admin/HideProducts) can be useful to remove the tab. 
 
 As a general rule of thumb, only use custom product storage types when you're linking with an existing catalog. 
 
 ## Product Behavioural Types
 
-Another type of custom products are those that have special behaviour. An example of this is the [Product Bundle](Bundles) type. Product bundles allow the merchant to select other existing products, and to sell those in a bundle. The price is set per bundle, but stock and weight is automatically calculated
+Other types of custom products are those that have special behaviour. An example of this is the [Product Bundle](Bundles) type. Product bundles allow the merchant to select other existing products, and to sell those in a bundle. The price is set per bundle, but stock and weight is automatically calculated
