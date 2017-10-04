@@ -4,6 +4,8 @@ To display the fully functional cart to allow the customer to checkout, use the 
 
 Added in v0.7.
 
+[TOC]
+
 ## Usage
 
 ```` html
@@ -163,3 +165,15 @@ Array
 
 )
 ````
+
+## Showing cart in the header?
+
+MODX processes snippets from top to bottom, so if you place a cart  summary in the header of the page, on the cart and checkout pages it may show old data. 
+
+One way around this is to add the `get_cart` snippet below the content (so the cart/checkout snippets are executed first), and to use the `&toPlaceholders` property to set placeholders, which you can then add into the header of the page.
+
+For example with 
+```` html
+[[!commerce.get_cart? &toPlaceholders=`cart`]]
+````
+below the content, you can use `[[!cart.total_quantity]]` and `[[!+cart.total_formatted]]` in the header of your page.
