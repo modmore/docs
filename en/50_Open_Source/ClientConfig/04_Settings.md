@@ -7,6 +7,10 @@ A comma separated list of user groups that are authorized to access the admin ar
 ## Clear Cache (`clientconfig.clear_cache`)
 
 When enabled, the MODX Resource cache will be cleared whenever a change is made to the values in ClientConfig. 
+
+## Context Aware (`clientconfig.context_aware`)
+
+When enabled you can store values for each context, instead of only global values. [See Multiple Contexts](Multiple_Contexts)
  
 ## Vertical Tabs (`clientconfig.vertical_tabs`)
 

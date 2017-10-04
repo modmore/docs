@@ -1,5 +1,14 @@
-ClientConfig gives your client a user-friendly interface for making site wide changes, while you as the administrator set up the different options available to the end-user. Settings are available with the familiar `[[++setting]]` tag for super easy implementation, and settings are also available through the `$modx->getOption('key')` APIs, allowing overriding of System Settings.
+ClientConfig gives your client a user-friendly interface for making site wide changes, while you as the administrator set up the different options available to the end-user. 
 
-ClientConfig is maintained on [Github](https://github.com/Mark-H/ClientConfig), please file your bugs and feature request there. Pull requests are welcomed as well! 
+Settings are available in chunks and templates with the familiar `[[++setting]]` tag for super easy implementation, and from snippets or third party code through the `$modx->getOption('key')` APIs.
 
-The first release was on December 9th, 2012 and is also available from [MODX.com](https://modx.com/extras/package/clientconfig).
+Settings in ClientConfig with the same key as system or context settings will override those values. 
+
+As of v2.0, ClientConfig also supports a [multi-context mode](Multiple_Contexts), which allows users to set values for each individual context. 
+
+Important links:
+
+- [Getting Started](Getting_started)
+- [Github](https://github.com/modmore/ClientConfig), for bug reports, feature requests, and access to the full MIT-licensed source code.
+- [ClientConfig on modmore.com](https://www.modmore.com/extras/clientconfig/).
+- [ClientConfig on MODX.com](https://modx.com/extras/package/clientconfig).
