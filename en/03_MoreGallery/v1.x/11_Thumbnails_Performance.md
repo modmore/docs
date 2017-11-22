@@ -32,7 +32,7 @@ Just make sure the image name is unique when uploaded (MoreGallery will ensure t
 
 ### Prevent phpThumb Cache Control
 
-Whenever the phpThumb library included in the MODX core is used, it will check the cache directories to verify its accuracey. This includes checking if cached files aren't too old, that there are too much cahce files and that the size of the cache doesn't grow out of control.
+Whenever the phpThumb library included in the MODX core is used, it will check the cache directories to verify its accuracy. This includes checking if cached files aren't too old, that there are too much cache files and that the size of the cache doesn't grow out of control.
 
 If the limits are exceeded, the system will remove cache files.
 
