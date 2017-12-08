@@ -3,9 +3,9 @@ title: Commerce
 description: Documentation for Commerce, a premium extra from modmore for MODX. 
 ---
 
-[Commerce](https://www.modmore.com/commerce/) brings a flexible and easy to use e-commerce solution to MODX.
+[Commerce](https://www.modmore.com/commerce/) brings a flexible and easy to use e-commerce solution to MODX. It was first announced at the MODXpo Munich in November 2015, was first released as private alpha in January 2017, and as of November 2017 is in public beta. 
 
-**Commerce is currently in invite-only BETA** as of July 27th. We're sending out all remaining beta invites (first come, first serve) in the following 1-2 months. To sign up for testing, or if you're in the beta but need a license for production usage, please email support@modmore.com. 
+[View the Roadmap](https://www.modmore.com/commerce/roadmap/) and the [Features Tour](https://www.modmore.com/commerce/features/) to learn more about what Commerce can do today.
 
 # Recommended Reading
 
