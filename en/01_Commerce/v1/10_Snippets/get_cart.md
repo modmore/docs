@@ -176,4 +176,4 @@ For example with
 ```` html
 [[!commerce.get_cart? &toPlaceholders=`cart`]]
 ````
-below the content, you can use `[[!cart.total_quantity]]` and `[[!+cart.total_formatted]]` in the header of your page.
+below the content, you can use `[[!+cart.total_quantity]]` and `[[!+cart.total_formatted]]` in the header of your page.
