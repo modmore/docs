@@ -34,11 +34,11 @@ With this configuration, all customers will be seen as guests.
 
 ### Auto-filling customer information from user profiles
 
-Commerce can automatically prefill address information into the checkout form, when customers are logged in. 
+If customers are logged in, Commerce will automatically [store and show previously used addresses](Previous_Addresses). 
 
-Go to Configuration > Modules in the Commerce dashboard, and find the User Profile Address module in the list. Click its name to edit the configuration, and enable it in test and/or live mode under _Availability_. 
+Commerce can also prefill address information from their user profile. This is a bit more limited than the built-in previous address functionality, but is useful if other parts of your site also rely on the user profile. To enable this, go to Configuration > Modules in the Commerce dashboard, and find the [User Profile Address](../Modules/Cart/UserProfileAddress) module in the list. Click its name to edit the configuration, and enable it in test and/or live mode under _Availability_. 
 
-This module can also update the user profile based on the submitted address information. This relies on a checkbox being available on the form, included in the default checkout templates.  
+The User Profile Address module can also update the user profile based on the submitted address information. This relies on a checkbox being added to the form, included in the default checkout templates.  
 
 [Read more about the UserProfileAddress module](../Modules/Cart/UserProfileAddress).
 

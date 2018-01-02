@@ -2,9 +2,11 @@
 title: User Profile Address
 ---
 
-The User Profile Address will pre-fill the customer address on the checkout from the currently logged in user's profile. It also adds a checkbox to the checkout, which will allow the user to specify that their address on file should be updated.
+The User Profile Address will pre-fill the customer address on the checkout from the currently logged in user's profile. It also adds a checkbox to the checkout (in the default templates), which will allow the user to specify that their address on file should be updated.
 
 Added in v0.4.
+
+As of v0.10, Commerce will also show [previously used addresses](../../Users/Previous_Addresses) out of the box. The User Profile Address module can still be used alongside that behaviour, in which case the profile address will be used to pre-fill the "Add new address" form.
 
 ## Properties
 
