@@ -299,6 +299,8 @@ then the name of the service has to be provided at the first config-object with 
         primary: id
     commerce_order:
         class: comOrder
+        exclude_keys:
+          - created_on
         primary: id
     commerce_order_item:
         class: comOrderItem
