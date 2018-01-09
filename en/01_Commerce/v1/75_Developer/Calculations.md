@@ -12,19 +12,19 @@ The subtotal is simply calculated as the price per item, times the quantity. Thi
 
 ### Shipping
 
-Item specific shipping costs are based on the order item price adjustment records for an order item. These are simply summed up, and stored in the shipping field.
+If per-item shipping costs are added (which is not something currently exposed in the core), the shipping field on the item will sum those up.
 
 ### Discount
 
-Just like the shipping costs, the discount is also based on order item price adjustments. These are also summed up. 
+The discount field sums up order item price adjustments. 
 
 ### Total Before Tax
 
-The `total_before_tax` is a sum of the subtotal, the shipping and the discount fields. Tax modules should use this total column for their math. 
+The `total_before_tax` is a sum of the subtotal, the shipping and the discount fields, prior to the tax calculation taking place (see total excluding tax description, below)
 
 ### Total Excluding Tax
 
-The `total_ex_tax` contains the total price excluding the calculated tax. 
+The `total_ex_tax` contains the total price for the item excluding the calculated tax. 
 
 If `commerce.tax_calculation` is set to `exclusive`, this value will be the same as `total_before_tax`. 
 
@@ -32,9 +32,7 @@ However if `commerce.tax_calculation` is set to `inclusive`, it will be lower be
 
 ### Tax
 
-The total tax as calculated. The tax calculation uses the `total_before_tax` column as value to calculate tax on. 
-
-The tax field may consist of different tax rates stacked on top of each other. 
+The total tax based on summing up the tax for the item. The tax field may consist of different tax rates stacked on top of each other. 
 
 ### Total
 
@@ -50,7 +48,7 @@ Sum of the `subtotal` of all order items combined.
 
 ### Shipping
 
-Sum of the `shipping` of all order items combined, plus the fee from the chosen shipping method. 
+Sum of the `shipping` of all order items combined, plus the fee for each order shipment (based on shipping method) combined.
 
 ### Discount
 
@@ -62,7 +60,7 @@ The total transaction fee for the order. This is calculated by taking the `fee` 
 
 ### Total Before Tax
 
-The `total_before_tax` is a sum of the subtotal, the shipping and the discount fields. Tax modules should use this total column for their math. 
+The `total_before_tax` is a sum of the subtotal, the shipping and the discount fields for all items combined.
 
 ### Total Excluding Tax
 
@@ -74,7 +72,7 @@ However if `commerce.tax_calculation` is set to `inclusive`, it will be lower be
 
 ### Tax
 
-The total tax as calculated. The tax calculation uses the `total_before_tax` column as value to calculate tax on. 
+The total tax as calculated, from all items combined. The tax calculation uses the `total_before_tax` column as value to calculate tax on. 
 
 The tax field may consist of different tax rates stacked on top of each other. 
 
