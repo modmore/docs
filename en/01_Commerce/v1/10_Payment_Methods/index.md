@@ -1,4 +1,4 @@
-Commerce integrates with a wide, and growing, variety of payment providers. Most of these payment providers are included in the default installation, so no additional installations are necessary. 
+Commerce integrates with a wide, and growing, variety of payment providers. Most of these payment providers are included in the default installation, but additional gateway packs are also available.
 
 ## Creating a Payment Method
 
@@ -12,16 +12,25 @@ You can create multiple payment methods all using the same payment gateway but w
 
 ## Available Payment Gateways
 
-- [Authorize.net](Authorize.net) (Credit Cards, on-site JavaScript implementation)
-- [Braintree](Braintree) (Credit Cards and PayPal via popup, on-site JavaScript implementation)
-- [Manual](Manual) (Dummy gateway that marks an order as paid)
-- [Mollie](Mollie) (Provider offering various off-site payment options including iDeal, Sofort, Bancontact, credit card (hosted form), and more)
-- [MultiSafePay](MultiSafePay) (Provider offering various off-site payment options, including iDeal, Sofort, Bancontact, credit card (hosted form), and more)
-- [Paymill](Paymill) (Credit Cards, on-site JavaScript framed implementation)
-- [PayPal](PayPal) (Credit Cards, PayPal account, off-site redirect)
-- [Stripe](Stripe) (Credit Cards, on-site JavaScript implementation)
+The table below contains a list of gateways that are currently available for Commerce. 
 
-Need another one that isn't yet available? Send an email to support@modmore.com to let us know which one you need (and when).
+- On/off-site will summarize the integration. When an integration is "on-site", the customer doesn't leave the site. When it is "Off-site", they are redirected to either a hosted payment page (where they can select a payment option and fill in their payment details), or for "direct" integrations they are sent directly to the payment source (e.g. iDeal/Sofort integrations redirect directly to the bank login screen)
+- Distributed with indicates where the gateway can be found. Gateways marked "Commerce" are available in each install. Gateway Packs and third party packages must be installed separately.
+
+| Gateway | Payment options | On/off-site | Distributed with |
+|---|---|---|---|
+| [Adyen](Adyen_hpp) | Lots of global, regional, and local payments | Off-site (hosted payment page) | [Gateway Pack 1](../Modules/Payments/GatewayPack1) |
+| [Authorize.net](Authorize.net) | Credit Cards | On-site (JavaScript) | Commerce |
+| [Braintree](Braintree) | Credit Cards, PayPal | On-site (JavaScript)  | Commerce |
+| [Manual](Manual) | None; marks all transactions as successful. | On-site (server-side) | Commerce |
+| [Mollie](Mollie) | Many, including iDeal, Sofort, Bancontact, Credit Card, and others. | Off-site (direct or hosted payment page) | Commerce |
+| [MultiSafePay](MultiSafePay) | Many, including iDeal, Sofort, Bancontact, credit card (hosted form), and others. | Off-site (direct or hosted payment page) | Commerce |
+| [Paymill](Paymill) | Credit Cards | On-site (JavaScript frame) | Commerce |
+| [PayPal](PayPal) | PayPal account, credit cards | Off-site (direct) | Commerce |
+| [SagePay](SagePay) | Credit Cards | Off-site (hosted payment page) | Commerce |
+| [Stripe](Stripe) | Credit Cards | On-site (JavaScript v2 form) | Commerce |
+
+Need another gateway that isn't yet available? Send an email to support@modmore.com to let us know which one you need (and when). 
 
 ## Implementing other Payment Gateways
 

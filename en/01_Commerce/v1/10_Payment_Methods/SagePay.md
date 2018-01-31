@@ -1,4 +1,4 @@
-[SagePay](https://www.sagepay.co.uk/) is a payment provider offering online, phone and face to face payment products, popular in the United Kingdom. 
+[SagePay](https://www.sagepay.co.uk/) is a payment provider offering online, phone and face to face payment products, popular in the United Kingdom. Commerce uses the "Server integration", which redirects customers to a SagePay hosted payment page.
 
 Added in v0.9.
 
