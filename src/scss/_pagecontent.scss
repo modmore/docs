@@ -22,7 +22,7 @@ h1 {
     margin-top: $paragraph-margin-bottom * 2.5;
 }
 
-p {
+p, td, th {
     margin: 0 0 $paragraph-margin-bottom;
     font-size: rem(15);
     line-height: $paragraph-lineheight;
@@ -37,5 +37,28 @@ a {
     transition: color .2s ease-in-out;
     &:hover {
         color: $secondary-color;
+    }
+}
+
+table {
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    border-spacing: 0;
+
+    tr {
+        border-collapse: collapse;
+    }
+
+    th {
+        text-align: left;
+        white-space: nowrap;
+    }
+    td, th {
+        padding: 0.5em;
+        border-bottom: 1px solid #ddd;
+        vertical-align: top;
+    }
+    th {
+        border-bottom-width: 2px;
     }
 }
