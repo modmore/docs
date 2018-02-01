@@ -94,7 +94,10 @@ There are three field types available for Settings:
 
 When using the Select, Radio or Checkbox options, you will also see a Field Options field where you can define the different options that are available in the drop down. Simply define one value per line, and if you want a different display value use "Displayed Value=placeholder\_value". As of ContentBlocks 1.5, the format "placeholder\_value==Displayed Value" is preferred to be consistent with template variables, and support for "Displayed Value=placeholder\_value" will be removed in 2.0.
 
- It's also possible to populate the field options with a snippet, just add the snippet tag inside the field options and enable the _Process Tags_ checkbox. Make sure the snippet responds with the proper syntax!
+It's also possible to populate the field options with a snippet, just add the snippet tag inside the field options and enable the _Process Tags_ checkbox. There's several pointers:
+- you can use parameters in your snippet call, but make sure the whole call is all on one line or it will be broken down into multiple lines by the parser and won't run
+- don't include a '!' to run the call uncached - this breaks the call and the snippet is run uncached regardless
+- make sure the snippet responds with the proper syntax
 
 [![](https://assets.modmore.com/galleries/inline-418/2015/contentblocks_component_layout_settings_edit.png)](https://assets.modmore.com/galleries/inline-418/2015/contentblocks_component_layout_settings_edit.png)
 
