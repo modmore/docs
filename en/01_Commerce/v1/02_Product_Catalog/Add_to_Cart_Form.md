@@ -98,6 +98,8 @@ The JSON returned by the server will look something like this.
   "success": true, // true or false
   "message": "Added <Name of Product> to your cart.", // a localised success/error message
   "redirect": false, // false or the url to redirect the user to
+  "redirect_method": "GET", // GET or POST. When this is POST, and redirect is a URL, you should create a form and submit it
+  "redirect_data": [], // An array of name => value pairs of data to submit when redirect_method = POST
   "errors": [], // an array of errors
   "output": "... the full html that would have normally been shown ...",
   "order": { // information about the order / cart contents
