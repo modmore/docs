@@ -24,7 +24,7 @@ While editing a layout through the ContentBlocks component, you can tick a check
 ## Example Use Cases
 
 - Complex designs where, instead of simply having multiple columns, you require multiple columns within certain columns.
-- Creating complex components such as Tabs or Accordions. [See Chris, our front-end developer, talk about how to create Tabs with ContentBlocks in his talk at the MODX Weekend 2014.](http://video.modmore.com.local/modx-weekend-2014/sunday-frontend/building-sites-with-contentblocks/)
+- Creating complex components such as Tabs or Accordions. [See Chris, our front-end developer, talk about how to create Tabs with ContentBlocks in his talk at the MODX Weekend 2014.](http://video.modmore.com/modx-weekend-2014/sunday-frontend/building-sites-with-contentblocks/)
 - Hand-crafting beautiful grids of images
 - Recursion, because recursion.
 
