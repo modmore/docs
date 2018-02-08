@@ -350,6 +350,8 @@ then the name of the service has to be provided at the first config-object with 
     commerce_order_message:
         class: comOrderMessage
         primary: id
+        exclude_keys:
+          - created_on
     commerce_transaction:
         class: comTransaction
         primary: id
