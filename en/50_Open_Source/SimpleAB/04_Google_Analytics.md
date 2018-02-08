@@ -32,6 +32,17 @@ For more information about custom variables, please see the official [Google Ana
 
 Please note that the custom variable **will not** be set when using the Admin Preview functionality.
 
+### Update variable template for new Google Analytics analytics.js code
+In system settings, category "SimpleAB" create a new setting:
+
+`simpleab.ga_custom_var_tpl`
+
+With value:
+
+`ga('set', '[[+name]]-[[+test]]', '[[+variation.name:htmlent]]');`
+
+Or whatever you need, based off the [New Google Analytics Variables Documentation](https://developers.google.com/analytics/devguides/collection/analyticsjs/custom-dims-mets)
+
 ## Viewing test data in Google Analytics
 
 To view the data in Google Analytics, browse to Audience > Custom > Custom Variables. The data will show up there. You can add secondary dimensions to get more insight into the users.
