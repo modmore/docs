@@ -1,4 +1,4 @@
-The `comTransaction `object contains information about payments that are made to or from your shop (refunds). 
+The `comTransaction` object contains information about payments that are made to or from your shop (refunds). 
 
 This includes **all payment attempts**, so not just completed transactions, but also new transactions that may still be processing, failed, or that are prepared for the customer to complete or authorise off-site.
 
