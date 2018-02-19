@@ -242,7 +242,7 @@ Set to true to use space instead of margins for Chinese language.
 
 ### Typewriter (`redactor.typewriter`) (tv)
 
-Stress-free typewriter mode. [See more](http://imperavi.com/redactor/examples/typewriter/).
+Stress-free typewriter mode with less clutter.
 
 **Default:**`false`
 
