@@ -1,4 +1,4 @@
-Creating a form is something you can do yourself, as a MODX website maintainer, but Formalicious enables content-manager to als create forms.
+Creating a form is something you can do yourself, as a MODX website maintainer, but Formalicious enables content-manager to also create forms.
 
 The process of setting up a Formalicious-form can be split into 3 steps. Each step has a Tab in the create-form dialog:
 1. Form settings
