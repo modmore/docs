@@ -1,8 +1,10 @@
 The Braintree payment gateway is included in the Commerce core, and does not need a module to be enabled. It does need to be configured as a payment method.
 
-[Braintree](https://www.braintreepayments.com/) is a PayPal subsidiary that allows you to accept payments with Credit/Debit Cards and digital wallets such as PayPal, Apple Pay, Android Pay and Bitcoin. It has no monthly fees, just transaction fees. 
+[Braintree](https://www.braintreepayments.com/) is a PayPal subsidiary that allows you to accept payments with Credit/Debit Cards and digital wallets such as PayPal, Apple Pay, Android Pay and others. It has no monthly fees, just transaction fees. 
 
-Commerce uses the so called _Drop In_ integration, which embeds the payment form into your page with JavaScript and an iframe, allowing you to sidestep PCI compliance horrors. Control over the design of the payment form is fairly limited. 
+Commerce uses the so called _Drop In_ v2 integration, which embeds the payment form into your page with JavaScript and an iframe, allowing you to sidestep PCI compliance horrors. Control over the design of the payment form is fairly limited. 
+
+Note that at the moment the Commerce integration only supports credit cards and PayPal. we intend to update to the newer Drop-In to also support Apple Pay, Google Pay, and others. 
 
 [TOC]
 

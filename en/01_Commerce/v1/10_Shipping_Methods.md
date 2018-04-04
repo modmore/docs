@@ -24,6 +24,10 @@ The shipping method defines its own weight unit which is used in the conversion 
  
 ![](../images/shipping/shipping-weight-specific.jpg)
 
+## TableRates Shipping Method
+
+Installable as a separate (free) module, the [TableRates shipping method](Modules/Shipping/TableRates) allows you to manage more complex customer-location-plus-weight rules as CSV, inspired by the Magento feature with the same name.
+
 ## Custom Shipping Methods
 
 If the provided shipping methods don't provide sufficient flexibility, for example if it has to be integrated with a shipping partner API, it's possible to develop custom shipping methods. [The developer documentation on this topic](Developer/Custom_Shipping_Methods) has instructions and example code. 

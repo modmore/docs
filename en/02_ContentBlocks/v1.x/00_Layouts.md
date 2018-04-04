@@ -35,9 +35,9 @@ Simply click the _Add Layout button_ or right click a layout and choose _Edit La
 
 In the Template tab you define the markup that this layout will use. It is possible to use snippets, chunks and other tags here, but most importantly you will need to reference the columns you define in the _Columns_ tab so that the actual content will be inserted there.
 
-If you create a column with reference "main", your placeholder will be ``. If you created a second column with reference "sidebar", that content will be available with ``. In the example below, we have set up a layout using the Bootstrap grid with two columns col\_1 and col\_2.
+If you create a column with reference "main", your placeholder will be [[+main]]. If you created a second column with reference "sidebar", that content will be available with [[+sidebar]]. In the example below, we have set up a layout using the Bootstrap grid with two columns col\_1 and col\_2.
 
-Any settings you define are also available as placeholder. If you add a setting with a reference of "class", the placeholder in your template will be ``.
+Any settings you define are also available as placeholder. If you add a setting with a reference of "class", the placeholder in your template will be [[+class]].
 
 [![](https://assets.modmore.com/galleries/inline-418/2015/contentblocks_component_layout_template.png)](https://assets.modmore.com/galleries/inline-418/2015/contentblocks_component_layout_template.png)
 
