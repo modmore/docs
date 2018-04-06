@@ -1,6 +1,6 @@
 The Packing Slip module adds an action to the [order shipments](../../Orders/Shipments) grid on the order detail page that will generate, and prompt to print, a packing slip for a shipment.
 
-**Packing Slip is available as a separate, free, package** and is also on [GitHub](https://github.com/modmore/Commerce_PackingSlip). Commerce 0.11 is required to use it.
+**Packing Slip is available as a separate (free) package from the modmore.com package provider** and is also on [GitHub](https://github.com/modmore/Commerce_PackingSlip). Commerce 0.11 is required to use it.
 
 [TOC]
  
