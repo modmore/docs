@@ -1,6 +1,6 @@
 With the User Group Shipment, you can set up delivery types that automatically assign users to a specified user group on payment. This is especially useful when you sell access to a private part of a website.
 
-**Packing Slip is available as a separate (free) package from the modmore.com package provider** and is also on [GitHub](https://github.com/modmore/Commerce_UserGroupShipment). Commerce 0.11 is required to use it.
+**User Group Shipment is available as a separate (free) package from the modmore.com package provider** and is also on [GitHub](https://github.com/modmore/Commerce_UserGroupShipment). Commerce 0.11 is required to use it.
 
 [TOC]
 
