@@ -20,7 +20,7 @@ You can use the Dymo LabelWriter Software to create a label design. Choose the r
 
 When you're happy with your label design choose "Save as template" in the "File" menu. 
 
-Add it in your templates folder with the filename `dymo/address.label`, for example if your theme is set to `withlabel`:
+Add it in your templates folder with the filename `dymo/address.label`, for example if your theme is set to `customlabel`:
 
 ![File structure for the label file: templates > customlabel > dymo > address.label](../../../images/modules/dymo-label-location.jpg)
 
