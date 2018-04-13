@@ -33,5 +33,5 @@ replacing the path with the right path for your PHP install.
 If you'd like to use the [backup] and [restore] commands, you'll also need to add the mysqldump and mysql binaries to your PATH. 
 
 ````
-export PATH=/Applications/MAMP/Library/bin
+export PATH=/Applications/MAMP/Library/bin:$PATH
 ````
