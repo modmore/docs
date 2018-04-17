@@ -42,6 +42,12 @@ In a form, that looks somewhat like this. Replace `123` with the ID of your prod
 
 Note that these two form structures cannot be mixed. The `products[id][quantity]` array format takes precedence over the `product` + `quantity` structure.
 
+## Adding custom fields to the order item
+
+Commerce (as of 0.11) supports simple custom fields using the [Item Data Module](../Modules/Cart/ItemData.md). The module allows you to define what field names to accept from the user, and then you can start sending those fields along with the add to cart request. This is great for user comments or simple product variations that have no impact on stock. 
+
+[See the Item Data Module documentation](../Modules/Cart/ItemData.md) for instructions on how to set that up.
+
 ## AJAX
 
 You can also add products to the cart using AJAX. Just serialize the form values, and POST those values to the cart page with an XMLHttpRequest. Instead of HTML, you'll get JSON back. 

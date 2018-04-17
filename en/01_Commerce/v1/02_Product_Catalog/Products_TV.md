@@ -49,6 +49,7 @@ To show product options as radio buttons, you can use something like this. **Not
 ```` html
 <form method="post" action="[[~[[++commerce.cart_resource]]]]">
     <input type="hidden" name="add_to_cart" value="1">
+    <input type="hidden" name="link" value="[[*id]]">
     
     <fieldset>
     [[!commerce.get_products? 
@@ -91,6 +92,7 @@ Similarly, to offer options in a dropdown, use something like this:
 
 <form method="post" action="[[~[[++commerce.cart_resource]]]]">
     <input type="hidden" name="add_to_cart" value="1">
+    <input type="hidden" name="link" value="[[*id]]">
     
     <div class="product-variation">
         <label for="choose-variation">Product</label>
@@ -123,6 +125,7 @@ If you'd like the customer to add all the products to the cart in a single swoop
 ```` html
 <form method="post" action="[[~[[++commerce.cart_resource]]]]">
     <input type="hidden" name="add_to_cart" value="1">
+    <input type="hidden" name="link" value="[[*id]]">
     
     [[!commerce.get_products? 
         &products=`[[*products]]`
@@ -142,6 +145,15 @@ With the following in chunk `product_all_at_once`:
     <input type="number" name="products[ [[+id]] ][quantity]" value="0">
 </div>
 ````
+
+## Product links and other custom fields
+
+The examples above include a hidden link input that submits the resource ID along with the add-to-cart request. This is meant to be used with the [Item Data Module](../Modules/Cart/ItemData) (introduced in 0.11) with `link` as an allowed field.
+
+It's recommended to include this in your add to cart form when using the products tv, so that your customer can return to the product resource they added the product from. Contrary to [resource products](Resource), products in a Product TV don't natively know what resource they are used on, so lack that link. 
+
+To add additional custom data, view the [Item Data Module documentation](../Modules/Cart/ItemData).
+
 
 ## Tip: use Form Customization to move the TV
 
