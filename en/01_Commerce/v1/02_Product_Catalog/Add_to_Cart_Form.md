@@ -150,3 +150,13 @@ The JSON returned by the server will look something like this.
   }
 }
 ````
+
+### Other AJAX Cart actions
+
+The following cart actions are available and require the mentioned data
+
+- Add product to cart: `add_to_cart=1` + `products[123]['quantity']=321` or `product=123` and `quantity=321`.
+- Remove item: `remove_item=123` where `123` is the ID of the order item
+- Update cart quantities: `update_cart=1` + object `items[order_item_id] = quantity` 
+- Continue to the checkout (persist order to database and show account step): `checkout=1`
+
