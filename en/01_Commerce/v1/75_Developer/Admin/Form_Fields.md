@@ -38,6 +38,7 @@ $field = new \modmore\Commerce\Admin\Widgets\Form\TextField($this->commerce, [
 - **Password** (`modmore\Commerce\Admin\Widgets\Form\PasswordField`), a simple field that accepts any text value while masking the value from the user. 
 - **Section** (`modmore\Commerce\Admin\Widgets\Form\SectionField`), a separator that can be used for sectioning a form. The `label` value is shown in a heading.
 - **Select** (`modmore\Commerce\Admin\Widgets\Form\SelectField`), a dropdown select field. Options are provided in the `options` option in the form of an array. Each element in the array needs a `value` and `label` key.
+- **SelectMultiple** (`modmore\Commerce\Admin\Widgets\Form\SelectMultipleField`), a dropdown multi-select field. Options are provided in the `options` option in the form of an array. Each element in the array needs a `value` and `label` key. Returns a comma seperated list of values. (available in v0.11).
 - **Textarea** (`modmore\Commerce\Admin\Widgets\Form\TextareaField`), a simple textarea field for longer pieces of text.
 - **Text** (`modmore\Commerce\Admin\Widgets\Form\TextField`), a simple text field. 
 
