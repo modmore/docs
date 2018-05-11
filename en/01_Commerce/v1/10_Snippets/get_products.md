@@ -15,6 +15,7 @@ Added in 0.4.
 - `&products`: the IDs of the products to iterate over. This can be comma separated (`123,321`) or separated by two pipes (`123||321`) like template variables store listbox values.
 - `&tpl`: can be set to the name of a chunk. The product information (without prefix) will be parsed through that chunk. If not provided, the product information will be dumped to screen in a `<pre>`. Placeholders include all product fields, as well as `[[+total_products]]` and `[[+idx]]` (0-based). 
 - `&sortby`: name of a field to sort the products by. For example `name` or `price`. By default, this will use the same order as the products were provided in. (**Note**: due to a bug in 2.5.2, the default may not return products unless you specify a different `&sortby`. Update to 2.5.4.)
+- `&separator`: string to use to join the product records together, defaults to a newline character. (new in 0.11)
 
 ## Showing product variations
 

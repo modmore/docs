@@ -1,8 +1,11 @@
-Delivery types were first added in v0.8 and are expected to be extended during the Commerce beta.
+Delivery types are used to group together products into [Order Shipments](Orders/Shipments), each of which gets its own shipping method and tracking reference.
+
+Delivery types were first added in v0.8 and exended in 0.11. 
 
 [TOC]
 
 ## What are Delivery Types?
+
 Delivery Types are used in both [Shipping Methods](Shipping_Methods) and [Products](Products) to determine what shipping methods are available for an order containing certain products. 
 
 During the checkout, Commerce automatically creates one or more [Order Shipments](Orders/Shipments) to group the purchased products by the delivery type the products are configured to use.
@@ -25,9 +28,17 @@ The different products the delivery types apply to are also shown, and of course
 
 Delivery types are managed in the Commerce dashboard under Configuration > Delivery Types. New types can be added, and existing ones can be edited and deleted (soft delete).
 
-## Custom Delivery Types
+## Shipping step options
 
-Aside from creating custom instances, it's also possible to extend the `comDeliveryType` class with a derivative to add more custom logic, however currently (v0.8), that is not yet very useful. Later in the Commerce beta, we will be adding more functionality to the delivery types to allow automatic delivery of digital goods like ebooks and other integrations.
+Each delivery type has an option on what to do with the shipping step in the checkout (since v0.11).
+ 
+- When set to "depends" (the default), the shipping step is only shown if there are multiple available shipping methods. 
+- When set to "never", Commerce always chooses the first available shipping method and does not show the shipping step, so the customer cannot change the method.
+- When set to "always", the shippping step will always be shown in the checkout steps, even if there is only option. 
+
+## Order Shipments 
+
+On each delivery type, you can set the order shipment type to use. This allows you to automate fulfillment based on delivery type. [Learn more about Order Shipments](Orders/Shipments)
 
 ## Connecting Shipping Methods and Delivery Types
 
