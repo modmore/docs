@@ -9,10 +9,10 @@ Added in v0.7.
 ## Usage
 
 ```` html
-[[commerce.get_cart? &tpl=`name-of-a-chunk`]]
-[[commerce.get_cart? &tpl=`name-of-a-chunk` &emptyTpl=`other-chunk`]]
-[[commerce.get_cart? &toPlaceholders=`cart.`]]
-[[commerce.get_cart? &field=`total_formatted`]]
+[[!commerce.get_cart? &tpl=`name-of-a-chunk`]]
+[[!commerce.get_cart? &tpl=`name-of-a-chunk` &emptyTpl=`other-chunk`]]
+[[!commerce.get_cart? &toPlaceholders=`cart.`]]
+[[!commerce.get_cart? &field=`total_formatted`]]
 ````
 
 ## Properties
