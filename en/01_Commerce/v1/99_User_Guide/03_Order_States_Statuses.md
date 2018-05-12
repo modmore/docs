@@ -30,7 +30,7 @@ A typical status workflow could be, for example:
 
 In this example, the Draft _status_ matches the Draft _state_, and when payment is received Commerce automatically sets the order to the _Processing_ state with the _Received_ status, notifying the merchant and the customer about the new order.
 
-Then when you or your warehouse stats working on the order, they change the status to _Processing_. When the package is packaged, they change the status to _Ready for shipping_ which may automatically create the shipping label for your carrier and send the customer their tracking code. 
+Then when you or your warehouse starts working on the order, they change the status to _Processing_. When the package is packaged, they change the status to _Ready for shipping_ which may automatically create the shipping label for your carrier and send the customer their tracking code. 
 
 Finally, when the package has been picked up, the status is changed to _Shipped_, and the _state_ is changed to _Completed_. 
 
