@@ -2,6 +2,8 @@ Custom Fields were introduced in MoreGallery 1.4 and allow you to add additional
 
 To manage the custom fields you'll need to write some JSON and store that in the `moregallery.custom_fields` system setting (or context setting). Additionally, it's also possible to set up custom fields per MoreGallery resource on the Settings tab.
 
+Note that these custom fields are not built in a way that they are easily searchable or filterable. If it's important that you can retrieve a subset of images with only a specific value, you may want to consider using the built-in tagging instead.
+
 [TOC]
 
 ## Example Custom Fields Configuration
