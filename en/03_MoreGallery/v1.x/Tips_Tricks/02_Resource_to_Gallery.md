@@ -8,4 +8,4 @@ When you open the resource in normal view by clicking it in the tree, you will s
 
 ![Selecting gallery resource](../images/gallery-quick-update.png)
 
-The icon of the resource will then change to a gallery icon: ![](https://www.modmore.com/assets/uploads/2013/morGallery_scree.JPG)
+The icon of the resource will then change to a gallery icon: ![](../images/gallery-icon.png)
