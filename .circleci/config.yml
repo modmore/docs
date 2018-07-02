@@ -9,9 +9,6 @@ jobs:
           name: Fix permissions
           command: 'sudo chown -R circleci:circleci /var/www' # https://discuss.circleci.com/t/permission-denied-during-checkout-phase/13665
       - checkout
-#      - run:
-#          name: Install PHP extensions
-#          command: 'sudo docker-php-ext-install pdo pdo_mysql'
       - run:
           name: Set PHP Timezone
           command: 'echo -e "[Date]\ndate.timezone = UTC" | sudo tee /usr/local/etc/php/php.ini > /dev/null'
