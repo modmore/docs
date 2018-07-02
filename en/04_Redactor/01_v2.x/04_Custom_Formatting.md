@@ -17,6 +17,8 @@ With custom formatting options, you can add custom styles and formats to the sta
 
 When this is added to the `redactor.formattingAdd` setting, it will add one new option to the formatting dropdown titled _Blue Styled Block_. When chosen it will add or update the `p` (paragraph) tag, with a class of `blue-styled` applied.
 
+Note that Redactor will use the tag plus the class as a unique identifier for the formatting, so make sure that each option has a unique combination of tag and class. 
+
 To add more formatting options, just add more elements:
 
 

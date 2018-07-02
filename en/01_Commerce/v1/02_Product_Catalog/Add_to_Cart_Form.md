@@ -56,7 +56,7 @@ For example the following jQuery snippet can be used to progressively enhance ad
 
 ```` html
 <script type="text/javascript">
-$(document).on('ready', function() {
+$(function() {
     // Grab all forms with a class of `add-to-cart`
     $('form.add-to-cart').on('submit', function(e) {
         // Prevent regular submit

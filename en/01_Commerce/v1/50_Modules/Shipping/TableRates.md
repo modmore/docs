@@ -21,7 +21,7 @@ Where in Magento you upload the file containing the shipping fees, for Commerce 
 
 The CSV data contains 5 values per line. These are:
 
-- The country code. Commerce uses 2-character country codes, however for compatibility with Magento generators and data files, Commerce also suppors the 3-character country codes here.
+- The country code. Commerce uses 2-character country codes, however for compatibility with Magento generators and data files, Commerce also supports the 3-character country codes here.
 - The state/region.
 - The zip code.
 - The condition value to compare against. For the "Weight to destination" condition, this is the shipment weight in gram. 
