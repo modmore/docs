@@ -32,15 +32,26 @@ $field = new \modmore\Commerce\Admin\Widgets\Form\TextField($this->commerce, [
 ### Available Field Types
 
 - **Checkbox** (`modmore\Commerce\Admin\Widgets\Form\CheckboxField`), a simple true-or-false checkbox. 
-- **Class** (`modmore\Commerce\Admin\Widgets\Form\ClassField`), a field that acts as either a Select or Hidden field. This field accepts a `parentClass` option (which contains the name of an xPDO class), and it will then prepare a select field with the available derivative classes. For example setting `'parentClass' => 'comShippingMethod'` will show a select with the available shipping methods. If only a single value is available, the field hides itself.  
+- **Country** (`modmore\Commerce\Admin\Widgets\Form\CountryField`), a dropdown select field displaying a list of countries.
+- **CountryPrice** (`modmore\Commerce\Admin\Widgets\Form\CountryPriceField`), a field for inputting a country and a price for the country.
+- **Class** (`modmore\Commerce\Admin\Widgets\Form\ClassField`), a field that acts as either a Select or Hidden field. This field accepts a `parentClass` option (which contains the name of an xPDO class), and it will then prepare a select field with the available derivative classes. For example setting `'parentClass' => 'comShippingMethod'` will show a select with the available shipping methods. If only a single value is available, the field hides itself.
+- **Date** (`modmore\Commerce\Admin\Widgets\Form\DateField`), a field for entering a date.
+- **DateTime** (`modmore\Commerce\Admin\Widgets\Form\DateTimeField`), a field for entering a date and a time.
+- **DeliveryType** (`modmore\Commerce\Admin\Widgets\Form\DeliveryTypeField`), a dropdown select field containing available delivery types.
+- **Description** (`modmore\Commerce\Admin\Widgets\Form\DescriptionField`), a field that displays a label and description.
 - **Hidden** (`modmore\Commerce\Admin\Widgets\Form\HiddenField`), a simple hidden field.
+- **Image** (`modmore\Commerce\Admin\Widgets\Form\ImageField`), an image field allowing selection from a media source or by entering a URL.
 - **Number** (`modmore\Commerce\Admin\Widgets\Form\NumberField`), a simple field that only accepts numeric values. 
-- **Password** (`modmore\Commerce\Admin\Widgets\Form\PasswordField`), a simple field that accepts any text value while masking the value from the user. 
+- **Password** (`modmore\Commerce\Admin\Widgets\Form\PasswordField`), a simple field that accepts any text value while masking the value from the user.
+- **ProductQuantity** (`modmore\Commerce\Admin\Widgets\Form\ProductQuantityField`), a field for inputting an existing product from a select field and quantity for the product.
 - **Section** (`modmore\Commerce\Admin\Widgets\Form\SectionField`), a separator that can be used for sectioning a form. The `label` value is shown in a heading.
 - **Select** (`modmore\Commerce\Admin\Widgets\Form\SelectField`), a dropdown select field. Options are provided in the `options` option in the form of an array. Each element in the array needs a `value` and `label` key.
-- **SelectMultiple** (`modmore\Commerce\Admin\Widgets\Form\SelectMultipleField`), a dropdown multi-select field. Options are provided in the `options` option in the form of an array. Each element in the array needs a `value` and `label` key. Returns a comma seperated list of values. (available in v0.11).
+- **SelectMultiple** (`modmore\Commerce\Admin\Widgets\Form\SelectMultipleField`), a dropdown multi-select field. Options are provided in the `options` option in the form of an array. Each element in the array needs a `value` and `label` key. Returns a comma seperated list of values.
+- **TaxRuleCondition** (`modmore\Commerce\Admin\Widgets\Form\TaxRuleConditionField`), a field for inputting a country and a condition to apply to the country.
 - **Textarea** (`modmore\Commerce\Admin\Widgets\Form\TextareaField`), a simple textarea field for longer pieces of text.
-- **Text** (`modmore\Commerce\Admin\Widgets\Form\TextField`), a simple text field. 
+- **Text** (`modmore\Commerce\Admin\Widgets\Form\TextField`), a simple text field.
+- **WeightPrice** (`modmore\Commerce\Admin\Widgets\Form\WeightPriceField`), a field for inputting a weight from and weight until with a price.
+- **WeightUnit** (`modmore\Commerce\Admin\Widgets\Form\WeightUnitField`), a field for inputting a weight unit.
 
 ### Available Options
 
