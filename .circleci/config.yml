@@ -1,0 +1,23 @@
+version: 2
+jobs:
+  build:
+    working_directory: /var/www/html
+    docker:
+      - image: circleci/php:7-apache-node-browsers
+    steps:
+      - checkout
+#      - run:
+#          name: Install PHP extensions
+#          command: 'sudo docker-php-ext-install pdo pdo_mysql'
+      - run:
+          name: Set PHP Timezone
+          command: 'echo -e "[Date]\ndate.timezone = UTC" | sudo tee /usr/local/etc/php/php.ini > /dev/null'
+      - run:
+          name: Install Package Dependencies # Cacheable by checksum of lock
+          command: 'composer install --no-dev --prefer-dist --no-interaction'
+      - run:
+          name: Create empty docs zip
+          command: 'touch modmore-documentation.zip'
+      - run:
+          name: Building
+          command: './build.sh'
