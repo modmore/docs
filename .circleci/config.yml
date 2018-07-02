@@ -5,6 +5,9 @@ jobs:
     docker:
       - image: circleci/php:7-apache-node-browsers
     steps:
+      - run:
+          name: Fix permissions
+          command: 'sudo chown -R circleci:circleci /var/www' # https://discuss.circleci.com/t/permission-denied-during-checkout-phase/13665
       - checkout
 #      - run:
 #          name: Install PHP extensions
