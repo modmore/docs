@@ -10,34 +10,34 @@ Whenever we talk about the Commerce Dashboard, we mean Extras &raquo; Commerce i
 
 ## Choosing Modules to use
 
-One of the first things you should do is decide whatmodules you want to use. In Commerce, many features are implemented as optional modules that can be enabled/disabled at will, and may contain additional configuration options.
+One of the first things you should do is decide which modules you want to use. In Commerce, many features are implemented as optional modules that can be enabled/disabled at will, and may contain additional configuration options.
 
 The majority of modules ship with the Commerce core, but [additional extensions](https://www.modmore.com/commerce/extensions/) are also available from modmore or third parties.
  
-In the Commerce Dashboard, navigate to Configuration &raquo; Modules to take a look at the modules that are available. 
+In the Commerce Dashboard, navigate to Configuration &raquo; Modules to take a look at the available modules. 
 
 ![A collection of modules that are installed with Commerce](../../images/gettingstarted/modules.jpg)
 
-To enable and configure a module, click its name in the list. You can enable modules in either test, live, or both modes by checking the appropriate boxes. 
+To enable and configure a module, click its name in the list. You can enable modules in either test mode, live mode, or both modes by checking the appropriate boxes. 
 
-Which modules you'll use depend on the type of shop and how you want to run things. We'll highlight a couple here. 
+Which modules you use depends on the type of shop and how the shop will be run. We'll highlight a couple of modules here. 
 
 Note that the names are translated, so if you use the manager in a different language than English they will be named differently and may be in a different order. 
 
 ### Customer, Address, and Shipping related
 
-We **strongly recommended** to enable the [Basic Address Validation](../50_Modules/Address_Validation/Basic) module. This module ensures that address information is filled in before the customer can move along in the checkout. In the module configuration you can enter the fields that should be required, depending on your locality, the `state` field may be best taken out. 
+We **strongly recommended** to enable the [Basic Address Validation](../50_Modules/Address_Validation/Basic) module. This module ensures that address information is filled in before the customer can move along in the checkout. In the module configuration, you can enter the fields that should be required depending on your locality. You may want to remove the `state` field. 
 
-You should also enable either [Autofill GeoIP](../50_Modules/Cart/AutoFillGeoIP) or the [Default Address](../50_Modules/Cart/DefaultAddress) module. These modules will set an expected address on the order before the customer gets to the address step, which is used by your taxes and shipping configuration to determine what rates and options to show in the cart. 
+You should also enable either the [Autofill GeoIP](../50_Modules/Cart/AutoFillGeoIP) module or the [Default Address](../50_Modules/Cart/DefaultAddress) module. These modules will set an expected address on the order before the customer gets to the address step. The address is used by your taxes and shipping configuration to determine what rates and options to show in the cart. 
 
-- The Default Address module is useful if you serve a distinct demographic; for example if you only (or predominantly) ship to one country or state, you can configure the Default Address module to use that by default, which should be accurate for the majority of your customers.
-- If your customer-base is more spread out, the Autofill GeoIP module will automatically geolocate the customer by their IP address and use the country (and optionally state) instead. This uses the [ipinfo.io](https://ipinfo.io/) service (free for up to 1000 lookups per day). 
+- The Default Address module is useful if you serve a distinct demographic. For example, if you only (or predominantly) ship to one country or state, you can configure the Default Address module to use that by default, which should be accurate for the majority of your customers.
+- If your customer-base is more spread out, the Autofill GeoIP module will automatically geolocate the customer by their IP address and use the country (and optionally the state) instead. This uses the [ipinfo.io](https://ipinfo.io/) service (free for up to 1000 lookups per day). 
 
-If you only sell in specific countries, the [Country Validation](../50_Modules/Address_Validation/Country) module is useful to restrict that.
+If you only sell in specific countries, the [Country Validation](../50_Modules/Address_Validation/Country) module is useful to restrict country selection.
 
 ### Discounts
 
-You'll likely want to enable the [Coupons](../50_Modules/Discounts/Coupons) module to get access to coupon codes. After enabling the module, refresh the page to see the Coupons tab being added to the top navigation.
+You'll likely want to enable the [Coupons](../50_Modules/Discounts/Coupons) module to get access to coupon codes. After enabling the module, refresh the page to see the Coupons tab added to the top navigation.
 
 ### Taxes
 
@@ -48,7 +48,7 @@ We'll look at configuring the actual [tax rates](../Taxes) in the next sections.
 
 ### Products & Cart
 
-Enable [CombineProducts](../50_Modules/Cart/CombineProducts) if you want multiple items with the same product to be combined into a single item in the cart. Note that this is not compatible with [ItemData](../50_Modules/Cart/ItemData) which we'll discuss later.
+Enable [CombineProducts](../50_Modules/Cart/CombineProducts) if you want multiple items with the same product to be combined into a single item in the cart. Note that this is not compatible with [ItemData](../50_Modules/Cart/ItemData), which we'll discuss later.
 
 ## Setting up Statuses
 
@@ -110,7 +110,7 @@ Click Add Tax Rule. Give it a priority of 1, set "Field name" to "country", and 
 
 When you save the tax rule, a new section "Rate Provider Options" will be shown. Enter the tax rate you want to charge, for example 21, give it a Tax Key like "STANDARD-NL", and a name that is shown to customers like "21% VAT" or "Standard VAT". Save again. 
 
-(If you want to add more tax rules, repeat this process. The priority determines in what order the tax rules will be evaluated, from top-to-bottom in the grid, so set the conditions so that the lowest priority number is the most specific, and eventually fall back to an "Always" condition with the highest priority number.)
+(If you want to add more tax rules, repeat this process. The priority determines the order that the tax rules will be evaluated from top-to-bottom in the grid, so set the conditions so that the lowest priority number is the most specific, and eventually fall back to an "Always" condition with the highest priority number.)
 
 ## Some final System Settings
 
