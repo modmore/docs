@@ -31,7 +31,7 @@ The mapping key for the delivery address is done the same way, but with `&delive
 [[!FormIt?
     ...
     &orderAddress=`address1:street,address2:number`
-    &deliverAddress=`firstname:delivery_firstname,lastname:delivery_lastname,address1:delivery_street,address2:delivery_number,...`
+    &deliveryAddress=`firstname:delivery_firstname,lastname:delivery_lastname,address1:delivery_street,address2:delivery_number,...`
     ...
 ]]
 ````   
