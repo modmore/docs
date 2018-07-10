@@ -15,22 +15,28 @@ $_lang['my_class'] = 'foobar';
 ````
 The entries (`my_richtext_field` and `my_class` in the example above) need to match the text you want to replace. This can be one of the following:
 
-Field names (both for display in the content canvas, as well as the "Add Content" modal)
-Field descriptions (in the Add Content modal tooltip)
-Layout names (both for display in the content canvas, as well as the "Add Layout" modal)
-Layout descriptions (in the Add Layout modal tooltip)
-Field and Layout Settings name (for modal and exposed settings)
-Field and Layout Setting Options display values (for modal and exposed settings)
+- Field names (both for display in the content canvas, as well as the "Add Content" modal)
+- Field descriptions (in the Add Content modal tooltip)
+- Layout names (both for display in the content canvas, as well as the "Add Layout" modal)
+- Layout descriptions (in the Add Layout modal tooltip)
+- Field and Layout Settings name (for modal and exposed settings)
+- Field and Layout Setting Options display values (for modal and exposed settings)
+
 For example, if you named a field "Headline", your lexicon entry would be `$_lang['Headline'] = 'Headline translation';
 
-##Loading the Lexicon Topic
+## Loading the Lexicon Topic
+
 To use your lexicon keys, it is important to load the lexicon topic into the manager. There are several ways to do that, but one way we will cover here is by using a small plugin that runs independently of ContentBlocks.
 
 The plugin will fire on the **OnDocFormRender** event, and contains the following:
+
 ```` PHP
 <?php
 $modx->controller->addLexiconTopic('mynamespace:default');
 ````
-Yeah, just that one line. Replace `mynamespace` with the name of your namespace, and `default` with the name of your lexicon topic (file).
 
-To check if it's working, open up the source view for the resource update page, and look for the line that loads the lang.js.php with a whole bunch of topics separated by commas. It looks something like this: <`script src="/connectors/lang.js.php?ctx=mgr&topic=topmenu,file,resource...">` Your lexicon entry should be in that list. If it isn't, double check if you enabled the **OnDocFormRender** event, or try clearing the cache and refreshing.
+Just that one line. Replace `mynamespace` with the name of your namespace, and `default` with the name of your lexicon topic (file).
+
+To check if it's working, open up the source view for the resource update page, and look for the line that loads the lang.js.php with a whole bunch of topics separated by commas. It looks something like this: <`script src="/connectors/lang.js.php?ctx=mgr&topic=topmenu,file,resource...">` Your lexicon entry should be in that list.
+
+If it isn't, double check if you enabled the **OnDocFormRender** event, or try clearing the cache and refreshing.
