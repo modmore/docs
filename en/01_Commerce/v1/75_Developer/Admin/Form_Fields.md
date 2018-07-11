@@ -41,7 +41,6 @@ $field = new \modmore\Commerce\Admin\Widgets\Form\TextField($this->commerce, [
 - **Description** (`modmore\Commerce\Admin\Widgets\Form\DescriptionField`), a field that displays a label and description.
 - **Hidden** (`modmore\Commerce\Admin\Widgets\Form\HiddenField`), a simple hidden field.
 - **Image** (`modmore\Commerce\Admin\Widgets\Form\ImageField`), an image field allowing selection from a media source or by entering a URL.
-- **Image** (`modmore\Commerce\Admin\Widgets\Form\ImageField`), an image field allowing selection from a media source or by entering a URL.
 - **LengthUnit** (`modmore\Commerce\Admin\Widgets\Form\LengthUnitField`), a field for inputting length units. Configurable with the "commerce.allowed_length_units" option and accepts all [PHP Units of Measure units](https://github.com/PhpUnitsOfMeasure/php-units-of-measure/blob/master/source/PhysicalQuantity/Mass.php). Defaults to mm,cm,m,in,ft (added in 0.11.1).
 - **Number** (`modmore\Commerce\Admin\Widgets\Form\NumberField`), a simple field that only accepts numeric values. 
 - **Password** (`modmore\Commerce\Admin\Widgets\Form\PasswordField`), a simple field that accepts any text value while masking the value from the user.
