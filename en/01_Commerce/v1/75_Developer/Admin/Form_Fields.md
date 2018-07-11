@@ -41,7 +41,7 @@ $field = new \modmore\Commerce\Admin\Widgets\Form\TextField($this->commerce, [
 - **Description** (`modmore\Commerce\Admin\Widgets\Form\DescriptionField`), a field that displays a label and description.
 - **Hidden** (`modmore\Commerce\Admin\Widgets\Form\HiddenField`), a simple hidden field.
 - **Image** (`modmore\Commerce\Admin\Widgets\Form\ImageField`), an image field allowing selection from a media source or by entering a URL.
-- **LengthUnit** (`modmore\Commerce\Admin\Widgets\Form\LengthUnitField`), a field for inputting length units. Configurable with the "commerce.allowed_length_units" option and accepts all [PHP Units of Measure units](https://github.com/PhpUnitsOfMeasure/php-units-of-measure/blob/master/source/PhysicalQuantity/Mass.php). Defaults to mm,cm,m,in,ft (added in 0.11.1).
+- **LengthUnit** (`modmore\Commerce\Admin\Widgets\Form\LengthUnitField`), a field for inputting length units. Configurable with the "commerce.allowed_length_units" option and accepts all [PHP Units of Measure units](https://github.com/PhpUnitsOfMeasure/php-units-of-measure/blob/master/source/PhysicalQuantity/Length.php). Defaults to mm,cm,m,in,ft (added in 0.11.1).
 - **Number** (`modmore\Commerce\Admin\Widgets\Form\NumberField`), a simple field that only accepts numeric values. 
 - **Password** (`modmore\Commerce\Admin\Widgets\Form\PasswordField`), a simple field that accepts any text value while masking the value from the user.
 - **ProductQuantity** (`modmore\Commerce\Admin\Widgets\Form\ProductQuantityField`), a field for inputting an existing product from a select field and quantity for the product.
@@ -53,7 +53,7 @@ $field = new \modmore\Commerce\Admin\Widgets\Form\TextField($this->commerce, [
 - **Textarea** (`modmore\Commerce\Admin\Widgets\Form\TextareaField`), a simple textarea field for longer pieces of text.
 - **Text** (`modmore\Commerce\Admin\Widgets\Form\TextField`), a simple text field.
 - **WeightPrice** (`modmore\Commerce\Admin\Widgets\Form\WeightPriceField`), a field for inputting a weight from and weight until with a price.
-- **WeightUnit** (`modmore\Commerce\Admin\Widgets\Form\WeightUnitField`), a field for inputting a weight unit. Configurable with the "commerce.allowed_weight_units" option and accepts all [PHP Units of Measure units](https://github.com/PhpUnitsOfMeasure/php-units-of-measure/blob/master/source/PhysicalQuantity/Length.php). Defaults to g,kg,t,lb,oz,st.
+- **WeightUnit** (`modmore\Commerce\Admin\Widgets\Form\WeightUnitField`), a field for inputting a weight unit. Configurable with the "commerce.allowed_weight_units" option and accepts all [PHP Units of Measure units](https://github.com/PhpUnitsOfMeasure/php-units-of-measure/blob/master/source/PhysicalQuantity/Mass.php). Defaults to g,kg,t,lb,oz,st.
 
 ### Available Options
 
