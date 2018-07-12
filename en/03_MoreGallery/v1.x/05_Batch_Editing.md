@@ -4,7 +4,7 @@ Start by ticking the checkbox shown in the top right of images. This can also be
 
 The batch actions toolbar looks like this:
 
-![Batch actions Toolbar](images/bulk-toolbar.jpg)
+![Batch actions Toolbar](images/batchedittags.jpg)
 
 From left to right, these are the provided functions in the toolbar.
 
@@ -12,6 +12,7 @@ From left to right, these are the provided functions in the toolbar.
 - Deselect all images (which also hides the bulk toolbar)
 - Mark all selected images as active/visible
 - Mark all selected images as inactive/hidden
+- Search for tags to add or remove from the selected images (new in v1.8)
 - Remove all selected images
 
 Keyboard users can tab through these options and execute them with `space`.
