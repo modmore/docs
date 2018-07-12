@@ -16,6 +16,11 @@ Both input types work the same aside from the addition of the title field.
 - Images, obviously!
 - Image-based icons in a call to action, especially useful when combined with other fields in a [Repeater](Repeater). 
 
+## Cropping
+
+As of v1.8, the Image field supports cropping. This is configured on the field properties. [Read more about the image cropper in ContentBlocks](../Cropping)
+
+
 ## Related Settings
 
 See the [Configuration](../Configuration) documentation for a description of the available settings. 
