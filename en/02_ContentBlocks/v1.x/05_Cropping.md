@@ -22,6 +22,9 @@ The name is displayed to the user when editing an image, and also used for the p
 
 ![Example of the image cropper](img/image-cropper.jpg)
 
+When hovering over an inserted image in the canvas, you can also see a preview of each crop. Clicking those will directly edit that specific crop in the cropper.
+
+![Previewing crops on an image field](img/crops-preview.gif)
 
 Options are separated by a comma (`,`) and are specified in the `key=value` format. There are currently four supported options:
 
