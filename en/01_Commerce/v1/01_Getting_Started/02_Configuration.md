@@ -35,6 +35,8 @@ You should also enable either the [Autofill GeoIP](../50_Modules/Cart/AutoFillGe
 
 If you only sell in specific countries, the [Country Validation](../50_Modules/Address_Validation/Country) module is useful to restrict country selection.
 
+If you require the customer to accept terms and conditions before initiating a payment, use the [Accept Terms](../Modules/Cart/AcceptTerms) modules.
+
 ### Discounts
 
 You'll likely want to enable the [Coupons](../50_Modules/Discounts/Coupons) module to get access to coupon codes. After enabling the module, refresh the page to see the Coupons tab added to the top navigation.

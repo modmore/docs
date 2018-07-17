@@ -19,3 +19,5 @@ Added in v0.9.
  - `&loadTransactions`: 1 or 0 to indicate if transactions should be loaded. If you're not showing transactions, you can gain a bit of speed by setting this to 0. Defaults to 1.
  - `&loadBillingAddress`: 1 or 0 to indicate if the billing address should be loaded. If you're not showing the billing address, you can gain a bit of speed by setting this to 0. Defaults to 1.
  - `&loadShippingAddress`: 1 or 0 to indicate if the shipping address should be loaded. If you're not showing the shipping address, you can gain a bit of speed by setting this to 0. Defaults to 1.
+ - `&loadShipments`: 1 or 0 to indicate if the [order shipments](../Orders/Shipments) should be loaded into a `shipments` array. The shipment also contains the chosen shipping method. Defaults to 1. Added in v0.11.1.
+ 
