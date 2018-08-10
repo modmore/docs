@@ -30,7 +30,7 @@ class AddOrderButton extends BaseModule
 
     public function initialize(EventDispatcher $dispatcher)
     {
-        $dispatcher->addListener(\Commerce::EVENT_ORDER_GET_ACTIONS, array($this, 'addButton'));
+        $dispatcher->addListener(\Commerce::EVENT_DASHBOARD_ORDER_ACTIONS, array($this, 'addButton'));
     }
 
     public function addButton(OrderActions $event)
