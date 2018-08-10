@@ -44,7 +44,7 @@ If only one crop is specified, then the left sidebar to switch between crops wil
 
 You'll probably want to display the crops in your front-end once they're generated. This can be done by using some new placeholders that are available in the template for your image field.
 
-The crop placeholders follow the format: `[[+crops.{CROP_NAME}.{CROP_VALUE_KEY}]]` where `{CROP_NAME}` is the name of the crop as it was defined in the `moregallery.crops` system setting (for example _small_, _medium_ or _large_ in the earlier example), and `{CROP_VALUE_KEY}` is one of the below.
+The crop placeholders follow the format: `[[+crops.{CROP_NAME}.{CROP_VALUE_KEY}]]` where `{CROP_NAME}` is the name of the crop as it was defined in the Crops property on your field (for example _small_, _medium_ or _large_ in the earlier example), and `{CROP_VALUE_KEY}` is one of the below.
 
 - `url`: A fully qualified URL to the cropped image. For example `/assets/crops/small.ao451jds.filename.png`. 
 - `targetWidth`: the width of the cropped image in px.
@@ -56,3 +56,7 @@ The crop placeholders follow the format: `[[+crops.{CROP_NAME}.{CROP_VALUE_KEY}]
 So for example if your crop was called small, you could get the url for the cropped image with `[[+crops.small.url]]`, its width with `[[+crops.small.targetWidth]]` and the height with `[[+crops.small.targetHeight]]`.
 
 Using these placeholders, you can add your crops in the way you'd like them to appear in your imageTpl chunk! Perhaps using the picture element or simply to highlight different areas of an image.
+
+## Making crops more intuitive
+
+The default cropper accounts for multiple crops to be defined. If you only want to use one crop to act as the thumbnail, you can enable the `Open cropper automatically` field property and set the `Use crop for thumbnail` property to the key of your crop. That way, the crop will be used instead of the dynamically generated thumbnail in the manager, and the cropper will also show as soon as an image is added, prompting the user to select the part of the image that should be shown.
