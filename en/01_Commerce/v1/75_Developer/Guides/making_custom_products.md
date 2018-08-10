@@ -1,30 +1,32 @@
 # Making Custom Products
 
-Commerce provides commonly used fields out the of box for products, however, chances are you will want to add more fields to suit how you manage products on your store. Due to its extendable nature, Commerce makes it a breeze to create custom products and custom product type fields to get you set your custom products set up in no time! In this guide we are going to make a simple custom product called Doodles that adds a shirt size select field and shirt color text field to the product form. You can see the [completed module on github](https://github.com/modmore/Commerce_DoodleProduct/).
+Commerce provides commonly used fields out the of box for products, however, chances are you will want to add more fields to suit how you manage products on your store. Due to its extendable nature, Commerce makes it a breeze to create custom products and custom product type fields to get you set your custom products set up in no time! 
+
+In this guide we are going to make a simple custom product called Doodles that adds a shirt size select field and shirt color text field to the product form. You can see the [completed module on github](https://github.com/modmore/Commerce_DoodleProduct/).
 
 Before making custom products it helps to have a basic idea of how MODX extras are made. The concepts of making a Commerce module and a MODX extra are very similar.
 
 ## Setup
 
-The easiest way to get started with any module is to clone the module skeleton through composer. Composer will automatically set up your workspace for making your custom product. If you do not already have composer, [read the introduction here](https://getcomposer.org/doc/00-intro.md) for how to install it on your system.
+The easiest way to get started with any module is to [clone the module skeleton through composer](https://github.com/modmore/Commerce_NPBProduct). Composer will automatically set up your workspace for making your custom product. If you do not already have composer, [read the introduction here](https://getcomposer.org/doc/00-intro.md) for how to install it on your system.
 
-You will need to create a subdirectory with the name you want your custom product to be called. This name will be used for the file structure and default namespaces in your project. For this example, we are going to use "doodleproduct". Using composer, you will create the project using the package modmore/moduleskeleton and put it into your directory.
+You will need to create a subdirectory with the name you want your custom product to be called. This name will be used for the file structure and default namespaces in your project. For this example, we are going to use `doodleproduct`. Using composer, you will create the project using the package modmore/moduleskeleton and put it into your directory.
 
 ```
 composer create-project modmore/moduleskeleton doodleproduct
 ```
 
-After running composer create-project, you can navigate into your subdirectory to see 3 new folders: _bootstrap, _build, and core. These folders serve a few different purposes.
+After running composer create-project, you can navigate into your subdirectory to see 3 new folders: `_bootstrap`, `_build`, and `core`. These folders serve a few different purposes.
 
 - `_bootstrap`: contains a file, index.php, to get your workspace setup. It will register your module within Commerce, set up system settings (located inside `_build/data/settings.php`), and configure namespaces.
-- `_build`: contains two primary files: build.schema.php and build.transport.php. The build schema file parses your schema which can contain definitions to extend built in commerce objects (such as the product we are making) as well as making custom tables. The build transport file is used when you are ready to build a transport package of your module.
-- `core/components/commerce_doodleproduct`: contains everything that makes the module work, such as src, model, and lexicons. This is where you will spend most of your time developing your module.
+- `_build`: contains two primary files: `build.schema.php` and `build.transport.php`. The build schema file parses your xPDO schema which can contain definitions to extend built-in commerce objects (such as the product we are making) as well as making custom tables. The build transport file is used when you are ready to build a transport package of your module.
+- `core/components/commerce_doodleproduct`: contains everything that makes the module work, such as `src` (for source files), `model` (for your schema and model classes), and `lexicon`. This is where you will spend most of your time developing your module.
 
-You will need to transfer these folder into your MODX installation's root directory. 
+You can symlink these directories into your MODX installation, or if you're familiar with building packages for MODX, you can copy the `config.core.php` file from your MODX installation to the root of the skeleton, and point MODX to your own directory with commerce_doodleproduct.core_path and commerce_doodleproduct.assets_url system settings. The bootstrap, which we'll run in a moment, will do that for you automatically.
 
 ### Package Details
 
-Once you run the build schema file later on in this guide, it will automatically generate the files to make your product. These files include package details, such as your name and email. This can be customized by editing the build schema file and replacing "Copyright 2018 by Your Name \<your@email.com\>" with your name and email address.
+Once you run the build schema file later on in this guide, it will automatically generate the files to make your product. These files include package details, such as your name and email. This can be customized by editing the `_build/build.schema.php` file and replacing "Copyright 2018 by Your Name \<your@email.com\>" with your name and email address.
 
 ### Namespace
 
@@ -47,7 +49,7 @@ To change the name and description of the module, edit the existing lexicons in 
 
 ### Bootstrap
 
-Now that you have configured your package details you can run the the file `_bootstrap/index.php` to set up your package and make it visible to Commerce. You should see the following output if it was successful: 
+Now that you have configured your package details you can run the the file `_bootstrap/index.php` to set up your package and make it visible to Commerce. Make sure to add a `config.core.php` file in the root of your project that points to your MODX installation. You should see the following output if it was successful: 
 
 ```
 Loading modX...
@@ -77,9 +79,9 @@ This allows Commerce to detect and load your extended product.
 
 The form field system in Commerce makes it simple to add powerful fields to a product form with its [built in form fields](https://docs.modmore.com/en/Commerce/v1/Developer/Admin/Form_Fields.html). For this product, we are going to add a select field to choose a shirt size and a text field for the color of the shirt.
 
-Inside your doodleproductproduct.class.php file, you will want to add a few lines to the top of the file so you can create the form fields without typing the full class name.
+Inside your `doodleproductproduct.class.php` file, you will want to add a few lines to the top of the file so you can create the form fields without typing the full class name.
 
-### Adding the Fields-
+### Adding the Fields
 
 ```PHP
 use modmore\Commerce\Admin\Widgets\Form\SelectField;
@@ -87,7 +89,7 @@ use modmore\Commerce\Admin\Widgets\Form\TextField;
 use modmore\Commerce\Admin\Widgets\Form\Tab;
 ```
 
-To define the custom fields you will need to create a new function, getModelFields, inside your class. Inside this function, you will need to call the parent getModelFields function to fetch all parent fields in an array, since we want to inherit all the existing fields of comProduct (name, description, price, etc). So far we have:
+To define the custom fields you will need to create a new method, getModelFields, inside your class. Inside this method, you will need to call the parent getModelFields function to fetch all parent fields in an array, since we want to inherit all the existing fields of comProduct (name, description, price, etc). So far we have:
 
 ```PHP
 public function getModelFields()
@@ -130,7 +132,7 @@ $newFields[] = new TextField($this->commerce, [
 
 **Notice that we are using lexicons, so you will need to define them in your lexicon files for them to show the correct value**. To save time, you can [download the lexicons](https://github.com/modmore/Commerce_DoodleProduct/blob/master/core/components/commerce_doodleproduct/lexicon/en/default.inc.php) from the completed Doodleproduct.
 
-Theres a few options you'll have to keep in mind when adding the fields as shown above. 
+There are a few options you'll have to keep in mind when adding the fields as shown above. 
 
 - label: shows to the left of the input field in the product form. It can be a string, but it is recommended to use lexicons.
 - name: property value the field is saved under inside the product.
@@ -149,9 +151,11 @@ Now that you have defined your new fields, you will need to merge them with the 
 return array_merge($fields, $newFields);
 ```
 
+If you would like to insert fields at specific locations, instead of appending them at the end, you can use PHP's `array_shift` functions to shuffle things around. [An example of this can be found in the RandomlyPricedProduct sample](https://github.com/modmore/Commerce_RandomlyPricedProduct/blob/master/core/components/commerce_randomlypricedproduct/model/commerce_randomlypricedproduct/randomlypricedproduct.class.php#L68).
+
 ## Adding Products
 
-All the fields are now added to your product; now you need to enable your module in the Commerce dashboard => configuration => Modules. Look for your module in the list and click it to enable it in test in the modal that appears.
+All the fields are now added to your product; next you need to enable your module in the Commerce dashboard => configuration => Modules. Look for your module in the list and click it to enable it in test in the modal that appears.
 
 Your extended product will now appear when adding products under the "Type" dropdown in the product form. Since we added a new tab, the new shirt size and shirt color fields will be in the shirt tab you created above.
 
@@ -163,7 +167,7 @@ One thing to keep in mind when making a transport package is if you have any set
 
 ## Displaying your Product
 
-After you have entered a few products, you are probably going to need to display them on the front end. Using the included commerce.get\_product snippet you can get products as well as the custom fields you added.
+After you have entered a few products, you are probably going to need to display them on the front end. Using the included `commerce.get_product` snippet you can get products as well as the custom fields you added.
 
 In the example below, the custom fields you added are accessible in the `item.properties` placeholder.
 
