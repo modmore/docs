@@ -8,7 +8,7 @@ Before making custom products it helps to have a basic idea of how MODX extras a
 
 ## Setup
 
-The easiest way to get started with any module is to [clone the module skeleton through composer](https://github.com/modmore/Commerce_NPBProduct). Composer will automatically set up your workspace for making your custom product. If you do not already have composer, [read the introduction here](https://getcomposer.org/doc/00-intro.md) for how to install it on your system.
+The easiest way to get started with any module is to [clone the module skeleton through composer](https://github.com/modmore/Commerce_ModuleSkeleton). Composer will automatically set up your workspace for making your custom product. If you do not already have composer, [read the introduction here](https://getcomposer.org/doc/00-intro.md) for how to install it on your system.
 
 You will need to create a subdirectory with the name you want your custom product to be called. This name will be used for the file structure and default namespaces in your project. For this example, we are going to use `doodleproduct`. Using composer, you will create the project using the package modmore/moduleskeleton and put it into your directory.
 
