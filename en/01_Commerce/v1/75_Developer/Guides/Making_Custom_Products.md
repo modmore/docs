@@ -1,5 +1,3 @@
-# Making Custom Products
-
 Commerce provides commonly used fields out the of box for products, however, chances are you will want to add more fields to suit how you manage products on your store. Due to its extendable nature, Commerce makes it a breeze to create custom products and custom product type fields to get you set your custom products set up in no time! 
 
 In this guide we are going to make a simple custom product called Doodles that adds a shirt size select field and shirt color text field to the product form. You can see the [completed module on github](https://github.com/modmore/Commerce_DoodleProduct/).
