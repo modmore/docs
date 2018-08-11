@@ -1,5 +1,3 @@
-# Making Custom Products
-
 Commerce provides commonly used fields out the of box for products, however, chances are you will want to add more fields to suit how you manage products on your store. Due to its extendable nature, Commerce makes it a breeze to create custom products and custom product type fields to get you set your custom products set up in no time! 
 
 In this guide we are going to make a simple custom product called Doodles that adds a shirt size select field and shirt color text field to the product form. You can see the [completed module on github](https://github.com/modmore/Commerce_DoodleProduct/).
@@ -8,7 +6,7 @@ Before making custom products it helps to have a basic idea of how MODX extras a
 
 ## Setup
 
-The easiest way to get started with any module is to [clone the module skeleton through composer](https://github.com/modmore/Commerce_NPBProduct). Composer will automatically set up your workspace for making your custom product. If you do not already have composer, [read the introduction here](https://getcomposer.org/doc/00-intro.md) for how to install it on your system.
+The easiest way to get started with any module is to [clone the module skeleton through composer](https://github.com/modmore/Commerce_ModuleSkeleton). Composer will automatically set up your workspace for making your custom product. If you do not already have composer, [read the introduction here](https://getcomposer.org/doc/00-intro.md) for how to install it on your system.
 
 You will need to create a subdirectory with the name you want your custom product to be called. This name will be used for the file structure and default namespaces in your project. For this example, we are going to use `doodleproduct`. Using composer, you will create the project using the package modmore/moduleskeleton and put it into your directory.
 
