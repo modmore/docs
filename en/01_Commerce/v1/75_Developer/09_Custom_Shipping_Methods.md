@@ -25,21 +25,21 @@ Next, [build the model files from the schema](https://docs.modx.com/xpdo/2.x/get
 
 Once you've done that, you can find your custom shipping method in `core/components/my_shipping_method/model/my_shipping_method/mysampleshippingmethod.class.php`. 
 
-Edit that file and add the `getPrice` method override. 
+Edit that file and add the `getPriceForShipment` method override. 
 
 ```` php
 <?php
 class mySampleShippingMethod extends comShippingMethod
 {
-    public function getPrice(comOrder $order, $orderTotal = 0)
+    public function getPriceForShipment(comOrderShipment $shipment)
     {
-        // The parent class takes care of calculating the price based on a configured absolute or percentage fee
-        // for the shipping method. 
-        $price = parent::getPrice($order, $orderTotal);
+        // The parent class takes care of calculating the price based
+        // on a configured absolute or percentage fee on the shipping method. 
+        $price = parent::getPriceForShipment($shipment);
 
         // Grab the products for this order to determine product weight/dimensions/count
         // For this example we charge €5 per unique item + €1 per quantity of that item
-        $items = $order->getItems();
+        $items = $shipment->getItems();
         foreach ($items as $item) {
             $price += 500;
             $price += $item->get('quantity') * 100;
@@ -51,7 +51,9 @@ class mySampleShippingMethod extends comShippingMethod
 }
 ````
 
-With the [$order object](Orders) you can easy retrieve the order items (`$order->getItems()`), the shipping address (`$order->getShippingAddress()`) and more. To retrieve products, loop over `$order->getItems()` and call `$item->getProduct()`. That will give you the [comProduct instance](Products), which you can use to grab things like the weight (`$product->getWeight()`). 
+[Shipments are collections of items in an order](../Orders/Shipments) that have the same delivery type and shipping method. With `$shipment->getItems()` you can access the items assigned to the current shipment. 
+
+You can get an [$order object](Orders) with `$shipment->getOrder()`. That gives you easy access to _all_ order items (`$order->getItems()`), the shipping address (`$order->getShippingAddress()`) and more. To retrieve products, loop over `$order->getItems()` or `$shipment->getItems()` and call `$item->getProduct()`. That will give you the [comProduct instance](Products), which you can use to grab things like the weight (`$product->getWeight()`). 
 
 If your shipping method needs to define additional options for the merchant to configure, you can do that by providing a getModelFields method. For example like this:
 
