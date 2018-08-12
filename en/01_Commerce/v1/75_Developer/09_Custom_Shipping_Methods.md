@@ -55,6 +55,8 @@ class mySampleShippingMethod extends comShippingMethod
 
 You can get an [$order object](Orders) with `$shipment->getOrder()`. That gives you easy access to _all_ order items (`$order->getItems()`), the shipping address (`$order->getShippingAddress()`) and more. To retrieve products, loop over `$order->getItems()` or `$shipment->getItems()` and call `$item->getProduct()`. That will give you the [comProduct instance](Products), which you can use to grab things like the weight (`$product->getWeight()`). 
 
+The total weight for all products in the shipment (as a `Mass` instance) is available with `$shipment->getWeight()`.
+
 If your shipping method needs to define additional options for the merchant to configure, you can do that by providing a getModelFields method. For example like this:
 
 ```` php
