@@ -71,4 +71,12 @@ When using the multiple-products form, add the fieldname inside the products arr
 </form>
 ````
 
+## Showing custom fields in the cart or emails
 
+Once you've added fields, you may want to show them somewhere. For example in the cart (`frontend/checkout/cart/items.twig`), checkout summary view (`frontend/checkout/partial/summary.twig`) or in the confirmation email (`emails/order-received.twig`). 
+
+If you've not worked with the templates in Commerce before, read up on those first under Front-end Theming.
+
+Depending on wether the field name you used is an existing field (e.g. `name`, `price`, or `comment`), or if it doesn't (e.g. `special_request`, `ship_to`), you can access the value as `{{ item.KEY_HERE }}` or `{{ item.properties.KEY_HERE }}`. For example the comment would be in `{{ item.comment }}`, as that's a recognised core field, while `special_request` does not exist in the Commerce schema, so that would be `{{ item.properties.special_request }}`. 
+
+The custom fields will automatically be shown in the order view in the dashboard.
