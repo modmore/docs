@@ -60,3 +60,14 @@ Using these placeholders, you can add your crops in the way you'd like them to a
 ## Making crops more intuitive
 
 The default cropper accounts for multiple crops to be defined. If you only want to use one crop to act as the thumbnail, you can enable the `Open cropper automatically` field property and set the `Use crop for thumbnail` property to the key of your crop. That way, the crop will be used instead of the dynamically generated thumbnail in the manager, and the cropper will also show as soon as an image is added, prompting the user to select the part of the image that should be shown.
+
+## Crop Quality
+
+By default, crops are created at 90% quality. If you'd like smaller file sizes, or crisper images, you can use the following two system settings to change the quality.
+
+- For JPEG, set `contentblocks.crop_jpeg_quality` to a number between 1 and 100.
+- For PNG, set `contentblocks.crop_png_compression` to a number between 1 and 10.
+
+The extension used is determined from the source image that is cropped.
+
+(_Note:_ These system settings were not automatically created by ContentBlocks until v1.8.2. Before that release, you may need to create the setting manually, but then they will work.)
