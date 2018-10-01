@@ -12,8 +12,6 @@ Go to Extras > Installer in your MODX manager and open the modmore.com package p
 
 Find Commerce in the provider under Premium Extras > Commerce and choose Download.
 
-**Alpha/Beta Note**: If you don't see Commerce in the list, make sure that you enabled the Commerce channel on your [API key](https://www.modmore.com/account/api-keys/).
-
 **Note:** Commerce is a rather big package which takes some time to be packaged on our server and then downloaded. It may take up to 30 seconds. 
 
 Once downloaded you can install Commerce. During the installation you can choose to automatically create a bunch of things for you, including currencies, a default shipping method, and cart/checkout resources. You can change all of these things after installation if needed, so it's recommended that you keep all boxes ticked unless you have a good reason not to.
@@ -75,7 +73,7 @@ Note the hidden input with name `add_to_cart`, and replace the number "1" in the
 
 ## Create the Cart Page
 
-If you chose to create a cart resource during the installation, you can skip this step. 
+_If you chose to create a cart resource during the installation, you can skip this step._
 
 To set up a cart, create a new resource and give it the following content:
 
@@ -85,11 +83,11 @@ To set up a cart, create a new resource and give it the following content:
 
 **Make sure the snippet call is uncached**. If you go to the cart resource, you should see a notice that your cart is empty. 
 
-To make sure Commerce knows where your cart is, update the `commerce.cart_resource` system setting with the ID of your Cart resource.
+To make sure Commerce knows where your cart is, update the `commerce.cart_resource` system setting with the ID of your Cart resource. As of v0.12, you can also set the `commerce.shop_resource` system setting to tell Commerce where the root of your shop is.
 
 ## Create the Checkout Page
 
-If you chose to create a checkout resource during the installation, you can skip this step. 
+_If you chose to create a checkout resource during the installation, you can skip this step._
 
 While carts are useful, you will also need a checkout to allow people to place their order. Create a new Checkout resource, and place the following uncached snippet call in it:
 

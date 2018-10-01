@@ -123,6 +123,7 @@ Now that you've explored all parts of the configuration in the Commerce Dashboar
 - Don't want to see the beta warning? Disable `commerce.show_beta_warning`. 
 - The E-mail & Notifications settings are useful to configure some default email options, like an image to use as image header with `commerce.email_header_url`. 
 - In the Taxes area, set the `commerce.tax_calculation` to `inclusive` if you want product prices to be treated as having taxes included in them, instead of adding taxes on top of it. 
+- The resource related settings should already be (partially) configured for you as part of the setup, but you may want to tweak your `login_resource` ([how to setup your login page](../Users/Login_Resource)), `register_resource` ([how to setup your registration page](../Users/Register_Resource)), and `shop_resource` settings. You can ignore the _Resource Product_ settings for now.
 
 ## Up next: set up your Product Catalog
 
