@@ -10,10 +10,10 @@ Added in 0.4.
 
 ## Properties
 
-- `&product`: the ID of the product to load.
-- `&toPlaceholders`: see below
-- `&tpl`: see below
-- `&field`: see below
+- `&product`: the ID of the product to load. If this is a comma or double-pipe separated value, only the first (< v0.12) or the first existing (v0.12+) product will be used. 
+- `&toPlaceholders`: Prefix to set product information to placeholders; see below
+- `&tpl`: Name of a chunk to return the output with; see below
+- `&field`: Name of a product field to return; see below
 
 ## Returning information
 
