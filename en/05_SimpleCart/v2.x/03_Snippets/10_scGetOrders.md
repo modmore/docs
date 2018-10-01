@@ -18,6 +18,12 @@ Default: [scOrders](../Chunks/scOrders)
 
 Name of the chunk to wrap the order list. 
 
+### loginTpl
+
+Default: [scOrdersLogin](../Chunks/scOrdersLogin)
+
+Name of the chunk to show when the user is not currently logged in.
+
 ### rowTpl
 
 Default: [scOrdersRow](../Chunks/scOrdersRow)
