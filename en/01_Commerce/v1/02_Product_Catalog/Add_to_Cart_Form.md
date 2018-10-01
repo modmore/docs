@@ -17,15 +17,15 @@ The form includes:
     <label for="add-quantity">Quantity:</label>
     <input type="number" name="quantity" value="1">
     
-    <input type="submit" value="Add to Cart">
+    <input type="submit" value="[[%commerce.add_to_cart]]">
 </form>
 ````
 
-Alpha note: support for the single products form was added in 0.3.3.
+The `[[%commerce.add_to_cart]]` lexicon was added in v0.12; in older versions you may need to hardcode your submit text.
 
 ## Multiple Products Form
 
-To add multiple products, you need to provide a `add_to_cart` value and a `products` array. The products array is provided as `product id => [options]`, for example `products[123][quantity] = 5`.
+To add multiple products in a single submit action, you need to provide a `add_to_cart` value and a `products` array. The products array is provided as `product id => [options]`, for example `products[123][quantity] = 5`.
 
 In a form, that looks somewhat like this. Replace `123` with the ID of your product. 
 
@@ -36,7 +36,7 @@ In a form, that looks somewhat like this. Replace `123` with the ID of your prod
     <label for="add-quantity">Quantity:</label>
     <input type="number" name="products[123][quantity]" value="1">
     
-    <input type="submit" value="Add to Cart">
+    <input type="submit" value="[[%commerce.add_to_cart]]">
 </form>
 ````
 
@@ -153,7 +153,7 @@ The JSON returned by the server will look something like this.
 
 ### Other AJAX Cart actions
 
-The following cart actions are available and require the mentioned data
+The following cart actions are available and require the mentioned data. This should be `POST`ed to the page.
 
 - Add product to cart: `add_to_cart=1` + `products[123]['quantity']=321` or `product=123` and `quantity=321`.
 - Remove item: `remove_item=123` where `123` is the ID of the order item
