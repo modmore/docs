@@ -14,11 +14,11 @@ For PayPal, you'll need to configure:
 
 ## Live API Keys
 
-To get your Live API Keys, login to the PayPal dashboard. Go to Tools in the top menu, and choose **PayPal Express Checkout** under Accept Payments Anywhere.
+To get your Live API Keys, login to the PayPal dashboard. Go to Tools > All Tools in the top menu, and find **API Credentials** in the list.
 
-![PayPal navigation](https://assets.modmore.com/uploads/2015/06/Screen_Shot_2015_06_11_at_17.30.33.png)
-                                                                                                 
-Under Integrated Carts, find the link that says Request API Signature and follow the instructions until you get the API Username, Password and Signature. 
+![Finding API Credentials](../../images/gateways/paypal-tools.jpg)
+
+On the page, find the **NVP/SOAP API integration (Classic)** item under Custom checkout experience and click **Manage API credentials**. Generage the API Signature and copy the username, password, and signature into the payment method.
 
 ## Sandbox API Keys
 
