@@ -23,7 +23,7 @@ For further customisation options, [see the Register documentation](https://docs
 
 ## 3. Tell Commerce you have a Register Resource
 
-Go to System > System Settings in the manager, and find the `commerce.regsiter_resource` system setting. Set its value to the ID of the login resource you created, this will automatically add a link to your sign up page from the user step in the checkout.
+Go to System > System Settings in the manager, and find the `commerce.register_resource` system setting. Set its value to the ID of the login resource you created, this will automatically add a link to your sign up page from the user step in the checkout.
 
 ## 4. Ready to go
 
