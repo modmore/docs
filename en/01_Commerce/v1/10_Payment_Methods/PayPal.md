@@ -18,7 +18,11 @@ To get your Live API Keys, login to the PayPal dashboard. Go to Tools > All Tool
 
 ![Finding API Credentials](../../images/gateways/paypal-tools.jpg)
 
-On the page, find the **NVP/SOAP API integration (Classic)** item under Custom checkout experience and click **Manage API credentials**. Generage the API Signature and copy the username, password, and signature into the payment method.
+On the page, find the **NVP/SOAP API integration (Classic)** item under Custom checkout experience and click **Manage API credentials**. 
+
+![Finding API Credentials](../../images/gateways/paypal-nvp.jpg)
+
+Generate the API Signature and copy the username, password, and signature into the payment method.
 
 ## Sandbox API Keys
 
