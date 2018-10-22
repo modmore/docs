@@ -41,21 +41,21 @@ The installation will automatically set up the most important aspects of Commerc
 This is what it creates:
 
 - A basic [status workflow](../Statuses), covering the draft, processing and completed statuses, with the necessary status changes to send emails to the customer and merchant. 
-- A [shipping method](../Shipping_Methods) that provides free shipping in development. Even if you do not need shipping methods for your shop, you'll always need to have at least one method set up to complete the checkout process.
+- A [delivery type](../Delivery_Types) and [shipping method](../Shipping_Methods) that provides free shipping in development. Even if you do not need shipping methods for your shop, you'll always need to have at least one method set up to complete the checkout process.
 - A [manual payment method](../Payment_Methods/Manual) that marks the order as paid without any money transfering hands for testing.
 - A set of [currencies](../Currencies), along with the proper subunits, formatting, alphanumeric and numeric codes. It will also set the currency you choose as the system default.
-- A new resource with the [commerce.cart snippet](../Snippets/cart) to act as the cart. It will be created in the root of the web context, and the `commerce.cart_resource` system setting will be updated to point to it.
-- A new resource with the [commerce.checkout snippet](../Snippets/checkout) which will hold the checkout process. It will be created in the root of the web context, and the `commerce.checkout_resource` system setting will be updated to point to it.
+- A new resource with the [commerce.cart snippet](../Snippets/cart) to act as the cart. It will be created in the root of the web context, with your default template, and the `commerce.cart_resource` system setting will be updated to point to it.
+- A new resource with the [commerce.checkout snippet](../Snippets/checkout) which will hold the checkout process. It will be created in the root of the web context, with your default template, and the `commerce.checkout_resource` system setting will be updated to point to it.
 
 Once these standard options are created, the installation will no longer offer these options when you reinstall or update Commerce to prevent duplications. If you want to recreate the standard currencies or status workflow, you will need to truncate the relevant tables in your database before Commerce will offer them as options.
 
 You will of course be able of changing every standard configuration after the installation. 
 
-The installation also verifies if your server meets the most important [requirements](../Requirements), including the MODX and PHP versions. Additional requirements (like serving the checkout over HTTPS) are checked when you want to enable live mode.
+The installation also verifies if your server meets the most important [requirements](../Requirements), including the MODX and PHP versions. Additional requirements (like serving the checkout over HTTPS) are checked in the Configuration Checklist, in the Commerce dashboard, when you're looking at switching to live mode.
 
 
 ## Exploring Commerce
 
-If the installation was successful, you're ready to start exploring the Commerce Dashboard. Refresh the manager, and find it under Extras &raquo; Commerce. 
+If the installation was successful, you're ready to start exploring the **Commerce Dashboard**. Refresh the manager, and find it under **Extras &raquo; Commerce**. 
 
 [Start exploring the Commerce Configuration &raquo;](Configuration)
