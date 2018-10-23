@@ -34,7 +34,7 @@ Brought to you by [modmore](https://www.modmore.com/).
 
 CSRFHelper is free to use, and licensed under the MIT License. [Source code and issue tracker are on GitHub](https://github.com/modmore/csrfhelper). 
 
-Installable packages are available from both modmore and MODX, through your site's package manager. After installation, look at the specific documentation for the type of form you're looking to protect for examples and instructions.
+Installable packages are available from both [modmore](https://www.modmore.com/extras/csrfhelper/) and [MODX](https://modx.com/extras/package/csrfhelper), through your site's package manager. After installation, look at the specific documentation for the type of form you're looking to protect for examples and instructions.
 
 ## Usage
 
