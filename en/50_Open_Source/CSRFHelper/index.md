@@ -1,8 +1,8 @@
-CSRF Helper is a tool for MODX to secure forms against cross-site request forgery (CSRF) vulnerabilities.
+CSRF Helper is a tool for MODX to secure forms against cross-site request forgery (CSRF) vulnerabilities, brought to you by [modmore](https://www.modmore.com/).
 
 [TOC]
 
-## CSRWhat?
+## What's a CSRF vulnerability?
 
 The [Open Web Application Security Project (OWASP) explains CSRF](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)) as follows:
 
@@ -19,16 +19,37 @@ attacker's choosing.
 state changing requests like transferring funds, changing their email address, and so forth.
 If the victim is an administrative account, CSRF can compromise the entire web application.
 
-While the focus should be on actions that an authenticated user can execute, you may find it beneficial to also protect unauthenticated actions as CSRF measures can make it more complicated to automate spam or brute-force type attacks.
- 
-On a MODX site, areas that may require protection against CSRF include:
+Forms that are vulnerable to CSRF can be executed by an attacker as another (authenticated) user. This requires that
+the user can be tricked into executing the action from their browser, for example by visiting a compromised site
+or a link that exploits a cross-site-scripting (XSS) vulnerability. 
 
-- Contact forms
-- Login, registration, profile update
+Most CSRF attacks are thus targeted. They are also specific to a site, as the attacker will need to craft a specific
+request for specific sites and forms. This makes CSRF a lower risk vulnerability to the average site compared to, say,
+a SQL injection or persisted XSS that impacts all visitors of a site. 
 
-CSRF Helper can help!
+You should however care about CSRF vulnerabilities if authenticated users can execute actions that can impact your
+site, their usage of the site, or lead to other vulnerabilities. 
 
-Brought to you by [modmore](https://www.modmore.com/).
+For example, a simple contact form that only sends information via email that the user submits is not as vulnerable
+as a form  that lets the user change the email address or other personal information associated with their account. 
+The latter could lead to an account being taken over by an attacker, while the first is just spam. 
+
+The benefit of implementing CSRF Helper on less vulnerable forms (like contact forms) comes from its potential to help
+protect against spam. An unprotected form can easily be hammered by an attacker/spammer, while a protected form requires
+the attacker to at the very least request the page containing the form over and over again and interact with it.  
+
+## How does CSRF Helper protect against CSRF?
+
+With CSRF Helper you can add CSRF protection to any form built with FormIt, as well as forms for the Login package.
+It's also possible, though currently not documented, to use the PHP classes at the core of CSRF Helper to verify tokens
+in custom form handlers.
+
+The CSRF protection works by generating what's known as a CSRF token, a random hash that is stored in a users' session,
+and which needs to be present and correct in a form submission. As an attacker cannot know this token in advance, they
+are unable of executing a valid form submission. 
+
+Other types of vulnerabilities (in particular XSS or clickjacking) may bypass this CSRF protection, but CSRF tokens do
+add a very valuable layer of protection. 
 
 ## Download & Installation
 
