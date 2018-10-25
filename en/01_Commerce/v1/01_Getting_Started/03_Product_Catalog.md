@@ -147,7 +147,7 @@ The add to cart form in this listing is slightly different because we used the q
 
 ## Going beyond
 
-With the basic structure in place, you can now start building our your catalog. Perhaps you want to add related products, show the add to cart form only if there's sufficient stock, or add more TVs to your products for highlights or product specs. 
+With the basic structure in place, you can now start building our your catalog. Perhaps you want to add related products, show the add to cart form only if there's sufficient stock, or add more TVs to your products for highlights or product specs. The sky is the limit!
 
 ## Next: customising your Cart & Checkout
 
