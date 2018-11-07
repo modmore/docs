@@ -43,16 +43,31 @@ Assuming `commerce.theme` is set to `webshop` and `commerce.themes_path` is set 
 
 If it finds the requested template file, it stops there, otherwise it checks the next path. This means you only have to copy the templates you're actually customising; any others will simply fall back to the default. 
 
-## Different themes per Context
+### Different themes per Context
 
 With Contexts in MODX, you can use different Commerce themes for different contexts. To use this, create `commerce.theme` and/or `commerce.themes_path` context settings for the specific context. 
 
 Note that the Commerce admin area will not use context-specific themes unless you specify the setting on the `mgr` context. We don't recommend making changes to the manager dashboard for now, to ensure things don't break in a weird way while we continue to evolve that.
 
-## Different themes for User (Groups)
+### Different themes for User (Groups)
 
 Another fun trick is to set specific themes on specific users or user groups in the same way as context settings, by adding the `commerce.theme` and/or `commerce.themes_path` setting to a user or user group.
  
 Due to the MODX setting inheritance, user or user group settings will take priority over context and system settings. 
 
 It's not recommended to do this for customer user (groups), however it could be useful for allowing admin users to preview a new theme when the site is live. Keep in mind though that the users need to be logged in to the frontend (e.g. using the Login snippet) for this to work.
+
+## Debugging templates
+
+Sometimes you may want to know what exact information is available to you in a specific template. 
+
+First, create or change the `commerce.debug` system setting, and set it to 1. 
+
+Then, in your template, you can use the [dump function](https://twig.symfony.com/doc/2.x/functions/dump.html). For example:
+
+````html
+{{ dump() }}
+{{ dump(order) }}
+````
+
+When you've launched your shop, set `commerce.debug` to 0 to make sure no stray dump functions are used in your templates.
