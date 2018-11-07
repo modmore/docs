@@ -91,13 +91,21 @@ Added in 1.0.1.
 
 #### &imageTpl
 
-The name of a chunk to use for each image in the result set. 
+The name of a chunk to use for each image in the result set. The default chunk used is this:
 
-**See further down this page for the default and placeholders for this chunk.**
+````html
+<li class="mg-image">
+    <a href="[[+view_url]]" title="[[+name]]">
+        <img src="[[+mgr_thumb]]" alt="[[+name]]">
+    </a>
+</li>
+````
+
+**See further down this page for a description of all placeholders available for this chunk.**
 
 Individual images will be joined together by the value of the `&imageSeparator` property.  
 
-If you're using [videos](../Video) in MoreGallery, you also need the `&youtubeTpl` and `&vimeoTpl` properties. They follow the same structure as the `&imageTpl`, but which are are applied to YouTube and Vimeo video records respectively. See below.
+If you're using [videos](../Video) in MoreGallery, you also need the `&youtubeTpl` and `&vimeoTpl` properties. They follow the same structure as the `&imageTpl`, but which are are applied to YouTube and Vimeo video records respectively. For PDFs, `&pdfTpl` is available. See below. 
 
 #### &mediaTpl
 
@@ -125,13 +133,64 @@ You can use the same placeholders as the `&imageTpl`, but you can also use the f
 
 The name of a chunk to use for templating a [YouTube video](../Video). Works identical to `&imageTpl` for videos from YouTube.
 
+The default chunk used is:
+
+````html
+<li class="mg-video mg-video-[[+service]]">
+    <a href="[[+view_url]]" title="[[+name:htmlent]]">
+        <img src="[[+mgr_thumb]]" class="img-polaroid" alt="[[+name:htmlent]]">
+    </a>
+</li>
+````
+
+If you want the video embedded, you can use something like this:
+
+````html
+<li class="mg-video mg-video-[[+service]]">
+    <div class="flex-video widescreen [[+service]]">
+        <iframe class="mg-video mg-video-[[+service]]" width="[[+width]]" height="[[+height]]"
+                src="//www.youtube.com/embed/[[+video_id]]" frameborder="0"></iframe>
+    </div>
+</li>
+````
+
 #### &vimeoTpl
 
 The name of chunk to use for templating a [Vimeo video](../Video). Works identical to `&imageTpl` for videos from Vimeo. 
 
+The default chunk used looks like this:
+
+````html
+<li class="mg-video mg-video-[[+service]]">
+    [[- If you want to show the Vimeo video directly, you use something like this:
+    <div class="flex-video widescreen [[+service]]">
+        <iframe class="mg-video mg-video-[[+service]]" width="[[+width]]" height="[[+height]]"
+                src="//player.vimeo.com/video/[[+video_id]]" frameborder="0"></iframe>
+    </div>
+    Otherwise, the file_url and mgr_thumb contain the thumbnail for the video. ]]
+
+    <a href="[[+view_url]]" title="[[+name:htmlent]]">
+        <img src="[[+mgr_thumb]]" class="img-polaroid" alt="[[+name:htmlent]]">
+    </a>
+</li>
+````
+
+If you prefer embedding the video directly, you can use something like this:
+
+````html
+<li class="mg-video mg-video-[[+service]]">
+    <div class="flex-video widescreen [[+service]]">
+        <iframe class="mg-video mg-video-[[+service]]" width="[[+width]]" height="[[+height]]"
+                src="//player.vimeo.com/video/[[+video_id]]" frameborder="0"></iframe>
+    </div>
+</li>
+````
+
 #### &pdfTpl
 
 The name of chunk to use for templating a PDF file. Works identical to `&imageTpl`. The `[[+mgr_thumb]]` placeholder and crops will contain an image of the first page of the PDF, while `[[+file_url]]` will be a link to the actual PDF. 
+
+When no chunk is specified, the `&imageTpl` is used by default.
 
 #### &imageSeparator
 
@@ -187,19 +246,97 @@ Added in 1.5.0.
 
 The name of a chunk to use for the single image view. See further down this page for the default and placeholders for this chunk.  
 
-There are also `&singleYoutubeTpl` and `&singleVimeoTpl` properties for [YouTube and Vimeo videos](../Video) respectively, which both follow the same behaviour as the `&singleImageTpl`. 
+There are also `&singleYoutubeTpl` and `&singleVimeoTpl` properties for [YouTube and Vimeo videos](../Video) respectively, and a `&singlePdfTpl` for PDFs, which both follow the same behaviour as the `&singleImageTpl`. 
+
+The default chunk used is:
+
+````html
+<p>
+    <a href="[[+file_url]]">
+        <img src="[[+file_url]]" class="img-polaroid" alt="[[+name]]">
+    </a>
+</p>
+
+<p>
+[[+prev.id:notempty=`
+    <a href="[[+prev.view_url]]">&laquo; [[+prev.name]]</a>
+`]]
+    <span class="text-center center">[[+name]]</span>
+[[+next.id:notempty=`
+    <a href="[[+next.view_url]]" class="text-right right">[[+next.name]] &raquo;</a>
+`]]
+</p>
+````
 
 #### &singleYoutubeTpl
 
 The name of a chunk to use for a single YouTube video embed. Works identical to `&singleImageTpl` for YouTube videos. 
 
+The default chunk used is:
+
+````html
+<div class="flex-video widescreen [[+service]] embed-responsive embed-responsive-16by9">
+    <iframe class="mg-video mg-video-[[+service]] embed-responsive-item" width="[[+width]]" height="[[+height]]"
+            src="//www.youtube.com/embed/[[+video_id]]" frameborder="0"></iframe>
+</div>
+
+<p>
+[[+prev.id:notempty=`
+    <a href="[[+prev.view_url]]">&laquo; [[+prev.name]]</a>
+`]]
+    <span class="text-center center">[[+name]]</span>
+[[+next.id:notempty=`
+    <a href="[[+next.view_url]]" class="text-right right">[[+next.name]] &raquo;</a>
+`]]
+</p>
+````
+
 #### &singleVimeoTpl
 
 The name of a chunk to use for a single Vimeo video embed. Works identical to `&singleImageTpl` for Vimeo videos.
+
+The default chunk used is:
+
+````html
+<div class="flex-video widescreen [[+service]] embed-responsive embed-responsive-16by9">
+    <iframe class="mg-video mg-video-[[+service]] embed-responsive-item" width="[[+width]]" height="[[+height]]"
+            src="//player.vimeo.com/video/[[+video_id]]" frameborder="0"></iframe>
+</div>
+
+<p>
+[[+prev.id:notempty=`
+    <a href="[[+prev.view_url]]">&laquo; [[+prev.name]]</a>
+`]]
+    <span class="text-center center">[[+name]]</span>
+[[+next.id:notempty=`
+    <a href="[[+next.view_url]]" class="text-right right">[[+next.name]] &raquo;</a>
+`]]
+</p>
+````
  
 #### &singlePdfTpl
 
 The name of a chunk to use for a single PDF file being shown. Works identical to the `&singleImageTpl` property. The `[[+mgr_thumb]]` and crops will contain images of the first page in the PDF, while `[[+file_url]]` is a link to the actual PDF. 
+
+The default chunk used is:
+
+```html
+<div class="embed-responsive">
+    <iframe class="mg-pdf embed-responsive-item" width="[[+width]]" height="[[+height]]"
+            src="[[+file_url]]" frameborder="0"></iframe>
+</div>
+
+<p>
+[[+prev.id:notempty=`
+    <a href="[[+prev.view_url]]">&laquo; [[+prev.name]]</a>
+`]]
+    <span class="text-center center">[[+name]]</span>
+[[+next.id:notempty=`
+    <a href="[[+next.view_url]]" class="text-right right">[[+next.name]] &raquo;</a>
+`]]
+</p>
+
+```
 
 #### &wrapperTpl
 
