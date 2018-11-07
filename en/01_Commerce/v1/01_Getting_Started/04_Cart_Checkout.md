@@ -27,7 +27,7 @@ It's not currently supported<sup>*</sup> to change the order or functionality of
 
 <sup>* Technically, it _is_ possible to change the checkout steps, but that requires in-depth technical knowledge of Commerce and changing undocumented features. That's why we do not currently provide support for it and discourage going down that route as we may still change how that works to make future customisation easier which would break custom checkout processes.</sup>
 
-### Cart 
+#### Cart step
 
 The cart step is always present. It's how you can add items to an order, and where the customer can make changes. With the Coupons module enabled, this also has the form to validate a coupon code. 
 
@@ -35,7 +35,7 @@ The cart is usually on its own resource (identified by the `commerce.cart_resour
 
 Further customisation to the cart usually revolves around changing the design or templates; we'll get to how that works in a minute.
 
-### Account
+#### Account step
 
 The account step is optional, shown by default. 
 
@@ -51,11 +51,11 @@ Other use cases for the account step are possible just by changing a few system 
 
 - To skip the account step completely, set both the `commerce.checkout_requires_account` and `commerce.checkout_show_account_step` settings to `no`. The account step will be removed from checkout completely. 
 
-### Address
+#### Address step
 
 The address step is required. It's where the customer enters their shipping (and optionally billing) address. If the customer is logged in, the address step may show previously used addresses as an option to speed along the process. 
 
-### Shipping
+#### Shipping step
 
 The shipping step is optional. When shown, it will calculate how much it costs to ship with each of your configured [shipping methods](../Shipping_Methods), show them in a list, and ask the customer to choose. If there are products from multiple [delivery types](../Delivery_Types) in the order, the customer will be asked to choose a shipping method for each. 
 
@@ -67,7 +67,7 @@ On each delivery type you can choose what to do with the shipping step:
 - When you set the shipping step to "required" on the delivery type, the shipping step is always shown, even with just one matching shipping method that has been pre-selected.
 - When you set the shipping step to "never", it is always hidden, and the customer cannot change the shipping method from the pre-selected one.
 
-### Payment
+#### Payment step
 
 The payment step is required. It lists available payment methods, including the calculated fee if set.
 
@@ -75,13 +75,89 @@ If the order total is zero because of a coupon, or all products being free, then
 
 If the total is not zero, but you do not intend to use online payments, you can create a payment method with the [Manual payment gateway](../Payment_Methods/Manual). That will mark the order as paid without the customer actually paying.
 
-### Thank you
+#### Thank you step
 
 When the customer visits the thank you page, the order is completed and their cart is emptied for future orders. 
 
 ## Design & templates
 
-See [theming](../Front-end_Theming) for how to change the front-end templates and design.
+You have full control over the design and templating of your site. This is still MODX, after all!
+
+For your [catalog](Product_Catalog) you'll mostly use your standard MODX templating. For the cart and the checkout, however, you'll use **Twig** templates, which are stored in files.
+
+The default templates can be found in `core/components/commerce/templates/default/` - these **will be overwritten** on upgrade, so don't edit them directly. 
+
+Start by changing the `commerce.theme` system setting. Give it a name, for example `myshop`, and create a new directory under `core/components/commerce/templates/` with the same name. That's now your own theme directory, which is safe from upgrades.
+
+To change templates, you will now copy them from the `default` folder, and paste them into the same directory structure in your `myshop` directory. 
+
+#### Hello world
+
+Let's try it by adding "Hello world" to our cart.
+
+Copy `core/components/commerce/templates/default/frontend/checkout/cart.twig` into your theme directory following the same structure, so `core/components/commerce/templates/myshop/frontend/checkout/cart.twig`. (If you want to do this via the manager, change the `upload_files` system setting to include the `twig` extension.)
+
+The template looks something like this:
+
+````html
+<div class="c-checkout c-cart c-checkout-cart">
+    <h2>
+        {% if order.total_quantity != 1 %}
+            {{ lex('commerce.cart_header', { 'items': order.total_quantity }) }}
+        {% else %}
+            {{ lex('commerce.cart_header_single') }}
+        {% endif %}
+    </h2>
+
+    {% include 'frontend/response-messages.twig' %}
+
+    {% if items|length > 0 %}
+        {% include 'frontend/checkout/cart/items.twig' %}
+        <div class="c-cart-actions">
+            <div class="c-cart-optional">
+                {% include 'frontend/checkout/cart/aside.twig' %}
+            </div>
+            <div class="c-cart-totals-wrapper">
+                {% include 'frontend/checkout/cart/totals.twig' %}
+
+                <form method="POST" action="{{ current_url }}" class="c-submit">
+                    <input type="hidden" name="checkout" value="1">
+                    <button class="c-button c-primary-button" type="submit">{{ lex('commerce.checkout') }}</button>
+                </form>
+            </div>
+        </div>
+    {% else %}
+        <p><a href="{{ shop_root_url }}">{{ lex('commerce.cart.no_items_yet') }} {{ lex('commerce.cart.continue_shopping') }}</a></p>
+    {% endif %}
+</div>
+````
+
+Change the heading bit at the top to the following:
+
+````html
+    <h2>
+        Hi there!
+        {% if order.total_quantity != 1 %}
+            {{ lex('commerce.cart_header', { 'items': order.total_quantity }) }}
+        {% else %}
+            {{ lex('commerce.cart_header_single') }}
+        {% endif %}
+    </h2>
+````
+
+If you visit your cart now, that should say `Hi there!` towards the top. 
+
+#### More tweaking
+
+There's a few dozen templates you can tweak in the same way. Their naming are hopefully clear enough to indicate where they are used, and you may also come across `include` calls in some templates referencing other nested templates. 
+
+You only have to copy the templates you want to change - all other templates will fall back to the `default` template. 
+
+In general, all templates in the `frontend` and `emails` directories are safe to change. Make sure to keep IDs and input names the same, to ensure things keep working as expected. Class names are less critical, but in some cases (payment method templates especially), you may want to keep those as-is. It's recommended to _not_ edit any of the `admin` templates, those are used in the dashboard. 
+
+#### CSS, lexicons, custom theme folders, and more 
+
+See [theming](../Front-end_Theming) for more options to change the design and templates.
 
 ## Next
 
