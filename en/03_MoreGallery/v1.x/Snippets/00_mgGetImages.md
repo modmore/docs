@@ -129,6 +129,10 @@ The name of a chunk to use for templating a [YouTube video](../Video). Works ide
 
 The name of chunk to use for templating a [Vimeo video](../Video). Works identical to `&imageTpl` for videos from Vimeo. 
 
+#### &pdfTpl
+
+The name of chunk to use for templating a PDF file. Works identical to `&imageTpl`. The `[[+mgr_thumb]]` placeholder and crops will contain an image of the first page of the PDF, while `[[+file_url]]` will be a link to the actual PDF. 
+
 #### &imageSeparator
 
 A string to be used between images parsed through the chunk specified in `&imageTpl`.   
@@ -191,8 +195,11 @@ The name of a chunk to use for a single YouTube video embed. Works identical to 
 
 #### &singleVimeoTpl
 
-The name of a chunk to use for a single Vimeo video embed. Works identical to `&singleImageTpl` for Vimeo videos. 
+The name of a chunk to use for a single Vimeo video embed. Works identical to `&singleImageTpl` for Vimeo videos.
+ 
+#### &singlePdfTpl
 
+The name of a chunk to use for a single PDF file being shown. Works identical to the `&singleImageTpl` property. The `[[+mgr_thumb]]` and crops will contain images of the first page in the PDF, while `[[+file_url]]` is a link to the actual PDF. 
 
 #### &wrapperTpl
 
