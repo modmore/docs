@@ -16,3 +16,10 @@ This can be accomplished by going to the creating (or editing) a field-type in t
 Everything is customisable by using chunks or FormIt parameters. First, create a duplicate of the email-chunk (emailFormTpl or fiarTpl) you wish to change and rename it. Then go to the form which should use this new chunk.
 
 Go to the _Advanced_ section and click _Add parameter_. Set the parameter-key to _emailTpl_ or _fiarTpl_ and set the value to the chunk you just made.
+
+## Adding a reply to address
+
+If you'd like the emails to have the proper reply-to header set, so you can immediately reply to an email to the customer, you can add a custom parameter to your form. 
+
+Edit your form. On the Advanced tab, add a custom parameter with paramater key `emailReplyTo` and a value of `[[+field_ID]]`, where `ID` is the ID of the field that contains your customers' email address. You can find that ID on the Form Fields tab, in the first column. For example if your email field has ID 5, you would set the value to `[[+field_5]]`. 
+
