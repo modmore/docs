@@ -1,3 +1,7 @@
+**This page has been completely rewritten into a full Getting Started series! [Get started with Commerce here &raquo;](Getting_Started/index)**
+
+<hr>
+
 Commerce is a full featured ecommerce solution for MODX, but you have to start somewhere! This document will guide you through the necessary steps on a fairly high level. If you get stuck on a certain step, click through to read more in depth documentation about the topic.
 
 [TOC]
