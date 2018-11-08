@@ -1,5 +1,7 @@
 We're collecting the questions we get most often into a list of FAQs. If your question is not in the list, please reach out to us via support@modmore.com and we would be glad to help.
 
+[TOC]
+
 ## How do I show my created form?
 Make sure that you marked your form as Published, and then add the following snippet call where you want the form to appear (without the spaces):
 
