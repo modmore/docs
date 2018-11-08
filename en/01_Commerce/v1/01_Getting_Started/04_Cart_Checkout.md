@@ -161,5 +161,5 @@ See [theming](../Front-end_Theming) for more options to change the design and te
 
 ## Next
 
-When you have your shop functional, let's end this tutorial with some notes about [extending Commerce](Extending_Commerce).
+When you have your shop functional, it's time to talk about the [next steps](Next_Steps).
 
