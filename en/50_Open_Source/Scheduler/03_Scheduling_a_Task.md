@@ -18,7 +18,7 @@ if (!($scheduler instanceof Scheduler)) {
  */
 $task = $scheduler->getTask('mycmp', 'dosomething');
 if ($task instanceof sTask) {
-    // Schedule a run in 10 minutes from no
+    // Schedule a run in 10 minutes from now
     // We're passing along an array of data; in this case a client ID.
     $task->schedule('+10 minutes', array(
         'client' => 15
