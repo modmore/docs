@@ -87,10 +87,10 @@ The SimpleCart meta fields contain the image, price, code and stock.
 - `[[+product_price_formatted]]`: the product price for one item, formatted with the currency sign and decimal/thousands separator. 
 - `[[+product_code]]`: the product code or SKU for the product
 - `[[+product_stock]]`: the number of items still in stock for this product
-- `[[+special_price]]`: (since v2.5) the special discounted price for the product, unformatted.
-- `[[+special_price_formatted]]`: (since v2.5) a properly formatted representation of the special product price. 
-- `[[+special_valid_from]]`: (since v2.5) the start date for when the special price becomes/became valid, as a datetime string.
-- `[[+special_valid_to]]`: (since v2.5) the end date for the special price, as a datetime string.
+- `[[+product_special_price]]`: (since v2.5) the special discounted price for the product, unformatted.
+- `[[+product_special_price_formatted]]`: (since v2.5) a properly formatted representation of the special product price. 
+- `[[+product_special_valid_from]]`: (since v2.5) the start date for when the special price becomes/became valid, as a datetime string.
+- `[[+product_special_valid_to]]`: (since v2.5) the end date for the special price, as a datetime string.
 
 
 For tax/VAT prices there are a number of other placeholders, however it is important to note that these only contain the right values if SimpleCart can figure out which prices to use. This means that if your Tax Rate has rules based on the country for example, that SimpleCart will **not** apply that tax rate until it knows what country a user is from.
