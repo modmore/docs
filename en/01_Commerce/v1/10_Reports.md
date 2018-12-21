@@ -7,8 +7,11 @@ Reports and exports offer you a variety of views into your shop. There are a num
 All reports offer tabular data (a set of headers with rows), which can be downloaded in a number of formats:
 
 - CSV: comma separated flat text file, useful for importing into Excel or Numbers. Array values within a field are encoded as JSON. 
+- Excel 2007: `.xslx` file, newer excel format
+- Excel 5: `.xsl` file, older excel format
 - XML: simple XML with a `<data>` root node, and each row within an `<item>` element with the key value pairs.
 - JSON: encoded javascript array containing objects with the key value pairs. 
+- HTML: simple HTML table
 
 Reports may also offer a set of options, such as a time period or type of data to load, as well as charts that can be generated. This is all offered through a simple interface in the merchant dashboard.
 
@@ -29,6 +32,8 @@ The **Coupon Codes** report is only available if the [Coupons module](Modules/Ca
 ### Financial Reports
 
 The **Daily Sales** report summarises the daily shop revenue over a period of time. The report allows selecting a period for which to load the data, varying from 24 hours to 1 year, or all sales. The Sales report offers a Sales Chart, which is a line chart showing the sales data.
+
+The **Tax Summary** report creates a summary of the taxes collected in a certain timeframe. This groups the tax collected records together by their tax code, and is useful for quickly preparing your tax reports. 
 
 The **Taxes Collected** report will create an export containing all individual order item tax records (i.e. the tax charged on each individual order item). 
 
