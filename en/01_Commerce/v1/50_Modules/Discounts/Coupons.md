@@ -11,9 +11,9 @@ Features such as limiting a coupon to specific products, multiple coupons per or
 
 ## Coupon Management
 
-After the Coupons module has been enabled, a new top menu item _Coupons_ will be available. From there the menu offers you three distinct views:
+After the Coupons module has been enabled, a new top menu item _Discounts_ will be available. From there the menu offers you three distinct views:
 
-- **Active Coupons** shows all coupons that have an expiry date in the future, or no expiry date at all. 
+- **Coupons** shows all coupons that have an expiry date in the future, or no expiry date at all. 
 - **Expired Coupons** shows coupon codes with a set expiry date that is in the past.
 - **Coupon Usage** shows a chronological list of when coupon codes were used, and how much the total calculated discount was for that order. 
 
