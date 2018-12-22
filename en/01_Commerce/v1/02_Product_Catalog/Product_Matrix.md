@@ -152,29 +152,30 @@ The referenced template looks like this:
                         {% set product = products[productId] %}
                         <td class="c-productmatrix-cell c-productmatrix-item-cell" data-product="{{ productId }}">
                             {% if products[productId] %}
-                                {% set product = products[productId] %}
                                 <p class="c-productmatrix-item-sku">
                                     {{ product.sku }}
                                 </p>
                                 <p class="c-productmatrix-item-price">
                                     {{ product.price_formatted }}
                                 </p>
-                                    {% if product.stock < 1 %}
-                                        <p class="c-productmatrix-item-no-stock">
-                                            {{ lex('commerce.out_of_stock') }}
-                                        </p>
-                                    {% else %}
-                                        <form method="post" action="[[~[[++commerce.cart_resource]]]]" class="add-to-cart c-productmatrix-item-add-to-cart">
-                                            <input type="hidden" name="add_to_cart" value="1">
-                                            <input type="hidden" name="product" value="{{ product.id }}">
-                                            <input type="hidden" name="link" value="[[*id]]">
+                                {% if product.stock < 1 %}
+                                    <p class="c-productmatrix-item-no-stock">
+                                        {{ lex('commerce.out_of_stock') }}
+                                    </p>
+                                {% else %}
+                                    <form method="post" action="[[~[[++commerce.cart_resource]]]]" class="add-to-cart c-productmatrix-item-add-to-cart">
+                                        <input type="hidden" name="add_to_cart" value="1">
+                                        <input type="hidden" name="product" value="{{ product.id }}">
+                                        <input type="hidden" name="link" value="[[*id]]">
 
-                                            <label for="add-quantity-{{ product.id }}">Quantity:</label>
-                                            <input id="add-quantity-{{ product.id }}" type="number" name="quantity" value="1">
+                                        <label for="add-quantity-{{ product.id }}">Quantity:</label>
+                                        <input id="add-quantity-{{ product.id }}" type="number" name="quantity" value="1">
 
-                                            <input type="submit" value="{{ lex('commerce.add_to_cart') }}">
-                                        </form>
-                                    {% endif %}
+                                        <input type="submit" value="{{ lex('commerce.add_to_cart') }}">
+                                    </form>
+                                {% endif %}
+                            {% else %}
+                                <p>Product {{ productId }} not loaded</p>
                             {% endif %}
                         </td>
                     {% endif %}
