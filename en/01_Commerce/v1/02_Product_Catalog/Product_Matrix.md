@@ -205,7 +205,7 @@ For use in a select dropdown you an use the optgroup template. There are 2 templ
 
 For **grouped by row** use the following sample:
 
-````twig
+````html
 <form method="post" action="[[~[[++commerce.cart_resource]]]]">
     <input type="hidden" name="add_to_cart" value="1">
     
@@ -226,7 +226,7 @@ For **grouped by row** use the following sample:
 
 This is what that twig template looks like:
 
-````twig
+````html
 {% for row in rows %}
     {% if row.active %}
         <optgroup label="{{ row.name }}">
@@ -249,7 +249,7 @@ This is what that twig template looks like:
 
 For **grouped by column**:
 
-````twig
+````html
 <form method="post" action="[[~[[++commerce.cart_resource]]]]">
     <input type="hidden" name="add_to_cart" value="1">
     
@@ -270,7 +270,7 @@ For **grouped by column**:
 
 The template for columns looks like this:
 
-````twig
+````html
 {% for column in columns %}
     {% if column.active %}
         <optgroup label="{{ column.name }}">
