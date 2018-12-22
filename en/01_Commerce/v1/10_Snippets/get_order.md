@@ -13,11 +13,12 @@ Added in v0.9.
 
 ## Properties
 
-- `&tpl`: the name of a twig template file (_not_ a chunk) to show the order details. This defaults to frontend/account/order-detail.twig, which you should override in a [custom theme](../Front-end_Theming). The ability to specify a different tpl is mostly meant for when you have different variations of the detail page (e.g. for different contexts)
- - `&loadItems`: 1 or 0 to indicate if items should be loaded. If you're not showing items, you can gain a bit of speed by setting this to 0. Defaults to 1.
- - `&loadStatus`: 1 or 0 to indicate if the status record should be loaded. If you're not showing the status name, you can gain a bit of speed by setting this to 0. Defaults to 1.
- - `&loadTransactions`: 1 or 0 to indicate if transactions should be loaded. If you're not showing transactions, you can gain a bit of speed by setting this to 0. Defaults to 1.
- - `&loadBillingAddress`: 1 or 0 to indicate if the billing address should be loaded. If you're not showing the billing address, you can gain a bit of speed by setting this to 0. Defaults to 1.
- - `&loadShippingAddress`: 1 or 0 to indicate if the shipping address should be loaded. If you're not showing the shipping address, you can gain a bit of speed by setting this to 0. Defaults to 1.
- - `&loadShipments`: 1 or 0 to indicate if the [order shipments](../Orders/Shipments) should be loaded into a `shipments` array. The shipment also contains the chosen shipping method. Defaults to 1. Added in v0.11.1.
+- `&tpl`: the name of a twig template file (_not_ a chunk) to show the order details. This defaults to `frontend/account/order-detail.twig`, which you should override in a [custom theme](../Front-end_Theming). The ability to specify a different tpl is mostly meant for when you have different variations of the detail page (e.g. for different contexts)
+- `&loadItems`: 1 or 0 to indicate if items should be loaded. If you're not showing items, you can gain a bit of speed by setting this to 0. Defaults to 1.
+- `&loadStatus`: 1 or 0 to indicate if the status record should be loaded. If you're not showing the status name, you can gain a bit of speed by setting this to 0. Defaults to 1.
+- `&loadTransactions`: 1 or 0 to indicate if transactions should be loaded. If you're not showing transactions, you can gain a bit of speed by setting this to 0. Defaults to 1.
+- `&loadBillingAddress`: 1 or 0 to indicate if the billing address should be loaded. If you're not showing the billing address, you can gain a bit of speed by setting this to 0. Defaults to 1.
+- `&loadShippingAddress`: 1 or 0 to indicate if the shipping address should be loaded. If you're not showing the shipping address, you can gain a bit of speed by setting this to 0. Defaults to 1.
+- `&loadShipments`: 1 or 0 to indicate if the [order shipments](../Orders/Shipments) should be loaded into a `shipments` array. The shipment also contains the chosen shipping method. Defaults to 1. Added in v0.11.1.
+- `&loadOrderFields`: 1 or 0 to indicate if custom order fields should be loaded. Defaults to 1. Added in v0.12. Order fields are available in the `order_fields` array, with the name as key, and the rendered value of the field as value.
  
