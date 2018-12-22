@@ -50,6 +50,7 @@ $field = new \modmore\Commerce\Admin\Widgets\Form\TextField($this->commerce, [
 - **SelectMultiple** (`modmore\Commerce\Admin\Widgets\Form\SelectMultipleField`), a dropdown multi-select field. Options are provided in the `options` option in the form of an array. Each element in the array needs a `value` and `label` key. Returns a comma seperated list of values (added in 0.11).
 - **Tab** (`modmore\Commerce\Admin\Widgets\Form\Tab`) is like a `SectionField`, except in the dashboard it will be automatically turned into a tabbed interface, whereas a Section only adds a new heading. The tab area starts with the first Tab field and every field will be part of its contents until a new Tab field is added.  
 - **TaxRuleCondition** (`modmore\Commerce\Admin\Widgets\Form\TaxRuleConditionField`), a field for inputting a country and a condition to apply to the country.
+- **TaxGroup** (`modmore\Commerce\Admin\Widgets\Form\TaxGroupField`), a field that lets the customer choose a tax group if more than one are available, or which is a hidden input with the only option available.
 - **Textarea** (`modmore\Commerce\Admin\Widgets\Form\TextareaField`), a simple textarea field for longer pieces of text.
 - **Text** (`modmore\Commerce\Admin\Widgets\Form\TextField`), a simple text field.
 - **WeightPrice** (`modmore\Commerce\Admin\Widgets\Form\WeightPriceField`), a field for inputting a weight from and weight until with a price.
