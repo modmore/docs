@@ -115,7 +115,7 @@ To output a table, use the following:
 
 The referenced template looks like this:
 
-````twig
+````html
 <table class="c-productmatrix">
     <thead class="c-productmatrix-head">
     <tr class="c-productmatrix-row c-productmatrix-head-row">
