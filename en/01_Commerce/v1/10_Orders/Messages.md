@@ -42,6 +42,8 @@ The chosen shipping method is available with the `shipping_method` prefix, for e
 
 Transactions for an order are available in a `{{ transactions }}` array that you can iterate over (as of v0.11.0-rc2). 
 
+Custom order fields are available in `order_fields`, already rendered for the customer, for example `{{ order_fields.coupon }}` (as of v0.11)
+
 ### Example data
 
 This is an example of all the data available in an order message. You can get this data yourself by enabling the `commerce.debug` system setting, and using `{{ dump() }}` or `{{ dump(placeholder name) }}`.  
