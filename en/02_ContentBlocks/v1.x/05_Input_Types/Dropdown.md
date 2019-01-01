@@ -26,11 +26,15 @@ Specify the options for the dropdown here. See the section _Defining the Options
 
 A value, which exists in the Drop-down Options, that should be preselected when the field is added to a page. 
 
+**Important:** If your default value is **empty**, the dropdown input will use the **first option**. 
+
 ## Defining the Options
 
 The Dropdown input type needs to have a set of options configured via the field properties. The way these are defined is very flexible.
 
-Here are the different formats which are supported. The _value_ is the actual value for a selection, and the _Displayed Value_ is what the editor sees in the dropdown. Both are also available in the field template. Each format is specified on a single line, separated by a line break (\\n).
+Here are the different formats which are supported. The _value_ is the actual value for a selection, and the _Displayed Value_ is what the editor sees in the dropdown. Both are also available in the field template. 
+
+Each format is specified on a single line, separated by a line break (\\n).
 
 - `value==Displayed Value`  
 Simple static value definition. Note the use of the double equal signs, this is similar to how you would define template variables.
@@ -46,6 +50,8 @@ A single hyphen is used to show a separator, consisting of a disabled option "--
 Use the `@SNIPPET` binding to dynamically fill the dropdown with the output from a snippet. The snippet can either return the options as a JSON encoded array, or as a line break (`\n`) separated plain text list with any of the above formats. See the section below for more information.
 
 These formats can be mixed and matched as needed. The official recommendation is to use the `value==Displayed Value` format predominantly.
+
+**Important:** Do not use empty values, except for a first option if you must. ContentBlocks **does not differentiate** between when an empty value was selected, and when no value is set yet, which means that empty values cause ContentBlocks to always fall back to the default value. If you have an empty value that is not the first value, that means it will never be pre-selected. (This may change in 2.0.) 
 
 ### Dynamic options with @SNIPPET
 
