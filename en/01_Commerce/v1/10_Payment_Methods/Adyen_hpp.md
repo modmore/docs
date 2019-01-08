@@ -46,9 +46,9 @@ To configure notifications, go to Account > Server Communication in the Adyen co
 
 ### Updating order status with notifications
 
-By default, Notifications only log to `core/cache/logs/adyen_notifications.log` and no additional processing is performed. 
+By default, Notifications only log to `core/cache/logs/adyen_notifications.log` and no additional processing (i.e. marking an order as paid) is performed. This is because the order is not processed the same way when received via notifications compared to through the checkout. We hope to address that in the future. 
 
-By creating a system setting `commerce_gatewayspack1.adyen.handle_auth_in_notification` and setting its value to 1 you can optionally allow the Gateway integration to use Notifications to trigger the order/transaction being marked as paid. **This does not currently trigger the `\Commerce::EVENT_ORDER_PAYMENT_RECEIVED` event because it bypasses the regular processing**, which may mean certain modules do not work as expected when this setting is enabled. 
+You can set the `commerce_gatewayspack1.adyen.handle_via_auth` system setting to 1 to allow the Gateway integration to use Notifications to trigger the order/transaction being marked as paid. **This does not currently trigger the `\Commerce::EVENT_ORDER_PAYMENT_RECEIVED` event because it bypasses the regular processing**, which may mean certain modules do not work as expected when this setting is enabled. 
 
 ### Note on notifications and multiple gateways
 
