@@ -1,3 +1,7 @@
+---
+title: Order States & Statuses
+---
+
 All orders in Commerce have a _State_ and a _Status_. 
 
 [TOC]
@@ -14,9 +18,9 @@ There are 4 different _States_:
 
 - **Cancelled** is for orders that were cancelled. These could have been draft or processing orders, but the bottom line is that they have not been fulfilled. 
 
-## Statuses
-
 _States_ cannot be changed and are core to the Commerce system.
+
+## Statuses
 
 _Statuses_ on the other hand are configured by your development team, and determine how an order flows from one state to the next. 
 
