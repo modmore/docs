@@ -30,13 +30,13 @@ The following field names are supported on addresses.
 
 Additional fields can be submitted to a generic `properties` field. For example the VAT registration is submitted to `address[billing][properties][vat_registration]`.
 
-To remember a new address for future checkouts, provide a `remember` value of `1`, for example with a field like `<input type="checkbox" name="address[billing][remember]" id="address-billing-remember" value="1" checked="checked">`
+To remember a new address for future checkouts, provide a `remember` value of `1`, for example with a field like `<input type="checkbox" name="address[billing][remember]" id="address-billing-remember" value="1" checked="checked">` It's recommended to leave this optional so users can choose, but you can also turn it into a hidden input to always remember addresses.
 
 ## Default
 
-The default template is as follows, as of Commerce v0.10.
+The default template is as follows, as of Commerce v0.12.
 
-```` twig
+````html
 <div class="c-checkout c-checkout-step c-checkout-address">
     <h2>{{ lex('commerce.checkout_address_header') }}</h2>
 
@@ -53,7 +53,7 @@ The default template is as follows, as of Commerce v0.10.
                     {% include "frontend/checkout/partial/previous-address.twig" with {
                         address: address,
                         type: 'shipping',
-                        current_address: address_shipping_id
+                        current_address: address_shipping_user_address
                     } %}
                 {% endfor %}
 
@@ -62,7 +62,7 @@ The default template is as follows, as of Commerce v0.10.
                            name="shipping_address"
                            class="c-method-radio c-shipping-address-radio"
                            id="shipping-address-new"
-                           value="1"
+                           value="new"
                            {% if address_shipping_id == 'new' %}checked="checked"{% endif %}
                     >
                     <div class="c-method-section c-shipping-address-section">
@@ -97,13 +97,13 @@ The default template is as follows, as of Commerce v0.10.
             </div>
         </div>
 
-        {% if previously_used_shipping|length > 0 %}
+        {% if previously_used_billing|length > 0 %}
         <div class="c-checkout-previous-address-list">
-            {% for address in previously_used_shipping %}
+            {% for address in previously_used_billing %}
                 {% include "frontend/checkout/partial/previous-address.twig" with {
                     address: address,
                     type: 'billing',
-                    current_address: address_billing_id
+                    current_address: address_billing_user_address
                 } %}
             {% endfor %}
         </div>
@@ -135,4 +135,4 @@ The default template is as follows, as of Commerce v0.10.
 </div>
 ````
 
-This template will offer previous addresses (if there are any), and another option to add a new address. The address fields themselves are in a different template that is included here.
+This template will offer previous addresses (if there are any), and another option to add a new address. The address fields themselves are in a different template that is included from `frontend/checkout/partial/billing-address-fields.twig` and `frontend/checkout/partial/shipping-address-fields.twig`.
