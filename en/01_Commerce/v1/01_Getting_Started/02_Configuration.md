@@ -28,28 +28,30 @@ Which modules you use depends on the type of shop and how the shop will be run. 
 
 It is **strongly recommended** to enable the [Basic Address Validation](../50_Modules/Address_Validation/Basic) module. This module ensures that address information is filled in before the customer can move along in the checkout. In the module configuration, you can enter the fields that should be required depending on your locality. For example the `state` field is not required in a large part of the world. 
 
-You should also enable either the [Autofill GeoIP](../50_Modules/Cart/AutoFillGeoIP) module or the [Default Address](../50_Modules/Cart/DefaultAddress) module. These modules will set an expected address on the order before the customer gets to the address step. This expected address is used by the taxes and shipping configuration to determine what rates and options to show in the cart. 
+You should also enable either the [Autofill GeoIP](../50_Modules/Cart/AutoFillGeoIP) module or the [Default Address](../50_Modules/Cart/DefaultAddress) module. These modules will set an expected address on the order before the customer gets to the address step. This expected address is used by the taxes and shipping configuration to determine what rates and options to show before the customer entered their information.
 
 - The [Default Address module](../50_Modules/Cart/DefaultAddress) is useful if you serve a distinct demographic. For example, if you only (or predominantly) ship to one country or state, you can configure the Default Address module to use that by default, which should be accurate for the majority of your customers.
 - If your customer base is more spread out, the Autofill GeoIP module will automatically geolocate the customer by their IP address and use the country (and optionally the state) instead. This uses the [ipinfo.io](https://ipinfo.io/) service (free for up to 1000 lookups per day) which is fairly accurate.  
 
 If you only sell in specific countries, the [Country Validation](../50_Modules/Address_Validation/Country) module is useful to restrict country selection. (Note that this does not remove countries from the country field in the address step, but you can do that by changing the templates.)
 
-If you require the customer to accept terms and conditions before initiating a payment, use the [Accept Terms](../Modules/Cart/AcceptTerms) module.
+If you require the customer to accept terms and conditions before initiating a payment, you can use the [Accept Terms](../Modules/Cart/AcceptTerms) module.
 
 ### Discounts
 
-You'll likely want to enable the [Coupons](../50_Modules/Discounts/Coupons) module to get access to coupon codes. After enabling the module, refresh the page to see the Coupons tab added to the top navigation. 
+You'll likely want to enable the [Coupons](../50_Modules/Discounts/Coupons) module to get access to coupon codes. After enabling the module, refresh the page to see the Discounts tab added to the top navigation. 
+
+There is also a [User & Usergroup Discounts](../50_Modules/Discounts/UserDIscounts) module that can be used for percentage discounts for users or user groups, accessible from the same Discounts tab once the module is enabled.
 
 ### Taxes
 
-Very few people enjoy paying taxes, but it's important to charge the right taxes to your customers. 
+Very few people enjoy paying taxes, but it is important to charge the right taxes to your customers. 
 
 - If you sell to customers in the European Union, enable the [EU VAT](../50_Modules/Taxes/EUVat) module to enable the EU VAT Rate Provider that enables automatically up-to-date tax rates across all countries in the EU. This loads (and caches) tax rates from [JSONVat.com](http://github.com/adamcooke/vat-rates), which is an open-source, community-maintained dataset.
 
 - If you sell to customers across the United States, the [TaxJar](../50_Modules/Taxes/TaxJar) module can be used to get automated sales tax calculations. This service covers virtually all possible Sales Tax rules, including product-specific exemptions if you configure the right product codes, and can also be used to help with your tax reporting, but does have a monthly cost to use. 
 
-For all other regions, or if you prefer to manually set rates, you can use the standard configuration. We'll look at configuring the actual [tax rates](../Taxes) in a minute.
+For all other regions, or if you prefer to manually set rates, you can use the standard configuration. We'll look at configuring the actual [tax groups and rates](../Taxes) in a minute.
 
 ### Products & Cart
 
@@ -61,13 +63,13 @@ The default installation created a simple [status workflow](../Statuses) for you
 
 ![Default Status Workflow in Commerce](../../images/gettingstarted/statusworkflow.jpg)
 
-For now, we'll leave that as-is, but later on you may want to change the emails that get send when an order is paid. You can find those by clicking on "Payment Received" in the Status Changes column for Draft, to see the actions that are fired when the payment is received. 
+For now, we'll leave that as-is, but later on you may want to change the emails that Commerce sends when an order is paid. You can find those by clicking on "Payment Received" in the Status Changes column for Draft, to see the actions that are fired when the payment is received. 
 
 You'll see two email actions are configured here, a confirmation email to the customer, and the order notification to the merchant. By clicking on the name (or "Edit Status Change Action" in the Actions menu), you can see the subject, recipient, and content configuration for each. By default these use templates, but you may need to tweak the recipient email on the order notification to merchant. 
 
 ## Setting up Payment Methods
 
-In the installation, a "Dummy Payment" was automatically created. This uses the [manual payment gateway](../Payment_Methods/Manual) which just marks the order as paid. If you want to add other payment method options, you can do that at **Configuration &raquo; Payment Methods**.
+In the installation, a "Dummy Payment" was automatically created. This uses the [manual payment gateway](../Payment_Methods/Manual) which just marks the order as paid. If you want to add [other payment method options](../Payment_Methods), you can do that at **Configuration &raquo; Payment Methods**.
 
 ## Setting up Delivery Types & Shipping Methods
 
@@ -97,13 +99,15 @@ For Euro, some countries prefer to use the comma instead of the dot for the deci
 
 ![The standard currencies](../../images/gettingstarted/currencies.jpg)
 
-If you need to add a currency that is not included in Commerce by default, [this site has a comprehensive list of the ISO4217 codes and formatting to use](https://www.thefinancials.com/Default.aspx?SubSectionID=curformat). The ISO codes are important to get right for certain payment providers.
+If you need to add a currency that is not included in Commerce by default, [this site has a comprehensive list of the ISO4217 codes and formatting to use](https://www.thefinancials.com/Default.aspx?SubSectionID=curformat). The ISO codes are important to get right for certain payment providers. 
+
+Use a different currency often? Let us know, maybe we can save you some time in the future by including it in the standard installation.
 
 [Learn more about currencies here](../Currencies). 
 
 ## Setting up Tax Groups
 
-Next up, create a tax group under **Configuration &raquo; Tax Groups**. Give it a name that describes the **type** of tax, not the actual rate to charge. For example you could have "Standard Tax" and "Food", but you would not typically name them "21%" or "9%".
+Next up, create a tax group under **Configuration &raquo; Tax Groups**. Give it a name that describes the **type** of tax, not the actual rate to charge. For example you could have "Standard Tax" and "Food", but you would not, typically, name them "21%" or "9%".
 
 After creating the tax group, choose **Manage Tax Rules**, in the Actions menu. 
 
@@ -115,7 +119,7 @@ After saving the rule, a new section _Rate Provider Options_ will be show. There
 
 If you want to add more tax rules for different rates, repeat this process. The priority determines the order that the tax rules will be evaluated from top-to-bottom in the grid, so set the conditions so that the lowest priority number is the most specific, and eventually fall back to an "Always" condition with the highest priority number. When using conditions that depend on customer information that is not yet be available, the rule is ignored, so keep that in mind.
 
-When creating products, you'll select the tax group to use for that specific product. 
+When creating products, you'll select the tax group to use for that specific product. Or, if only one tax group is configured, it is selected for you automatically.
 
 ## Some final System Settings
 

@@ -24,7 +24,7 @@ For most MODX shops, we recommend building the catalog based around resources. F
 
 These tools allow you to use MODX in the same way you would for normal sites. 
 
-To hook up Commerce, you will then use what we call the **Products TV** on your product pages. This is a template variable type that ships with Commerce that lets you maintain a list of products that are associated with the page. 
+To hook up Commerce, you will then use what we call the **Products TV** or **Matrix TV** on your product pages. These are template variable types that ship with Commerce that let you maintain either a list or a matrix of products that are associated with the page. 
 
 Imagine this resource structure:
 
@@ -38,7 +38,11 @@ Imagine this resource structure:
         - Design E
         - Design F
         
-All designs will have a set of sizes that are available for selection on that product page. Those sizes are the products in Commerce, with their own price and stock. 
+All designs will have a set of sizes that are available for selection on that product page. You will manage the general catalog page through the resources, while the sizes are the products in Commerce, with their own price and stock. The Products TV lets you manage a one-dimensional list of product variations. 
+
+**About the Product Matrix:** 
+
+> The Product Matrix TV works in a similar way to the Products TV, but instead of a one-dimensional list, it lets you define 2 properties and products are automatically created for the intersections of those properties. This is useful for a variety of use cases, but it's a bit more complex to get started with. If this is your first time working with Commerce, we'd recommend first getting to grips with the system using the Products TV. When you have that working, you can [learn more about the product matrix](../Product_Catalog/Product_Matrix) for more powerful product management.
 
 So let's start building. Install Collections, and create a sample resource structure for your shop, perhaps based on the sample above. Make sure to create a template for your categories, and a template for your product resources.
 
@@ -148,6 +152,8 @@ The add to cart form in this listing is slightly different because we used the q
 ## Going beyond
 
 With the basic structure in place, you can now start building our your catalog. Perhaps you want to add related products, show the add to cart form only if there's sufficient stock, or add more TVs to your products for highlights or product specs. The sky is the limit!
+
+You can also try the [product matrix](../Product_Catalog/Product_Matrix), instead of the products tv. The matrix is a more powerful way of managing products that combines 2 product attributes or properties into automatically generated products. You will need to make changes to your template and add to cart form to get that one hooked up, which is a little more complex than the Products TV due to its different structure.
 
 ## Next: customising your Cart & Checkout
 

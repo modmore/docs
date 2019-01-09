@@ -25,7 +25,7 @@ By default, Commerce shows all of the following steps:
 
 It's not currently supported<sup>*</sup> to change the order or functionality of these steps drastically, but there are various ways to make this fit your shop. We'll go over those options for each step.
 
-<sup>* Technically, it _is_ possible to change the checkout steps, but that requires in-depth technical knowledge of Commerce and changing undocumented features. That's why we do not currently provide support for it and discourage going down that route as we may still change how that works to make future customisation easier which would break custom checkout processes.</sup>
+<sup>* Technically, it _is_ possible to change the checkout steps, but we strongly discourage that level of customisation and do not currently provide documentation or support for it. We may change the underlying system in the future which would break custom checkout processes.</sup>
 
 #### Cart step
 
@@ -61,7 +61,7 @@ The shipping step is optional. When shown, it will calculate how much it costs t
 
 Commerce automatically selects the first available shipping method as soon as the cart, to present the user with an accurate total as soon as possible. 
 
-On each delivery type you can choose what to do with the shipping step:
+On each [delivery type](../Delivery_Types) you can choose what to do with the shipping step:
 
 - By default, the shipping step is set to "depends", which means it will only be shown if there is more than one matching shipping method for the order. 
 - When you set the shipping step to "required" on the delivery type, the shipping step is always shown, even with just one matching shipping method that has been pre-selected.
@@ -74,6 +74,8 @@ The payment step is required. It lists available payment methods, including the 
 If the order total is zero because of a coupon, or all products being free, then the payment step is automatically skipped and the order marked as completed. 
 
 If the total is not zero, but you do not intend to use online payments, you can create a payment method with the [Manual payment gateway](../Payment_Methods/Manual). That will mark the order as paid without the customer actually paying.
+
+If you'd like to implement a sort of "confirmation step" into the checkout, it's recommended to change the templating of the payment step to act as that instead. If you want to have a checkbox that requires customers to accept terms and conditions, enable the Accept Terms module. 
 
 #### Thank you step
 
@@ -95,7 +97,9 @@ To change templates, you will now copy them from the `default` folder, and paste
 
 Let's try it by adding "Hello world" to our cart.
 
-Copy `core/components/commerce/templates/default/frontend/checkout/cart.twig` into your theme directory following the same structure, so `core/components/commerce/templates/myshop/frontend/checkout/cart.twig`. (If you want to do this via the manager, change the `upload_files` system setting to include the `twig` extension.)
+Copy `core/components/commerce/templates/default/frontend/checkout/cart.twig` into your theme directory following the same structure, so place the copy in `core/components/commerce/templates/myshop/frontend/checkout/cart.twig`. 
+
+(If you want to do this via the manager, change the `upload_files` system setting to include the `twig` extension.)
 
 The template looks something like this:
 
@@ -153,11 +157,13 @@ There's a few dozen templates you can tweak in the same way. Their naming are ho
 
 You only have to copy the templates you want to change - all other templates will fall back to the `default` template. 
 
-In general, all templates in the `frontend` and `emails` directories are safe to change. Make sure to keep IDs and input names the same, to ensure things keep working as expected. Class names are less critical, but in some cases (payment method templates especially), you may want to keep those as-is. It's recommended to _not_ edit any of the `admin` templates, those are used in the dashboard. 
+In general, all templates in the `frontend` and `emails` directories are safe to change. Make sure to keep IDs and input names the same, to ensure things keep working as expected. Class names are less critical, but in some cases (payment method templates especially), you may want to keep those as-is. 
+
+**Note**: It's recommended to **not** edit any of the `admin` templates, those are used in the dashboard and we do not currently make an effort to preserve backwards compatibility in those templates. This means that if you copy or change the admin templates, and upgrade Commerce, you may end up with a broken dashboard.
 
 #### CSS, lexicons, custom theme folders, and more 
 
-See [theming](../Front-end_Theming) for more options to change the design and templates.
+See [theming](../Front-end_Theming) for more options to change the design and templates. There are many different things you can do. 
 
 ## Next
 
