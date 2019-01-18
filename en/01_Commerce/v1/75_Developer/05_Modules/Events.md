@@ -63,7 +63,7 @@ FQN: `modmore\Commerce\Events\AddressValidation`
 - `addFieldError(string $field, string $message)`: adds a field-specific error to the validation.
 - `addMessage(string $message)`: adds a generic error message to the validation.
 - `hasAnyErrors()`: returns true if there is at least one field specific error, or an error message.
-- `getFieldErrors()`: returns an error of AddressValidationError objects (same namespace) with the field specific errors.
+- `getFieldErrors()`: returns an array of AddressValidationError objects (same namespace) with the field specific errors.
 - `hasMessages()`: returns true if there's at least one generic error message set.
 - `getMessages()`: returns an array of generic error messages.
 
