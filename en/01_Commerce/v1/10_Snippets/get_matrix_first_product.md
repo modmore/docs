@@ -67,7 +67,7 @@ Depending on which property you've provided to the snippet (`&toPlaceholders`, `
 
 The first product.. isn't that just the one in the top left? Not quite! When determining the first product, there are a number of factors that can exclude a product from potentially being the first:
 
-- Rows or columns that are deactivated (shared orange-ish in the matrix) are skipped
+- Rows or columns that are deactivated (shaded red-ish in the matrix) are skipped
 - If you specify `&withStock`, only products where the stock is larger than 0 are included
 - If you specify `&withImage`, only products with an image are included
 
