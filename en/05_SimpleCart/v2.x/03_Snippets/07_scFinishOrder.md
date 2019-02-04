@@ -38,6 +38,10 @@ Name of a chunk, or `@INLINE:` or `@FILE:` prefixed value that's used as an inli
 
 Name of a chunk, or `@INLINE:` or `@FILE:` prefixed value that's used as an inline chunk, or file that's loaded. This will be shown when the order was created and paid properly. [Read more](../Frontend/Checkout/Thank_You).
 
+### orderPending
+
+Name of a chunk, or `@INLINE:` or `@FILE:` prefixed value for an inline chunk or file, which will be shown when an asynchronous payment is still pending confirmation. Defaults to the `scFinishOrderPending` chunk, which automatically refreshes the page every 5 seconds. 
+
 ### placeholderPrefix
 
 Default: `order.`
