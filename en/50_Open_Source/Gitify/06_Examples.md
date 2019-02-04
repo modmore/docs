@@ -279,3 +279,92 @@ data:
     class: migxConfig
     primary: [id, name]
 ````
+
+## Including objects when package uses a service-class 
+
+If an extra uses a service-class instead of a normal class (like Commerce does),
+then the name of the service has to be provided at the first config-object with the *service* option.
+
+```` 
+    commerce_currency:
+        class: comCurrency
+        primary: id
+        package: commerce
+        service: Commerce
+    commerce_product:
+        class: comProduct
+        primary: id
+    commerce_product_bundle_product:
+        class: comProductBundleProduct
+        primary: id
+    commerce_order:
+        class: comOrder
+        exclude_keys:
+          - created_on
+        primary: id
+    commerce_order_item:
+        class: comOrderItem
+        primary: id
+    commerce_order_shipment:
+        class: comOrderShipment
+        primary: id
+    commerce_delivery_type:
+        class: comDeliveryType
+        primary: id
+    commerce_shipping_method:
+        class: comShippingMethod
+        primary: id
+    commerce_status:
+        class: comStatus
+        primary: id
+    commerce_status_change:
+        class: comStatusChange
+        primary: id
+    commerce_status_change_action:
+        class: comStatusChangeAction
+        primary: id
+    commerce_tax_group:
+        class: comTaxGroup
+        primary: id
+    commerce_tax_rule:
+        class: comTaxRule
+        primary: id
+    commerce_tax_rate:
+        class: comTaxRate
+        primary: id
+    commerce_order_item_tax_rate:
+        class: comOrderItemTax
+        primary: id
+    commerce_order_item_adjustment:
+        class: comOrderItemAdjustment
+        primary: id
+    commerce_order_log:
+        class: comOrderLog
+        primary: id
+    commerce_order_address:
+        class: comOrderAddress
+        primary: id
+    commerce_address:
+        class: comAddress
+        primary: id
+    commerce_order_message:
+        class: comOrderMessage
+        primary: id
+        exclude_keys:
+          - created_on
+    commerce_transaction:
+        class: comTransaction
+        primary: id
+    commerce_payment_method:
+        class: comPaymentMethod
+        primary: id
+    commerce_module:
+        class: comModule
+        primary: id
+    commerce_coupon:
+        class: comCoupon
+        primary: id
+    commerce_coupon_usage:
+        class: comCouponUsage
+        primary: id
+````
