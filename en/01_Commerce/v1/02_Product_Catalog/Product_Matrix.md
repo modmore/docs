@@ -40,7 +40,7 @@ Open a resource that has your matrix TV. You should see an empty matrix with som
 
 Congratulations, you just created your first matrix product! 
 
-![An empty product matrix, showing you how to get started](../../images/products/matrix-first.jpg)
+![An product matrix with a single product in it](../../images/products/matrix-first.jpg)
 
 In our example we gave both the column (whole wheat, €1.50) and the row (roasted chicken €2.00) a price. Combined, these made up the price of the created product (whole wheat chicken, €3.50). You can also set a price on the matrix itself which will then be applied to all products. Click on "Manage Matrix Options", enter a base price, and save. You'll notice the product is also updated.
 
@@ -49,6 +49,22 @@ When setting a price change on a row or column, it doesn't have to be a positive
 You may notice that your product is marked as out of stock. Click on the product cell, enter the stock, and save. You can also change the price for a single product this way, but note that when you next edit the matrix or a row/column, that the product price will be re-calculated from that. 
 
 Now continue to add more attributes. Whenever you add a new row or column, additional products will be created based on the values you give. 
+
+## Matrix Configuration
+
+At any time you can change the matrix configuration by clicking on the **Manage Matrix Options** button at the top left of the matrix. The options provided there are initially configured base on the input options on the template variable, but can be changed for individual matrices. 
+
+The available options are explained below.
+
+- **Column Label**: the name for what type of attribute a column is. Primarily used in the manager, but you can also set up your templates to access this in the front-end (`{{ matrix.column_name }}`)  
+- **Row Label**: the name for what type of attribute a row is. Primarily used in the manager, but you can also set up your templates to access this in the front-end (`{{ matrix.row_name }}`)  
+- **Product SKU Template**: an inline [Twig template](../Templates) that is used to generate the SKU for each individual product. This usually includes the SKU from the column (`{{ column.sku }}`) and the SKU from the row (`{{ row.sku }}`), but can also include resource fields (any standard resource field, e.g. `{{ resource.alias }}`) or template variables. For template variables, you need to add a comma separated list of TVs to load the value for in the `commerce.matrix.load_tvs` system setting.
+- **Product Name Template**: similar to the SKU template, the Name template is an inline [Twig template](../Templates) for generating the name for each individual product. This usually includes the name from the column (`{{ column.name }}`) and the name from the row (`{{ row.name}}`), but can also include resource fields (any standard resource field, e.g. `{{ resource.pagetitle }}`) or template variables. For template variables, you need to add a comma separated list of TVs to load the value for in the `commerce.matrix.load_tvs` system setting.
+- **Description**: a description for the matrix itself. Could be used in your front-end to offer additional information about pricing. Is not applied to individual products.
+- **Base Price**: the base price for all products in the matrix. This is combined with the base price on the rows and columns to reach the product price. Once created, you can temporarily edit the price on individual products, which will be reverted when you edit the relevant column, row, or matrix configuration.
+- **Base Weight** and **Weight Unit**: the default weight for products in the matrix.
+- **Tax Group**: see [taxes](../Taxes)
+- **Delivery Type**: see [Delivery Types](../Delivery_Types)
 
 ## Showing product selection with a matrix
 
@@ -298,9 +314,7 @@ Made a cool product selector with the matrix? [Share it on our forum!](https://f
 
 Some examples above include a hidden link input that submits the resource ID along with the add-to-cart request. This is meant to be used with the [Item Data Module](../Modules/Cart/ItemData) (introduced in 0.11) with `link` as an allowed field.
 
-It's recommended to include this in your add to cart form when using a matrix, so that your customer can return to the product resource they added the product from. Contrary to [resource products](Resource), products in a Product TV don't natively know what resource they are used on, so lack that link. 
-
-To add additional custom data, view the [Item Data Module documentation](../Modules/Cart/ItemData).
+It's recommended to include this in your add to cart form when using a matrix, so that your customer can return to the product resource they added the product from. To add additional custom data, view the [Item Data Module documentation](../Modules/Cart/ItemData).
 
 ## Tip: use Form Customization to move the TV
 
