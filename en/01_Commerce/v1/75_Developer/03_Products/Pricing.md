@@ -140,7 +140,7 @@ interface ShippingPriceTypeInterface extends PriceTypeInterface {
 which you could then integrate into existing PriceType implementations by adding the interface and the provided methods:
 
 ```php
-final class Example implements PriceTypeInterface, ItemPriceTypeInterface
+final class Example implements PriceTypeInterface, ItemPriceTypeInterface, ShippingPriceTypeInterface
 {    
     public function getPriceForItem(\comOrderItem $item)
     {
