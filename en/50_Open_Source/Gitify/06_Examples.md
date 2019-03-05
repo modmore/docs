@@ -207,12 +207,19 @@ data:
     class: cbField
     primary: [id, name]
     package: contentblocks
+  cb_categories:
+    class: cbCategory
+    primary: [id, name]
   cb_layouts:
     class: cbLayout
     primary: [id, name]
   cb_templates:
     class: cbTemplate
     primary: [id, name]
+  cb_defaults:
+    class: cbDefault
+    primary: id
+    
   redirects:
     class: modRedirect
     primary: id
