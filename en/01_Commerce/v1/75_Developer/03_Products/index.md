@@ -8,7 +8,6 @@ Most everything else is presentational and does not belong in the Product object
 
 If you have multiple options for a product, each variation would typically be implemented as unique `comProduct` records with their own SKUs, names and prices. In your user-facing interface, those can still be part of a same product page.
 
-**1.0 Alpha Note**: We're considering baking in product variations into products as well. If that happens, we'll update this page. 
 
 ## comProduct
 
@@ -31,7 +30,7 @@ The following methods are available on the base `comProduct` object:
 - `getSku()`
 - `getName()`
 - `getDescription()`
-- `getPrice()`: returns an instance of `modmore\Commerce\Products\Price` with the price(s) for the product along with the [currency](../Currencies)
+- `getPrice()`: returns an instance of `modmore\Commerce\Products\Price` with the price(s) for the product along with the [currency](../../Currencies)
 - `getStock()`: returns the quantity of products in stock currently
 - `getWeight()`: returns an instance of `PhpUnitsOfMeasure\PhysicalQuantity\Mass` which is created with both the weight and weight_unit value.
 - `updateStock($quantitySold = 0, $quantitySupplied = 0)`: used for updating the stock. 
@@ -40,7 +39,7 @@ The following methods are available on the base `comProduct` object:
 - `getEditLink()`: returns `false` or a link in the manager where the product can be edited.
 - `synchronise()`: mostly useful for custom product types to "cluster" updates in a single request. 
 
-As with [all objects in Commerce](Base_Class), you can also use `setProperty` and `getProperty`/`getProperties` to get additional information.
+As with [all objects in Commerce](../Base_Class), you can also use `setProperty` and `getProperty`/`getProperties` to get additional information.
 
 ## comResourceProduct
 
