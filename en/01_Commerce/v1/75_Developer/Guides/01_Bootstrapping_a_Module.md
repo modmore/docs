@@ -114,16 +114,20 @@ Many actions in Commerce trigger [events](../Modules/Events) that you can intera
 Let's say we want to know when a customer adds an item to their cart. The event for that is `\Commerce::EVENT_ITEM_ADDED_TO_CART`, so we can add a listener like this:
 
 ```php
-$dispatcher->addListener(\Commerce::EVENT_ITEM_ADDED_TO_CART, [$this, 'onItemAddedToCart']);
+    public function initialize(EventDispatcher $dispatcher)
+    {
+        $dispatcher->addListener(\Commerce::EVENT_ITEM_ADDED_TO_CART, [$this, 'onItemAddedToCart']);
+    }
 ```
 
 Next, create a new method in your class that matches the callable, in the above example that's `onItemAddedToCart`. That method will be called with an `Event` object, which in this case is `modmore\Commerce\Events\Cart\Item`, which we can typehint for:
 
 ```php
-public function onItemAddedToCart(modmore\Commerce\Events\Cart\Item $event) {
-    $item = $event->getItem();
-    $this->adapter->log(1, 'Customer added product ' . $item->get('name') . ' to their cart.');
-}
+    public function onItemAddedToCart(modmore\Commerce\Events\Cart\Item $event)
+    {
+        $item = $event->getItem();
+        $this->adapter->log(1, 'Customer added product ' . $item->get('name') . ' to their cart.');
+    }
 ```
 
 You can see we fetch the `comOrderItem` that was added with `$event->getItem()` and then log the item's name to the MODX error log for testing.
