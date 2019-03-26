@@ -100,7 +100,7 @@ Next, we'll implement the important logic that determines if our customer gets a
 
 That should do the trick!
 
-We'll also need to tell Commerce how to save and load the data for a price type, which happens with the `serialize` and static `unserialize` methods. While the exact format this uses is up to you, storing data as JSON is typically fine. As the PriceType is always stored in a currency-specific `PricingInterface` implementation, you do not have to store the context. 
+We'll also need to tell Commerce how to save and load the data for a price type, which happens with the `serialize` and static `unserialize` methods. While the exact format this uses is up to you, storing data as JSON is typically fine. As the PriceType is always stored in a currency-specific `PricingInterface` implementation, you do not have to store the currency. 
 
 ```php
     public function serialize()
@@ -114,7 +114,7 @@ We'll also need to tell Commerce how to save and load the data for a price type,
     {
         $details = json_decode($data, true);
         if (!is_array($details)) {
-            throw new InvalidPriceTypeDataException('Could not decode JSON "' . $data .'" for Simple Price Type');
+            throw new InvalidPriceTypeDataException('Could not decode JSON "' . $data .'" for LoggedIn Price Type');
         }
 
         $amount = array_key_exists('amount', $details) ? (int)$details['amount'] : 0;
@@ -192,15 +192,15 @@ final class LoggedInPriceType implements PriceTypeInterface, ItemPriceTypeInterf
 
 Now that we have a custom price type, we need to register it with Commerce so it can automatically show it when editing product prices. 
 
-We use our module for that, by adding a listener to the [TBA @todo] event, and passing it the name of our custom Price Type. 
+We use our module for that, by adding a listener to the `\Commerce::EVENT_DASHBOARD_GET_PRICE_TYPES` event, and passing it the name of our custom Price Type. 
 
 ```php
     public function initialize(EventDispatcher $dispatcher)
     {
-        $dispatcher->addListener(\Commerce::TBATBATBATBATBABTABTBATABTABETBTABTBATB, [$this, 'onRegisterPriceType']);
+        $dispatcher->addListener(\Commerce::EVENT_DASHBOARD_GET_PRICE_TYPES, [$this, 'registerPriceType']);
     }
     
-    public function onItemAddedToCart(modmore\Commerce\Events\TBATBATBATBATBATBA $event)
+    public function registerPriceType(modmore\Commerce\Events\Admin\PriceTypes $event)
     {
         $event->registerPriceType(ThirdParty\YourModuleName\Pricing\LoggedInPriceType::class);
     }

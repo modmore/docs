@@ -1,6 +1,6 @@
 Commerce supports different use cases for setting product prices. 
 
-All products support a basic retail price. This is the price that's normally charged for the product. You edit it by editing your product, and filling in the "Price" or "Retail Price" field. This is a base price, in a single currency. 
+All products support a basic retail price. This is the price that's normally charged for the product in a certain currency. You edit it by editing your product, and filling in the "Price" field. This is a base price.
 
 Most (but not all) ways of integration with Commerce also supports more advanced price types. These are a bit more complex, and also much more powerful. 
 
@@ -16,19 +16,17 @@ First, navigate to where you usually manage products. Depending on how your shop
 
 (If you manage your products elsewhere, for example in a different application or a custom solution, price types may not be supported. Contact your development partner for assistance.)
 
-Edit the product you want to manage prices for. On the _Pricing_ tab you should see the primary _Retail Price_ at the top, and sections per currency below that.
+Edit the product you want to manage prices for. On the _Pricing_ tab you should see the _Price_ sections, one for each enabled currency.
 
 (Contact your development partner to enable additional currencies.)
 
 ### Multiple Currencies
 
-To set a retail price in different currencies, add a **Simple Price** to the currency. 
-
-Compared to the other price types (which we'll discuss below), the **Simple Price** is always used for a product in a given currency, and basically lets you define a retail price per currency. When you add multiple Simple Prices, the cheapest one will apply.
+To set a retail price in different currencies, simply set the single price field shown to you. 
 
 ### Time-based Sale Prices
 
-To set a sale price that automatically starts and/or expires, add a **Sale Price**. It will ask you for the date the sale will start, the date it ends, and the price. 
+To set a sale price that automatically starts and/or expires, add a **Sale Price** or **Percentage Sale Price**. It will ask you for the date the sale will start, the date it ends, and the price or percentage discount respectively. 
 
 The start and expiration dates are both optional, so if you have a sale that's already running you can leave out the start date, and if you don't want to automatically expire the sale, you can leave the expiration date empty as well.
 
@@ -37,6 +35,8 @@ It is possible that sale prices starting or expiring is not immediately visible 
 ### Quantity Based Prices (aka bulk discounts)
 
 If you want to charge a lower price when customers buy more products, quantity based prices are what you need. Add a **Quantity Price** to the currency of your choosing.
+
+Note that only one instance of the quantity price is accepted per currency. 
 
 The fields that appear will let you define different prices for different brackets. For example: 
 
@@ -57,7 +57,7 @@ You may have access to other types, too. Price Types can be extended, for exampl
 
 These use cases are not mutually exclusive, and can be combined in a single product. 
 
-For example you can use the **Simple Price** to set a per-currency retail price, and also add the **Sale** or **Quantity** price types to it as well.
+For example you can have a per-currency retail price, and also add the **Sale** or **Quantity** price types to it as well.
 
 When a customer orders a product, Commerce will evaluate all your rules for the currency, and will charge the customer the **cheapest price** that's available for their product.
 

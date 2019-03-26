@@ -11,7 +11,7 @@ On this page:
 
 ## (Retail) Prices & Price Types
 
-In Commerce each product has a (retail) price. This is the primary price that you set when managing products, and is available with all different types of [managing your product catalog](../Product_Catalog). Historically this was the only price you could set for a product.
+In Commerce each product has a standard/retail price for each enabled currency. This is the primary price that you set when managing products, and is available with all different types of [managing your product catalog](../Product_Catalog). Historically this was the only price you could set for a product.
 
 Price Types, first introduced in v1.0, give you a lot more power and flexibility. Price Types are only available for the [Product List TV](../Product_Catalog/Products_TV) and [Product Matrix TV](../Product_Catalog/Product_Matrix), or for products managed manually from the dashboard. This indeed means that [Resource Products](../Product_Catalog/Resource) do not support price types at the moment. 
 
@@ -21,13 +21,17 @@ Custom product types can support price types, but that depends on their implemen
 
 Commerce ships with the following price types out of the box:
 
-- Simple: a single price that is always used, used to give a retail price per currency (as the standard product price only supports a single currency).
 - Sale: a single price that is only used between two date/times. 
+- Sale Percentage: a percentage discount price that is only used between two date/times. THe percentage price is useful for in a Matrix, as it will cascade from the matrix/row/column to each individual product.
 - Quantity: lets you set multiple prices where the returned price is based on the quantity on the order item.
+
+They are not available right away; you first need to enable their respective modules at Configuration > Modules. 
 
 ## Template integration
 
-A PriceRenderer is available that can render "from/for" prices. 
+The `[[+pricing_regular]]` and `[[+pricing_regular_formatted]]` placeholders (and twig equivalent) always contain the regular price for a product in the current currency.
+
+Separate renderers are going to be available to show the different types of prices in your templates.
 
 (To be continued)
 
