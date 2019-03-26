@@ -52,19 +52,19 @@ Pricing instances are always specific to one currency.
 
 The purpose of a price type is to, potentially out of a long list of options, return a single Price that is available. A PriceType instance is always specific to one currency.
 
-Technically, Price Types are implementations of `\modmore\Commerce\Pricing\PriceType\Interfaces\PriceTypeInterface` (which sets the contract for how a PriceType is serialized) and `\modmore\Commerce\Pricing\PriceType\Interfaces\ItemPriceTypeInterface` (which sets the contract for how an). 
+Technically, Price Types are implementations of `\modmore\Commerce\Pricing\PriceType\Interfaces\PriceTypeInterface` (which sets the contract for how a PriceType is serialized), `\modmore\Commerce\Pricing\PriceType\Interfaces\ItemPriceTypeInterface` (which sets the contract for how a price type should interact with an order item), and `\modmore\Commerce\Pricing\PriceType\Interfaces\RelativePriceTypeInterface` (which tells Commerce about a `setRegularPrice` method so your price type can do calculations with an original price).
 
 There are presently 3 implementations of this in Commerce:
 
-- `\modmore\Commerce\Pricing\PriceType\Simple` is a basic price type that always returns the one price it is given. Primarily meant to be used in multi currency situations, where this price type can provide a per-currency standard price. 
 - `\modmore\Commerce\Pricing\PriceType\Sale` is a price type that either returns a single defined Price or not, based on a start (from) and expiration (until) DateTime. 
+- `\modmore\Commerce\Pricing\PriceType\PercentageSale` is a price type that either returns a single defined Price or not, based on a start (from) and expiration (until) DateTime. Compared to the Sale PriceType, the SalePercentage lets the user enter a percentage discount and it then calculates the new price from that.
 - `\modmore\Commerce\Pricing\PriceType\Quantity` gives the merchant a way to define bulk pricing between different brackets. This PriceType contains different prices
 
 We'll get to more details and some examples in a minute.
 
 ## Why the multiple Price Type and Pricing interfaces?
 
-While this document is focused on Products, none of the concepts here are, technically speaking, exclusively available to Products. 
+While this document is focused on Products, none of the concepts here are, technically speaking, exclusively available to Products/Items. 
 
 The Price Types, Pricing and Prices are all generic, with additional Product-specific interfaces and implementations that connect the two.
 
@@ -124,7 +124,7 @@ final class Example implements PriceTypeInterface, ItemPriceTypeInterface
 
 (At this point you don't have any further logic, but we recommend that you add a `__construct` method that takes in whatever values your PriceType needs, using that in `getPriceForItem`, and adding additional getters/setters as needed.)
 
-By architecting it this way, we're leaving room for future implementations of other types of pricing. For example we may implement price types into Shipping Methods at some point using an interface like this:
+By architecting it this way, we're leaving room for future implementations of other types of pricing. For example we'll likely implement price types into Shipping Methods at some point using an interface like this:
 
 ```php 
 interface ShippingPriceTypeInterface extends PriceTypeInterface {
@@ -245,10 +245,9 @@ At that point, you would add the interface to a PricingInterface implementation,
 If you have a `comProduct` instance loaded, and want to get the price from that, there are a few methods at your disposal with the word price (or pricing) in it: 
 
 - `$product->getPrice() : \modmore\Commerce\Product\Price` - this is the old method of getting a price back for a product. Note that this `\modmore\Commerce\Product\Price` object is **not** an implementation of `\modmore\Commerce\Pricing\Interfaces\PriceInterface` (which would be the `\modmore\Commerce\Pricing\Price` class). This method primarily serves to turn the `price` field on the product into something that resembles a price with a currency, but that implementation turns out to have been a bit short-sighted, and has been deprecated. Unfortunately as the `Product\Price` and `Pricing\PriceInterface` are not compatible and we have been encouraging people to override getPrice in custom products, we have to keep them both around for a little while. 
-- `$product->getRetailPrice(comCurrency $currency) : PriceInterface` is the new method (since 1.0) of getting the standard retail/regular price for a product. Internally, this currently calls `$product->getPrice()` to preserve backwards compatibility with custom product types, and then it transforms the `Product\Price` into a `Pricing\Price` which can be used with price types and PricingInterface implementations. As mentioned in the definitions, the regular aka retail price is a standard price before any price types are evaluated.
-- `$product->getPricing(comCurrency $currency) : ProductPricing` this returns a `ProductPricing` instance (which implements both `PricingInterface` and `ItemPricingInterface`) with all pricing information for the product in the provided currency, including the retail price and the various price types that are configured on the product. 
+- `$product->getPricing(comCurrency $currency) : ProductPricing` this always returns a `ProductPricing` instance (which implements both `PricingInterface` and `ItemPricingInterface`) with all pricing information for the product in the provided currency, including the retail price and the various price types that are configured on the product. 
 
-So typically you'll want either `$product->getRetailPrice(comCurrency $currency)` to get the standard product price, or to get the full pricing information you'll call `$product->getPricing(comCurrency $currency)` instead. 
+So typically you'll get the full pricing information with `$product->getPricing(comCurrency $currency)`, and interact with that to get the standard or alternative prices. 
 
 The current currency object is available on all `comSimpleObject` instances through `$object->getCurrency()`, through `$commerce->currency`, or `$commerce->getCurrency($threeLetterAlphaCode)`. 
 
@@ -277,16 +276,6 @@ Repeat steps 2-4 for each currency you need to import.
 
 Different price types are initialised in different ways. Some examples:
 
-- **Simple** (`\modmore\Commerce\Pricing\PriceType\Simple`) expects a `PriceInterface` instance in its constructor.
-
-```php
-$pricing->addPriceType(
-    new \modmore\Commerce\Pricing\PriceType\Simple(
-        new \modmore\Commerce\Pricing\Price($currency, 7500)
-    )
-);
-```
-
 - **Sale** (`\modmore\Commerce\Pricing\PriceType\Sale`) expects a `PriceInterface`, and optionally a `\DateTime` for the start and expiration times. When there is no start or no expiration time, provide `null` or omit the argument.
 
 ```php
@@ -300,6 +289,18 @@ $pricing->addPriceType(
 ```
 
 (Tip, to get a DateTime object from a unix timestamp, use `new \DateTime('@' . $timestamp)`)
+
+- **PercentageSale** (`\modmore\Commerce\Pricing\PriceType\PercentageSale`) expects a discount provided as a float with up to 2 decimals (e.g. `20.50`), and optionally a `\DateTime` for the start and expiration times. When there is no start or no expiration time, provide `null` or omit the argument.
+
+```php
+$pricing->addPriceType(
+    new PercentageSale(
+        12.50,
+        (new \DateTime())->modify('-3 days'),
+        (new \DateTime())->modify('+4 days')
+    )
+);
+```
 
 - **Quantity** (`\modmore\Commerce\Pricing\PriceType\Quantity`) expects the currency in the constructor, and subsequent calls to `add(int $min, int|null $max, int $amountInCents)` to add the quantity brackets. The `add` method can be chained. If you don't want to set a maximum quantity, provide a `null`.
 
@@ -321,8 +322,8 @@ If you programmatically want to remove a PriceType, create a new ProductPricing 
 ```php
 $currency = $commerce->getCurrency('EUR');
 $currentPricing = $product->getPricing($currency);
+$retailPrice = $currentPricing->getRegularPrice();
 
-$retailPrice = $product->getRetailPrice($currency);
 $newPricing = new ProductPricing($currency, $retailPrice);
 
 foreach ($currentPricing->getPriceTypes() as $priceType) {
