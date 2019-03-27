@@ -29,9 +29,9 @@ They are not available right away; you first need to enable their respective mod
 
 ## Template integration
 
-The `[[+pricing_regular]]` and `[[+pricing_regular_formatted]]` placeholders (and twig equivalent) always contain the regular price for a product in the current currency.
+The `[[+price]]` and `[[+price_formatted]]` placeholders (and twig equivalent) contain the regular price for a product in the current currency.
 
-Separate renderers are going to be available to show the different types of prices in your templates.
+Separate renderers are going to be available to show the different types of prices in your templates in mid-end April.
 
 (To be continued)
 
