@@ -52,9 +52,14 @@ Pricing instances are always specific to one currency.
 
 The purpose of a price type is to, potentially out of a long list of options, return a single Price that is available. A PriceType instance is always specific to one currency.
 
-Technically, Price Types are implementations of `\modmore\Commerce\Pricing\PriceType\Interfaces\PriceTypeInterface` (which sets the contract for how a PriceType is serialized), `\modmore\Commerce\Pricing\PriceType\Interfaces\ItemPriceTypeInterface` (which sets the contract for how a price type should interact with an order item), and `\modmore\Commerce\Pricing\PriceType\Interfaces\RelativePriceTypeInterface` (which tells Commerce about a `setRegularPrice` method so your price type can do calculations with an original price).
+Technically, Price Types are implementations of one or more of the following interfaces: 
 
-There are presently 3 implementations of this in Commerce:
+- `\modmore\Commerce\Pricing\PriceType\Interfaces\PriceTypeInterface`, which sets the contract for how a PriceType is serialized
+- `\modmore\Commerce\Pricing\PriceType\Interfaces\ItemPriceTypeInterface`, which sets the contract for how a price type should interact with an order item
+- `\modmore\Commerce\Pricing\PriceType\Interfaces\RelativePriceTypeInterface`, which tells Commerce about a `setRegularPrice` method so your price type can do calculations with an original price
+- `\modmore\Commerce\Pricing\PriceType\Interfaces\TimeBoundPriceTypeInterface`, which provides a `getFromDate()` and `getUntilDate()` method for determining/rendering if a price type is valid for the provided date. 
+
+There are presently 3 Price Type implementations in Commerce:
 
 - `\modmore\Commerce\Pricing\PriceType\Sale` is a price type that either returns a single defined Price or not, based on a start (from) and expiration (until) DateTime. 
 - `\modmore\Commerce\Pricing\PriceType\PercentageSale` is a price type that either returns a single defined Price or not, based on a start (from) and expiration (until) DateTime. Compared to the Sale PriceType, the SalePercentage lets the user enter a percentage discount and it then calculates the new price from that.
@@ -336,3 +341,17 @@ foreach ($currentPricing->getPriceTypes() as $priceType) {
 $product->savePricing($newPricing);    
 ```
 
+## Loading Price Types in a custom product
+
+Prior to 1.0, you would override `getPrice` and return a simple price object. That has been deprecated and will be removed in 1.3. 
+
+To define custom pricing now, you have two options at your disposal:
+
+- Override `getRawPricing()` and `setRawPricing()` if you only need to change **where** the pricing data is stored. `getRawPricing()` needs to return an array in the format `[ "USD" => ["regular_price" => 1000, "price_types" => []] ]`, and `setRawPricing` should accept an array in that format, serialize, and save it.
+- Override `getPricingInstance(comCurrency $currency)` (1.0.0-rc2+) and `savePricing(ItemPricingInterface $pricing)` if you want to manually construct a `ProductPricing` instance and handle its serialisation. If `getPricingInstance()` returns `null`, the `comProduct` will construct a pricing instance from the `getPrice()` method.
+
+The first approach is typically recommended for product types that work similar to the Resource Product, where information is loaded from elsewhere. 
+
+The second approach can allow you more flexibility in creating the pricing instance directly. If you do not also implement `setRawPricing()` or `savePricing()` however, programmatic interaction with your product type may not work 100% the same as a built-in product.
+
+To make sure that other interactions with the pricing work as expected you'll likely also want to override the `savePricing` method to control how pricing information provided by a programatic interface is saved for your product.  

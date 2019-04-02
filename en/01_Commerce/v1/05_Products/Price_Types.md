@@ -25,13 +25,14 @@ Commerce ships with the following price types out of the box:
 - Sale Percentage: a percentage discount price that is only used between two date/times. THe percentage price is useful for in a Matrix, as it will cascade from the matrix/row/column to each individual product.
 - Quantity: lets you set multiple prices where the returned price is based on the quantity on the order item.
 
-They are not available right away; you first need to enable their respective modules at Configuration > Modules. 
+They are not shown right away; you first need to enable their respective modules at Configuration > Modules. 
 
 ## Template integration
 
-The `[[+price]]` and `[[+price_formatted]]` placeholders (and twig equivalent) contain the regular price for a product in the current currency.
+The `[[+price]]` and `[[+price_formatted]]` placeholders (and twig equivalent) contain the current best price for a product in the current currency.
 
-Separate renderers are going to be available to show the different types of prices in your templates in mid-end April.
+To render a "From/until"-style date, you can use the `[[+price_rendered]]` placeholder which uses the `frontend/price.twig` [twig template](../Front-end_Theming). 
 
-(To be continued)
+For date-based price types, like the Sale/Percentage Sale, which also have an expiration date set, you can also use the `[[+price_valid_until]]` placeholder. That contains a unix timestamp which can be rendered to a human-readable timestamp with the `date` output filter.
 
+We'll add a snippet that lets you render a quantity-based price type to your product pages in mid-end April. The other core price types are automatically taken into account in the `[[+price]]` and `[[+price_rendered]]` placeholders. 
