@@ -5,8 +5,10 @@ Added in 0.4.
 ## Usage
 
 ```` html
-[[commerce.get_product? &product=`123`]]
+[[!commerce.get_product? &product=`123`]]
 ````
+
+It's possible to call this snippet both cached and uncached. The benefit of calling it uncached is that automatic sale prices are reflected in the output; but that does come at a small performance penalty.
 
 ## Properties
 

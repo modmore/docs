@@ -5,3 +5,5 @@ To use stock with [Resource Products](Resource_Products), make sure you've set u
 To automatically reduce the stock level when an order is paid, enable the [Update Stock module](../Modules/Cart/UpdateStock). 
 
 To make sure customers cannot add more to their cart than what is in stock, enable the [Enforce Stock module](../Modules/Cart/EnforceStock) as well. 
+
+When using third party stock management (e.g. an ERP or PIM system), you'd typically only use EnforceStock to prevent customers from ordering more than is available. Instead of the UpdateStock module, you'd let products retrieve the accurate stock directly from the ERP/PIM system. 

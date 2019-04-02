@@ -5,10 +5,13 @@ Added in 0.4.
 ## Usage
 
 ```` html
-[[commerce.get_products? 
+[[!commerce.get_products? 
     &products=`123, 321, 213, 231`
-    &tpl=`product-item`]]
+    &tpl=`product-item`
+]]
 ````
+
+It's possible to call this snippet both cached and uncached. The benefit of calling it uncached is that automatic sale prices are reflected in the output; but that does come at a small performance penalty.
 
 ## Properties
 
@@ -30,7 +33,7 @@ If you select one or more products on a resource, you can use this snippet in yo
 
 `product_option` chunk:
 
-````§ html
+```` html
 [[+total_products:eq=`1`:then=`
   <input type="hidden" name="product" value="[[+id]]">
 `:else=`
