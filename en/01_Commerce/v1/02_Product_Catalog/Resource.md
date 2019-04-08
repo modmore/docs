@@ -22,7 +22,8 @@ Set up the following MODX System Settings to point to a resource field or templa
 - `commerce.resourceproduct.delivery_type_field` - see Delivery Type and Tax Group section below
 - `commerce.resourceproduct.description_field` - should be a text field, like `introtext`
 - `commerce.resourceproduct.name_field` - should be a text field, like `pagetitle`
-- `commerce.resourceproduct.price_field` - should be a number TV. By default this accepts decimals, but you can set `commerce.resourceproduct.price_field_decimals` to no to use integer values (e.g. 100 = €1) instead. 
+- `commerce.resourceproduct.pricing_field` - should be the name of a Product Pricing TV (including the `tv.` prefix), which will contain the pricing for the resource product.
+- `commerce.resourceproduct.price_field` - **Deprecated in favour of the pricing field** - should be a number TV. By default this accepts decimals, but you can set `commerce.resourceproduct.price_field_decimals` to no to use integer values (e.g. 100 = €1) instead. 
 - `commerce.resourceproduct.sku_field` - should be a text field, like `alias`
 - `commerce.resourceproduct.stock_field` - should be an integer number TV
 - `commerce.resourceproduct.tax_group_field` - see Delivery Type and Tax Group section below
@@ -32,6 +33,16 @@ Set up the following MODX System Settings to point to a resource field or templa
 The values of each setting should be the name of a standard resource field (e.g. `pagetitle`, `alias`, or `introtext`), or the name of a TV prefixed with `tv.` (e.g. `tv.price` or `tv.product_sku`). 
 
 Once setup, product information is synchronised when a product is added to the cart, or when the product record is saved in the Commerce merchant dashboard. See Add to cart form below for how you should set up your add to cart to automatically generate the product records in the Commerce database.
+
+### Prices
+
+As of v1.0.0-rc3, you should configure your resources products with a Pricing TV. This replaced the old Price field, which lacked multi-currency support. By using the Pricing TV, you also get access to [Price Types](../Products/Price_Types) on resource products.
+
+To set it up, create a new template variable of type "[Commerce] Resource Product Pricing". Give it an appropriate caption, set the name to "pricing", and on the Template Access tab assign it to the right templates. 
+
+(You can also set a different name for the TV, in which case you need to set the `commerce.resourceproduct.pricing_field` system setting accordingly.)
+
+Now, when you edit a resource with this template, you should see the Pricing TV allowing you to set prices in each [enabled currency](../Currencies).
 
 ### Delivery Type and Tax Group
 
@@ -117,4 +128,23 @@ or like this for a different resource:
     <input type="submit" value="Add to Cart">
 </form>
 ````
+
+## Displaying Product information in your template
+
+To show product information in your template,  you can either use your template variables (e.g. `[[*pagetitle]]` or `[[*product_stock]]`), but you can also fetch the information through the [get_product snippet](../Snippets/get_product). The benefit of the get_product snippet is that the placeholders you can use are identical to the ones with the other product catalog options (e.g. [Product List TV](Products_TV)), and you also get some additional processing of values. 
+
+The basic snippet call would look like this:
+
+```html
+[[!commerce.get_product? &product=`[[commerce.get_resource_product_id]]`]]
+```
+
+That will show you all fields that are available. You can provide a `&field` property to extract a single field, provide a chunk in `&tpl`, or set all values to placeholders you can use throughout the template with `&toPlaceholders`. [Learn more about the get_product snippet](../Snippets/get_product)
+
+This will for example show the rendered price (which takes sale price types into account):
+
+```html
+[[!commerce.get_product? &product=`[[commerce.get_resource_product_id]]` &field=`price_rendered`]]
+```
+
 
