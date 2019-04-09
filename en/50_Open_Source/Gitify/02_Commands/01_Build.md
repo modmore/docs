@@ -8,12 +8,13 @@ Also as of v0.9, `Gitify build` automatically tries to resolve duplicate id/prim
 
 ````
 Usage:
- build [--skip-clear-cache] [-f|--force] [--no-backup]
+ build [--skip-clear-cache] [-f|--force] [--no-backup] [--no-cleanup]
 
 Options:
  --skip-clear-cache    When specified, it will skip clearing the cache after building.
  --force (-f)          When specified, all existing content will be removed before rebuilding. Can be useful when having dealt with complex conflicts.
  --no-backup           When using the --force attribute, Gitify will automatically create a full database backup first. Specify --no-backup to skip creating the backup, at your own risk.
+ --no-cleanup          With --no-cleanup specified the built-in orphan handling is disabled for this build. The orphan handling removes objects that no longer exist in files from the database.
  --help (-h)           Display this help message.
  --verbose (-v|vv|vvv) Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug.
  --version (-V)        Display the Gitify version.
