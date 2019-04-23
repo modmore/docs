@@ -68,4 +68,13 @@ foreach ($modx->getIterator('comProduct', $c) as $product) {
 }
 ```
 
+## Filling the price index
+
+The price index is kept up-to-date automatically, but if you have a lot of products prior to the 1.0 upgrade, you may need to fill it the first time using a command line utility. The utility you need is included with Commerce, and can be executed with the following command:
+
+````bash
+php core/components/commerce/utilities/fill_price_indices.php
+````
+
+If you're programmatically creating or updating product information, using `comProduct->save()` should be sufficient to also update the price index. If you're not using the provided objects but instead feed it directly into the database or use a pull-based pricing integration, it may be necessary to take additional measures to keep the price index up-to-date. 
 
