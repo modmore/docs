@@ -50,10 +50,6 @@ If you're not seeing the attachment, check in `core/export/invoices` if the PDF 
 
 There's a couple ways you can change the invoice.
 
-- Add/change some basic information through settings
-- Change the Twig template
-- Change the way the invoice reference is generated
-
 ### Add company information [required]
 
 In most jurisdictions you need to include your full company details on the invoice. You can add this, with HTML, in the `commerce.invoice_merchant_address` system setting; the contents of which will be added before the meta data in the top right of the invoice.
@@ -66,7 +62,15 @@ With the `commerce.invoice_logo_url` system setting you can add a logo to the in
 
 Use the `commerce.invoice_footer_text` system setting; supports HTML.
 
-### Change the generated invoice reference
+### Define a (per-context) template
+
+Configure the name of a twig template in the `commerce.invoice_template` system setting. This can be overridden per-context to allow invoices to be branded differently.
+
+The default template is `invoice/web.twig`. 
+
+If you're new to theming with Twig in commerce, [start here](Front-end_Theming). 
+
+## Customise invoice references
 
 The `commerce.invoice_reference_template` system setting contains an inline twig template that is used to generate the invoice reference. The default is: `INV-{{- increment|str_pad_left(5, '0') -}}`
 
