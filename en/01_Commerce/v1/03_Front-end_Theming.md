@@ -22,6 +22,10 @@ For example you might create a directory `core/components/commerce/templates/pre
 
 With the directory in place, you can copy files from their location in the defaults folder, to the same location in your own theme folder. To edit the cart you would copy `core/components/commerce/templates/default/frontend/checkout/cart.twig` to `core/components/commerce/templates/premiumshirts/frontend/checkout/cart.twig` and make your changes there.
 
+**Note: Do NOT copy all directories and files into your own templates folder blindly; only copy the files you're actually changing.** That saves you effort and makes it crystal clear what files are different from the default and may need changes, while also automatically giving you fixes in the default templates where possible.  
+
+**Note2: Do NOT copy/overwrite the admin templates**. While it's technically possible to change the admin templates the same way as front-end templates, we do not currently support custom admin templating and may at any time introduce backwards incompatible changes if you do copy/change admin templates.  
+
 ## Custom Theme Folder
 
 It's also possible to place your theme folder outside the Commerce directories. This is recommended, but as shown before not necessary.
