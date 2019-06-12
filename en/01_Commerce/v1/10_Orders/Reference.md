@@ -91,9 +91,13 @@ Suffix of "-TEST" if the order was made in test mode: `00123-TEST`
 {{- increment|str_pad_left(5, '0') -}}{% if test %}-TEST{% endif %}
 ````
 
+## Start increments at a certain number
+
+By default, increments start at 1. To change that, set the `commerce.order_increment_start` system setting to the lowest value you want increments to start at. (Added in v1.0.1)
+
 ## Reset increments yearly
 
-If you include the year in the reference, you'll likely want to reset the increment every year as well. To do that, enable the `commerce.order_increment_reset_yearly` system setting. New orders will automatically start from 1 again at January 1st midnight server time.
+If you include the year in the reference, you'll likely want to reset the increment every year as well. To do that, enable the `commerce.order_increment_reset_yearly` system setting. New orders will automatically start from 1 (or the value of the `commerce.order_increment_start` setting) again at January 1st midnight server time.
 
 ## Regenerating order references
 

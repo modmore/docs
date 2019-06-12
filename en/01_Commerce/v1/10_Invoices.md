@@ -76,4 +76,6 @@ The `commerce.invoice_reference_template` system setting contains an inline twig
 
 The primary component is an incrementing number, `{{ increment }}` in the template. The `commerce.invoice_increment_reset_yearly` system setting determines if that number resets at the start of each year or not. 
 
-The invoice reference works the same as the [order reference](Orders/Reference), so check that documentation for more details about what you can set the template to. 
+With the `commerce.invoice_increment_start` system setting you can determine the starting number for invoice reference.
+
+The invoice reference works the same as the [order reference](Orders/Reference), so check that documentation for more details about what you can set the template to, and what the different settings do.
