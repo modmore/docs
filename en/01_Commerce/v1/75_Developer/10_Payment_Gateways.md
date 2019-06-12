@@ -1,3 +1,8 @@
+> Important: the gateway classes described here have been replaced in Commerce 1.1 with new interfaces and classes, that removes the strict dependence on Omnipay 2. 
+> 
+> [Read more about building Gateways for Commerce 1.1+](Payment_Gateways/index)
+
+
 Commerce uses the PHP OmniPay library (v2) to integrate with payment gateways, without reinventing the wheel for every gateway individually. Commerce requires a small wrapper class, example included below, to be made aware of a payment gateway and to know what configuration to ask from the merchant when setting up the gateway.
 
 Note the difference between a Payment Gateway (discussed here, the code that handles talking to payment providers) and [Payment Methods](../Payment_Methods) (admin-configured instances of a gateway, each with their own configuration). Technically speaking, gateways are an instance of `\modmore\Commerce\Gateways\BaseGateway`, while payment methods are xPDO objects of type `\comPaymentMethod`. 
