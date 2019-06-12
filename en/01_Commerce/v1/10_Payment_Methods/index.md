@@ -28,7 +28,8 @@ The table below contains a list of gateways that are currently available for Com
 | [Paymill](Paymill) | Credit Cards | On-site (JavaScript frame) | Commerce |
 | [PayPal](PayPal) | PayPal account, credit cards | Off-site (direct) | Commerce |
 | [SagePay](SagePay) | Credit Cards | Off-site (hosted payment page) | Commerce |
-| [Stripe](Stripe) | Credit Cards | On-site (JavaScript v2 form) | Commerce |
+| [Stripe (Legacy)](Stripe) | Credit Cards | On-site (JavaScript v2 tokenisation) | Commerce |
+| [Stripe - Card](Stripe_Card) | Credit Cards | On-site (JavaScript v3 Payment Intents) | Commerce v1.1 |
 
 Need another gateway that isn't yet available? Send an email to support@modmore.com to let us know which one you need (and when). 
 
