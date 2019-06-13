@@ -7,7 +7,7 @@ The Coupons module ships with the Commerce core. Enable it in Configuration > Mo
 - Enabling/disabling a coupon
 - Allowing the order only for specific order totals (minimum/maximum)
 
-Features such as limiting a coupon to specific products, multiple coupons per order, bulk creating unique coupons, or exporting a list of coupons, are not currently supported. If you're interested in those or other features, please let us know so we can properly prioritise it for a future release. 
+Features such as multiple coupons per order, bulk creating unique coupons, or exporting a list of coupons, are not currently supported. If you're interested in those or other features, please let us know so we can properly prioritise it for a future release. 
 
 ## Coupon Management
 
