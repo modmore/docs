@@ -151,7 +151,7 @@ The add to cart form in this listing is slightly different because we used the q
 
 ## Going beyond
 
-With the basic structure in place, you can now start building our your catalog. Perhaps you want to add related products, show the add to cart form only if there's sufficient stock, or add more TVs to your products for highlights or product specs. The sky is the limit!
+With the basic structure in place, you can now start building your catalog. Perhaps you want to add related products, show the add to cart form only if there's sufficient stock, or add more TVs to your products for highlights or product specs. The sky is the limit!
 
 You can also try the [product matrix](../Product_Catalog/Product_Matrix), instead of the products tv. The matrix is a more powerful way of managing products that combines 2 product attributes or properties into automatically generated products. You will need to make changes to your template and add to cart form to get that one hooked up, which is a little more complex than the Products TV due to its different structure.
 
