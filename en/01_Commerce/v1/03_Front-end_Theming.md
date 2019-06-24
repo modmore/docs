@@ -16,26 +16,20 @@ The default templates for Commerce are stored in `core/components/commerce/templ
 
 ## Overriding Template Files
 
-To override template files, create a new folder in `core/components/commerce/templates/` and create files with the same name as the files in the default folder. Then set the `commerce.theme` setting to the name of your directory. 
+To override template files, you have two settings at your disposal:
 
-For example you might create a directory `core/components/commerce/templates/premiumshirts/` and set the `commerce.theme` setting to `premiumshirts`.
+- `commerce.theme` contains the name of the theme directory, like `default`, `premiumshirts`, or `awesomeevents`. 
+- `commerce.themes_path` contains the path to the directory that holds themes. You may use placeholders like `{base_path}` and {core_path} here.
 
-With the directory in place, you can copy files from their location in the defaults folder, to the same location in your own theme folder. To edit the cart you would copy `core/components/commerce/templates/default/frontend/checkout/cart.twig` to `core/components/commerce/templates/premiumshirts/frontend/checkout/cart.twig` and make your changes there.
+So if you set `commerce.theme` to `blueshoes` and `commerce.themes_path` to `{base_path}assets/templates/`, then Commerce will look for template files in `/assets/templates/blueshoes/`. 
+
+Note that the `themes_path` setting must end in a slash.
+
+With that directory in place, you can copy files from their location in the defaults folder, to the same location in your own theme folder. For example, to edit the cart you would copy `core/components/commerce/templates/default/frontend/checkout/cart.twig` to `core/components/commerce/templates/premiumshirts/frontend/checkout/cart.twig` and make your changes there.
 
 **Note: Do NOT copy all directories and files into your own templates folder blindly; only copy the files you're actually changing.** That saves you effort and makes it crystal clear what files are different from the default and may need changes, while also automatically giving you fixes in the default templates where possible.  
 
-**Note2: Do NOT copy/overwrite the admin templates**. While it's technically possible to change the admin templates the same way as front-end templates, we do not currently support custom admin templating and may at any time introduce backwards incompatible changes if you do copy/change admin templates.  
-
-## Custom Theme Folder
-
-It's also possible to place your theme folder outside the Commerce directories. This is recommended, but as shown before not necessary.
-
-The setting you'll need to update for this is `commerce.themes_path`. Set this to a fully qualified server path that **contains** your theme directory. It's possible to use `{base_path}` and `{core_path}` values to make the path relative to the base or core path respectively.
-
-To give an example, if you want your theme files in `assets/templates/webshop/`, you would set:
-
-- `commerce.theme` to `webshop`
-- `commerce.themes_path` to `{base_path}assets/templates/` - note the trailing slash is required.
+**Note2: Do NOT copy/overwrite the admin template directory**. While it's technically possible to change the admin templates the same way as front-end templates, we do not currently support custom admin templating and may at any time introduce backwards incompatible changes if you do copy/change admin templates. Just don't.
 
 ## Theme inheritance
 
@@ -47,11 +41,29 @@ Assuming `commerce.theme` is set to `webshop` and `commerce.themes_path` is set 
 
 If it finds the requested template file, it stops there, otherwise it checks the next path. This means you only have to copy the templates you're actually customising; any others will simply fall back to the default. 
 
+### Multiple theme inheritance
+
+As of Commerce v1.1, you can also define multiple comma-separated themes and theme paths. This is useful when combined with a [starter pack](https://www.modmore.com/commerce/extensions/theme-red/) or if you have a complex setup with multiple similar themes that still need specific overrides per context (see below). 
+
+Themes and theme paths are checked in the order they are defined, so the left-most option is checked first. 
+
+Assuming `commerce.theme` is set to `webshop, ctred` and `commerce.themes_path` is set to `{base_path}assets/templates/, {core_path}components/commercetheme_red/templates/`, Commerce will check for matching template files in the following order. 
+
+1. `{base_path}assets/templates/webshop/`
+2. `{core_path}components/commercetheme_red/templates/webshop/`
+3. `{core_path}components/commerce/templates/webshop/`
+4. `{base_path}assets/templates/ctred/`
+5. `{core_path}components/commercetheme_red/templates/ctred/`
+6. `{core_path}components/commerce/templates/ctred/`
+7. `{core_path}components/commerce/templates/default/`
+
+Only paths that exist are included in the inheritance, of course. 
+
 ### Different themes per Context
 
 With Contexts in MODX, you can use different Commerce themes for different contexts. To use this, create `commerce.theme` and/or `commerce.themes_path` context settings for the specific context. 
 
-Note that the Commerce admin area will not use context-specific themes unless you specify the setting on the `mgr` context. We don't recommend making changes to the manager dashboard for now, to ensure things don't break in a weird way while we continue to evolve that.
+Note that the Commerce admin area will not use context-specific themes unless you specify the setting on the `mgr` context. We don't recommend making changes to the manager dashboard, to ensure things don't break in a weird way while we continue to evolve that.
 
 ### Different themes for User (Groups)
 
