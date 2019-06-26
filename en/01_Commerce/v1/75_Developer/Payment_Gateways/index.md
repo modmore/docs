@@ -2,6 +2,10 @@ Commerce supports a [number of built-in and third party payment method](../../Pa
 
 > Note: this documentation deals with **Commerce 1.1+**; in 1.0 and before a [different implementation is needed](../Payment_Gateways). At the moment, both the 1.0 (recognised by the usage of the "BaseGateway") and 1.1 (recognised by "GatewayInterface" or "Omnipay2Gateway") solutions are supported, but it is strongly encouraged to [upgrade to the new interfaces](Migrate_BaseGateway_to_Omnipay2Gateway).
 
+On this page you'll find a high-level overview of the different interfaces and classes that are involved with payment gateways. You'll need a `GatewayInterface` implementation and at least one `TransactionInterface` implementation. 
+
+[TOC]
+
 ## High-level overview
 
 Gateways consists of Gateway instances, and related Transaction instances. 
@@ -68,18 +72,6 @@ For transactions that (may) receive updates via a webhook, the `\modmore\Commerc
 
 To support both off-site redirects and webhooks, make sure to implement both interfaces. Also note that Commerce checks the **implemented interfaces**, and not if methods are present, so always include the proper interfaces in the class definition.
 
-### Pre-1.1: BaseGateway
-
-Prior to Commerce 1.1, all gateways extended from a `BaseGateway`, providing the protected `$omnipayGateway` property to indicate an Omnipay 2 driver to use. As of Commerce 1.1, Omnipay is no longer a requirement, and has been replaced with the above interfaces instead. 
-
-If you're familiar with how Omnipay works, you may recognise the general concept of splitting up the logic between gateways (`AbstractGateway` in Omnipay) and transactions (`AbstractRequest/AbstractResponse`). 
-
-The biggest difference is that Omnipay gateways are focused on the payment provider interactions (i.e. `purchase()` to start a payment and `completePurchase()` to finish it), which are not always consistently implemented to mean the same thing in different drivers and we can't reliably call `completePurchase()` repeatedly, for example, without knowing wether that's safe to do or not. With the gateway implementation in Commerce 1.1+, the focus is on Commerce actions (i.e. `view()` to show a payment provider form/options, `submit()` to indicate the customer chose the method and is trying to pay, `returned()` to fetch the payment status (or to finish it) when the customer returns to the site). Gateway instances handle those "touchpoints" and return `TransactionInterface` instances that Commerce then uses to determine how/if the order needs to be updated.
-
-To migrate a pre-1.1 gateway to the new classes, see [Migrate BaseGateway to Omnipay2Gateway](Migrate_BaseGateway_to_Omnipay2Gateway).
-
-There is also an `Omnipay2Gateway` abstract class that can be used to achieve a similar integration with Omnipay 2 drivers, but using the new Commerce-native interfaces. 
-
 ## Registering a Gateway
 
 To tell Commerce about your gateway, you will need to create a [Module](../Modules). In this module you will provide the class name and the label to show for it in the back-end. 
@@ -142,3 +134,22 @@ After the gateway is selected, the class name is stored on the payment method, a
 
 **Do not** use the `modmore\Commerce\Gateways` namespace in custom gateways, or extend directly from core-provided gateways, to prevent future conflicts or breaking changes.
 
+## GatewayHelper
+
+The [GatewayHelper](GatewayHelper) class contains useful (static) utility methods for gateways. Most notably, you should use it to generate (customer) return/cancel and (webhook) notification URLs, and the transaction description. 
+
+## Omnipay2Gateway
+
+Looking to build an integration for which a suitable Omnipay driver is available? The [Omnipay2Gateway abstract class](Omnipay2Gateway) implements immediately confirmed and redirect transactions. 
+
+## Pre-1.1: BaseGateway
+
+Prior to Commerce 1.1, all gateways extended from a `BaseGateway`, providing the protected `$omnipayGateway` property to indicate an Omnipay 2 driver to use. As of Commerce 1.1, Omnipay is no longer a requirement, and has been replaced with the above interfaces instead. 
+
+If you're familiar with how Omnipay works, you may recognise the general concept of splitting up the logic between gateways (`AbstractGateway` in Omnipay, `GatewayInterface` in Commerce) and transactions (`AbstractRequest`/`AbstractResponse` in Omnipay, `TransactionInterface` in Commerce). 
+
+The biggest difference is that Omnipay gateways are focused on the payment provider interactions (i.e. `purchase()` to start a payment and `completePurchase()` to finish it). They typically don't generate forms or JS implementations (tokenisation) and not all drivers are quite as consistent in naming or when certain methods should (or should not) be used. While immensely useful when it works, it can also get in the way of using more powerful provider-specific functionality. 
+
+The Commerce interfaces are more geared around the different touch points for transactions. These are viewing the payment method selection page (`view()`), choosing the method (`submit()`), returning from an off-site gateway or checking the status (`returned()`), and optionally receiving a webhook notification (`webhook()`). The latter 3 return `TransactionInterface` implementations that contain information about the current payment status.
+ 
+To migrate a pre-1.1 gateway (`... extends BaseGateway`) to the new classes, see [Migrate BaseGateway to Omnipay2Gateway](Migrate_BaseGateway_to_Omnipay2Gateway).
