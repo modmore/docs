@@ -9,7 +9,7 @@ The WebhookGatewayInterface should be implemented by gateways that (may) accept 
 
 namespace modmore\Commerce\Gateways\Interfaces;
 
-use modmore\Commerce\Gateways\TransactionException;
+use modmore\Commerce\Gateways\Exceptions\TransactionException;
 
 interface WebhookGatewayInterface extends GatewayInterface {
     /**

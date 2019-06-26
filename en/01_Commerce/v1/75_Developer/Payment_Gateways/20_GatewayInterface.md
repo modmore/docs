@@ -13,7 +13,7 @@ use comOrder;
 use comPaymentMethod;
 use comTransaction;
 use modmore\Commerce\Admin\Widgets\Form\Field;
-use modmore\Commerce\Gateways\TransactionException;
+use modmore\Commerce\Gateways\Exceptions\TransactionException;
 
 interface GatewayInterface {
     /**
@@ -62,14 +62,27 @@ interface GatewayInterface {
 
 namespace ThirdParty\GatewayName\Gateways;
 
+use Commerce;
 use comOrder;
 use comPaymentMethod;
 use comTransaction;
 use modmore\Commerce\Admin\Widgets\Form\Field;
 use modmore\Commerce\Admin\Widgets\Form\PasswordField;
-use modmore\Commerce\Gateways\TransactionException;
+use modmore\Commerce\Gateways\Exceptions\TransactionException;
 
 class MyGateway implements \modmore\Commerce\Gateways\Interfaces\GatewayInterface {
+    /** @var Commerce */
+    protected $commerce;
+    
+    /** @var comPaymentMethod */
+    protected $method;
+    
+    public function __construct(Commerce $commerce, comPaymentMethod $method)
+    {
+        $this->commerce = $commerce;
+        $this->method = $method;
+    }
+    
     /**
      * Render the payment gateway for the customer; this may show issuers or a card form, for example.
      *
@@ -78,6 +91,7 @@ class MyGateway implements \modmore\Commerce\Gateways\Interfaces\GatewayInterfac
      */
     public function view(comOrder $order)
     {
+        // To render a template, use: $this->commerce->view()->render('frontend/gateways/foo.twig', []);
         return '<p>This may render a template that contains client-side code that needs to run for the gateway.</p>';
     }
 

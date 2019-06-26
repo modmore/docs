@@ -4,7 +4,9 @@ Commerce supports a [number of built-in and third party payment method](../../Pa
 
 ## High-level overview
 
-Gateways consists of Gateway instances, and related Transaction instances. Various interfaces are available that determine available functionality on a given gateway or transaction, and as developer you get to choose which one(s) to support depending on both user and technical requirements. Commerce automatically infers available functions based on the implemented interfaces.
+Gateways consists of Gateway instances, and related Transaction instances. 
+
+Various interfaces are available that determine available functionality on a given gateway or transaction, and as developer you get to choose which one(s) to support depending on both user and technical requirements. Commerce automatically infers available functions based on the implemented interfaces.
 
 ### Gateways
 
@@ -15,15 +17,29 @@ In Commerce, payment gateways implement the `\modmore\Commerce\Gateways\Interfac
 - `public function returned(comTransaction $transaction, array $data): TransactionInterface`
 - `public function getGatewayProperties(comPaymentMethod $method): Field[]`
 
+The `submit` and `returned` methods need to return an instance of the [TransactionInterface](TransactionInterface).
+
+[More about the GatewayInterface >](GatewayInterface)
+
 For gateways that take server-to-server webhook notifications for payment confirmations, the `\modmore\Commerce\Gateways\Interfaces\WebhookGatewayInterface` interface adds the following method:
 
 - `public function webhook(\comTransaction $transaction, array $data): TransactionInterface`
 
-The `submit`, `returned` and `webhook` methods need to return an instance of the `\modmore\Commerce\Gateways\Interfaces\TransactionInterface` interface. 
+The `webhook` method needs to return an instance of the [WebhookTransactionInterface](WebhookTransactionInterface).
+
+[More about the WebhookGatewayInterface >](WebhookGatewayInterface)
+
+For gateways that require server-to-server webhook notifications, but which do not support unique URLs per transaction but rather have a single configurable webhook URL, the `\modmore\Commerce\Gateways\Interfaces\SharedWebhookGatewayInterface` interface adds:
+
+- `public function identifyWebhookTransaction();`
+
+The `identifyWebhookTransaction` method returns a `\comTransaction` instance - notably **not** a `TransactionInterface` implementation.
+
+[More about the SharedWebhookGatewayInterface >](SharedWebhookGatewayInterface)
 
 ### Transactions
 
-The `\modmore\Commerce\Gateways\Interfaces\TransactionInterface` interface defines a payment attempt, making it clear what is/has happened with the attempt, and has the following methods:
+The `\modmore\Commerce\Gateways\Interfaces\TransactionInterface` interface defines a payment attempt, making it clear what is/has happened with the attempt. It defines the following methods:
 
 - `public function isPaid(): bool`
 - `public function isAwaitingConfirmation(): bool`
@@ -34,6 +50,8 @@ The `\modmore\Commerce\Gateways\Interfaces\TransactionInterface` interface defin
 - `public function getExtraInformation(): array`
 - `public function getData(): array`
 
+[More about the TransactionInterface >](TransactionInterface)
+
 For transactions that (may) cause an off-site redirect, the `\modmore\Commerce\Gateways\Interfaces\RedirectTransactionInterface` interface adds the following methods:
 
 - `public function isRedirect(): bool`
@@ -41,20 +59,26 @@ For transactions that (may) cause an off-site redirect, the `\modmore\Commerce\G
 - `public function getRedirectUrl(): string` 
 - `public function getRedirectData(): array` 
 
+[More about the RedirectTransactionInterface >](RedirectTransactionInterface)
+
 For transactions that (may) receive updates via a webhook, the `\modmore\Commerce\Gateways\Interfaces\WebhookTransactionInterface` interface adds the following methods to determine how to respond to webhook requests:
 
 - `public function getWebhookResponse(): string`
 - `public function getWebhookResponseCode(): int`
 
-### Legacy: BaseGateway
+To support both off-site redirects and webhooks, make sure to implement both interfaces. Also note that Commerce checks the **implemented interfaces**, and not if methods are present, so always include the proper interfaces in the class definition.
+
+### Pre-1.1: BaseGateway
 
 Prior to Commerce 1.1, all gateways extended from a `BaseGateway`, providing the protected `$omnipayGateway` property to indicate an Omnipay 2 driver to use. As of Commerce 1.1, Omnipay is no longer a requirement, and has been replaced with the above interfaces instead. 
 
 If you're familiar with how Omnipay works, you may recognise the general concept of splitting up the logic between gateways (`AbstractGateway` in Omnipay) and transactions (`AbstractRequest/AbstractResponse`). 
 
+The biggest difference is that Omnipay gateways are focused on the payment provider interactions (i.e. `purchase()` to start a payment and `completePurchase()` to finish it), which are not always consistently implemented to mean the same thing in different drivers and we can't reliably call `completePurchase()` repeatedly, for example, without knowing wether that's safe to do or not. With the gateway implementation in Commerce 1.1+, the focus is on Commerce actions (i.e. `view()` to show a payment provider form/options, `submit()` to indicate the customer chose the method and is trying to pay, `returned()` to fetch the payment status (or to finish it) when the customer returns to the site). Gateway instances handle those "touchpoints" and return `TransactionInterface` instances that Commerce then uses to determine how/if the order needs to be updated.
+
 To migrate a pre-1.1 gateway to the new classes, see [Migrate BaseGateway to Omnipay2Gateway](Migrate_BaseGateway_to_Omnipay2Gateway).
 
-In Commerce 1.1 we've added a new `Omnipay2Gateway` abstract class that can be used to achieve a similar integration with Omnipay 2 drivers, but using the new Commerce-native interfaces. 
+There is also an `Omnipay2Gateway` abstract class that can be used to achieve a similar integration with Omnipay 2 drivers, but using the new Commerce-native interfaces. 
 
 ## Registering a Gateway
 
@@ -110,11 +134,11 @@ class MyGateway extends BaseModule
 }
 ````
 
-[Learn more about modules here](../Modules).
+[Learn more about modules here](../Modules) and [start here if you haven't built a module before](../Guides/Bootstrapping_a_Module).
 
 **Important: the module's registerGateways method will only run when an admin user adds or edits a payment method**, so don't use that to initiate gateway state. 
 
-After the gateway is selected, the class name is stored on the payment method, and Commerce will load that gateway class when showing payment methods to the customer. That's why you need to include the logic to load your gateway class (which can be an autoloader, like Composer, or a simple `require_once` call) in your `initialize()` method, and not in the `registerGateways` method. 
+After the gateway is selected, the class name is stored on the payment method, and Commerce will load that gateway class when showing payment methods to the customer. That's why you need to include the logic to load your gateway class (which can be an autoloader, like Composer, or a simple `require_once` call) in your `initialize()` method, and not in the `registerGateways` method. In the example module above, the composer autoloader is required which will know about the gateway class. 
 
 **Do not** use the `modmore\Commerce\Gateways` namespace in custom gateways, or extend directly from core-provided gateways, to prevent future conflicts or breaking changes.
 

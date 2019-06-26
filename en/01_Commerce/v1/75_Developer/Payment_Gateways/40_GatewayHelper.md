@@ -8,6 +8,12 @@ Use `GatewayHelper::getNotifyURL(comTransaction $transaction)` to get a normalis
 
 This will return a fully qualified URL to `assets/components/commerce/notify.php` with the transaction ID, in such a way that Commerce can automatically route the webhook request to the right transaction/gateway instance. 
 
+## getSharedNotifyURL
+
+Use `GatewayHelper::getSharedNotifyURL(\comPaymentMethod $method)` to get a normalised webhook notification URL for gateways that do not implement transaction-specific notification/webhook URLs. 
+
+This will return a fully qualified URL to `assets/components/commerce/notify.php` with the payment method ID. When such a request is received, and 
+
 ## getReturnUrl
 
 Use `GatewayHelper::getReturnURL(comTransaction $transaction)` to get the URL to redirect the customer to in the case of an off-site redirect payment. This is a fully qualified URL to the (context-specific) checkout page, including the transaction ID. 
