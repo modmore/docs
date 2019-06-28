@@ -17,7 +17,6 @@ When an event is fired, it will provide you with an event object in your callbac
 |`\Commerce::EVENT_ORDER_AFTER_CALCULATE `|`Order`|`comOrder->calculate`| |
 |`\Commerce::EVENT_ORDER_BEFORE_STATUS_CHANGE`|`OrderStatus`| | |
 |`\Commerce::EVENT_ORDER_AFTER_STATUS_CHANGE`|`OrderStatus`| | |
-|`\Commerce::EVENT_ORDER_PAYMENT_RECEIVED`|`Payment`| | |
 |`\Commerce::EVENT_ORDER_ADDRESS_ADDED`|`Address`| | |
 |`\Commerce::EVENT_ORDER_MESSAGE_PLACEHOLDERS`|`MessagePlaceholders`|`comOrderMessage` when collecting placeholders for messages|To add additional information (placeholders) to emails or other content that gets sent through the order messages system.|
 |`\Commerce::EVENT_ORDERITEM_ADDED`|`OrderItem`| | |
@@ -25,6 +24,11 @@ When an event is fired, it will provide you with an event object in your callbac
 |`\Commerce::EVENT_ORDERITEM_REMOVED`|`OrderItem`| | |
 |`\Commerce::EVENT_ORDERITEM_BEFORE_CALCULATE`|`OrderItem`|`comOrderItem->calculate`| |
 |`\Commerce::EVENT_ORDERITEM_AFTER_CALCULATE `|`OrderItem`|`comOrderItem->calculate`| |
+|`\Commerce::EVENT_TRANSACTION_CREATED`|`Transaction`| v1.1 - `comOrder::addTransaction`, in the checkout flow when a transaction is initialised. | Synchronising transactions with 3rd party system |
+|`\Commerce::EVENT_TRANSACTION_CANCELLED`|`Transaction`| v1.1 - `comTransaction::markCancelled` called by checkout or webhook action where the payment attempt is cancelled | Synchronising transactions |
+|`\Commerce::EVENT_TRANSACTION_PROCESSING`|`Transaction`| v1.1 - `comTransaction::markProcessing` called by checkout or webhook action when the payment first enters a processing/open/pending state | Synchronising transactions |
+|`\Commerce::EVENT_TRANSACTION_FAILED`|`Transaction`| v1.1 - `comTransaction::markFailed` called by checkout or webhook action when the payment failed. | Synchronising transactions |
+|`\Commerce::EVENT_TRANSACTION_COMPLETED`|`Transaction`| v1.1 - `comTransaction::markCompleted` called by checkout or webhook action when the payment was successful. | Synchronising transactions |
 |`\Commerce::EVENT_DASHBOARD_INIT_GENERATOR`|`Admin\GeneratorEvent`|When initialising the dashboard and loading the available pages (controllers/views).| |
 |`\Commerce::EVENT_DASHBOARD_GET_MENU`|`Admin\TopNavMenu`|When initialising the dashboard and generating the navigation.|Customising the navigation or adding links to additional pages.|
 |`\Commerce::EVENT_DASHBOARD_PAGE_BEFORE_GENERATE`|`Admin\PageEvent`| | |
@@ -38,6 +42,13 @@ When an event is fired, it will provide you with an event object in your callbac
 |`\Commerce::EVENT_CHECKOUT_AFTER_STEP`|`Checkout`|During the checkout, after a step has been processed, but not yet returned to the page.|Generally for making additional placeholders or information available.|
 |`\Commerce::EVENT_ITEM_ADDED_TO_CART`|`Cart\Item`|Only in the cart when a product is added to cart.|Adding additional information or corrections to items added to the cart.|
 |`\Commerce::EVENT_GET_PAYMENT_GATEWAYS`|`Gateway`|Administrator listing available gateways when creating or editing payment methods.|Registering custom payment gateways.|
+
+### Common use cases
+
+- To trigger something when an order is complete, consider using a [custom status change action](../Status_Change_Actions) or use `\Commerce::EVENT_STATE_CART_TO_PROCESSING`
+- To implement custom address validation, use `\Commerce::EVENT_ADDRESS_VALIDATE`
+- To accept and store additional information in the checkout, use `\Commerce::EVENT_CHECKOUT_BEFORE_STEP` to create [custom order fields](../Order_Fields)
+- For registering pages or assets into the manager dashboard, use `\Commerce::EVENT_DASHBOARD_INIT_GENERATOR` and `\Commerce::EVENT_DASHBOARD_GET_MENU`
 
 ## Event Classes
 
@@ -137,6 +148,8 @@ FQN: `modmore\Commerce\Events\OrderStatus`
 
 FQN: `modmore\Commerce\Events\Payment`
 
+**Deprecated**, removed in v1.1. 
+
 - `getGateway()`: returns the BaseGateway instance for the received payment
 - `getMethod()`: returns the comPaymentMethod instance 
 - `getTransaction()`: returns the comTransaction instance
@@ -156,6 +169,12 @@ FQN: `modmore\Commerce\Events\Reports`
 
 - `addReport(ReportInterface $report)`: adds a report to the list of reports. This needs to be provided an instance.
 - `getReports()`: returns an array of all module registered rate providers.
+
+### Transaction
+
+FQN: `modmore\Commerce\Events\Transaction`
+
+- `getTransaction()`: returns the relevant `comTransaction` object. From that you can use `getOrder()` to get the `comOrder` instance, and `getMethod()` to get the `comPaymentMethod` instance.
 
 ### Admin\GeneratorEvent
 
