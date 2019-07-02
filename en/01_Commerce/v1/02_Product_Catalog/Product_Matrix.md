@@ -72,7 +72,6 @@ When you place your TV in a template, you'll notice it only outputs an ID. That'
 
 To output your products, you'll need to provide that ID to the [commerce.get_matrix snippet](../Snippets/get_matrix), which takes care of loading all your rows, columns, and products. It provides those to a twig template, which you can adapt to fit your frontend needs. 
 
-
 ### Matrix Data Structure
 
 When using the get_matrix snippet, you have access to a bunch of data inside a twig template.
@@ -111,6 +110,7 @@ When using the get_matrix snippet, you have access to a bunch of data inside a t
     - `column` the id of the column 
     - `row` the id of the row 
 - `map` is a map on `row => column => product ID` indicating where products are in the matrix. You'd typically loop over rows and columns, use the map to determine the product ID, and then output that. 
+- `resource` (as of v1.1) contains, if the matrix is associated with a resource, all resource fields like `{{ resource.pagetitle}}` or `{{ resource.publishedon }}`. For template variables, you need to add a comma separated list of TVs to load the value for in the `commerce.matrix.load_tvs` system setting. 
 
 Commerce ships with a few (unstyled) templates to get you started. It's likely you'll want to create your own; [learn more about templating in Commerce here](../Front-end_Theming).
 
@@ -308,11 +308,16 @@ The template for columns looks like this:
 {% endfor %}
 ````
 
+Other (community) implementations:
+
+-  [Turning optgroup based dropdown into dependent selects](https://forum.modmore.com/t/product-matrix-dropdown-improvement/1828)
+- The [starter pack "red"](https://www.modmore.com/commerce/extensions/theme-red/) ([preview](http://theme-red.modmore.modxcloud.com/fruit/fruit-shakes.html)) also contains JS-enhanced dependent selects. 
+
 Made a cool product selector with the matrix? [Share it on our forum!](https://forum.modmore.com/c/commerce)
 
 ## Product links and other custom fields
 
-Some examples above include a hidden link input that submits the resource ID along with the add-to-cart request. This is meant to be used with the [Item Data Module](../Modules/Cart/ItemData) (introduced in 0.11) with `link` as an allowed field.
+Some examples above include a hidden input with the name `link`, which submits the resource ID along with the add-to-cart request. This is meant to be used with the [Item Data Module](../Modules/Cart/ItemData) (introduced in 0.11) with `link` as an allowed field.
 
 It's recommended to include this in your add to cart form when using a matrix, so that your customer can return to the product resource they added the product from. To add additional custom data, view the [Item Data Module documentation](../Modules/Cart/ItemData).
 
