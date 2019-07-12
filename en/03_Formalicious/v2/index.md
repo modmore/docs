@@ -5,6 +5,8 @@ description: Documentation for Formalicious, a premium form builder for MODX by 
 
 [Formalicious](https://www.modmore.com/formalicious/) is the most powerful and easiest MODX form builder, with built-in multi-step forms, 8 field types, validation and the ability to use hooks and other advanced FormIt features.
 
+V2 is updated to use the lastest modx FormIt package and allowes better handling of placeholders & styling withing your form creating.
+
 # Recommended Reading
 
 - [Installation](Installation)
