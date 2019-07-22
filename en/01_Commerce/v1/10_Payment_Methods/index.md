@@ -27,23 +27,21 @@ Unless otherwise noted, the gateways below are included in the standard Commerce
 | Gateway | Payment options | On/off-site | SCA Ready? |
 |---|---|---|---|
 | [Adyen](Adyen_hpp) ([Gateway Pack 1](../Modules/Payments/GatewayPack1)) | Lots of global, regional, and local payments | Off-site (hosted payment page) | ✓ |
-| [Authorize.net](Authorize.net) | Credit Cards | On-site (JavaScript) | ? (note 1) |
-| [Braintree](Braintree) | Credit Cards, PayPal | On-site (JavaScript)  | ? (note 2) |
+| [Authorize.net](Authorize.net) | Credit Cards | On-site (JavaScript) | ? (note 2) |
+| [Braintree](Braintree) | Credit Cards, PayPal | On-site (JavaScript)  | ✓ (v1.1+) |
 | [Manual](Manual) | None; marks all transactions as successful. | On-site (server-side) | Not applicable |
-| [Mollie](Mollie) | Many, including iDeal, Sofort, Bancontact, Credit Card, and others. | Off-site (direct or hosted payment page) | ✓ (note 3) |
-| [MultiSafePay](MultiSafePay) | Many, including iDeal, Sofort, Bancontact, credit card (hosted form), and others. | Off-site (direct or hosted payment page) | ✓ (note 3) |
-| [Paymill](Paymill) | Credit Cards | On-site (JavaScript frame) | ✓ (note 4) |
-| [PayPal](PayPal) | PayPal account, credit cards | Off-site (direct) | ✓ (note 3) |
-| [SagePay](SagePay) | Credit Cards | Off-site (hosted payment page) | ✓ (note 3) |
-| [Stripe (Legacy)](Stripe) | Credit Cards | On-site (JavaScript v2 tokenisation) | ⨉ |
-| [Stripe - Card](Stripe_Card) (Commerce 1.1) | Credit Cards | On-site (JavaScript v3 Payment Intents) | ✓ |
+| [Mollie](Mollie) | Many, including iDeal, Sofort, Bancontact, Credit Card, and others. | Off-site (direct or hosted payment page) | ✓ (note 1) |
+| [MultiSafePay](MultiSafePay) | Many, including iDeal, Sofort, Bancontact, credit card (hosted form), and others. | Off-site (direct or hosted payment page) | ✓ (note 1) |
+| [Paymill](Paymill) | Credit Cards | On-site (JavaScript frame) | ✓ (note 3) |
+| [PayPal](PayPal) | PayPal account, credit cards | Off-site (direct) | ✓ (note 1) |
+| [SagePay](SagePay) | Credit Cards | Off-site (hosted payment page) | ✓ (note 1) |
+| [Stripe](Stripe) | Credit Cards |  On-site (v1.1+: Payment Intents, v1.0: v2 tokenisation) | ✓ (v1.1+) |
 
 Notes:
 
-1. Authorize.net has not yet published information on their path towards complying with SCA. [One third party source](https://www.paywithbolt.com/psd2-sca-3d-secure-2-eva/) suggests they do not intend to support the PSD2 regulation.
-2. For Commerce v1.1 we're updating the Braintree integration from the v2 Drop-in UI to the v3 Drop-in UI, and we're expecting that will satisfy SCA requirements along the way. We'll confirm that as that integration is complete.
-3. Gateways with note 3 indicate hosted payment pages. In those cases, the payment provider is responsible for the SCA interaction. While we have not in all cases verified current compliance for hosted payment options, we expect them all to be compliant before the September deadline.
-4. Paymill has confirmed in private communication that their existing integration will comply with PSD2/SCA, "with no or only minor changes in the integration". At this time we interpret that to mean our current integration is ready to go when Paymill finishes their systems. If changes end up being necessary, we'll update it in this list.
+1. Gateways with note 1 indicate hosted payment pages. In those cases, the payment provider is responsible for the SCA interaction. We've done a cursory review of hosted payment options and expect them all to be compliant by the deadline. Consult their documentation or merchant support to confirm.
+2. Authorize.net has not yet published information on their path towards complying with SCA. [One third party source](https://www.paywithbolt.com/psd2-sca-3d-secure-2-eva/) suggests they do not intend to support the PSD2 regulation.
+3. Paymill has confirmed in private communication that their existing integration will comply with PSD2/SCA, "with no or only minor changes in the integration". At this time we interpret that to mean our current integration is ready to go when Paymill finishes their systems. If changes end up being necessary, we'll update it in this list.
 
 ## What about PCI compliance?
 
