@@ -1,6 +1,6 @@
 Extending Commerce always starts with a [module](../Modules). Even if you're not going to be doing anything that's [event-based](../Modules/Events), a Module is a way to load custom models and register custom classes.
 
-In this guide we walk you through using the Module Skeleton to bootstrap the module. At the end of this guide you'll have a module that logs a Hello World. From that point on, you can use the rest of the documentation and projects on the modmore github organisation as inspiration for making amazing extensions.
+In this guide we walk you through using the [Commerce Module Skeleton](https://github.com/modmore/Commerce_ModuleSkeleton) to bootstrap the module. At the end of this guide you'll have a module that logs a Hello World. From that point on, you can use the rest of the documentation and projects on the modmore github organisation as inspiration for making amazing extensions.
 
 On this page:
 
@@ -8,21 +8,27 @@ On this page:
 
 ## Setup
 
-The easiest way to get started with any module is to [clone the module skeleton through composer](https://github.com/modmore/Commerce_ModuleSkeleton). Composer will automatically set up your workspace for making your custom product. If you do not already have composer, [read the introduction here](https://getcomposer.org/doc/00-intro.md) for how to install it on your system.
+The easiest way to get started with any module is to [start with the module skeleton through composer](https://github.com/modmore/Commerce_ModuleSkeleton). Composer will automatically set up your workspace with a variety of components to kick-start your Commerce development, such as making custom products or other module types. 
 
-You will need to create a subdirectory with the name you want your custom product to be called. This name will be used for the file structure and default namespaces in your project. For this example, we are going to use `myfirstmodule`. Using composer, you will create the project using the package modmore/moduleskeleton and put it into your directory.
+> If you do not already have composer, [read the introduction here](https://getcomposer.org/doc/00-intro.md) for how to install it on your system.
+
+You will need to create a subdirectory with the name you want your custom product to be called. **This name will be used for the file structure and default namespaces in your project**. For this example, we are going to use `myfirstmodule`. 
+
+Using composer, you will create the project using the package `modmore/moduleskeleton` and giving it the name we want to use.
 
 ```
 composer create-project modmore/moduleskeleton myfirstmodule
 ```
 
-After running composer create-project, you can navigate into your subdirectory to see 3 new folders: `_bootstrap`, `_build`, and `core`. These folders serve a few different purposes.
+After running `composer create-project,` you can navigate into your subdirectory to see 3 new folders: `_bootstrap`, `_build`, and `core`. These folders serve a few different purposes.
 
-- `_bootstrap`: contains a file, index.php, to get your workspace setup. It will register your module within Commerce, set up system settings (located inside `_build/data/settings.php`), and configure namespaces.
-- `_build`: contains two primary files: `build.schema.php` and `build.transport.php`. The build schema file parses your xPDO schema which can contain definitions to extend built-in commerce objects (such as the product we are making) as well as making custom tables. The build transport file is used when you are ready to build a transport package of your module.
-- `core/components/commerce_myfirstmodule`: contains everything that makes the module work, such as `src` (for source files), `model` (for your schema and model classes), and `lexicon`. This is where you will spend most of your time developing your module.
+- `_bootstrap`: contains a single file, index.php, to get your workspace setup. It will register your module within Commerce, set up system settings (located inside `_build/data/settings.php`), and configure namespaces.
+- `_build`: contains two primary files: `build.schema.php` and `build.transport.php`. The build schema file parses your xPDO schema which can contain definitions to extend built-in commerce objects (such as the product we are making) as well as making custom tables. The `build.transport.php` file is used when you are ready to build a transport package of your module. 
+- `core/components/commerce_myfirstmodule`: contains everything that makes the module work, such as `src` (for source files, under your namespace), `model` (for your xPDO schema and model classes), and `lexicon`. This two directories are where you will spend most of your time developing your module.
 
-To hook this up to your MODX installation, copy the `config.core.php` from your MODX installation into the root of the project folder, and create/update the `commerce_myfirstmodule.core_path` and `commerce_myfirstmodule.assets_url` system settings to point to the right directories. The bootstrap, which we'll run in a moment, will do that for you automatically.
+To hook this up to your MODX installation, copy the `config.core.php` from your MODX installation into the root of the project folder, or use the example `config.core.sample.php` to point it to your MODX installation dynamically.
+
+You'll also need to create/update the `commerce_myfirstmodule.core_path` and `commerce_myfirstmodule.assets_url` system settings to point to the right directories. The bootstrap, which we'll run in a moment, will do that for you automatically, but especially the assets_url may need additional tweaking.
 
 Alternatively, it's also possible to use symlinks to copy your directories into the MODX installation. 
 
@@ -37,20 +43,17 @@ The files that will have to changed are:
 - `core/components/commerce_myfirstmodule/composer.json` on line 7
 - `core/components/commerce_myfirstmodule/src/Modules/Myfirstmodule.php` on line 2
 
-The skeleton also comes with a composer autoloader, based on the composer.json file you just edited. Navigate to `core/components/commerce_myfirstmodule/` on the command line and run `composer dumpautoload` to refresh that. Or manually edit: 
-
-- `core/components/commerce_myfirstmodule/vendor/composer/autoload_psr4.php` on line 9
-- `core/components/commerce_myfirstmodule/vendor/composer/autoload_static.php` on line 12 and 17
+The skeleton also comes with a composer autoloader, based on the composer.json file you just edited. Navigate to `core/components/commerce_myfirstmodule/` on the command line and run `composer dumpautoload` to refresh the autoloader to use your new namespace. You only have to do this when changing or adding namespaces.
 
 ### Package Details
 
-If you'll be adding an xPDO model/package to your extension, you should edit `_build/build.schema.php` to replace the "Copyright 2018 by Your Name \<your@email.com\>" notice before running the build.
+If you'll be adding an xPDO model/package to your extension, you should edit `_build/build.schema.php` to replace the "Copyright 2019 by Your Name \<your@email.com\>" notice **before running the build the first time**.  
 
 ### Module Information
 
-When your module is registered inside Commerce it will include the name of the module, the author's name, and a short description. Inside the module's core folder in `src/Modules/Myfirstmodule.php` you can edit the author name in the getAuthor function. 
+When your module is registered inside Commerce it will include the name of the module, the author's name, and a short description. Inside the module class in `src/Modules/Myfirstmodule.php` you can edit that information.
 
-This file is also where you'll initialize the module, load your custom models, and more, but let's not get ahead of ourselves.
+This file is where you'll initialize the module, load your custom models, and more, but let's not get ahead of ourselves.
 
 To change the name and description of the module, edit the existing lexicons in `lexicon/en/default.inc.php`, as well as creating other lexicons for any other languages you want to support with your module. 
 
@@ -68,13 +71,15 @@ Initializing manager...
 Done.
 ```
 
-If you need to add more settings again down the line, you can safely re-run it again, it will not duplicate any existing settings or namespaces.
+If you need to add more settings again down the line, you can safely re-run the bootstrap again, it will not duplicate any existing settings or namespaces.
 
 ## And... done!
 
 That should get your module up and running!
 
-Navigate to Extras > Commerce > Configuration > Modules and find your module in the list. If it's not there, there may be an issue with the Composer autoloaderor your module naming (see the step about editing the namespace). If you're not comfortable with Composer, you don't have to use the autoloader, but you'll need to manually add the module to the modx_commerce_modules database table in that case. 
+Navigate to Extras > Commerce > Configuration > Modules and find your module in the list. If it's not there, there may be an issue with the Composer autoloader or your module naming (see the step about editing the namespace). 
+
+If you're not comfortable with Composer, you don't have to use the autoloader, but you'll need to manually add the module to the modx_commerce_modules database table in that case. 
 
 Assuming your module showed up, and you enabled it, let's make it do something. Some ideas...
 
@@ -136,13 +141,17 @@ Depending on the event, different data is available. In certain cases you can al
 
 ## Building a Transport Package
 
-When you're done with your extension, you can build it into a transport package to share it with others. The provided build script in `_build/build.transport.php` covers system settings (see `_build/data/settings.php`), a requirements validator, the files in your core directory (to also include assets, uncomment lines 91-94), and your license, readme, and changelog files. 
+When you're done with your extension, you can build it into a transport package to share it with others. The provided build script in `_build/build.transport.php` covers system settings (see `_build/data/settings.php`), a requirements validator, the files in your core directory, and your license, readme, and changelog files. 
 
-If you need to include other data, like snippets or other elements, you can [learn more about build scripts in the MODX documentation](https://docs.modx.com/revolution/2.x/developing-in-modx/advanced-development/package-management/creating-a-3rd-party-component-build-script). 
+If you need to include other data, like snippets or other elements, you can [learn more about build scripts in the MODX documentation](https://docs.modx.org/current/en/extending-modx/transport-packages/build-script). 
 
-(If you prefer to use MyComponent, GitPackageManagement, or other build tools, you are of course free to do so. Make sure to include the `_build/resolves/loadmodules.resolver.php` resolver if you build any other way.)
+Make sure to read through the build script, as it has some commented out parts to help you with some common building needs. 
 
-After you built a package and wrote some documentation, you can upload it to MODX.com to share with others. If you're looking to release your extension as a paid extra and can guarantee support and continued development, then we'd also be happy to discuss a potential release on modmore.com. 
+After you built a package and wrote some documentation, you can upload it to MODX.com to share with others. Let us know when you've done that, and we'd be more than happy to [list it with the available Commerce extensions](https://www.modmore.com/commerce/extensions/).
+
+If you're looking to release your extension as a paid extra and can guarantee support and continued development, then we'd also be happy to discuss a potential release on modmore.com. 
+
+(If you prefer to use MyComponent, GitPackageManagement, or other build tools, you are of course free to do so. Make sure to include the `_build/resolves/loadmodules.resolver.php` resolver if you build any other way. If you'd like to potentially have your extra released on modmore.com, we do strongly recommend keeping the provided build script, as that is set up to support our package provider.)
 
 ## Support
 
