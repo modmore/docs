@@ -2,11 +2,9 @@
 title: "PDF Writer: mPDF"
 ---
 
-The mPDF PDF Writer is a separate extension, free to install, that allows you to generate PDFs using mPDF library. 
+The [mPDF PDF Writer module is a separate extension](https://www.modmore.com/commerce/extensions/mpdf-writer/), free to install, that allows you to generate PDFs using mPDF library. 
 
 You need a PDF writer for [generating invoices](../Invoices).
-
-[TOC]
 
 ## Install the Extension
 
