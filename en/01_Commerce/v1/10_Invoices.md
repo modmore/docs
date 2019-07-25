@@ -26,9 +26,16 @@ In the new screen, in the menu on **Add Status Change Action**, choose **Create 
 
 Now that you told Commerce **when** to create the invoice, you haven't told it **how** yet. For that, you need a PDF Writer.
 
-Commerce does not ship with any writes, so you'll need an [extension](https://www.modmore.com/commerce/extensions/). One option is to use the [PDFCrowd Writer](Modules/PDFCrowdWriter), which requires a subscription/license from [PDFCrowd](https://pdfcrowd.com/); the v2 HTML to PDF API to be exact. Other writers [can be built as well](Developer/PDF_Writer). 
+Commerce does not ship with any writers, so you'll need an [extension](https://www.modmore.com/commerce/extensions/).
+ 
+There are currently 2 official options available:
 
-The installation instructions for different writers may vary. For PDFCrowd you need an account and to enter the username and API Key in the module configuration; for others you may need to install additional server software. 
+- [PDFCrowd Writer](Modules/PDFCrowdWriter), which requires a subscription/license from [PDFCrowd](https://pdfcrowd.com/) (the v2 HTML to PDF API). While paid, PDFCrowd gives great results and by offloading the generation to a separate service you don't have to consider server resources.
+- [mPDF Writer](Modules/mPDFWriter) uses the [mPDF library (v8)](https://mpdf.github.io/) to generate the PDFs locally, on your server. mPDF does not support all the styling that PDFCrowd does, but for a free and portable self-hosted option, it is quite good. 
+
+Other writers [can be developed as well](Developer/PDF_Writer). 
+
+The installation instructions for different writers may vary. For PDFCrowd you need an account and to enter the username and API Key in the module configuration. mPDF just needs to be enabled. Other options may require you to install additional server software. 
 
 Once you have an invoice action creating invoice records, and a PDF writer to create the actual PDF files, you'll be able of downloading invoices from the back-end by clicking on the invoice references shown in the order details. 
 
@@ -56,7 +63,7 @@ In most jurisdictions you need to include your full company details on the invoi
 
 ### Add a logo
 
-With the `commerce.invoice_logo_url` system setting you can add a logo to the invoice, in the top left. 
+With the `commerce.invoice_logo_url` system setting you can add a logo to the invoice, in the top left. When left empty, the site name will be shown in its place (as of v1.1). 
 
 ### Add text to the footer
 

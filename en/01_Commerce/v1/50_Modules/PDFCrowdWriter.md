@@ -19,10 +19,3 @@ Using the modmore package provider, download the _PDFCrowdWriter for Commerce_ p
 Once installed, go to Commerce > Configuration > Modules and find the PDFCrowd Writer in the list (tip: search for pdf).
 
 Click on its name, and enter your PDFCrowd username and the API Key you can find in the PDFCrowd dashboard into the module options. Also enable the module in the test/live modes. 
-
-
-
-
-
-
-
