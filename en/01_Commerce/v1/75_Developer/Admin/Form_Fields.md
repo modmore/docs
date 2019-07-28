@@ -2,6 +2,10 @@ The Commerce admin area is built HTML-first, which means that all forms and fiel
 
 You might need to define forms and fields if you're adding pages to the admin area, or when building [extended models](../Extended_Models) that support the `getModelFields()` method (e.g. [custom shipping methods](../Custom_Shipping_Methods)).
 
+[TOC]
+
+## Simple Example
+
 Fields are self-contained classes that are created with options provided in the constructor, which handles validation and providing the markup. 
 
 Here's a simple example of defining a text field. 
@@ -29,7 +33,7 @@ $field = new \modmore\Commerce\Admin\Widgets\Form\TextField($this->commerce, [
 
 (Obviously for readability, it'd be best to import those classes with a `use` statement)
 
-### Available Field Types
+## Available Field Types
 
 - **Checkbox** (`modmore\Commerce\Admin\Widgets\Form\CheckboxField`), a simple true-or-false checkbox. 
 - **Country** (`modmore\Commerce\Admin\Widgets\Form\CountryField`), a dropdown select field displaying a list of countries.
@@ -56,7 +60,7 @@ $field = new \modmore\Commerce\Admin\Widgets\Form\TextField($this->commerce, [
 - **WeightPrice** (`modmore\Commerce\Admin\Widgets\Form\WeightPriceField`), a field for inputting a weight from and weight until with a price.
 - **WeightUnit** (`modmore\Commerce\Admin\Widgets\Form\WeightUnitField`), a field for inputting a weight unit. Configurable with the "commerce.allowed_weight_units" option and accepts all [PHP Units of Measure units](https://github.com/PhpUnitsOfMeasure/php-units-of-measure/blob/master/source/PhysicalQuantity/Mass.php). Defaults to g,kg,t,lb,oz,st.
 
-### Available Options
+## Available Options
 
 The following options are supported on each field:
 
@@ -96,22 +100,23 @@ $field->setValidationRules([
 
 Generally speaking the constructor options approach is preferred in the core.
 
-### Validation Rules
+## Validation Rules
 
 The following validation classes exist which can be passed to a field.
 
-- **Enum** (`modmore\Commerce\Admin\Widgets\Form\Validation\Enum`) can be used to make sure the value is in a set of accepted values. Not necessary with a select field, that already catches that by default. Provide a simple array of accepted values in the constructor.
-- **Length** (`modmore\Commerce\Admin\Widgets\Form\Validation\Length`) can be used to force a specific limit of text size, both a minimum and a maximum. The first constructor parameter is the minimum length, the second parameter is the maximum length. 
-- **Regex** (`modmore\Commerce\Admin\Widgets\Form\Validation\Regex`) can be used to make sure the value matches a certain regex pattern. The pattern is the first parameter, and the second parameter lets you set a specific error string (lexicon).  
+- **Enum (array $acceptedValues)** (`modmore\Commerce\Admin\Widgets\Form\Validation\Enum`) can be used to make sure the value is in a set of accepted values. Not necessary with a select field, that already catches that by default. Provide a simple array of accepted values in the constructor.
+- **Length ($minLength = 0, $maxLength = 0)** (`modmore\Commerce\Admin\Widgets\Form\Validation\Length`) can be used to force a specific limit of text size, both a minimum and a maximum. The first constructor parameter is the minimum length, the second parameter is the maximum length. 
+- **Regex ($pattern)** (`modmore\Commerce\Admin\Widgets\Form\Validation\Regex`) can be used to make sure the value matches a certain regex pattern. The pattern is the first parameter, and the second parameter lets you set a specific error string (lexicon).  
 - **Required** (`modmore\Commerce\Admin\Widgets\Form\Validation\Required`) can be used to mark a field as required. This uses a loose check with `empty()`, so if 0 is an accepted, non-empty value in your scenario, the Required validation rule is not going to be suitable.
+- **Number ($min = 0, $max = 0)** (`modmore\Commerce\Admin\Widgets\Form\Validation\Number`, added in v1.1) can validate a numeric value. This will return an error if the value is not numeric. Returns an error if the value is smaller than `$min`. If `$max` is larger than 0, it returns an error if the value is larger than that.
 
-### Examples
+## Examples
 
 Most of these examples are copied straight from the Commerce source code, and may need tweaks before they'll work for you.
 
 All classes are assumed to have been imported with a `use` statement.
 
-#### Color regex validation
+### Color regex validation
 
 ````php
 $fields[] = new TextField($this->commerce, [
@@ -125,7 +130,9 @@ $fields[] = new TextField($this->commerce, [
 ]);
 ````
 
-#### Select field
+### Select field
+
+Note: it's not typically needed to add an Enum validation to a select; it will ignore invalid values by default.
 
 ```` php
 $fields[] = new SelectField($this->commerce, [
@@ -147,7 +154,7 @@ $fields[] = new SelectField($this->commerce, [
 ]);
 ````
 
-#### Checkbox field
+### Checkbox field
 
 ```` php
 $fields[] = new CheckboxField($this->commerce, [
