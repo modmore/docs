@@ -16,10 +16,11 @@ Filters are applied to a value. For example: `{{ value|FILTER_NAME(filter, optio
 - `country_code_to_name`, call on a 2-character country code to get the localised (based on MODX `locale` system setting) name of the country
 - `format_address` (since 0.10.0-rc2), call on an array containing an address to get it automatically formatted according to the country formatting rules.
 - `format_currency(currency [optional])` (since 0.12.0-rc2), call on an integer number to format is as currency. Uses the current currency unless you specify the 3-character currency code in the optional parameter
+- `strftime(format)` (since 1.1.0), provided a unix timestamp or strtotime-compatible date/time string, this will format it to a localised date/time string for you using [strftime](https://php.net/strftime). Make sure to set the `locale` system setting in MODX accordingly.
 
 ## Functions
 
-Functions are called by itself, provided a value. For example:: `{{ functionName(Value1, Value2)`
+Functions are called by itself, provided a value. For example: `{{ functionName(Value1, Value2) }}`
 
 - `lex(lexiconKey)`, returns a string from the lexicon identified by the lexiconKey. 
 - `admin_url(actionKey, {parameter: value})`, returns a URL to the Commerce dashboard, at the action you specify, with the optional parameters. 
