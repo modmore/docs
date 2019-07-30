@@ -1,4 +1,6 @@
-To add a product to the cart, you'll need to submit the product record ID (not the catalog ID) to the cart page. There are two variations supported, one for multiple products, and the other for single products. 
+To add a product to the cart, you'll need to submit the product record ID (not the resource ID) to the cart page. There are two form variations supported, one for multiple products, and the other for single products. 
+
+[TOC]
 
 ## Single Products Form
 
