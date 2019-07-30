@@ -8,7 +8,9 @@ The Commerce templates are stored in files, which makes it easier to edit with a
 
 ## Disabling the Default CSS
 
-Commerce includes a very simple cart and checkout design out of the box. To disable it, set the `commerce.register_checkout_css` system setting to 0. 
+Commerce includes a very simple cart and checkout design out of the box. To disable it, set the `commerce.register_checkout_css` system setting to 0. Keep in mind that the default template files are made to look decent with these styles.
+
+The default CSS consists of two files, `style.simple.css` and `layout.simple.css`. The source Sass files can be found in `assets/components/commerce/frontend/` - feel free to copy those into your own workflow to get a head-start at customising the design. This folder is overwritten on upgrade.
 
 ## Default Template Files
 
@@ -41,9 +43,9 @@ Assuming `commerce.theme` is set to `webshop` and `commerce.themes_path` is set 
 
 If it finds the requested template file, it stops there, otherwise it checks the next path. This means you only have to copy the templates you're actually customising; any others will simply fall back to the default. 
 
-### Multiple theme inheritance
+### Multiple themes (v1.1+)
 
-As of Commerce v1.1, you can also define multiple comma-separated themes and theme paths. This is useful when combined with a [starter pack](https://www.modmore.com/commerce/extensions/theme-red/) or if you have a complex setup with multiple similar themes that still need specific overrides per context (see below). 
+As of Commerce v1.1, you can define multiple comma-separated themes and theme paths. This is useful when combined with a [starter pack](https://www.modmore.com/commerce/extensions/theme-red/) or if you have a complex setup with multiple similar themes that still need specific overrides per context (see below). 
 
 Themes and theme paths are checked in the order they are defined, so the left-most option is checked first. 
 
@@ -57,7 +59,9 @@ Assuming `commerce.theme` is set to `webshop, ctred` and `commerce.themes_path` 
 6. `{core_path}components/commerce/templates/ctred/`
 7. `{core_path}components/commerce/templates/default/`
 
-Only paths that exist are included in the inheritance, of course. 
+Only paths that exist are included in the inheritance. 
+
+If modules have added additional theme paths, to include their own templates into the inheritance tree, those will be checked **after the user-defined theme(s)**, but **before the default**. That allows you to override module-provided template paths, while modules can override defaults. 
 
 ### Different themes per Context
 
