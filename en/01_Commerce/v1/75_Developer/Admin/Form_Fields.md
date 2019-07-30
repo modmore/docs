@@ -42,7 +42,7 @@ $field = new \modmore\Commerce\Admin\Widgets\Form\TextField($this->commerce, [
 - **Date** (`modmore\Commerce\Admin\Widgets\Form\DateField`), a field for entering a date.
 - **DateTime** (`modmore\Commerce\Admin\Widgets\Form\DateTimeField`), a field for entering a date and a time.
 - **DeliveryType** (`modmore\Commerce\Admin\Widgets\Form\DeliveryTypeField`), a dropdown select field containing available delivery types.
-- **Description** (`modmore\Commerce\Admin\Widgets\Form\DescriptionField`), a field that displays a label and description.
+- **Description** (`modmore\Commerce\Admin\Widgets\Form\DescriptionField`), a field that displays a label and description. When providing `'raw' => true`, the description will be treated as raw HTML and not escaped.
 - **Hidden** (`modmore\Commerce\Admin\Widgets\Form\HiddenField`), a simple hidden field.
 - **Image** (`modmore\Commerce\Admin\Widgets\Form\ImageField`), an image field allowing selection from a media source or by entering a URL.
 - **LengthUnit** (`modmore\Commerce\Admin\Widgets\Form\LengthUnitField`), a field for inputting length units. Configurable with the "commerce.allowed_length_units" option and accepts all [PHP Units of Measure units](https://github.com/PhpUnitsOfMeasure/php-units-of-measure/blob/master/source/PhysicalQuantity/Length.php). Defaults to mm,cm,m,in,ft (added in 0.11.1).

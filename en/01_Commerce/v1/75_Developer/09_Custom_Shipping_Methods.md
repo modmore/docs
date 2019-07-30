@@ -2,7 +2,7 @@ If your shipping costs are dynamically generated based on product weight, size o
 
 ## Basics
 
-A custom shipping method is a derivative of the comShippingMethod object. This derivative would override the `getPrice(comOrder $order, $orderTotal)` method to use its own price logic instead.
+A custom shipping method is a derivative of the comShippingMethod object. This derivative would override the `getPriceForShipment(comOrderShipment $shipment)` method to use its own price logic instead.
 
 You can use a [Module](Modules) to load the package containing your xPDO model. Just call `$this->adapter->loadPackage($name, $path)` in the `initialize` method to make xPDO aware of your derivative. 
 
@@ -53,7 +53,9 @@ class mySampleShippingMethod extends comShippingMethod
 
 [Shipments are collections of items in an order](../Orders/Shipments) that have the same delivery type and shipping method. With `$shipment->getItems()` you can access the items assigned to the current shipment. 
 
-You can get an [$order object](Orders) with `$shipment->getOrder()`. That gives you easy access to _all_ order items (`$order->getItems()`), the shipping address (`$order->getShippingAddress()`) and more. To retrieve products, loop over `$order->getItems()` or `$shipment->getItems()` and call `$item->getProduct()`. That will give you the [comProduct instance](Products), which you can use to grab things like the weight (`$product->getWeight()`). 
+You can get an [$order object](Orders) with `$shipment->getOrder()`. That gives you easy access to _all_ order items (`$order->getItems()`), the shipping address (`$order->getShippingAddress()`) and more. 
+
+To retrieve products, loop over `$order->getItems()` or `$shipment->getItems()` and call `$item->getProduct()`. That will give you the [comProduct instance](Products), which you can use to grab things like the weight (`$product->getWeight()`). 
 
 The total weight for all products in the shipment (as a `Mass` instance) is available with `$shipment->getWeight()`.
 
@@ -78,5 +80,7 @@ class mySampleShippingMethod extends comShippingMethod
 ````
 
 Any field instance can be used, and you can also use the built-in validation. [See Forms & Fields](Admin/Form_Fields) for more information on defining fields. 
+
+To add fields to products, or to offer more functionality with regards to the processing, you need a custom order _shipment_ type. 
 
 Commerce ships with the standard `comShippingMethod` ("Standard Shipping Method"), a country-based `comShippingMethodByCountry` ("Country-Specific Shipping Method"), and the `comShippingMethodByWeight` ("Weight-Specific Shipping Method") shipping method class. These can be useful for inspiration.
