@@ -197,7 +197,7 @@ $show-header-for-stacked: false !default;
     }
 
     //Darkens the odd striped table rows.
-    @elseif($table-stripe == odd) {
+    @else if($table-stripe == odd) {
       &:nth-of-type(odd):hover {
         background-color: $table-row-stripe-hover;
       }
