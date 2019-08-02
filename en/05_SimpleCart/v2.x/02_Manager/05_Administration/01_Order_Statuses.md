@@ -21,7 +21,7 @@ The name a **unique reference** for the status. It should be unique, lowercase, 
 
 The title is what the status is shown as. This is stored as a lexicon (you can switch the language to see translations) and can change. 
 
-Every status can also have a default message. This is meant to be the default message that is sent to the customer when the order status is updated. By filling in a default message, it will appear automatically [when changing the order status](https://www.modmore.com/simplecart/documentation/manager/orders/update-status/). 
+Every status can also have a default message. This is meant to be the default message that is sent to the customer when the order status is updated. By filling in a default message, it will appear automatically [when changing the order status](https://modmore.com/simplecart/documentation/manager/orders/update-status/). 
 
 This default message can also contain placeholders like `[[+firstname]]` and `[[+lastname]]`.
 

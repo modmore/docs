@@ -4,7 +4,7 @@ title: Official modmore documentation
 
 # Welcome to the modmore documentation
 
-If you're looking for information on using the [Premium Extras from modmore](https://www.modmore.com/extras/), look no further! On this shiny new documentation site, you can read more about how our products work, and what you can make with them.
+If you're looking for information on using the [Premium Extras from modmore](https://modmore.com/extras/), look no further! On this shiny new documentation site, you can read more about how our products work, and what you can make with them.
 
 The navigation on the side allows you to browse the documentation hierarchically. The search at the top is useful if you already know what you're looking for. If you're actually reading _everything_, there's previous and next links at the bottom of the page. 
 

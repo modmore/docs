@@ -311,7 +311,7 @@ The template for columns looks like this:
 Other (community) implementations:
 
 -  [Turning optgroup based dropdown into dependent selects](https://forum.modmore.com/t/product-matrix-dropdown-improvement/1828)
-- The [starter pack "red"](https://www.modmore.com/commerce/extensions/theme-red/) ([preview](http://theme-red.modmore.modxcloud.com/fruit/fruit-shakes.html)) also contains JS-enhanced dependent selects. 
+- The [starter pack "red"](https://modmore.com/commerce/extensions/theme-red/) ([preview](http://theme-red.modmore.modxcloud.com/fruit/fruit-shakes.html)) also contains JS-enhanced dependent selects. 
 
 Made a cool product selector with the matrix? [Share it on our forum!](https://forum.modmore.com/c/commerce)
 

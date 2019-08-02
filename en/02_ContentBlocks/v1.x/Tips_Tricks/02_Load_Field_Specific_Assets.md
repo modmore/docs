@@ -4,7 +4,7 @@ This Tip makes use of the cbHasField snippet, included in the ContentBlocks core
 
 ## The Setup
 
-In this case, we're using the [Displaying (MODX) Code tip](https://www.modmore.com/contentblocks/tips-tricks/displaying-code/) as example. We want to only load our syntax highlight script, in this case Prism, when we have a code input in the content.
+In this case, we're using the [Displaying (MODX) Code tip](https://modmore.com/contentblocks/tips-tricks/displaying-code/) as example. We want to only load our syntax highlight script, in this case Prism, when we have a code input in the content.
 
 Prism consists of [two files](http://prismjs.com/download.html) you'll need on your server, a CSS file (which should go into the `<head>`) and a javascript file (which should go right before the `</body>`). Let's assume that you have uploaded these files to /assets/js/prism.css and /assets/style/prism.js, and that the code field you created earlier has an ID of 4.
 

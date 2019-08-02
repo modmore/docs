@@ -147,7 +147,7 @@ If you need to include other data, like snippets or other elements, you can [lea
 
 Make sure to read through the build script, as it has some commented out parts to help you with some common building needs. 
 
-After you built a package and wrote some documentation, you can upload it to MODX.com to share with others. Let us know when you've done that, and we'd be more than happy to [list it with the available Commerce extensions](https://www.modmore.com/commerce/extensions/).
+After you built a package and wrote some documentation, you can upload it to MODX.com to share with others. Let us know when you've done that, and we'd be more than happy to [list it with the available Commerce extensions](https://modmore.com/commerce/extensions/).
 
 If you're looking to release your extension as a paid extra and can guarantee support and continued development, then we'd also be happy to discuss a potential release on modmore.com. 
 

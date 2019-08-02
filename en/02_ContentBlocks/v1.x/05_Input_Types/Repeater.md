@@ -132,7 +132,7 @@ Now add the rest of the fields. This works the same, except we use different inp
 
 #### Biography
 - General Tab:  
-    - Input Type: Rich Text (which will use [Redactor](https://www.modmore.com/extras/redactor/) or TinyMCE, depending which is installed)
+    - Input Type: Rich Text (which will use [Redactor](https://modmore.com/extras/redactor/) or TinyMCE, depending which is installed)
     - Key: bio (the placeholder will be `[[+bio]]`)
     - Width: 70%
     - Name: Biography

@@ -2,7 +2,7 @@ Scheduler can be installed from the modmore.com package provider, as well as via
 
 ## Install the Package
 
-Using the modmore.com [Package Provider](https://www.modmore.com/about/package-provider/) you can install the Scheduler package super easily. Please see the [full instructions for the package install](https://www.modmore.com/extras/scheduler/download/) for more details.
+Using the modmore.com [Package Provider](https://modmore.com/about/package-provider/) you can install the Scheduler package super easily. Please see the [full instructions for the package install](https://modmore.com/extras/scheduler/download/) for more details.
 
 ## Installing from Git
 

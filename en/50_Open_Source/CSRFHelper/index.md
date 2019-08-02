@@ -1,4 +1,4 @@
-CSRF Helper is a tool for MODX to secure forms against cross-site request forgery (CSRF) vulnerabilities, brought to you by [modmore](https://www.modmore.com/).
+CSRF Helper is a tool for MODX to secure forms against cross-site request forgery (CSRF) vulnerabilities, brought to you by [modmore](https://modmore.com/).
 
 [TOC]
 
@@ -55,7 +55,7 @@ add a very valuable layer of protection.
 
 CSRFHelper is free to use, and licensed under the MIT License. [Source code and issue tracker are on GitHub](https://github.com/modmore/csrfhelper). 
 
-Installable packages are available from both [modmore](https://www.modmore.com/extras/csrfhelper/) and [MODX](https://modx.com/extras/package/csrfhelper), through your site's package manager. After installation, look at the specific documentation for the type of form you're looking to protect for examples and instructions.
+Installable packages are available from both [modmore](https://modmore.com/extras/csrfhelper/) and [MODX](https://modx.com/extras/package/csrfhelper), through your site's package manager. After installation, look at the specific documentation for the type of form you're looking to protect for examples and instructions.
 
 ## Usage
 

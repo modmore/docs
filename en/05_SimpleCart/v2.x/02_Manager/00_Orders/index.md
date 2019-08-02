@@ -37,6 +37,6 @@ To view the order details you can right click on an order in the list and choose
 
 ## Creating a new order
 
-With the _Create new order_ button you can create an order from the back-end. This is useful for invoice-based billing or when accepting orders via the phone. [Read more about creating orders here](https://www.modmore.com/simplecart/documentation/manager/orders/create-new-order/).
+With the _Create new order_ button you can create an order from the back-end. This is useful for invoice-based billing or when accepting orders via the phone. [Read more about creating orders here](https://modmore.com/simplecart/documentation/manager/orders/create-new-order/).
 
 [ ![The SimpleCart order create window](https://assets.modmore.com/uploads/2015/12/orders_overview_createorder.png)](https://assets.modmore.com/uploads/2015/12/orders_overview_createorder.png "The SimpleCart order create window")

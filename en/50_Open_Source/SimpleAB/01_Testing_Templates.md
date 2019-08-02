@@ -105,6 +105,6 @@ You'll need to log conversions if you want to calculate a conversion rate, so le
 
 #### 8. Let data pour in...
 
-Now it's the time to get a refill for that empty cup. Depending on how many visits your site gets, it may take a few hours to a few weeks to get some reliable data. Sounds like a great time to pick up a new hobby, or to write about how awesome SimpleAB is on your blog and earn money with our [Affiliate program](https://www.modmore.com/account/affiliate/). :)
+Now it's the time to get a refill for that empty cup. Depending on how many visits your site gets, it may take a few hours to a few weeks to get some reliable data. Sounds like a great time to pick up a new hobby, or to write about how awesome SimpleAB is on your blog and earn money with our [Affiliate program](https://modmore.com/account/affiliate/). :)
 
 We take documentation serious, and we hope this tutorial has helped you understanding creating Template Tests with SimpleAB. If you need more help which is not covered here, or spot any issues, please don't hesitate to [get in touch with support](https://support.modmore.com/) and we'd be glad to help.

@@ -12,7 +12,7 @@ Whenever we talk about the Commerce Dashboard, we refer to the **Extras &raquo; 
 
 One of the first things you should do is decide which modules you want to use, because this will determine what features are available and need to be configured.
  
-In Commerce, many features are implemented as optional modules that can be enabled/disabled at will, and may contain additional configuration options. The majority of modules ship with the Commerce core, but [additional extensions](https://www.modmore.com/commerce/extensions/) are also available. Some extensions were built by modmore, and are covered by your standard support, while others have been built by the larger community and are _not_ covered by standard support. 
+In Commerce, many features are implemented as optional modules that can be enabled/disabled at will, and may contain additional configuration options. The majority of modules ship with the Commerce core, but [additional extensions](https://modmore.com/commerce/extensions/) are also available. Some extensions were built by modmore, and are covered by your standard support, while others have been built by the larger community and are _not_ covered by standard support. 
  
 In the Commerce Dashboard, navigate to **Configuration &raquo; Modules** to take a look at the available modules. 
 

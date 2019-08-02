@@ -8,9 +8,9 @@ Commerce is a full featured ecommerce solution for MODX, but you have to start s
 
 ## Install the Package
 
-First of all you'll need to install Commerce. It's available from the modmore.com [package provider](https://www.modmore.com/about/package-provider/), so you'll need to create an [api key](https://www.modmore.com/account/api-keys/) and add that to your MODX site to get started.
+First of all you'll need to install Commerce. It's available from the modmore.com [package provider](https://modmore.com/about/package-provider/), so you'll need to create an [api key](https://modmore.com/account/api-keys/) and add that to your MODX site to get started.
  
-Next, you'll need a license. [Free development licenses](https://www.modmore.com/free-development-licenses/) are available if you're on a development domain (`localhost`, `site.dev`, `dev.site.com` etc.), otherwise you'll need to buy a license. [See the Commerce Pricing](https://www.modmore.com/commerce/pricing/) for information on licenses and prices.
+Next, you'll need a license. [Free development licenses](https://modmore.com/free-development-licenses/) are available if you're on a development domain (`localhost`, `site.dev`, `dev.site.com` etc.), otherwise you'll need to buy a license. [See the Commerce Pricing](https://modmore.com/commerce/pricing/) for information on licenses and prices.
 
 Go to Extras > Installer in your MODX manager and open the modmore.com package provider by clicking the arrow on the _Download Extras_ button, choosing _Select a Provider_ in the menu, and choosing modmore.com in the window. 
 

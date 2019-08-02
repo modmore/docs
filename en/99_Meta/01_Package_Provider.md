@@ -1,13 +1,13 @@
 To install the extras from modmore you need to configure a new Package Provider in your MODX installation. This will allow you to download, install and update our extras from within MODX.
 
-For our Premium Extras you will first need to purchase a license, or a [development domain to use a free development license](https://www.modmore.com/free-development-licenses/).
+For our Premium Extras you will first need to purchase a license, or a [development domain to use a free development license](https://modmore.com/free-development-licenses/).
 
 
 [TOC]
 
 ## Step 1: Create an API Key
 
-To connect with our Package Provider, you first need to create an API Key. This is done on our website under [Account &raquo; API Keys](https://www.modmore.com/account/api-keys/). 
+To connect with our Package Provider, you first need to create an API Key. This is done on our website under [Account &raquo; API Keys](https://modmore.com/account/api-keys/). 
 
 API Keys act as a username and password for the webservices, and is connected to your account. 
 
@@ -31,7 +31,7 @@ To browse and download our extras, click on the small arrow on the _Download Ext
 
 At this point you should see the start screen of the provider, with a list of most popular and latest updated extras from our provider. You can click one of the extras on that screen to search for it, or you can use the left hand tree view to browse by category. 
 
-If you're on a domain that's eligible for a [free development license](https://www.modmore.com/free-development-licenses/), our premium extras will say "Free to try on development" in the name and a download will not require or deduct any available licenses. 
+If you're on a domain that's eligible for a [free development license](https://modmore.com/free-development-licenses/), our premium extras will say "Free to try on development" in the name and a download will not require or deduct any available licenses. 
 
 ## Step 3: Download & Install
 

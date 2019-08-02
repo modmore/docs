@@ -11,7 +11,7 @@ Below you will find several preconfigured examples, but you can create your own 
 ````
 [{
   "title":"Buy Button",
-  "clip":"<a href='https://www.modmore.com/extras/' class='buy'>Buy this product now</a>."
+  "clip":"<a href='https://modmore.com/extras/' class='buy'>Buy this product now</a>."
 },{
   "title":"Copyright",
   "clip":"©2013 modmore."

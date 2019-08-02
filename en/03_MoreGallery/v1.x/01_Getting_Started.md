@@ -6,9 +6,9 @@ In this getting started document we'll walk you through the basic set up for Mor
 
 ## Prerequisite: Installing MoreGallery
 
-If you haven't yet, the first step is to install the MoreGallery. You'll need a modmore.com account and follow the instructions [found in the Purchases section of the site](https://www.modmore.com/account/purchases/).
+If you haven't yet, the first step is to install the MoreGallery. You'll need a modmore.com account and follow the instructions [found in the Purchases section of the site](https://modmore.com/account/purchases/).
 
-On a local development domain, you may use a [free development license](https://www.modmore.com/free-development-licenses/). Otherwise you'll need to buy a license first as well.
+On a local development domain, you may use a [free development license](https://modmore.com/free-development-licenses/). Otherwise you'll need to buy a license first as well.
 
 ## Step 1: Create a Gallery Resource
 

@@ -1,4 +1,4 @@
-To integrate recent Facebook, Twitter & Instagram posts, you can use the free [Social Media extension for Digital Signage](https://www.modmore.com/digitalsignage/extensions/social-media/). 
+To integrate recent Facebook, Twitter & Instagram posts, you can use the free [Social Media extension for Digital Signage](https://modmore.com/digitalsignage/extensions/social-media/). 
 
 ## Setting up your template
 

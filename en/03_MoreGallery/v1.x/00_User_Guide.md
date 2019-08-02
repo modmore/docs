@@ -1,4 +1,4 @@
-This user guide is meant for the end-users of the MoreGallery add-on. For information about front-end implementation, please review the [documentation](https://www.modmore.com/moregallery/documentation/).
+This user guide is meant for the end-users of the MoreGallery add-on. For information about front-end implementation, please review the [documentation](https://modmore.com/moregallery/documentation/).
 
 **Please note** that your designer or developer has the tools to customise MoreGallery to your exact needs. Because of that, not all information in this document may apply to your specific situation. 
 
@@ -25,7 +25,7 @@ Uploading images is really easy. Just click the Upload button, and choose the im
 
 After choosing images, you will see them being added to the images overview. They are still being uploaded (if the images are really big, this can take some time), but when the spinner disappears and the bar turns green, it is done.
 
-![](https://www.modmore.com/assets/uploads/2013/mgupload3.gif)
+![](https://modmore.com/assets/uploads/2013/mgupload3.gif)
 
 ## Importing Images
 
@@ -41,7 +41,7 @@ To add a video, click the _Add Video_ button in the toolbar. In the window that 
 
 To sort the images in a different order than what they were uploaded, you can drag them across the page. Click the image while holding down the mouse button, and move your mouse to where you want the image to appear. A black outline will show where the image will be placed if you release the mouse.
 
-![](https://www.modmore.com/assets/uploads/2013/recording2.gif)
+![](https://modmore.com/assets/uploads/2013/recording2.gif)
 
 ## Editing Image Information
 
@@ -49,7 +49,7 @@ Each image has information associated with it. This includes at the very least a
 
 To edit this information, click the white bar below the image (the one with the name, filename and the modify icon). An edit pane and enlargement of the image will appear below it.
 
-![](https://www.modmore.com/assets/uploads/2013/editimage.gif)
+![](https://modmore.com/assets/uploads/2013/editimage.gif)
 
 When the edit pane opened, you can edit the information in the fields. When you are done changing the details, you can just close the edit pane with the close button; the changes are automatically saved.
 
@@ -65,4 +65,4 @@ When hovering over an image in the main view, you can see a number of options. B
 
 To view a large version of an image in the Manager, click the small image preview. A modal window will pop up showing a large version of the image.
 
-![](https://www.modmore.com/assets/uploads/2013/previewlarge3.gif)
+![](https://modmore.com/assets/uploads/2013/previewlarge3.gif)

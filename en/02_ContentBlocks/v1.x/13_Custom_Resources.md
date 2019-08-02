@@ -11,7 +11,7 @@ Once we have independently confirmed that third party custom resources work as e
 The following Extras are known to work with ContentBlocks and enabled by default as of 1.1.0:
 
 - MoreGallery
-- [SimpleCart](https://www.modmore.com/simplecart/) (as of v2.1.1)
+- [SimpleCart](https://modmore.com/simplecart/) (as of v2.1.1)
 - [Articles](http://rtfm.modx.com/extras/revo/articles) (as of v1.7.7)
 - [GoodNews](http://www.bitego.com/extras/goodnews/)
 - [Collections](http://modx.com/extras/package/collections)

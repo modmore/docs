@@ -10,5 +10,5 @@ Important links:
 
 - [Getting Started](Getting_started)
 - [Github](https://github.com/modmore/ClientConfig), for bug reports, feature requests, and access to the full MIT-licensed source code.
-- [ClientConfig on modmore.com](https://www.modmore.com/extras/clientconfig/).
+- [ClientConfig on modmore.com](https://modmore.com/extras/clientconfig/).
 - [ClientConfig on MODX.com](https://modx.com/extras/package/clientconfig).

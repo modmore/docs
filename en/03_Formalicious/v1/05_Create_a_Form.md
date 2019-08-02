@@ -46,4 +46,4 @@ Now is the time to put a form on a page! This can be done by going to a page and
 
 ![Select a Formalicious form in a page](../images/resource.png)
 
-Alternatively, if you use [ContentBlocks](https://www.modmore.com/contentblocks/), you can also create a _Formalicious Form Selector_ field and insert that into your page. 
+Alternatively, if you use [ContentBlocks](https://modmore.com/contentblocks/), you can also create a _Formalicious Form Selector_ field and insert that into your page. 

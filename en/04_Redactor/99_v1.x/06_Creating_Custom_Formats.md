@@ -1,10 +1,10 @@
 
-The page you're currently looking at contains information related to Redactor 1.x. Please visit [Custom Formatting](https://www.modmore.com/redactor/documentation/custom-formats/) for the relevant information for Redactor 2.x.
+The page you're currently looking at contains information related to Redactor 1.x. Please visit [Custom Formatting](https://modmore.com/redactor/documentation/custom-formats/) for the relevant information for Redactor 2.x.
 
 
 For Redactor 1.2.0, we added something special to do exactly what many of you requested, custom formatting. By making use of the [Redactor Styles Plugin](https://github.com/jpdevries/styles) by JP DeVries, you can create custom formats to more easily format your text. [Redactor TVs](Custom_Template_Variable) can even have their own custom formats that overrides the System Defaults.
 
-![Using className to style individiual format options in the toolbar](https://www.modmore.com/assets/uploads/redactor_custom_styles.png "Styling individual Format Options")
+![Using className to style individiual format options in the toolbar](https://modmore.com/assets/uploads/redactor_custom_styles.png "Styling individual Format Options")
 
 To add custom styles to Redactor you will need to set the [redactor.stylesJson](Configuration) System Setting to properly formatted JSON that defines each of your styles. 
 

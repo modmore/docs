@@ -46,7 +46,7 @@ Some shipping methods may require the customer to submit certain information, su
 
 ## Available Shipping Method Types
 
-Commerce ships with a couple of different shipping method types out of the box, and there are also [extensions](https://www.modmore.com/commerce/extensions/) available.
+Commerce ships with a couple of different shipping method types out of the box, and there are also [extensions](https://modmore.com/commerce/extensions/) available.
 
 ### Standard Shipping Method
 

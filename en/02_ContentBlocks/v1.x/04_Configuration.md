@@ -12,7 +12,7 @@ All of these settings are created automatically when installing ContentBlocks. T
 
 ### Accepted Resource Types (`contentblocks.accepted_resource_types`) 
 
-Comma separated list of the resource types ContentBlocks should be enabled on. There are built in resource types in MODX like modDocument, but other extras may also provide them in a way that ContentBlocks can support. This includes for example MoreGallery, [Collections](http://modx.com/extras/package/collections), [GoodNews](http://www.bitego.com/extras/goodnews) and [SimpleCart](https://www.modmore.com/simplecart/).
+Comma separated list of the resource types ContentBlocks should be enabled on. There are built in resource types in MODX like modDocument, but other extras may also provide them in a way that ContentBlocks can support. This includes for example MoreGallery, [Collections](http://modx.com/extras/package/collections), [GoodNews](http://www.bitego.com/extras/goodnews) and [SimpleCart](https://modmore.com/simplecart/).
 
 For instructions about using ContentBlocks on custom resource types, please visit the [Custom Resources](Custom_Resources) documentation.
 
@@ -26,7 +26,7 @@ When Rebuilding Content via the ContentBlocks component, you may find that the c
 
 ### Custom Icon Path (`contentblocks.custom_icon_path`) 
 
-If you'd like to use custom icons ([see the default set here](https://www.modmore.com/contentblocks/custom-inputs/icons/)), you can set the (server) path here. The {assets\_path} placeholder will be replaced with the full path to your assets directory. Also make sure to set the Custom Icon URL to match the path provided here.
+If you'd like to use custom icons ([see the default set here](https://modmore.com/contentblocks/custom-inputs/icons/)), you can set the (server) path here. The {assets\_path} placeholder will be replaced with the full path to your assets directory. Also make sure to set the Custom Icon URL to match the path provided here.
 
 ### Custom Icon URL (`contentblocks.custom_icon_url`) 
 

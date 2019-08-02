@@ -1,10 +1,10 @@
-To get started with Digital Signage, you need a license. We offer [free development licenses](https://www.modmore.com/free-development-licenses/) that you can use to try out Digital Signage, and also for development and staging purposes. [Paid licenses can be found here](https://www.modmore.com/digitalsignage/pricing/).
+To get started with Digital Signage, you need a license. We offer [free development licenses](https://modmore.com/free-development-licenses/) that you can use to try out Digital Signage, and also for development and staging purposes. [Paid licenses can be found here](https://modmore.com/digitalsignage/pricing/).
 
 [TOC]
 
 ## Installing the package
 
-After creating an [api key](https://www.modmore.com/account/api-keys/) and adding it to your MODX site, you can browse our package provider to download Digital Signage. If you're new to modmore, [learn more about how our package provider works here](https://www.modmore.com/about/package-provider/).
+After creating an [api key](https://modmore.com/account/api-keys/) and adding it to your MODX site, you can browse our package provider to download Digital Signage. If you're new to modmore, [learn more about how our package provider works here](https://modmore.com/about/package-provider/).
 
 When you install the package, a few things will be created for you:
 

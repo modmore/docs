@@ -2,11 +2,11 @@
 title: Available Third Party Input Types
 ---
 
-Interested in using more than just the [built in input types](https://www.modmore.com/contentblocks/documentation/input-types/)? This page contains a list of the input types you can install that we know off. Know of any others? Let us know!
+Interested in using more than just the [built in input types](https://modmore.com/contentblocks/documentation/input-types/)? This page contains a list of the input types you can install that we know off. Know of any others? Let us know!
 
 ## oEmbed Input
 
-Developed by us here at modmore, the oEmbed Input can be installed via the [modmore.com package provider](https://www.modmore.com/about/package-provider/) as a free package. It was first released on April 26th 2014.
+Developed by us here at modmore, the oEmbed Input can be installed via the [modmore.com package provider](https://modmore.com/about/package-provider/) as a free package. It was first released on April 26th 2014.
 
 The oEmbed Input Type allows you to embed content from a few dozen oEmbed-enabled content providers, by simply pasting in the link to the content. By making use of the [noembed.com](http://noembed.com/) web service, you have instant embed-ability for close to 50 content providers, varying from YouTube, Vimeo and Spotify, to Facebook, Twitter, Dropbox, Amazon and many more.
 

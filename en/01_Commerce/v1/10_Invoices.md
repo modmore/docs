@@ -26,7 +26,7 @@ In the new screen, in the menu on **Add Status Change Action**, choose **Create 
 
 Now that you told Commerce **when** to create the invoice, you haven't told it **how** yet. For that, you need a PDF Writer.
 
-Commerce does not ship with any writers, so you'll need an [extension](https://www.modmore.com/commerce/extensions/).
+Commerce does not ship with any writers, so you'll need an [extension](https://modmore.com/commerce/extensions/).
  
 There are currently 2 official options available:
 

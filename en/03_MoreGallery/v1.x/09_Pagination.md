@@ -30,7 +30,7 @@ To match it with the Foundation framework, you could add some minimal styling an
 
 You can find a lot more information and options specific to getPage in [the getPage documentation](http://rtfm.modx.com/display/ADDON/getPage). 
 
-If you get stuck integrating MoreGallery with getPage, feel free to [contact support](https://www.modmore.com/account/support/) for help. 
+If you get stuck integrating MoreGallery with getPage, feel free to [contact support](https://modmore.com/account/support/) for help. 
 
 More information about using the mgGetImages snippet and the available properties can be found in the [Snippet Usage](Snippets/mgGetImages) documentation.
 

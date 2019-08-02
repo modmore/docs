@@ -18,7 +18,7 @@ Compared to version 1, version 2 of the gateways require a bit more set up. This
 
 Here's what you need to do.
 
-1. First, install the package from the modmore.com [package provider](https://www.modmore.com/about/package-provider/). 
+1. First, install the package from the modmore.com [package provider](https://modmore.com/about/package-provider/). 
 2. [Create a webhook in the Stripe dashboard](https://dashboard.stripe.com/account/webhooks), pointing it to `https://yoursite.com/assets/components/simplecart_stripe/connector.php?action=webhook` Select the events `source.charged`, `source.failed` and `source.cancelled`.
 3. Open the webhook in the dashboard, and copy the *Signing Secret* into the `simplecart_stripe.webhook_secret` system setting, located under the `simplecart_stripe` namespace.
 4. Back in the Stripe Dashboard in the API >  Webhooks section, click on your endpoint. Test the webhook  by clicking the `Send test webhook` button in the top right corner. Leave it on the default event type, and click on _Send test webhook_ button. Make sure the response looks like JSON, and has a message of `Unsupported event type, ignoring request`. If you get a different response, that means you might not have copied the webhook secret properly, and you wont be able of accepting payments.

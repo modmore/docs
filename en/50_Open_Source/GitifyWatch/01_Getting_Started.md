@@ -9,7 +9,7 @@ Gitify Watch is primarily meant for use on staging or production environments wh
 These are the steps needed to set up Gitify Watch, which are explained in a bit more detail if you follow the link:
 
 1. [Download and install Scheduler](../Scheduler/Installation) in MODX (and [install Gitify on your server](../Gitify/Installation) if it isn't there yet)
-2. [Download and install Gitify Watch](https://www.modmore.com/gitifywatch/download/)
+2. [Download and install Gitify Watch](https://modmore.com/gitifywatch/download/)
 3. [Point Gitify Watch to your Gitify installation](Link_Gitify)
 4. [Configure your environments in the .gitify file](Configure_Environments)
 5. [Make sure the git repository is set up properly](Repository_Setup)

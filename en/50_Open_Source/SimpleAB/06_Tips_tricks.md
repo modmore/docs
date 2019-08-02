@@ -33,4 +33,4 @@ When a user is not an Admin, only report functionalities are available in the co
 
 ### [Hide mod**more** Logo](#logo)
 
-At the bottom right of the component, we display the mod**more** logo by default, with a link to the [SimpleAB Documentation](https://www.modmore.com/extras/simpleab/documentation/), because we want you to remember us while you deliver awesomeness to your client. Are we stuck in your brain already? Great! Head over to _System_ » _System Settings_ and choose _simpleab_ in the namespace dropdown (the one that defaults to core), and set `simpleab.hide_logo` to _yes_.
+At the bottom right of the component, we display the mod**more** logo by default, with a link to the [SimpleAB Documentation](https://modmore.com/extras/simpleab/documentation/), because we want you to remember us while you deliver awesomeness to your client. Are we stuck in your brain already? Great! Head over to _System_ » _System Settings_ and choose _simpleab_ in the namespace dropdown (the one that defaults to core), and set `simpleab.hide_logo` to _yes_.

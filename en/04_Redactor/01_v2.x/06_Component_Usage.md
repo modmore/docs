@@ -86,6 +86,6 @@ closeAction: 'close'
 
 ## Done!
 
-This requires at least Redactor 1.2. This method should also work for other editors that are available for MODX, however your mileage may vary. Consult the documentation or ask the developer to see if other editors you prefer to use supports this approach. Or, you know, [buy Redactor](https://www.modmore.com/redactor/pricing/). ;)
+This requires at least Redactor 1.2. This method should also work for other editors that are available for MODX, however your mileage may vary. Consult the documentation or ask the developer to see if other editors you prefer to use supports this approach. Or, you know, [buy Redactor](https://modmore.com/redactor/pricing/). ;)
 
 We have tested the Redactor integration in, among others, FAQ Manager, MoreGallery, Articles, mxCalendar and ContentBlocks.

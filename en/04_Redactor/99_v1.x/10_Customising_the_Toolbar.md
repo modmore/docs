@@ -1,4 +1,4 @@
-The page you're currently looking at contains information related to Redactor 1.x. Please visit [Custom Toolbars](https://www.modmore.com/redactor/documentation/customising-the-editor/) for the relevant information for Redactor 2.x.
+The page you're currently looking at contains information related to Redactor 1.x. Please visit [Custom Toolbars](https://modmore.com/redactor/documentation/customising-the-editor/) for the relevant information for Redactor 2.x.
 
 
 
@@ -13,7 +13,7 @@ With a little bit of CSS, or as we like to call it [Sass](http://sass-lang.com) 
 
 ### Sass
 
-Here’s a look at the source Sass we use to pre-process our [CSS below](https://www.modmore.com/extras/redactor/documentation/customizing-the-toolbar/#css).
+Here’s a look at the source Sass we use to pre-process our [CSS below](https://modmore.com/extras/redactor/documentation/customizing-the-toolbar/#css).
 
 
 ```` scss   
@@ -137,7 +137,7 @@ Changing the colors of the Sass variables in [this gist](http://sassmeister.com/
 
 [Play with this gist on SassMeister.](https://sassmeister.com/gist/17f1a62335428a48a7ac)
 
-You’ll want to include this CSS on your MODX manager pages so that they override the default Redactor styles. You can do this by supplying the [Stylesheet Setting](https://www.modmore.com/extras/redactor/documentation/configuration/#stylesheet) with an absolute path to your custom stylesheet which may looking something like:
+You’ll want to include this CSS on your MODX manager pages so that they override the default Redactor styles. You can do this by supplying the [Stylesheet Setting](https://modmore.com/extras/redactor/documentation/configuration/#stylesheet) with an absolute path to your custom stylesheet which may looking something like:
 
 ```` html   
 [[++asset_url]]css/redactor-custom.css   

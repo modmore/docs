@@ -2,7 +2,7 @@
 title: Upgrading from Redactor 1.x to 2.0
 ---
 
-Redactor 2.0 is a major release, which brings with it major changes. New features and improvements have been added, but some older features have also been removed or replaced. While we've tried to make the upgrade as seamless as possible, some breaking changes have been inevitable. This document discusses the removed or replaced features. For more information about all the new and improved features, please review the [2.0 announcement blog](https://www.modmore.com/blog/2015/announcing-redactor-2.0/).
+Redactor 2.0 is a major release, which brings with it major changes. New features and improvements have been added, but some older features have also been removed or replaced. While we've tried to make the upgrade as seamless as possible, some breaking changes have been inevitable. This document discusses the removed or replaced features. For more information about all the new and improved features, please review the [2.0 announcement blog](https://modmore.com/blog/2015/announcing-redactor-2.0/).
 
 Before upgrading to Redactor 2.0, we recommend making a backup of the Redactor files and your system settings database table, just in case you need to revert.
 

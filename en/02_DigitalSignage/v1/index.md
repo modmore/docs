@@ -3,7 +3,7 @@ title: DigitalSignage
 description: Documentation for Digital Signage, a plugin by Sterc that lets you manage slideshows for narrow casting.
 ---
 
-[DigitalSignage](https://www.modmore.com/digitalsignage/) is a premium extra by Sterc that lets you manage slideshows for narrow casting. [Learn more about DigitalSignage](https://www.modmore.com/digitalsignage/)
+[DigitalSignage](https://modmore.com/digitalsignage/) is a premium extra by Sterc that lets you manage slideshows for narrow casting. [Learn more about DigitalSignage](https://modmore.com/digitalsignage/)
 
 Recommended reading:
 

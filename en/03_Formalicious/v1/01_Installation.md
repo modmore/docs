@@ -14,6 +14,6 @@ To accomplish this, follow these steps:
 
 ## Inserting a form with ContentBlocks
 
-If you also use [ContentBlocks](https://www.modmore.com/contentblocks/), you can use a field to select a form to insert as well, instead of needing the template variable and form code in your template. This gives your content editors more control over what form is inserted at what position.
+If you also use [ContentBlocks](https://modmore.com/contentblocks/), you can use a field to select a form to insert as well, instead of needing the template variable and form code in your template. This gives your content editors more control over what form is inserted at what position.
 
 Formalicious will add its custom input type during installation. At Extras > ContentBlocks, create a new field using the "Formalicious Form Selector" input type and customise the template as needed. 

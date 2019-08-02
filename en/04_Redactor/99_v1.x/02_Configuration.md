@@ -1,12 +1,12 @@
-The page you're currently looking at contains information related to Redactor 1.x. Please visit [Configure Redactor](https://www.modmore.com/redactor/documentation/configuration/) for the relevant information for Redactor 2.x.
+The page you're currently looking at contains information related to Redactor 1.x. Please visit [Configure Redactor](https://modmore.com/redactor/documentation/configuration/) for the relevant information for Redactor 2.x.
 
 ---
 
 Redactor comes with a whole bunch of configuration options, so you can customize the look of the editor, the available functionality and some nifty tricks that Redactor offers.
 
-These configurations are stored as System Settings, and can be found by visiting _System_ » _System Settings_ and choosing _redactor_ in the namespace dropdown (that's the one that defaults to "core"). It is also possible to create [Redactor Template Variables instances](https://www.modmore.com/extras/redactor/documentation/template-variable/), in which case you can override many of the settings for each template variable.
+These configurations are stored as System Settings, and can be found by visiting _System_ » _System Settings_ and choosing _redactor_ in the namespace dropdown (that's the one that defaults to "core"). It is also possible to create [Redactor Template Variables instances](https://modmore.com/extras/redactor/documentation/template-variable/), in which case you can override many of the settings for each template variable.
 
-+tv Options marked with a "+" in the overview, or with the blue "+tv" label below, are options that can be configured for individual [Redactor template variables](https://www.modmore.com/extras/redactor/documentation/template-variable/).
++tv Options marked with a "+" in the overview, or with the blue "+tv" label below, are options that can be configured for individual [Redactor template variables](https://modmore.com/extras/redactor/documentation/template-variable/).
 
 [TOC]
 
@@ -98,7 +98,7 @@ When not 0, this lets you set a placeholder text for the editor if no content is
 
 
 **Added in 1.5.0**  
-This setting allows you to add a list of predefined links in "Add link" modal. [More info](https://www.modmore.com/extras/redactor/documentation/creating-predefined-links/).
+This setting allows you to add a list of predefined links in "Add link" modal. [More info](https://modmore.com/extras/redactor/documentation/creating-predefined-links/).
 
 
 
@@ -626,10 +626,10 @@ The path, relative to the root of the media source as defined by the `Media Sour
 - `` if available, the pagetitle of the current resource. **Added in 1.4.0**
 - `` if available, the alias of the current resource. **Added in 1.4.0**
 - `` if available, the context\_key of the current resource. **Added in 1.4.0**
-- `https://www.modmore.com/` Your MODX site\_url. **Added in 1.5.0**
+- `https://modmore.com/` Your MODX site\_url. **Added in 1.5.0**
 - `/assets/` Your MODX assets\_url. **Added in 1.5.0**
 
-Also see `Image Upload Path`, `Media Source` and [Using Media Sources with Redactor](https://www.modmore.com/extras/redactor/documentation/media-sources/)
+Also see `Image Upload Path`, `Media Source` and [Using Media Sources with Redactor](https://modmore.com/extras/redactor/documentation/media-sources/)
 
 
 
@@ -653,10 +653,10 @@ The path, relative to the root of the media source as defined by the `Media Sour
 - `` if available, the pagetitle of the current resource. **Added in 1.4.0**
 - `` if available, the alias of the current resource. **Added in 1.4.0**
 - `` if available, the context\_key of the current resource. **Added in 1.4.0**
-- `https://www.modmore.com/` Your MODX site\_url. **Added in 1.5.0**
+- `https://modmore.com/` Your MODX site\_url. **Added in 1.5.0**
 - `/assets/` Your MODX assets\_url. **Added in 1.5.0**
 
-Also see `File Upload Path`, `Media Source` and [Using Media Sources with Redactor](https://www.modmore.com/extras/redactor/documentation/media-sources/)
+Also see `File Upload Path`, `Media Source` and [Using Media Sources with Redactor](https://modmore.com/extras/redactor/documentation/media-sources/)
 
 
 
@@ -769,7 +769,7 @@ Default: yes
 
 Choose (or provide the ID of) a Media Source to use for uploading and browsing images and files. This can be any type of Media Source that implements uploading and browsing of images.
 
-Also see `File Upload Path`, `Image Upload Path` and [Using Media Sources with Redactor](https://www.modmore.com/extras/redactor/documentation/media-sources/)
+Also see `File Upload Path`, `Image Upload Path` and [Using Media Sources with Redactor](https://modmore.com/extras/redactor/documentation/media-sources/)
 
 
 

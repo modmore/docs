@@ -2,7 +2,7 @@
 title: Available Input Types
 ---
 
-This page contains an **alphabetical** list of the _built-in_ input types for [ContentBlocks](https://www.modmore.com/contentblocks/). For information on building custom input types for things that are not included, check out the [Custom Inputs documentation](../Custom_Inputs/Developing_Custom_Inputs) and see the [List of Available Custom Input Types](../Custom_Inputs/Third_Party_Input_Types) for custom input types you can use.
+This page contains an **alphabetical** list of the _built-in_ input types for [ContentBlocks](https://modmore.com/contentblocks/). For information on building custom input types for things that are not included, check out the [Custom Inputs documentation](../Custom_Inputs/Developing_Custom_Inputs) and see the [List of Available Custom Input Types](../Custom_Inputs/Third_Party_Input_Types) for custom input types you can use.
 
 [TOC]
 
@@ -28,7 +28,7 @@ The chunk input type has no template. If your chunk relies on certain styling, y
 
 
 
-[![](https://www.modmore.com/assets/uploads/7595c06a23a490d4b6e805f21c62d277.png)](https://www.modmore.com/assets/uploads/7595c06a23a490d4b6e805f21c62d277.png)
+[![](https://modmore.com/assets/uploads/7595c06a23a490d4b6e805f21c62d277.png)](https://modmore.com/assets/uploads/7595c06a23a490d4b6e805f21c62d277.png)
 
  
 
@@ -53,7 +53,7 @@ Also see this tip for [Displaying (MODX) Code](../Tips_Tricks/Displaying_MODX_Co
 
 
 
-[![](https://www.modmore.com/assets/uploads/e280ca4db15226f2778c7e119dc1600d.png)](https://www.modmore.com/assets/uploads/e280ca4db15226f2778c7e119dc1600d.png)
+[![](https://modmore.com/assets/uploads/e280ca4db15226f2778c7e119dc1600d.png)](https://modmore.com/assets/uploads/e280ca4db15226f2778c7e119dc1600d.png)
 
  
 
@@ -69,7 +69,7 @@ The template property is used for each individual image (placeholders: `[[+idx]]
 
 
 
-[![](https://www.modmore.com/assets/uploads/6b2273fa0b7ea82850c83f94a3e70ef8.png)](https://www.modmore.com/assets/uploads/6b2273fa0b7ea82850c83f94a3e70ef8.png)
+[![](https://modmore.com/assets/uploads/6b2273fa0b7ea82850c83f94a3e70ef8.png)](https://modmore.com/assets/uploads/6b2273fa0b7ea82850c83f94a3e70ef8.png)
 
  
 
@@ -85,7 +85,7 @@ For example, a template could contain a link and and anchor to [automatically li
 
 
 
-[![](https://www.modmore.com/assets/uploads/cf0526ac66123db933a73b506130c053.png)](https://www.modmore.com/assets/uploads/cf0526ac66123db933a73b506130c053.png)
+[![](https://modmore.com/assets/uploads/cf0526ac66123db933a73b506130c053.png)](https://modmore.com/assets/uploads/cf0526ac66123db933a73b506130c053.png)
 
  
 
@@ -117,9 +117,9 @@ The image is available through the `[[+url]]` placeholder in the template, and w
 
 
 
-[![](https://www.modmore.com/assets/uploads/82308bae9d682e0df6aa26c8f29cf2e7.png)](https://www.modmore.com/assets/uploads/82308bae9d682e0df6aa26c8f29cf2e7.png)
+[![](https://modmore.com/assets/uploads/82308bae9d682e0df6aa26c8f29cf2e7.png)](https://modmore.com/assets/uploads/82308bae9d682e0df6aa26c8f29cf2e7.png)
 
-[![](https://www.modmore.com/assets/uploads/226117876a28868059b4da1b0e3a93b5.png)](https://www.modmore.com/assets/uploads/226117876a28868059b4da1b0e3a93b5.png)
+[![](https://modmore.com/assets/uploads/226117876a28868059b4da1b0e3a93b5.png)](https://modmore.com/assets/uploads/226117876a28868059b4da1b0e3a93b5.png)
 
  
 
@@ -133,7 +133,7 @@ Need to make complex lists? The List (and Ordered List) input type have you cove
 
 
 
-[![](https://www.modmore.com/assets/uploads/0600fcde539a94c22b1864d5bbb69adb.png)](https://www.modmore.com/assets/uploads/0600fcde539a94c22b1864d5bbb69adb.png)
+[![](https://modmore.com/assets/uploads/0600fcde539a94c22b1864d5bbb69adb.png)](https://modmore.com/assets/uploads/0600fcde539a94c22b1864d5bbb69adb.png)
 
  
 
@@ -147,7 +147,7 @@ The Quote input type combines a simple textfield with a smaller input field to a
 
 
 
-[![](https://www.modmore.com/assets/uploads/f30c46c28bb0725ed917ad29344a824b.png)](https://www.modmore.com/assets/uploads/f30c46c28bb0725ed917ad29344a824b.png)
+[![](https://modmore.com/assets/uploads/f30c46c28bb0725ed917ad29344a824b.png)](https://modmore.com/assets/uploads/f30c46c28bb0725ed917ad29344a824b.png)
 
  
 
@@ -155,13 +155,13 @@ The Quote input type combines a simple textfield with a smaller input field to a
 
 ## Rich Text
 
-The rich text input uses the installed rich text editor, such as [Redactor](https://www.modmore.com/extras/redactor/) or TinyMCE, to provide the richtext editing experience your clients are already used to. If no supported rich text editor is installed, a simple textarea is shown instead.
+The rich text input uses the installed rich text editor, such as [Redactor](https://modmore.com/extras/redactor/) or TinyMCE, to provide the richtext editing experience your clients are already used to. If no supported rich text editor is installed, a simple textarea is shown instead.
 
  
 
 
 
-[![](https://www.modmore.com/assets/uploads/1cd44c5242245bf7754332f2ea6e8743.png)](https://www.modmore.com/assets/uploads/1cd44c5242245bf7754332f2ea6e8743.png)
+[![](https://modmore.com/assets/uploads/1cd44c5242245bf7754332f2ea6e8743.png)](https://modmore.com/assets/uploads/1cd44c5242245bf7754332f2ea6e8743.png)
 
  
 
@@ -179,7 +179,7 @@ It is possible to filter the available snippets based on name/IDs as well as cat
 
 
 
-[![](https://www.modmore.com/assets/uploads/a9e5ae3f5f9b8770a1c28e9fd0455c27.png)](https://www.modmore.com/assets/uploads/a9e5ae3f5f9b8770a1c28e9fd0455c27.png)
+[![](https://modmore.com/assets/uploads/a9e5ae3f5f9b8770a1c28e9fd0455c27.png)](https://modmore.com/assets/uploads/a9e5ae3f5f9b8770a1c28e9fd0455c27.png)
 
  
 
@@ -193,7 +193,7 @@ Docs to be added.
 
 
 
-[![](https://www.modmore.com/assets/uploads/76fde4cb13d90fb56d43c301f03af29a.png)](https://www.modmore.com/assets/uploads/76fde4cb13d90fb56d43c301f03af29a.png)
+[![](https://modmore.com/assets/uploads/76fde4cb13d90fb56d43c301f03af29a.png)](https://modmore.com/assets/uploads/76fde4cb13d90fb56d43c301f03af29a.png)
 
  
 
@@ -215,4 +215,4 @@ The Video input allows the user to either paste in a YouTube URL, or to search p
 
 
 
-[![](https://www.modmore.com/assets/uploads/12ec4e5848bf5df6ddd62a916b977b6c.png)](https://www.modmore.com/assets/uploads/12ec4e5848bf5df6ddd62a916b977b6c.png)
+[![](https://modmore.com/assets/uploads/12ec4e5848bf5df6ddd62a916b977b6c.png)](https://modmore.com/assets/uploads/12ec4e5848bf5df6ddd62a916b977b6c.png)

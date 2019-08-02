@@ -12,15 +12,15 @@ On this page:
 
 ## Downloading Commerce
 
-First of all you'll need to install Commerce in your MODX installation. Commerce is available from the modmore.com [package provider](https://www.modmore.com/about/package-provider/), so you'll need to create an [api key](https://www.modmore.com/account/api-keys/) and add that to your MODX site to get started.
+First of all you'll need to install Commerce in your MODX installation. Commerce is available from the modmore.com [package provider](https://modmore.com/about/package-provider/), so you'll need to create an [api key](https://modmore.com/account/api-keys/) and add that to your MODX site to get started.
 
-**&raquo; Note:**  If you're new to modmore and haven't worked with our package provider before, [learn more about how that works here](https://www.modmore.com/about/package-provider/). It's a one-time set up to access all our extras.
+**&raquo; Note:**  If you're new to modmore and haven't worked with our package provider before, [learn more about how that works here](https://modmore.com/about/package-provider/). It's a one-time set up to access all our extras.
 
-In order to install Commerce, you will need to have a license. [Licenses are available for €299](https://www.modmore.com/commerce/pricing/), but free development licenses are available to use while you're building the shop. 
+In order to install Commerce, you will need to have a license. [Licenses are available for €299](https://modmore.com/commerce/pricing/), but free development licenses are available to use while you're building the shop. 
 
-To use a [free development license](https://www.modmore.com/free-development-licenses/), make sure that your MODX installation is installed on a domain that matches the free development licenses whitelist. This means you should be on a domain like `localhost`, `site.local`, `dev.site.com`, or a similar pattern. [The full list of supported domains can be found here](https://www.modmore.com/free-development-licenses/#faq_109). If you're unable (or unwilling) to use a domain that is approved for free licenses, you can also use a paid license and transfer that to the live domain later.
+To use a [free development license](https://modmore.com/free-development-licenses/), make sure that your MODX installation is installed on a domain that matches the free development licenses whitelist. This means you should be on a domain like `localhost`, `site.local`, `dev.site.com`, or a similar pattern. [The full list of supported domains can be found here](https://modmore.com/free-development-licenses/#faq_109). If you're unable (or unwilling) to use a domain that is approved for free licenses, you can also use a paid license and transfer that to the live domain later.
 
-When you have your [API Key](https://www.modmore.com/account/api-keys/) set up as a package provider in your MODX site, open the modmore.com package provider by clicking the arrow on the _Download Extras_ button (at Extras > Installer), choosing _Select a Provider_ in the menu, and choosing modmore.com in the window. 
+When you have your [API Key](https://modmore.com/account/api-keys/) set up as a package provider in your MODX site, open the modmore.com package provider by clicking the arrow on the _Download Extras_ button (at Extras > Installer), choosing _Select a Provider_ in the menu, and choosing modmore.com in the window. 
 
 Find Commerce in the provider under Premium Extras > Commerce and choose Download. 
 

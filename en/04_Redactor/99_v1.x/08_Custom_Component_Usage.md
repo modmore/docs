@@ -97,7 +97,7 @@ Let us know if your Extra supports Redactor too, and we'll gladly add it to the 
 
 ## Version Detection
 
-One of the [several improvements in Redactor 1.5](https://www.modmore.com/blog/2014/announcing-redactor-1.5/) introduced the ability to check the current version of Redactor through our API. We do **not** recommend using version detection, however if you absolutely must it is possible through `$redactor->version`.
+One of the [several improvements in Redactor 1.5](https://modmore.com/blog/2014/announcing-redactor-1.5/) introduced the ability to check the current version of Redactor through our API. We do **not** recommend using version detection, however if you absolutely must it is possible through `$redactor->version`.
 
 
 ```` php   

@@ -45,7 +45,7 @@ If it finds the requested template file, it stops there, otherwise it checks the
 
 ### Multiple themes (v1.1+)
 
-As of Commerce v1.1, you can define multiple comma-separated themes and theme paths. This is useful when combined with a [starter pack](https://www.modmore.com/commerce/extensions/theme-red/) or if you have a complex setup with multiple similar themes that still need specific overrides per context (see below). 
+As of Commerce v1.1, you can define multiple comma-separated themes and theme paths. This is useful when combined with a [starter pack](https://modmore.com/commerce/extensions/theme-red/) or if you have a complex setup with multiple similar themes that still need specific overrides per context (see below). 
 
 Themes and theme paths are checked in the order they are defined, so the left-most option is checked first. 
 

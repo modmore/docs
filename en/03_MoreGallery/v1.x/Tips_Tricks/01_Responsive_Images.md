@@ -1,6 +1,6 @@
 ## Using Picture for Responsive Images
 
-MoreGallery 1.3 added a neat [cropping & resizing feature](https://www.modmore.com/moregallery/documentation/crops/). 
+MoreGallery 1.3 added a neat [cropping & resizing feature](https://modmore.com/moregallery/documentation/crops/). 
 
 
 One of the use cases for that feature is the use of responsive images, where different crops are shown for different browser dimensions. In this document, we'll explain how you can set up your gallery to use `<picture>` and `<source>` tags with several different crops. 

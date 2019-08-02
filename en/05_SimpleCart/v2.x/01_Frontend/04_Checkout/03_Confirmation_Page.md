@@ -36,7 +36,7 @@ Finally, if you didn't have it yet, make sure the redirect hook is set and that 
 
 On the confirmation page you'll need to load the information from the checkout page with the FormItRetriever snippet, and add all that information to hidden input fields inside the form. You'll also need a FormIt call with the scCreateOrder hook which will send the user to the desired payment gateway, and/oor the thank you page.
 
-Basically you're creating a [one-page checkout](https://www.modmore.com/simplecart/documentation/tutorials/one-page-checkout/) here, by collecting all information and then sending it to SimpleCart in one sweep.
+Basically you're creating a [one-page checkout](https://modmore.com/simplecart/documentation/tutorials/one-page-checkout/) here, by collecting all information and then sending it to SimpleCart in one sweep.
 
 Here's an example of what the confirmation page might look like.
 

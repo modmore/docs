@@ -10,7 +10,7 @@ These icons were designed specifically for ContentBlocks by Jon Wallace Design.
 
 All icons will be shown in the Icons dropdown when adding a field or layout, but in case you want a separate look, here they are:
 
-![](https://www.modmore.com/assets/uploads/2014/02/2014-02-25-13.57.04-Content_Blocks___MODX_Revolution.png)![](https://www.modmore.com/assets/uploads/2014/02/2014-02-25-13.57.31-Content_Blocks___MODX_Revolution.png)![](https://www.modmore.com/assets/uploads/2014/02/2014-02-25-13.57.49-Content_Blocks___MODX_Revolution.png)
+![](https://modmore.com/assets/uploads/2014/02/2014-02-25-13.57.04-Content_Blocks___MODX_Revolution.png)![](https://modmore.com/assets/uploads/2014/02/2014-02-25-13.57.31-Content_Blocks___MODX_Revolution.png)![](https://modmore.com/assets/uploads/2014/02/2014-02-25-13.57.49-Content_Blocks___MODX_Revolution.png)
 
 All these icons are retina-ready too (not on this page), so should look great on your fancy screens as well.
 
