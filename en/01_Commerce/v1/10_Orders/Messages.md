@@ -1,32 +1,52 @@
-Order Messages are communications from the shop specific to a certain order. This mostly includes email notifications to the customer, but could also include emails to the merchant about the new order, text  (SMS) messages sent via a third party integration, or other forms of communication.
+---
+title: Emails & Messages
+---
+
+Order Messages are communications from the shop specific to a certain order. Typically email notifications to the customer, but could also include emails to the merchant about the new order, text (SMS) messages sent via a third party integration, or other forms of order-specific communication. 
+
+[TOC]
+
+## Viewing & sending Messages
 
 To manage Order Messages, go to Commerce > Orders and when viewing an order navigate to the Messages tab. There you can see all previous messages, and create new ones. 
 
-When creating messages, they are not automatically sent. To send them hover over _Actions_ in the grid and select _Send Messages_. This allows you to first draft a message before it is whisked away to the customer. To view a message contents, hover over _Actions_ and open _View Message Content_. For automated messages, such as those created through an [Email Status Change Action](../Statuses/Email_Action), messages are usually sent right away.
+When creating messages, you can choose if it should be sent immediately or not. When you uncheck the _Send message right away_ checkbox, it will be stored as a draft. 
+
+To send a draft hover over _Actions_ in the grid and select _Send Message_. To view a message contents, click _View Message Content_. 
+
+For automated messages, such as those created through an [Email Status Change Action](../Statuses/Email_Action), messages are usually sent right away.
+
+Multiple recipients are supported, separate them with a comma. 
 
 ## Message Types
 
 The Commerce core provides two message types: Email and Internal.
 
-### Email Message Type
+### Email Message
 
 The email message type is the most common one. It sends, surprisingly, an email. 
 
 Email sending is done through MODX using PhpMailer, so make sure that your email settings (in MODX under System > Settings > Email area) are configured properly to send email. It's strongly encouraged to use SMTP with an email delivery service like Mandrill, Postmark, Amazon SES, or others. Make sure that SPF and DKIM are configured properly for optimal delivery. 
 
-### Internal Message Type
+### Internal Note
 
-The internal message type creates an internal note. It is not currently sent to anyone, but remains available to be checked on the order. 
+The internal message type creates an internal note. It is not sent to anyone, but remains available to be checked on the order. 
 
 ## Available Placeholders
 
 For the Email Message Type, and possibly third party message types, you can use a whole bunch of placeholders in the Subject and Content fields. 
 
-These are parsed as Twig templates, so you can use basic logic in the emails as well. 
+These are parsed as [Twig templates](../Front-end_Theming), so you can use logic in the emails as well. 
 
-Order fields are available with the `order` prefix, like `{{ order.id }}`, `{{ order.total_formatted }}` and `{{ order.total_quantity }}`.
+An example of all placeholders is included at the end of this page. We'll discuss a couple special fields first. 
 
-An array of items is found in the `items` placeholder, which could be used like this:
+### Order Fields
+
+**Order fields** are available with the `order` prefix, like `{{ order.id }}`, `{{ order.total_formatted }}` and `{{ order.total_quantity }}`.
+
+### Order Items
+
+An array of order items is found in the `items` placeholder, which could be used like this:
 
 ```` twig
 <ul>
@@ -36,15 +56,121 @@ An array of items is found in the `items` placeholder, which could be used like 
 </ul>
 ````
 
-Address fields are available with the `billing_address` and `shipping_address` prefixes. For example `{{ billing_address.fullname }}`, `{{ shipping_address.address1 }}` and `{{ shipping_address.email }}`. 
+_When items are assigned to a product_, you can find the product information in item.product. The exact information you'll find there may depend on the product type. 
 
-The chosen shipping method is available with the `shipping_method` prefix, for example `{{ shipping_method.name }}`. 
+For example: `{{ item.product.weight_formatted }}`
+
+### Addresses
+
+Address information is available with the `billing_address` and `shipping_address` prefixes. For example `{{ billing_address.fullname }}`, `{{ shipping_address.address1 }}` and `{{ shipping_address.email }}`. 
+
+Note that depending on your checkout, it is possible only one or the other is available - build your template accordingly. 
+
+To automatically format the address, use the `format_address` filter like this: `{{ shipping_address|format_address }}`. 
+
+### Shipments & Shipping Methods
+
+An array of [order shipments](Shipments) is available as `{{ shipments }}`, each containing the shipping method that was chosen. Here's how you may use that:
+
+``` html
+{% for shipment in shipments %}
+    <p>Shipment {{ shipment.id }} will be delivered by {{ shipment.method.name }}</p>
+{% endfor %}
+```
+
+As of v1.1, the `{{ shipment.total_weight }}`, `{{ shipment.tracking_url }}` and `{{ shipment.email_note }}` placeholders are available.
+ 
+- The tracking_url needs to be provided by a custom order shipment implementation and may not be available until an order has been processed. 
+- The total_weight is calculated from each products' configured weight times the quantity. The unit this is in will be based on the weight unit set on the first product that was processed. 
+- The email_note is fully-rendered HTML based on the shipping methods' configured email note at the time the email is sent. In v0.12 and 1.0 you can access the email note as `{{ shipping_method_note }}`.
+
+If you're looking to organise your order items by shipment, you will need to combine the iteration and match `item.shipment` to `shipment.id`, like this:
+
+``` html
+{% for shipment in shipments %}
+    <h3>{{ shipment.name }}</h3>
+    
+    {% if shipment.email_note %}
+        {{ shipment.email_note|raw }}
+    {% endif %}
+    
+    <ul>
+        {% for item in items %}
+            {% if item.shipment == shipment.id %}
+                <li>{{ item.quantity }}x {{ item.name }} - {{ item.total_formatted }}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+    
+    <p>Total {{ shipment.product_quantity }} products, weight: {{ shipment.total_weight }}</p>
+    
+    {% if shipment.tracking_url %}
+        <p><a href="{{ shipment.tracking_url }}" class="button">Track shipment {{ shipment.tracking_reference }}</a></p>
+    {% elseif shipment.tracking_reference %}
+        <p>Tracking reference: {{ shipment.tracking_reference }}</p>
+    {% endif %}
+{% endfor %}
+```
+
+(Prior to v0.8, you could use `{{ shipping_method }}`, but that has been deprecated and no longer returns the method for orders placed since the 0.8 update)
+
+### Transactions & Payment Methods
 
 Transactions for an order are available in a `{{ transactions }}` array that you can iterate over (as of v0.11.0-rc2). 
 
-Custom order fields are available in `order_fields`, already rendered for the customer, for example `{{ order_fields.coupon }}` (as of v0.11)
+Only completed transactions are included in this array, so you don't have to filter out failed/pending transactions. 
 
-### Example data
+Note that a transaction with the [Manual payment gateway](../Payment_Methods/Manual) is considered successful/paid by Commerce, even though may users apply that as a "pay in store"-type payment. 
+
+It is technically possible for there to be more than one completed transaction (e.g. partial payments or loyalty cards), though that's uncommon at this time.
+
+Transactions include the payment method as `{{ transaction.method }}. 
+
+An example:
+
+``` html
+{% for transaction in transactions %}
+    <p>Thank you for your {{ transaction.amount_formatted }} payment via {{ transaction.method.name }}.</p>
+{% endfor %}
+```
+
+As of v1.1, the payment-method specific email note is also available on the transaction as `{{ transaction.email_note|raw }}`. In v0.12 and 1.0 you can access the email note as `{{ payment_method_note|raw }}`.
+
+### Order fields
+
+Custom order fields are available in `order_fields`, already rendered for the customer (as of v0.11). 
+ 
+To render a specific order field: 
+
+```html
+{{ order_fields.coupon|raw }}
+```
+
+To render all order fields, iterate over the array:
+
+```html
+{% for name, value in order_fields %}
+    <p><b>{{ lex('commerce.' ~ name) }}</b>: {{ value|raw }}</p>
+{% endfor %}
+```
+
+Note that we're applying the `raw` filter to the value - this allows custom order fields to output HTML (like a link or . 
+
+### Payment/Shipping notes 
+
+On payment and shipping methods you can set an _Email Note_ that is automatically included in the email when those methods are selected. This is useful for including method-specific instructions or thank you messages. 
+
+In v0.12 and v1.0, use `{{ payment_method_note|raw }}` and `{{ shipping_method_note|raw }}` respectively.
+
+In v1.1+ the email note is also available in the transaction and shipment as `{{ transaction.email_note }}` or `{{ shipment.email_note }}`. Which one to use depends on the layout of your email.
+
+### Invoices
+
+The last generated PDF invoice for an order is available in the `invoice` order field, like: `{{ order_fields.invoice }}`. That will only contain the invoice reference. 
+
+To attach the PDF invoice to the email, enable "Attach invoice" on the [email status change](../Statuses/Email_Action). 
+
+## Example data
 
 This is an example of all the data available in an order message. You can get this data yourself by enabling the `commerce.debug` system setting, and using `{{ dump() }}` or `{{ dump(placeholder name) }}`.  
 
