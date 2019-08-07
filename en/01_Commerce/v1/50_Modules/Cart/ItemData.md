@@ -65,7 +65,7 @@ When using the multiple-products form, add the fieldname inside the products arr
     <input type="number" name="products[123][quantity]" value="1">
     
     <label for="add-comment">Special request:</label>
-    <textarea name="products[123][comment]" id="add-comment></textarea>
+    <textarea name="products[123][comment]" id="add-comment"></textarea>
     
     <input type="submit" value="Add to Cart">
 </form>
