@@ -118,7 +118,7 @@ That will dump the exact data to screen for you to inspect.
 
 ### Level 12
 
-```
+``` json
 {
     "level": 12,
     "version": "1.9.0-pl",
