@@ -1,8 +1,8 @@
-As of MoreGallery v1.9, your MoreGallery installation will share technical information about your implementation with modmore.
+As of MoreGallery v1.9, your MoreGallery installation will share technical information about your implementation with modmore. This happens during license checks, which happens about once a week.
 
 To set the consent level, update the **moregallery.data_consent** system setting. During installation or upgrade you can also set the consent level. By default the level is set to 10. 
 
-The data is associated with your license on the modmore server, which means we do have the ability of connecting the collected data to an individual site and the site owner. We may use this data in support or to reach out to individual customers who use certain configurations to ask for clarification or feedback on future functionality.
+The data is associated with your license on the modmore server, which means we do have the ability of connecting the collected data to an individual site and the license owner. We may use this data in support or to reach out to individual customers who use certain configurations to request feedback for future functionality.
 
 We only keep the **latest data** that is shared. When new data is provided, it overwrites the previous data we had stored. To gain insight into long-term trends in MoreGallery usage, we aggregate the data from all sites nightly, and turn that into anonymous insights. 
 
