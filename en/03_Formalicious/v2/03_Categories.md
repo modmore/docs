@@ -3,5 +3,3 @@ Organising your forms from the start is highly recommended. You can do this by c
 Create tabs by going to the Formalicious page in the Extras-menu and click on _Admin panel_.
 
 Manage your _Categories_ in the first tab. The category-name will be displayed as the tab-name, followed by the description, which can be used to explain to your users what the category is used for.
-
-**Please be aware:** forms can go missing when removing their parent category. Always make sure a category is empty before removing it. Version 1.1.0 will change this behaviour.

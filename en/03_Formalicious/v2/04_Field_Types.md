@@ -14,7 +14,7 @@ All these types have a _Chunk_ associated with them. These can be found in the E
 All the required fields are implemented in Formalicious, but you can change these chunks to match your needs. **It is recommended to duplicate and rename a field before changing it**, because an update of Formalicious will override the original chunks.
 
 ## Creating your own field type
-All the fields necessary area available by default, but we offer creative freedom here. You can create your own types with your own chunks.
+We made the most common used input fields already available, but we offer creative freedom here. You can create your own types with your own chunks.
 
 The following placeholders can be used
 
@@ -43,7 +43,16 @@ We specified the chunk called "specialEmailTpl". This chunk is a regular FormIt-
 
 Below is an example of our "Special email Tpl" (copy of emailTpl):
 
-![specialEmailTpl chunk for a Formalicious email-field](../images/createfieldchunkv2.png)
+```
+<div class="form-group [[!+error:notempty=`has-error`]]">
+    <label for="[[!+name]]">[[!+title]][[!+required:notempty=`*`:empty=``]]:</label>
+    <div class="form-control--wrapper">
+        <input type="email" id="[[!+name]]" name="[[!+name]]" class="form-control [[!+error:notempty=`error`]]" value="[[!+value]]" [[!+placeholder:notempty=`placeholder="[[!+placeholder]]"`]] />
+        [[!+error]]
+    </div>
+    [[!+description:notempty=`<div class="form-control--description">[[!+description]]</div>`]]
+</div>
+```
 
 **And that's it, you're all set!**
 
