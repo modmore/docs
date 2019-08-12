@@ -51,7 +51,7 @@ Both the minimum and the maximum are inclusive, but the cheapest price is always
 
 ### Other types
 
-You may have access to other types, too. Price Types can be extended, for example to support prices for different users. 
+You may have access to other types, too. User and User Group prices are also available, and Price Types can be extended, for example to support prices for different users. 
 
 ## Combining multiple Price Types in one product
 
@@ -76,4 +76,4 @@ Here's how that would work when a customer orders a certain number of products:
 - When a customer orders 7 products, they are still charged €35 each. While the quantity based price is now eligible, the sale price of €35 is still cheaper than the first bracket in the quantity based pricing (€40). 
 - When a customer orders 10 products, they are charged €30 each. The second quantity bracket for 10-19 products is now cheaper than the sale price of €35.
 
-When using multiple currencies, only the rules for the currency the customer is using (which is usually based on what site/domain/URL they are using) are evaluated. So if your customer is in the EUR site which charges €35 for the sale, even if you have USD pricing that's cheaper (e.g. $25 each), the EUR customer will be charged the €35 price. 
+When using multiple currencies, only the prices for the currency the customer is using (which is usually based on what site/domain/URL they are using) are evaluated. So if your customer is in the EUR site which charges €35 for the sale, even if you have USD pricing that's cheaper (e.g. $25 each), the EUR customer will be charged the €35 price. 

@@ -59,11 +59,13 @@ Technically, Price Types are implementations of one or more of the following int
 - `\modmore\Commerce\Pricing\PriceType\Interfaces\RelativePriceTypeInterface`, which tells Commerce about a `setRegularPrice` method so your price type can do calculations with an original price
 - `\modmore\Commerce\Pricing\PriceType\Interfaces\TimeBoundPriceTypeInterface`, which provides a `getFromDate()` and `getUntilDate()` method for determining/rendering if a price type is valid for the provided date. 
 
-There are presently 3 Price Type implementations in Commerce:
+There are presently 5 Price Type implementations in Commerce:
 
 - `\modmore\Commerce\Pricing\PriceType\Sale` is a price type that either returns a single defined Price or not, based on a start (from) and expiration (until) DateTime. 
 - `\modmore\Commerce\Pricing\PriceType\PercentageSale` is a price type that either returns a single defined Price or not, based on a start (from) and expiration (until) DateTime. Compared to the Sale PriceType, the SalePercentage lets the user enter a percentage discount and it then calculates the new price from that.
 - `\modmore\Commerce\Pricing\PriceType\Quantity` gives the merchant a way to define bulk pricing between different brackets. This PriceType contains different prices
+- `\modmore\Commerce\Pricing\PriceType\User` (added in v1.1) gives user-specific prices by entering the username and adding the price.
+- `\modmore\Commerce\Pricing\PriceType\UserGroup` (added in v1.1) gives usergroup specific prices by selecting the usergroup and adding the price.
 
 We'll get to more details and some examples in a minute.
 
@@ -73,7 +75,7 @@ While this document is focused on Products, none of the concepts here are, techn
 
 The Price Types, Pricing and Prices are all generic, with additional Product-specific interfaces and implementations that connect the two.
 
-For example, the PriceTypeInterface only defines how a PriceType can be statically instantiated from serialized data, and how to serialize it again:
+For example, the PriceTypeInterface defines how a PriceType can be statically instantiated from serialized data, and how to serialize it again:
 
 ``` php
 interface PriceTypeInterface {
@@ -88,6 +90,8 @@ interface PriceTypeInterface {
      * @return self
      */
     public static function unserialize(\comCurrency $currency, $data);
+    
+    // ... a couple more methods for rendering the price type ...
 }
 ```
 
@@ -122,6 +126,8 @@ final class Example implements PriceTypeInterface, ItemPriceTypeInterface
     {
         // ...
     }
+    
+    // ...
 }
 ```
 
@@ -166,6 +172,8 @@ final class Example implements PriceTypeInterface, ItemPriceTypeInterface, Shipp
     {
         // ...
     }
+    
+    // ...
 }
 ```
 
@@ -249,7 +257,7 @@ At that point, you would add the interface to a PricingInterface implementation,
 
 If you have a `comProduct` instance loaded, and want to get the price from that, there are a few methods at your disposal with the word price (or pricing) in it: 
 
-- `$product->getPrice() : \modmore\Commerce\Product\Price` - this is the old method of getting a price back for a product. Note that this `\modmore\Commerce\Product\Price` object is **not** an implementation of `\modmore\Commerce\Pricing\Interfaces\PriceInterface` (which would be the `\modmore\Commerce\Pricing\Price` class). This method primarily serves to turn the `price` field on the product into something that resembles a price with a currency, but that implementation turns out to have been a bit short-sighted, and has been deprecated. Unfortunately as the `Product\Price` and `Pricing\PriceInterface` are not compatible and we have been encouraging people to override getPrice in custom products, we have to keep them both around for a little while. 
+- `$product->getPrice() : \modmore\Commerce\Product\Price` - this is the old method of getting a price back for a product. Note that this `\modmore\Commerce\Product\Price` object is **not** an implementation of `\modmore\Commerce\Pricing\Interfaces\PriceInterface` (which would be the `\modmore\Commerce\Pricing\Price` class). This method primarily served to turn the `price` field on the product into something that resembles a price with a currency, but that implementation turns out to have been a bit short-sighted, and has been deprecated. Unfortunately as the `Product\Price` and `Pricing\PriceInterface` are not compatible and we have been encouraging people to override getPrice in custom products, we have to keep them both around for a little while. 
 - `$product->getPricing(comCurrency $currency) : ProductPricing` this always returns a `ProductPricing` instance (which implements both `PricingInterface` and `ItemPricingInterface`) with all pricing information for the product in the provided currency, including the retail price and the various price types that are configured on the product. 
 
 So typically you'll get the full pricing information with `$product->getPricing(comCurrency $currency)`, and interact with that to get the standard or alternative prices. 
@@ -272,9 +280,9 @@ Other notable methods on the `ProductPricing` object:
 
 If you're looking to import product prices, you'll need to interact with the classes mentioned in this document to make that work. The rough workflow would look like this:
 
-1. Create a comProduct object, giving it the regular price (integer) in the `price` field. Save the product to the database (`$product->save()`). 
+1. Create a comProduct object, optionally giving it the regular price (integer) in the `price` field. Save the product to the database (`$product->save()`). 
 2. Get a `ProductPricing` object for the product/currency combination: `$pricing = $product->getPricing($currency)`. Even if you just created the product, this is guaranteed to always return a `ProductPricing` instance. 
-3. Add your price types with the `addPriceType` method. 
+3. Call `$pricing->setRegularPrice()` to set the regular price, and add your price types with the `addPriceType` method. 
 4. Save the `ProductPricing` by calling `$product->savePricing($pricing)`. This **overwrites** the pricing data for the currency. Internally this will serialize and save it to the `pricing` column in the products database, but always use the `savePricing` method instead of the `pricing` column to make sure your code doesn't break if we change how data is stored.
 
 Repeat steps 2-4 for each currency you need to import.
@@ -317,6 +325,27 @@ $pricing->addPriceType(
     ->add(20, null, 4900)
 );
 ```
+
+- **User** (`\modmore\Commerce\Pricing\PriceType\User`, added v1.1) expects the currency in the constructor, and subsequent calls to `add(string $username, int $amount)` to add the prices. 
+
+```php
+$pricing->addPriceType(
+    (new User($currency))
+    ->add('admin', 1990)
+    ->add('editor', 2450)
+);
+```
+
+- **UserGroup** (`\modmore\Commerce\Pricing\PriceType\UserGroup`, added v1.1) expects the currency in the constructor, and subsequent calls to `add(int $userGroupID, int $amount)` to add the prices. 
+
+```php
+$pricing->addPriceType(
+    (new UserGroup($currency))
+    ->add(1, 5300)
+    ->add(5, 4900)
+);
+```
+
 
 ## Removing a PriceType from a Pricing instance
 

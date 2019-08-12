@@ -24,6 +24,8 @@ Commerce ships with the following price types out of the box:
 - Sale: a single price that is only used between two date/times. 
 - Sale Percentage: a percentage discount price that is only used between two date/times. THe percentage price is useful for in a Matrix, as it will cascade from the matrix/row/column to each individual product.
 - Quantity: lets you set multiple prices where the returned price is based on the quantity on the order item.
+- User: lets you enter usernames and set the price for each. (Added in v1.1)
+- UserGroup: lets you select usergroups and set the price for each. (Added in v1.1)
 
 They are not shown right away; you first need to enable their respective modules at Configuration > Modules. 
 
@@ -35,4 +37,6 @@ To render a "From/until"-style date, you can use the `[[+price_rendered]]` place
 
 For date-based price types, like the Sale/Percentage Sale, which also have an expiration date set, you can also use the `[[+price_valid_until]]` placeholder. That contains a unix timestamp which can be rendered to a human-readable timestamp with the `date` output filter.
 
-We'll add a snippet that lets you render a quantity-based price type to your product pages in mid-end April. The other core price types are automatically taken into account in the `[[+price]]` and `[[+price_rendered]]` placeholders. 
+To render a quantity-based pricing table, use the [commerce.render_quantity_price](../Snippets/render_quantity_price) snippet.
+
+To render prices taking into account taxes, discounts, and user/usergroup price types, use the [commerce.render_taxed_price](../Snippets/render_quantity_price) snippet. 
