@@ -97,6 +97,7 @@ FQN: `modmore\Commerce\Events\Checkout`
 - `setData(array $data)`
 - `getOrder()`
 - `getResponse()`
+- `getRequestMethod()` returns GET or POST (as of v1.1)
 
 ### Gateways
 
