@@ -91,3 +91,88 @@ Because it uses the exact same placeholders, you could even re-use an email temp
 If the printer does not seem to respond, check your MODX error log for an error message. 
 
 You can also [check print tasks in Google Cloud Print](https://www.google.com/cloudprint/#jobs) to make sure they're queued and processing. Note that when using the special "Save to Google Drive" printer, tasks do not show up in the list of print jobs. 
+
+## Integrating CloudPrint in other modules
+
+The CloudPrint module can be used by other modules, too! Modules that generate documents or reports could add a print button quite easily. 
+
+First, offer your user the ability to select the printer to use **if** the CloudPrint module is enabled. This may be in the module configuration or a record's fields. 
+
+This example is for adding the field to module configuration:
+
+```php
+use modmore\Commerce_CloudPrint\Admin\PrinterField;
+// ...
+
+class MyModule extends BaseModule {
+    // ...
+    public function getModuleConfiguration(\comModule $module): array
+    {
+        $fields = [];
+        // ...
+        if (class_exists(PrinterField::class)) {
+            $fields[] = new PrinterField($this->commerce, [
+                'label' => $this->adapter->lexicon('commerce_cloudprint.select_printer'),
+                'description' => $this->adapter->lexicon('commerce_mymodule.select_printer.desc'), // add a description specific to your module explaining what the printer is for
+                'name' => 'properties[printer]',
+                'value' => $module->getProperty('printer'),
+                'emptyOption' => true, // if the printer is optional
+            ]);
+        }
+        // Optionally, add an else clause with a DescriptionField telling the user the module supports CloudPrint
+        // ...
+        return $fields;
+    }
+}
+```
+
+Then, when you have something to print, make sure a printer is selected, create a `Printer` object, and call its `print()` method:
+
+``` php
+
+use modmore\Commerce_CloudPrint\Auth;
+use modmore\Commerce_CloudPrint\Printer;
+
+class SomeClass
+{
+    public function sendToPrinter()
+    {
+        // Retrieve the comModule instance to fetch our printer ID
+        $module = $this->adapter->getObject('comModule', ['class_name' => MyModule::class]);
+        if (!($module instanceof comModule)) {
+            return 'Module not found.';
+        }
+        
+        $printerId = $module->getProperty('printer');
+        if (empty($printerId)) {
+            return 'No printer set.';
+        }
+        $printer = new Printer(new Auth($this->commerce), $printerId);
+        
+        $title = 'My Amazing Print';
+        $contentType = 'application/pdf';
+        $contents = 'raw pdf contents, e.g. file_get_contents($pdfFile)';
+        
+        $result = $printer->print($title, $contentType, $contents);
+        if ($result->isSuccessful()) {
+            return 'Success! ' . $result->getMessage();
+        }
+        return 'Error: ' . $result->getMessage();
+    }
+}
+```
+
+The `print()` method returns a `PrintResult` object, which has the following methods:
+
+- `isSuccessful(): bool`
+- `getMessage(): string` will return either a success or error message. For an error message, the error code is prefixed between square brackets.
+- `getErrorCode(): ?string` will return an error code or `null` if no error code was set.
+- `getStatus(): string` will return a string indicating the print job status. Typically, this is `QUEUED`. 
+- `getOwnerId(): string` returns the email address of the printer owner. 
+- `getRawResponse(): array` returns the raw response from the Cloud Print `/submit` API. 
+
+To print, you don't need to submit a PDF. HTML (set the content type to `text/html`), URLs (set the content type to `url` and provide the url as content), images (`image/jpeg`, `image/png`) and various other formats are also supported. [See the Google Cloud Print documentation for contentType](https://developers.google.com/cloud-print/docs/appInterfaces#parameters)
+
+If you need to generate a PDF from HTML, you can use a [PDF Writer](../Developer/PDF_Writer). 
+
+The `print()` method will throw a `PrintException` for invalid requests.
