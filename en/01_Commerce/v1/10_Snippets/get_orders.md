@@ -6,6 +6,8 @@ This snippet can be paginated with getPage or pdoPage.
  
 Added in v0.9.
 
+[TOC]
+
 ## Usage
 
 ```` html
@@ -17,6 +19,8 @@ Added in v0.9.
 ## Properties
 
 - `&tpl`: the name of a twig template file (_not_ a chunk) to show the orders. This defaults to frontend/account/orders.twig, which you should override in a [custom theme](../Front-end_Theming). The ability to specify a different tpl is mostly meant for when you have different variations of the orders page (e.g. for different contexts)
+- `&where`: a JSON array containing additional conditions to filter orders on. See examples below. (added in v1.1)
+- `&logSql`: set to 1 if you want the query that was used for fetching orders to get logged to your MODX error log; useful for debugging custom `&where` conditions. (added in v1.1)
 - `&sortby`: a field name to sort the orders by. Defaults to the date the order was created.
 - `&sortdir`: `ASC` or `DESC`.
 - `&limit`: the amount of orders to show. Defaults to 10.
@@ -30,3 +34,25 @@ Added in v0.9.
 - `&loadShipments`: 1 or 0 to indicate if the [order shipments](../Orders/Shipments) should be loaded into a `shipments` array. The shipment also contains the chosen shipping method. Defaults to 1. Added in 0.11.1.
 - `&loadOrderFields`: 1 or 0 to indicate if custom order fields should be loaded. Defaults to 1. Added in v0.12.
 
+
+## Additional conditions
+
+The `&where` property lets you add additional conditions for the order to be returned. This property needs to contain valid JSON. 
+
+For example, to only lists orders in a specific context:
+
+``` html
+[[!commerce.get_orders? 
+    &where=`{"context":"web"}`
+]]
+```
+
+Or with a specific status (where 5 is the ID of the status):
+
+``` html
+[[!commerce.get_orders? 
+    &where=`{"status":5}`
+]]
+```
+
+Use `&logSql` to see the final query in your MODX error log.
