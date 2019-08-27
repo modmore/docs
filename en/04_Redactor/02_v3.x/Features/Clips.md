@@ -11,6 +11,10 @@ For example:
 
 Be sure to use **"double quotes"** or it will not be considered valid JSON.
 
+## Special Characters
+
+If you want to add the ability to easily insert special characters, you can also add `specialchars` to your toolbar instead of using Clips. That automatically adds a special button for common special characters to insert. 
+
 ## Clips from 2.x
 
 Redactor 2.x also had Clips, but with a different structure. That structure is also recognised in 3.x and will be automatically converted on save. 
