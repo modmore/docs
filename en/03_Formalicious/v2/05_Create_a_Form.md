@@ -31,7 +31,7 @@ You have to save the form settings before you can access this tab and add steps/
 
 Before adding a field, you need to add a _Step_. You can change the text of a _Step_ by double clicking the text of the step. It will allow you to change the text inline. Hit _Enter_ to save the changes.
 
-Steps will group your from fields on the frontend and next/previous buttons will be automatically added by Formalicious for your users. The steps are also available as navigation on the frontend via `[[!+formalicious.navigation]]`
+Steps will group your from fields on the frontend and next/previous buttons will be automatically added by Formalicious for your users. The only thing you have to do is styling!
 
 ## Form fields
 Every step can contain fields. Click 'Add field' and choose a field type in the dialog window. This will open the "Save field" dialog. The title will be the label of the field, the placeholder is optional and works as a [HTML5 Placeholder attribute](https://www.w3.org/TR/html5/forms.html#the-placeholder-attribute).
@@ -46,4 +46,4 @@ Now is the time to put a form on a page! This can be done by going to a page and
 
 ![Select a Formalicious form in a page](../images/resource.png)
 
-Alternatively, if you use [ContentBlocks](https://modmore.com/contentblocks/), you can also create a _Formalicious Form Selector_ field and insert that into your page. 
+Alternatively, if you use [ContentBlocks](https://www.modmore.com/contentblocks/), you can also create a _Formalicious Form Selector_ field and insert that into your page. 
