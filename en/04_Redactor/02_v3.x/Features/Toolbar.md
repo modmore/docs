@@ -1,3 +1,7 @@
+---
+title: Toolbar Buttons
+---
+
 The toolbar is the most important aspect of Redactor, providing you with the buttons to add markup and media. 
 
 It is primarily configured by the list of buttons, in the Toolbar section of the configurator. The available list of buttons is shown below that field.
