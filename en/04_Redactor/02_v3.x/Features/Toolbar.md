@@ -14,7 +14,7 @@ It is primarily configured by the list of buttons, in the Toolbar section of the
 - Lists: lists, ol, ul, indent, outdent 
 - Media: link, image, file, video, widget 
 - Editor: redo, undo, fullscreen, [divider](Dividers)
-- Others: [html](Source), line, [properties](Properties), specialchars, table
+- Others: [html](Source), line, [properties](Properties), specialchars, table, download
 
 ## Redactor Plugins
 
