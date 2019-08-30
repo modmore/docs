@@ -29,7 +29,7 @@ Note that the module only runs on POST requests, not GET. Passing URL parameters
 
 If you need GET parameters to be stored, you either need to write a module, or have the GET parameters turned into a hidden input that is submitted with a POST request. 
 
-## Templates
+## Adding fields to your Templates
 
 The module only listens to requests - it does not automatically add the field to your checkout form.
 
@@ -37,12 +37,18 @@ To do that, [set up a custom theme](../Front-end_Theming) and edit the checkout 
 
 The module only requires you to **match the name to what is in the module configuration**; the exact input type or formatting doesn't matter. You can get as fancy or simple as you'd like, so long as the POST contains the right name and value.
 
-Perhaps you want to provide a simple desired delivery date field on the shipping step which you added to the module as `delivery_date` with field type `Date`? Then add to `frontend/checkout/shipping-method.twig`:
+For example if you want to provide a simple desired delivery date field on the shipping step, which you added to the module as `delivery_date` with field type `Date`, then add something like this to `frontend/checkout/shipping-method.twig`:
 
 ``` html
 <label for="field-delivery_date">Preferred delivery date:</label>
 <input type="date" id="field-delivery_date" name="delivery_date">
 ```
+
+## Accessing custom field values
+
+To read the value of a custom field, you can use `{{ order_fields.NAME_OF_FIELD }}`, for example `{{ order_fields.delivery_date }}`. 
+
+That works in [email templates](../Orders/Messages) as well as checkout templates. 
 
 ## Get help
 
