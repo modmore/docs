@@ -76,3 +76,7 @@ With the [shortcodes](Shortcodes) you can start typing certain codes at the star
 It's encouraged to start editing your configuration set to learn about all the features Redactor uses. Each option has a description in the editing view to help you understand what it does.
 
 For the more powerful functionality, we have [extended documentation](Features). The configuration set view will also link to that documentation where applicable. 
+
+## Restrict access to the configurator
+
+To restrict access to the configurator, you can use the [provided access permissions](Permissions).
