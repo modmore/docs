@@ -4,7 +4,7 @@ title: Quickstart Guide
 
 Welcome to Redactor 3. We hope this will be your favorite editor for MODX, if it isn't already. 
 
-The focus in Redactor is on a simple, clean, and user friendly rich text editor. It's not a page builder (though it integrates extremely well with our ContentBlocks solution for that!), but does output clean media and various types of media. 
+The focus in Redactor is on a simple, clean, and user friendly rich text editor. It's not a page builder (though it integrates extremely well with [ContentBlocks](https://modmore.com/contentblocks/)!), but does output clean markup and various types of media. 
 
 Let's take a quick tour of Redactor!
 
@@ -16,7 +16,9 @@ After installing Redactor, you'll find a new page in the manager dedicated to it
 
 ![Redactor Configuration under Extras in the MODX 2.x manager](images/menu-entry.jpg)
 
-In this manager page, you'll manage what we call **Configuration Sets**. Each set is one unique configuration of Redactor, which can be enabled system-wide, in specific contexts, to the custom template variable input type, or ContentBlocks input types. 
+In this manager page, you'll manage what we call **Configuration Sets**. Each set is one unique implementation of Redactor, which can be enabled system-wide, in specific contexts, for specific templates, to the custom template variable input type or resource introtext, or ContentBlocks input types. 
+
+For each way you can use Redactor, check the [Usage documentation](Usage).
 
 ### Default configuration sets
 
@@ -37,8 +39,9 @@ You can edit these sets as you'd like - they **will not** be overwritten on upgr
 
 When you've spent some time creating a configuration set that you like, you can re-use it on different sites. 
 
-- In the set configuration view, click on Export in the top right menu.
-- In the list of configuration sets, right click on a specific set and choose Export, or click the Export button on the top right of the grid to export all sets.
+- In the set configuration view, click on Export in the top right menu to export the set you're currently editing.
+- In the list of sets, right click on a specific set and choose Export to export a specific set.
+- In the list of sets, click the Export button on the top right of the grid to export all sets.
 
 The generated XML file can be imported on any Redactor 3 installation by clicking the Import button in the sets overview and uploading the file. 
 
@@ -58,3 +61,18 @@ If you'd like to use a different configuration for a template variable, you can 
 
 Also use [ContentBlocks](https://modmore.com/contentblocks/)? Then you can use the [provided Redactor input type](Usage/ContentBlocks) to use a specific configuration set for rich text fields for more control.
 
+## Themes
+
+Redactor 3 ships with a selection of different editor themes. [Choose the one you like most](Themes), or [build your own](Themes/Custom).
+
+## Shortcuts & Shortcodes
+
+With the [available shortcuts](Shortcuts) you can execute some common commands without needing to leave the keyboard.
+
+With the [shortcodes](Shortcodes) you can start typing certain codes at the start of a new line to apply standard formatting.
+
+## More features
+
+It's encouraged to start editing your configuration set to learn about all the features Redactor uses. Each option has a description in the editing view to help you understand what it does.
+
+For the more powerful functionality, we have [extended documentation](Features). The configuration set view will also link to that documentation where applicable. 

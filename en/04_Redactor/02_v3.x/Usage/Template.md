@@ -4,6 +4,8 @@ There are also separate options to choose the configuration set for [Template Va
 
 If you want to get more granular in defining the configuration set **for the content field**, you can configure a per-template configuration set. 
 
+## How-to 
+
 To set up a different set for a template, edit the template and go to its Properties tab.
 
 ![Showing how to add the property to the template](../images/template-properties.jpg)
@@ -14,4 +16,4 @@ To set up a different set for a template, edit the template and go to its Proper
 
 3. Save the property set, and save the template.
 
-When set up correctly, you should see the template listed in the Redactor Configuration grid, and of course editing a resource with that template will use the chosen configuration.
+When set up correctly, you should see the template listed in the Redactor Configuration grid, and editing a resource with that template will use the chosen configuration.
