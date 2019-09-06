@@ -32,7 +32,7 @@ Now you can choose which permissions the user should have. We've listed them in 
 
 Select the desired permissions, save the Access Policy, and choose close to return to the Access Control Lists page in the manager.
 
-## Step 2: Add the Policy to a User Group
+### Step 2: Add the Policy to a User Group
 
 Now you can add the Access Policy to a user group. 
 
@@ -42,6 +42,6 @@ Right click the user group and choose _Update User Group_.
 
 On the new page, go to _Permissions_ > _Context Access_. Hit _Add Context_ and in the window select the `mgr` context, a minimum role of member (9999), and the access policy you created in the previous step.
 
-## Step 3: flush permissions
+### Step 3: flush permissions
 
 While manager sessions typically flush permissions automatically, you can flush the sessions via Manage > Flush permissions to make sure sessions are reloaded. 
