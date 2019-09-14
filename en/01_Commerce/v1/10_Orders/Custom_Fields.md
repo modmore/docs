@@ -20,5 +20,6 @@ You can also read all custom fields, like so:
     {{ fieldValue|raw }}
   {% endfor %}
 </ul>
+```
 
 That works in [email templates](../Orders/Messages) as well as checkout templates.
