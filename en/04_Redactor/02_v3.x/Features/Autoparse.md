@@ -2,7 +2,7 @@ With the autoparse options, enabled in the Links section of the configurator, yo
 
 [TOC]
 
-## Autoparse Images
+## Autoparse images
 
 With images, you can paste the link to an image and it will be inserted. 
 
@@ -12,7 +12,7 @@ Pasting a link to a YouTube or Vimeo video page will automatically embed the vid
 
 As an alternative to providing the link, you can also use the Video toolbar button to provide an embed code instead. 
 
-## Autoparse Links
+## Autoparse links
 
 When pasting in a URL, it will be turned into a proper link. The link text is the URL. To control the length of the link text, configure the _Link text length_ setting. 
 

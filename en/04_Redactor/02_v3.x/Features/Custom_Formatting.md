@@ -85,3 +85,6 @@ Clear inline formatting/styles:
 }
 ````
 
+## Custom styling
+
+To show custom styling in the editor, [register a custom CSS file](Custom_CSS). 
