@@ -7,7 +7,7 @@ To load a plugin you need to do two things.
 - Add the URL to the plugin.js file in `redactor.js`. That setting support comma-separated URLs, if you need multiple files. 
 - In the configurator, under Miscellaneous, add the name (only the name) of your plugin to the Additional Plugins option. 
 
-If your plugin requires custom CSS to load, you can use the `redactor.css` setting to load that. Make sure to scope your CSS appropriately as it will be loaded automatically across the MODX manager.
+If your plugin requires custom CSS, you can use the `redactor.css` setting to load that. Make sure to scope your CSS appropriately as it will be loaded automatically across the MODX manager. [Learn more about custom styling](Custom_CSS).
 
 ## Building custom plugins
 
