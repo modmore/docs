@@ -13,7 +13,7 @@ listId | ID of a resource containing an AgendaList snippet call. | System Settin
 outputSeparator | An optional string to separate each tpl instance. | -
 toPlaceholder | If set, the snippet result will be assigned to this placeholder instead of outputting it directly. | -
 tpl | Name of a chunk that contains the template for one category. | tplAgendaCategory
-useRequest | Use the request value of categories to filter the displayed categories. | Yes
+useRequest | Use the request value of `category` to filter the displayed categories. | Yes
 wrapperTpl | Name of a chunk that contains the wrapper template for all categories. | tplAgendaCategoriesWrapper
 
 ## Placeholders

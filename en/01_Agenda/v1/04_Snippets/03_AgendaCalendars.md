@@ -12,7 +12,7 @@ limit | Limit the number of calendars in the result. Use `0` for unlimited calen
 outputSeparator | An optional string to separate each tpl instance. | -
 toPlaceholder | If set, the snippet result will be assigned to this placeholder instead of outputting it directly. | -
 tpl | Name of a chunk that contains the template for one calendar. | tplAgendaCalendar
-useRequest | Use the request value of calendars to filter the displayed calendars. | Yes
+useRequest | Use the request value of `calendar` to filter the displayed calendars. | Yes
 wrapperTpl | Name of a chunk that contains the wrapper template for all calendars. | tplAgendaCalendarsWrapper
 
 ## Placeholders

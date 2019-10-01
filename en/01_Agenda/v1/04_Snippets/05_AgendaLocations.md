@@ -12,7 +12,7 @@ limit | Limit the number of locations in the result. Use `0` for unlimited locat
 outputSeparator | An optional string to separate each tpl instance. | -
 toPlaceholder | If set, the snippet result will be assigned to this placeholder instead of outputting it directly. | -
 tpl | Name of a chunk that contains the template for one location. | tplAgendaLocation
-useRequest | Use the request value of locations to filter the displayed locations. | Yes
+useRequest | Use the request value of `location` to filter the displayed locations. | Yes
 wrapperTpl | Name of a chunk that contains the wrapper template for all locations. | tplAgendaLocationsWrapper
 
 ## Placeholders
