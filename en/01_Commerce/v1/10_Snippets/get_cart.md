@@ -23,6 +23,7 @@ Added in v0.7.
 - `&toPlaceholders`: prefix to use for setting placeholders with all cart information.
 - `&field`: specify an order field to return only that field.
 - `&separator`: string to use to join the product records together, defaults to a newline character. (new in 0.11)
+- `&loadOrderFields`: when set to 1 (default), order fields are loaded into the `order_fields` placeholder. (new in 1.1.0-rc3)
 
 ## Returning information
 
