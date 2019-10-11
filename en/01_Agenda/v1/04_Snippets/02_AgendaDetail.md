@@ -10,7 +10,7 @@ calendars | Comma-separated list of aliases of calendars to filter the displayed
 categories | Comma separated list of aliases of categories to filter the displayed event. | -
 categoryTpl | Name of a chunk that contains the template of one category in the category list of an event. | tplAgendaEventCategory
 contexts | Comma separated list of context keys to filter the displayed event. | -
-daterangeFormat | Format of the daterange displayed in an event. | Lexicon `agenda.php_format_daterange`, the format string has to contain 7 parts separated by `|` 
+daterangeFormat | Format of the daterange displayed in an event. | Lexicon `agenda.php_format_daterange`. The format string has to contain 7 parts. The [format rules](04_Snippets/01_AgendaList.md#range-placeholder-format) are described below.
 daterangeSeparator | Separator in the daterange displayed in an event. | Lexicon `agenda.php_format_separator`
 detailId | ID of a resource containing an AgendaDetail snippet call. | System Setting `agenda.detail_id`
 durationParts | Number of detail parts of the event duration output. With the value `1` the duration will be shortened as i.e. `1 month`, with the value `2` the duration will be shortened as i.e. `1 month 2 days`, | 1
@@ -53,7 +53,7 @@ duration | The formatted duration of the event. The details of the duration coul
 images | All images of the event formatted by the chunk set with the imageTpl property
 imageurls | An array of all image urls. The placeholder [[+imageurls.1]] contains the url of the first image
 location | The location of the event formatted by the chunk set with the locationTpl property
-range | The formatted date range of the event. The format is defined with the lexicon entries `agenda.php_format_daterange` and `agenda.php_format_separator`
+range | The formatted date range of the event. The format is defined with the lexicon entries `agenda.php_format_daterange` and `agenda.php_format_separator`. The [format rules](04_Snippets/01_AgendaList.md#range-placeholder-format) are described below.
 repeating | Contains 1 if the event is an recurring event (otherwise 0).
 resource_id | The id of a linked resource of the event.
 title | The title of the event.
