@@ -1,6 +1,6 @@
 _Agenda_ contains some _system settings_ in the `agenda` namespace.
 
-These are available in the MODX system settings panel and in the [settings](02_Custom_Manager_Page/07_Settings.md) tab (cog icon) of the _Agenda_ custom manager page.
+These are available in the MODX system settings panel and in the [settings](02_Custom_Manager_Page/07_Settings) tab (cog icon) of the _Agenda_ custom manager page.
 
 Key | Name | Description | Default
 ----|------|-------------|--------
