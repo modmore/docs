@@ -87,3 +87,9 @@ setting](02_Custom_Manager_Page/07_Settings.md). A new log will be created in
 `{core_path}/cache/logs/agenda.log` with a lot of debug information.
 
 By default, errors are logged to the standard MODX error log.
+
+## I can't use my own daterange format in the lexicon or in the snippet properties
+
+The format string has to use exactly 7 parts separated by `|`. The description
+of the formatting rules could be found below the placeholder descriptions on the
+[AgendaList](04_Snippets/01_AgendaList.md#range-placeholder-format) snippet description.

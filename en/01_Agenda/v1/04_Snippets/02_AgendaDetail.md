@@ -10,7 +10,7 @@ calendars | Comma-separated list of aliases of calendars to filter the displayed
 categories | Comma separated list of aliases of categories to filter the displayed event. | -
 categoryTpl | Name of a chunk that contains the template of one category in the category list of an event. | tplAgendaEventCategory
 contexts | Comma separated list of context keys to filter the displayed event. | -
-daterangeFormat | Format of the daterange displayed in an event. | Lexicon `agenda.php_format_daterange`
+daterangeFormat | Format of the daterange displayed in an event. | Lexicon `agenda.php_format_daterange`, the format string has to contain 7 parts separated by `|` 
 daterangeSeparator | Separator in the daterange displayed in an event. | Lexicon `agenda.php_format_separator`
 detailId | ID of a resource containing an AgendaDetail snippet call. | System Setting `agenda.detail_id`
 durationParts | Number of detail parts of the event duration output. With the value `1` the duration will be shortened as i.e. `1 month`, with the value `2` the duration will be shortened as i.e. `1 month 2 days`, | 1

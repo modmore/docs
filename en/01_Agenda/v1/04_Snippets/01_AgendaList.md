@@ -10,7 +10,7 @@ calendars | Comma-separated list of aliases of calendars to filter the displayed
 categories | Comma separated list of aliases of categories to filter the displayed events. | -
 categoryTpl | Name of a chunk that contains the template of one category in the category list of an event. | tplAgendaEventCategory
 contexts | Comma separated list of context keys to filter the displayed events. | -
-daterangeFormat | Format of the daterange displayed in an event. | Lexicon `agenda.php_format_daterange`
+daterangeFormat | Format of the daterange displayed in an event. | Lexicon `agenda.php_format_daterange`, the format string has to contain exactly 7 parts separated by `|` 
 daterangeSeparator | Separator in the daterange displayed in an event. | Lexicon `agenda.php_format_separator`
 detailId | ID of a resource containing an AgendaDetail snippet call. | System Setting `agenda.detail_id`
 durationParts | Number of detail parts of the event duration output. With the value `1` the duration will be shortened as i.e. `1 month`, with the value `2` the duration will be shortened as i.e. `1 month 2 days`, | 1
@@ -59,7 +59,7 @@ idx | The number of the event starting with 1.
 images | All images of the event formatted by the chunk set with the imageTpl property
 imageurls | An array of all image urls. The placeholder [[+imageurls.1]] contains the url of the first image
 location | The location of the event formatted by the chunk set with the locationTpl property
-range | The formatted date range of the event. The format is defined with the lexicon entries `agenda.php_format_daterange` and `agenda.php_format_separator`
+range | The formatted date range of the event. The format is defined with the lexicon entries `agenda.php_format_daterange` and `agenda.php_format_separator`. The [format rules](#range-placeholder-format) are described below.
 repeating | Contains 1 if the event is an recurring event (otherwise 0).
 resource_id | The id of a linked resource of the event.
 title | The title of the event.
@@ -122,3 +122,38 @@ description | The description of the video.
 idx | The number of the video starting with 1.
 title | The title of the video.
 url | The url that shows the event video.
+
+## Range placeholder format
+
+The `range` placeholder could be formatted with the lexicon entries
+`agenda.php_format_daterange` and `agenda.php_format_separator` or the snippet
+properties `daterangeFormat` and `daterangeSeparator`. The format string has to
+use exactly 7 parts separated by `|`. The default english lexicon entry is `j.|
+F |Y|, |g|:i a|`.
+
+The daterrange is formatted with the following rules: 
+
+- If both dates are different and the hour/minute of start and end is 0, parts
+4-7 are removed from start and end date.
+- If both dates are different and the hour/minute of start and end is 0 and year
+of start and end is equal, parts 4-7 are removed from start and end date and
+part 3 is removed from start date.
+- If both dates are different and the hour/minute of start and end is 0 and year
+and month of start and end are equal, parts 4-7 are removed from start and end
+date and parts 2-3 are removed from start date.
+- If both dates are different and the hour/minute of start and end is 0 and
+year, month and day of start and end are equal, parts 4-7 are removed from start
+and end date and parts 1-3 are removed from start date.
+- If both dates are different and the hour/minute of start and end is not 0 and
+one detail of year, month and day of start and end is not equal, all parts are
+used in the start and end date.
+- If both dates are different and the hour/minute of start and the hour of end
+is 0 and all details of year, month and day of start and end are equal, parts
+4-7 are removed from start date.
+- If both dates are different and the hour or minute of start or the hour of end
+not 0 and all details of year, month and day of start and end are equal, part 7
+is removed from start date.
+- If both dates are equal and the hour/minute of start is 0, part 4-7 is
+removed from the start date and separator and end date are removed.
+- If both dates are equal and the hour/minute of start is not 0, separator and
+end date are removed.
