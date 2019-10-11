@@ -8,8 +8,8 @@ glad to help.
 
 To render events to your visitors, you can use the provided snippets:
 
-- [AgendaList](04_Snippets/01_AgendaList.md) used for rendering a list of events
-- [AgendaDetail](04_Snippets/02_AgendaDetail.md) used for showing one specific event on a detail page
+- [AgendaList](04_Snippets/01_AgendaList) used for rendering a list of events
+- [AgendaDetail](04_Snippets/02_AgendaDetail) used for showing one specific event on a detail page
 
 There are also other snippets to help you render calendars, categories, and locations. 
 
@@ -19,15 +19,15 @@ By default repeating events are scheduled for 100 recurrences.
 
 You have two possibilitiesto change that:
 
-- [Setup a cron job](05_Cronjob.md) to refreshes recurring events for up to 100 repeats in the future from the current date.
-- Increase the `agenda.repeating_max_occurance` [system setting](02_Custom_Manager_Page/07_Settings.md) to a larger value.
+- [Setup a cron job](05_Cronjob) to refreshes recurring events for up to 100 repeats in the future from the current date.
+- Increase the `agenda.repeating_max_occurance` [system setting](02_Custom_Manager_Page/07_Settings) to a larger value.
 
 ## Can events, categories, calendars or locations be connected to a resource? 
 
 Yes!
 
 Agenda comes with a number of [system
-settings](02_Custom_Manager_Page/07_Settings.md). Configure them with a comma
+settings](02_Custom_Manager_Page/07_Settings). Configure them with a comma
 separated list of resource IDs to use as parent resources. When set up, a new
 resource selection field will be added to the edit windows in the manager.
 
@@ -38,7 +38,7 @@ resource selection field will be added to the edit windows in the manager.
 
 ## How often is an event feed refreshed?
 
-When creating the [feed](02_Custom_Manager_Page/06_Feeds.md) for events to be
+When creating the [feed](02_Custom_Manager_Page/06_Feeds) for events to be
 imported, you can set how often the feed should be checked for new or updated
 events, with a minimum interval of once a minute.
    
@@ -57,7 +57,7 @@ JavaScript API and the Geocoding API.
 # What's the difference between a calendar and a category?
 
 They're both ways of organising your events into logical sections, and can be
-filtered on in the [AgendaList](04_Snippets/01_AgendaList.md) snippet.
+filtered on in the [AgendaList](04_Snippets/01_AgendaList) snippet.
 
 A Calendar is best seen as the "owner" or "target" for an event. For example a
 conference center could use calendars for organising events as "Public events",
@@ -83,7 +83,13 @@ through web requests as well using online cron job services.
 ## Can the cron job log more information?
 
 Yes, enable the `agenda.debug` [system
-setting](02_Custom_Manager_Page/07_Settings.md). A new log will be created in
+setting](02_Custom_Manager_Page/07_Settings). A new log will be created in
 `{core_path}/cache/logs/agenda.log` with a lot of debug information.
 
 By default, errors are logged to the standard MODX error log.
+
+## I can't use my own daterange format in the lexicon or in the snippet properties
+
+The format string has to use exactly 7 parts separated by `|`. The description
+of the formatting rules could be found below the placeholder descriptions on the
+[AgendaList](04_Snippets/01_AgendaList#range-placeholder-format) snippet description.
