@@ -15,6 +15,7 @@ Some features however, are a bit more powerful or have more complicated configur
 - [Image Path Mode (aka base urls mode)](Image_Path_Mode)
 - [Image Styles](Image_Styles)
 - [Inline Styles](Inline_Styles)
+- [Link Styles](Link_Styles)
 - [Properties](Properties)
 - [Source mode](Source)
 - [Text Expander](Text_Expander)

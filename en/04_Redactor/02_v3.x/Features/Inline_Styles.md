@@ -9,6 +9,6 @@ By adding the `inlinestyle` button to your toolbar, you get access to a quick se
 - superscript (`<sup>`)
 - subscript (`<sub>`)
 
-The inline style options can't be customised. For more flexible inline styles, the [custom formatting functionality may be better suited](Custom_Formatting). 
+The inline style options can't be customised. For more flexible inline styles, the [custom formatting functionality may be better suited](Custom_Formatting).
 
 
