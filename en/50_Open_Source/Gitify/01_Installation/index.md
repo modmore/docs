@@ -3,12 +3,13 @@ New as of v0.2 is that dependencies are managed via [Composer](https://getcompos
 To get started with Gitify, it's easiest to set up a local clone of this repository. It doesn't matter in which folder clone it to. On Unix/Linux systems you can choose your home directory. After that, run Composer to download the dependencies, and finally make the Gitify file executable to run it.
 
 ````
-$ git clone https://github.com/modmore/Gitify.git Gitify
-$ cd Gitify
+git clone https://github.com/modmore/Gitify.git Gitify
+cd Gitify
 # If you haven't installed composer, yet, you can do this to install the composer.phar:
 # curl -sS https://getcomposer.org/installer | php
-$ composer install (or php composer.phar install)
-$ chmod +x Gitify
+composer install --no-dev 
+# or: php composer.phar install --no-dev
+chmod +x Gitify
 ````
 
 At this point you should be able to type `./Gitify` and get a response like the following:
