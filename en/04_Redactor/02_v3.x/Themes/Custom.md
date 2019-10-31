@@ -39,3 +39,27 @@ or plain CSS:
     border-radius: 2px 2px 0 0;
 }
 ```
+
+## Supporting dark mode toggle
+
+To support the dark mode toggle in your theme, add additional styling when the `redactor-theme__dark` class is present on the `redactor-box`. 
+
+For example:
+
+``` scss
+.redactor-theme-mycolor.redactor-box {
+    .redactor-toolbar-wrapper {
+        background: #FF9900;
+        padding-bottom: 16px;
+        border-radius: 2px 2px 0 0;
+    }
+    
+    &.redactor-theme__dark {
+        .redactor-toolbar-wrapper {
+            background: #6c3600;
+        }
+    }
+}
+```
+
+
