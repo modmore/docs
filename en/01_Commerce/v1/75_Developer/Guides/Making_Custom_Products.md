@@ -24,7 +24,7 @@ You can symlink these directories into your MODX installation, or if you're fami
 
 ### Package Details
 
-Once you run the build schema file later on in this guide, it will automatically generate the files to make your product. These files include package details, such as your name and email. This can be customized by editing the `_build/build.schema.php` file and replacing "Copyright 2018 by Your Name \<your@email.com\>" with your name and email address.
+Once you run the build schema file later on in this guide, it will automatically generate the files to make your product. These files include package details, such as your name and email. This can be customized by editing the `_build/build.schema.php` file and replacing "Copyright YEAR by Your Name \<your@email.com\>" with your name and email address.
 
 ### Namespace
 
@@ -35,9 +35,9 @@ The files that will have to changed are:
 - `_bootstrap/index.php` on line 108
 - `_build/resolvers/loadmodules.resolver.php` on line 20
 - `core/components/commerce_doodleproduct/composer.json` on line 7
-- `core/components/commerce_doodleproduct/vendor/composer/autoload_psr4.php` on line 9
-- `core/components/commerce_doodleproduct/vendor/composer/autoload_static.php` on line 12 and 17
 - `core/components/commerce_doodleproduct/src/Modules/Doodleproduct.php` on line 2
+
+After changing the namespaces in these files, go into the `core/components/commerce_doodleproduct` directory and run `composer dump-autoload` to refresh the namespace in the Composer vendor files.
 
 ### Module Information
 
