@@ -13,10 +13,9 @@ If you already have a functional Fred set-up with support for the standard TinyM
 In the Fred manager component, create/update an element. For its markup, you will need to define:
 
 - A div element for the content
-- `contenteditable="true"` on the div to make it editable
 - `data-fred-name="text"` (or a different name) to make Fred save the value
 - `data-fred-rte="true"` to enable rich text support
-- Optionally, `data-fred-rte-config="redactor-text" (or a different name) to set the configuration. See _Customising Redactor_, below.
+- Optionally, `data-fred-rte-config="redactor_text" (or a different name) to set the configuration. See _Customising Redactor_, below.
 
 For example, your element markup could look like this:
 
@@ -25,7 +24,7 @@ For example, your element markup could look like this:
     <div class="container">
         <div class="row">
             <h2 class="section-heading" contenteditable="true" data-fred-name="head">Learn more about this awesome feature!</h2>
-            <div class="text-faded mb-4 text-left" contenteditable="true" data-fred-name="text" data-fred-rte="true" data-fred-rte-config="redactor_text">
+            <div class="text-faded mb-4 text-left" data-fred-name="text" data-fred-rte="true" data-fred-rte-config="redactor_text">
                 <p>There's so much you can do here. Make it pop!</p>
             </div>
         </div>
@@ -80,7 +79,13 @@ At this time, no other options can be provided in a Fred RTE Config.
 
 Redactor will now use the provided configuration set for the element. RTE Configs override other ways of setting the configuration set to use.
 
-## Tips
+## Limitations
+
+Only the "Simple" media browser is supported for inserting existing files and images. The standard MODX browser is not available in Fred. 
+
+Redactor does not currently integrate with Fred's elFinder, but we may add that in a future release given enough people use Redactor with Fred. Be sure to let us know if you're using Fred and would like us to support the additional finder.
+
+## Fred Tips
 
 - [Shortcodes](../Shortcodes) are a great companion for a rich text editor in Fred. Just type `h2.` to switch to a header level 2.
-- Create different configurations for different elements. 
+- Create different configurations for different elements. A primary blog content section could be configured to allow more toolbar features than a piece of hero text.
