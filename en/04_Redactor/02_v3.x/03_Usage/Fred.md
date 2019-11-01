@@ -77,3 +77,8 @@ For example:
 At this time, no other options can be provided in a Fred RTE Config.
 
 Redactor will now use the provided configuration set for the element. RTE Configs override other ways of setting the configuration set to use.
+
+## Tips
+
+- [Shortcodes](../Shortcodes) are a great companion for a rich text editor in Fred. Just type `h2.` to switch to a header level 2.
+- Create different configurations for different elements. 
