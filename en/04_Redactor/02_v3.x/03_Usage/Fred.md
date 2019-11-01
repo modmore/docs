@@ -85,6 +85,8 @@ Only the "Simple" media browser is supported for inserting existing files and im
 
 Redactor does not currently integrate with Fred's elFinder, but we may add that in a future release given enough people use Redactor with Fred. Be sure to let us know if you're using Fred and would like us to support the additional finder.
 
+Unlike TVs and ContentBlocks fields, Fred elements are not shown in the usage column for configuration sets.
+
 ## Fred Tips
 
 - [Shortcodes](../Shortcodes) are a great companion for a rich text editor in Fred. Just type `h2.` to switch to a header level 2.
