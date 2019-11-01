@@ -24,9 +24,9 @@ For example, your element markup could look like this:
 <section class="{{bgcolor}} {{textcolor}}" id="{{ anchortext|lower|replace({' ': ''}) }}" data-fred-render="{{published}}">
     <div class="container">
         <div class="row">
-            <h2 class="section-heading" contenteditable="true" data-fred-name="head">We've got what you need!</h2>
+            <h2 class="section-heading" contenteditable="true" data-fred-name="head">Learn more about this awesome feature!</h2>
             <div class="text-faded mb-4 text-left" contenteditable="true" data-fred-name="text" data-fred-rte="true" data-fred-rte-config="redactor_text">
-                <p>Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!</p>
+                <p>There's so much you can do here. Make it pop!</p>
             </div>
         </div>
     </div>
@@ -43,9 +43,11 @@ In the manager, under System > System Settings, search for the `fred.rte` system
 
 If you now visit a Fred-enabled page and add your rich text element to it, you should see Redactor is initialised. 
 
-### Customising Redactor
+## Customising Redactor
 
-Redactor uses [Configuration Sets](../Configuration_sets) to manage its different configuration. We recommend creating a unique set for Fred as you'll likely want slightly different configuration for Fred then you would for other things in the manager. 
+Redactor uses [Configuration Sets](../Configuration_Sets) to manage its different configuration. We recommend creating a unique set for Fred as you'll likely want slightly different configuration for Fred then you would for other things in the manager. 
+
+### Create a configuration set
 
 Start by creating a new configuration set (or duplicating one you like) and opening it to change its settings.
 
