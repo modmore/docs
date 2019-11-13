@@ -69,8 +69,8 @@ And add a chunk with the name responsiveImageTpl. Here's an example of what it s
     <a href="[[+file_url]]" rel="prettyPhoto[gallery]">
         <picture alt="[[+name]]">
         	<!--[if IE 9]><video style="display: none;"><![endif]-->
-           <source srcset="[[+crops.desktop.thumbnail_url]]" media="min-width:800px">
-           <source srcset="[[+crops.tablet.thumbnail_url]]" media="min-width:480px">
+           <source srcset="[[+crops.desktop.thumbnail_url]]" media="(min-width:800px)">
+           <source srcset="[[+crops.tablet.thumbnail_url]]" media="(min-width:480px)">
            <source srcset="[[+crops.mobile.thumbnail_url]]">
            <!--[if IE 9]></video><![endif]-->
            
