@@ -2,77 +2,56 @@
 title: SimpleCart or Commerce?
 ---
 
-Since announcing Commerce in 2015, the question we received most was if people should wait for Commerce, or use [SimpleCart](../../SimpleCart) (the other ecommerce plugin we have available)for their projects. 
+Not sure which e-commerce solution to use, and doubting between SimpleCart and Commerce? Simple, [use Commerce](https://modmore.com/commerce).
 
-Until we released Commerce that was easy to answer: use SimpleCart, as Commerce isn't ready to go, and there is no release date just yet.
+## Pricing 
 
-But now that Commerce is in beta, there are different considerations. We'll go over a few in this document to see how the two products differ, and when which one would make sense.
+Yes, Commerce costs a bit more. It's also capable of so much more.
 
-[TOC]
+When building a webshop, you need to start with a reliable foundation that can be extended when your clients' business wants to try something new. You also want as much plug and play functionality as possible, but only as optional features when you need them.
+ 
+SimpleCart simply cannot offer any of that; but it is literally what we had in mind when building Commerce.
+
+If the license fee for Commerce is holding you back from using it, [non-profit discounts are available](https://modmore.com/commerce/pricing/non-profit/). 
+
+Also note that we're able of providing a lot more support for Commerce compared to SimpleCart thanks to the higher license price.
+
+## Feature comparison
+
+- Payment provider integrations? [Commerce has 10 (and counting) plug and play payment integrations](https://docs.modmore.com/en/Commerce/v1/Payment_Methods/index.html#page_Available+Payment+Gateways). [SimpleCart has 5](https://docs.modmore.com/en/SimpleCart/v2.x/Payment_Methods/index.html), each of which is also available for Commerce.
+
+- Flexible shipping methods? [Commerce has 3 different shipping method types built-in](https://docs.modmore.com/en/Commerce/v1/Shipping_Methods.html), including based on weight and destination country, plus 3 other types available as installable extensions. SimpleCart is limited to a fixed or percentage-based shipping fee. 
+
+- Need to get data out of your shop? Commerce ships with [a bunch of different reports and exports covering a wide range of data](https://docs.modmore.com/en/Commerce/v1/Reports.html) (which is also extendable), while SimpleCart is limited to a single CSV export of basic order information.
+
+- Don't like taxes? Neither do we, but Commerce does support powerful [tax rules with automatic tax rates for the US and EU](https://docs.modmore.com/en/Commerce/v1/Taxes.html), inclusive/exclusive product prices, and the ability to show accurate tax calculation before the customer enters their billing information using geolocation or default addresses. Shipping costs are taxed, too, unlike with SimpleCart. 
+
+- Special product prices? [Price types in Commerce](https://docs.modmore.com/en/Commerce/v1/Products/Price_Types.html) gives you sale, bulk/quantity, user, and user group product prices. And yes, custom price types can be integrated as well. 
+
+- CRM/ERP integration? While there are no plug and play integrations currently available for either, Commerce does support retrieving product information from an external source and includes dozens of events to implement bi-directional synchronisation. 
+
+- Powerful fulfillment workflows, including label generation, printing packing sheets, invoicing, or custom integrations? [Commerce offers a very powerful status workflow system with the ability to fire any action at any step in the process.](https://docs.modmore.com/en/Commerce/v1/Statuses/index.html)
+
+- Stock management? SimpleCart does not restrict purchases to the available stock, Commerce does. 
+
+We could go on - but you probably get the point.
+ 
+The only thing SimpleCart does better than Commerce is being _simple_. 
+
+There's much less to learn in SimpleCart, so if you have very limited requirements, a very short deadline, and no experience with either systems, then you may be quicker to launch with SimpleCart. 
+
+In such a scenario though, we do suggest taking advantage of the opportunity to dive head-first into the powers of Commerce, immersing yourself with all it has to offer. 
+
+And also: take liberal use of our email support. We have your back, and have already helped dozens of agencies and similar numbers of freelance developers getting up to speed with all that Commerce has to offer. You can also [use our Commerce starter pack](https://modmore.com/commerce/extensions/theme-red/) to get a fully functional catalog and custom checkout theme from a simple package installation, ready to be customised. 
+
+## Community
+
+The MODX community is definitely embracing Commerce. Half of the available extensions for Commerce have been made by third-party developers. 
+
+Commerce has also overtaken SimpleCart in terms of installations, even though SimpleCart has been available for several years longer than Commerce.
 
 ## Already using SimpleCart?
 
-Just stick with it. If your webshop is humming along nicely, and there's no immediate reason to change how it works, SimpleCart should do just fine. 
+Don't worry - we'll continue to provide bug fixes and support for SimpleCart. We don't have major (re-)developments planned for it, but we'll do what we can to make sure it's stable.
 
-We're continuing to maintain SimpleCart, even now that Commerce is available, so as long as you keep that up to date you'll enjoy a stable experience. 
-
-If your shop has grown beyond what SimpleCart can offer, migrating it to Commerce may make sense. There's a few options you could consider. 
-
-1. First, you could leave your [catalog](Product_Catalog) in place, using SimpleCart. Combined with a few changes to your templates, cart, checkout and customer section this option will save you a lot of content migrations, while benefiting from the more advanced and flexible Commerce features. It's possible to move along your order history as well if needed. We're planning to make tools and documentation to support this available in the next few months.
-
-2. The second option is to move your products into a new catalog as well. Look into the [different ways of managing your catalog in Commerce](Product_Catalog) for comparisons to find what best suits your shop. By moving the catalog, you might get additional benefits or features available that your shop needs. 
-
-3. The most radical option is to start with a clean slate. Perhaps the shop could use a redesign or rebuild? You get to pick the best tool for the job, which is probably Commerce. 
-
-## High-level Requirements
-
-There's a few high level requirements that will lead you to either products. 
-
-### Product Prices inclusive of Taxes/VAT
-
-If you need to configure your products to have prices including taxes or VAT, then Commerce is the way to go. Commerce, like SimpleCart, defaults to prices exclusive of taxes, however Commerce offers a setting to toggle to an inclusive calculation instead. 
-
-Commerce also ships with self-updating VAT rates for the EU, and a TaxJar integration for automated US Sales Tax calculation.
-
-[Read more about taxes in Commerce](Taxes).
-
-### Dynamic shipping costs
-
-If you need to calculate shipping costs based on an integration with a postal service, or based on custom business logic involving product weight, size, or quantity, then you'll want Commerce.
-
-SimpleCart is rather restricted in how it allows shipping methods to be priced. In the past we have researched adding more flexible shipping pricing to SimpleCart, however that turned out to be not as straightforward to do as we hoped due to the structure of the checkout, and the legacy users to consider. 
-
-The flexibility of Commerce will allow you to manage shipping costs in various ways.
-
-1. For each shipping method you can provide a fixed or percentage price out of the box. Each method also has restrictions on the order total you can set, making sure shipping methods are only available as an option until, between, or after a certain order total. Simple business rules like "€5 shipping under €25, €3 from €25-50, free from €50+" can be easily implemented with these options. 
-
-2. A shipping method for weight based costings is also available out of the box, as is a shipping method that sets different prices per country.
-
-3. For specific business rules or integrations with carriers, you could build a [custom shipping method](Developer/Custom_Shipping_Methods). 
-
-### Payment Service Providers
-
-When accepting payments online you need to work with one or more payment providers. This can be an important factor in deciding which shopping solution fits your needs. 
-
-SimpleCart supports the following payment providers:
-
-- Authorize.net, SIM integration
-- Mollie
-- PayPal Express
-- Stripe
-
-For a current list of the supported payment methods in Commerce see [Payment Methos](Payment_Methods). At time of writing, the following are supported in Commerce:
-
-- Authorize.net, Accept.js integration
-- Braintree
-- Mollie
-- MultiSafePay
-- Paymill
-- PayPal Express
-- SagePay
-- Stripe
-
-If the payment provider you need is not on either lists, Commerce is the better option. Implementing gateways is a lot easier in Commerce thanks to the use of the OmniPay library. If a "driver" exists for the Payment Provider you need, we'll be able of integrating it with Commerce much quicker. 
-
-Be sure to request the payment provider you need well ahead of time, and we might be able of adding it in our regular release cycle if there is sufficient demand. To commission a payment provider because you need it short term, please contact Mark via support@modmore.com for an estimate. 
-
+If you're looking to migrate a SimpleCart shop to Commerce, we're happy to offer you a €50 discount on the Commerce license. (Only for SimpleCart licenses bought from modmore, or for older licenses with a support extension.)
