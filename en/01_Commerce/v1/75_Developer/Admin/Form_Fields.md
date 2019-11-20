@@ -36,6 +36,7 @@ $field = new \modmore\Commerce\Admin\Widgets\Form\TextField($this->commerce, [
 ## Available Field Types
 
 - **Checkbox** (`modmore\Commerce\Admin\Widgets\Form\CheckboxField`), a simple true-or-false checkbox. 
+- **Contexts** (`modmore\Commerce\Admin\Widgets\Form\ContextsField`), multi-select field automatically prefilled with the available contexts in MODX. (added in 1.1.0-pl)
 - **Country** (`modmore\Commerce\Admin\Widgets\Form\CountryField`), a dropdown select field displaying a list of countries.
 - **CountryPrice** (`modmore\Commerce\Admin\Widgets\Form\CountryPriceField`), a field for inputting a country and a price for the country.
 - **Class** (`modmore\Commerce\Admin\Widgets\Form\ClassField`), a field that acts as either a Select or Hidden field. This field accepts a `parentClass` option (which contains the name of an xPDO class), and it will then prepare a select field with the available derivative classes. For example setting `'parentClass' => 'comShippingMethod'` will show a select with the available shipping methods. If only a single value is available, the field hides itself.
