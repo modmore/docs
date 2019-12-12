@@ -23,10 +23,14 @@ The create/edit window for one category has a some of options, that could be set
 [![](img/category-edit.png)](img/category-edit.png)
 
 You could set the category name, the category alias and you could toggle it to
-inactive. The category could be linked with a MODX resource. This combo field is
-only shown, when the system setting `agenda.parents_category` is filled with a
-comma separated list of resources, that are parents for the resources selectable
-with the combo field. And you could set the category text and background color
-with a color picker.
+inactive. And you could set the category text and background color with a color
+picker.
+
+The category could be linked with a MODX resource. This combo field is only
+shown, when the system setting `agenda.parents_category` is filled with a comma
+separated list of resources, that are parents for the resources selectable with
+the combo field. This combo has a select, a preview and a quickedit button. The
+resource could be edited in a new window with an alt click on the quickedit
+button.
 
 [![](img/category-colorpicker.png)](img/category-colorpicker.png)

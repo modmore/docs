@@ -1,4 +1,4 @@
-This tab contains a calendar view of the current month. 
+This tab contains a calendar view of the current month.
 
 [![](img/overview.png)](img/overview.png)
 
@@ -31,12 +31,15 @@ The create/edit window for one event has a lot of options, that could be set.
 [![](img/event-edit.png)](img/event-edit.png)
 
 In the event tab you have to set the event title and the event calender, where
-the event is shown in. The event could be linked with a MODX resource. This combo
-field is only shown, when the system setting `agenda.parents_event` is filled
-with a comma separated list of resources, that are parents for the resources
-selectable with the combo field. An event should have a start date/time and an
-end date/time and it could have a location. The location could be directly
+the event is shown in. An event should have a start date/time and an end
+date/time and it could have a location. The location could be directly
 created/edited in the event tab.
+
+The event could be linked with a MODX resource. This combo field is only shown,
+when the system setting `agenda.parents_event` is filled with a comma separated
+list of resources, that are parents for the resources selectable with the combo
+field. This combo has a select, a preview and a quickedit button. The resource
+could be edited in a new window with an alt click on the quickedit button.
 
 The event could be restricted to a context, it has to be tagged with at least
 one category and it could be toggled to inactive. If the `All Day Event`

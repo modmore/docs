@@ -1,32 +1,37 @@
-This snippet displays one event in a detail view.
- 
+This snippet displays events in a list view separared into intervals. The snippet was introduced with Agenda 1.1.0.
+
 ## Properties
- 
+
 It uses the following snippet properties:
 
 Property | Description | Default
 ---------|-------------|--------
-calendars | Comma-separated list of aliases of calendars to filter the displayed event. | -
-categories | Comma separated list of aliases of categories to filter the displayed event. | -
+allowedRequestKeys | Comma-separated list of request keys, that could be used to filter the displayed events. Defaults to all allowed. Available since Agenda 1.1.0. | -
+calendars | Comma-separated list of aliases of calendars to filter the displayed events. | -
+categories | Comma separated list of aliases of categories to filter the displayed events. | -
 categoryTpl | Name of a chunk that contains the template of one category in the category list of an event. | tplAgendaEventCategory
-contexts | Comma separated list of context keys to filter the displayed event. | -
-daterangeFormat | Format of the daterange displayed in an event. | Lexicon `agenda.php_format_daterange`. The format string has to contain 7 parts. The [format rules](01_AgendaList#range-placeholder-format) are described below.
+contexts | Comma separated list of context keys to filter the displayed events. | -
+daterangeFormat | Format of the daterange displayed in an event. | Lexicon `agenda.php_format_daterange`. The format string has to contain 7 parts. The [format rules](01_AgendaList#range-placeholder-format) are described on the AgendaList page.
 daterangeSeparator | Separator in the daterange displayed in an event. | Lexicon `agenda.php_format_separator`
 detailId | ID of a resource containing an AgendaDetail snippet call. | System Setting `agenda.detail_id`
 durationParts | Number of detail parts of the event duration output. With the value `1` the duration will be shortened as i.e. `1 month`, with the value `2` the duration will be shortened as i.e. `1 month 2 days`, | 1
-emptyTpl | Name of a chunk that contains the template for not found event. | tplAgendaEventEmpty
-id | ID of one event to retrieve the displayed event. | Request parameter `event`
+emptyTpl | Name of a chunk that contains the template for an empty list of events. | tplAgendaEventEmpty
+end | The end date to filter the displayed events. Must contain a [supported date and time format](https://www.php.net/manual/de/datetime.formats.php). | first day of next month 0:00
 imageTpl | Name of a chunk that contains the template for one image in the image list of an event. | tplAgendaEventImage
+interval | The interval into which the period between start and end date is divided. Must contain a [supported date and time format](https://www.php.net/manual/de/datetime.formats.php). | +1 day
+intervalTpl | Name of a chunk that contains the template for an interval. | tplAgendaIntervalRow
 listId | ID of a resource containing an AgendaList snippet call. | System Setting `agenda.list_id`
 locale | The locale for the displayed formatted date. | System/Context setting `locale`
-locations | Comma separated list of aliases of locations to filter the displayed event. | -
+locations | Comma separated list of aliases of locations to filter the displayed events. | -
 locationTpl | Name of a chunk that contains the template for the location of an event. | tplAgendaEventLocation
-repeating | ID of one event to retrieve the displayed event. | Request parameter `repeating`
+outputSeparator | An optional string to separate each tpl instance. | -
+start | The start date to filter the displayed events. Must contain a [supported date and time format](https://www.php.net/manual/de/datetime.formats.php). | first day of this month 0:00
 toPlaceholder | If set, the snippet result will be assigned to this placeholder instead of outputting it directly. | -
-tpl | Name of a chunk that contains the template for one event. | tplAgendaEventDetail
-usergroups | Comma separated list of user group names to filter the displayed event. | -
-users | Comma separated list of user IDs to filter the displayed event. | -
+tpl | Name of a chunk that contains the template for one event. | tplAgendaEventRow
+usergroups | Comma separated list of user group names to filter the displayed events. | -
+users | Comma separated list of user IDs to filter the displayed events. | -
 videoTpl | Name of a chunk that contains the template for one video in the video list of an event. | tplAgendaEventVideo
+wrapperTpl | Name of a chunk that contains the wrapper template for all events. | tplAgendaIntervalWrapper
 
 ## Placeholders
 
@@ -38,7 +43,7 @@ placeholder subtitle in each used chunk with the value `whatever`.
 **CAUTION:** The default template chunks for both snippets are overwritten
 during each package update, so please rename the chunks before editing them.
 
-### tplAgendaEventDetail
+### tplAgendaEventRow
 
 Placeholder | Description
 ------------|------------
@@ -50,22 +55,38 @@ categories | All categories of the event formatted by the chunk set with the cat
 description | The title of the event.
 detail_url | The url that shows the event detail. Will be generated with the system/context setting `agenda.detail_id`. This resource should contain an AgendaDetail snippet call.
 duration | The formatted duration of the event. The details of the duration could be set with the `durationParts` snippet property.
+enddate | The start date of the event formatted in ISO 8601 (could be formatted i.e. with ```[[+startdate:strtotime:date=`%a. %d.%m.%Y`]]```).
+idx | The number of the event starting with 1.
 images | All images of the event formatted by the chunk set with the imageTpl property
-imageurls | An array of all image urls. The placeholder [[+imageurls.1]] contains the url of the first image
+imageurls | An array of all image urls. The placeholder `[[+imageurls.1]]` contains the url of the first image
 location | The location of the event formatted by the chunk set with the locationTpl property
-range | The formatted date range of the event. The format is defined with the lexicon entries `agenda.php_format_daterange` and `agenda.php_format_separator`. The [format rules](01_AgendaList#range-placeholder-format) are described below.
+range | The formatted date range of the event. The format is defined with the lexicon entries `agenda.php_format_daterange` and `agenda.php_format_separator` and could be overridden by the `daterangeFormat` snippet property. The [format rules](01_AgendaList#range-placeholder-format) are described on the AgendaList page.
 repeating | Contains 1 if the event is an recurring event (otherwise 0).
 resource_id | The id of a linked resource of the event.
+startdate | The start date of the event formatted in ISO 8601 (could be formatted i.e. with ```[[+startdate:strtotime:date=`%a. %d.%m.%Y`]]```).
 title | The title of the event.
 videos | All videos of the event formatted by the chunk set with the videosTpl property
-videourls | An array of all video urls. The placeholder [[+videourls.1]] contains the url of the first video
+videourls | An array of all video urls. The placeholder `[[+videourls.1]]` contains the url of the first video
+
+[Extended fields](../06_Extended_Fields) are available as placeholder with the prefix `extended` in the
+event row template.
 
 ### tplAgendaEventWrapper
 
 Placeholder | Description
 ------------|------------
-count | Count of the events filtered by the snippet properties (without limit/offset) 
-output | All events collected by the snippet separated by the string in the outputSeparator property
+count | Count of the events filtered by the snippet properties (without limit/offset)
+output | All events in one interval collected by the snippet separated by the string in the outputSeparator property
+startdate | The start date of the interval formatted in ISO 8601 (could be formatted i.e. with ```[[+startdate:strtotime:date=`%a. %d.%m.%Y`]]```).
+enddate | The end date of the interval formatted in ISO 8601 (could be formatted i.e. with ```[[+startdate:strtotime:date=`%a. %d.%m.%Y`]]```).
+range | The formatted date range of the interval. The format is defined with the lexicon entries `agenda.php_format_daterange` and `agenda.php_format_separator` and could be overridden by the `daterangeFormat` snippet property. The [format rules](#range-placeholder-format) are described below.
+idy | The number of the interval starting with 1.
+
+### tplAgendaIntervalWrapper
+
+Placeholder | Description
+------------|------------
+output | All intervals collected by the snippet separated by the string in the outputSeparator property
 
 ### tplAgendaEventEmpty
 
