@@ -22,11 +22,14 @@ The create/edit window for one calendar has a some of options, that could be set
 
 [![](img/calendar-edit.png)](img/calendar-edit.png)
 
-You could set the calendar name and you could toggle it to inactive. The
-calendar could be linked with a MODX resource. This combo field is only shown,
-when the system setting `agenda.parents_calendar` is filled with a comma
+You could set the calendar name and you could toggle it to inactive. And you
+could set the calendar text and background color with a color picker.
+
+The calendar could be linked with a MODX resource. This combo field is only
+shown, when the system setting `agenda.parents_calendar` is filled with a comma
 separated list of resources, that are parents for the resources selectable with
-the combo field. And you could set the calendar text and background color with a
-color picker.
+the combo field. This combo has a select, a preview and a quickedit button. The
+resource could be edited in a new window with an alt click on the quickedit
+button.
 
 [![](img/calendar-colorpicker.png)](img/calendar-colorpicker.png)

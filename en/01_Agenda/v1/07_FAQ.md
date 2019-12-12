@@ -9,7 +9,8 @@ glad to help.
 To render events to your visitors, you can use the provided snippets:
 
 - [AgendaList](04_Snippets/01_AgendaList) used for rendering a list of events
-- [AgendaDetail](04_Snippets/02_AgendaDetail) used for showing one specific event on a detail page
+- [AgendaCalendar](04_Snippets/02_AgendaCalendar) used for rendering events in a list divided into intervals (i.e. days)
+- [AgendaDetail](04_Snippets/03_AgendaDetail) used for showing one specific event on a detail page
 
 There are also other snippets to help you render calendars, categories, and locations. 
 

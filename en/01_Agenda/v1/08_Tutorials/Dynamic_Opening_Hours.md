@@ -2,7 +2,7 @@ Using Agenda, you can manage and display dynamic opening hours on your site.
 When you've completed this tutorial, you'll have a simple list showing the
 opening hours in the next week.
 
-![](opening-hours.jpg)
+![](img/opening-hours.jpg)
 
 [TOC]
 

@@ -1,6 +1,8 @@
 _Agenda_ contains some _system settings_ in the `agenda` namespace.
 
-These are available in the MODX system settings panel and in the [settings](02_Custom_Manager_Page/07_Settings) tab (cog icon) of the _Agenda_ custom manager page.
+These are available in the MODX system settings panel and in the
+[settings](02_Custom_Manager_Page/07_Settings) tab (cog icon) of the _Agenda_
+custom manager page.
 
 Key | Name | Description | Default
 ----|------|-------------|--------
@@ -9,6 +11,7 @@ agenda.debug | Debug | Log debug informations in MODX error log. | No
 agenda.default_timezone | Default Timezone | Default [time zone](https://www.php.net/manual/en/timezones.php) for events. | Europe/Berlin
 agenda.detail_id | Detail ID | ID of a resource containing AgendaDetail snippet call. | -
 agenda.editor_type | Editor Type | Editor type for text fields (htmleditor or textarea). | htmleditor
+agenda.extended_event_fields | Extended Event Fields | JSON encoded array of [extended event fields](#).| -
 agenda.google_maps_api_key | Google Maps API Key | [Request](https://developers.google.com/maps/documentation/javascript/get-api-key) a Google Maps API Key. | -
 agenda.google_maps_default_lat | Google Maps Default Latitude | Default latitude for the displayed map when creating/editing a location. | 51.977825
 agenda.google_maps_default_lng | Google Maps Default Longitude | Default longitude for the displayed map when creating/editing a location. | 7.291066

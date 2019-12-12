@@ -6,14 +6,16 @@ It uses the following snippet properties:
 
 Property | Description | Default
 ---------|-------------|--------
+allowedRequestKeys | Comma-separated list of request keys, that could be used to filter the displayed categories. Defaults to all allowed. Available since Agenda 1.1.0. | -
 categories | Comma-separated list of aliases of categories to filter the displayed categories. | -
 emptyTpl | Name of a chunk that contains the template for not found categories. | tplAgendaCategoriesEmpty
 limit | Limit the number of categories in the result. Use `0` for unlimited categories. | 20
 listId | ID of a resource containing an AgendaList snippet call. | System Setting `agenda.list_id`
+offset | An offset of categories returned by the criteria to skip. | 0
 outputSeparator | An optional string to separate each tpl instance. | -
 toPlaceholder | If set, the snippet result will be assigned to this placeholder instead of outputting it directly. | -
+totalVar | The key of a placeholder that indicates the total number of categories returned by the criteria. | agendacategories.total
 tpl | Name of a chunk that contains the template for one category. | tplAgendaCategory
-useRequest | Use the request value of `category` to filter the displayed categories. | Yes
 wrapperTpl | Name of a chunk that contains the wrapper template for all categories. | tplAgendaCategoriesWrapper
 
 ## Placeholders
@@ -46,5 +48,5 @@ Only the current script properties are available as placeholders.
 
 Placeholder | Description
 ------------|------------
-count | Count of the categories filtered by the snippet properties (without limit/offset) 
+count | Count of the categories filtered by the snippet properties (without limit/offset)
 output | All categories collected by the snippet separated by the string in the outputSeparator property
