@@ -1,5 +1,7 @@
 ## Extended Event Fields
 
+The extended fields were introduced with Agenda 1.1.0.
+
 Each event in Agenda could use predefined extended fields. The field values are
 stored as JSON encoded array in a text field. So sorting and filtering by
 extended fields is not possible.
