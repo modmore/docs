@@ -1,16 +1,43 @@
+---
+title: 'Modules & Extensions'
+---
+
 Commerce uses Modules to provide most functionality and features. 
 
-Many modules are shipped with the core Commerce package, requiring no further install, but third party modules are also available offering different payment providers, shipping partners, communication-related integrations or other features. 
+Many modules are shipped with the core Commerce package, requiring no further install.
 
-In this section of the documentation you'll find information about all modules that are available from modmore. Third party modules may be missing from the list, while we encourage third party developers to submit documentation to this site we can not force them to do so, and in some cases we may not accept these contributions until we have had a chance to review the module itself. 
+Other modules are provided as [standalone extensions](https://modmore.com/commerce/extensions/), installable through the MODX Extras installer. There are extensions for payment gateways, shipping partners, communication-related integrations and more. 
 
-Choose one of the following categories to see the matching modules:
+[**All available extensions, including third party extensions, can be found here.**](https://modmore.com/commerce/extensions/)
 
-- Payments
-- Shipping
-- Communication
-- Taxes
-- Other
+In alphabetical order:
 
-**Note**: not all the modules are actually be exposed as modules in the Commerce admin area. For example payment providers and shipping integrations that are provided with the Commerce package are not shown as modules, instead they are just available when creating a payment or shipping method. 
-
+- [Accept Terms](Cart/AcceptTerms)
+- [AutoFill GeoIP](Cart/AutoFillGeoIP)
+- [Basic Address Validation](Address_Validation/Basic)
+- [Basic Custom Fields](Custom_Fields_(Basic))
+- [CloudPrint](CloudPrint)
+- [Combine Products](Cart/CombineProducts)
+- [Country Validation](Address_Validation/Country)
+- [Coupons](Discounts/Coupons)
+- [Customers](Admin/Customers)
+- [Default Address](Cart/DefaultAddress)
+- [Dymo Address Label](Shipping/DymoAddressLabel)
+- [Enforce Stock](Cart/EnforceStock)
+- [EU VAT](Taxes/EUVat)
+- [EU VAT Validator](Address_Validation/EUVat_Validator)
+- [Gateways Pack 1](Payments/GatewayPack1)
+- [Hide Products](Admin/HideProducts)
+- [ItemData](Cart/ItemData)
+- [Mailchimp](Mailchimp)
+- [MessageBird](Communication/MessageBird)
+- [Minimum Order Amount](Cart/MinOrderAmount)
+- [mPDF Writer](mPDFWriter)
+- [Packing Slip](Shipping/PackingSlip)
+- [PDFCrowd Writer](PDFCrowdWriter)
+- [Table Rates](Shipping/TableRates)
+- [TaxJar](Taxes/TaxJar)
+- [Update Stock](Cart/UpdateStock)
+- [UserProfileAddress](Cart/UserProfileAddress)
+- [User Group Shipment](Shipping/UserGroupShipment)
+- [User & User Group Discounts](Discounts/UserDIscounts)
