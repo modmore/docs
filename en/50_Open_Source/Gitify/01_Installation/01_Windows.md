@@ -16,6 +16,12 @@ c:\xampp\php\php.exe
 <ampps root>\php\php.exe
 ````
 
+## MAMP Pro
+
+If you use MAMP Pro make sure to enable "[Make this version available on the command line](https://documentation.mamp.info/en/MAMP-PRO-Windows/Languages/PHP/)":
+
+> Check this option to add the current PHP version to the system path. You verify this by checking your System PATH in Advanced System Settings > Environment Variables > System Variables.
+
 ### Additional Dependencies
 
 Here are the Windows dependencies in order to get the script to execute properly. They must be installed and their bin folders have to be added to the Windows PATH environment variable in the Advanced System Settings screen:
