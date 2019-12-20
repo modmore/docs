@@ -51,9 +51,13 @@ When importing you can choose 3 different import modes.
 - With the **Overwrite** mode, any existing sets with the same ID of a set in the XML file will be overwritten. Existing sets that don't have a matching set in the export, are left as they were.
 - With the **Replace** mode, all existing sets are first removed, before the sets in the XML file are created. 
 
+The exports do not contain any references to where you've enabled a certain set. 
+
+To quickly set an imported configuration set as default, you can right click it in the list of sets and choose **Set as system default**. For other ways to assign configuration sets to be used, [see the usage section](Usage). That includes per-template and per-context options, and others.
+
 ## Using the Redactor Template Variable
 
-Redactor will automatically enhance standard MODX richtext template variables with the default configuration set. This means that the content and richtext fields use the same configuration.
+Redactor will automatically enhance standard MODX richtext template variables with the _default_ configuration set. This means that the content and richtext fields use the same configuration.
 
 If you'd like to use a different configuration for a template variable, you can use the provided Redactor template variable type. [Learn more about the Redactor template variable &raquo;](Usage/Template_Variables)
 
@@ -63,7 +67,7 @@ Also use [ContentBlocks](https://modmore.com/contentblocks/)? Then you can use t
 
 ## Themes
 
-Redactor 3 ships with a selection of different editor themes. [Choose the one you like most](Themes), or [build your own](Themes/Custom).
+Redactor 3 ships with a selection of different editor themes, including one that looks like Redactor 2 to help ease the transition and a dark mode. [Choose the one you like most](Themes), or [build your own](Themes/Custom).
 
 ## Shortcuts & Shortcodes
 
@@ -75,7 +79,7 @@ With the [shortcodes](Shortcodes) you can start typing certain codes at the star
 
 It's encouraged to start editing your configuration set to learn about all the features Redactor uses. Each option has a description in the editing view to help you understand what it does.
 
-For the more powerful functionality, we have [extended documentation](Features). The configuration set view will also link to that documentation where applicable. 
+For the more powerful functionality, we have [extended documentation](Features). The configuration set view will also link to documentation where applicable. 
 
 ## Restrict access to the configurator
 

@@ -21,3 +21,11 @@ To manage the title, description and transaction fee for the Mollie gateway, you
 The name cannot be changed, as that is tied in with loading and identifying the gateway.
 
  [ ![](https://assets.modmore.com/uploads/2015/06/Screen_Shot_2015_06_11_at_17.25.37.png)](https://assets.modmore.com/uploads/2015/06/Screen_Shot_2015_06_11_at_17.25.37.png)
+
+## Payments not getting confirmed?
+
+The Mollie integration uses a webhook to listen to payments. If you're constantly stuck in the "Payment is awaiting confirmation" view, the webhook may be failing.
+
+To check the webhook URL, login to the Mollie dashboard and look at a specific transaction. Find the Webhook URL for the transaction, and verify that it is correct.
+
+In many cases, we've seen that webhook URLs are generated with `HTTP` while the site runs on `HTTPS`. That can cause webhooks to fail. To fix that, update the `server_protocol` system setting in MODX to `https`. 
