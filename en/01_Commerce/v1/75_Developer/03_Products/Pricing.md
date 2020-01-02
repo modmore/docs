@@ -276,7 +276,7 @@ Other notable methods on the `ProductPricing` object:
 - `getRegularPrice() : PriceInterface`
 - `addPriceType(PriceTypeInterface $priceType) : void`
 
-## Updating product pricing programmatically
+## Adding price types programmatically
 
 If you're looking to import product prices, you'll need to interact with the classes mentioned in this document to make that work. The rough workflow would look like this:
 
@@ -347,11 +347,11 @@ $pricing->addPriceType(
 ```
 
 
-## Removing a PriceType from a Pricing instance
+## Updating or removing price types
 
-It's not natively possible to remove a PriceType directly, as it does not have an ID or another unique key to target them by. 
+It's not natively possible to update, remove or replace a PriceType directly, as it does not have an ID or another unique key to target them by. 
 
-If you programmatically want to remove a PriceType, create a new ProductPricing input, add the PriceType's you want to keep, and save that to the product.
+To programmatically update/remove/replace a PriceType, create a new (empty) ProductPricing instance, add the PriceType's you want to keep, and save that to the product.
 
 ```php
 $currency = $commerce->getCurrency('EUR');
@@ -368,6 +368,16 @@ foreach ($currentPricing->getPriceTypes() as $priceType) {
 }
 
 $product->savePricing($newPricing);    
+```
+
+If you want to find a specific price type, you can use instanceof to test the price type inside the `foreach` loop. For example to only keep a Sale price type:
+
+```php
+foreach ($currentPricing->getPriceTypes() as $priceType) {
+    if ($priceType instanceof \modmore\Commerce\Pricing\PriceType\Sale) {
+        $newPricing->addPriceType($priceType);
+    }
+}
 ```
 
 ## Loading Price Types in a custom product
