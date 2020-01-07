@@ -49,3 +49,11 @@ To learn how to configure what set to use in different places, see:
 - [Template variables](Usage/Template_Variables)
 - [ContentBlocks fields](Usage/ContentBlocks)
 - [Third-party extra](Usage/Third_Party_Extras)
+
+## Custom Preview Contents
+
+By default the configurator shows some dummy text. Some lorum ipsum, an image, some links and various formatting. 
+
+If you'd rather use custom content for the preview (for example to showcase custom styles or other elements), you can do so by creating a chunk.
+
+Create a chunk named `redactor_configurator_preview`, and provide your content. Refresh the configurator. 

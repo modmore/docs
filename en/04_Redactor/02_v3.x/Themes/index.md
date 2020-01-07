@@ -18,11 +18,19 @@ The redactor2 theme mimics the styling from Redactor 2.x. It's not an exact matc
 
 ![Redactor 2 inspired theme for Redactor 3](redactor2.jpg)
 
+### minimal
+
+The minimal theme provides a flat toolbar without shadows or rounded borders. Taken some inspiration from TinyMCE. 
+
+![Minimal theme for Redactor](minimal.jpg)
+
 ### dark
 
 The dark theme inverses the color while using a blue for headers and links. 
 
 ![Dark theme for Redactor 3](dark.jpg)
+
+Note that a dynamic dark mode is also available for most themes; add the `toggledark` button to your toolbar configuration to use it. More on that below.
 
 ### pride
 
@@ -42,13 +50,13 @@ Aside from the Dark theme, shown before, you can also use a dynamic dark mode. T
 
 To use it, add `toggledark` to your Toolbar Buttons in the configurator. Then find the toggle button in the toolbar.
 
-The dark mode works best with the `default`, `redactor2`, and `pride` themes. Shown below is the toggling in action with the redactor2 theme.
+The dark mode works best with the `default`, `redactor2` and `minimal` themes. Shown below is the toggling in action with the redactor2 theme.
 
 <video width="500" height="163" autoplay="autoplay" muted loop playsinline poster="../images/darkmode.jpg" src="../images/darkmode.mp4" type="video/mp4">
 <img src="../images/darkmode.gif" alt="Toggling dark mode">
 </video>
 
-When toggling the default theme, that switches to the dark theme. The redactor2 and pride themes have different dark toolbar styles. 
+When toggling the default theme, that switches to the dark theme. The other themes have their own dark styles which may be slightly different.
 
 Toggling the dark theme does not have any effect.
 
