@@ -8,4 +8,4 @@ Redactor 3 is the latest implementation of [Imperavi's Redactor.js](https://impe
 
 - Upgrading from 2.x? [Start here &raquo;](Upgrades/From_2.x)
 - New to Redactor? [Start with the Quickstart Guide &raquo;](Quickstart)
-- Looking for information on licenses, prices, or reviews? [Back to modmore.com](https://modmore.com/redactor/)
+- Looking for information on what Redactor can do, licenses, prices, or reviews? [Back to modmore.com](https://modmore.com/redactor/)

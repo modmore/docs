@@ -1,6 +1,6 @@
 New in Redactor 3 is the properties plugin. It allows you to add a class or ID to any block element. 
 
-![The Properties plugin in action](../images/properties.jpg)
+![The Properties plugin in action](../images/properties2.jpg)
 
 They're simple text inputs, requiring the user to enter the appropriate values.
  
