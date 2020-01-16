@@ -18,6 +18,9 @@ Redactor comes with the following built-in shortcuts.
 | Toggle heading level 6 | ctrl+alt+6 | meta+alt+6 |
 | Toggle ordered list | ctrl+shift+7 | meta+shift+7 |
 | Toggle unordered list | ctrl+shift+8 | meta+shift+8 |
+| Insert hard tab (`\t`) | shift+tab | shift+tab |
+| Indent list item | tab, ctrl+] | tab, meta+] |
+| Outdent list item | shift+tab (in list), ctrl+[ | shift+tab (in list), meta+[ |
 
 ## Configurator shortcuts
 
