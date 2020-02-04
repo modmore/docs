@@ -5,6 +5,7 @@ Redactor can be used in different places in different ways. These different use 
 - [On the resource introtext](Introtext)
 - [Different configurations per template](Template)
 - [As custom ContentBlocks rich text field](ContentBlocks)
+- [As part of MIGX](MIGX)
 
 It's also possible to use Redactor with [third party extras](Third_Party_Extras). 
 
