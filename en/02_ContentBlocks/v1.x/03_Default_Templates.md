@@ -5,6 +5,7 @@ If you haven't worked with Templates before, be sure to [read more about Templat
 
 To manage your default templates, go to _Extras_ (or _Components_ pre-2.3) in the top navigation and choose ContentBlocks in the drop down. Open the Defaults tab.
 
+[TOC]
 
 ## Rules
 

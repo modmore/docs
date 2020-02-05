@@ -4,6 +4,7 @@ Templates are available as of ContentBlocks v1.1. With Templates you can define 
 
 The screenshots on this page were taken on Revolution 2.3, but this of course also works on 2.2.
 
+[TOC]
 
 ## Creating a Template
 

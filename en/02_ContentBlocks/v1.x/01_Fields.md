@@ -2,6 +2,10 @@ Fields are implementation of an [Input Type](Input_Types) (such as _heading_ or 
 
 To give a simple example, you may define "Note" and "Warning" fields so editors can add callout blocks into the content. These fields would both be a _textarea_ or _richtext_ input type, but because their template is different, they provide vastly different use cases and visual styles in the front-end.
 
+[TOC]
+
+## Managing Fields
+
 To manage fields, head over to Components and find the Content Blocks menu item. On the Fields tab, you can click _Add Field_, or right click a field and choose _Edit Field_ to open the field window. You'll find a number of tabs, which we'll go over in detail below, to help you manage your ContentBlocks fields.
 
 - General: used for managing the basic field information.

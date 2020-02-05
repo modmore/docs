@@ -3,16 +3,20 @@ ContentBlocks is available in English (default), German, French, Dutch, Polish, 
 
 The data you define through the component (fields, layouts and templates) also supports translations since v1.1. This allows you to present different names and descriptions for your users depending on their manager language. We support lexicons on field, layout and template names and descriptions, as well as field and layout settings and properties on select input types (chunk, snippet and chunk selector).
 
+[TOC]
+
 ## The Lexicon Files
 
 To load the lexicon, you will need to create a namespace and add a "lexicon" directory inside the namespace its core path.
 
 In there, you would have a directory for each language (`en`, `fr`, `de`, etc) and a file in each of those (e.g. `default.inc.php`). Within the file, you would add the lexicon entries to a `$_lang` variable. An example of a lexicon file is shown below.
-```` PHP
+
+````PHP
 <?php
 $_lang['my_richtext_field'] = 'Rich Text';
 $_lang['my_class'] = 'foobar';
 ````
+
 The entries (`my_richtext_field` and `my_class` in the example above) need to match the text you want to replace. This can be one of the following:
 
 - Field names (both for display in the content canvas, as well as the "Add Content" modal)
@@ -22,7 +26,7 @@ The entries (`my_richtext_field` and `my_class` in the example above) need to ma
 - Field and Layout Settings name (for modal and exposed settings)
 - Field and Layout Setting Options display values (for modal and exposed settings)
 
-For example, if you named a field "Headline", your lexicon entry would be `$_lang['Headline'] = 'Headline translation';
+For example, if you named a field "Headline", your lexicon entry would be `$_lang['Headline'] = 'Headline translation';`
 
 ## Loading the Lexicon Topic
 

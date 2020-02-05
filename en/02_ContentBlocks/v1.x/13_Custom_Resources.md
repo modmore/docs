@@ -4,9 +4,11 @@ title: Custom Resources
 
 As of ContentBlocks 1.1 it is possible to use it on a variety of custom resource types.
 
-Once we have independently confirmed that third party custom resources work as expected with ContentBlocks, we will include it in the `contentblocks.accepted_resource_types` system setting so it is enabled by default. It is possible to manually add class keys to this setting if you want to test it with a resource type that we have not yet confirmed, or disable using ContentBlocks on certain resource types.
+[TOC]
 
 ## Supported Custom Resource Types
+
+Once we have independently confirmed that third party custom resources work as expected with ContentBlocks, we will include it in the `contentblocks.accepted_resource_types` system setting so it is enabled by default. It is possible to manually add class keys to this setting if you want to test it with a resource type that we have not yet confirmed, or disable using ContentBlocks on certain resource types.
 
 The following Extras are known to work with ContentBlocks and enabled by default as of 1.1.0:
 
