@@ -10,11 +10,13 @@ During the first upgrade to Redactor 3, your v2 system settings will automatical
 
 This imported set will be as close as a match to your old configuration as possible, but keep in mind not every old setting has a new option. 
 
-**Your imported set is not automatically enabled.** Navigate to Extras > Redactor Configuration to find it. Open it and make sure it was properly imported and works the way you expect it to. 
+**Your imported set will be automatically enabled.** Please test it to make sure it was properly imported and works the way you expect it to.
 
-When all looks good, you can enable it from either the configuration sets grid (right click it in the list) or [the system settings](../Usage/Content).
+To help ease with upgrading when using custom CSS, the v2 "redactor-editor" class is added to your imported configuration set (in Appearance > Content style class); this will not be present on the standard configuration sets. [Learn more about custom styling in v3](../Features/Custom_CSS)
 
-**Important:** downgrading from 3 to 2 is **not supported**. If you're not sure yet if you want to start using Redactor 3 right away, start by upgrading on a development site and only upgrade production when you're happy. 
+The JSON structure for custom formatting has changed in v3 and will need to be manually updated.
+
+**Important:** downgrading from 3 to 2 is **not supported**. If you're not sure yet if you want to start using Redactor 3 right away, test the upgrade on a development site and only upgrade production when you're happy.
 
 Old system settings from v2, with a few exceptions, are removed on the first upgrade to v3.
 
@@ -29,7 +31,7 @@ While the automatic import is useful, we do recommend configuring Redactor 3 fro
 Please note this list may be incomplete
 
 - Allowed/denied tags and cleanup in general works differently now. See the Cleanup tab for details of what you can configure in v3.
-- The image float margin from v2 has changed. Previously you would set a margin for left and right floats separately, in v3 you set a single margin (in the Media tab) which will automatically be applied to the right side of the image.
+- The image float margin from v2 has changed. Previously you would set a margin for left and right floats separately, in v3 you set a single margin (in the Media tab) which will automatically be applied to the proper side of the image.
 - Source code highlighting with Ace is no longer supported. Only Codemirror is now available (enabled by default).
 - The syntax for some plugins (like Clips) has changed. In most cases these will be automatically converted by the configurator. See the configurator for details.
 - Changing the available colors for the fontcolor plugin is no longer supported.
