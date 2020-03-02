@@ -17,6 +17,8 @@ detailId | ID of a resource containing an AgendaDetail snippet call. | System Se
 durationParts | Number of detail parts of the event duration output. With the value `1` the duration will be shortened as i.e. `1 month`, with the value `2` the duration will be shortened as i.e. `1 month 2 days`, | 1
 emptyTpl | Name of a chunk that contains the template for an empty list of events. | tplAgendaEventEmpty
 end | The end date to filter the displayed events. Must contain a [supported date and time format](https://www.php.net/manual/de/datetime.formats.php). | today +1 month 0:00
+excludeEvents | Comma separated list of event ids that should be excluded from the list. Available since Agenda 1.1.0. | -
+excludeRepeats | Comma separated list of repeating event ids that should be excluded from the list. Available since Agenda 1.1.0. | -
 imageTpl | Name of a chunk that contains the template for one image in the image list of an event. | tplAgendaEventImage
 limit | Limit the number of events in the result. Use `0` for unlimited events. | 20
 listId | ID of a resource containing an AgendaList snippet call. | System Setting `agenda.list_id`
