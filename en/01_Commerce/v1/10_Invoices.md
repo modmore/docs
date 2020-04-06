@@ -86,3 +86,24 @@ The primary component is an incrementing number, `{{ increment }}` in the templa
 With the `commerce.invoice_increment_start` system setting you can determine the starting number for invoice reference.
 
 The invoice reference works the same as the [order reference](Orders/Reference), so check that documentation for more details about what you can set the template to, and what the different settings do.
+
+## Regenerating invoices
+
+If your testing or have another reason to want to generate the PDF invoices, you can delete the files in your core/export/invoices/ directories. The next time an invoice is requested, it will be processed with the current template.
+
+When regenerating invoices, it's important to note that while the invoice data (totals, items, tax, etc) will use the historic invoice data, the following information will be **loaded at the time of generation**:
+
+- invoice meta data (not editable in the dashboard)
+- system/context settings: site_start (site_url), site_name, commerce.invoice_logo_url, commerce.invoice_merchant_address, commerce.invoice_footer_text.
+
+### Regenerating all invoices
+
+To regenerate invoices en-masse, there's a utility shipped with Commerce (v1.1.4+). SSH into the server and execute the following command:
+
+```
+php core/components/commerce/utilities/generate_invoices.php
+```
+
+You'll be asked to confirm that you want to regenerate invoices, after which it will iterate over all invoices and create the PDFs **if they are missing**. So you'll still need to delete the PDF invoices from core/export/invoices/ before running the utility.
+
+It's possible this process times out or runs out of memory on a lot of invoices. As it only creates invoices for which no file is available, you can just keep repeating the command until it's done.
