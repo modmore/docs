@@ -7,7 +7,7 @@
     "esprima": "^3.1.0",
     "jshint": "latest",
     "live-reload": "1.x.x",
-    "mkdirp": "^0.5.1",
+    "mkdirp": "^1.0.4",
     "npm-build-tools": "christianseel/npm-build-tools",
     "parallelshell": "2.0.x",
     "rimraf": "latest",
