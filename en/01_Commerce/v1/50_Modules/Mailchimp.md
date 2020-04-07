@@ -4,7 +4,7 @@ With the [Mailchimp Extension](https://modmore.com/commerce/extensions/mailchimp
 
 First install the free extension from the modmore package provider. 
 
-Navigate to Extras > Commerce > Modules and find Mailchimp in the list. Open its configuration and enter your API Key; you can find this in Mailchimp by clicking on your name in the top right > Account > Extras > API Keys. 
+Navigate to Extras > Commerce > Configuration > Modules and find Mailchimp in the list. Open its configuration and enter your API Key; you can find this in Mailchimp by clicking on your name in the top right > Account > Extras > API Keys.
 
 Save the api key on the module configuration, at which point you'll get some additional options on the module. 
 
