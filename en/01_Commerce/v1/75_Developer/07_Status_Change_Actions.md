@@ -23,4 +23,4 @@ An example use case for this implementation is a flexible CRM integration. An ad
 ## Custom Actions
 For advanced actions, you can write your own action class. Basically extend the `comStatusChangeAction` class, and provide a `process()` method to do what you need it to do. 
 
-To define options that need to be shown in the interface, define the <.........> method and make it return an array of fields.
+To define options that need to be shown in the interface, define the `getModelFields()` method and make it return an array of fields.
