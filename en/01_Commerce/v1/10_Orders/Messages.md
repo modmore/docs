@@ -20,13 +20,21 @@ Multiple recipients are supported, separate them with a comma.
 
 ## Message Types
 
-The Commerce core provides two message types: Email and Internal.
+The Commerce core provides 3 message types: Email, Formatted Email and Internal Note.
 
 ### Email Message
 
-The email message type is the most common one. It sends, surprisingly, an email. 
+The email message type is the most common one. It sends, surprisingly, an email! 
 
-Email sending is done through MODX using PhpMailer, so make sure that your email settings (in MODX under System > Settings > Email area) are configured properly to send email. It's strongly encouraged to use SMTP with an email delivery service like Mandrill, Postmark, Amazon SES, or others. Make sure that SPF and DKIM are configured properly for optimal delivery. 
+Email sending is done through MODX using PhpMailer, so make sure [MODX is properly set up for email sending](https://docs.modx.com/current/en/building-sites/sending-mail) (in MODX under System > Settings > Email area). It's strongly encouraged to use SMTP with an email delivery service like Mandrill, Postmark, Amazon SES, or others. Make sure that SPF and DKIM are configured properly for optimal delivery.
+
+### Formatted Email Message
+
+The formatted email, introduced in v1.1.5, lets you send an email that is wrapped in a nice template so it looks more professional than the standard "raw" email.
+
+The used template, by default, is `emails/message.twig`. You can override its content using [custom Twig templating](../Front-end_Theming), and you can also set a different template to be used with the `commerce.templated_message_template` system setting. You can use all the placeholders in the template as described below, with the addition of the `message_content` block, which will be filled with the content added in the interface (`{% block message_content %}{% endblock %}`).  
+
+The content entered into a formatted message is processed using markdown (specifically, parsedown), to enable easier use of links and basic formatting options.  
 
 ### Internal Note
 
@@ -169,6 +177,10 @@ In v1.1+ the email note is also available in the transaction and shipment as `{{
 The last generated PDF invoice for an order is available in the `invoice` order field, like: `{{ order_fields.invoice }}`. That will only contain the invoice reference. 
 
 To attach the PDF invoice to the email, enable "Attach invoice" on the [email status change](../Statuses/Email_Action). 
+
+## Other message types
+
+- [MessageBird extension](https://modmore.com/commerce/extensions/messagebird/) lets you create text (SMS) messages.
 
 ## Example data
 
