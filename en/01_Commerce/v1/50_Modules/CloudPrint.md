@@ -1,10 +1,16 @@
 The CloudPrint module is available as a [separate extension](https://modmore.com/commerce/extensions/cloudprint/). It's free to use, and covered by your standard modmore support.
 
-With CloudPrint, you can magically print [invoices](../Invoices) or any document based on a [twig template](../Front-end_Theming) on a [Google Cloud Print connected printer](https://www.google.com/cloudprint/learn/printers/). It runs as part of the [status workflow](../Statuses), making it perfect to print order summaries, packing slips, or shipping labels.
-
-Cloud Print also supports saving to Google Drive. 
+With CloudPrint, you can magically print [invoices](../Invoices) or any document based on a [twig template](../Front-end_Theming) on a [Google Cloud Print connected printer](https://www.google.com/cloudprint/learn/printers/). It runs as part of the [status workflow](../Statuses), making it perfect to print order summaries, packing slips, or shipping labels. Cloud Print also supports saving to Google Drive. 
 
 [TOC]
+
+## Google Cloud Print deprecation
+
+**IMPORTANT: Google is discontinuing Google Cloud Print on December 31st, 2020.** This extension will no longer work after that date.
+
+This extension will no longer work after that date. While we don't immediately have an alternative available, if you only use one or a small number of printers you may find suitable vendor-specific alternatives.  For example, [web-connected HP printers can use an email-based system](https://support.hp.com/us-en/document/c03721293) which you can integrate by configuring an email status change to send an email to your printer-specific address.
+
+If you do need the flexibility of a system like Cloud Print which supports multiple printer brands, there are some other solutions available like PrintNode, and we'd be happy to estimate how much it would cost to develop such an integration.
 
 ## Authorization
 
