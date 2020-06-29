@@ -16,7 +16,7 @@ Create a new resource somewhere in your site, and name it Register, or Sign up. 
 
 Save the resource. Open it and make sure that it shows the default registration form. 
 
-If you'd like the customer to be able of continuing with the checkout immediately, disable `&activation`, enable `&autoLogin`, and set `submittedResourceId` to `[[++commerce.register_resource]]`. 
+If you'd like the customer to be able to continue with the checkout immediately, disable `&activation`, enable `&autoLogin`, and set `submittedResourceId` to `[[++commerce.checkout_resource]]`. This will ensure that the Register snippet redirects the user back to the checkout process after registering.
 
 For further customisation options, [see the Register documentation](https://docs.modx.com/extras/revo/login/login.register).
 
