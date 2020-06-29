@@ -29,6 +29,7 @@ Unless otherwise noted, the gateways below are included in the standard Commerce
 | [Adyen](Adyen_hpp) ([Gateway Pack 1](../Modules/Payments/GatewayPack1)) | Lots of global, regional, and local payments | Off-site (hosted payment page) | ✓ |
 | [Authorize.net](Authorize.net) | Credit Cards | On-site (JavaScript) | ? (note 2) |
 | [Braintree](Braintree) | Credit Cards, PayPal | On-site (JavaScript)  | ✓ (v1.1+) |
+| [Klarna](Klarna) | Several, including "Pay Later", depending on country | On-site (JavaScript) | ✓ |
 | [Manual](Manual) | None; marks all transactions as successful. | On-site (server-side) | Not applicable |
 | [Mollie](Mollie) | Many, including iDeal, Sofort, Bancontact, Credit Card, and others. | Off-site (direct or hosted payment page) | ✓ (note 1) |
 | [MultiSafePay](MultiSafePay) | Many, including iDeal, Sofort, Bancontact, credit card (hosted form), and others. | Off-site (direct or hosted payment page) | ✓ (note 1) |
@@ -36,6 +37,7 @@ Unless otherwise noted, the gateways below are included in the standard Commerce
 | [PayPal](PayPal) | PayPal account, credit cards | Off-site (direct) | ✓ (note 1) |
 | [SagePay](SagePay) | Credit Cards | Off-site (hosted payment page) | ✓ (note 1) |
 | [Stripe](Stripe) | Credit Cards |  On-site (v1.1+: Payment Intents, v1.0: v2 tokenisation) | ✓ (v1.1+) |
+| [WiPay](WiPay) | Credit Cards | Off-site (hosted payment page) | ✓ |
 
 Notes:
 
@@ -51,15 +53,13 @@ It may still be needed to fill out (yearly) PCI-related paperwork, usually in th
 
 ## Is Commerce ready for PSD2 and Strong Customer Authentication?
 
-We're actively working on upgrading payment gateways that need to be updated. Please see the _SCA Ready_ column in the table above, and relevant notes, for details. 
-
-Before the September 14, 2019 deadline we expect all gateways to be ready to go. 
+Yes, please see the _SCA Ready_ column in the table above, and relevant notes, for details about the status for each of the available payment gateways.
 
 ## Need another payment provider?
 
 With hundreds (if not thousands) of payment providers available, it is likely you'll eventually need an integration we don't have available just yet. You can [request and vote for payment gateways on our feature tracker](https://ideas.modmore.com/?tags=commerce-gateways).
 
-To sponsor development of a payment integration, please contact support@modmore.com with details of the payment provider, and we'd be more than happy to provide you with a cost and time estimate.
+To sponsor development of a payment integration, please contact support@modmore.com with details of the payment provider, and we'd be more than happy to provide you with a cost and time estimate. Typical gateway implementations cost in the €300-600 range. 
 
 ## Integrating Payment Gateways
 
