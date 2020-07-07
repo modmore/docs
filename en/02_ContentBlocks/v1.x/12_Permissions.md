@@ -1,5 +1,9 @@
 As of ContentBlocks 1.5, you have fine grained control over who can perform certain actions in the ContentBlocks Component. This uses the Access Control Lists features of MODX, that allows you to assign sets of permissions to a user group.
 
+[TOC]
+
+## Introduction
+
 During installation a Policy Template with the name `ContentBlocksTemplate` is created. This contains all the permissions for ContentBlocks, 35 at latest count, which you can add to Access Policies through that template. The full list can be seen in your manager, along with a brief description of each, by browsing to _System_ > _Access Control Lists_ > _Policy Templates_ > _ContentBlocksTemplate_.
 
 There are permissions that control access to the entire component (`contentblocks_component`) and it gets more granular from there on. With the `contentblocks_fields`, `contentblocks_layouts`, `contentblocks_templates`, `contentblocks_categories` and `contentblocks_defaults` permissions you can remove the specific tabs in one go.

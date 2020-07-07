@@ -14,6 +14,14 @@ The minimum mgGetImages snippet call outputs a list of thumbnails, linking to an
 
 You should always call mgGetImages uncached, as it manages caching internally. This makes sure the images on a Gallery resource are in sync with the frontend, without relying on full site cache clears.
 
+## Listing & single image views
+
+The `mgGetImages` snippet by default lists images in a gallery, but it also supports a "single image view" or "detail view". When the page is requested with a `iid` URL parameter (or another parameter defined by the `&singleImageParam` snippet parameter), only the specific image is shown with the `&singleImageTpl`.
+
+The single image view also includes previous and next images, so it can be used for a simple gallery view without any JavaScript solutions. This detail view is also used to render embed codes for videos and iframes for PDFs. The detail view can also be disabled with `&singleImageEnabled`.
+
+The parameter for the rendering of one image in the list is `&imageTpl`, not `&singleImageTpl`.
+
 ## Snippet Properties
 
 
@@ -224,7 +232,7 @@ A string to be used between tags parsed through the chunk specified in `&tagTpl`
 
 #### &singleImageEnabled
 
-Set to `1` to enable the single image view, or `0` to disable it. When enabled, the snippet will automatically show a single image with a different template (see `&singleImageTpl`) if the `&singleImageParam` is present in the URL. Useful for accessible image galleries. The single image view has been available since v1.0, the singleImageEnabled property was added in v1.4.  
+Set to `1` to enable the single image view, or `0` to disable it. When enabled, the snippet will automatically show a single image (detail view) with a different template (see `&singleImageTpl`) if the `&singleImageParam` is present in the URL. Useful for accessible image galleries. The single image view has been available since v1.0, the singleImageEnabled property was added in v1.4.
 
 **Default**: `1`  
 
@@ -244,7 +252,9 @@ Added in 1.5.0.
 
 #### &singleImageTpl
 
-The name of a chunk to use for the single image view. See further down this page for the default and placeholders for this chunk.  
+The name of a chunk to use for the single image (/detail) view. See further down this page for the default and placeholders for this chunk.
+
+**For rendering of one image in the gallery listing, see `&imageTpl` instead.**
 
 There are also `&singleYoutubeTpl` and `&singleVimeoTpl` properties for [YouTube and Vimeo videos](../Video) respectively, and a `&singlePdfTpl` for PDFs, which both follow the same behaviour as the `&singleImageTpl`. 
 

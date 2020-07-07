@@ -1,0 +1,1 @@
+Returns a localised `yes` or `no` value depending on the boolean input. The translation comes from the MODX lexicon for `yes` and `no`.

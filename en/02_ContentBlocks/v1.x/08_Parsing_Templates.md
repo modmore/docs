@@ -4,6 +4,8 @@ title: Parsing & Templates
 
 ContentBlocks provides a revolutionary way of managing content. With this new way of doing things, there are also a few things to keep in mind when developing websites - in particular related to the way your page will be parsed and what is and what isn't possible. This document will walk you through a few of these limitations and best practices.
 
+[TOC]
+
 ## When & Where
 
 When you're using ContentBlocks, the layouts and fields you used are parsed **when the resource is saved**. This was done to make integration into your templates as easy as possible (by simply using `[[*content]]` in your template), as well as to prevent parsing the resource from slowing down the front-end of the website. As many [input types](Input_Types) offer very granular templateing, it is not uncommon for large or complex resources to take 0,5-2 seconds to fully parse, and you don't want that delay in front of your users.

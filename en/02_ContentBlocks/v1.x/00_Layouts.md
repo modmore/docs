@@ -2,6 +2,8 @@ In ContentBlocks you can use _Layouts_ to easily manage multi column content. Ea
 
 During installation you get the opportunity to install some basic Foundation and Bootstrap based layouts to get started quickly.
 
+[TOC]
+
 ## Managing Layouts
 
  To manage Layouts, find the Content Blocks component under the Extras menu and move to the Layouts tab.

@@ -19,7 +19,7 @@ if vendor/bin/daux generate --source=. --destination=html ; then
     fi
 
     # Generate a zip file containing the complete static site, placing it inside the html folder again
-    zip -r html/modmore-documentation.zip html
+    #zip -r html/modmore-documentation.zip html
 else
     echo "Failed generating documentation";
     exit 1;
