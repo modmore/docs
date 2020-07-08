@@ -8,8 +8,8 @@ First rename the file assets/components/agenda/_overview.php to overview.php.
 Afterwards edit it and remove the exit(); in line 12.
 
 The Agenda backend uses FullCalendar 3 for the calendar display. You have to
-create a working FullCalendar script according to the documentation on
-https://fullcalendar.io/docs/v3/installation
+create a working FullCalendar script according to the
+[documentation](https://fullcalendar.io/docs/v3/installation)
 
 ## Restrict the request
 
