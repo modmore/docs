@@ -30,9 +30,9 @@ $('#fullcalendar').fullCalendar({
         endParam: 'enddate',
         data: function () {
             return {
-                calendars: calendars || 0,
-                categories: categories || 0,
-                query: config.params.query || '',
+                //calendars: calendars || 0,
+                //categories: categories || 0,
+                //query: query || '',
                 limit: 0
             };
         }
