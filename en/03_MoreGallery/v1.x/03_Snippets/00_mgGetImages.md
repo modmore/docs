@@ -372,6 +372,14 @@ Name of a placeholder to set the total amount of images to. ([Primarily used for
 
 The amount of images to return ([optionally per page](../Pagination)) when listing images.  
 
+#### &randomLimit
+
+When using a random sort order, MoreGallery requests all images that match your filters and writes them to the cache. It then randomly picks them from the cache file on render.
+
+On really large galleries, this can slow down performance and increase memory usage. In particularly large cases, we've seen the process of loading all results time out or exceed allowed memory, causing it to never write the file.
+
+To avoid the heaviest hit, the &randomLimit property was introduced in v1.11.1 with a default of 1500 images. This means it will only ever grab 1500 images to pick a random one from. 1500 images equates +- 5 seconds of processing on an initial request, with much improved response times on subsequent requests grabbing `&limit` random images from the cache. You can tweak the number to match your scenario if you need more random results or more performance.
+
 #### &offset
 
 Indicates starting at what index the results should be returned ([primarily used for paginating results](../Pagination)). 
