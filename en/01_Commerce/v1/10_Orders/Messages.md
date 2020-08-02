@@ -40,6 +40,14 @@ The content entered into a formatted message is processed using markdown (specif
 
 The internal message type creates an internal note. It is not sent to anyone, but remains available to be checked on the order. 
 
+## Testing email templates the easy way
+
+If you're working on customising email templates, it's useful to not go through the checkout for each attempt. You can do that by viewing the order detail page, Messages tab, and clicking "View Message". 
+  
+In Commerce 1.2+, first disable the `commerce.save_sent_message_content` system setting before creating your test email. Doing so will make sure that the email template is re-rendered each time you view the message in the dashboard.
+
+If you're looking for where the standard emails are defined, go to Configuration > Statuses and click on the status change that corresponds with payment received. That will have the default twig syntax to use in the message content.
+
 ## Available Placeholders
 
 For the Email Message Type, and possibly third party message types, you can use a whole bunch of placeholders in the Subject and Content fields. 
