@@ -36,6 +36,14 @@ Conditions in a tax rule take the basic format `if [name of field] [condition] [
 
 ![Screenshot of the Tax Rule edit form](../images/taxes/tax-rule-manual.jpg)
 
+The field can be defined in the following ways. Commerce will use the **first** match from top-to-bottom in this list:
+
+- `shipping_address.field_name` (>= v1.2): `field_name` specifically on the shipping address, for example `shipping_address.country` or `shipping_address.state`. Falls back to the billing address if no separate shipping address is set. Can also target properties on the address like this: `shipping_address.properties.custom_property_key`.
+- `billing_address.field_name` (>= v1.2): `field_name` specifically on the billing address, for example `billing_address.country` or `billing_address.state`. Falls back to the shipping address if no separate billing address is set. Can also target properties on the address like this: `billing_address.properties.custom_property_key`.
+- `order.field_name` (>= v1.2): `field_name` specifically on the order, for example `billing_address.country` or `billing_address.state`. Falls back to the shipping address if no separate billing address is set. Can also target properties on the order like this: `order.properties.custom_property_key`.
+- `order_field.field_name` (>= v1.2): a specific [custom order field](Orders/Custom_Fields) identified by its name, for example `order_field.tax_exempt`. This uses the stored value, the structure of which depends on the custom order field type. Often, but not always, a simple string or numeric value.
+- `simple_field_name`: target a field on either the order (e.g. `context`) or if the name does not exist on the order, the field on the billing address (e.g. `country`, `state`, `zip`). Does not support properties.
+
 The following conditions are available. Conditions that accept a value are case insensitive. 
 
 - `always`: useful as a fallback tax rate
@@ -48,7 +56,7 @@ The following conditions are available. Conditions that accept a value are case 
 - `not empty`: customer provided value is not empty
 - `greater than`: compares 2 numbers (decimals/floats supported), making sure that the customer provided value is greater than the value added in the rule
 - `less than`: opposite of `greater than`
-- `in european union`: used with the country field, this checks if the country is a member of the European Union. This uses a hardcoded list of country codes, so while countries don't join/leave the EU often, keep Commerce up to date. 
+- `in european union`: used with the country field, this checks if the country is a member of the European Union. This uses a hardcoded list of country codes, so while countries don't join/leave the EU often, keep Commerce up to date. Note that the United Kingdom (code `GB`) will no longer be considered part of the EU for this check at the end of the Brexit grace period at December 31st, 2020.
 - `not in european union`: opposite of `in european union`.
 
 For each tax rule, a Rate Provider is chosen and configured that determines the actual tax rate that will be added to the order.
