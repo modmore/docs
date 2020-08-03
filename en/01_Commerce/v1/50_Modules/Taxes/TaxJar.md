@@ -8,7 +8,7 @@ When enabling the TaxJar module, it will be available as a Rate Provider for you
 
 The taxjar properties are managed as system settings. Go to System > System Settings, choose commerce as namespace, and TaxJar as area, to find all the below options.
 
-- **TaxJar API Token** (`commerce.taxjar.api_key`): this is provided by TaxJar under [Account > SmartCalcs API](https://app.taxjar.com/account#api-access). 
+- **TaxJar API Token** (`commerce.taxjar.api_key`): this is provided by TaxJar under [Account > Data sources > TaxJar API](https://app.taxjar.com/account#api-access). 
 - **Nexus Country** (`commerce.taxjar.nexus_country`): the country from where you sell or ship your products, defaults to US.
 - **Nexus State** (`commerce.taxjar.nexus_state`): the state from where you sell or ship your products. 
 - **Nexus Zip** (`commerce.taxjar.nexus_zip`): the zipcode from where you sell or ship your products.
