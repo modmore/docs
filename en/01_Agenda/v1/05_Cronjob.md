@@ -49,7 +49,7 @@ event are created and old (maybe edited) repeats are not changed.
 ## Debug the cronjob
 
 To detect cronjob issues, you could enable the Agenda [system
-setting](02_Custom_Manager_Page/07_Settings.md) `agenda.debug`. The file
+setting](02_Custom_Manager_Page/07_Settings) `agenda.debug`. The file
 `{core_path}/cache/logs/agenda.log` will then contain a lot of debug
 information. Per default cronjob errors are logged in the standard MODX error
 log.
