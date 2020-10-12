@@ -1,4 +1,4 @@
-This tab contains a paginated grid with all [settings](../03_System_Settings) of the consentfriend
+This tab contains a paginated grid with all [settings](../03_System_Settings.md) of the consentfriend
 namespace.
 
 [![](img/settings.png)](img/settings.png)
