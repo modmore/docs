@@ -10,8 +10,7 @@ It is a perfect solution for users looking for an extensive MODX event managemen
 # Recommended Reading
 
 - [Installation](01_Installation)
-- [Custom Manager Page](02_Custom_Manager_Page)
-- [Snippets](04_Snippets)
+- [Custom Manager Page](02_Custom_Manager_Page/index)
+- [Snippets](04_Snippets/index)
 - [FAQ](07_FAQ)
-- [Tutorials](08_FAQ)
-
+- Tutorials

@@ -24,6 +24,6 @@ This tab contains a grid view of all [locations](05_Locations).
 
 This tab contains a grid view of all [feeds](06_Feeds).
 
-#### Settings (cog icon) 
+#### Settings (gear icon) 
 
 This tab contains a grid view of all [settings](07_Settings).

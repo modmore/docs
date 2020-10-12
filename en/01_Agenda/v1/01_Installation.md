@@ -6,7 +6,7 @@ Also some [snippets](04_Snippets/index) in the element category named
 _Agenda_ are created.
 
 There are some system settings available in the namespace _agenda_. These could
-also be edited in the [settings](02_Custom_Manager_Page/07_Settings) (cog
+also be edited in the [settings](02_Custom_Manager_Page/07_Settings) (gear
 icon) tab of the _Agenda_ custom manager page.
 
 If you want to connect events, categories, calendars or locations to MODX
