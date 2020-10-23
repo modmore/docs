@@ -30,11 +30,12 @@ HTML code.
 ## Custom external services
 
 If you have to place the external services inline on the page, you have to
-handle the code preparation on your own. External services can be i.e. called
-by `script`, `img`, `link` or `iframe` tags. All those tags for an external
-service must contain a `type="text/plain"` and a `data-name` attribute, that
-matches the name of a [service](../03_Custom_Manager_Page/01_Services.md#service-name) 
-of ConsentFriend, i.e. `data-name="matomo"`.
+handle the code preparation on your own. External services can be i.e. called by
+`script`, `img`, `link` or `iframe` tags. All those tags for an external service
+must contain a `data-name` attribute, that matches the name of a
+[service](../03_Custom_Manager_Page/01_Services.md#service-name) of
+ConsentFriend, i.e. `data-name="matomo"`. If the original tag contains a type
+attribute it has to be changed to `type="text/plain"`.
 
 ### script tags
 
