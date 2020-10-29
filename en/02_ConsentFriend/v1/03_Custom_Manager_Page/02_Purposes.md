@@ -1,6 +1,6 @@
 This tab contains a paginated grid with all purposes. The purposes are used to
-build the consent modal in the frontend, if the [system
-setting](../04_System_Settings.md) `consentfriend.group_by_purpose` is enabled.
+build the consent modal in the frontend, if the system setting group by purpose
+is enabled.
 
 [![](img/purposes.png)](img/purposes.png)
 

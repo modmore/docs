@@ -27,4 +27,4 @@ consentfriend.notice_as_modal | Notice as Modal | If enabled, ConsentFriend will
 consentfriend.privacy_policy_id | Privacy Policy ID | The ID of a MODX resource containing the privacy policy. | site_start
 consentfriend.storage_method | Storage Method | How ConsentFriend persists consent information in the browser. Specify either "cookie" (the default) or "localStorage". | cookie
 consentfriend.hide_powered_by | Hide Powered By | If enabled, ConsentFriend will hide the "Realized with ConsentFriend (Powered by Klaro!)" link in the consent modal. | No
-consentfriend.theme | Theme | The ConsentFriend [theme](05_Themes.md). Can be changed to "black", "dark", "light", "white". | -
+consentfriend.theme | Theme | The ConsentFriend theme. Can be changed to "black", "dark", "light", "white". | -
