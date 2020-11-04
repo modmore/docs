@@ -10,6 +10,18 @@ with just a few lines of code.
 You can create a new service with a click on the create service button on the
 top left above the services grid.
 
+You can export the services to an xml file with a click on the export services
+button above the services grid.
+
+You can import a xml file with the services with a click on the import services
+button above the services grid. In the import window you could select a file to
+import and the import mode. In the append mode the entries in the file are
+appended to the existing services in the grid. In the replace mode the existing
+services in the grid are replaced with the entries in the file. In the update
+mode the existing services in the grid are updated with the entries in the file.
+
+[![](img/services-import.png)](img/services-import.png)
+
 The grid can be filtered by a search input on the top right above the services
 grid.
 
