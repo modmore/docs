@@ -11,7 +11,7 @@ to modify i.e. the default recaptchav3_html with the following code:
         });
     }
 </script>
-<script onload="loadCaptcha()" type="text/plain" data-type="application/javascript" data-src="https://www.google.com/recaptcha/api.js?render=[[+site_key]]&hl=[[++cultureKey]]" data-name="recaptcha"></script>
+<script onload="loadCaptcha()" type="text/plain" data-type="application/javascript" data-src="https://www.google.com/recaptcha/api.js?render=[[+site_key]]&hl=[[++cultureKey]]" data-name="googleRecaptcha"></script>
 <input type="hidden" name="[[+token_key]]">
 <input type="hidden" name="[[+action_key]]" value="[[+form_id]]">
 ```
