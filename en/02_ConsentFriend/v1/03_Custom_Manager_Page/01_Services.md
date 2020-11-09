@@ -79,7 +79,7 @@ In the code tab you can select the code section and enter the service code.
 
 **Code:** The service code, thats injected automatically into the page code. The
 service code will be automatically disabled for a direct execution before the
-injection.
+injection. MODX context/system settings tags could be used in the service code.
 
 ### Cookies Tab
 

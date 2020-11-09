@@ -3,3 +3,21 @@ not in the list, please reach out to us via support@modmore.com and we would be
 glad to help.
 
 [TOC]
+
+## How could I transform an exisiting Google Analytics implementation in a MODX site to ConsentFriend?  
+
+1. Locate the usage of Google Analytics in your template or in the dependent
+chunk calls.
+2. Copy the Google Analytics ID (a string starting with `UA-`) in
+the template or chunk and create a system setting `google_analytics_id`
+with that value.
+3. Disable that chunk (i.e. by renaming it) or the template
+part (i.e. by surrounding it with `[[-` and `]]`).
+4. Enable ConsentFriend in the frontend.
+5. Clear the MODX cache.
+
+## Can I use different Google Analytics IDs in different contexts?
+
+Thats possible. The default Google Analytics service uses the MODX
+system/context setting tag `[[++google_analytics_id]]`. So you have to create a
+context setting `google_analytics_id` with the value of the Google Analytics ID.
