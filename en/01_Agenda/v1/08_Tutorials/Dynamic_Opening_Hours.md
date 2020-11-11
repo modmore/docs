@@ -34,7 +34,7 @@ in the list.
 ## Snippets & Chunks
 
 To render the opening hours, we'll use the
-[AgendaList](../04_Snippets/01_AgendaList) snippet with some custom chunks and
+[AgendaList](../04_Snippets/01_AgendaList.md) snippet with some custom chunks and
 logic.
 
 Here's our `AgendaList` call; make sure to adjust the `&calendars` filter to
