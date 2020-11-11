@@ -14,7 +14,7 @@ This snippet displays one event in a [detail](03_AgendaDetail.md) view.
 
 #### AgendaCalendars
 
-This snippet displays a list of [calendars](04_AgendaCalendars.).
+This snippet displays a list of [calendars](04_AgendaCalendars.md).
 
 #### AgendaCategories
 
