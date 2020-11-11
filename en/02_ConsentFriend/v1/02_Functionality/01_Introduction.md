@@ -6,26 +6,27 @@ disable the automatic execution or loading of external services.
 
 [![](img/consent-management.png)](img/consent-management.png)
 
-!!! info "The following steps are prepared by ConsentFriend automatically"
-    To make sure that no tracking scripts and third-party services are loaded
-    without consent, the HTML code of the page has to be modified: For scripts,
-    the type attribute has to be set to or replaced with `type="text/plain"`
-    (this keeps the browser from executing the script) and a data attribute with
-    the original type has to be added, i.e.
-    `data-type="application/javascript"`. Also a data-name attribute that has to
-    match the name of the [service in the Custom Manager
-    Page](../03_Custom_Manager_Page/01_Services.md#service-name) must be added, i.e.
-    `data-name="matomo"`.
+> **The following steps are prepared by ConsentFriend automatically**
+>
+> To make sure that no tracking scripts and third-party services are loaded
+without consent, the HTML code of the page has to be modified: For scripts, the
+type attribute has to be set to or replaced with `type="text/plain"` (this keeps
+the browser from executing the script) and a data attribute with the original
+type has to be added, i.e. `data-type="application/javascript"`. Also a
+data-name attribute that has to match the name of the [service in the Custom
+Manager Page](../03_Custom_Manager_Page/01_Services.md#service-name) must be
+added, i.e. `data-name="matomo"`.
 
 If you enter the external service code in the ConsentFriend service
 configuration, the code will be prepared for the the automatic activation.
 ConsentFriend will inject the code at the end of the HEAD or BODY section in the
 HTML code.
 
-!!! info "Commercial conversion of Klaro!"
-    ConsentFriend does not use the commercial server side version of Klaro!. It
-    is not needed and currently not possible to use the commercial version of
-    Klaro! with ConsentFriend.
+> **Commercial conversion of Klaro!**
+>
+> ConsentFriend does not use the commercial server side version of Klaro!. It is
+not needed and currently not possible to use the commercial version of Klaro!
+with ConsentFriend.
 
 ## Custom external services
 
@@ -64,10 +65,12 @@ Example code for external services:
 - [Google reCAPTCHA](Google_reCAPTCHA.md)
 - [Youtube videos](Youtube_Videos.md)
 
+#### Link to open the consent management window
+
 If you want to add a link to the consent management window on a page, you could use the following code: 
 
 ```
-<a onclick="klaro.show();return false;">Change consent settings</a>
+<a onclick="klaro.show();return false;">[[%consentfriend.services.change_setting? &namespace=`consentfriend`]]</a>
 ```
 
 
