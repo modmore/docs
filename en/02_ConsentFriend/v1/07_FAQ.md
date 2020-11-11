@@ -21,3 +21,14 @@ part (i.e. by surrounding it with `[[-` and `]]`).
 Thats possible. The default Google Analytics service uses the MODX
 system/context setting tag `[[++google_analytics_id]]`. So you have to create a
 context setting `google_analytics_id` with the value of the Google Analytics ID.
+
+## The consent modal displays only lexicon keys instead of translated strings
+
+Thats a result of different language detection. MODX uses the cultureKey
+system/context setting and ConsentFriend uses the html lang attribute. So you
+have to fill the html lang attribute with the cultureKey system/context setting:
+`<html lang="[[++cultureKey]]">`.
+
+## I would like to change the texts of ConsentFriend
+
+This could be done with the ConsentFriend [lexicon](06_Lexicon.md).
