@@ -1,7 +1,11 @@
 _ConsentFriend_ has five different default themes, that can be enabled in the
-[system settings](04_System_Settings.md). If you want to create your own theme,
-you could import the file `assets/components/consentfriend/scss/klaro.scss` in your
-scss workflow.
+[system settings](04_System_Settings.md).
+
+> If you want to create your own theme, you could import the file
+`assets/components/consentfriend/scss/klaro.scss` in your scss workflow.
+To disable the default styling of the modal afterwards, please set the system
+setting consentfriend.js_url to
+`/assets/components/consentfriend/js/web/consentfriend-no-css.js`.
 
 **default (or empty)**
 
