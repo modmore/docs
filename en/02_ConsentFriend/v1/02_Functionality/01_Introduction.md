@@ -48,9 +48,13 @@ renamed with `data-src`.
 ### iframe and img tags
 
 Services with an iframe or an img tag need an additional `data-src` attribute
-with the original src i.e. `data-src="https://www.youtube.com/embed/M7lc1UVf-VE"`.
+with the original src i.e. `data-src="https://www.youtube.com/embed/M7lc1UVf-VE"`. 
 The original src attribute has to be removed. Since the type attribute is not 
 valid for iframe tags, it can be removed there.
+
+ConsentFriend will hide an iframe based service and display a placeholder with
+an activation button in place. This feature is called [Contextual
+Consent](02_Contextual_Consent.md) and is used since ConsentFriend 1.2.0.
 
 ### link tags
 
