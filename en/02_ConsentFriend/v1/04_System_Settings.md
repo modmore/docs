@@ -20,11 +20,12 @@ consentfriend.enable | Enable | Enable ConsentFriend on this installation/contex
 consentfriend.group_by_purpose | Group by Purpose | If enabled, ConsentFriend will group apps by their purpose in the modal. This is advisable if you have a large number of apps. Users can then enable or disable entire groups of apps instead of having to enable or disable every app. | Yes
 consentfriend.hide_decline_all | Hide Decline All | If enabled, ConsentFriend will hide the "decline" button in the consent modal and force the user to open the modal in order to change his/her consent or disable all third-party apps. We strongly advise you to not use this feature, as it opposes the "privacy by default" and "privacy by design" principles of the GDPR (but might be acceptable in other legislations such as under the CCPA). | No
 consentfriend.hide_learn_more | Hide Learn More | If enabled, ConsentFriend will hide the "learn more/customize" link in the consent notice. We strongly advise against using this under most circumstances, as it keeps the user from customizing his/her consent choices. | No
+consentfriend.hide_powered_by | Hide Powered By | If enabled, ConsentFriend will hide the "Realized with ConsentFriend (Powered by Klaro!)" link in the consent modal. | No
 consentfriend.html_texts | HTML Texts | If enabled, ConsentFriend will render the texts given in the `consentModal.description` and `consentNotice.description` translations as HTML. This enables you to e.g. add custom links or interactive content. | -
 consentfriend.js_url | Javascript Url | The Javascript URL for ConsentFriend. | -
 consentfriend.must_consent | Must Consent | If enabled, ConsentFriend will directly display the consent manager modal and not allow the user to close it before having actively consented or declined the use of third-party applications. | No
+consentfriend.no_autoLoad | No Autoload | If enabled, it will keep ConsentFriend from automatically loading itself when the page is being loaded. Available since ConsentFriend 1.2.0. | No
 consentfriend.notice_as_modal | Notice as Modal | If enabled, ConsentFriend will show the cookie notice as modal. | No
 consentfriend.privacy_policy_id | Privacy Policy ID | The ID of a MODX resource containing the privacy policy. | site_start
 consentfriend.storage_method | Storage Method | How ConsentFriend persists consent information in the browser. Specify either "cookie" (the default) or "localStorage". | cookie
-consentfriend.hide_powered_by | Hide Powered By | If enabled, ConsentFriend will hide the "Realized with ConsentFriend (Powered by Klaro!)" link in the consent modal. | No
 consentfriend.theme | Theme | The ConsentFriend [theme](05_Themes.md). Can be changed to "black", "dark", "light", "white". | -

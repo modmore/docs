@@ -81,6 +81,11 @@ tracking scripts that would generate new page view events every time
 ConsentFriend disables and re-enables them due to a consent change by the
 user.
 
+**Contextual Consent Only:** If "Contextual Consent Only" is checked, the
+service cannot be directly activated globally with the 'Accept All' workflow in
+the consent modal. The service is still hidden by a placeholder, but a second
+button is displayed which allows the user to activate the service globally.
+
 ### Code Tab
 
 In the code tab you can select the code section and enter the service code.
@@ -92,6 +97,21 @@ In the code tab you can select the code section and enter the service code.
 **Code:** The service code, thats injected automatically into the page code. The
 service code will be automatically disabled for a direct execution before the
 injection. MODX context/system settings tags could be used in the service code.
+
+### Callback Tab
+
+In the callback tab you can enter the service callback code.
+
+[![](img/service-callback.png)](img/service-callback.png)
+
+**Callback:** The service callback code thats executed when the service is
+loaded or the initial consent is changed. It must contain a javascript function
+with the two properties `consent` and `service`. `consent` contains the consent
+state (true = consented) and `service` contains the service configuation. 
+
+The demo data of the googleRecaptcha service contains a code example that
+disables all inputs with `data-name="googleRecaptcha"`. Please look into the
+[reCAPTCHA usage example](../02_Functionality/Google_reCAPTCHA.md).
 
 ### Cookies Tab
 
