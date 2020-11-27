@@ -1,5 +1,5 @@
 Contextual consent allows the website to obtain the consent of the users on
-site. This is be used to hide embedded YouTube videos and display a placeholder
+place. This is used to hide embedded YouTube videos and display a placeholder
 with a consent button inside.
 
 This function can be extended with the service setting 'Contextual Consent
