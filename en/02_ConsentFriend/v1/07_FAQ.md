@@ -36,7 +36,7 @@ This could be done with the ConsentFriend [lexicon](06_Lexicon.md).
 ## How could I create an own theme for ConsentFriend?
 
 If you want to create your own theme, you could import the file
-`assets/components/consentfriend/scss/klaro.scss` in your scss workflow. There
+`assets/components/consentfriend/scss/consentfriend.scss` in your scss workflow. There
 are a few scss variables available in
 `assets/components/consentfriend/scss/vars.scss` that could be overridden
 before. To disable the default styling of the modal afterwards, please set the
