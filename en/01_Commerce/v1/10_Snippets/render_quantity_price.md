@@ -26,7 +26,7 @@ With resource products:
 
 The default template outputs a table if at least 1 quantity bracket is set, and an empty result if not. 
 
-```twig
+```html
 {% if prices|length > 0 %}
     <table class="table c-quantity-price__container">
         <thead>
