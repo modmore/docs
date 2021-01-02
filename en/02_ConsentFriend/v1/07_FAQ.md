@@ -4,7 +4,7 @@ glad to help.
 
 [TOC]
 
-## How could I transform an exisiting Google Analytics implementation in a MODX site to ConsentFriend?  
+## How can I convert an exisiting Google Analytics implementation in a MODX site to ConsentFriend?  
 
 1. Locate the usage of Google Analytics in your template or in the dependent
 chunk calls.
@@ -33,7 +33,7 @@ have to fill the html lang attribute with the cultureKey system/context setting:
 
 This could be done with the ConsentFriend [lexicon](06_Lexicon.md).
 
-## How could I create an own theme for ConsentFriend?
+## How can I create an own theme for ConsentFriend?
 
 If you want to create your own theme, you could import the file
 `assets/components/consentfriend/scss/consentfriend.scss` in your scss workflow. There
@@ -43,4 +43,11 @@ before. To disable the default styling of the modal afterwards, please set the
 system setting consentfriend.js_url to
 `/assets/components/consentfriend/js/web/consentfriend-no-css.js`.
 
+## How can I redisplay the consent management window on a page?
 
+If you want to allow the user to change his consent settingsm, you can add a
+link to the consent management window using the following code:
+
+```
+<a onclick="klaro.show();return false;">[[%consentfriend.services.change_setting? &namespace=`consentfriend`]]</a>
+```
