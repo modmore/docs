@@ -20,7 +20,7 @@ It is primarily configured by the list of buttons, in the Toolbar section of the
 
 Whenever a toolbar button requires a Redactor plugin, it is automatically initialised. 
 
-In some cases, the positioning of the plugin cannot be changed. This has to do with how plugins are initialised one at a time, and that buttons added to the toolbar are added either at the end or relative to specific buttons.
+In some cases, the positioning of buttons initialised by a plugin cannot be changed. This has to do with how plugins are initialised one at a time, and that buttons added to the toolbar are added either at the end or relative to specific buttons.
 
 The following plugins have hardcoded positions in the toolbar which cannot be changed:
 
@@ -28,19 +28,9 @@ The following plugins have hardcoded positions in the toolbar which cannot be ch
 - table, always added before the link button
 - video, always added after the image button
 
-The following plugins are added to the end of the toolbar:
+As of Redactor v3.1, plugins that previously had no defined position that would always get added at the end of the toolbar, will now position themselves properly, based on their location in the buttons configuration. This affected the following plugins before v3.1: `alignment, clips, fontcolor, fontfamily, fontsize, fullscreen, properties, specialchars, textdirection, variable, widget`.
 
-- alignment
-- clips
-- fontcolor
-- fontfamily
-- fontsize
-- fullscreen
-- properties
-- specialchars
-- textdirection
-- variable
-- widget
+If you still seeing odd positioning of toolbar buttons in v3.1+ that's different from your configuration, make sure the buttons with a fixed position (inlinestyle, table, video) are configured in their hardcoded position (e.g. make sure `table` is before `link` in your toolbar buttons configuration). 
 
 ## Examples
 
