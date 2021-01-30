@@ -24,10 +24,11 @@ Note that a provided country that is not excluded can be accepted or rejected, b
 To immediately accept or reject all European Union Member States, add the `EU` or `-EU` short-hand respectively. At time of writing, the following country codes are considered part of the EU: 
 
 ```
-['BE','BG', 'CZ', 'DK', 'DE', 'EE', 'IE', 'EL', 'ES', 'FR', 'HR', 'IT', 'CY', 'LV', 'LT', 'LU', 'HU', 'MT', 'NL', 'AT', 'PL', 'PT', 'RO', 'SI', 'SK', 'FI', 'SE', 'UK']
+['BE','BG', 'CZ', 'DK', 'DE', 'EE', 'IE', 'ES', 'FR', 'GR', 'HR', 'IT', 'CY',
+'LV', 'LT', 'LU', 'HU', 'MT', 'NL', 'AT', 'PL', 'PT', 'RO', 'SI', 'SK', 'FI', 'SE']
 ```
 
-Note that if/when the United Kingdom leaves the EU (Brexit) `UK` will no longer be considered part of the EU for this particular short-hand. If it is important for your integration that `UK` is always included (or excluded), add it separately like `EU, UK` or `-EU, -UK`. 
+Note that releases prior to v1.2.0-rc3 the United Kingdom (`UK`, or `GB` for VAT purposes in the EU) was considered to be part of the European Union. That has since been removed following Brexit. If it is important for your integration that the United Kingdom is always included (or excluded), add it separately like `EU, UK` or `-EU, -UK` for consistency across releases.
 
 ## Processing Order
 
@@ -55,7 +56,7 @@ Countries are evaluated in the following order until a result is determined.
 
 ## Integrating country rules in custom code (v1.1+)
 
-To run these same exact rules in a module or other Commerce-based code, you can use the `Countries` static service. The `isAcceptedCountry` static method takes in a provided `$country` and the `$countries` definition, and returns a boolean true or false to indicate the country is to be accepted or rejected.
+To run these same exact rules in a module or other Commerce-based code, you can use the `modmore\Commerce\Services\Countries` static service. The `isAcceptedCountry` static method takes in a provided `$country` and the `$countries` definition, and returns a boolean true or false to indicate the country is to be accepted or rejected.
 
 The method automatically normalised the country and countries to uppercase, splits the string based on a comma, and trims away any whitespace.
 
