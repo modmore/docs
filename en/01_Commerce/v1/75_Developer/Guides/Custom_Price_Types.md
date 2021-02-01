@@ -91,7 +91,7 @@ Next, we'll implement the important logic that determines if our customer gets a
     public function getPriceForItem(\comOrderItem $item)
     {
         $order = $item->getOrder();
-        if ($order instanceof comOrder && $order->get('user') > 0 {
+        if ($order instanceof comOrder && $order->get('user') > 0) {
             return $this->price;
         )
         return false;

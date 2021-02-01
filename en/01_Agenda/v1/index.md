@@ -9,9 +9,8 @@ It is a perfect solution for users looking for an extensive MODX event managemen
 
 # Recommended Reading
 
-- [Installation](01_Installation)
-- [Custom Manager Page](02_Custom_Manager_Page)
-- [Snippets](04_Snippets)
-- [FAQ](07_FAQ)
-- [Tutorials](08_FAQ)
-
+- [Installation](01_Installation.md)
+- [Custom Manager Page](02_Custom_Manager_Page/index.md)
+- [Snippets](04_Snippets/index.md)
+- [FAQ](07_FAQ.md)
+- Tutorials

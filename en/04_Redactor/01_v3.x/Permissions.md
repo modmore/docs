@@ -1,4 +1,4 @@
-If desires, you can limit access to the Configurator using the MODX permissions system. 
+If desired, you can limit access to the Configurator using the MODX permissions system. 
 
 On installation, Redactor will automatically give full configurator access to all user groups with access to the manager. After that, permissions are not changed unless you remove the policy from the administrator user group again.
 

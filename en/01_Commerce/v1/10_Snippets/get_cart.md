@@ -125,6 +125,7 @@ Array
                             [stock] => 9
                             [weight] => 3
                             [weight_unit] => kg
+                            [image] => path/to/image.jpg
                             [tax_group] => 1
                             [target] => 0
                             [removed] => 
@@ -145,6 +146,7 @@ Array
                     [link] => 
                     [description] => 
                     [price] => 2000
+                    [image] => path/to/image.jpg
                     [quantity] => 1
                     [subtotal] => 2000
                     [discount] => 0

@@ -23,4 +23,4 @@ normally have a `Local` source. If the event is created by a feed it will have a
 
 The create/edit window for one event has a lot of options, that could be set. The
 information about those options could be found in the [Tab
-Overview](01_Overview#createedit) documentation.
+Overview](01_Overview.md#createedit) documentation.

@@ -27,7 +27,7 @@ For example, to use configuration set #12 on a description field, your MIGX form
         "field": "description",
         "caption": "Description",
         "inputTVtype": "migxredactor3",
-        "configs": 14
+        "configs": 12
     }]
 }]
 ```
