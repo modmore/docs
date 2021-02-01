@@ -16,7 +16,7 @@ Excluding a country is done by prefixing its country code with a dash (`-`).
 
 Note that a provided country that is not excluded can be accepted or rejected, based on the entire countries definition.
 
-- If you **only define exclusions** (e.g. `-UK, -FR, -US`), and the provided country is *not* excluded (e.g. `NL`), then it will be **accepted**.
+- If you **only define exclusions** (e.g. `-GB, -FR, -US`), and the provided country is *not* excluded (e.g. `NL`), then it will be **accepted**.
 - If you **define both exclusions and inclusions** (e.g. `NL, EU, -FR`), a country that is not specifically included (e.g. `US`) is **rejected**. This scenario is most useful with the EU short-hand, see below. 
 
 ### European Union short-hand (v1.1+)
@@ -28,7 +28,17 @@ To immediately accept or reject all European Union Member States, add the `EU` o
 'LV', 'LT', 'LU', 'HU', 'MT', 'NL', 'AT', 'PL', 'PT', 'RO', 'SI', 'SK', 'FI', 'SE']
 ```
 
-Note that releases prior to v1.2.0-rc3 the United Kingdom (`UK`, or `GB` for VAT purposes in the EU) was considered to be part of the European Union. That has since been removed following Brexit. If it is important for your integration that the United Kingdom is always included (or excluded), add it separately like `EU, UK` or `-EU, -UK` for consistency across releases.
+Note that releases prior to v1.2.0-rc3 the United Kingdom (`GB`) was considered to be part of the European Union. That has since been removed following Brexit. If it is important for your integration that the United Kingdom is always included (or excluded), add it separately like `EU, GB` or `-EU, -GB` for consistency across releases.
+
+### ISO 3166 vs European Union country codes
+
+Commerce uses **ISO 3166** 2-character codes to represent countries. That includes in the address handling, validation, country restrictions, the EU VAT module, and others.  
+
+In all its wisdom, the European Union uses codes `UK` to represent the United Kingdom (while ISO 3166 uses `GB`) and `EL` for Greece (while ISO 3166 uses `GR`) in the context of VAT and VAT registration numbers. 
+
+As the VIES webservice by the EU, used for validating VAT numbers, requires the EU-specific country codes to be provided (`UK`/`EL`), Commerce will automatically translate `GB` > `UK` and `GR` > `EL` in that specific context. This happens internally, so you do not have to adjust templates and should always ask customers for their ISO code (`GB`/`GR`) - the default checkout does that correctly. 
+
+As of Commerce 1.2.0-rc3, validation of VAT Numbers for the United Kingdom (`GB` country selected) goes directly to the HMRC and the translation from `GB` to `UK` no longer happens on the country code. 
 
 ## Processing Order
 
