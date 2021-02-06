@@ -16,6 +16,47 @@ First install the package via the package manager. It's free.
 
 Next enable the module in Commerce > Configuration > Modules. You'll now find the Time Slots top menu item to be available.
 
+## Commerce 1.2.0-rc2 or earlier
+
+The package requires a fix that ships with 1.2.0-rc3. For older versions, please patch the following.
+
+File: `core/components/commerce/model/commerce/comordershipment.class.php`
+Line: approx 286
+
+Change the following `setShippingMethod` function from:
+
+````php 
+    public function setShippingMethod(comShippingMethod $method, array $data = [])
+    {
+        $this->set('method', $method->get('id'));
+        $this->set('fee', 0); // Reset the fee so it doesn't affect anything
+        $this->calculate(); // Recalculate the totals and the fee
+        return true;
+    }
+````
+
+to:
+
+````php
+    public function setShippingMethod(comShippingMethod $method, array $data = [])
+    {
+        $this->set('method', $method->get('id'));
+        $this->set('fee', 0); // Reset the fee so it doesn't affect anything
+        
+        // Allow the shipping method to receive the data and process things accordingly
+        $success = $method->setShippingInformation($this->getOrder(), $this, $data);
+
+        // Recalculate the totals and the fee
+        $this->calculate();
+
+        return $success;
+    }
+````
+
+Without this fix, submitting the shipping method will show an error (and/or redirect back to the checkout; some JS enhancements don't show the error immediately).
+
+We don't normally recommend editing core files, however (1) this module was built on a tight time frame to accommodate shops being allowed to reopen for pickup, (2) this is an easy fix, (3) the fix is already included in a future release so you wont lose the patch once you upgrade to 1.2.0-rc3 or above.
+
 ## Managing time slots
 
 Managing available slots is a three-step process in Commerce: 
