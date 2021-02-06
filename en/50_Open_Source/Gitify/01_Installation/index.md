@@ -35,7 +35,7 @@ install
   install:modx   Downloads, configures and installs a fresh MODX installation.
 ````
 
-If that's working as expected, the next step is to add the Gitify executable to your PATH so you can run Gitify in any directory. Edit your `~/.bash_profile` and add the following, with the right path to the Gitify directory (not file) of course:
+If that's working as expected, the next step is to add the Gitify executable to your PATH so you can run Gitify in any directory. Edit your `~/.bash_profile`, `~/.zshrc` or `~/.profile` file and add the following, with the right path to the Gitify **directory** (not the executable file):
 
 ````
 export PATH=/path/to/Gitify/:$PATH
