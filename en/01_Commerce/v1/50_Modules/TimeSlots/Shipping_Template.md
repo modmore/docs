@@ -1,4 +1,4 @@
-Time Slot uses a template in `clickcollect/frontend/shipping_form.twig` for rendering its options for customers.
+Time Slot uses a template in `timeslots/frontend/shipping_form.twig` for rendering its options for customers.
 
 When replacing this with your own theme, make sure that you provide `name="shipment_details[{{ shipment.id }}][date]` with the selected date in Y-m-d format, and that `name="shipment_details[{{ shipment.id }}][slot]` contains the ID of the selected timeslot.
 
