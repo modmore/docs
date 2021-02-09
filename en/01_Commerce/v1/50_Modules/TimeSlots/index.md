@@ -83,8 +83,10 @@ To make sure placing an order reduces the amount of reservations that can be pla
 
 Add the "Reserve Time Slot" status change action. 
 
-## Customising the front-end
+## Customising the front-end and emails
 
 By default the available dates and slots are shown in a similar way as different payment gateways show their options, which has some basic styling attached in both the default theme and the Red starter page. 
 
 You can apply your own CSS to make it fit your brand, or you can [replace the template to build something completely different](Shipping_Template).
+
+To show the selected time slot in the checkout or emails, [see the instructions for accessing slot information](Accessing_Slot_Information).
