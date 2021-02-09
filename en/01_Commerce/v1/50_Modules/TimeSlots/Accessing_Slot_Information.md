@@ -58,7 +58,7 @@ array (size=5)
   'timeslots_slot_info' => 
     array (size=21)
       'id' => int 31
-      'class_key' => string 'clcoDateSlot' (length=12)
+      'class_key' => string 'ctsDateSlot' (length=12)
       'properties' => null
       'for_date' => int 5
       'base_slot' => int 10
@@ -69,7 +69,7 @@ array (size=5)
       'max_reservations' => int 50
       'available_reservations' => int 50
       'date_id' => string '5' (length=1)
-      'date_class_key' => string 'clcoDate' (length=8)
+      'date_class_key' => string 'ctsDate' (length=8)
       'date_properties' => null
       'date_for_date' => string '2021-02-07' (length=10)
       'date_schedule' => string '3' (length=1)
