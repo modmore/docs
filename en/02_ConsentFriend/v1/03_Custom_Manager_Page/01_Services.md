@@ -7,13 +7,13 @@ with just a few lines of code.
 
 [![](img/services.png)](img/services.png)
 
-You can create a new service with a click on the create service button on the
+You can create a new service with a click on the New Service button on the
 top left above the services grid.
 
-You can export the services to an xml file with a click on the export services
+You can export the services to a YAML file with a click on the Export Services
 button above the services grid.
 
-You can import a xml file with the services with a click on the import services
+You can import a YAML file with the services with a click on the Import Services
 button above the services grid. In the import window you could select a file to
 import and the import mode. In the append mode the entries in the file are
 appended to the existing services in the grid. In the replace mode the existing
@@ -26,8 +26,8 @@ The grid can be filtered by a search input on the top right above the services
 grid.
 
 Each service can be edited by a click on the edit icon in the row of the
-service. It can be deleted after a confirmation with a click on the trash icon
-in the row of the service.
+service. And it can be deleted after a confirmation with a click on the trash
+icon in the row of the service.
 
 The row of each service shows the service name, the title, some options, and the
 purposes. The service title will be shown in green, when it is retrieved from a
