@@ -4,13 +4,13 @@ setting](../04_System_Settings.md) `consentfriend.group_by_purpose` is enabled.
 
 [![](img/purposes.png)](img/purposes.png)
 
-You can create a new purpose with a click on the create purpose button on the top
+You can create a new purpose with a click on the New Purpose button on the top
 left above the purposes grid.
 
-You can export the purposes to an xml file with a click on the export purposes
+You can export the purposes to a YAML file with a click on the Export Purposes
 button above the purposes grid.
 
-You can import a xml file with the purposes with a click on the import purposes
+You can import a YAML file with the purposes with a click on the Import Purposes
 button above the purposes grid. In the import window you could select a file to
 import and the import mode. In the append mode the entries in the file are
 appended to the existing purposes in the grid. In the replace mode the existing
@@ -19,8 +19,8 @@ mode the existing purposes in the grid are updated with the entries in the file.
 
 [![](img/purposes-import.png)](img/purposes-import.png)
 
-The grid can be filtered by a search input on the top right above the
-purposes grid.
+The grid can be filtered by a search input on the top right above the purposes
+grid.
 
 Each purpose can be edited by a click on the edit icon in the row of the
 purpose. And it can be deleted after a confirmation with a click on the trash
