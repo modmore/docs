@@ -40,6 +40,8 @@ When enabled ContentBlocks will load unminified assets to help debug issues. Typ
 
 When this setting is turned on, ContentBlocks will no longer be used. This setting in particular is useful to only selectively enable ContentBlocks per context, as you can disable ContentBlocks globally through this system setting, and then enable it on a specific context by adding a context setting with the same key.
 
+**Default:** `0 (false)` (means ContentBlocks is enabled)
+
 #### Enable/Disable by template
 
 **To enable or disable ContentBlocks by template**, you previously needed to create a custom plugin to override the per-resource `contentblocks._isContentBlocks` flag in the properties. That's a flexible approach that will still work, and also allows you to go beyond simple template conditionals if needed. 
@@ -55,9 +57,6 @@ As of ContentBlocks v1.10, you can also configure this through the template prop
 This way of enabling/disabling ContentBlocks takes priority over the per-resource flag. Just like context-level restrictions, if ContentBlocks is disabled, it will not show up at all on the resource.
 
 [All ways of enabling or disabling ContentBlocks are summarised here.](https://support.modmore.com/article/71-can-i-enable-disable-contentblocks-system-wide-per-context-per-resource-or-based-on-other-factors)
-
-
-**Default:** `0 (false)`
 
 ### Hide Logo (`contentblocks.hide_logo`) 
 
