@@ -2,7 +2,7 @@
 title: Configuration
 ---
 
-Most configuration for ContentBlocks is done through the Component (and the [fields](Fields), [layouts](Layouts) and [templates](Templates) that makes available), however there are also a number of System Settings available that can be used to change the way ContentBlocks works.
+Most configuration for ContentBlocks is done through the Component (through the [fields](Fields), [layouts](Layouts) and [templates](Templates) that makes available), however there are also a number of System Settings available that can be used to change the way ContentBlocks works.
 
 All of these settings are created automatically when installing ContentBlocks. They can also be added manually to Users, User Groups or Contexts to override their values for specific users or contexts. To do that, add a new setting with the mentioned key (including the `contentblocks.` prefix!) and the desired value.
 
@@ -39,7 +39,23 @@ When enabled ContentBlocks will load unminified assets to help debug issues. Typ
 ### Disabled (`contentblocks.disabled`) 
 
 When this setting is turned on, ContentBlocks will no longer be used. This setting in particular is useful to only selectively enable ContentBlocks per context, as you can disable ContentBlocks globally through this system setting, and then enable it on a specific context by adding a context setting with the same key.
-When this setting is turned on, ContentBlocks will no longer be used. This setting in particular is useful to only selectively enable ContentBlocks per context, as you can disable ContentBlocks globally through this system setting, and then enable it on a specific context by adding a context setting with the same key.
+
+#### Enable/Disable by template
+
+**To enable or disable ContentBlocks by template**, you previously needed to create a custom plugin to override the per-resource `contentblocks._isContentBlocks` flag in the properties. That's a flexible approach that will still work, and also allows you to go beyond simple template conditionals if needed. 
+
+As of ContentBlocks v1.10, you can also configure this through the template properties. 
+
+1. First decide if you want to _whitelist_ templates (in which case you disable ContentBlocks globally, and then enable it per-template), or _blacklist_ them (in which you enable ContentBlocks globally, but disable specific templates). Set the `contentblocks.disabled` system (or context) setting accordingly.   
+2. Edit the template you want to enable/disable. Navigate to the Properties tab.
+3. Unlock the default properties by clicking the "Default Properties Locked" button in the grid. (While for snippets and plugins you would typically create a custom property set, that's not currently possible for templates.)
+4. Create a new property with key `contentblocks.disabled` - please make sure to check your spelling. Set the value to 1 if you want to allow ContentBlocks on this template, set the value to 0 (or an empty string) to disallow it. 
+5. Repeat for other templates you are whitelisting/blacklisting.
+
+This way of enabling/disabling ContentBlocks takes priority over the per-resource flag. Just like context-level restrictions, if ContentBlocks is disabled, it will not show up at all on the resource.
+
+[All ways of enabling or disabling ContentBlocks are summarised here.](https://support.modmore.com/article/71-can-i-enable-disable-contentblocks-system-wide-per-context-per-resource-or-based-on-other-factors)
+
 
 **Default:** `0 (false)`
 
