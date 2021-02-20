@@ -27,8 +27,8 @@ By default Scheduler only runs one task each time it is triggered. You can chang
 How to set up the cron job depends on your server, but the command you will want to add is the following:
 
 
-```` html   
-php -q /home/server\_user/path/to/assets/components/scheduler/run.php   
+```` html
+php -q /home/server\_user/path/to/assets/components/scheduler/run.php
 ````
 
-If you use an external cron job service, simply point it to `assets/components/scheduler/run.php` file.
+If you use an external cron job service, point it to the `assets/components/scheduler/run.php` file.
