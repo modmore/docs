@@ -5,8 +5,9 @@ Within a Tax Group are **Tax Rules**. These are simple logical rules, with condi
 The **Rate Provider** is an implementation that takes in the order/cart contents, and returns a **Tax Rate**. There are different types of rate providers, each with their own behaviour, such as:
 
 - **Manual Rate Provider**: returns a fixed tax rate that you provide in its options.
-- **European Union VAT Rates Provider**: returns a tax rate, based on a category (standard, reduced, etc), for either the customers' country or a country you specify in the options. 
-- **TaxJar United States Sales Tax Provider**: integrates with the TaxJar service to provide accurate Sales Tax for any purchase in the United States. 
+- **European Union VAT Rates**: returns a tax rate, based on a category (standard, reduced, etc), for either the customers' country or a country you specify in the options. Only for countries in the EU.
+- **TaxJar US Sales Tax**: integrates with the TaxJar service to provide accurate Sales Tax for purchases in the United States. 
+- **Avalara US Sales Tax**: integrates with the Avalara service provide accurate Sales Tax for purchases in the United States, plus address validation and augmentation (eg 5 to 9 character zip codes), exemption certificates support (CertCapture), plus tax reconcilition in AvaTax. 
 
 These elements make up taxes in Commerce. Below, we'll go into more detail about each of them.
 
@@ -73,9 +74,7 @@ Used when you want to define the tax rate yourself. Its option accepts the rate 
 
 ### European Union VAT Rates provider
 
-Used for retrieving VAT rates in the EU. In the rate provider options you can provided a named rate (`reduced`, `standard` etc), and that rate will be used. 
-
-This provider gets its VAT rates data from [jsonvat.com](https://jsonvat.com/). 
+Used for retrieving VAT rates in the EU. In the rate provider options you can provided a named rate (`reduced`, `standard` etc), and that rate will be used. This provider gets its VAT rates data from a private API modmore hosts for Commerce exclusively. 
 
 The [EUVat Module](Modules/Taxes/EUVat) needs to be enabled for this rate provider to be available.
 
@@ -85,7 +84,9 @@ There are several use cases for this provider.
 - When selling to businesses, it can be used alongside the [EU VAT Validator module](Modules/Address_Validation/EUVat_Validator) to apply the _Reverse Charge_ mechanism. This means the customer is not charged any VAT, but instead they file taxes in their own country and pay the VAT there. To use this, set up the EU VAT Validator module and tick the _Use Reverse Charge_ checkbox in the rate provider options.
 - It can also be used for using a fixed country's tax rate, without having to hardcode it. By setting the _Use Country_ option to a specific country code, it will retrieve that country its tax rates, and apply the named rate you provided. For example setting _Use Country_ to `NL`, and the rate to `standard` will apply the standard Dutch VAT rate of 21% to orders.
 
-### TaxJar United States Sales Tax provider
+Note that since Brexit the United Kingdom is not considered part of the European Union and you should use the Manual Tax Rate Provider. 
+
+### TaxJar integration
 
 For sales tax in the United States we've integrated with the [TaxJar](https://taxjar.com) SmartCalcs API. You can provide your Nexus via the MODX system settings, or in the SmartCalcs dashboard, and the system will then apply the proper sales tax automatically. Where possible, it will apply state, county and city tax separately to ease your reporting.
 
@@ -97,6 +98,12 @@ If you have different products which need their own exemption code, then you've 
 
 If your US Sales Tax requirements are simple (only a handful of unique combinations), you can also set them up with the manual tax rate provider, but that does not currently have the ability to provide split up rates (e.g. state/county/city sales tax). 
 
+### Avalara integration
+
+For sales tax, address validation, exemption certificates, and tax reconciliation, we have an integration with Avalara available. This integration is available in a separate package, available to install from the modmore package provider for free. 
+
+[Learn more about the Avalara integration for Commerce](https://docs.modmore.com/en/Commerce/v1/Modules/Avalara.html)
+
 ### Custom Rate Providers
 
 It's possible to develop [custom tax rate providers](Developer/Custom_Tax_Rate_Providers) for when none of the available ones meet your requirements. 
@@ -107,11 +114,11 @@ The final, and most important, part of the tax puzzle is the actual Tax Rate. In
 
 Tax Rates are applied to Order Items, with the calculation of the taxable and tax amounts happening there. 
 
-Tax Rates can be reviewed, but not edited, under Configuration > Tax Rates. 
+Tax Rates can be reviewed, but not edited, under Configuration > Tax Rates. They are created by the tax rate providers automatically.
 
 ## Showing Taxes before the customer enters their address
 
-To show the expected amount of taxes for an order before the customer entered their details in the checkout, you can use modules like [AutoFillGeoIP](Modules/Cart/AutoFillGeoIP), and [UserProfileAddress](Modules/Cart/UserProfileAddress). These pre-fill an _Expected Address_ on the order based on the customer's IP Address and MODX User profile respectively, which is available to the Tax Rules to attempt to make an early tax rate determination.
+To show the expected amount of taxes for an order before the customer entered their details in the checkout, you can use modules like [AutoFillGeoIP](Modules/Cart/AutoFillGeoIP), [Default Address](Modules/Cart/DefaultAddress), and [UserProfileAddress](Modules/Cart/UserProfileAddress). These pre-fill an _Expected Address_ on the order based on the customer's IP Address, a hard-coded state/country, and MODX User profile respectively, which is then available to the Tax Rules to attempt to make an early tax rate determination. 
 
 Only if all details used in the tax rule conditions is available, will its rate provider lookup be processed. 
 
