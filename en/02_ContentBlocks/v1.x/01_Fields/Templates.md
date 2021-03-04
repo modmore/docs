@@ -1,5 +1,7 @@
 Field templates can be found by editing a [field in the ContentBlocks component](../Fields) and opening the Properties tab.
 
+[TOC]
+
 ## Placeholders
 
 Templates use the standard MODX parser, and have access to a number of placeholders in the form of `[[+KEY]]`.
@@ -23,7 +25,7 @@ It's also possible to access layout settings in field templates (as of v1.8.3). 
 [[+layout_settings.my_setting_key]
 ```
 
-## Using @CHUNK
+## Using @CHUNK templates
 
 If you'd like to use static elements, you can use chunks. The best way to do so is by using the `@CHUNK` syntax, which will pass all available placeholders into your chunk automatically.
 
@@ -45,3 +47,31 @@ That will be parsed by ContentBlocks into a full chunk tag, like this:
     ...
 ]]
 ```
+
+(_This works exactly the same in layout templates._)
+
+## Using @FILE templates
+
+As of v1.11 `@FILE` templates are also supported.
+
+Unlike `@CHUNK` templates which don't get parsed until the front-end renders a resource, `@FILE` templates are parsed during the resource save so are more performant. You do however need to save the resource or rebuild all pages after making a change to a template file, similar to regular inline templates.
+
+The syntax is simply `@FILE path/to/file.ext`. There is no required extension, but `.tpl` or `.html` is suggested.
+
+**In order to use `@FILE`, you need to configure a media source and path first.**
+
+1. Create, if you don't already have one, a media source to hold the templates. We strongly recommend using one that has its base path set to a non-web-accessible location, such as `core/elements/`.
+2. Set the `contentblocks.file_template_source` system setting to your media source.
+3. Set the `contentblocks.file_template_path` system setting to a path inside that media source where ContentBlocks templates are located. To use the root of the media source, use `/`. By setting this to a value like `contentblocks` or `cb`, you can use it alongside other elements.
+
+After these steps, you can go to Extras > ContentBlocks to add the `@FILE` template to your fields or layouts.
+
+If the media source and/or path is not correct, your front-end will render the following:
+
+```html
+<p class="error">Failed processing template, please refer to the error log.</p>
+```
+
+The MODX error log will have a more detailed message telling you if the problem was loading the media source or the template file. If it can't find the file, it will log the full path to make debugging easier.
+
+(_This works exactly the same in layout templates._)

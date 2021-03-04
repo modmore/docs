@@ -27,3 +27,9 @@ There are three import modes available, each with their own use cases and caveat
 If you need help figuring out the right import mode for your situation, please don't hesitate to get in touch with support@modmore.com.
 
 [![](https://assets.modmore.com/uploads/2015/12/contentblocks_import.png)](https://assets.modmore.com/uploads/2015/12/contentblocks_import.png)
+
+## Handling Repeaters
+
+To import/export repeaters, make sure you're using at least v1.11 of ContentBlocks. Older versions could not properly import the subfields.
+
+While other fields in exports are backwards compatible, it's recommended to re-export any exports you commonly use on v1.11 to make sure it uses the new format.
