@@ -60,7 +60,10 @@ For example, only showing products that are in stock:
 [[commerce.get_products? 
     &products=`[[+tv.products]]`
     &tpl=`products.product_option` 
-    &where=`{"stock:>=":1}`
+    &where=`{
+        "stock:>=":1,
+        "or:stock_infinite:=":1
+    }`
 ]]
 ````
 
