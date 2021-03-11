@@ -24,6 +24,7 @@ As of 1.0.0-rc2, here is what fields are available on a standard product:
 - `name`
 - `description`
 - `stock`
+- `stock_infinite`
 - `weight`, `weight_unit`, `weight_formatted`: the weight for a product; you'd typically use `weight_formatted` which combines the decimal `weight` and the `unit` and then formats it nicely.
 - `image`: primary image, if set
 - `tax_group`: ID of the tax group this product is assigned to.
