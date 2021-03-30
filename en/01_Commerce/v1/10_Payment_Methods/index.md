@@ -36,12 +36,11 @@ Unless otherwise noted, the gateways below are included in the standard Commerce
 | [Omise](https://modx.com/extras/package/omisepaymentgatewayforcommerce) (third-party extension) | Credit card, PromptPay, TrueMoney Wallet, internet banking (Asia) | see extension |
 | [Paymill](Paymill) (core) | Credit Cards (primarily DE, EU) | On-site (JavaScript frame) | ✓ (note 3) |
 | [PayPal](PayPal) (core) | Express, supporting PayPal account, credit cards | Off-site (direct) | ✓ (note 1) |
+| [PostFinance Checkout](https://modx.com/extras/package/postfinancecheckoutpaymentgatewayforcommerce) (third-party extension) | PostFinance card, PostFinance e-finance, TWINT, Visa and Mastercard | see extension |
 | [SagePay](SagePay) (core) | Credit Cards (primarily UK) | Off-site (hosted payment page) | ✓ (note 1) |
 | [SplitIt](https://modx.com/extras/package/splititpaymentgatewayforcommerce) (third-party extension) | Multiple installments | see extension |
 | [Stripe](Stripe) (core) | Credit Cards |  On-site (v1.1+: Payment Intents, v1.0: v2 tokenisation) | ✓ (v1.1+) |
 | [WiPay](WiPay) (official extension) | Credit Cards (Caribbean) | Off-site (hosted payment page) | ✓ |
-| [PostFinance Checkout](https://modx.com/extras/package/postfinancecheckoutpaymentgatewayforcommerce) (third-party extension) | PostFinance card, PostFinance e-finance, TWINT, Visa and Mastercard | see extension |
-
 
 Notes:
 
