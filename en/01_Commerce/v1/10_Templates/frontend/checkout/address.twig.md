@@ -8,9 +8,9 @@ The address step requires a hidden input field with the name `add_address` and v
 
 As of Commerce 0.10, the `shipping_address` and `billing_address` POST fields must contain either the ID of a previously used address (for a logged in user), or the string `new`. `billing_address` can also be set to `same`, to use the same billing and shipping address. For compatibility with pre-0.10 templates, a POST field with name `add_billing_address` and a true-ish value (like `1`) acts the same as if `billing_address` was set to `new`.
 
-Submitting address fields uses nested (array-like) field names. The top level is `address`, the next level is either `shipping` or `billing`, and then there's the actual address field. For example, the `company` field on a `billing` address should be submitted with a field named `address[billing][company]`. 
+Submitting address fields uses nested (array-like) field names. The top level is `address`, the next level is either `shipping` or `billing`, and then there's the actual address field. For example, the `company` field on a `billing` address should be submitted with a field named `address[billing][company]`.
 
-The following field names are supported on addresses. 
+The following field names are supported on addresses.
 
 - fullname
 - firstname
@@ -31,6 +31,8 @@ The following field names are supported on addresses.
 Additional fields can be submitted to a generic `properties` field. For example the VAT registration is submitted to `address[billing][properties][vat_registration]`.
 
 To remember a new address for future checkouts, provide a `remember` value of `1`, for example with a field like `<input type="checkbox" name="address[billing][remember]" id="address-billing-remember" value="1" checked="checked">` It's recommended to leave this optional so users can choose, but you can also turn it into a hidden input to always remember addresses.
+
+If the Basic Address Validation module is enabled, a `required_address_fields` placeholder is available (as of v1.2.0-rc4) containing an array of all required fields. This can be used to automatically add form validation or required-field indicators, e.g.: `{% if "email" in required_address_fields %}<span class="required" aria-label="Required">*</span>{% endif %}`
 
 ## Default
 
