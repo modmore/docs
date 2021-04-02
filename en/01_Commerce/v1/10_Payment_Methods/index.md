@@ -39,6 +39,7 @@ Unless otherwise noted, the gateways below are included in the standard Commerce
 | [PostFinance Checkout](https://modx.com/extras/package/postfinancecheckoutpaymentgatewayforcommerce) (third-party extension) | PostFinance card, PostFinance e-finance, TWINT, Visa and Mastercard | see extension |
 | [SagePay](SagePay) (core) | Credit Cards (primarily UK) | Off-site (hosted payment page) | ✓ (note 1) |
 | [SplitIt](https://modx.com/extras/package/splititpaymentgatewayforcommerce) (third-party extension) | Multiple installments | see extension |
+| [SprayPay](https://modx.com/extras/package/commercespraypay) (third-party extension) | Multiple installments | see extension |
 | [Stripe](Stripe) (core) | Credit Cards |  On-site (v1.1+: Payment Intents, v1.0: v2 tokenisation) | ✓ (v1.1+) |
 | [WiPay](WiPay) (official extension) | Credit Cards (Caribbean) | Off-site (hosted payment page) | ✓ |
 
