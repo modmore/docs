@@ -13,6 +13,7 @@ limit | Limit the number of calendars in the result. Use `0` for unlimited calen
 listId | ID of a resource containing an AgendaList snippet call. | System Setting `agenda.list_id`
 offset | An offset of calendars returned by the criteria to skip. | 0
 outputSeparator | An optional string to separate each tpl instance. | -
+resourceTpl | Name of a chunk that contains the template for the linked resource of a calendar. | -
 toPlaceholder | If set, the snippet result will be assigned to this placeholder instead of outputting it directly. | -
 totalVar | The key of a placeholder that indicates the total number of calendars returned by the criteria. | agendacalendars.total
 tpl | Name of a chunk that contains the template for one calendar. | tplAgendaCalendar
