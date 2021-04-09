@@ -22,6 +22,7 @@ locale | The locale for the displayed formatted date. | System/Context setting `
 locations | Comma separated list of aliases of locations to filter the displayed event. | -
 locationTpl | Name of a chunk that contains the template for the location of an event. | tplAgendaEventLocation
 repeating | ID of one recurring event to retrieve the displayed event. | Request parameter `repeating`
+resourceTpl | Name of a chunk that contains the template for the linked resource of an event. | -
 toPlaceholder | If set, the snippet result will be assigned to this placeholder instead of outputting it directly. | -
 tpl | Name of a chunk that contains the template for one event. | tplAgendaEventDetail
 usergroups | Comma separated list of user group names to filter the displayed event. | -

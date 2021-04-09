@@ -39,3 +39,7 @@ This hook allows to fill FormIt values by [Agenda events](08_AgendaEventGet).
 #### AgendaEventSet
 
 This hook allows to set [Agenda events](09_AgendaEventSet) values by FormIt.
+
+#### AgendaSearch
+
+This hook allows to search for [Agenda events](10_AgendaSearch) in SimpleSearch faceted search.

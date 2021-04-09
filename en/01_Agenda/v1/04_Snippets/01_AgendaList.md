@@ -27,6 +27,7 @@ locations | Comma separated list of aliases of locations to filter the displayed
 locationTpl | Name of a chunk that contains the template for the location of an event. | tplAgendaEventLocation
 offset | An offset of locations returned by the criteria to skip. | 0
 outputSeparator | An optional string to separate each tpl instance. | -
+resourceTpl | Name of a chunk that contains the template for the linked resource of an event. | -
 sortby | Sort field for sorting the output. It could also contain a JSON object to sort the output by multiple fields like `{"AgendaEvents.title":"ASC","all_startdate":"ASC"}`. | all_startdate
 sortdir | Sort direction for sorting the output. Unused when the sortby property contains a valid JSON object. | ASC
 start | The start date to filter the displayed events. Must contain a [supported date and time format](https://www.php.net/manual/de/datetime.formats.php). | today 0:00
