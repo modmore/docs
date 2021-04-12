@@ -2,9 +2,7 @@ Klarna allows customers to pay for your order later and in multiple installments
 
 [Learn more about Klarna on its official site](https://www.klarna.com/), and [find supported payment options per country here](https://developers.klarna.com/documentation/klarna-payments/in-depth-knowledge/payment-method-availability/).
 
-To use Klarna with Commerce, you'll need to install the separate Klarna extension, available from the modmore.com package provider. The extension requires at least Commerce v1.1.5.
-
-> **Note**: Klarna and Commerce 1.1.5 are coming soon. This doc was just written in advance. ;)
+To use Klarna with Commerce, you'll need to install the separate Klarna extension, available from the modmore.com package provider. The extension requires at least Commerce v1.2.0-rc3.
 
 [TOC]
 
