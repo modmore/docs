@@ -129,7 +129,7 @@ HTTPOnly attribute. [See the documentation](https://developer.mozilla.org/en-US/
 In the callbacks tab you can enter several service callback codes in the
 textareas of the four callback tabs.
 
-[![](img/service-callbacks.png)](img/service-callback.png)
+[![](img/service-callbacks.png)](img/service-callbacks.png)
 
 **On Toggle:** This callback code is executed when the service consent is
 changed. It must contain a javascript function with the two properties
