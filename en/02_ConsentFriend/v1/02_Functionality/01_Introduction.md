@@ -76,5 +76,3 @@ If you want to add a link to the consent management window on a page, you could 
 ```
 <a onclick="klaro.show();return false;">[[%consentfriend.services.change_setting? &namespace=`consentfriend`]]</a>
 ```
-
-

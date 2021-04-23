@@ -7,8 +7,8 @@ with just a few lines of code.
 
 [![](img/services.png)](img/services.png)
 
-You can create a new service with a click on the New Service button on the
-top left above the services grid.
+You can create a new service with a click on the New Service button on the top
+left above the services grid.
 
 You can export the services to a YAML file with a click on the Export Services
 button above the services grid.
@@ -98,21 +98,6 @@ In the code tab you can select the code section and enter the service code.
 service code will be automatically disabled for a direct execution before the
 injection. MODX context/system settings tags could be used in the service code.
 
-### Callback Tab
-
-In the callback tab you can enter the service callback code.
-
-[![](img/service-callback.png)](img/service-callback.png)
-
-**Callback:** The service callback code thats executed when the service is
-loaded or the initial consent is changed. It must contain a javascript function
-with the two properties `consent` and `service`. `consent` contains the consent
-state (true = consented) and `service` contains the service configuation. 
-
-The demo data of the googleRecaptcha service contains a code example that
-disables all inputs with `data-name="googleRecaptcha"`. Please look into the
-[reCAPTCHA usage example](../02_Functionality/Google_reCAPTCHA.md).
-
 ### Cookies Tab
 
 In the cookies tab you can edit the cookies of that service in a grid. Adding
@@ -138,3 +123,43 @@ properly, the cookie can't be deleted by ConsentFriend, as there is no way to
 access the path or domain of a cookie in JS. Notice that it is not possible to
 delete cookies that were set on a third-party domain, or cookies that have the
 HTTPOnly attribute. [See the documentation](https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie#new-cookie_domain)
+
+### Callbacks Tab
+
+In the callbacks tab you can enter several service callback codes in the
+textareas of the four callback tabs.
+
+[![](img/service-callbacks.png)](img/service-callback.png)
+
+**On Toggle:** This callback code is executed when the service consent is
+changed. It must contain a javascript function with the two properties
+`consent` and `service` or stay empty. `consent` contains the consent state
+(true = consented) and `service` contains the service configuation.
+
+The demo data of the googleRecaptcha service contains a code example that
+disables all inputs with `data-name="googleRecaptcha"`. Please have a look at
+the [reCAPTCHA usage example](../02_Functionality/Google_reCAPTCHA.md).
+
+The `On Toggle` callback was named `Callback` before ConsentFriend 1.3.0. The next
+callbacks are available with ConsentFriend 1.3.0.
+
+**On Init:** This callback code is executed when the service is initialized
+(once per page-load). It must contain a javascript function with the property
+`opts` or stay empty. `opts` contains the configuration of the ConsentFriend
+script in `opts.config`, the service configuation in `opts.service` and an
+optional configuration in `opts.vars`. Here you can create additional variables
+to be used later in the `On Accept` and `On Decline` callbacks.
+
+**On Accept:** This callback code is executed when the service is accepted. 
+It must contain a javascript function with the property `opts` (see
+`On Init` callback) or stay empty.
+
+**On Decline:** This callback code is executed when the service is declined.
+It must contain a javascript function with the property `opts` (see
+`On Init` callback) or stay empty.
+
+The demo data of the googleTagManager service contains code examples for the
+three callbacks above that use the new Google Tag Manager `Consent Mode`. It
+will load the Google Analytics tag via Google Tag Manager, but only if you have
+consented to use Google Analytics via ConsentFriend. Please have a look at the
+[Google Tag Manager usage example](../02_Functionality/Google_Tag_Manager.md).
