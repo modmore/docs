@@ -1,7 +1,9 @@
 
-ContentBlocks is available in English (default), German, French, Dutch, Polish, Russian and Swedish, [which we manage through CrowdIn](https://crowdin.net/project/modmore-contentblocks). This covers all core text, including instructions, buttons, labels, settings and more.
+ContentBlocks itself is available in English (default), German, French, Dutch, Polish, Russian and Swedish, [which we manage through CrowdIn](https://crowdin.net/project/modmore-contentblocks). This covers all core text, including instructions, buttons, labels, settings and more.
 
 The data you define through the component (fields, layouts and templates) also supports translations since v1.1. This allows you to present different names and descriptions for your users depending on their manager language. We support lexicons on field, layout and template names and descriptions, as well as field and layout settings and properties on select input types (chunk, snippet and chunk selector).
+
+At the moment ContentBlocks does not have a built-in way to translate your content. For this we recommend a multi-context solution (optionally with the Babel and/or LangRouter extras). Note that ContentBlocks and Lingua are **not** compatible.
 
 [TOC]
 
@@ -19,14 +21,16 @@ $_lang['my_class'] = 'foobar';
 
 The entries (`my_richtext_field` and `my_class` in the example above) need to match the text you want to replace. This can be one of the following:
 
-- Field names (both for display in the content canvas, as well as the "Add Content" modal)
+- Field names (both for display in the content canvas, and the "Add Content" modal)
 - Field descriptions (in the Add Content modal tooltip)
-- Layout names (both for display in the content canvas, as well as the "Add Layout" modal)
+- Layout names (both for display in the content canvas, and the "Add Layout" modal)
 - Layout descriptions (in the Add Layout modal tooltip)
 - Field and Layout Settings name (for modal and exposed settings)
 - Field and Layout Setting Options display values (for modal and exposed settings)
 
 For example, if you named a field "Headline", your lexicon entry would be `$_lang['Headline'] = 'Headline translation';`
+
+To avoid lexicon conflicts, it may be useful to prefix the keys with a namespace of your own.
 
 ## Loading the Lexicon Topic
 
