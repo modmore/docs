@@ -20,24 +20,28 @@ The table below contains a list of gateways that are currently available for Com
 
 **On/off-site** summarizes the integration. When an integration is "on-site", the customer doesn't leave the site but they enter their payment information in the checkout. When listed as "Off-site", customers are redirected to either a hosted payment page (where they can select a payment option and fill in their payment details), or for "direct" integrations they are sent directly to the payment source (e.g. iDeal/Sofort integrations redirect directly to the bank login screen). 
 
-**SCA Ready** indicates if the payment gateway has been updated in accordance with _Strong Customer Authentication_ (SCA) regulation introduced in the _Revised Payment Services Directive_ (aka PSD2). These requirements will go into effect for European customers on September 14, 2019. 
+**SCA Ready** indicates if the payment gateway has been updated in accordance with _Strong Customer Authentication_ (SCA) regulation introduced in the _Revised Payment Services Directive_ (aka PSD2). These requirements went into effect for European customers on September 14, 2019. 
 
 Unless otherwise noted, the gateways below are included in the standard Commerce package and covered by standard support. 
 
 | Gateway | Payment options | On/off-site | SCA Ready? |
 |---|---|---|---|
 | [Adyen](Adyen_hpp) ([Gateway Pack 1](../Modules/Payments/GatewayPack1)) | Lots of global, regional, and local payments | Off-site (hosted payment page) | ✓ |
-| [Authorize.net](Authorize.net) | Credit Cards | On-site (JavaScript) | ? (note 2) |
-| [Braintree](Braintree) | Credit Cards, PayPal | On-site (JavaScript)  | ✓ (v1.1+) |
-| [Klarna](Klarna) | Several, including "Pay Later", depending on country | On-site (JavaScript) | ✓ |
-| [Manual](Manual) | None; marks all transactions as successful. | On-site (server-side) | Not applicable |
-| [Mollie](Mollie) | Many, including iDeal, Sofort, Bancontact, Credit Card, and others. | Off-site (direct or hosted payment page) | ✓ (note 1) |
-| [MultiSafePay](MultiSafePay) | Many, including iDeal, Sofort, Bancontact, credit card (hosted form), and others. | Off-site (direct or hosted payment page) | ✓ (note 1) |
-| [Paymill](Paymill) | Credit Cards | On-site (JavaScript frame) | ✓ (note 3) |
-| [PayPal](PayPal) | PayPal account, credit cards | Off-site (direct) | ✓ (note 1) |
-| [SagePay](SagePay) | Credit Cards | Off-site (hosted payment page) | ✓ (note 1) |
-| [Stripe](Stripe) | Credit Cards |  On-site (v1.1+: Payment Intents, v1.0: v2 tokenisation) | ✓ (v1.1+) |
-| [WiPay](WiPay) | Credit Cards | Off-site (hosted payment page) | ✓ |
+| [Authorize.net](Authorize.net) (core) | Credit Cards (primarily USA) | On-site (JavaScript) | ? (note 2) |
+| [Braintree](Braintree) (core) | Credit Cards, PayPal | On-site (JavaScript)  | ✓ (v1.1+) |
+| [Klarna](Klarna) (official extension) | Several, including "Pay Later", depending on country (primarily EU) | On-site (JavaScript) | ✓ |
+| [Manual](Manual) (core) | None; marks all transactions as successful. | On-site (server-side) | Not applicable |
+| [Mollie](Mollie) (core) | Many, including iDeal, Sofort, Bancontact, Credit Card, and others (primarily NL, EU) | Off-site (direct or hosted payment page) | ✓ (note 1) |
+| [MultiSafePay](MultiSafePay) (core) | Many, including iDeal, Sofort, Bancontact, credit card (hosted form), and others (primarily NL, EU) | Off-site (direct or hosted payment page) | ✓ (note 1) |
+| [Omise](https://modx.com/extras/package/omisepaymentgatewayforcommerce) (third-party extension) | Credit card, PromptPay, TrueMoney Wallet, internet banking (Asia) | see extension |
+| [Paymill](Paymill) (core) | Credit Cards (primarily DE, EU) | On-site (JavaScript frame) | ✓ (note 3) |
+| [PayPal](PayPal) (core) | Express, supporting PayPal account, credit cards | Off-site (direct) | ✓ (note 1) |
+| [PostFinance Checkout](https://modx.com/extras/package/postfinancecheckoutpaymentgatewayforcommerce) (third-party extension) | PostFinance card, PostFinance e-finance, TWINT, Visa and Mastercard | see extension |
+| [SagePay](SagePay) (core) | Credit Cards (primarily UK) | Off-site (hosted payment page) | ✓ (note 1) |
+| [SplitIt](https://modx.com/extras/package/splititpaymentgatewayforcommerce) (third-party extension) | Multiple installments | see extension |
+| [SprayPay](https://modx.com/extras/package/commercespraypay) (third-party extension) | Multiple installments | see extension |
+| [Stripe](Stripe) (core) | Credit Cards |  On-site (v1.1+: Payment Intents, v1.0: v2 tokenisation) | ✓ (v1.1+) |
+| [WiPay](WiPay) (official extension) | Credit Cards (Caribbean) | Off-site (hosted payment page) | ✓ |
 
 Notes:
 

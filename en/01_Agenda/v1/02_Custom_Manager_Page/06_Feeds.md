@@ -8,9 +8,10 @@ left above the feeds grid.
 The grid could be filtered by a search input on the top right above the
 feeds grid.
 
-Each feed could be edited by a click on the edit icon in the row of the
-feed. And it could be deleted after a confirmation with a click on the trash
-icon in the row of the feed.
+Each feed could be edited by a click on the edit icon in the row of the feed.
+And it could be deleted after a confirmation with a click on the trash icon in
+the row of the feed. The feed can be refreshed with a click on the refresh
+icon.
 
 The row of each feed shows the feed url, date/time of the last update and the
 next update by the cronjob, the feed type the calendar, the categories and the

@@ -22,6 +22,7 @@ locale | The locale for the displayed formatted date. | System/Context setting `
 locations | Comma separated list of aliases of locations to filter the displayed event. | -
 locationTpl | Name of a chunk that contains the template for the location of an event. | tplAgendaEventLocation
 repeating | ID of one recurring event to retrieve the displayed event. | Request parameter `repeating`
+resourceTpl | Name of a chunk that contains the template for the linked resource of an event. | -
 toPlaceholder | If set, the snippet result will be assigned to this placeholder instead of outputting it directly. | -
 tpl | Name of a chunk that contains the template for one event. | tplAgendaEventDetail
 usergroups | Comma separated list of user group names to filter the displayed event. | -
@@ -54,7 +55,7 @@ enddate | The start date of the event formatted in ISO 8601 (could be formatted 
 images | All images of the event formatted by the chunk set with the imageTpl property
 imageurls | An array of all image urls. The placeholder `[[+imageurls.1]]` contains the url of the first image
 location | The location of the event formatted by the chunk set with the locationTpl property
-range | The formatted date range of the event. The format is defined with the lexicon entries `agenda.php_format_daterange` and `agenda.php_format_separator` and could be overridden by the `daterangeFormat` snippet property. The [format rules](01_AgendaList.md#range-placeholder-format) are described on the AgendaList page.
+range | The formatted date range of the event. The format is defined with the lexicon entries `agenda.php_format_daterange` and `agenda.php_format_separator` and could be overridden by the `daterangeFormat` snippet property. The [format rules](01_AgendaList#range-placeholder-format) are described on the AgendaList page.
 repeating | Contains 1 if the event is an recurring event (otherwise 0).
 resource_id | The id of a linked resource of the event.
 startdate | The start date of the event formatted in ISO 8601 (could be formatted i.e. with ```[[+startdate:strtotime:date=`%a. %d.%m.%Y`]]```).
@@ -62,7 +63,7 @@ title | The title of the event.
 videos | All videos of the event formatted by the chunk set with the videosTpl property
 videourls | An array of all video urls. The placeholder `[[+videourls.1]]` contains the url of the first video
 
-[Extended fields](../06_Extended_Fields.md) are available as placeholder with the prefix `extended` in the
+[Extended fields](../06_Extended_Fields) are available as placeholder with the prefix `extended` in the
 event row template.
 
 ### tplAgendaEventWrapper

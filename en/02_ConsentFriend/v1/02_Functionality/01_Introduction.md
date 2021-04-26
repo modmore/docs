@@ -67,6 +67,7 @@ The original href attribute has to be removed.
 Example code for external services:
 
 - [Google reCAPTCHA](Google_reCAPTCHA.md)
+- [Google Tag Manager](Google_Tag_Manager.md)
 - [Youtube videos](Youtube_Videos.md)
 
 #### Link to open the consent management window
@@ -76,5 +77,3 @@ If you want to add a link to the consent management window on a page, you could 
 ```
 <a onclick="klaro.show();return false;">[[%consentfriend.services.change_setting? &namespace=`consentfriend`]]</a>
 ```
-
-

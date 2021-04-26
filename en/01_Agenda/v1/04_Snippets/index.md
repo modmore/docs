@@ -1,25 +1,45 @@
-_Agenda_ contains five _snippets_ in the `Agenda` category.
+_Agenda_ contains some _snippets_ in the `Agenda` category.
 
 #### AgendaList
 
-This snippet displays events in a [list](01_AgendaList.md) view.
+This snippet displays [Agenda events](01_AgendaList) in a view.
 
 #### AgendaCalendar
 
-This snippet displays events in a list divided into [intervals](02_AgendaCalendar.md).
+This snippet displays [Agenda events](02_AgendaCalendar) in a list divided into.
 
 #### AgendaDetail
 
-This snippet displays one event in a [detail](03_AgendaDetail.md) view.
+This snippet displays one [Agenda event](03_AgendaDetail) in a view.
+
+#### AgendaDetailIcal
+
+This snippet displays the [iCal Download link](04_AgendaDetailIcal) of one event and downloads the iCal file.
 
 #### AgendaCalendars
 
-This snippet displays a list of [calendars](04_AgendaCalendars.md).
+This snippet displays a list of [Agenda calendars](05_AgendaCalendars).
 
 #### AgendaCategories
 
-This snippet displays a list of [categories](05_AgendaCategories.md).
+This snippet displays a list of [Agenda categories](06_AgendaCategories).
 
 #### AgendaLocations
 
-This snippet displays a list of [locations](06_AgendaLocations.md).
+This snippet displays a list of [Agenda locations](07_AgendaLocations).
+
+## FormIt Hooks
+
+_Agenda_ contains FormIt _hooks_ in the `Agenda` category.
+
+#### AgendaEventGet
+
+This hook allows to fill FormIt values by [Agenda events](08_AgendaEventGet).
+
+#### AgendaEventSet
+
+This hook allows to set [Agenda events](09_AgendaEventSet) values by FormIt.
+
+#### AgendaSearch
+
+This hook allows to search for [Agenda events](10_AgendaSearch) in SimpleSearch faceted search.

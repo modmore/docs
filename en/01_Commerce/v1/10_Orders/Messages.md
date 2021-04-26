@@ -30,7 +30,7 @@ Email sending is done through MODX using PhpMailer, so make sure [MODX is proper
 
 ### Formatted Email Message
 
-The formatted email, introduced in v1.1.5, lets you send an email that is wrapped in a nice template so it looks more professional than the standard "raw" email.
+The formatted email, introduced in v1.2.0, lets you send an email that is wrapped in a nice template so it looks more professional than the standard "raw" email.
 
 The used template, by default, is `emails/message.twig`. You can override its content using [custom Twig templating](../Front-end_Theming), and you can also set a different template to be used with the `commerce.templated_message_template` system setting. You can use all the placeholders in the template as described below, with the addition of the `message_content` block, which will be filled with the content added in the interface (`{% block message_content %}{% endblock %}`).  
 
