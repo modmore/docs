@@ -22,6 +22,7 @@ In alphabetical order:
 - [Coupons](Discounts/Coupons)
 - [Customers](Admin/Customers)
 - [Default Address](Cart/DefaultAddress)
+- [Digital Product](Shipping/DigitalProduct) 
 - [Dymo Address Label](Shipping/DymoAddressLabel)
 - [Enforce Stock](Cart/EnforceStock)
 - [EU VAT](Taxes/EUVat)
