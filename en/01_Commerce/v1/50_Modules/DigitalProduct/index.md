@@ -17,7 +17,12 @@ Digital Product for Commerce is **available as a separate package** and from [Gi
 
 - **Direct downloads on purchase**
 
-  Provide a direct download link to a book, plugin, MODX theme, or any other digital product you're looking to sell.
+  Provide a direct download link to a book, plugin, MODX theme, or any other digital file you're looking to sell.
+
+
+- **User group access**
+
+  After purchase, users are added to a specific user group that grants them further access on your website.
 
 ## Initial Configuration
 
@@ -35,48 +40,16 @@ Digital Product for Commerce is **available as a separate package** and from [Gi
 
 4. Create a *Download Resource*. This is a page that customers won't actually view, it acts as a gateway of sorts, and checks a secret key verifying that the payment was made before forwarding them to the designated page, or facilitating a direct download (depending on your preference).
 
-
-5. Set the `commerce_digitalproduct.download_resource` system setting to the ID of the **Download Resource** you just created.
-
-
-6. Add the `[[!digitalproduct.get_file]]` snippet to the **Download Resource** you just created in the last two steps.
+5. Add the `[[!digitalproduct.get_file]]` snippet to the **Download Resource** you just created.
 
 
-7. Override the default Commerce `thank-you.twig` template by copying it to your `customtheme/frontend/checkout/` directory.
-   Edit this custom template to display the digital products or pages the customer now has access to.
+6. Set the `commerce_digitalproduct.download_resource` system setting to the ID of the **Download Resource** you just created.
 
-Here's a basic example which loops through resources and files separately, only showing headings if there are results:
+7. To add download links to the thank you page or the email sent to customers, [see the thank you and email template instructions](ThankYou).
 
-```html
-<div class="c-digital-products">
-    {% for digitalProduct in digitalProducts %}
+## Downloadable Resource Configuration
 
-        {% if digitalProduct.resources|length > 0 %}
-            <h4>{{ digitalProduct.product.name }} {{ lex('commerce_digitalproduct.pages') }}</h4>
-            {% for resource in digitalProduct.resources %}
-                <p><a href="[[~[[++commerce_digitalproduct.download_resource]]]]?secret={{ resource.secret }}">{{ resource.name }}</a></p>
-            {% endfor %}
-        {% endif %}
-
-        {% if digitalProduct.files|length > 0 %}
-            <h4>{{ digitalProduct.product.name }} {{ lex('commerce_digitalproduct.files') }}</h4>
-            {% for file in digitalProduct.files %}
-                <p><a href="[[~[[++commerce_digitalproduct.download_resource]]]]?secret={{ file.secret }}">{{ file.name }}</a></p>
-            {% endfor %}
-        {% endif %}
-
-    {% endfor %}
-</div>
-```
-> As you can see in the example, within this twig file the `digitalProducts` variable is available when there are digital products on the order. There are three accessible sub-arrays you can access: resources, files, and all (containing resources and files).
->> You also have access to all fields within DigitalproductFile object: `id`, `class_key`, `properties`, `digitalproduct_id`, `secret`, `name`, `resource`, `file`, `download_count`, `download_limit`, and `download_expiry`.
-
-If you haven't created a custom theme or overridden template files before, you can [learn how in the documentation](https://docs.modmore.com/en/Commerce/v1/Front-end_Theming.html).
-
-
-## Restricted Pages Configuration
-
-*This entails setting up a group of restricted resources and linking them to your products, so that when a payment is made, the customer is given access to those resources.*
+*This entails setting up a group of restricted resources and linking them to your products, so that when a payment is made, the customer is given access to download a copy of those resources. This way you can for example sell an ebook that's built from a resource.*
 
 1. Create a parent resource somewhere for the restricted pages that your customers will be granted access to, once their payment has been successful.
 
@@ -112,7 +85,7 @@ If you haven't created a custom theme or overridden template files before, you c
 
 *There are some other options available on the edit window for a digital product. These apply to both file downloads and restricted resource access.*
 
-1. If you would like the customer to also be added to a user group on payment, set the `User Group Access` field to that user group. (Typically this user group would have access to a resource group containing your restricted resources, or perhaps a media source containing the files.)
+1. If you would like the customer to also be added to a user group on payment, set the `User Group Access` field to that user group. (Typically this user group would have access to a resource group containing restricted resources, or perhaps a media source containing the files.)
 
 
 2. In the `Download Limit` field, set the maximum number of times this file can be downloaded. Leave it blank to not set a limit.
