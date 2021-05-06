@@ -2,11 +2,11 @@
 title: 'Modules & Extensions'
 ---
 
-Commerce uses Modules to provide most functionality and features. 
+Commerce uses Modules to provide most functionality and features.
 
 Many modules are shipped with the core Commerce package, requiring no further install.
 
-Other modules are provided as [standalone extensions](https://modmore.com/commerce/extensions/), installable through the MODX Extras installer. There are extensions for payment gateways, shipping partners, communication-related integrations and more. 
+Other modules are provided as [standalone extensions](https://modmore.com/commerce/extensions/), installable through the MODX Extras installer. There are extensions for payment gateways, shipping partners, communication-related integrations and more.
 
 [**All available extensions, including third party extensions, can be found here.**](https://modmore.com/commerce/extensions/)
 
@@ -22,7 +22,7 @@ In alphabetical order:
 - [Coupons](Discounts/Coupons)
 - [Customers](Admin/Customers)
 - [Default Address](Cart/DefaultAddress)
-- [Digital Product](Shipping/DigitalProduct) 
+- [Digital Product](DigitalProduct)
 - [Dymo Address Label](Shipping/DymoAddressLabel)
 - [Enforce Stock](Cart/EnforceStock)
 - [EU VAT](Taxes/EUVat)
