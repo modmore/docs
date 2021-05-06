@@ -28,6 +28,7 @@ Digital Product for Commerce is **available as a separate package** and from [Gi
 
 2. Create a **Delivery Type** in `Configuration -> Delivery Types`, and make sure the *Shipment Type* field is set to ***Digital Shipment*** (rather than Standard Shipment).
 
+![Screenshot showing the edit panel for a Digital Product Delivery Type](../images/digitalproduct/digital-product-delivery-type.png)
 
 3. Create a **Shipping Method** in `Configuration -> Shipping Methods`, and set its **Delivery Type** to be the one you just created in the last step.
 
@@ -91,6 +92,7 @@ If you haven't created a custom theme or overridden template files before, you c
 
 5. After saving, go back to the *Delivery* tab and there will be new fields related to being a digital product. Click on the `Resources` field to select from any of the restricted resources you added under the parent(s) in step 3. Don't forget to `Save`.
 
+![Screenshot showing the edit panel for a restricting resources on a Digital Product](../images/digitalproduct/digital-product-edit-restricted-resources.png)
 
 ## Direct Download Configuration
 
@@ -104,6 +106,7 @@ If you haven't created a custom theme or overridden template files before, you c
 
 3. Select a value in the `Download Method` field. Currently, there are two methods (with more planned) `Redirect`  and `Forced`. Redirect will send the customer to the file itself exposing the file URL. Force will keep the URL secret and trigger an immediate download.
 
+![Screenshot showing the edit panel for a direct download on a Digital Product](../images/digitalproduct/digital-product-edit-direct-download.png)
 
 ## Other Options
 
