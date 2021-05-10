@@ -6,8 +6,6 @@ Time Slots is a shipping method implementation that allows merchants to manage a
 
 It can be installed for free through the modmore package provider and is covered by standard support.
 
-**The Time Slots extension is currently in private beta and expected to be more widely released in a matter of days. Thank you for your patience. If you wish to join the beta, please email support@modmore.com.**
-
 [TOC]
 
 ## Installation
