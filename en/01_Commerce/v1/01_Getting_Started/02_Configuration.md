@@ -47,7 +47,7 @@ There is also a [User & Usergroup Discounts](../50_Modules/Discounts/UserDIscoun
 
 Very few people enjoy paying taxes, but it is important to charge the right taxes to your customers. 
 
-- If you sell to customers in the European Union, enable the [EU VAT](../50_Modules/Taxes/EUVat) module to enable the EU VAT Rate Provider that enables automatically up-to-date tax rates across all countries in the EU. This loads (and caches) tax rates from [JSONVat.com](http://github.com/adamcooke/vat-rates), which is an open-source, community-maintained dataset.
+- If you sell to customers in the European Union, enable the [EU VAT](../50_Modules/Taxes/EUVat) module to enable the EU VAT Rate Provider that enables automatically up-to-date tax rates across all countries in the EU. This loads (and caches) tax rates from an open-source, community-maintained dataset for standard and reduced tax rates around the EU. 
 
 - If you sell to customers across the United States, the [TaxJar](../50_Modules/Taxes/TaxJar) module can be used to get automated sales tax calculations. This service covers virtually all possible Sales Tax rules, including product-specific exemptions if you configure the right product codes, and can also be used to help with your tax reporting, but does have a monthly cost to use. 
 
