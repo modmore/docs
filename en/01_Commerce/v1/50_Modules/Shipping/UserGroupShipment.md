@@ -14,4 +14,9 @@ With the User Group Shipment, you can set up delivery types that automatically a
 
 Note that when you're just setting this up, you may need to complete your order or delete and re-add products to the cart, in order for the right shipment type to be used. 
 
+## Advanced usage
 
+By default, roles will be assigned automatically when an order moves from Draft to Processing. However, you can also use Status Change Actions to control that with more granularity.
+
+1. Uncheck the "Run automatically when an order is moved to processing" box on the Shipping Method editing screen
+2. Add a "Assign User Groups to purchaser" Status Change Action to the status that you would like this to apply to
