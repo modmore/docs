@@ -84,6 +84,9 @@ Other actions are available in extensions, such as:
 
 - [Printing order information or invoices on a physical printer with CloudPrint](https://modmore.com/commerce/extensions/cloudprint/)
 - [Sending SMS/Text messages with MessageBird](https://modmore.com/commerce/extensions/messagebird/)
+- [Sending an order notification to Slack](https://docs.modmore.com/en/Commerce/v1/Modules/Slack.html)
+- [Running a snippet](https://docs.modmore.com/en/Commerce/v1/Modules/SnippetStatusAction.html)
+- Some extensions also require setting up status change actions as part of other functionality, for example [capturing Klarna payments](https://modmore.com/commerce/extensions/klarna/) or [reserving a time slot](https://modmore.com/commerce/extensions/time-slots/).
 
 [Learn more about building custom status change actions in the developer documentation.](../Developer/Status_Change_Actions)
 
