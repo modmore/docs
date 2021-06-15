@@ -18,7 +18,9 @@ None.
 
 ## Used Templates
 
-Which templates are used depends on the checkout configuration. 
+Which templates are used depends on the checkout configuration. Some themes may use different or additional templates from the defaults. 
+
+In all cases the outer wrapper that the checkout is contained within is `frontend/checkout/wrapper.twig`. 
 
 - `frontend/checkout/cart.twig`, which includes:
     - `frontend/response-messages.twig`
