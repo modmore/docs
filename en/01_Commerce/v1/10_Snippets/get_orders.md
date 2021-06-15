@@ -3,7 +3,7 @@ The `commerce.get_orders` snippet will list orders that a logged in customer pla
 This snippet will send the user to the unauthorized_page if they are not logged in, and show a message if no orders exist yet. It shows orders that are processing or completed.
 
 This snippet can be paginated with getPage or pdoPage.
- 
+
 Added in v0.9.
 
 [TOC]
@@ -33,16 +33,17 @@ Added in v0.9.
 - `&loadShippingAddress`: 1 or 0 to indicate if the shipping address should be loaded. If you're not showing the shipping address, you can gain a bit of speed by setting this to 0. Defaults to 1.
 - `&loadShipments`: 1 or 0 to indicate if the [order shipments](../Orders/Shipments) should be loaded into a `shipments` array. The shipment also contains the chosen shipping method. Defaults to 1. Added in 0.11.1.
 - `&loadOrderFields`: 1 or 0 to indicate if custom order fields should be loaded. Defaults to 1. Added in v0.12.
+- `&loadModuleFields`: 1 or 0 to indicate if module-provided fields should be loaded. This allows modules to add additional information to orders, but may come at a performance penalty depending on the module. Added in v1.3.
 
 
 ## Additional conditions
 
-The `&where` property lets you add additional conditions for the order to be returned. This property needs to contain valid JSON. 
+The `&where` property lets you add additional conditions for the order to be returned. This property needs to contain valid JSON.
 
 For example, to only lists orders in a specific context:
 
 ``` html
-[[!commerce.get_orders? 
+[[!commerce.get_orders?
     &where=`{"context":"web"}`
 ]]
 ```
@@ -50,7 +51,7 @@ For example, to only lists orders in a specific context:
 Or with a specific status (where 5 is the ID of the status):
 
 ``` html
-[[!commerce.get_orders? 
+[[!commerce.get_orders?
     &where=`{"status":5}`
 ]]
 ```
