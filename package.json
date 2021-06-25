@@ -9,7 +9,7 @@
     "live-reload": "1.x.x",
     "mkdirp": "^0.5.1",
     "npm-build-tools": "christianseel/npm-build-tools",
-    "parallelshell": "2.0.x",
+    "parallelshell": "3.0.x",
     "rimraf": "latest",
     "svg-sprite": "1.0.x",
     "watch": "0.x.x"
