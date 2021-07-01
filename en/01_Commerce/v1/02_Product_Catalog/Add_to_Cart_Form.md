@@ -70,6 +70,7 @@ $(function() {
             
         $.ajax({
             url: action,
+            method: 'POST',
             data: values,
             dataType: 'json',
             success: function(result) {
@@ -86,7 +87,7 @@ $(function() {
                 }
                 else {
                     if (result.message && result.message.length) {
-                         alert(result.message);
+                         alert('An error occurred: ' + result.message);
                     }
                     else {
                         alert('Could not add the product to the cart.');
