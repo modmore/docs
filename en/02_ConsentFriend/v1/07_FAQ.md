@@ -21,6 +21,15 @@ part (i.e. by surrounding it with `[[-` and `]]`).
 Thats possible. The default Google Analytics service uses the MODX
 system/context setting tag `[[++google_analytics_id]]`. So you have to create a
 context setting `google_analytics_id` with the value of the Google Analytics ID.
+Please make sure that the ConsentFriend plugin has a higher priority than the
+context routing plugin in the onHandleRequest event.
+
+## Can I use different privacy policies in different contexts?
+
+This is possible with a context setting. For this you need to set the
+`consentfriend.privacy_policy_id` context setting differently in each context. 
+Please also make sure that the ConsentFriend plugin has a higher priority in the
+onHandleRequest event than the context routing plugin.
 
 ## The consent modal displays only lexicon keys instead of translated strings
 
@@ -49,5 +58,5 @@ If you want to allow the user to change his consent settingsm, you can add a
 link to the consent management window using the following code:
 
 ```
-<a onclick="klaro.show();return false;">[[%consentfriend.services.change_setting? &namespace=`consentfriend`]]</a>
+<a onclick="klaro.show(window.consentFriendConfig, { modal: true });return false;">[[%consentfriend.services.change_setting? &namespace=`consentfriend`]]</a>
 ```
