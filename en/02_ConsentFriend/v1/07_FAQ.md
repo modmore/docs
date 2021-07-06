@@ -21,15 +21,20 @@ part (i.e. by surrounding it with `[[-` and `]]`).
 Thats possible. The default Google Analytics service uses the MODX
 system/context setting tag `[[++google_analytics_id]]`. So you have to create a
 context setting `google_analytics_id` with the value of the Google Analytics ID.
+
 Please make sure that the ConsentFriend plugin has a higher priority than the
-context routing plugin in the onHandleRequest event.
+context routing plugin in the onHandleRequest event. You have to edit the
+ConsentFriend plugin for this. In the System Events tab you have to update the
+OnHandleRequest plugin event and fill the priority value of ConsentFriend with a
+higher value than the routing plugin.
 
 ## Can I use different privacy policies in different contexts?
 
-This is possible with a context setting. For this you need to set the
-`consentfriend.privacy_policy_id` context setting differently in each context. 
+This is possible with a context setting. For this you have to set the
+`consentfriend.privacy_policy_id` context setting differently in each context.
 Please also make sure that the ConsentFriend plugin has a higher priority in the
-onHandleRequest event than the context routing plugin.
+onHandleRequest event than the context routing plugin. See the FAQ entry above
+for more information.
 
 ## The consent modal displays only lexicon keys instead of translated strings
 
