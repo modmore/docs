@@ -1,5 +1,9 @@
 Order Items are, as the name implies, items placed within a [order](Orders). It's a fairly simple object extending `comSimpleObject`, but it comes with a few tricks up its sleeve too.
 
+[TOC]
+
+## Values
+
 The following values are available on the comOrderItem object through `$item->get(key)`:
 
 - `order`: the ID of the `comOrderobject` this item belongs to. This should not be set manually, and may be `0` if the `comSessionOrder` is used for carts, as that does not persist the objects to the database. [Read more about orders here](Orders).
