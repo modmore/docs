@@ -20,6 +20,12 @@ When you install the package, a few things will be created for you:
 
 A couple of [settings](Configuration) are also set automatically based on what was created. This includes the context, templates adn more. The standard configuration should be good to start with. 
 
+## Creating a template
+
+Before moving on, duplicate the default template that was created and give it a name of your own. **Without a custom template, your broadcast wont work!**
+
+Edit the `digitalsignage.templates` system setting and add your own template ID separated with a comma, for example `5,6`. **You need to have at least 2 options in the setting!** 
+
 ## Creating your first broadcast
 
 Click on the Digital Signage button in the MODX menu to go to the management dashboard. You'll notice a few tabs:
@@ -36,7 +42,9 @@ Create another slide with type **Buienradar**, which can show the weather. Find 
 
 ![Creating a slide](../images/create-slide.jpg)
 
-When you have slides, move to the **Broadcasts** tab and click **Create new broadcast**. Enter a name and save. Right click and choose **Update slides (internal slides)**. Drag and drop the slides you created from the right _Available Slides_ to the left _Selected Slides_ column. Close the modal. 
+When you have slides, move to the **Broadcasts** tab and click **Create new broadcast**. Enter a name, select a template, and save. Right click and choose **Update slides (internal slides)**. Drag and drop the slides you created from the right _Available Slides_ to the left _Selected Slides_ column. Close the modal. 
+
+> **If you do not have the option to select a template, make sure to duplicate the default template and add at least 2 options to the `digitalsignage.templates` system setting.** Failing to do so can cause your broadcasts to be created without a template due to an unresolved bug, meaning you only get a blank page when viewing it.
 
 ## Connecting a screen (player)
 
