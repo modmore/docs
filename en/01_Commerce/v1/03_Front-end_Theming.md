@@ -1,6 +1,6 @@
 The Commerce front-end and admin are both built with the Twig templating language. 
 
-Twig is similar to the MODX template language, however it's more powerful as it allows conditionals, loops and custom functions. With these features you get more flexibility in output, while drastically reducing the number of individual templates needed. [Learn more about the Twig syntax and features here](http://twig.sensiolabs.org/doc/2.x/templates.html). 
+Twig is similar to the MODX template language, however it's more powerful as it allows conditionals, loops and custom functions. With these features you get more flexibility in output, while drastically reducing the number of individual templates needed. [Learn more about the Twig syntax and features here](https://twig.symfony.com/doc/2.x/templates.html). 
 
 The Commerce templates are stored in files, which makes it easier to edit with an IDE like WebStorm/PhpStorm, Sublime Text or Notepad++. Files are also easier to include in version control systems like git.
 
