@@ -32,7 +32,7 @@ Then you need to set at least the following properties:
 
 ```html
 [[!FormIt / Register?
-    &hooks=`akismet,email,redirect`
+    &hooks=`Akismet,email,redirect`
     ...
     &akismetType=`contact-form`
     &akismetAuthor=`sender`
@@ -45,6 +45,20 @@ Then you need to set at least the following properties:
 
 Add the snippet to the hooks:
 
+    [[!FormIt?
+        ...
+        &hooks=`Akismet,email,redirect`
+        ...
+    ]]
+
+Also add as many of the snippet properties that matches your form names, for example a form with a `username`, `email` and `fullname` field, a hidden `nospam` honeypot field, and while testing:
+
+    &akismetType=`contact-form`
+    &akismetAuthor=`name`
+    &akismetAuthorEmail=`email`
+    &akismetContent=`text`
+    &akismetHoneypotField=`nospam`
+
 [See a full FormIt example](Examples/FormIt)
 
 ## Use with Register
@@ -53,7 +67,7 @@ On your register resource, add the akismet snippet to the `&preHooks` on the Reg
 
     [[!Register? 
         ...
-        &preHooks=`akismet`
+        &preHooks=`Akismet`
         ...
     ]]
 
