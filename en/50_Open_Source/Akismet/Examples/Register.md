@@ -82,9 +82,30 @@ Replace activationResourceId with the ID of the activation resource, and submitt
 </div>
 ```
 
+If you do not use the `[[!+reg.error.message]]` placeholder (which will contain all errors), you can render the Akismet error specifically like this:
+
+    [[!+register.error.akismet:notempty=`<p class="error">[[!+register.error.akismet]]</p>`]]
+
 In the **myActivationEmailTpl** chunk:
 
+```html
+<p>[[+username]],</p>
 
+<p>Thanks for registering! To activate your new account, please click on the following link:</p>
+
+<p><a href="[[+confirmUrl]]">[[+confirmUrl]]</a></p>
+
+<p>After activating, you may login with your password and username:</p>
+
+<p>
+Username: <strong>[[+username]]</strong><br />
+Password: <strong>[[+password]]</strong></p>
+
+<p>If you did not request this message, please ignore it.</p>
+
+<p>Thanks,<br />
+<em>Site Administrator</em></p>
+```
 
 ## Submitted resource
 
