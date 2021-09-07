@@ -12,11 +12,22 @@ The example below is based on the [example from the MODX documentation](https://
 ## Register resource 
 
 Replace activationResourceId with the ID of the activation resource, and submittedResourceId with the ID of the resource that instructs (see below).
+
 ```html
 <h2>Register</h2>
 
 [[!Register?
     &submitVar=`registerbtn`
+    
+    &preHooks=`Akismet`
+    
+    &akismetTest=`1`
+    &akismetType=`signup`
+    &akismetAuthor=`username`
+    &akismetAuthorEmail=`email`
+    &akismetContent=`fullname`
+    &akismetHoneypotField=`nospam`
+
     &activationResourceId=`123`
     &activationEmailTpl=`myActivationEmailTpl`
     &activationEmailSubject=`Thanks for Registering!`
@@ -90,7 +101,4 @@ The activation resource needs to have the [ConfirmRegister snippet](https://docs
 It's suggested to at least provide a &errorPage property if there's an issue confirming the new account, and/or the &redirectTo property.
 
 Set the ID of your activation resource to `&activationResourceId` on the Register snippet.
-
-
-
 
