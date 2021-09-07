@@ -8,8 +8,11 @@ title: Akismet
 Originally developed for Wordpress, this open source package integrates Akismet with the MODX extras
 [FormIt](https://docs.modx.com/current/en/extras/formit/index) and [Login](https://docs.modx.com/current/en/extras/login/index) (specifically the [Register](https://docs.modx.com/current/en/extras/login/login.register) snippet).
 
-Akismet is free for personal sites or blogs, and requires a paid subscription for use on commercial websites. [Learn more about Akismet's subscription model](https://akismet.com/plans/). 
+Akismet is free for personal sites or blogs, and requires a paid subscription for use on commercial websites. [Learn more about Akismet's subscription model](https://akismet.com/plans/).
 
+[Donations to support our open source work are much appreciated](https://modmore.com/extras/akismet/donate/).
+
+[TOC]
 
 ## Getting Started
 
