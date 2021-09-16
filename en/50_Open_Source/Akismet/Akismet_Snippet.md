@@ -1,4 +1,4 @@
-The Akismet snippet can be used as a **hook** (in FormIt) or **preHook** (in Login/Register). 
+The Akismet snippet can be used as a **hook** (in FormIt) or **preHook** (in Register and QuipReply). 
 
 You need to instruct Akismet what fields to use. For this, add properties prefixed with `akismet` to the FormIt or Register snippet call.
 
@@ -51,7 +51,9 @@ Add the snippet to the hooks:
         ...
     ]]
 
-Also add as many of the snippet properties that matches your form names, for example a form with a `username`, `email` and `fullname` field, a hidden `nospam` honeypot field, and while testing:
+If you use other anti-spam or validation measures (like Recaptcha or CSRFHelper), you can decide in which order to place them. As Akismet may see repeat submits as spammy, you'll usually want to put other checks first.
+
+Also add as many of the snippet properties that matches your form names, for example a form with a `name`, `email` and `text` field, a hidden `nospam` honeypot field:
 
     &akismetType=`contact-form`
     &akismetAuthor=`name`
@@ -63,7 +65,7 @@ Also add as many of the snippet properties that matches your form names, for exa
 
 ## Use with Register
 
-On your register resource, add the akismet snippet to the `&preHooks` on the Register snippet call:
+On your register resource, add the Akismet snippet to the `&preHooks` on the Register snippet call:
 
     [[!Register? 
         ...
@@ -73,13 +75,37 @@ On your register resource, add the akismet snippet to the `&preHooks` on the Reg
 
 Also add as many of the snippet properties that matches your form names, for example a form with a `username`, `email` and `fullname` field, a hidden `nospam` honeypot field, and while testing: 
 
-    &akismetTest=`1`
     &akismetType=`signup`
     &akismetAuthor=`username`
     &akismetAuthorEmail=`email`
     &akismetContent=`fullname`
     &akismetHoneypotField=`nospam`
 
+If you have split name fields, you can provide them as a comma separated list:
+
+    &akismetContent=`firstname,lastname`
+
 [See a full Register example](Examples/Register)
+
+## Use with Quip (v1.1+)
+
+On your QuipReply snippet call, add the Akismet snippet to the `&preHooks`:
+
+    [[!QuipReply? 
+        ...
+        &preHooks=`Akismet`
+        ...
+    ]]
+
+Also add as many of the snippet properties that matches your form names, for example a form with a `username`, `email` and `fullname` field, a hidden `nospam` honeypot field, and while testing: 
+
+    &akismetType=`reply`
+    &akismetAuthor=`name`
+    &akismetAuthorEmail=`email`
+    &akismetAuthorUrl=`website`
+    &akismetContent=`comment`
+    &akismetHoneypotField=`nospam`
+
+[See a full Quip example](Examples/Quip)
 
 
