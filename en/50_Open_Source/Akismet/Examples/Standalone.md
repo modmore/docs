@@ -87,7 +87,7 @@ $values = [
     'comment_content' => $_POST['message'],
 ];
 
-$isSpam = $akismet->checkSpam($values, $config);
+$isSpam = $akismet->checkSpam($values);
 ```
 
 These are functionally identical. Option 1 is easier to implement in a snippet (just pass `$_POST` and `$scriptProperties` and configure it like you would FormIt or Register), while option 2 gives you a bit more control.
