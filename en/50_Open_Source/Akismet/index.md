@@ -20,7 +20,7 @@ Install Akismet via the [modmore package provider](https://modmore.com/about/pac
 
 [Sign up for an Akismet account](https://akismet.com/plans/), then copy and paste the provided *API Key* into the new `akismet.api_key` system setting.
 
-Next, [implement the Akismet snippet](Akismet_Snippet) as either a hook (FormIt) or preHook (Register) into your form. 
+Next, [implement the Akismet snippet](Akismet_Snippet) as either a hook (FormIt) or preHook (Register, QuipReply) into your form. If you have a custom form-handling snippet, [see the standalone instructions](Examples/Standalone).
 
 ## Personal information
 
@@ -31,6 +31,14 @@ As spam protection is a "legitimate interest" its usage does not require specifi
 > This site uses Akismet to reduce spam. Learn how your comment data is processed.
 
 [Learn more about Akismet and the GDPR.](https://akismet.com/gdpr/)
+
+## Automatic cleanup (v1.1+)
+
+Spam checks are automatically removed after 30 days. This time period can be adjusted with the `akismet.cleanup_days_old` system setting; giving it a value of 0 disables the cleanup.
+
+The cleanup does not require a cron job, but runs automatically when form submissions are checked for spam.
+
+## 
 
 ## Learn More
 
