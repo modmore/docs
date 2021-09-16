@@ -56,7 +56,6 @@ There are two ways to provide configuration to the class.
 An example of option 1:
 
 ```php
-<?php 
 // could just be $values = $_POST, but in this case we want to show the structure of the array
 $values = [
     'name' => $_POST['name'],
@@ -80,7 +79,6 @@ $isSpam = $akismet->checkSpam($_POST, $scriptProperties);
 An example of option 2:
 
 ```php
-<?php 
 // Note the key names must now match the Akismet api @ https://akismet.com/development/api/#comment-check
 $values = [
     'comment_type' => 'signup',
