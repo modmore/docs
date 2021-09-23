@@ -26,6 +26,7 @@ Set up the following MODX System Settings to point to a resource field or templa
 - `commerce.resourceproduct.price_field` - **Deprecated in favour of the pricing field** - should be a number TV. By default this accepts decimals, but you can set `commerce.resourceproduct.price_field_decimals` to no to use integer values (e.g. 100 = €1) instead. 
 - `commerce.resourceproduct.sku_field` - should be a text field, like `alias`
 - `commerce.resourceproduct.stock_field` - should be an integer number TV
+- `commerce.resourceproduct.stock_infinite_field` - should be a TV that returns a boolean value (i.e. 1 or 0/empty), for example a checkbox TV with `Allow unlimited purchases==1` as the input option values. (Added in v1.2.2)
 - `commerce.resourceproduct.tax_group_field` - see Delivery Type and Tax Group section below
 - `commerce.resourceproduct.weight_field` - should be a number TV, can accept decimals. 
 - `commerce.resourceproduct.weight_unit_field` - should be a text or select that offers units like `kg`, `g`, `lbs`, etc. For example this could be a listbox TV with input option values set to `g||kg||t||lb||oz||st`. Alternatively if all your products use the same weight unit, you can skip this field, and set the `commerce.default_weight_unit` system setting instead. 
