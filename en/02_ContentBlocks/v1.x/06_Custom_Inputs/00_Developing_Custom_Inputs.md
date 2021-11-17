@@ -199,6 +199,9 @@ ContentBlocks.openModal(title, html, options);
 <div class="contentblocks-field contentblocks-field-text">
     <div class="contentblocks-field-actions"></div>
     <label for="{%=o.generated_id%}_textfield">{%=o.name%}</label>
+    {% if (o.content_desc) { %}
+        <p class="content-field-description">{%=o.content_desc%}</p>
+    {% } %}
     <div class="contentblocks-field-text contentblocks-field-text-input">
         <input type="text" id="{%=o.generated_id%}_textfield" value="{%=o.value%}">
     </div>
@@ -216,6 +219,14 @@ On top of the required markup, there are some useful classes/hooks you can use a
 - If you need to load data over AJAX when the field is added, you can add a `<div class="contentblocks-loader"></div>` BEFORE the `.contentblocks-field` div. In your init javascript function call `dom.addClass('contentblocks-field-loading')`, and remove that class again with `dom.removeClass('contentblocks-field-loading')` when everything is loaded. See the snippet or chunk input types for inspiration.
 - If you have a form in a modal, the styling is not automatically applied. You can either add a `.contentblocks-modal-field` class to a wrapping div in the modal, or add the `.contentblocks-input` class to the input itself.
 - To prevent a part of your input from being a drag target (for reordering fields in the content), simply add the `.prevent-drag` class to that part or a wrapper div. Be sure not to add that class to the outmost `.contentblocks-field` as then users wont be able of changing the position of your input type.
+
+To show the content description, added in v1.12, you will need to add the following in the correct place. Typically this is inserted between the label and an input type, but you may chosoe a more appropriate location based on the type of input type.
+
+```html
+{% if (o.content_desc) { %}
+    <p class="content-field-description">{%=o.content_desc%}</p>
+{% } %}
+```
 
 If you're replicating (part of) what other inputs are doing, be sure to check out the source code of that input to see if there are any other specific classes/methods you can use to achieve the same effect. Chances are there is. All core inputs are located in assets/components/contentblocks/js/inputs/ - the unminified files are there as well - and templates in core/components/contentblocks/templates/inputs/.
 
