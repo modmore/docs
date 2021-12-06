@@ -31,7 +31,7 @@
     "start": "npm run live-reload -s & npm run watch -s"
   },
   "devDependencies": {
-    "node-sass": "^3.10.1",
+    "node-sass": "^7.0.0",
     "node-uuid": "^1.4.7"
   }
 }
