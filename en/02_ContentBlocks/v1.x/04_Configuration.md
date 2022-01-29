@@ -51,7 +51,7 @@ When this setting is turned on, ContentBlocks will no longer be used. This setti
 1. First decide if you want to _whitelist_ templates (in which case you disable ContentBlocks globally, and then enable it per-template), or _blacklist_ them (in which you enable ContentBlocks globally, but disable specific templates). Set the `contentblocks.disabled` system (or context) setting accordingly.   
 2. Edit the template you want to enable/disable. Navigate to the Properties tab.
 3. Unlock the default properties by clicking the "Default Properties Locked" button in the grid. (While for snippets and plugins you would typically create a custom property set, that's not currently possible for templates.)
-4. Create a new property with key `contentblocks.disabled` - please make sure to check your spelling. Set the value to 1 if you want to allow ContentBlocks on this template, set the value to 0 (or an empty string) to disallow it. 
+4. Create a new property with key `contentblocks.disabled` - please make sure to check your spelling. Set the value to 1 if you want to disallow ContentBlocks on this template, set the value to 0 (or an empty string) to allow it. 
 5. Repeat for other templates you are whitelisting/blacklisting.
 
 ![Screenshot showing the Template Properties tab filled out with the contentblocks.disabled property.](img/template-property.jpg)
