@@ -43,31 +43,37 @@ You can find a list of available names in the next section.
 
 The following names can be used as column names:
 
-- name
-- product_name
-- description
-- product_description
-- image
-- price
-- price_rendered
-- regular_price_formatted
-- sku
-- stock
-- stock_infinite
-- stock_unlimited
-- weight
-- weight_unit
-- weight_with_unit
+- `name`
+- `product_name`
+- `description`
+- `product_description`
+- `image`
+- `price`
+- `price_rendered`
+- `regular_price_formatted`
+- `sku`
+- `stock`
+- `stock_infinite`
+- `stock_unlimited`
+- `weight`
+- `weight_unit`
+- `weight_with_unit`
 
 The above names can be used with the Collections [inbuilt Renderers](https://docs.modx.com/3.x/en/extras/collections/index#renderers).
 For example, with the column name **image**, you would want to render it by using **_Collections.renderer.image_**
 in the _Renderer_ field (not the Snippet Renderer field!).
 
-There's also a couple of special ones that return multiple values and require custom renderers.
-- name_with_description_render
-- name_with_unit_render
+NOTE: You can also use any other column name you like while using the `commerce.collections_view` snippet renderer. 
+If it's not one of the names specified above, then all the product fields will be returned together as JSON.
 
-We'll discuss how to use these below in the advanced section.
+Look at the Product column in this image:
+
+![Collections View Grid](../../images/products/collections_view_json.png)
+
+To be able to use this output in a meaningful way, we need to create our own custom Collections renderer to display
+exactly what we want, how we want.
+
+We'll discuss how to use this below in the advanced section.
 
 ##Settings
 
@@ -88,8 +94,10 @@ One of Collection's renderers is called `Collections.renderer.pagetitleWithButto
 We decided we'd like to have the product name rather than the resource title and also include the 
 product description as well. 
 
-So we're going to copy it and modify it slightly to do so. And we'll use the special column name `name_with_description_render`
-which returns both the product name and description as JSON.
+So we're going to copy it and modify it slightly to do so. And at least for this example, we'll use `main` as the 
+column name. As mentioned above in the Usage section, if we use any column name other than the ones listed above,
+all the product fields are returned together as a JSON string. This is good for our purposes, because we want 
+access to both the product name, and the product description in the same column for this.
 
 In your `custom.js` file, add the following:
 ```js
@@ -119,6 +127,8 @@ Collections.renderer.productNameWithButtons = function(value, metaData, record, 
     return productNameWithButtons.apply(data);
 };
 ```
+You might be able to see that this renderer is almost the same as the regular Collections renderer `Collections.renderer.pagetitleWithButtons`.
+
 
 We also want to change the styling slightly to make room for the product description. In your custom.css file, put this:
 ```css
