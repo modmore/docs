@@ -120,9 +120,9 @@ var productNameWithButtons = new Ext.XTemplate('<tpl for=".">'
 });
 Collections.renderer.productNameWithButtons = function(value, metaData, record, rowIndex, colIndex, store) {
     var data = JSON.parse(JSON.stringify(record.data));
-    var val = JSON.parse(value);
-    data.name = val['name'];
-    data.description = val['description'];
+    var productData = JSON.parse(value);
+    data.name = productData['name'];
+    data.description = productData['description'];
     data.self = this;
     return productNameWithButtons.apply(data);
 };
