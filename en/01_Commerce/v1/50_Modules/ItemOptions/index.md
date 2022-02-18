@@ -5,7 +5,7 @@ description: 'The Item Options extension for Commerce is useful for simple produ
 
 The Item Options extension for Commerce is useful for simple product configurators. It's a free and official extension available from our own package provider for Commerce 1.2.6 and up.
 
-The module operates on a similar module as the [ItemData](Cart/ItemData) module: additional data is submitted in the add to cart request, and added to an order item. In this case the "additional data" is additional product IDs, and they are added as "order item adjustments": separate rows on a single order item with a price change and name.
+The module operates on a similar module as the [ItemData](../Cart/ItemData) module: additional data is submitted in the add to cart request, and added to an order item. In this case the "additional data" is additional product IDs, and they are added as "order item adjustments": separate rows on a single order item with a price change and name.
 
 ## Example setup
 
