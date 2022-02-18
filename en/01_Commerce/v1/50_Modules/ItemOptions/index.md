@@ -5,7 +5,9 @@ description: 'The Item Options extension for Commerce is useful for simple produ
 
 The Item Options extension for Commerce is useful for simple product configurators. It's a free and official extension available from our own package provider for Commerce 1.2.6 and up.
 
-The module operates on a similar module as the [ItemData](../Cart/ItemData) module: additional data is submitted in the add to cart request, and added to an order item. In this case the "additional data" is additional product IDs, and they are added as "order item adjustments": separate rows on a single order item with a price change and name.
+The module operates similarly to the [ItemData](../Cart/ItemData) module: additional data is submitted in the add to cart request, and added to an order item. In this case the "additional data" is additional product IDs, and they are added as "order item adjustments": separate rows on a single order item with a price change and name.
+
+[TOC]
 
 ## Example setup
 
@@ -61,13 +63,13 @@ On the resource/template, [create an add to cart form](https://docs.modmore.com/
     
     <input type="submit" value="Add to Cart">
 </form>
-```
+````
 
 > In this case we're loading the sides and sauces from the current resource. However, you don't have to! If you need to reuse products across different resources, you could create a central "Sides" and "Sauces" resource, and use getResourceField/pdoField to load those product IDs into the page instead.
 
 The **product_as_radio** chunk might contain something like this:
 
-```
+````html
 <div class="product-option">
   <label>
     <input type="radio" name="product" value="[[+id]]" [[+idx:eq=`0`:then=`checked`]]>
@@ -112,6 +114,8 @@ When we make our selection and add it to the cart, the `sauces` and `sides` will
 ![A veggieburger added to the cart with some coleslaw and mayonaise](incart.png)
 
 Customers can change the overall quantity, but not remove or change the options from the cart. 
+
+## Troubleshooting
 
 If you're not seeing the item options **in your cart**:
 
