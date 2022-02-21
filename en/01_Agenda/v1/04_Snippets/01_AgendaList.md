@@ -58,10 +58,10 @@ calendar_background | The background color of the calendar of the event.
 calendar_foreground | The foreground color of the calendar of the event.
 calendar_name | The calendar name.
 categories | All categories of the event formatted by the chunk set with the categoryTpl property
-description | The title of the event.
+description | The description of the event.
 detail_url | The url that shows the event detail. Will be generated with the system/context setting `agenda.detail_id`. This resource should contain an AgendaDetail snippet call.
 duration | The formatted duration of the event. The details of the duration could be set with the `durationParts` snippet property.
-enddate | The start date of the event formatted in ISO 8601 (could be formatted i.e. with ```[[+startdate:strtotime:date=`%a. %d.%m.%Y`]]```).
+enddate | The start date of the event formatted in ISO 8601 (could be formatted i.e. with ```[[+enddate:strtotime:date=`%a. %d.%m.%Y`]]```).
 idx | The number of the event starting with 1.
 images | All images of the event formatted by the chunk set with the imageTpl property
 imageurls | An array of all image urls. The placeholder `[[+imageurls.1]]` contains the url of the first image
