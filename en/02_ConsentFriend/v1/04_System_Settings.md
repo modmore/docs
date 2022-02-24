@@ -30,3 +30,4 @@ consentfriend.notice_as_modal | Notice as Modal | If enabled, ConsentFriend will
 consentfriend.privacy_policy_id | Privacy Policy ID | The ID of a MODX resource containing the privacy policy. | site_start
 consentfriend.storage_method | Storage Method | How ConsentFriend persists consent information in the browser. Specify either "cookie" (the default) or "localStorage". | cookie
 consentfriend.theme | Theme | The ConsentFriend [theme](05_Themes.md). Can be changed to "black", "dark", "light", "white". | -
+consentfriend.user_agent_filter | User Agent Filter | Comma-separated list of user agent substrings that are not logged. | Bot, DuckDuckGo, Googlebot, python-requests, petalbot, SiteDash, sogou, Robot
