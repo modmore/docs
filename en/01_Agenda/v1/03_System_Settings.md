@@ -7,7 +7,7 @@ custom manager page.
 Key | Name | Description | Default
 ----|------|-------------|--------
 agenda.category_required | Category Required | An event requires a category. | Yes
-agenda.debug | Debug | Log debug informations in MODX error log. | No
+agenda.debug | Debug | Log debug information in MODX error log. | No
 agenda.default_timezone | Default Timezone | Default [time zone](https://www.php.net/manual/en/timezones.php) for events. | Europe/Berlin
 agenda.detail_id | Detail ID | ID of a resource containing AgendaDetail snippet call. | -
 agenda.editor_type | Editor Type | Editor type for text fields (htmleditor or textarea). | htmleditor
@@ -18,9 +18,9 @@ agenda.google_maps_default_lng | Google Maps Default Longitude | Default longitu
 agenda.google_maps_default_zoom | Google Maps Standard Zoom | Default zoom for the displayed map when creating/editing a location. | 9
 agenda.image_mediasource | Image Media Source | Media source for event images. | 1
 agenda.list_id | List ID | ID of a resource containing an AgendaList snippet call. | -
-agenda.manager_date_format | Date Format | The [ExtJS date format](https://docs.sencha.com/extjs/3.4.0/#!/api/Date) can be used here. | d.m.Y
-agenda.manager_date_format_long | Date Format (long) | The [ExtJS date format](https://docs.sencha.com/extjs/3.4.0/#!/api/Date) can be used here. | l, d.m.Y
-agenda.manager_time_format | Time Format | The [ExtJS date format](https://docs.sencha.com/extjs/3.4.0/#!/api/Date) can be used here. | G:i
+agenda.manager_date_format | Date Format | The format must be valid according to [Ext JS Date](https://docs.sencha.com/extjs/3.4.0/#!/api/Date). | d.m.Y
+agenda.manager_date_format_long | Date Format (long) | The format must be valid according to [Ext JS Date](https://docs.sencha.com/extjs/3.4.0/#!/api/Date). | l, d.m.Y
+agenda.manager_time_format | Time Format | The format must be valid according to [Ext JS Date](https://docs.sencha.com/extjs/3.4.0/#!/api/Date). | G:i
 agenda.manager_time_increment | Time Steps | Number of minutes between individual time values ​​in the time selection field. | 15
 agenda.parents_calendar | Calendar Parent Resources | Comma-separated list of parent resources for a resource connected with a calendar. | -
 agenda.parents_category | Category Parent Resources | Comma-separated list of parent resources for a resource connected with a category | -
