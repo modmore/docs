@@ -19,7 +19,7 @@ select more than one value at a time!
 
 [ ![Multi-Select](../img/multi-select-input-type.png)](../img/multi-select-input-type.png)  
 
-##Features at a Glance
+## Features at a Glance
 
  - Select multiple values.
  - Available as both an input type and a setting.
