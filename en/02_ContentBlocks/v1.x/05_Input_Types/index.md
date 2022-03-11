@@ -31,8 +31,13 @@ The chunk input type has no template. If your chunk relies on certain styling, y
 [![](https://modmore.com/assets/uploads/7595c06a23a490d4b6e805f21c62d277.png)](https://modmore.com/assets/uploads/7595c06a23a490d4b6e805f21c62d277.png)
 
  
+## Checkbox
 
- 
+Available in ContentBlocks 1.12 and above, this simple input type provides a checkbox that can be toggled to return 
+a boolean output. This is especially handy in repeaters, where there may be a desire to enable or disable individual rows.
+
+[![](../img/checkbox.png)](../img/checkbox.png)
+
 
 ## Code
 
