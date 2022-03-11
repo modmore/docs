@@ -28,6 +28,11 @@ A value, which exists in the Drop-down Options, that should be preselected when 
 
 **Important:** If your default value is **empty**, the dropdown input will use the **first option**. 
 
+### Search Enabled
+
+Available in ContentBlocks 1.12 and above, there is a new `Search Enabled` property. If enabled, it will include a typeahead/search
+field on the dropdown that allows filtering the available options displayed. Disabled it any time to revert to a regular dropdown field.
+
 ## Defining the Options
 
 The Dropdown input type needs to have a set of options configured via the field properties. The way these are defined is very flexible.
@@ -109,3 +114,4 @@ $options = array(
 
 return implode("\n", $options);
 ````
+

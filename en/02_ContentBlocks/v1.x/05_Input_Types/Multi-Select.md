@@ -19,6 +19,14 @@ select more than one value at a time!
 
 [ ![Multi-Select](../img/multi-select-input-type.png)](../img/multi-select-input-type.png)  
 
+##Features at a Glance
+
+ - Select multiple values.
+ - Available as both an input type and a setting.
+ - Includes all the same remote and local configuration options as the [dropdown input type](https://docs.modmore.com/en/ContentBlocks/v1.x/Input_Types/Dropdown.html).
+ - Typeahead / search functionality. Type into the multi-select field to filter the options shown in the dropdown.
+ - Customisable via a template field, input options, output separator and defaults. 
+
 ## Available Properties
 
 ### Template
