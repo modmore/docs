@@ -41,6 +41,12 @@ If you create a column with reference "main", your placeholder will be [[+main]]
 
 Any settings you define are also available as placeholder. If you add a setting with a reference of "class", the placeholder in your template will be [[+class]].
 
+Other available placeholders in Layout templates:
+
+- `[[+layout_title]]` (or `[[+title]]`); you can edit the layout title by clicking on the title on the canvas
+- `[[+idx]]`, the index (position) of the layout
+- `[[+unique_idx]]`, a unique index across all elements on the page (fields and layouts)
+
 [![](https://assets.modmore.com/galleries/inline-418/2015/contentblocks_component_layout_template.png)](https://assets.modmore.com/galleries/inline-418/2015/contentblocks_component_layout_template.png)
 
  

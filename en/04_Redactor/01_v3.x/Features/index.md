@@ -12,6 +12,7 @@ Some features however, are a bit more powerful or have more complicated configur
 - [Custom Formatting](Custom_Formatting)
 - [Custom Plugins](Custom_Plugins)
 - [Dividers](Dividers)
+- [Font options (color, family and size)](Font_Options)
 - [Image Path Mode (aka base urls mode)](Image_Path_Mode)
 - [Image Styles](Image_Styles)
 - [Inline Styles](Inline_Styles)

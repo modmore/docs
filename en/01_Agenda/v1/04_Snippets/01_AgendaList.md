@@ -58,10 +58,10 @@ calendar_background | The background color of the calendar of the event.
 calendar_foreground | The foreground color of the calendar of the event.
 calendar_name | The calendar name.
 categories | All categories of the event formatted by the chunk set with the categoryTpl property
-description | The title of the event.
+description | The description of the event.
 detail_url | The url that shows the event detail. Will be generated with the system/context setting `agenda.detail_id`. This resource should contain an AgendaDetail snippet call.
 duration | The formatted duration of the event. The details of the duration could be set with the `durationParts` snippet property.
-enddate | The start date of the event formatted in ISO 8601 (could be formatted i.e. with ```[[+startdate:strtotime:date=`%a. %d.%m.%Y`]]```).
+enddate | The start date of the event formatted in ISO 8601 (could be formatted i.e. with ```[[+enddate:strtotime:date=`%a. %d.%m.%Y`]]```).
 idx | The number of the event starting with 1.
 images | All images of the event formatted by the chunk set with the imageTpl property
 imageurls | An array of all image urls. The placeholder `[[+imageurls.1]]` contains the url of the first image
@@ -144,27 +144,12 @@ F |Y|, |g|:i a|`.
 
 The daterrange is formatted with the following rules:
 
-- If both dates are different and the hour/minute of start and end is 0, parts
-4-7 are removed from start and end date.
-- If both dates are different and the hour/minute of start and end is 0 and year
-of start and end is equal, parts 4-7 are removed from start and end date and
-part 3 is removed from start date.
-- If both dates are different and the hour/minute of start and end is 0 and year
-and month of start and end are equal, parts 4-7 are removed from start and end
-date and parts 2-3 are removed from start date.
-- If both dates are different and the hour/minute of start and end is 0 and
-year, month and day of start and end are equal, parts 4-7 are removed from start
-and end date and parts 1-3 are removed from start date.
-- If both dates are different and the hour/minute of start and end is not 0 and
-one detail of year, month and day of start and end is not equal, all parts are
-used in the start and end date.
-- If both dates are different and the hour/minute of start and the hour of end
-is 0 and all details of year, month and day of start and end are equal, parts
-4-7 are removed from start date.
-- If both dates are different and the hour or minute of start or the hour of end
-not 0 and all details of year, month and day of start and end are equal, part 7
-is removed from start date.
-- If both dates are equal and the hour/minute of start is 0, part 4-7 is
-removed from the start date and separator and end date are removed.
-- If both dates are equal and the hour/minute of start is not 0, separator and
-end date are removed.
+- If both dates are different and the hour/minute of start and end is 0, parts 4-7 are removed from start and end date.
+- If both dates are different and the hour/minute of start and end is 0 and year of start and end is equal, parts 4-7 are removed from start and end date and part 3 is removed from start date.
+- If both dates are different and the hour/minute of start and end is 0 and year and month of start and end are equal, parts 4-7 are removed from start and end date and parts 2-3 are removed from start date.
+- If both dates are different and the hour/minute of start and end is 0 and year, month and day of start and end are equal, parts 4-7 are removed from start and end date and parts 1-3 are removed from start date.
+- If both dates are different and the hour/minute of start and end is not 0 and one detail of year, month and day of start and end is not equal, all parts are used in the start and end date.
+- If both dates are different and the hour/minute of start and the hour of end is 0 and all details of year, month and day of start and end are equal, parts 4-7 are removed from start date.
+- If both dates are different and the hour or minute of start or the hour of end not 0 and all details of year, month and day of start and end are equal, part 7 is removed from start date.
+- If both dates are equal and the hour/minute of start is 0, part 4-7 is removed from the start date and separator and end date are removed.
+- If both dates are equal and the hour/minute of start is not 0, separator and end date are removed.

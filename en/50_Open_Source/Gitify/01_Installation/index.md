@@ -1,3 +1,38 @@
+## v2
+
+As of Gitify v2 and up, installation has been simplified and is handled entirely via composer. You can choose to install Gitifiy globally, or locally to a project.
+
+For a **global** installation, run: 
+
+````
+composer global require modmore/gitify:^2
+````
+
+After the installation completes, you'll use `gitify` as the main command.
+
+For a **local project installation**, run:
+
+````
+composer require modmore/gitify:^2
+```` 
+
+After the installation completes, you'll use `vendor/bin/gitify` as the main command.
+
+Finally, for **development or advanced usage**, you may continue to use the manual installation steps:
+
+```` 
+git clone https://github.com/modmore/Gitify.git Gitify
+cd Gitify
+composer install --no-dev
+chmod +x bin/gitify
+````
+
+In this case you'll use `bin/gitify` as the main command.
+
+_Note that the gitify executable has been moved into the `bin` directory on v2. You may need to adjust your `$PATH` accordingly._
+
+## v1 (and prior)
+
 New as of v0.2 is that dependencies are managed via [Composer](https://getcomposer.org/), most notably it has been rebuilt on top of Symfony's Console component to provide a more feature-packed base to build from. [Follow these instructions if you haven't installed Composer before](https://getcomposer.org/doc/00-intro.md)
 
 To get started with Gitify, it's easiest to set up a local clone of this repository. It doesn't matter in which folder clone it to. On Unix/Linux systems you can choose your home directory. After that, run Composer to download the dependencies, and finally make the Gitify file executable to run it.

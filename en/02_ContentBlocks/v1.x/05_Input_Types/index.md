@@ -31,8 +31,13 @@ The chunk input type has no template. If your chunk relies on certain styling, y
 [![](https://modmore.com/assets/uploads/7595c06a23a490d4b6e805f21c62d277.png)](https://modmore.com/assets/uploads/7595c06a23a490d4b6e805f21c62d277.png)
 
  
+## Checkbox
 
- 
+Available in ContentBlocks 1.12 and above, this simple input type provides a checkbox that can be toggled to return 
+a boolean output. This is especially handy in repeaters, where there may be a desire to enable or disable individual rows.
+
+[![](../img/checkbox.png)](../img/checkbox.png)
+
 
 ## Code
 
@@ -56,8 +61,25 @@ Also see this tip for [Displaying (MODX) Code](../Tips_Tricks/Displaying_MODX_Co
 [![](https://modmore.com/assets/uploads/e280ca4db15226f2778c7e119dc1600d.png)](https://modmore.com/assets/uploads/e280ca4db15226f2778c7e119dc1600d.png)
 
  
+## Color Picker
 
- 
+The Color Picker input enables editors to pick any color they fancy from the pop-up color wheel, 
+or select from a group of curated color swatches.
+
+[![](../img/color-picker-window.png)](../img/color-picker-window.png)
+
+The Color Picker is available as a core input type, as well as all types of settings (as a modal, a field, or a straight-up setting).
+
+[![](../img/color-picker-setting.png)](../img/color-picker-setting.png)
+
+**Configuration**
+
+To set the default swatch colors, edit the comma-separated values in the `contentblocks.color_picker_defaults` system setting.
+When using a color picker input type (as opposed to a setting), you can override these presets per field via the
+field Properties tab.
+
+[![](../img/color-picker-defaults.png)](../img/color-picker-defaults.png)
+
 
 ## Gallery
 
