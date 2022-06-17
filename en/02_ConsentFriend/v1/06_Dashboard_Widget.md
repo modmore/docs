@@ -1,4 +1,4 @@
-ConsentFriend contains a Dashboard widget since version 1.4.
+ConsentFriend contains a Dashboard widget since version 1.4.0.
 
 [![](img/dashboard-widget.png)](img/dashboard-widget.png)
 
