@@ -3,13 +3,25 @@ title: BabelTranslate
 description: Documentation for BabelTranslate, a translator for MODX resources. 
 ---
 
-[BabelTranslate](https://modmore.com/babeltranslate/) simple but very useful MODX extra if you want to have your content automatically translated with a translation service (currently it supports DeepL API Free and Pro).
+[BabelTranslate](https://modmore.com/babeltranslate/) simple but very useful
+MODX extra if you want to translate your multilingual sites with a
+translation service (currently it supports DeepL API Free and Pro).
 
-It translates the content of a MODX resource with a button from a linked Babel resource. The translatable resource fields must be defined beforehand with a comma-separated list. The translatable template variables and the translatable ContentBlocks fields must be configured beforehand with a JSON.
+BabelTranslate adds automatic translations to Babel. So you'll need to set up
+your contexts first, configure what to translate, and then you can use the
+Translate toolbar to translate the current ressource from a linked resource.
+Optionally, the translation can happen automatically when Babel creates a
+resource.
 
-The volume of DeepL API Free translation is 500,000 characters per month, which is enough for 10-100 pages (depends a lot on the length of the content).
+BabelTranslate can translate standard content fields (pagetitle, introtext,
+etc.), text and JSON-based TV types - and even ContentBlocks blocks! You
+need to define what to translate in a couple of system settings.
 
-It is a perfect solution for users who want a well-translated content in different languages.
+The volume of DeepL API Free translation is 500,000 characters per month, which
+is enough for 10-100 pages (depends a lot on the length of the content).
+
+It is a perfect solution for users who want a well-translated content in
+multilingual sites.
 
 # Recommended Reading
 
@@ -17,4 +29,3 @@ It is a perfect solution for users who want a well-translated content in differe
 - [Usage](02_Usage)
 - [System Settings](03_System_Settings)
 - [FAQ](04_FAQ)
-
