@@ -46,6 +46,8 @@ If you would like to show more images, adjust the limit property as desired. We'
 
 To format the image result we are using the `albumGalleryImage` chunk.
 
+To add a link to the full album from this chunk, you can use `<a href="[[~[[+id]]]]">...</a>`. 
+
 ## The albumGalleryImage Chunk
 
 This chunk is used for each individual image that is returned. Be sure to refer to the [Snippet Usage](Snippets/mgGetImages) document for all available placeholders.
@@ -56,3 +58,5 @@ This chunk is used for each individual image that is returned. Be sure to refer 
   <h4>[[+name]]</h4>
 </div>
 ````
+
+To add a link to the full album page from this chunk, you can use `<a href="[[~[[+resource.id]]]]">...</a>`. 
