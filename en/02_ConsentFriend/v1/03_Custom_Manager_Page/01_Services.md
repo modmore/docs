@@ -1,7 +1,7 @@
 This tab contains a paginated grid with all internal or third-party services,
-that could collect personal data.
+that are able to collect personal data.
 
-With ConsentFriend can manage both inline and external scripts as well as static
+With ConsentFriend you can manage inline and external scripts as well as static
 tracking elements like images or stylesheet links. New services can be added
 with just a few lines of code.
 
@@ -14,7 +14,7 @@ You can export the services to a YAML file with a click on the Export Services
 button above the services grid.
 
 You can import a YAML file with the services with a click on the Import Services
-button above the services grid. In the import window you could select a file to
+button above the services grid. In the import window you have to select a file to
 import and the import mode. In the append mode the entries in the file are
 appended to the existing services in the grid. In the replace mode the existing
 services in the grid are replaced with the entries in the file. In the update
@@ -27,7 +27,8 @@ grid.
 
 Each service can be edited by a click on the edit icon in the row of the
 service. And it can be deleted after a confirmation with a click on the trash
-icon in the row of the service.
+icon in the row of the service. The service name and the yes/no columns are
+editable inline.
 
 The row of each service shows the service name, the title, some options, and the
 purposes. The service title will be shown in green, when it is retrieved from a
@@ -61,6 +62,9 @@ notice. Do not forget to add translations for all purposes you list here.
 the description is left blank, the description is set by the lexicon entry
 "consentfriend.services.&lt;name&gt;.description" with the consentfriend
 namespace.
+
+**Contexts:** The context(s) where this service is active in the frontend.
+Available since ConsentFriend 1.5.0.
 
 **Active:** If "active" is checked, the service is shown in the consent management window
 window.
@@ -96,7 +100,7 @@ In the code tab you can select the code section and enter the service code.
 
 **Code:** The service code, thats injected automatically into the page code. The
 service code will be automatically disabled for a direct execution before the
-injection. MODX context/system settings tags could be used in the service code.
+injection. MODX context/system settings tags can be used in the service code.
 
 ### Cookies Tab
 
@@ -141,7 +145,7 @@ disables all inputs with `data-name="googleRecaptcha"`. Please have a look at
 the [reCAPTCHA usage example](../02_Functionality/Google_reCAPTCHA.md).
 
 The `On Toggle` callback was named `Callback` before ConsentFriend 1.3.0. The next
-callbacks are available with ConsentFriend 1.3.0.
+callbacks are available since ConsentFriend 1.3.0.
 
 **On Init:** This callback code is executed when the service is initialized
 (once per page-load). It must contain a javascript function with the property

@@ -6,7 +6,7 @@ Klaro. Sadly the changes are not backwards compatible. If you created an own
 theme, you have to use the new color variables. Please check the display of the
 consent popup after the update and after compiling the scss file for your site.
 
-> If you want to create your own theme, you could import the file
+> If you want to create your own theme, you can import the file
 `assets/components/consentfriend/scss/klaro.scss` in your scss workflow.
 To disable the default styling of the modal afterwards, please set the system
 setting consentfriend.js_url to

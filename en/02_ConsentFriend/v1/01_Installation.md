@@ -5,18 +5,18 @@ A custom manager page called _ConsentFriend_ is installed within the _Extras_
 menu.
 
 There are some system settings available in the namespace _ConsentFriend_. These
-can also be edited in the [settings](03_Custom_Manager_Page/03_Settings.md) (gear
+can also be edited in the [settings](03_Custom_Manager_Page/04_Settings.md) (gear
 icon) tab of the _ConsentFriend_ custom manager page.
 
 ## Prepare the website
 
-After the installation on an existing website, you have to identify the used
-external services like Google Analytics, Matomo, Google Fonts etc. If those
-services are referenced at the end of the head or the body section, you could
-[edit an existing service or create a new
+After the installation on an existing website, you need to identify the external
+services used, such as Google Analytics, Matomo, Google Fonts, etc. If these
+services are referenced at the end of the Head or Body section, you can [edit an
+existing service or create a new
 service](03_Custom_Manager_Page/01_Services.md#createedit) and use the found
-code in the code tab. ConsentFriend will do the needed code changes for the
-consent management window.
+code in the Code tab. ConsentFriend will make the necessary changes to the code
+for the consent management window.
 
 If you use inline code for external services, you have to [modify it on your
 own](02_Functionality/01_Introduction.md#custom-external-services).

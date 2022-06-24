@@ -13,11 +13,11 @@ purposes grid.
 
 You can import a YAML file with the full ConsentFriend configuration with a
 click on the Import Configuration button above the settings grid. In the import
-window you could select a file to import.
+window you have to select a file to import.
 
 [![](img/configuration-import.png)](img/configuration-import.png)
 
-This ConsentFriend configuration file could be uploaded to
+This ConsentFriend configuration file can be uploaded to
 `{core_path}config/consentfriend/setup.yaml` before installing the ConsentFriend
 package. Then the content of file will be prepared as initial configuration of
 ConsentFriend. If you later on just need to add one service, prepare a

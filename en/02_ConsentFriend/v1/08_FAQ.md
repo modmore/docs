@@ -45,14 +45,14 @@ have to fill the html lang attribute with the cultureKey system/context setting:
 
 ## I would like to change the texts of ConsentFriend
 
-This could be done with the ConsentFriend [lexicon](06_Lexicon.md).
+This can be done with the ConsentFriend [lexicon](06_Lexicon.md).
 
 ## How can I create an own theme for ConsentFriend?
 
-If you want to create your own theme, you could import the file
+If you want to create your own theme, you can import the file
 `assets/components/consentfriend/scss/consentfriend.scss` in your scss workflow. There
 are a few scss variables available in
-`assets/components/consentfriend/scss/vars.scss` that could be overridden
+`assets/components/consentfriend/scss/vars.scss` that can be overridden
 before. To disable the default styling of the modal afterwards, please set the
 system setting consentfriend.js_url to
 `/assets/components/consentfriend/js/web/consentfriend-no-css.js`.

@@ -72,7 +72,7 @@ Example code for external services:
 
 #### Link to open the consent management window
 
-If you want to add a link to the consent management window on a page, you could use the following code: 
+If you want to add a link to the consent management window on a page, you can use the following code: 
 
 ```
 <a onclick="klaro.show();return false;">[[%consentfriend.services.change_setting? &namespace=`consentfriend`]]</a>

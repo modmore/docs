@@ -4,18 +4,15 @@ parts of the events.
 
 #### Services 
 
-This tab contains a grid view of all third-party
-[services](01_Services.md), that could collect personal
-data.
+This tab contains a grid view of all third-party [services](01_Services.md),
+that are able to collect personal data.
 
 #### Purposes 
 
-This tab contains a grid view of all
-[purposes](02_Purposes.md), that can be assigned to a
-service.
+This tab contains a grid view of all [purposes](02_Purposes.md), that can be
+assigned to a service.
 
 #### Settings (gear icon) 
 
-This tab contains a grid view of all ConsentFriend
-[settings](03_Settings.md), that could be found in
-[settings](../04_System_Settings.md).
+This tab contains a grid view of all ConsentFriend [settings](04_Settings.md),
+that are available in [settings](../04_System_Settings.md).
