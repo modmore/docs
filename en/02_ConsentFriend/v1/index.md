@@ -16,8 +16,8 @@ prepares a compliance with GDPR/DSGVO on the website and helps the site admin to
 setup the consent management in an easy way.
 
 It is a perfect solution for website operators, that have to use third-party
-frontend services on a MODX website. Since those services could collect personal
-data, the service usage has to be fully transparent and compliant.
+frontend services on a MODX website. Since those services are able to collect
+personal data, the service usage has to be fully transparent and compliant.
 
 # Recommended Reading
 

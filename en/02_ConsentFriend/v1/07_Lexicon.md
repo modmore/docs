@@ -11,4 +11,5 @@ MODX cache** for changes to appear in the front-end.
 The changes made this way will also persist across updates of the ConsentFriend
 package.
 
-The ConsentFriend lexicon could be translated on Weblate in the future.
+The ConsentFriend frontend lexicon can be translated on
+[Weblate](https://hosted.weblate.org/projects/treehillstudio/consentfriend-web/).

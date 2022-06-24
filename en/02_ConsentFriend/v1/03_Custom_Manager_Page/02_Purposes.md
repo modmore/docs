@@ -11,7 +11,7 @@ You can export the purposes to a YAML file with a click on the Export Purposes
 button above the purposes grid.
 
 You can import a YAML file with the purposes with a click on the Import Purposes
-button above the purposes grid. In the import window you could select a file to
+button above the purposes grid. In the import window you have to select a file to
 import and the import mode. In the append mode the entries in the file are
 appended to the existing purposes in the grid. In the replace mode the existing
 purposes in the grid are replaced with the entries in the file. In the update
@@ -24,7 +24,8 @@ grid.
 
 Each purpose can be edited by a click on the edit icon in the row of the
 purpose. And it can be deleted after a confirmation with a click on the trash
-icon in the row of the purpose.
+icon in the row of the purpose. The purpose key and the active column are
+editable inline.
 
 The row of each purpose shows the key, the title and the active state of an
 entry.
