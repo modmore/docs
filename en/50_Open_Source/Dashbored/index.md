@@ -14,8 +14,6 @@ Widgets included:
 * SiteDash
 * SiteDash | Extended Monitoring
 
-[Donations to support our open source work are much appreciated](https://modmore.com/extras/dashbored/donate/).
-
 ![An overview of the MODX dashbored utilising Dashbored widgets.](images/dashbored-view.jpg)
 
 _The image above shows the six different kinds of widgets available. Some are using custom backgrounds, and some are the default._
