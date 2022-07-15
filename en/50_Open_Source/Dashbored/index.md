@@ -22,13 +22,15 @@ _The image above shows the six different kinds of widgets available. Some are us
 
 ## Getting Started
 
-Install Dashbored via the [modmore package provider](https://modmore.com/about/package-provider/). Then go to your MODX dashboard, and click on the **Add** button to select the widgets you would like to use.
+Install Dashbored via the [modmore package provider](https://modmore.com/about/package-provider/). Then go to your MODX dashboard, and click on the **Add** button (in the top-right corner) to select the widgets you would like to use.
 
 ## SiteDash Widgets
 
 There are two widgets that utilise your SiteDash account, enabling you to display both website audit and extended monitoring data. 
 
 For these you will need to add your SiteDash Integration Key to the `dashbored.sitedash site_integration_key` system setting. You can generate a **SiteDash Integration Key** by logging into [SiteDash](https://sitedash.app/), select the site you would like to use, click on _Manage & Actions_, and you'll find it halfway down the page.
+
+After adding the site integration key to the system setting, return to your dashboard and click the refresh icon in the widget title bar to load the new data. 
 
 ## Settings
 
@@ -46,6 +48,12 @@ The About tab contains information about the API, service, or GitHub repository 
 
 ## Refreshing the widget
 
-Data from the widgets is cached for an amount of time, so each time you return to the dashbored, you don't need to wait for responses from the various APIs. If you would like to refresh the widget without waiting, click on the refresh icon in the widget's title bar.
+Data from the widgets is cached for a certain amount of time, so each time you return to the dashbored, you don't need to wait for responses from the various APIs. If you would like to refresh the widget before the cache has expired, click on the refresh icon in the widget's title bar.
 
+## Restricting access to widgets
 
+If there are certain widgets that you would like to restrict access to, this can be done via MODX main menu: 
+```
+Cog Icon -> Dashboards -> Widgets Tab -> Select the widget -> Permission dropdown
+```
+From the list, select the permission a user needs to have to add that widget to the dashboard.
