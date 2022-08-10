@@ -41,9 +41,9 @@ It will add the fields price, and the fields minimum and maximum in two columns
 to the event create/update window.
 
 Each array will create one extended field. The `name` key is required. The
-`label` key will be used, when it exist. Otherwise a lexicon entry with the
+`label` key will be used, when it exists. Otherwise, a lexicon entry with the
 field name prefixed by `agenda.extended.` is searched in the lexicon. An `xtype`
-key will be used, when it exist. Otherwise the xtype defaults to `textfield`.
+key will be used, when it exists. Otherwise, the xtype defaults to `textfield`.
 
 If a nested `fields` key contains an array value, this value will be used for
 subfields in columns. The `width` key inside is then used for the subfield

@@ -19,7 +19,7 @@ with a double click on the text.
 
 ## Create/Edit
 
-The create/edit window for one location has a some of options, that could be set.
+The create/edit window for one location has some options, that could be set.
 
 [![](img/location-edit-location.png)](img/location-edit-location.png)
 
@@ -32,7 +32,7 @@ system settings).
 On the address tab you could enter the address. If you have set the Google Maps
 API key in the system settings, you could geocode that address with the search
 button on the map. If marker on the map is not set right, you could drag it
-around (the location latitude and longitude values will be changed). Also the
+around (the location latitude and longitude values will be changed). Also, the
 map content could be dragged with the mouse (the map latitude and longitude
 values will be changed). The zoom level of the map could be changed by clicking
 on the plus/minus signs (the zoom value will be changed).

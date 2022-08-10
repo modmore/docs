@@ -7,14 +7,14 @@ event on a frontend page.
 ## Basic Setup
 
 First install FormIt and create a new MODX Resource. Then create a new Calendar
-under under Extras > Agenda > Calendars tab. Name it i.e. "User Events" with an
-alias of "userevents" and make sure it's active.
+under Extras > Agenda > Calendars tab. Name it i.e. "User Events" with an alias
+of "userevents" and make sure it's active.
 
 ## FormIt Call and form code
 
 To render and execute the form, we have to add a FormIt call to a MODX resource.
-This FormIt Call uses the [AgendaEventGet](../04_Snippets/08_AgendaEventGet) and
-the [AgendaEventSet](../04_Snippets/09_AgendaEventSet) hooks.
+This FormIt Call uses the [AgendaEventGet](../04_Snippets/09_AgendaEventGet) and
+the [AgendaEventSet](../04_Snippets/10_AgendaEventSet) hooks.
 
 Here's our `FormIt` example call; make sure to adjust the `&agendaEvent` property to
 the ID of an existing event, that should be editable in the frontend.
@@ -106,5 +106,5 @@ a restriction in the `AgendaCategories` snippet.
 the start date and end date of the repeating event. The other fields will change
 the event itself.
 - All editable fields are shown on the documentation of the
-[AgendaEventGet](../04_Snippets/08_AgendaEventGet) and the
-[AgendaEventSet](../04_Snippets/09_AgendaEventSet) hooks.
+[AgendaEventGet](../04_Snippets/09_AgendaEventGet) and the
+[AgendaEventSet](../04_Snippets/10_AgendaEventSet) hooks.

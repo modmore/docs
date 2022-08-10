@@ -18,11 +18,11 @@ a double click on the text.
 
 ## Create/Edit
 
-The create/edit window for one category has a some of options, that could be set.
+The create/edit window for one category has some options, that could be set.
 
 [![](img/category-edit.png)](img/category-edit.png)
 
-You could set the category name, the category alias and you could toggle it to
+You could set the category name, the category alias, and you could toggle it to
 inactive. And you could set the category text and background color with a color
 picker.
 

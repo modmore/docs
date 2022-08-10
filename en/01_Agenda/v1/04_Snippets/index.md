@@ -2,44 +2,63 @@ _Agenda_ contains some _snippets_ in the `Agenda` category.
 
 #### AgendaList
 
-This snippet displays [Agenda events](01_AgendaList) in a view.
+The [AgendaList](01_AgendaList) snippet displays Agenda events in a view.
 
 #### AgendaCalendar
 
-This snippet displays [Agenda events](02_AgendaCalendar) in a list divided into.
+The [AgendaCalendar](02_AgendaCalendar) snippet displays Agenda events in a list divided into.
 
 #### AgendaDetail
 
-This snippet displays one [Agenda event](03_AgendaDetail) in a view.
+The [AgendaDetail](03_AgendaDetail) snippet displays one Agenda event in a view.
 
 #### AgendaDetailIcal
 
-This snippet displays the [iCal Download link](04_AgendaDetailIcal) of one event and downloads the iCal file.
+The [AgendaDetailIcal](04_AgendaDetailIcal) snippet displays the iCal Download link of one event and downloads the iCal file.
 
 #### AgendaCalendars
 
-This snippet displays a list of [Agenda calendars](05_AgendaCalendars).
+The [AgendaCalendars](05_AgendaCalendars) snippet displays a list of Agenda calendars.
 
 #### AgendaCategories
 
-This snippet displays a list of [Agenda categories](06_AgendaCategories).
+The [AgendaCategories](06_AgendaCategories) snippet displays a list of Agenda categories.
 
 #### AgendaLocations
 
-This snippet displays a list of [Agenda locations](07_AgendaLocations).
+The [AgendaLocations](07_AgendaLocations) snippet displays a list of Agenda locations.
+
+#### AgendaGetDate
+
+The [AgendaGetDate](08_AgendaGetDate) snippet retrieves and formats a date from an GET parameter.
 
 ## FormIt Hooks
 
-_Agenda_ contains FormIt _hooks_ in the `Agenda` category.
+_Agenda_ contains FormIt/SimpleSearch _hooks_ in the `Agenda` category.
 
 #### AgendaEventGet
 
-This hook allows to fill FormIt values by [Agenda events](08_AgendaEventGet).
+The [AgendaEventGet](09_AgendaEventGet) hook allows to fill FormIt values by Agenda events.
 
 #### AgendaEventSet
 
-This hook allows to set [Agenda events](09_AgendaEventSet) values by FormIt.
+The [AgendaEventSet](10_AgendaEventSet) hook allows to set Agenda events values by FormIt.
 
 #### AgendaSearch
 
-This hook allows to search for [Agenda events](10_AgendaSearch) in SimpleSearch faceted search.
+The [AgendaSearch](11_AgendaSearch) hook allows to search for Agenda events in SimpleSearch faceted search.
+
+## Output Filter
+
+#### AgendaCalcDate
+
+The [AgendaCalcDate](12_AgendaCalcDate) output filter calculates a date with the given input and the options.
+
+#### AgendaCalcFirstFullWeek
+
+The [AgendaCalcFirstFullWeek](13_AgendaCalcFirstFullWeek) output filter calculates the startdate of the first full week with the given input.
+
+#### AgendaCalcLastFullWeek
+
+The [AgendaCalcLastFullWeek](14_AgendaCalcLastFullWeek) output filter calculates the enddate of the last full week with the given input.
+

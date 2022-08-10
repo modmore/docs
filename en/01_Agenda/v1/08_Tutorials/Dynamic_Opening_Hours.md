@@ -20,12 +20,12 @@ want to show as the event title (e.g. "Closed", or "Closed for private party").
 If you're **open** on a certain day, add an event with a start and end date,
 which corresponds with your opening hours.
 
-Use the recurring events functionality to automatically repeat the opening hours
+Use the recurring events' functionality to automatically repeat the opening hours
 weekly. Once created, you can edit the start and end date/time of an event from
 the Repeats tab, for when the opening hours are different.
 
 **It's important to have an event for each day of the week**. If you're missing
-*a day, it wont show up in our list of opening hours at all.
+*a day, it won't show up in our list of opening hours at all.
 
 If you add multiple events for a single day (e.g. if the store is open in the
 morning and afternoon, but closed during lunch), each one will show separately

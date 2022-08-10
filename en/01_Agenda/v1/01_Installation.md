@@ -2,7 +2,7 @@ The MODX installer should install the package automatically from the modmore
 repository.
 
 A custom manager page called _Agenda_ is installed within the _Extras_ menu.
-Also some [snippets](04_Snippets/index) in the element category named
+Also, some [snippets](04_Snippets/index) in the element category named
 _Agenda_ are created.
 
 There are some system settings available in the namespace _agenda_. These could
@@ -20,5 +20,5 @@ the Agenda [system setting](02_Custom_Manager_Page/07_Settings)
 `agenda.google_maps_api_key`. You have to activate the Maps JavaScript API and
 the Geocoding API in the created Google Cloud Platform project.
 
-After the installation you have to setup a cronjob, if you want to use more than
-100 repeats of a recurring event or if you want to setup feeds.
+After the installation you have to set up a cronjob, if you want to use more than
+100 repeats of a recurring event or if you want to set up feeds.

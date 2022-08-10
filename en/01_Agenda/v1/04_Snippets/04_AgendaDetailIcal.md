@@ -4,17 +4,17 @@ This snippet displays an iCalendar link or download an iCalendar file of an even
 
 It uses the following snippet properties:
 
-Property | Description | Default
----------|-------------|--------
-calendars | Comma-separated list of aliases of calendars to filter the iCal download. | -
-categories | Comma separated list of aliases of categories to filter the iCal download. | -
-contexts | Comma separated list of context keys to filter the iCal download. | -
-id | ID of one event to display the iCal download link for. | Request parameter `event`
-locations | Comma separated list of aliases of locations to filter the iCal download. | -
-tpl | Name of a chunk that contains the template for the iCal download link. | tplAgendaEventDetailICalLink
-repeating | ID of one recurring event to display the iCal download link for. | Request parameter `repeating`
-usergroups | Comma separated list of user group names to filter the iCal download. | -
-users | Comma separated list of user IDs to filter the iCal download. | -
+| Property   | Description                                                                | Default                       |
+|------------|----------------------------------------------------------------------------|-------------------------------|
+| calendars  | Comma-separated list of aliases of calendars to filter the iCal download.  | -                             |
+| categories | Comma separated list of aliases of categories to filter the iCal download. | -                             |
+| contexts   | Comma separated list of context keys to filter the iCal download.          | -                             |
+| id         | ID of one event to display the iCal download link for.                     | Request parameter `event`     |
+| locations  | Comma separated list of aliases of locations to filter the iCal download.  | -                             |
+| tpl        | Name of a chunk that contains the template for the iCal download link.     | tplAgendaEventDetailICalLink  |
+| repeating  | ID of one recurring event to display the iCal download link for.           | Request parameter `repeating` |
+| usergroups | Comma separated list of user group names to filter the iCal download.      | -                             |
+| users      | Comma separated list of user IDs to filter the iCal download.              | -                             |
 
 ## Placeholders
 
@@ -28,7 +28,7 @@ during each package update, so please rename the chunks before editing them.
 
 ### tplAgendaEventDetailIcal
 
-Placeholder | Description
-------------|------------
-key | The request key for the iCal download link.
-value | The request value for the iCal download link.
+| Placeholder | Description                                   |
+|-------------|-----------------------------------------------|
+| key         | The request key for the iCal download link.   |
+| value       | The request value for the iCal download link. |

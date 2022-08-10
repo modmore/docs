@@ -20,7 +20,7 @@ The cronjob command will run two different tasks:
 - [refresh the feeds](#refresh-the-feeds-task)
 - [refresh the recurring events](#refresh-the-recurring-events-task)
 
-Normally the the feeds and the recurring events are refreshed together. To run a
+Normally the feeds and the recurring events are refreshed together. To run a
 single task you could use the property `mode=feed` or `mode=repeating` for the
 cronjob:
 
