@@ -20,7 +20,7 @@ with a double click on the text.
 
 ## Create/Edit
 
-The create/edit window for one feed has a some of options, that could be set.
+The create/edit window for one feed has some options, that could be set.
 
 [![](img/feed-edit.png)](img/feed-edit.png)
 

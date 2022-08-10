@@ -30,9 +30,9 @@ The create/edit window for one event has a lot of options, that could be set.
 
 [![](img/event-edit.png)](img/event-edit.png)
 
-In the event tab you have to set the event title and the event calender, where
+In the event tab you have to set the event title and the event calendar, where
 the event is shown in. An event should have a start date/time and an end
-date/time and it could have a location. The location could be directly
+date/time, and it could have a location. The location could be directly
 created/edited in the event tab.
 
 The event could be linked with a MODX resource. This combo field is only shown,
@@ -42,7 +42,7 @@ field. This combo has a select, a preview and a quickedit button. The resource
 could be edited in a new window with an alt click on the quickedit button.
 
 The event could be restricted to a context, it has to be tagged with at least
-one category and it could be toggled to inactive. If the `All Day Event`
+one category, and it could be toggled to inactive. If the `All Day Event`
 checkbox is checked, the events don't have a time input.
 
 If the event is set as recurring event, an additional section is visible. There
@@ -66,7 +66,7 @@ during saving the event when the recurring settings of an event are changed.
 In the description tab you could set the description for the current event. In
 the content tab you could set the content for the current event. The editor type
 of the content/description input could be set with the `agenda.editor_type`
-system setting to htmleditor (the system wide richtext editor) or textarea.
+system setting to htmleditor (the system-wide richtext editor) or textarea.
 
 After an event is saved, you could attach images and videos to the saved event
 in the images/videos tab. Each image/video could have a title and a description.

@@ -1,6 +1,6 @@
 We're collecting the questions we get most often into a FAQ. If your question is
-not in the list, please reach out to us via support@modmore.com and we would be
-glad to help.
+not in the list, please reach out to us via treehillstudio-support@modmore.com,
+and we would be glad to help.
 
 [TOC]
 
@@ -12,15 +12,15 @@ To render events to your visitors, you can use the provided snippets:
 - [AgendaCalendar](04_Snippets/02_AgendaCalendar) used for rendering events in a list divided into intervals (i.e. days)
 - [AgendaDetail](04_Snippets/03_AgendaDetail) used for showing one specific event on a detail page
 
-There are also other snippets to help you render calendars, categories, and locations. 
+There are other snippets to help you render calendars, categories, and locations. 
 
 ## How can an event repeat more than 100 times?
 
-By default repeating events are scheduled for 100 recurrences.
+By default, repeating events are scheduled for 100 recurrences.
 
 You have two possibilitiesto change that:
 
-- [Setup a cron job](05_Cronjob) to refreshes recurring events for up to 100 repeats in the future from the current date.
+- [Set up a cron job](05_Cronjob) to refresh recurring events for up to 100 repeats in the future from the current date.
 - Increase the `agenda.repeating_max_occurance` [system setting](02_Custom_Manager_Page/07_Settings) to a larger value.
 
 ## Can events, categories, calendars or locations be connected to a resource? 
@@ -91,6 +91,6 @@ By default, errors are logged to the standard MODX error log.
 
 ## I can't use my own daterange format in the lexicon or in the snippet properties
 
-The format string has to use exactly 7 parts separated by `|`. The description
+|The format string has to use exactly 7 parts separated by `|`. The description|
 of the formatting rules could be found below the placeholder descriptions on the
 [AgendaList](04_Snippets/01_AgendaList#range-placeholder-format) snippet description.

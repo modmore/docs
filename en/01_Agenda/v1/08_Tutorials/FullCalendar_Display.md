@@ -19,7 +19,7 @@ the overview connector.
 
 ## Call the frontend scripts
 
-Finally you have to initialize the FullCalendar script with the following code:
+Finally, you have to initialize the FullCalendar script with the following code:
 
 ```js
 $('#fullcalendar').fullCalendar({
@@ -30,9 +30,9 @@ $('#fullcalendar').fullCalendar({
         endParam: 'enddate',
         data: function () {
             return {
-                //calendars: calendars || 0,
-                //categories: categories || 0,
-                //query: query || '',
+|                //calendars: calendars || 0,|
+|                //categories: categories || 0,|
+|                //query: query || '',|
                 limit: 0
             };
         }
@@ -40,5 +40,5 @@ $('#fullcalendar').fullCalendar({
 });
 ```
 
-Maybe it is possble to make this work with FullCalendar 4 or 5, but thats not
+Maybe it is possble to make this work with FullCalendar 4 or 5, but that's not
 part of this instruction.

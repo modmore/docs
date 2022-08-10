@@ -18,11 +18,11 @@ a double click on the text.
 
 ## Create/Edit
 
-The create/edit window for one calendar has a some of options, that could be set.
+The create/edit window for one calendar has some options, that could be set.
 
 [![](img/calendar-edit.png)](img/calendar-edit.png)
 
-You could set the calendar name and you could toggle it to inactive. And you
+You could set the calendar name, and you could toggle it to inactive. And you
 could set the calendar text and background color with a color picker.
 
 The calendar could be linked with a MODX resource. This combo field is only
