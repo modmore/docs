@@ -24,7 +24,7 @@ h1 {
 
 p, td, th {
     margin: 0 0 $paragraph-margin-bottom;
-    font-size: rem(15);
+    font-size: rem(16);
     line-height: $paragraph-lineheight;
     text-rendering: $paragraph-text-rendering;
 }
@@ -96,4 +96,10 @@ blockquote {
   :last-child {
     margin-bottom: 0;
   }
+}
+.Permalink {
+  margin-left: -1em;
+  width: 1em;
+  display: inline-block;
+  text-align: center;
 }

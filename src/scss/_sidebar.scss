@@ -4,7 +4,7 @@ aside.sidebar {
     text-shadow: 0 0 rem(15) rgba(0,0,0,0.15);
 
     @include breakpoint(large) {
-        border-right: 3px solid #132843;
+        //border-right: 3px solid #132843;
     }
 }
 
@@ -180,9 +180,9 @@ nav.pagenav {
 
     // 2nd level link
     > ul > li > ul > li > a {
-        padding-left: rem(45);
-        font-size: rem(12);
-        text-transform: uppercase;
+        padding-left: rem(30);
+        font-size: rem(14);
+        //text-transform: uppercase;
         //background-image: #{"url(\"data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' width='216' height='146' viewBox='0 0 216 146' fill='#fff'><path d='M144.988 65.667l-53.12-53.04c-1.955-2.063-4.398-3.095-7.332-3.095s-5.377 1.033-7.333 3.096l-6.192 6.11c-2.01 2.01-3.014 4.454-3.014 7.333 0 2.825 1.005 5.297 3.015 7.415L110.608 73 71.01 112.596c-2.01 2.01-3.015 4.454-3.015 7.334 0 2.823 1.005 5.295 3.015 7.414l6.192 6.11c2.01 2.01 4.455 3.015 7.333 3.015 2.88 0 5.324-1.007 7.333-3.017l53.12-53.04c2.01-2.117 3.016-4.59 3.016-7.413 0-2.88-1.006-5.323-3.016-7.333z'/></svg>\")"};
        // background-size: rem(13);
         //background-repeat: no-repeat;
@@ -193,8 +193,8 @@ nav.pagenav {
 
     // 3rd level link
     li li li a {
-        padding-left: rem(60);
-        font-size: rem(12);
+        padding-left: rem(45);
+        font-size: rem(14);
         font-weight: $global-weight-normal;
     }
 

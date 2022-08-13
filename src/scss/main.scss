@@ -91,9 +91,10 @@ aside.sidebar {
     max-width: 100%;
 }
 .s-content li {
-    font-size: .875rem;
+    font-size: 1em;
     line-height: 1.6;
     text-rendering: optimizeLegibility;
+  margin-bottom: 0.4em;
 }
 .s-content li > p:last-of-type {
     margin-bottom: 0;
