@@ -1,6 +1,6 @@
 ---
-title: MoreGallery
-description: Documentation for MoreGallery, a premium extra from modmore for MODX. 
+title: MoreGallery 1.x
+description: Documentation for MoreGallery, a premium extra from modmore for MODX.
 ---
 
 [MoreGallery](https://modmore.com/moregallery/) is an intuitive and fully featured image gallery for MODX with tags, cropping, custom fields and video.

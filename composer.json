@@ -1,5 +1,5 @@
 {
     "require": {
-        "justinwalsh/daux.io": "dev-development"
+        "daux/daux.io": "0.x"
     }
 }

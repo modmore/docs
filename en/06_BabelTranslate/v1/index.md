@@ -1,6 +1,6 @@
 ---
-title: BabelTranslate
-description: Documentation for BabelTranslate, a translator for MODX resources. 
+title: BabelTranslate 1.x
+description: Documentation for BabelTranslate, a translator for MODX resources.
 ---
 
 [BabelTranslate](https://modmore.com/babeltranslate/) simple but very useful

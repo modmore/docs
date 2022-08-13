@@ -20,50 +20,30 @@
 
     <meta name="author" content="The modmore team &amp; contributors">
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="icon" href="https://assets.modmore.com/icon_180x180.png" type="image/x-icon">
     <!-- Mobile -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- JS -->
+    <script>
+        window.base_url = "<?= $base_url?>";
+        document.documentElement.classList.remove('no-js');
+    </script>
+
     <!-- Font -->
-    <?php foreach ($params['theme']['fonts'] as $font) {
-        echo "<link href='$font' rel='stylesheet' type='text/css'>";
-    } ?>
+    <?php foreach ($config->getTheme()->getFonts() as $font) { ?>
+        <link href='<?= $font; ?>' rel='stylesheet' type='text/css'>
+    <?php } ?>
 
     <!-- CSS -->
-    <?php foreach ($params['theme']['css'] as $css) {
-        echo "<link href='$css' rel='stylesheet' type='text/css'>";
-    } ?>
-
-    <?php /*if ($params['html']['search']) {
-        ?>
-        <!-- Tipue Search -->
-        <link href="<?= $base_url; ?>tipuesearch/tipuesearch.css" rel="stylesheet">
-        <?php
-
-    } */ ?>
+    <?php foreach ($config->getTheme()->getCSS() as $css) { ?>
+        <link href='<?= $css; ?>' rel='stylesheet' type='text/css'>
+    <?php } ?>
 </head>
-<body class="<?= $params['html']['float'] ? 'with-float' : ''; ?>">
+<body class="<?= $this->section('classes'); ?>">
 <?= $this->section('content'); ?>
-<!--
-<script defer src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script>
-    onContentLoaded(function() {
-        if (!window.jQuery) {
-            loadJS('/assets/templates/docs/src/bower_components/jquery/dist/jquery.min.js', false, function () {
-                loadJS('/assets/templates/docs/dist/main.js', true);
-            });
-        } else {
-            loadJS('/assets/templates/docs/dist/main.js', true);
-        }
-
-        // load image related scripts async
-        loadJS('/assets/templates/docs/dist/images.js', function(){
-            window.lazySizes.init();
-        });
-    });
-</script>
--->
 
 <script>
     if (window.location.host === 'docs.modmore.com') {
@@ -84,29 +64,13 @@
 <script src="<?= $base_url; ?>themes/modmore/js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
+
 <!-- JS -->
-<?php foreach ($params['theme']['js'] as $js) {
-    echo '<script src="' . $js . '"></script>';
-} ?>
+<?php foreach ($config->getTheme()->getJS() as $js) { ?>
+    <script src="<?= $js; ?>"></script>
+<?php } ?>
 
-<script src="<?= $base_url; ?>themes/modmore/js/daux.js"></script>
-
-<?php if ($params['html']['search']) {
-    ?>
-    <!-- Tipue Search -->
-    <script type="text/javascript" src="<?php echo $base_url; ?>themes/modmore/js/tipuesearch.js"></script>
-
-    <script>
-        window.onunload = function(){}; // force $(document).ready to be called on back/forward navigation in firefox
-        $(function() {
-            tipuesearch({
-                'base_url': '<?php echo $base_url?>'
-            });
-        });
-    </script>
-    <?php
-
-} ?>
+<?php $this->insert('theme::partials/search_script', ['page' => $page, 'base_url' => $base_url]); ?>
 
 <script type="text/javascript">!function(e,t,n){function a(){var e=t.getElementsByTagName("script")[0],n=t.createElement("script");n.type="text/javascript",n.async=!0,n.src="https://beacon-v2.helpscout.net",e.parentNode.insertBefore(n,e)}if(e.Beacon=n=function(t,n,a){e.Beacon.readyQueue.push({method:t,options:n,data:a})},n.readyQueue=[],"complete"===t.readyState)return a();e.attachEvent?e.attachEvent("onload",a):e.addEventListener("load",a,!1)}(window,document,window.Beacon||function(){});</script>
 <script type="text/javascript">

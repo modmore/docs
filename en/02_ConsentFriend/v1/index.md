@@ -1,5 +1,5 @@
 ---
-title: ConsentFriend
+title: ConsentFriend 1.x
 description: Documentation for ConsentFriend, a premium consent management platform for MODX by Treehill Studio.
 ---
 

@@ -1,4 +1,4 @@
-$pageheader-color: $body-background;
+$pageheader-color: #fff;
 $pageheader-font-color: #555;
 .pageheader {
     height: rem(57);
@@ -7,7 +7,7 @@ $pageheader-font-color: #555;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
-    padding: rem(0 30);
+    padding: rem(0 30 0 0);
     color: $pageheader-font-color;
 
     background: $pageheader-color;
@@ -29,7 +29,7 @@ $pageheader-font-color: #555;
         top: 0;
         left: 0;
         right: 0;
-        padding: rem(0 45);
+        padding: rem(0 45 0 0);
     }
 }
 
