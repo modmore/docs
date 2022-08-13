@@ -1,4 +1,8 @@
-To integrate recent Facebook, Twitter & Instagram posts, you can use the free [Social Media extension for Digital Signage](https://modmore.com/digitalsignage/extensions/social-media/). 
+> **This extra is discontinued**. It was originally built by Sterc and distributed by modmore as a Premium Extra, however in 2020 Sterc decided they can no longer offer the support required. It is no longer available from modmore, but may be available elsewhere.
+>
+> Unfortunately modmore cannot provide standard support for this extra. You may request support from Sterc directly or consider [booking Premium MODX Support](https://modmore.com/premium-modx-support/) if you need help with it.
+
+To integrate recent Facebook, Twitter & Instagram posts, you can use the free [Social Media extension for Digital Signage](https://modmore.com/digitalsignage/extensions/social-media/).
 
 ## Setting up your template
 
@@ -46,14 +50,14 @@ Next, way in the footer, but before digitalsignage.js is included, load the Soci
 
 ## Adding new Slide Type
 
-In the Digital Signage dashboard, click on Admin View in the top right and add a new Slide Type with key `social_media`, a name and icon of your choosing (e.g. `icon-heart`). 
+In the Digital Signage dashboard, click on Admin View in the top right and add a new Slide Type with key `social_media`, a name and icon of your choosing (e.g. `icon-heart`).
 
 ## Adding a new Slide
 
-Go back to the default view with the button in the top right, and add a new slide using the slide type you just created. 
+Go back to the default view with the button in the top right, and add a new slide using the slide type you just created.
 
 ## Adding Social Media access tokens
 
 In System > System Settings open the `digitalsignagesocialmedia` namespace to find the various access credentials you'll need, as well as search options. You only have to add the tokens for the social media you want to integrate with.
 
-To check if the credentials are working, you can view the "Export (social media)" resource in your digitalsignage context. That should contain your post, or might contain error messages. 
+To check if the credentials are working, you can view the "Export (social media)" resource in your digitalsignage context. That should contain your post, or might contain error messages.

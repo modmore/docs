@@ -1,4 +1,8 @@
-To prevent spam, you can use the [Math hook](https://docs.modx.com/extras/revo/formit/formit.hooks/formit.hooks.math) that ships with FormIt. 
+> **This extra is discontinued**. It was originally built by Sterc and distributed by modmore as a Premium Extra, however in 2020 Sterc decided they can no longer offer the support required. It is no longer available from modmore, but may be available elsewhere.
+>
+> Unfortunately modmore cannot provide standard support for this extra. You may request support from Sterc directly or consider [booking Premium MODX Support](https://modmore.com/premium-modx-support/) if you need help with it.
+
+To prevent spam, you can use the [Math hook](https://docs.modx.com/extras/revo/formit/formit.hooks/formit.hooks.math) that ships with FormIt.
 
 [TOC]
 
@@ -27,11 +31,11 @@ Now you're ready to use the field.
 
 ## Add the field to a form
 
-Go to Extras > Formalicious and edit your form. 
+Go to Extras > Formalicious and edit your form.
 
-Add the newly created `Math Captcha` field to your form. You can give it a title, but that's not currently used in the `customMathFieldTpl`, so is only shown in the form management. 
+Add the newly created `Math Captcha` field to your form. You can give it a title, but that's not currently used in the `customMathFieldTpl`, so is only shown in the form management.
 
 Next open the Advanced tab, and add `math` to the Posthooks. This makes sure the field is validated and that error messages are shown.
 
-**Important**: the math hook only works with forms that only have a single step. 
+**Important**: the math hook only works with forms that only have a single step.
 

@@ -1,3 +1,7 @@
+> **This extra is discontinued**. It was originally built by Sterc and distributed by modmore as a Premium Extra, however in 2020 Sterc decided they can no longer offer the support required. It is no longer available from modmore, but may be available elsewhere.
+>
+> Unfortunately modmore cannot provide standard support for this extra. You may request support from Sterc directly or consider [booking Premium MODX Support](https://modmore.com/premium-modx-support/) if you need help with it.
+
 Creating a form is something you can do yourself, as a MODX website maintainer, but Formalicious enables content-manager to also create forms.
 
 The process of setting up a Formalicious-form can be split into 3 steps. Each step has a Tab in the create-form dialog:
@@ -46,4 +50,4 @@ Now is the time to put a form on a page! This can be done by going to a page and
 
 ![Select a Formalicious form in a page](../images/resource.png)
 
-Alternatively, if you use [ContentBlocks](https://www.modmore.com/contentblocks/), you can also create a _Formalicious Form Selector_ field and insert that into your page. 
+Alternatively, if you use [ContentBlocks](https://www.modmore.com/contentblocks/), you can also create a _Formalicious Form Selector_ field and insert that into your page.

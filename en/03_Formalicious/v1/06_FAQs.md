@@ -1,3 +1,7 @@
+> **This extra is discontinued**. It was originally built by Sterc and distributed by modmore as a Premium Extra, however in 2020 Sterc decided they can no longer offer the support required. It is no longer available from modmore, but may be available elsewhere.
+>
+> Unfortunately modmore cannot provide standard support for this extra. You may request support from Sterc directly or consider [booking Premium MODX Support](https://modmore.com/premium-modx-support/) if you need help with it.
+
 We're collecting the questions we get most often into a list of FAQs. If your question is not in the list, please reach out to us via support@modmore.com and we would be glad to help.
 
 [TOC]
@@ -21,7 +25,7 @@ Go to the _Advanced_ section and click _Add parameter_. Set the parameter-key to
 
 ## Adding a reply to address
 
-If you'd like the emails to have the proper reply-to header set, so you can immediately reply to an email to the customer, you can add a custom parameter to your form. 
+If you'd like the emails to have the proper reply-to header set, so you can immediately reply to an email to the customer, you can add a custom parameter to your form.
 
-Edit your form. On the Advanced tab, add a custom parameter with paramater key `emailReplyTo` and a value of `[[+field_ID]]`, where `ID` is the ID of the field that contains your customers' email address. You can find that ID on the Form Fields tab, in the first column. For example if your email field has ID 5, you would set the value to `[[+field_5]]`. 
+Edit your form. On the Advanced tab, add a custom parameter with paramater key `emailReplyTo` and a value of `[[+field_ID]]`, where `ID` is the ID of the field that contains your customers' email address. You can find that ID on the Form Fields tab, in the first column. For example if your email field has ID 5, you would set the value to `[[+field_5]]`.
 

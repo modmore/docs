@@ -1,14 +1,18 @@
+> **This extra is discontinued**. It was originally built by Sterc and distributed by modmore as a Premium Extra, however in 2020 Sterc decided they can no longer offer the support required. It is no longer available from modmore, but may be available elsewhere.
+>
+> Unfortunately modmore cannot provide standard support for this extra. You may request support from Sterc directly or consider [booking Premium MODX Support](https://modmore.com/premium-modx-support/) if you need help with it.
+
 Upon installation you'll find a new template called `DigitalSignage (1.x.x original)`. As the name implies, this is a default template that **will be overwritten on upgrades**, so you'll want to avoid editing it directly.
 
 [TOC]
 
 ## Setting a custom template
 
-To start tweaking your design, first duplicate the original template. 
+To start tweaking your design, first duplicate the original template.
 
 Go to System > System Settings and change the `digitalsignage.templates` system setting to include the ID of the new template you just created. This setting accepts a comma separated list of template IDs, so if its value is for example `2` and your template is ID `3`, you can set it to `2,3`.
 
-In the Digital Signage dashboard, on the Broadcasts tab, right click the broadcast you want to use with your own template and choose _Update broadcast_. Choose your template under Templates, and save. 
+In the Digital Signage dashboard, on the Broadcasts tab, right click the broadcast you want to use with your own template and choose _Update broadcast_. Choose your template under Templates, and save.
 
 ## Editing the template
 
