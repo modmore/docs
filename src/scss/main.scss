@@ -155,8 +155,11 @@ aside.sidebar {
   font-weight: 600;
   text-decoration: underline;
 
-  &.Link--external:after {
-    content: " " url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAVklEQVR4Xn3PgQkAMQhDUXfqTu7kTtkpd5RA8AInfArtQ2iRXFWT2QedAfttj2FsPIOE1eCOlEuoWWjgzYaB/IkeGOrxXhqB+uA9Bfcm0lAZuh+YIeAD+cAqSz4kCMUAAAAASUVORK5CYII=);
+  &.Link--external {
+    white-space: nowrap;
+    &:after {
+      content: " " url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAVklEQVR4Xn3PgQkAMQhDUXfqTu7kTtkpd5RA8AInfArtQ2iRXFWT2QedAfttj2FsPIOE1eCOlEuoWWjgzYaB/IkeGOrxXhqB+uA9Bfcm0lAZuh+YIeAD+cAqSz4kCMUAAAAASUVORK5CYII=);
+    }
   }
 
   &.Link--broken {
@@ -164,4 +167,12 @@ aside.sidebar {
   }
 }
 
+.s-content table {
+  min-width: 100%;
+  margin-bottom: 1em;
 
+  @include breakpoint(large) {
+    margin-left: -2.5em;
+    margin-right: -2.5em;
+  }
+}
