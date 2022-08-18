@@ -148,4 +148,19 @@ This will for example show the rendered price (which takes sale price types into
 [[!commerce.get_product? &product=`[[commerce.get_resource_product_id]]` &field=`price_rendered`]]
 ```
 
+## Syncing values between Commerce and Resources
+
+The values from the resource are synced to Commerce when a product is added to the cart.
+
+When calling commerce.get_resource_product_id for the first time (which creates the product in Commerce), that also synchronises the values the first time.
+
+Finally, in a construct like this:
+
+```html
+[[!commerce.get_product? &product=`[[commerce.get_resource_product_id]]`]]
+```
+
+the values are also synchronised by the commerce.get_product snippet.
+
+At this time, values are **not** synced when saving a resource. This may be added in the future.
 
