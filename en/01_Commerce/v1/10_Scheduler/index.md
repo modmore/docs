@@ -6,8 +6,8 @@ As of Commerce v1.3 a built-in scheduler can be used to process background or as
 
 The scheduler can support a few distinct use cases:
 
-1. One-time tasks to execute asynchronously (e.g. "send this email at the first opportunity")
-2. One-time tasks to execute at a specific time later (e.g. "send a reminder email in two days")
+1. One-time tasks to execute asynchronously (e.g. "send this email at the first opportunity") - note there'll be a delay of up to 60 seconds.
+2. One-time tasks to execute at a specific time later (e.g. "send a reminder email in two days from now")
 3. Recurring tasks that happen on a fixed schedule (e.g. "import product data at 1am every night")
 
 The scheduler is used for, among other things:
@@ -208,3 +208,23 @@ If you want it to run at the first possible opportunity, leave off the date 3rd 
 
 At the moment, we don't have a hard requirement for the scheduler in Commerce, so it may not be available on some servers.
 
+To conditionally use the scheduler when it's available, but falling back to synchronous execution otherwise, use the `$scheduler->isAvailable()` method:
+
+````php
+if ($scheduler->isAvailable()) {
+    $scheduler->run('MyModule::doStuff', $properties);
+}
+else {
+    MyModule::doStuff($commerce, $properties);
+}
+````
+
+Or as a ternary shorthand:
+
+````php
+$scheduler->isAvailable()
+    ? $scheduler->run('MyModule::doStuff', $properties)
+    : MyModule::doStuff($commerce, $properties);
+````
+
+It's also worth considering making it a user-configurable option if async processing should be used, depending on the use case.
