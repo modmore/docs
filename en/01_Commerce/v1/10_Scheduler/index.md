@@ -15,8 +15,6 @@ The scheduler is used for, among other things:
 - Sending emails asynchronously so the order processing isn't delayed; note that this needs to be enabled on the email messages in your status workflow.
 - Automatically plan the [TimeSlots schedule](../50_Modules/TimeSlots) nightly
 
-Modules can also hook into it for
-
 [TOC]
 
 ## Installation
