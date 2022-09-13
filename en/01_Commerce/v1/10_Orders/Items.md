@@ -21,7 +21,7 @@ How hard can calculating an item price be? Well, when you factor in sales, disco
 
 The calculating of a specific item is performed in the following order:
 
-1. First, the per-item `price` is determined. [Based on configured Price Types](../Products/Price_Types) the price may already be one thing or another based on currencies, available sales, item quantity, logged-in user, etc. If you're using a custom add-to-cart script that enables `is_manual_price`, this is skipped.
+1. First, the per-item `price` is determined. [Based on configured Price Types](../Products/Price_Types) the price may already be one thing or another based on currencies, available sales, item quantity, logged-in user, etc. If you're using a custom add-to-cart script that enables `is_manual_price`, this is skipped. If a price type is used that gives a lower price than the configured regular price, the `regular_price` is set to the regular price. (As of v1.3)
 
 2. The `price` is multiplied by the `quantity` which gives the `subtotal_before_extra`. This is sort of the "raw" subtotal based on the current going rate for the product. 
 
