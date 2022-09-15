@@ -31,4 +31,10 @@ How to set up the cron job depends on your server, but the command you will want
 php -q /home/server\_user/path/to/assets/components/scheduler/run.php
 ````
 
-If you use an external cron job service, point it to the `assets/components/scheduler/run.php` file.
+### External Crons
+
+If you use an external cron job service that triggers the file with a HTTP request, point it to  `https://yoursite.com/assets/components/scheduler/run.php?ctx=web` - including the `&ctx` URL parameter.
+
+> Running cron jobs over HTTP is not recommended. It means a front-end web server is processing the request, which are practically always configured with limits on memory and processing times, which can cause long or heavy tasks to fail.
+>
+> These limits are not in place for actual CRON jobs on the server.
