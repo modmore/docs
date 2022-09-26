@@ -20,7 +20,7 @@ By default, repeating events are scheduled for 100 recurrences.
 
 You have two possibilitiesto change that:
 
-- [Set up a cron job](05_Cronjob) to refresh recurring events for up to 100 repeats in the future from the current date.
+- [Set up a cron job](05_Cronjob) to refresh repeating events for up to 100 repeats in the future from the current date.
 - Increase the `agenda.repeating_max_occurance` [system setting](02_Custom_Manager_Page/07_Settings) to a larger value.
 
 ## Can events, categories, calendars or locations be connected to a resource? 
@@ -61,13 +61,13 @@ They're both ways of organising your events into logical sections, and can be
 filtered on in the [AgendaList](04_Snippets/01_AgendaList) snippet.
 
 A Calendar is best seen as the "owner" or "target" for an event. For example a
-conference center could use calendars for organising events as "Public events",
+conference center can use calendars for organising events as "Public events",
 "Private parties" and "Staff-only events", which are then shown in different
 sections of the website. An event must have one Calendar.
 
-A Category is then the type of event, which could be a sub-filter on the detail
+A Category is then the type of event, which can be a sub-filter on the detail
 pages. For example "Weddings", "Conference", "Expo", "Training/workshops". An
-event could have many categories.
+event can have many categories.
 
 For events grouped into a location or room, you can use the Locations
 functionality as well. That can also be used with maps, ideal for businesses
@@ -75,7 +75,7 @@ with different venues or events hosted in varying places.
 
 ## Is the cron job required?
 
-If you use Feeds or recurring events, yes, the cron job is required for Agenda
+If you use Feeds or repeating events, yes, the cron job is required for Agenda
 to work as expected.
 
 If your server doesn't allow you to configure cron jobs, you can trigger it
@@ -92,5 +92,5 @@ By default, errors are logged to the standard MODX error log.
 ## I can't use my own daterange format in the lexicon or in the snippet properties
 
 |The format string has to use exactly 7 parts separated by `|`. The description|
-of the formatting rules could be found below the placeholder descriptions on the
+of the formatting rules can be found below the placeholder descriptions on the
 [AgendaList](04_Snippets/01_AgendaList#range-placeholder-format) snippet description.

@@ -4,19 +4,21 @@ This snippet displays a list of locations.
 
 It uses the following snippet properties:
 
-| Property           | Description                                                                                                                                        | Default                         |
-|--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------|
-| allowedRequestKeys | Comma-separated list of request keys, that could be used to filter the displayed locations. Defaults to all allowed. Available since Agenda 1.1.0. | -                               |
-| locations          | Comma-separated list of aliases of locations to filter the displayed locations.                                                                    | -                               |
-| emptyTpl           | Name of a chunk that contains the template for not found locations.                                                                                | tplAgendaLocationsEmpty         |
-| limit              | Limit the number of locations in the result. Use `0` for unlimited locations.                                                                      | 20                              |
-| listId             | ID of a resource containing an AgendaList snippet call.                                                                                            | System Setting `agenda.list_id` |
-| offset             | An offset of locations returned by the criteria to skip.                                                                                           | 0                               |
-| outputSeparator    | An optional string to separate each tpl instance.                                                                                                  | -                               |
-| toPlaceholder      | If set, the snippet result will be assigned to this placeholder instead of outputting it directly.                                                 | -                               |
-| totalVar           | The key of a placeholder that indicates the total number of locations returned by the criteria.                                                    | agendalocations.total           |
-| tpl                | Name of a chunk that contains the template for one location.                                                                                       | tplAgendaLocation               |
-| wrapperTpl         | Name of a chunk that contains the wrapper template for all locations.                                                                              | tplAgendaLocationsWrapper       |
+| Property           | Description                                                                                                                                                             | Default                         |
+|--------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------|
+| ajax               | If enabled, the snippet output will be directly output as JSON result to the browser when the page is requested by Ajax (XMLHttpRequest). Available since Agenda 1.4.0. | No                              |
+| allowedRequestKeys | Comma-separated list of request keys, that could be used to filter the displayed locations. Defaults to all allowed. Available since Agenda 1.1.0.                      | -                               |
+| emptyTpl           | Name of a chunk that contains the template for not found locations.                                                                                                     | tplAgendaLocationsEmpty         |
+| limit              | Limit the number of locations in the result. Use `0` for unlimited locations.                                                                                           | 20                              |
+| listId             | ID of a resource containing an AgendaList snippet call.                                                                                                                 | System Setting `agenda.list_id` |
+| locations          | Comma-separated list of aliases of locations to filter the displayed locations.                                                                                         | -                               |
+| offset             | An offset of locations returned by the criteria to skip.                                                                                                                | 0                               |
+| outputSeparator    | An optional string to separate each tpl instance.                                                                                                                       | -                               |
+| selected           | Set the selected placeholder to `selected="selected"`, when the value is equal to the location alias.                                                                   | -                               |
+| toPlaceholder      | If set, the snippet result will be assigned to this placeholder instead of outputting it directly.                                                                      | -                               |
+| totalVar           | The key of a placeholder that indicates the total number of locations returned by the criteria.                                                                         | agendalocations.total           |
+| tpl                | Name of a chunk that contains the template for one location.                                                                                                            | tplAgendaLocation               |
+| wrapperTpl         | Name of a chunk that contains the wrapper template for all locations.                                                                                                   | tplAgendaLocationsWrapper       |
 
 ## Placeholders
 

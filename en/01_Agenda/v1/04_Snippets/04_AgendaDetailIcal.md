@@ -12,7 +12,7 @@ It uses the following snippet properties:
 | id         | ID of one event to display the iCal download link for.                     | Request parameter `event`     |
 | locations  | Comma separated list of aliases of locations to filter the iCal download.  | -                             |
 | tpl        | Name of a chunk that contains the template for the iCal download link.     | tplAgendaEventDetailICalLink  |
-| repeating  | ID of one recurring event to display the iCal download link for.           | Request parameter `repeating` |
+| repeating  | ID of one repeating event to display the iCal download link for.           | Request parameter `repeating` |
 | usergroups | Comma separated list of user group names to filter the iCal download.      | -                             |
 | users      | Comma separated list of user IDs to filter the iCal download.              | -                             |
 

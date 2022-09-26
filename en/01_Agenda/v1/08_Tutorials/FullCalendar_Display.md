@@ -1,4 +1,4 @@
-You could use the FullCalendar 3 script in the frontend with the following steps.
+You can use the FullCalendar 3 script in the frontend with the following steps.
 
 [TOC]
 
@@ -14,7 +14,7 @@ create a working FullCalendar script according to the
 ## Restrict the request
 
 If you need to restict the overview connector to a special calendar, category,
-time range etc., you could apply your own request variables after the line 29 in
+time range etc., you can apply your own request variables after the line 29 in
 the overview connector.
 
 ## Call the frontend scripts
