@@ -1,8 +1,8 @@
 ## Extended Event Fields
 
-The extended fields were introduced with Agenda 1.1.0.
+The extended event fields were introduced with Agenda 1.1.0.
 
-Each event in Agenda could use predefined extended fields. The field values are
+Each event in Agenda can use predefined extended fields. The field values are
 stored as JSON encoded array in a text field. So sorting and filtering by
 extended fields is not possible.
 
@@ -19,18 +19,24 @@ example:
   {
     "fields": [
       {
+        "xtype": "numberfield",
         "name": "minimum",
+        "renderer": "agenda-combo-example-resource",
         "label": "Minimum number of participants",
         "width": 0.5,
         "column_label": "min.",
         "column_width": 50
+        "hidden": false
       },
       {
+        "xtype": "numberfield",
         "name": "maximum",
+        "renderer": "agenda-combo-example-resource",
         "label": "Maximum number of participants",
         "width": 0.5,
         "column_label": "max.",
-        "column_width": 50
+        "column_width": 50,
+        "hidden": false
       }
     ]
   }
@@ -44,15 +50,32 @@ Each array will create one extended field. The `name` key is required. The
 `label` key will be used, when it exists. Otherwise, a lexicon entry with the
 field name prefixed by `agenda.extended.` is searched in the lexicon. An `xtype`
 key will be used, when it exists. Otherwise, the xtype defaults to `textfield`.
+A `renderer` key will be used, when it exists. The renderer has to be defined in
+the file referenced in the `agenda.extended_xtypes_script` system setting.
 
 If a nested `fields` key contains an array value, this value will be used for
 subfields in columns. The `width` key inside is then used for the subfield
 column width.
 
-The extended fields could also generate columns in the events grid. The
+The extended fields can also generate columns in the events grid. The
 `column_label` key is required to add a column in the grid. The `column_width`
 key will define the width of the grid column. The column_width defaults to 100.
+The column can be hidden in the grid with the `hidden` key.
 
 Extended fields are available as placeholder with the prefix `extended` in the
 event row template. The `price` field from the example will be available with
 the `[[+extended.price]]` placeholder.
+
+## Extended Repeat Fields
+
+The extended repeat fields were introduced with Agenda 1.4.0.
+
+They work the same as the extended event fields and are shown in the edit repeat
+window and the repeats grid.
+
+## Extended Location Fields
+
+The extended location fields were introduced with Agenda 1.4.0.
+
+They work the same as the extended event fields and are shown in the edit
+location window and the locations grid.
