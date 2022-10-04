@@ -34,3 +34,8 @@ custom manager page.
 | agenda.parents_location         | Location Parents Resource     | Comma separated list of parent resources for a resource connected with a location.                                                                                                                                                                             | -             |
 | agenda.repeating_max_occurance  | Maximum Occurance             | Maximum orccurance of repeating events.                                                                                                                                                                                                                        | 100           |
 | agenda.video_mediasource        | Video Media Source            | Media Source for Event Videos.                                                                                                                                                                                                                                 | 1             |
+
+The settings `agenda.extended_event_fields`, `agenda.extended_repeat_fields` and
+`agenda.extended_location_fields` can use `@FILE` or `@CHUNK` bindings. Path
+placeholders like `{core_path}`, `{base_path}` and `{assets_path}` can be used.
+All paths have to stay inside the MODX base path because of security reasons.
