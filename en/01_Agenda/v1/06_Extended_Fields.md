@@ -66,16 +66,20 @@ Extended fields are available as placeholder with the prefix `extended` in the
 event row template. The `price` field from the example will be available with
 the `[[+extended.price]]` placeholder.
 
+The setting can use `@FILE` or `@CHUNK` bindings. Path
+placeholders like `{core_path}`, `{base_path}` and `{assets_path}` can be used.
+All paths have to stay inside the MODX base path because of security reasons.
+
 ## Extended Repeat Fields
 
 The extended repeat fields were introduced with Agenda 1.4.0.
 
-They work the same as the extended event fields and are shown in the edit repeat
-window and the repeats grid.
+They work the same as the extended event fields, can use `@FILE` or `@CHUNK`
+bindings and are shown in the edit repeat window and the repeats grid.
 
 ## Extended Location Fields
 
 The extended location fields were introduced with Agenda 1.4.0.
 
-They work the same as the extended event fields and are shown in the edit
-location window and the locations grid.
+They work the same as the extended event fields, can use `@FILE` or `@CHUNK`
+bindings and are shown in the edit location window and the locations grid.
