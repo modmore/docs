@@ -11,7 +11,7 @@
     "sass": "^1.32.8",
     "parallelshell": "2.0.x",
     "rimraf": "latest",
-    "svg-sprite": "1.0.x",
+    "svg-sprite": "2.0.x",
     "watch": "0.x.x"
   },
   "scripts": {
