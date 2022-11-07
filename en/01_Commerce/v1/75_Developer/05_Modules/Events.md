@@ -208,6 +208,14 @@ FQN: `modmore\Commerce\Events\Admin\OrderActions` (extends `modmore\Commerce\Eve
 - `addAction(modmore\Commerce\Admin\Util\Action $action)`: add a single action.
 - `getOrder()`: returns the comOrder object.
 
+### Admin\OrderItemDetail
+
+FQN: `modmore\Commerce\Events\Admin\OrderItemDetail`
+
+- `getItem()`: returns the comOrderItem the detail is being rendered for
+- `addRow(string $html)`: from your module, write some arbitrary HTML to the item's detail section
+- `getRows()`: returns the added rows to the item
+
 ### Admin\OrderMenu
 
 FQN: `modmore\Commerce\Events\Admin\OrderMenu`
