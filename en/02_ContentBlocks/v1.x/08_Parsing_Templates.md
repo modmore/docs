@@ -8,7 +8,7 @@ ContentBlocks provides a revolutionary way of managing content. With this new wa
 
 ## When & Where
 
-When you're using ContentBlocks, the layouts and fields you used are parsed **when the resource is saved**. This was done to make integration into your templates as easy as possible (by simply using `[[*content]]` in your template), as well as to prevent parsing the resource from slowing down the front-end of the website. As many [input types](Input_Types) offer very granular templateing, it is not uncommon for large or complex resources to take 0,5-2 seconds to fully parse, and you don't want that delay in front of your users.
+When you're using ContentBlocks, the layouts and fields you used are parsed **when the resource is saved**. This was done to make integration into your templates as easy as possible (by simply using `[[*content]]` in your template), as well as to prevent parsing the resource from slowing down the front-end of the website. As many [input types](Input_Types) offer very granular templating, it is not uncommon for large or complex resources to take 0,5-2 seconds to fully parse, and you don't want that delay in front of your users.
 
 If you're changing field or layout templates, you will notice that this doesn't automatically update the resources using this content before the change. To parse every resource again, simply hit the "Rebuild Content" button in the component. This will kick off a process that loops over all of your resources and re-generates the content with the latest templates.
 

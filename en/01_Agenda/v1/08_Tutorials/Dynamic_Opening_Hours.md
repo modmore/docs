@@ -12,7 +12,7 @@ First create a new Calendar under Extras > Agenda > Calendars tab. Name it
 "Opening Hours" with an alias of "openinghours", or something similar. Make sure
 it's active, and give it a recognisable color.
 
-In your events overview, start adding (recurring) events to your new calendar.
+In your events overview, start adding (repeating) events to your new calendar.
 
 If you're **closed** on a certain day, add an **all day event** with what you
 want to show as the event title (e.g. "Closed", or "Closed for private party").
@@ -20,7 +20,7 @@ want to show as the event title (e.g. "Closed", or "Closed for private party").
 If you're **open** on a certain day, add an event with a start and end date,
 which corresponds with your opening hours.
 
-Use the recurring events' functionality to automatically repeat the opening hours
+Use the repeating events' functionality to automatically repeat the opening hours
 weekly. Once created, you can edit the start and end date/time of an event from
 the Repeats tab, for when the opening hours are different.
 

@@ -5,7 +5,7 @@ A custom manager page called _Agenda_ is installed within the _Extras_ menu.
 Also, some [snippets](04_Snippets/index) in the element category named
 _Agenda_ are created.
 
-There are some system settings available in the namespace _agenda_. These could
+There are some system settings available in the namespace _agenda_. These can
 also be edited in the [settings](02_Custom_Manager_Page/07_Settings) (cog
 icon) tab of the _Agenda_ custom manager page.
 
@@ -21,4 +21,4 @@ the Agenda [system setting](02_Custom_Manager_Page/07_Settings)
 the Geocoding API in the created Google Cloud Platform project.
 
 After the installation you have to set up a cronjob, if you want to use more than
-100 repeats of a recurring event or if you want to set up feeds.
+100 repeats of a repeating event or if you want to set up feeds.

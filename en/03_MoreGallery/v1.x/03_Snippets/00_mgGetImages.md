@@ -43,9 +43,11 @@ Used for rendering a list of specific images, for example those selected by the 
 
 #### &sortBy
 
-The field to sort images on. This can be one of the following: `filename`, `name`, `sortorder`, `uploadedon`, `editedon` or `random` to randomise the order of the images.
+The field to sort images on. This can be one of the following: `id`, `filename`, `name`, `sortorder`, `uploadedon`, `editedon` or `random` to randomise the order of the images.
 
 **Default**: `sortorder`
+
+**Note**: If multiple images are uploaded simultaneously, they will share the same `uploadedon` timestamp. This means the next and previous links may not appear for those images in single image view (when sorting by `uploadedon`). If batch uploads will be used, sorting by `id` can produce a similar result without this caveat.
 
 #### &sortDir
 

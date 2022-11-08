@@ -1,5 +1,5 @@
 Using the Agenda FormIt hooks, you can create and edit events by users in the
-frontend. When you've completed this tutorial, you'll could create and edit an
+frontend. When you've completed this tutorial, you'll can create and edit an
 event on a frontend page.
 
 [TOC]
@@ -91,18 +91,18 @@ The form code (based on Bootstrap 3) should be added below of the `FormIt` call 
 ```
 
 On the page with the FormIt call the title, the start date, the end date, the
-category and the description of an existing event could be edited. The category
-could be set with a dropdown showing all active categories.
+category and the description of an existing event can be edited. The category
+can be set with a dropdown showing all active categories.
 
 Some notes:
 
-- The `agendaEvent` property could be set by request parameter. Please make sure
-that all events on your page could be edited, if you allow this. You could
+- The `agendaEvent` property can be set by request parameter. Please make sure
+that all events on your page can be edited, if you allow this. You can
 restrict the editing to events created by the current user with the
 `agendaOwnEvent` property.
 - You can't set multiple categories with the dropdown at the moment, because of
 a restriction in the `AgendaCategories` snippet.
-- If you change the `agendaEvent` property to `agendaRepeating`, you could edit
+- If you change the `agendaEvent` property to `agendaRepeating`, you can edit
 the start date and end date of the repeating event. The other fields will change
 the event itself.
 - All editable fields are shown on the documentation of the
