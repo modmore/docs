@@ -1,5 +1,5 @@
 ---
-title: ConsentFriend 1.x
+title: ConsentFriend
 description: Documentation for ConsentFriend, a premium consent management platform for MODX by Treehill Studio.
 ---
 
@@ -19,7 +19,7 @@ It is a perfect solution for website operators, that have to use third-party
 frontend services on a MODX website. Since those services are able to collect
 personal data, the service usage has to be fully transparent and compliant.
 
-# Recommended Reading
+## Recommended Reading
 
 - [Installation](01_Installation)
 - [Functionality](02_Functionality/01_Introduction)
