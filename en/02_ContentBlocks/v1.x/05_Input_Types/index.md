@@ -30,6 +30,15 @@ The chunk input type has no template. If your chunk relies on certain styling, y
 
 [![](https://modmore.com/assets/uploads/7595c06a23a490d4b6e805f21c62d277.png)](https://modmore.com/assets/uploads/7595c06a23a490d4b6e805f21c62d277.png)
 
+
+## Chunk Selector
+
+The Chunk Selector input provides your editor a way to choose a chunk to display. This is in contrast to the _Chunk_ input, which displays a preselected chunk.
+
+After selecting a chunk, choose a related [property set](https://docs.modx.com/3.x/en/building-sites/properties-and-property-sets) to use, or specify a custom property.
+
+[![](../img/chunk-selector-input.png)](../img/chunk-selector-input.png)
+
  
 ## Checkbox
 
@@ -81,21 +90,49 @@ field Properties tab.
 [![](../img/color-picker-defaults.png)](../img/color-picker-defaults.png)
 
 
+## File
+
+The file input allows selecting or uploading files to be downloaded as attachments by your users. Select a file and then give it a title in the provided text field; this title will then display on the download link in the output.
+
+[![](../img/file-input.png)](../img/file-input.png)
+
+**Configuration**
+
+In the field properties, you can customize the template, maximum number of files allowed, media source and directory the files will be uploaded to, and the allowed file extensions.
+
+[![](../img/file-input-properties.png)](../img/file-input-properties.png)
+
+As you can see in the image above, there are two template fields that can be customized with your own markup. The following placeholders are available:
+
+ - Template
+   - `[[+url]]` - The file URL
+   - `[[+title]]` - The file title specified by the user
+   - `[[+size]]` - The file size (note the optional `:cbFileFormatSize` output modifier!)
+ - Wrapper Template
+   - `[[+files]]` - A list of files with the markup specified by the above Template
+
+
 ## Gallery
 
 While not quite as full featured as MoreGallery, the built-in Gallery input for ContentBlocks is quite nice. It allows you to limit the number of images editors can add and is fully template-able as you would expect.
 
 The template property is used for each individual image (placeholders: `[[+idx]]`, `[[+url]]` and `[[+title]]`), while the wrapper template is used to wrap the images (placeholder: `[[+images]]`).
 
- 
-
-
 
 [![](https://modmore.com/assets/uploads/6b2273fa0b7ea82850c83f94a3e70ef8.png)](https://modmore.com/assets/uploads/6b2273fa0b7ea82850c83f94a3e70ef8.png)
 
  
+## MoreGallery Image Selector
 
+While not included in ContentBlocks by itself, if you have both MoreGallery (1.16+) and ContentBlocks installed, the MoreGallery Image Selector input is made available.
+
+> If you did not have ContentBlocks installed when installing MoreGallery 1.16+, you may need to reinstall MoreGallery before the ContentBlocks input type will be available.
+
+The Image Selector input enables you to select an image from any MoreGallery resource to include within your ContentBlocks layout.
+
+[![](../img/image-selector-input.png)](../img/image-selector-input.png)
  
+For more information, view the [MoreGallery Image Selector](https://docs.modmore.com/en/MoreGallery/v1.x/Image_Selector.html) documentation.
 
 ## Heading
 
@@ -103,7 +140,6 @@ The heading input is a simple one, but extremely useful. It combines a drop down
 
 For example, a template could contain a link and and anchor to [automatically link headings](../Tips_Tricks/Auto_Linked_Headers), like we're doing on modmore.com.
 
- 
 
 
 
