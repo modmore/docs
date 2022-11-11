@@ -1,6 +1,6 @@
 We're collecting the questions we get most often into a FAQ. If your question is
-not in the list, please reach out to us via support@modmore.com and we would be
-glad to help.
+not in the list, please reach out to us via treehillstudio-support@modmore.com
+and we will be glad to help.
 
 [TOC]
 
@@ -45,7 +45,7 @@ have to fill the html lang attribute with the cultureKey system/context setting:
 
 ## I would like to change the texts of ConsentFriend
 
-This can be done with the ConsentFriend [lexicon](06_Lexicon.md).
+This can be done with the ConsentFriend [lexicon](07_Lexicon.md).
 
 ## How can I create an own theme for ConsentFriend?
 
