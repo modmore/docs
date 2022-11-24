@@ -19,7 +19,7 @@ The form includes:
     <label for="add-quantity">Quantity:</label>
     <input type="number" name="quantity" value="1">
     
-    <input type="submit" value="[[%commerce.add_to_cart]]">
+    <input type="submit" value="[[%commerce.add_to_cart? &namespace=`commerce` &topic=`frontend`]]">
 </form>
 ````
 
@@ -38,7 +38,7 @@ In a form, that looks somewhat like this. Replace `123` with the ID of your prod
     <label for="add-quantity">Quantity:</label>
     <input type="number" name="products[123][quantity]" value="1">
     
-    <input type="submit" value="[[%commerce.add_to_cart]]">
+    <input type="submit" value="[[%commerce.add_to_cart? &namespace=`commerce` &topic=`frontend`]]">
 </form>
 ````
 
