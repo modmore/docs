@@ -22,7 +22,7 @@ configuration, the code will be prepared for the the automatic activation.
 ConsentFriend will inject the code at the end of the HEAD or BODY section in the
 HTML code.
 
-> **Commercial conversion of Klaro!**
+> **Commercial version of Klaro!**
 >
 > ConsentFriend does not use the commercial server side version of Klaro!. It is
 not needed and currently not possible to use the commercial version of Klaro!
