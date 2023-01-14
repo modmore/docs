@@ -4,11 +4,11 @@ title: 'Modules & Extensions'
 
 Commerce uses Modules to provide most functionality and features.
 
-Many modules are shipped with the core Commerce package, requiring no further install.
+Many modules are shipped with the core Commerce package, requiring no further install. You can find those in Configuration > Modules in your Commerce dashboard.
 
 Other modules are provided as [standalone extensions](https://modmore.com/commerce/extensions/), installable through the MODX Extras installer. There are extensions for payment gateways, shipping partners, communication-related integrations and more.
 
-[**All available extensions, including third party extensions, can be found here.**](https://modmore.com/commerce/extensions/)
+[**All available installable extensions, including third party extensions, can be found here.**](https://modmore.com/commerce/extensions/)
 
 In alphabetical order:
 
