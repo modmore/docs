@@ -17,12 +17,10 @@ We could implement a custom translation layer if not for one historic mistake on
 ```php
 <?php
 
-//   v   v   v
-use \Symfony\Component\EventDispatcher\EventDispatcher;
+use Symfony\Component\EventDispatcher\EventDispatcher;
 
 class MyModule extends \modmore\Commerce\Modules\BaseModule
 {
-    // ...                         v   v   v
     public function initialize(EventDispatcher $dispatcher)
     {
         $dispatcher->addListener($eventName, $listener)
@@ -41,6 +39,24 @@ In Commerce 1.3 (dev7), we upgraded the Symfony dispatcher to 4.4, and added a n
 The new `\modmore\Commerce\Dispatcher\EventDispatcher` and `\modmore\Commerce\Dispatcher\Event` classes extend their Symfony counter-parts, and our EventDispatcher flips around the order of the parameters on the dispatch() method so that continues to work without deprecation warnings or errors.
 
 The next step is for  **all modules and extensions to update the references to these new classes**. This is a simple search & replace operation, and means increasing the minimum supported version of your module to 1.3.
+
+The example in the previous section would need to be updated to this:
+
+```
+<?php
+
+// change the `use` statement to the new class
+use modmore\Commerce\Dispatcher\EventDispatcher;
+
+class MyModule extends \modmore\Commerce\Modules\BaseModule
+{
+    // this does not have to change  v   v   v
+    public function initialize(EventDispatcher $dispatcher)
+    {
+        $dispatcher->addListener($eventName, $listener)
+    }
+}
+```
 
 ## Changes in Commerce v2.0
 
