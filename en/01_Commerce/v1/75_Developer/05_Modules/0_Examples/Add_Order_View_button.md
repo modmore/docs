@@ -1,6 +1,6 @@
-This example shows how you can add additional action buttons to the top of the order detail view. In this particular example it adds a link to edit the coupon the customer used in the order. 
+This example shows how you can add additional action buttons to the top of the order detail view. In this particular example it adds a link to edit the coupon the customer used in the order.
 
-Other use cases could include adding a "Print" button that links to a different page that is formatted as a printable order receipt/invoice/packing slip, or adding a refund button. 
+Other use cases could include adding a "Print" button that links to a different page that is formatted as a printable order receipt/invoice/packing slip, or adding a refund button.
 
 ````
 <?php
@@ -9,7 +9,10 @@ namespace modmore\Commerce\Modules\Admin;
 
 use modmore\Commerce\Events\Admin\OrderActions;
 use modmore\Commerce\Modules\BaseModule;
-use Symfony\Component\EventDispatcher\EventDispatcher;
+use modmore\Commerce\Dispatcher\EventDispatcher;
+// For modules that need to support 1.2 or before, replace with:
+// use Symfony\Component\EventDispatcher\EventDispatcher;
+// Please note that is DEPRECATED and will be REMOVED in 2.0
 
 class AddOrderButton extends BaseModule
 {

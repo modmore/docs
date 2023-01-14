@@ -8,7 +8,10 @@ namespace modmore\Commerce\Modules\Reports;
 use modmore\Commerce\Events\Reports;
 use modmore\Commerce\Modules\BaseModule;
 use modmore\Commerce\Reports\ReportInterface;
-use Symfony\Component\EventDispatcher\EventDispatcher;
+use modmore\Commerce\Dispatcher\EventDispatcher;
+// For modules that need to support 1.2 or before, replace with:
+// use Symfony\Component\EventDispatcher\EventDispatcher;
+// Please note that is DEPRECATED and will be REMOVED in 2.0
 
 class Products extends BaseModule
 {

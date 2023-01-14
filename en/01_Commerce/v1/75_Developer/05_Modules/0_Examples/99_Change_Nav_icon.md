@@ -8,7 +8,10 @@ namespace modmore\Commerce\Modules\Admin;
 use modmore\Commerce\Admin\Generator;
 use modmore\Commerce\Events\Admin\TopNavMenu as TopNavMenuEvent;
 use modmore\Commerce\Modules\BaseModule;
-use Symfony\Component\EventDispatcher\EventDispatcher;
+use modmore\Commerce\Dispatcher\EventDispatcher;
+// For modules that need to support 1.2 or before, replace with:
+// use Symfony\Component\EventDispatcher\EventDispatcher;
+// Please note that is DEPRECATED and will be REMOVED in 2.0
 
 class ChangeIcon extends BaseModule
 {
