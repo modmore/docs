@@ -4,19 +4,20 @@ This snippet displays an iCalendar link or download an iCalendar file of an even
 
 It uses the following snippet properties:
 
-| Property       | Description                                                                       | Default                       |
-|----------------|-----------------------------------------------------------------------------------|-------------------------------|
-| calendars      | Comma-separated list of aliases of calendars to filter the iCal download.         | -                             |
-| categories     | Comma separated list of aliases of categories to filter the iCal download.        | -                             |
-| contexts       | Comma separated list of context keys to filter the iCal download.                 | -                             |
-| id             | ID of one event to display the iCal download link for.                            | Request parameter `event`     |
-| locations      | Comma separated list of aliases of locations to filter the iCal download.         | -                             |
-| tpl            | Name of a chunk that contains the template for the iCal download link.            | tplAgendaEventDetailICalLink  |
-| locationTpl    | Name of a chunk that contains the template for the location in the iCal event.    | tplAgendaEventLocationICal    |
-| descriptionTpl | Name of a chunk that contains the template for the description in the iCal event. |                               |
-| repeating      | ID of one repeating event to display the iCal download link for.                  | Request parameter `repeating` |
-| usergroups     | Comma separated list of user group names to filter the iCal download.             | -                             |
-| users          | Comma separated list of user IDs to filter the iCal download.                     | -                             |
+| Property       | Description                                                                       | Default                      |
+|----------------|-----------------------------------------------------------------------------------|------------------------------|
+| id             | ID of one event to retrieve the ical event.                                       | -                            |
+| repeating      | ID of one repeating event to retrieve the ical event.                             | -                            |
+| tpl            | Name of a chunk that contains the template for iCal download link.                | tplAgendaEventDetailICalLink |
+| locationTpl    | Name of a chunk that contains the template for the location of the ical event.    | tplAgendaEventLocationICal   |
+| descriptionTpl | Name of a chunk that contains the template for the description in the iCal event. | -                            |
+| calendars      | Comma-separated list of aliases of calendars to filter the iCal download.         | -                            |
+| categories     | Comma separated list of aliases of categories to filter the iCal download.        | -                            |
+| users          | Comma separated list of user IDs to filter the iCal download.                     | -                            |
+| usergroups     | Comma separated list of user group names to filter the iCal download.             | -                            |
+| contexts       | Comma separated list of context keys to filter the iCal download.                 | -                            |
+| locations      | Comma separated list of aliases of locations to filter the iCal download.         | -                            |
+| where          | JSON encoded xPDO where clause to filter the ical event.                          | -                            |
 
 ## Placeholders
 

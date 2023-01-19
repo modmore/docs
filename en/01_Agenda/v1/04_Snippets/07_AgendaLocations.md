@@ -4,21 +4,23 @@ This snippet displays a list of locations.
 
 It uses the following snippet properties:
 
-| Property           | Description                                                                                                                                                             | Default                         |
-|--------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------|
-| ajax               | If enabled, the snippet output will be directly output as JSON result to the browser when the page is requested by Ajax (XMLHttpRequest). Available since Agenda 1.4.0. | No                              |
-| allowedRequestKeys | Comma-separated list of request keys, that could be used to filter the displayed locations. Defaults to all allowed. Available since Agenda 1.1.0.                      | -                               |
-| emptyTpl           | Name of a chunk that contains the template for not found locations.                                                                                                     | tplAgendaLocationsEmpty         |
-| limit              | Limit the number of locations in the result. Use `0` for unlimited locations.                                                                                           | 20                              |
-| listId             | ID of a resource containing an AgendaList snippet call.                                                                                                                 | System Setting `agenda.list_id` |
-| locations          | Comma-separated list of aliases of locations to filter the displayed locations.                                                                                         | -                               |
-| offset             | An offset of locations returned by the criteria to skip.                                                                                                                | 0                               |
-| outputSeparator    | An optional string to separate each tpl instance.                                                                                                                       | -                               |
-| selected           | Set the selected placeholder to `selected="selected"`, when the value is equal to the location alias.                                                                   | -                               |
-| toPlaceholder      | If set, the snippet result will be assigned to this placeholder instead of outputting it directly.                                                                      | -                               |
-| totalVar           | The key of a placeholder that indicates the total number of locations returned by the criteria.                                                                         | agendalocations.total           |
-| tpl                | Name of a chunk that contains the template for one location.                                                                                                            | tplAgendaLocation               |
-| wrapperTpl         | Name of a chunk that contains the wrapper template for all locations.                                                                                                   | tplAgendaLocationsWrapper       |
+| Property           | Description                                                                                                                                                                    | Default                   |
+|--------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------|
+| ajax               | **Since 1.5.0:** If set, the snippet output will be directly output as JSON result to the browser when the page is requested with the same value in the ajax request property. | No                        |
+| allowedRequestKeys | Comma-separated list of request keys, that could be used to filter the displayed locations. Defaults to all allowed.                                                           | -                         |
+| emptyTpl           | Name of a chunk that contains the template for not found locations.                                                                                                            | tplAgendaLocationsEmpty   |
+| filterByEvents     | **Since 1.5.0:** If this option is set, the locations with no future events are filtered from the result.                                                                      | No                        |
+| limit              | Limit the number of locations in the result. Use "0" for unlimited locations.                                                                                                  | 20                        |
+| listId             | ID of a resource containing an AgendaList snippet call.                                                                                                                        | -                         |
+| locations          | Comma-separated list of aliases of locations to filter the displayed locations.                                                                                                | -                         |
+| offset             | The offset of locations to skip.                                                                                                                                               | -                         |
+| outputSeparator    | An optional string to separate each tpl instance.                                                                                                                              | -                         |
+| selected           | Comma separated list of calendar aliases, that have the placeholder selected filled.                                                                                           | -                         |
+| toPlaceholder      | If set, the snippet result will be assigned to this placeholder instead of outputting it directly.                                                                             | -                         |
+| totalVar           | The key of a placeholder that indicates the total number of locations.                                                                                                         | agendalocations.total     |
+| tpl                | Name of a chunk that contains the template for one location.                                                                                                                   | tplAgendaLocation         |
+| where              | JSON encoded xPDO where clause to filter the locations.                                                                                                                        | -                         |
+| wrapperTpl         | Name of a chunk that contains the wrapper template for all locations.                                                                                                          | tplAgendaLocationsWrapper |
 
 ## Placeholders
 

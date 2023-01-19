@@ -33,15 +33,15 @@ The create/edit window for one event has a lot of options, that can be set.
 ### Event Tab
 
 In the event tab you have to set the event title and the event calendar, where
-the event is shown in. An event should have a start date/time and an end
-date/time, and it could have a location. The location could be directly
-created/edited in the event tab.
+the event is shown in. An event must have a start date/time and an end
+date/time, and it can have a location. The location can be created/edited
+directly on the event tab.
 
-The event could be linked with a MODX resource. This combo field is only shown,
+The event can be linked with a MODX resource. This combo field is only shown,
 when the system setting `agenda.parents_event` is filled with a comma separated
 list of resources, that are parents for the resources selectable with the combo
 field. This combo has a select, a preview and a quickedit button. The resource
-could be edited in a new window with an alt click on the quickedit button.
+can be edited in a new window with an alt click on the quickedit button.
 
 The event could be restricted to a context, it has to be tagged with at least
 one category, and it could be toggled to inactive. If the `All Day Event`
@@ -59,7 +59,8 @@ optional createable `agenda.repeating_max_occurance` system setting. With the
 `weekly` repeating type, you could set the weekdays, where the event will start.
 The start date/time will then be recalculated on base of the first repeating
 event. With the `monthly by weekday` repeating type, you could set the event
-i.e. to the second wednesday or last tuesday of a month.
+i.e. to the second wednesday or last tuesday of a month. With the `custom`
+repeating type, you can create your own event dates in the repeats grid.
 
 The fields on the event tab can be extended by the [Extended Event
 Fields](../06_Extended_Fields.md) system setting.
@@ -67,9 +68,10 @@ Fields](../06_Extended_Fields.md) system setting.
 ### Repeats Tab
 
 In the repeats tab you could view the repeats of the current event. You could
-edit and delete each repeat. The title column of a repeat is light gray, when is
-uses the default title. When one field of the repeat does not use the default
-value, the modified column contains a green tick.
+edit and delete each repeat. If the repeat type is `custom` you can add your own
+event dates. The title column of a repeat is light gray, when is uses the
+default title. When one field of the repeat does not use the default value, the
+modified column contains a green tick.
 
 The grid can be toggled to show past/future repeats. It also can be filtered by
 a search input on the top right above the repeats grid.
