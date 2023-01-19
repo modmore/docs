@@ -4,21 +4,23 @@ This snippet displays a list of categories.
 
 It uses the following snippet properties:
 
-| Property           | Description                                                                                                                                                             | Default                         |
-|--------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------|
-| ajax               | If enabled, the snippet output will be directly output as JSON result to the browser when the page is requested by Ajax (XMLHttpRequest). Available since Agenda 1.4.0. | No                              |
-| allowedRequestKeys | Comma-separated list of request keys, that can be used to filter the displayed categories. Defaults to all allowed. Available since Agenda 1.1.0.                       | -                               |
-| categories         | Comma-separated list of aliases of categories to filter the displayed categories.                                                                                       | -                               |
-| emptyTpl           | Name of a chunk that contains the template for not found categories.                                                                                                    | tplAgendaCategoriesEmpty        |
-| limit              | Limit the number of categories in the result. Use `0` for unlimited categories.                                                                                         | 20                              |
-| listId             | ID of a resource containing an AgendaList snippet call.                                                                                                                 | System Setting `agenda.list_id` |
-| offset             | An offset of categories returned by the criteria to skip.                                                                                                               | 0                               |
-| outputSeparator    | An optional string to separate each tpl instance.                                                                                                                       | -                               |
-| selected           | Set the selected placeholder to `selected="selected"`, when the value is equal to the category alias.                                                                   | -                               |
-| toPlaceholder      | If set, the snippet result will be assigned to this placeholder instead of outputting it directly.                                                                      | -                               |
-| totalVar           | The key of a placeholder that indicates the total number of categories returned by the criteria.                                                                        | agendacategories.total          |
-| tpl                | Name of a chunk that contains the template for one category.                                                                                                            | tplAgendaCategory               |
-| wrapperTpl         | Name of a chunk that contains the wrapper template for all categories.                                                                                                  | tplAgendaCategoriesWrapper      |
+| Property           | Description                                                                                                                                                                                        | Default                    |
+|--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------|
+| ajax               | **Since 1.5.0:** If this option is set, the snippet output will be directly returned to the browser as a JSON result when the page is requested with the same value in the ajax request parameter. | No                         |
+| allowedRequestKeys | Comma-separated list of request keys, that could be used to filter the displayed categories. Defaults to all allowed.                                                                              | -                          |
+| categories         | Comma-separated list of aliases of categories to filter the displayed categories.                                                                                                                  | -                          |
+| emptyTpl           | Name of a chunk that contains the template for not found categories.                                                                                                                               | tplAgendaCategoriesEmpty   |
+| filterByEvents     | **Since 1.5.0:** If this option is set, the categories with no future events are filtered from the result.                                                                                         | No                         |
+| limit              | Limit the number of categories in the result. Use "0" for unlimited categories.                                                                                                                    | 20                         |
+| listId             | ID of a resource containing an AgendaList snippet call.                                                                                                                                            | -                          |
+| offset             | The offset of categories to skip.                                                                                                                                                                  | -                          |
+| outputSeparator    | An optional string to separate each tpl instance.                                                                                                                                                  | -                          |
+| selected           | Comma separated list of category aliases, that have the placeholder selected filled.                                                                                                               | -                          |
+| toPlaceholder      | If set, the snippet result will be assigned to this placeholder instead of outputting it directly.                                                                                                 | -                          |
+| totalVar           | The key of a placeholder that indicates the total number of categories.                                                                                                                            | agendacategories.total     |
+| tpl                | Name of a chunk that contains the template for one category.                                                                                                                                       | tplAgendaCategory          |
+| where              | **Since 1.5.0:** JSON encoded xPDO where clause to filter the categories.                                                                                                                          | -                          |
+| wrapperTpl         | Name of a chunk that contains the wrapper template for all categories.                                                                                                                             | tplAgendaCategoriesWrapper |
 
 ## Placeholders
 

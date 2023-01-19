@@ -1,4 +1,6 @@
-You could create and edit your event data on the custom manager page of _Agenda_. This page contains seven tabs where you could manage different parts of the events.
+You can create and edit your event data on the custom manager page of _Agenda_.
+This page contains up to eight tabs where you can manage different parts of the
+events.
 
 #### Overview 
 
@@ -24,6 +26,10 @@ This tab contains a grid view of all [locations](05_Locations).
 
 This tab contains a grid view of all [feeds](06_Feeds).
 
+#### Modules (puzzle icon) 
+
+This tab contains a grid view of all [modules](07_Modules).
+
 #### Settings (cog icon) 
 
-This tab contains a grid view of all [settings](07_Settings).
+This tab contains a grid view of all [settings](08_Settings).

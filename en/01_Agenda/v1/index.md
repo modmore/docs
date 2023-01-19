@@ -12,5 +12,5 @@ It is a perfect solution for users looking for an extensive MODX event managemen
 - [Installation](01_Installation)
 - [Custom Manager Page](02_Custom_Manager_Page)
 - [Snippets](04_Snippets)
-- [FAQ](07_FAQ)
+- [FAQ](08_FAQ)
 

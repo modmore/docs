@@ -21,14 +21,14 @@ By default, repeating events are scheduled for 100 recurrences.
 You have two possibilitiesto change that:
 
 - [Set up a cron job](05_Cronjob) to refresh repeating events for up to 100 repeats in the future from the current date.
-- Increase the `agenda.repeating_max_occurance` [system setting](02_Custom_Manager_Page/07_Settings) to a larger value.
+- Increase the `agenda.repeating_max_occurance` [system setting](02_Custom_Manager_Page/08_Settings) to a larger value.
 
 ## Can events, categories, calendars or locations be connected to a resource? 
 
 Yes!
 
 Agenda comes with a number of [system
-settings](02_Custom_Manager_Page/07_Settings). Configure them with a comma
+settings](02_Custom_Manager_Page/08_Settings). Configure them with a comma
 separated list of resource IDs to use as parent resources. When set up, a new
 resource selection field will be added to the edit windows in the manager.
 
@@ -84,7 +84,7 @@ through web requests as well using online cron job services.
 ## Can the cron job log more information?
 
 Yes, enable the `agenda.debug` [system
-setting](02_Custom_Manager_Page/07_Settings). A new log will be created in
+setting](02_Custom_Manager_Page/08_Settings). A new log will be created in
 `{core_path}/cache/logs/agenda.log` with a lot of debug information.
 
 By default, errors are logged to the standard MODX error log.
