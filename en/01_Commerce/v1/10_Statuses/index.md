@@ -10,45 +10,45 @@ The status workflow is one of the more complicated aspects for first-time Commer
 
 There are 4 primary concepts:
 
-- **State** is a hard-coded category an order is in, which affects internal behavior and restrictions. For example the "draft" state allows an order to be changed in the cart by the customer, while "completed" is a read-only archive.
-- **Status** is a merchant-defined category. Statuses don't affect internal behavior; they are primarily for the merchant to use and understand. A status is assigned to a state.
-- **Status Change** is for changing an order from one status to another. It's not possible to select a status directly; instead the status change is selected.
-- **Status Change Action** is an action that gets processed when a status change is executed. Sending an email is the most common action; but others are available.
+- **State** is a hard-coded category an order is in, which affects internal behavior and restrictions. For example the "draft" state allows an order to be changed in the cart by the customer, while "completed" is a read-only archive. It's not possible to add custom states or change the meaning for any of these.
+- **Status** is a merchant-defined category. Statuses don't affect internal behavior; they are primarily for the merchant to use and understand. A status belongs to a state, and there can be multiple statuses per state.
+- **Status Change** is for changing an order from one status to another. It's not possible to set a status on an order directly; instead a status change is processed to transition from one to the other.
+- **Status Change Action** is an action that gets processed when a status change is executed. For example sending an email to the merchant or customer, or creating a PDF invoice are status change actions.
 
-These concepts together form the status workflow. 
+These concepts together form the status workflow.
 
 ## Diagram
 
-It may help to visualise the workflow. In the diagram shown below, you can see the default status workflow (Draft, Received, Awaiting Pickup, and Shipped) and two example additional statuses (Product in backorder, Cancelled). 
+It may help to visualise the workflow. In the diagram shown below, you can see the default status workflow (Draft, Received, Awaiting Pickup, and Shipped) and two example additional statuses (Product in backorder, Cancelled).
 
 ![Visual diagram showing how States, Statuses and Status Changes interact](status-diagram.jpg)
 
-Note how the statuses flow through the states, and what status changes are offered when an order is assigned a certain status. 
+Note how the statuses flow through the states, and what status changes are offered when an order is assigned a certain status.
 
 (For brevity, status change actions are not shown in the diagram. You can imagine that the "Payment Received" status change sends the customer and merchant an email, while "Ready for pickup" might interact with a shipping partner API to create a label or to schedule the pickup.)
 
 ## Deeper diving
 
-Let's dive a little deeper into the different concepts. 
+Let's dive a little deeper into the different concepts.
 
 ### States
 
-States are hardcoded in Commerce. They are indicated by the internal class type for an order, and can't be changed. 
+States are hardcoded in Commerce. They are indicated by the internal class type for an order, and can't be changed.
 
 There are 4 states available:
 
 - `draft` is used for orders that have not yet been formally placed. The customer is still checking out (or has abandoned the cart) and the order should not yet be processed by the merchant. From the `draft` state, an order can be moved into either `processing` or `cancelled` states. (Class: `comCartOrder`)
-- `processing` is where an order is taken by the merchant and handled until it is complete. Most custom statuses will happen in this state. The order can no longer be changed by the customer, only by the merchant through the dashboard. From the `processing` state, an order can be moved to either `completed` or `cancelled`. Orders in the `processing` state are considered to be successfully received orders for reporting purposes. 
-- `completed` is a read-only archive of completed orders. 
+- `processing` is where an order is taken by the merchant and handled until it is complete. Most custom statuses will happen in this state. The order can no longer be changed by the customer, only by the merchant through the dashboard. From the `processing` state, an order can be moved to either `completed` or `cancelled`. Orders in the `processing` state are considered to be successfully received orders for reporting purposes.
+- `completed` is a read-only archive of completed orders.
 - `cancelled` is a read-only archive of orders that were not completed/successful.
 
-It's not possible to transition from any state to any state. 
+It's not possible to transition from any state to any state.
 
-- From `draft` you can move to either `processing` or `cancelled` (notably that means you **cannot** move directly to `completed`). 
-- From `processing` you can move to either `completed` or `cancelled`. 
+- From `draft` you can move to either `processing` or `cancelled` (notably that means you **cannot** move directly to `completed`).
+- From `processing` you can move to either `completed` or `cancelled`.
 - It's not possible to transition out of `completed` or `cancelled` states.
 
-As far as reporting is concerned, all orders in the `processing` and `completed` states are considered successfully received orders. This is important to understand in the context of tax reports. Make sure to send orders which should not be included in such reports to the `cancelled` state. 
+As far as reporting is concerned, all orders in the `processing` and `completed` states are considered successfully received orders. This is important to understand in the context of tax reports. Make sure to send orders which should not be included in such reports to the `cancelled` state.
 
 ### Statuses
 
@@ -60,63 +60,70 @@ The status can be given a color to make it easier to identify the status in the 
 
 ### Status Change
 
-The Status Change is how an order flows from one status to the next. 
+The Status Change is how an order flows from one status to the next.
 
 It's not possible to change the status on an order directly; there must always be a status change for it.
 
-When using status changes to a different state, please be aware of the restrictions in how states can be transitioned, as detailed above in the States section. 
+When using status changes to a different state, please be aware of the restrictions in how states can be transitioned, as detailed above in the States section.
 
-A status change is a temporary thing - an order does not stay in a certain status change, it only processes it and ends up in the new target status when that's done. 
+A status change is a temporary thing - an order does not stay in a certain status change, it only processes it and ends up in the new target status when that's done.
 
 ### Status Change Action
 
 To power up the status workflow, you can add Actions to a Status Change.
 
-Status Change Actions perform _something_ when a status change is processing. 
+Status Change Actions perform _something_ when a status change is processing.
 
-For example, in a Payment Received status change, the Email action will send an email to the customer (and another to the merchant) to confirm their order was received successfully. 
+For example, in a Payment Received status change, the Email action will send an email to the customer (and another to the merchant) to confirm their order was received successfully.
 
 Or, if you use a dedicated fulfillment partner or bookkeeping/invoicing solution, you may have a status change action that pushes the information received by Commerce to a third-party API.
 
-Commerce ships with [send email](Email_Action), [create PDF invoice](Invoice_Action), and [trigger event](Event_Action) actions out of the box. 
+Commerce ships with the following actions out of the box:
+
+- [Send an email](Email_Action), used for both merchant notifications and emails to the customer
+- [Create PDF invoice](Invoice_Action), required for the [built-in invoice support](../Invoices)
+- [Webhook](Webhook_Action), allows you to send a request (optionally with order information) to any third-party service that accepts webhooks; works really well with Zapier to integrate other apps (v1.3+)
+- Capture authorized transactions, to complete [Authorize/Capture payments](../Payment_Methods/Authorize_Capture_Flow) (v1.3+)
+- [Trigger an event](Event_Action), which can fire internal Commerce events for modules to listen to (advanced)
 
 Other actions are available in extensions, such as:
 
 - [Printing order information or invoices on a physical printer with CloudPrint](https://modmore.com/commerce/extensions/cloudprint/)
-- [Sending SMS/Text messages with MessageBird](https://modmore.com/commerce/extensions/messagebird/)
-- [Sending an order notification to Slack](https://docs.modmore.com/en/Commerce/v1/Modules/Slack.html)
-- [Running a snippet](https://docs.modmore.com/en/Commerce/v1/Modules/SnippetStatusAction.html)
-- Some extensions also require setting up status change actions as part of other functionality, for example [capturing Klarna payments](https://modmore.com/commerce/extensions/klarna/) or [reserving a time slot](https://modmore.com/commerce/extensions/time-slots/).
+- [Sending SMS/Text messages with MessageBird](https://modmore.com/commerce/extensions/messagebird/), to either the customer or merchant
+- [Sending order notifications to Slack](https://docs.modmore.com/en/Commerce/v1/Modules/Slack.html)
+- [Running a snippet](https://docs.modmore.com/en/Commerce/v1/Modules/SnippetStatusAction.html) as a simple way to run custom code during the status without needing to build a full extension.
+
+Some extensions also require setting up status change actions as part of other functionality, for example [capturing Klarna payments](https://modmore.com/commerce/extensions/klarna/) or [reserving a time slot](https://modmore.com/commerce/extensions/time-slots/).
 
 [Learn more about building custom status change actions in the developer documentation.](../Developer/Status_Change_Actions)
 
 ## Configuring Statuses
 
-Statuses are managed in the merchant dashboard, under Configuration > Statuses. 
+Statuses are managed in the merchant dashboard, under Configuration > Statuses.
 
-The statuses are sorted by their state (draft > processing > completed > cancelled), and then by the order defined on the status. 
+The statuses are sorted by their state (draft > processing > completed > cancelled), and then by the order defined on the status.
 
 For relevant technical information, please see [Orders](../Developer/Orders), [Modules](../Developer/Modules) and [Status Change Actions](../Developer/Status_Change_Actions) in the Developers Reference.
 
 ## Cart order handling
 
-The status system also controls how new orders during the checkout (cart) are handled. 
+The status system also controls how new orders during the checkout (cart) are handled.
 
-There are two things that need to be configured for new orders to be handled properly: a new order status and a status change to fire when an order is paid. 
+There are two things that need to be configured for new orders to be handled properly: a new order status and a status change to fire when an order is paid.
 
 The **new order status** must be one that has its state set to draft. Available statuses will show a _Set as new order status_ button in the grid, like in the screenshot included below. Clicking it will, as expected, set the new order status to that status.
 
 ![](../../images/statuses/set-new-order-status.jpg)
 
-Once you've set a status as the new order status, the status will be shown in bold with a note that it is used for new orders. 
+Once you've set a status as the new order status, the status will be shown in bold with a note that it is used for new orders.
 
 Any time a new order (which includes a cart) is created by a customer, it will have this status assigned to.
 
-The Status Changes for that status will also start showing a _Set as Change on Payment_ button, as shown below. Clicking on that button will configure the status change to be executed when payment for an order is received. 
+The Status Changes for that status will also start showing a _Set as Change on Payment_ button, as shown below. Clicking on that button will configure the status change to be executed when payment for an order is received.
 
 ![](../../images/statuses/set-paid-order-change.jpg)
 
-Once selected, the status change will be shown in bold and with a note that it is used when payment is received. 
+Once selected, the status change will be shown in bold and with a note that it is used when payment is received.
 
 ![](../../images/statuses/paid-order-change-set.jpg)
 
