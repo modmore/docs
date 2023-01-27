@@ -8,6 +8,8 @@ This is only supported by select gateways and payment methods.
 
 > As of Commerce v1.3, the supported gateways are Stripe (credit card payments only) and Manual. We plan to add support  to other gateways in the future.
 
+> The [Klarna](Klarna) gateway also uses authorizations and captures, however that is not yet updated to use the new authorization features in Commerce 1.3. If you use Klarna, make sure to [follow its separate setup instructions](Klarna) to properly capture those payments.
+
 Commerce currently expects a single authorization to have a single capture. It is not supported to do incremental captures.
 
 [TOC]
