@@ -5,7 +5,7 @@
 
 ## Relations
 
-- `OrderItem`: one [`comOrderItem`](comOrderItem) object (`comOrderItemDiscountAdjustment.item = comOrderItem.id`)
+- `OrderItem`: one [`comOrderItem`](comOrderItem) object (`comOrderItemExtraAdjustment.item = comOrderItem.id`)
 
 ## Fields
 

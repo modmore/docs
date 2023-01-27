@@ -33,12 +33,20 @@ Representation of an item in a cart order that's only stored in the user session
 | **shipment** | integer (`int[10]`) |  |
 | **sku<br>Default: `(missing sku)`** | string (`varchar[190]`) |  |
 | **name<br>Default: `(missing name)`** | string (`varchar[1024]`) |  |
+| **name_primary<br>Default: `(missing name)`** | string (`varchar[1024]`) |  |
 | **link** | string (`varchar[1024]`)<br>may be null |  |
 | **description** | string (`varchar[1024]`) |  |
+| **description_primary** | string (`varchar[1024]`) |  |
 | **price** | integer (`int[20]`) | Integer number in the currency base unit (e.g. cents) |
 | **price_formatted** |  | `price` passed through the [financial formatter](../Formatters/financial) |
+| **regular_price** | integer (`int[20]`) | Integer number in the currency base unit (e.g. cents) |
+| **regular_price_formatted** |  | `regular_price` passed through the [financial formatter](../Formatters/financial) |
 | **image** | string (`varchar[190]`)<br>may be null |  |
 | **quantity<br>Default: `1`** | integer (`int[20]`) |  |
+| **subtotal_before_extra** | integer (`int[20]`) | Integer number in the currency base unit (e.g. cents) |
+| **subtotal_before_extra_formatted** |  | `subtotal_before_extra` passed through the [financial formatter](../Formatters/financial) |
+| **extra** | integer (`int[20]`) | Integer number in the currency base unit (e.g. cents) |
+| **extra_formatted** |  | `extra` passed through the [financial formatter](../Formatters/financial) |
 | **subtotal** | integer (`int[20]`) | Integer number in the currency base unit (e.g. cents) |
 | **subtotal_formatted** |  | `subtotal` passed through the [financial formatter](../Formatters/financial) |
 | **discount** | integer (`int[20]`) | Integer number in the currency base unit (e.g. cents) |

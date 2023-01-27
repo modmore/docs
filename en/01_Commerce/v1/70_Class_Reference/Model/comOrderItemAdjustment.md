@@ -9,6 +9,7 @@ Represents an adjustment to the item price.
 
 - [`comOrderItemShippingAdjustment`](comOrderItemShippingAdjustment)
 - [`comOrderItemDiscountAdjustment`](comOrderItemDiscountAdjustment)
+- [`comOrderItemExtraAdjustment`](comOrderItemExtraAdjustment)
 
 
 ## Relations
@@ -31,4 +32,9 @@ Represents an adjustment to the item price.
 | **show_on_order** | boolean (`tinyint[1]`) |  |
 | **price_change** | integer (`int[20]`) | Integer number in the currency base unit (e.g. cents) |
 | **price_change_formatted** |  | `price_change` passed through the [financial formatter](../Formatters/financial) |
+| **price_change_per_quantity** | boolean (`tinyint[1]`) |  |
+| **price_change_percentage** | float (`decimal[20,4]`) |  |
+| **price_change_percentage_formatted** |  | `price_change_percentage` passed through the [percentage formatter](../Formatters/percentage) |
+| **total_change** | integer (`int[20]`) | Integer number in the currency base unit (e.g. cents) |
+| **total_change_formatted** |  | `total_change` passed through the [financial formatter](../Formatters/financial) |
 | **currency** | string (`varchar[3]`) |  |

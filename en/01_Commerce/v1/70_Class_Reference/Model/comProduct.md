@@ -13,7 +13,7 @@ Default product type, commonly extended.
 
 The following classes belong to classes in extensions or third-party code. They may require a package to be installed or are not publicly available at all.
 
-- `RandomlyPricedProduct`
+- `DigitalproductProduct`
 
 
 ## Relations

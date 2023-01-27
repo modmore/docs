@@ -19,3 +19,4 @@
 | **name** | string (`varchar[190]`) |  |
 | **description** | string (`varchar[1024]`) |  |
 | **sortorder** | integer (`int[10]`) |  |
+| **active<br>Default: `1`** | boolean (`tinyint[1]`) |  |

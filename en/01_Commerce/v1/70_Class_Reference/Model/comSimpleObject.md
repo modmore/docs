@@ -37,6 +37,8 @@ Contains logic for Formatters, properties, making the Commerce class and adapter
 - [`comTransaction`](comTransaction)
 - [`comTransactionLog`](comTransactionLog)
 - [`comPaymentMethod`](comPaymentMethod)
+- [`comSchedulerTask`](comSchedulerTask)
+- [`comI18n`](comI18n)
 - [`comModule`](comModule)
 - [`comCoupon`](comCoupon)
 - [`comCouponUsage`](comCouponUsage)
@@ -55,25 +57,43 @@ Contains logic for Formatters, properties, making the Commerce class and adapter
 - [`comStatusChangeActionEmail`](comStatusChangeActionEmail)
 - [`comStatusChangeActionEvent`](comStatusChangeActionEvent)
 - [`comStatusChangeActionInvoice`](comStatusChangeActionInvoice)
+- [`comStatusChangeActionCaptureTransactions`](comStatusChangeActionCaptureTransactions)
+- [`comStatusChangeActionWebhook`](comStatusChangeActionWebhook)
 - [`comOrderItemShippingAdjustment`](comOrderItemShippingAdjustment)
 - [`comOrderItemDiscountAdjustment`](comOrderItemDiscountAdjustment)
+- [`comOrderItemExtraAdjustment`](comOrderItemExtraAdjustment)
 - [`comOrderEmailMessage`](comOrderEmailMessage)
 - [`comOrderInternalMessage`](comOrderInternalMessage)
+- [`comOrderTemplatedEmailMessage`](comOrderTemplatedEmailMessage)
 - [`comFreeProductDiscount`](comFreeProductDiscount)
 - [`comUserDiscount`](comUserDiscount)
 - [`comUserGroupDiscount`](comUserGroupDiscount)
 
 The following classes belong to classes in extensions or third-party code. They may require a package to be installed or are not publicly available at all.
 
-- `RandomlyPricedProduct`
+- `ctsSchedule`
+- `ctsScheduleSlot`
+- `ctsDate`
+- `ctsDateSlot`
+- `ctsOrderSlot`
+- `Digitalproduct`
+- `DigitalproductFile`
+- `DigitalproductProduct`
 - `UserGroupShipment`
 - `MyParcelOrderShipment`
+- `DigitalproductOrderShipment`
 - `TableRatesShippingMethod`
 - `MyParcelShippingMethod`
+- `TimeSlotsShippingMethod`
+- `GoogleRoutesShippingMethod`
+- `UserGroupStatusChangeAction`
 - `MyParcelCreateShipmentAction`
-- `CloudPrintStatusChangeAction`
-- `CloudPrintInvoiceStatusChangeAction`
-- `CloudPrintTemplateStatusChangeAction`
+- `ReserveTimeSlotStatusChangeAction`
+- `SlackStatusChangeAction`
+- `SnippetStatusChangeAction`
+- `CaptureKlarnaOrder`
+- `ReleaseKlarnaOrder`
+- `AvalaraCreateTransaction`
 
 ## Fields
 

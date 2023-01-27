@@ -1,3 +1,5 @@
+Used in [authorize & capture payment flows](https://docs.modmore.com/en/Commerce/v1/Payment_Methods/Authorize_Capture_Flow.html).
+
 ## Meta
 
 - Extends: [`comStatusChangeAction`](comStatusChangeAction)
@@ -5,7 +7,7 @@
 
 ## Relations
 
-- `StatusChange`: one [`comStatusChange`](comStatusChange) object (`comStatusChangeActionEmail.status_change = comStatusChange.id`)
+- `StatusChange`: one [`comStatusChange`](comStatusChange) object (`comStatusChangeActionCaptureTransactions.status_change = comStatusChange.id`)
 
 ## Fields
 

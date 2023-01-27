@@ -1,3 +1,5 @@
+Used to [send a webhook request to a third-party service](../../Statuses/Webhook_Action).
+
 ## Meta
 
 - Extends: [`comStatusChangeAction`](comStatusChangeAction)
@@ -5,7 +7,7 @@
 
 ## Relations
 
-- `StatusChange`: one [`comStatusChange`](comStatusChange) object (`comStatusChangeActionEmail.status_change = comStatusChange.id`)
+- `StatusChange`: one [`comStatusChange`](comStatusChange) object (`comStatusChangeActionWebhook.status_change = comStatusChange.id`)
 
 ## Fields
 

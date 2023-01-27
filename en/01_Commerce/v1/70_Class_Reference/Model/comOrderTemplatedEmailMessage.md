@@ -1,11 +1,11 @@
 ## Meta
 
-- Extends: [`comOrderMessage`](comOrderMessage)
+- Extends: [`comOrderEmailMessage`](comOrderEmailMessage)
 - Table: `modx_commerce_order_message`
 
 ## Relations
 
-- `Order`: one [`comOrder`](comOrder) object (`comOrderInternalMessage.order = comOrder.id`)
+- `Order`: one [`comOrder`](comOrder) object (`comOrderTemplatedEmailMessage.order = comOrder.id`)
 
 ## Fields
 

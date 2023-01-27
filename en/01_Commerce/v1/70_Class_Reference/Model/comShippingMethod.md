@@ -1,5 +1,3 @@
-Base (standard) shipping method type. Commonly extended.
-
 ## Meta
 
 - Extends: [`comSimpleObject`](comSimpleObject)
@@ -14,6 +12,8 @@ The following classes belong to classes in extensions or third-party code. They 
 
 - `TableRatesShippingMethod`
 - `MyParcelShippingMethod`
+- `TimeSlotsShippingMethod`
+- `GoogleRoutesShippingMethod`
 
 
 ## Relations

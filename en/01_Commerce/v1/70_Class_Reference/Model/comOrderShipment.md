@@ -9,6 +9,7 @@ The following classes belong to classes in extensions or third-party code. They 
 
 - `UserGroupShipment`
 - `MyParcelOrderShipment`
+- `DigitalproductOrderShipment`
 
 
 ## Relations

@@ -17,6 +17,8 @@
 | **properties** | array (`text`)<br>may be null | Serialized arbitrary data stored with an object. Use utility methods instead of directly accessing these values: `getProperty($key, $default)`, `getProperties()`, `setProperty($key, $value)`, `setProperties($properties, $merge)`, `unsetProperty($key)`, `unsetProperties($keys)` |
 | **user** | int (`int[10]`)<br>may be null |  |
 | **type<br>Default: `billing`** | string (`varchar[190]`) |  |
+| **last_used** | int (`int[20]`) | UNIX timestamp |
+| **last_used_formatted** |  | `last_used` passed through the [datetime formatter](../Formatters/datetime) |
 | **fullname** | string (`varchar[190]`)<br>may be null |  |
 | **firstname** | string (`varchar[190]`)<br>may be null |  |
 | **lastname** | string (`varchar[190]`)<br>may be null |  |
@@ -32,4 +34,4 @@
 | **mobile** | string (`varchar[190]`)<br>may be null |  |
 | **email** | string (`varchar[190]`)<br>may be null |  |
 | **notes** | string (`text`)<br>may be null |  |
-| **remember** | bool (`tinyint[1]`)<br>may be null | Deprecated; no longer relevant. |
+| **remember** | bool (`tinyint[1]`)<br>may be null |  |

@@ -1,5 +1,3 @@
-Special type of [Order](comOrder) that represents a read-only copy of an order that has been processed and marked as completed.
-
 ## Meta
 
 - Extends: [`comOrder`](comOrder)
@@ -32,6 +30,8 @@ Special type of [Order](comOrder) that represents a read-only copy of an order t
 | **secret** | string (`varchar[191]`) |  |
 | **test** | boolean (`tinyint[1]`) |  |
 | **status** | integer (`int[10]`) |  |
+| **payment_status** | string (`varchar[30]`) | One of: `unpaid`, `authorized`, `partially_paid`, `paid`, `pending_refund`, `partially_refunded`, `refunded` |
+| **origin<br>Default: `checkout`** | string (`varchar[40]`) | One of: `manual`, `checkout`, `subscription`  |
 | **currency** | string (`varchar[3]`) |  |
 | **context<br>Default: `web`** | string (`varchar[190]`)<br>may be null |  |
 | **reference** | string (`varchar[190]`)<br>may be null |  |
@@ -52,6 +52,12 @@ Special type of [Order](comOrder) that represents a read-only copy of an order t
 | **tax_formatted** |  | `tax` passed through the [financial formatter](../Formatters/financial) |
 | **total** | integer (`int[20]`) | Integer number in the currency base unit (e.g. cents) |
 | **total_formatted** |  | `total` passed through the [financial formatter](../Formatters/financial) |
+| **total_authorized** | integer (`int[20]`) | Integer number in the currency base unit (e.g. cents) |
+| **total_authorized_formatted** |  | `total_authorized` passed through the [financial formatter](../Formatters/financial) |
+| **total_paid** | integer (`int[20]`) | Integer number in the currency base unit (e.g. cents) |
+| **total_paid_formatted** |  | `total_paid` passed through the [financial formatter](../Formatters/financial) |
+| **total_refunded** | integer (`int[20]`) | Integer number in the currency base unit (e.g. cents) |
+| **total_refunded_formatted** |  | `total_refunded` passed through the [financial formatter](../Formatters/financial) |
 | **total_due** | integer (`int[20]`) | Integer number in the currency base unit (e.g. cents) |
 | **total_due_formatted** |  | `total_due` passed through the [financial formatter](../Formatters/financial) |
 | **total_quantity** | integer (`int[20]`) |  |

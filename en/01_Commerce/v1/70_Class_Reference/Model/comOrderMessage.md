@@ -9,6 +9,7 @@ Base class for order messages.
 
 - [`comOrderEmailMessage`](comOrderEmailMessage)
 - [`comOrderInternalMessage`](comOrderInternalMessage)
+- [`comOrderTemplatedEmailMessage`](comOrderTemplatedEmailMessage)
 
 
 ## Relations
@@ -24,7 +25,8 @@ Base class for order messages.
 | **class_key** | string (`varchar[100]`) | Type of object |
 | **properties** | array (`text`)<br>may be null | Serialized arbitrary data stored with an object. Use utility methods instead of directly accessing these values: `getProperty($key, $default)`, `getProperties()`, `setProperty($key, $value)`, `setProperties($properties, $merge)`, `unsetProperty($key)`, `unsetProperties($keys)` |
 | **order** | integer (`int[10]`) |  |
-| **content** | string (`text`) |  |
+| **message_key** | string (`varchar[191]`) |  |
+| **content** | string (`mediumtext`) |  |
 | **recipient** | string (`varchar[250]`) |  |
 | **from** | string (`varchar[250]`) |  |
 | **created_on** | int (`int[20]`) | UNIX timestamp |

@@ -8,13 +8,19 @@
 - [`comStatusChangeActionEmail`](comStatusChangeActionEmail)
 - [`comStatusChangeActionEvent`](comStatusChangeActionEvent)
 - [`comStatusChangeActionInvoice`](comStatusChangeActionInvoice)
+- [`comStatusChangeActionCaptureTransactions`](comStatusChangeActionCaptureTransactions)
+- [`comStatusChangeActionWebhook`](comStatusChangeActionWebhook)
 
 The following classes belong to classes in extensions or third-party code. They may require a package to be installed or are not publicly available at all.
 
+- `UserGroupStatusChangeAction`
 - `MyParcelCreateShipmentAction`
-- `CloudPrintStatusChangeAction`
-- `CloudPrintInvoiceStatusChangeAction`
-- `CloudPrintTemplateStatusChangeAction`
+- `ReserveTimeSlotStatusChangeAction`
+- `SlackStatusChangeAction`
+- `SnippetStatusChangeAction`
+- `CaptureKlarnaOrder`
+- `ReleaseKlarnaOrder`
+- `AvalaraCreateTransaction`
 
 
 ## Relations
@@ -33,3 +39,4 @@ The following classes belong to classes in extensions or third-party code. They 
 | **name** | string (`varchar[190]`) |  |
 | **description** | string (`varchar[1024]`) |  |
 | **sortorder** | integer (`int[10]`) |  |
+| **active<br>Default: `1`** | boolean (`tinyint[1]`) |  |
