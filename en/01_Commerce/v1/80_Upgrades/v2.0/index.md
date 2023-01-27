@@ -17,3 +17,4 @@ Commerce 1.x will continue to be supported and receive stability and security fi
 ## Noteworthy changes for developers
 
 1. Since v1.3, modules can type-hint against the native `\modmore\Commerce\Dispatcher\EventDispatcher` class (in the `initialize` method of the module class). In v2.0, it is **mandatory** to do so, as the internal classes have been changed and updated. [Learn more about the EventDispatcher changes](EventDispatcher)
+2. The class_alias for Omnipay2Gateway > OmnipayGateway, introduced in v1.3 following the upgrade from Omnipay v2 to v3, will be removed in v2.0. Any gateway classes that use it should be updated to use the new class names prior to v2.0. [Learn more about changes related to payment gateways](Payment_Gateways).
