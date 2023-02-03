@@ -43,7 +43,9 @@ When an event is fired, it will provide you with an event object in your callbac
 | `\Commerce::EVENT_ITEM_ADDED_TO_CART`              | `Cart\Item`             | Only in the cart when a product is added to cart.                                                                                          | Adding additional information or corrections to items added to the cart.                                                                       |
 | `\Commerce::EVENT_GET_PAYMENT_GATEWAYS`            | `Gateway`               | Administrator listing available gateways when creating or editing payment methods.                                                         | Registering custom payment gateways.                                                                                                           |
 | `\Commerce::EVENT_GET_PDF_WRITER`                  | `PdfWriter`             | Commerce core whenever a PDF writer is required.                                                                                           | Registering a PDF writer that can turn a HTML snippet into a PDF.                                                                              |
-| `\Commerce::EVENT_SEND_MAIL`                       | `Mail`                  | comOrderEmailMessage right before sending an email.                                                                                        | Customizing an email before it is sent; including adding attachments, adding/changing the recipients, or altering the content. (Added in v1.3) |
+| `\Commerce::EVENT_SEND_MAIL`                       | `Mail`                  | v1.3 - comOrderEmailMessage right before sending an email.                                                                                 | Customizing an email before it is sent; including adding attachments, adding/changing the recipients, or altering the content. (Added in v1.3) |
+| `\Commerce::EVENT_SCHEDULER_BEFORE`                | `Scheduler`             | v1.3 - `Services\SchedulerScheduler::fetch` Before the Scheduler service runs a background task.                                           | Customizing an email before it is sent; including adding attachments, adding/changing the recipients, or altering the content. (Added in v1.3) |
+| `\Commerce::EVENT_SCHEDULER_AFTER`                 | `Scheduler`             | v1.3 - `Services\Scheduler\Handler::handle` After the Scheduler service runs a background task.                                            | Customizing an email before it is sent; including adding attachments, adding/changing the recipients, or altering the content. (Added in v1.3) |
 
 ### Common use cases
 
@@ -255,3 +257,11 @@ FQN: `modmore\Commerce\Events\Cart\Item`
 - `getOrder()`: returns the `comOrder` instance
 - `getOptions()`: returns an array of request parameters (GET and/or POST) that were sent along with the add-to-cart request. **This is unfiltered input, use wisely.**
 - getOption(string $key, mixed $default = null): returns a single option that was sent in GET or POST, which is not empty, or the provided default.
+
+
+### Scheduler
+
+FQN: `modmore\Commerce\Events\Scheduler`
+
+- `getScheduler()`: returns the `Services\Scheduler\Scheduler` instance.
+- `getTasks()`: returns an array of current tasks.
