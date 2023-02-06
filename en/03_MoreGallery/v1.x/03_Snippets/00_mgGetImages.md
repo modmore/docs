@@ -35,6 +35,16 @@ As of 1.5.0, you can also specify a comma separated list of resource IDs to get 
 
 #### &images
 
+Provide a comma separated list of image IDs to only return those images. This overrides the `&resource` property.
+
+Meant to be used with the [Image Selector](../Image_Selector) and `` &sortBy=`selection` `` to return images in the order they were selected.
+
+Added in v1.16.
+
+**Default**: none
+
+#### &images
+
 Used for rendering a list of specific images, for example those selected by the [Image Selector TV and ContentBlocks Input](../Image_Selector). Added in v1.16.
 
 > Selecting images this way cannot be used together with `&resource`.
@@ -44,6 +54,8 @@ Used for rendering a list of specific images, for example those selected by the 
 #### &sortBy
 
 The field to sort images on. This can be one of the following: `id`, `filename`, `name`, `sortorder`, `uploadedon`, `editedon` or `random` to randomise the order of the images.
+
+As of v1.16.0, you can also use `selection` in combination with an `&images` property that provides image IDs as a comma separated list. This is intended to be used with the [Image Selector](../Image_Selector).
 
 **Default**: `sortorder`
 
