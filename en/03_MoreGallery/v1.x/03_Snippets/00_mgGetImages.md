@@ -51,7 +51,7 @@ As of v1.16.0, you can also use `selection` in combination with an `&images` pro
 
 **Default**: `sortorder`
 
-**Note**: If multiple images are uploaded simultaneously, they will share the same `uploadedon` timestamp. This means the next and previous links may not appear for those images in single image view (when sorting by `uploadedon`). If batch uploads will be used, sorting by `id` can produce a similar result without this caveat.
+**Note**: Sorting by `uploadedon` may not load the right previous/next images in the single image view because of identical values. This was fixed in 1.16.0; on older versions you may sort by `&id` instead to produce a similar result.
 
 #### &sortDir
 
