@@ -43,14 +43,6 @@ Added in v1.16.
 
 **Default**: none
 
-#### &images
-
-Used for rendering a list of specific images, for example those selected by the [Image Selector TV and ContentBlocks Input](../Image_Selector). Added in v1.16.
-
-> Selecting images this way cannot be used together with `&resource`.
-
-**Default**: none
-
 #### &sortBy
 
 The field to sort images on. This can be one of the following: `id`, `filename`, `name`, `sortorder`, `uploadedon`, `editedon` or `random` to randomise the order of the images.
