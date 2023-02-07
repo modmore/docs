@@ -59,7 +59,7 @@ The default urlPattern, `/assets/components/googledrivemediasource/?s={source}&i
 
 It is recommended to configure a rewrite for Apache:
 
-```htaccess
+```
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^drive/(.+)$ /assets/components/googledrivemediasource/index.php?s=2&id=$1 [L,QSA]
