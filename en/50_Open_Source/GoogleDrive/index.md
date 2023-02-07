@@ -7,6 +7,8 @@ This package includes a MODX Media Source implementation to provide access and s
 
 The media source requires MODX 3.0+ and PHP 8.0+.
 
+[TOC]
+
 ## Set-up
 
 There are a few steps to get up and running with Google Drive.
