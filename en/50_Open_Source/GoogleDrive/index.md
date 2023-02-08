@@ -82,20 +82,19 @@ The s=2 parameter indicates the **media source ID**, in this example ID 2. Chang
 The **urlPattern** in the media source can then drop the media source ID and be configured to:
 
 ```html
-/gdrive/{id}
+https://yoursite.com/gdrive/{id}
 ```
 
-> **You should run this proxy on a subdomain if you can, and set a full https URL in the urlPattern, to maximise compatibility with third party tools**. Just make sure all requests are routed to the index file and that the `s` and `id` parameters are properly set from the request or rewrite.
+> **You should run this proxy with a fully qualified URL in the urlPattern, to maximise compatibility with third party tools**. This could be on a (sub)domain, but has to start with https. Make sure all requests are routed to the index file and that the `s` and `id` parameters are properly set from the request or rewrite.
 
-> For phpthumb, it is necessary to set the `phpthumb_nohotlink_enabled` system setting to `No`. This allows it to handle external files that are not replicated on the local file system.
-
+> For phpthumb and the MODX media browser, it is necessary to set the `phpthumb_nohotlink_enabled` system setting to `No` to see thumbnails. This allows it to handle external files that are not replicated on the local file system.
 
 ## Integrations
 
 When using the media source with other extras, you may run into compatibility issues because files and directories are referenced by IDs and cannot be found on the local file system.
 
-We've confirmed the MODX core, Image+, ContentBlocks, and phpthumb, **however you will need to run the friendly URLs proxy from a (sub)domain with a full https url configured
+We've confirmed the MODX core, Image+, ContentBlocks, and phpthumb, **however you will need to run the friendly URLs proxy from a (sub)domain with a full https url configured**. Otherwise, they may try to find the file locally, where it will be unable of finding any files.
 
-Please do report incompatibilities
+Please do report any incompatibilities **when using a full url** [on GitHub](https://github.com/modmore/GoogleDriveMediaSource/issues).
 
 
