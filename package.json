@@ -8,7 +8,7 @@
     "jshint": "latest",
     "live-reload": "1.x.x",
     "mkdirp": "^0.5.1",
-    "sass": "^1.32.8",
+    "sass": "^1.58.1",
     "parallelshell": "2.0.x",
     "rimraf": "latest",
     "svg-sprite": "1.0.x",
