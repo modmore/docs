@@ -10,7 +10,7 @@ then
 fi
 
 # Generate the docs using daux.io
-if /Applications/MAMP/bin/php/php7.4.30/bin/php vendor/bin/daux generate --source=. --destination=html ; then
+if php vendor/bin/daux generate --source=. --destination=html ; then
 
     # Remove the empty placeholder file from the generated html folder
     if [ -f html/modmore-documentation.zip ];
