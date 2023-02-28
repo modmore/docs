@@ -11,9 +11,19 @@ h1,h2,h3,h4,h5,h6 {
     text-rendering: $header-text-rendering;
     color: $primary-color;
 }
-
+h1, h2 {
+  margin-top: 2rem;
+}
+h2 {
+  border-bottom: 2px solid #d2e3ee;
+}
 h3, h4, h5, h6 {
   padding-left: 1rem;
+  margin-bottom: 0.5rem;
+
+  &.TableOfContentsContainer__title {
+    padding-left: 0;
+  }
 }
 
 @for $i from 1 through 6 {

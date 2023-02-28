@@ -2,21 +2,32 @@
 title: Emails & Messages
 ---
 
-Order Messages are communications from the shop specific to a certain order. Typically email notifications to the customer, but could also include emails to the merchant about the new order, text (SMS) messages sent via a third party integration, or other forms of order-specific communication. 
+Order Messages are communications from the shop specific to a certain order. Typically these are email notifications to the customer, but could also include emails to the merchant about the new order, text (SMS) messages sent via a third party integration, or other forms of order-specific communication.
 
 [TOC]
 
+## Emails in the status workflow
+
+By default, Commerce will create a [status workflow](../Statuses) for you on installation that includes 2 email messages when an order is first received:
+
+- "New order received" notification, sent to the merchant
+- "Thanks for your order" email, sent to the customer
+
+You can change the configuration for these emails (such as the merchant recipient email) by going to Commerce > Configuration > Statuses, and clicking the email you want to change in the Status Changes column.
+
+There are more ways you can change the default emails with various settings. [There's a summary available here](https://support.modmore.com/article/170-how-can-i-change-the-emails-that-get-sent-when-an-order-is-placed).
+
 ## Viewing & sending Messages
 
-To manage Order Messages, go to Commerce > Orders and when viewing an order navigate to the Messages tab. There you can see all previous messages, and create new ones. 
+To manage Order Messages, go to Commerce > Orders and when viewing an order navigate to the Messages tab. There you can see all previous messages, and create new ones.
 
-When creating messages, you can choose if it should be sent immediately or not. When you uncheck the _Send message right away_ checkbox, it will be stored as a draft. 
+When creating messages, you can choose if it should be sent immediately or not. When you uncheck the _Send message right away_ checkbox, it will be stored as a draft.
 
-To send a draft hover over _Actions_ in the grid and select _Send Message_. To view a message contents, click _View Message Content_. 
+To send a draft hover over _Actions_ in the grid and select _Send Message_. To view a message contents, click _View Message Content_.
 
 For automated messages, such as those created through an [Email Status Change Action](../Statuses/Email_Action), messages are usually sent right away.
 
-Multiple recipients are supported, separate them with a comma. 
+Multiple recipients are supported, separate them with a comma.
 
 ## Message Types
 
@@ -24,7 +35,7 @@ The Commerce core provides 3 message types: Email, Formatted Email and Internal 
 
 ### Email Message
 
-The email message type is the most common one. It sends, surprisingly, an email! 
+The email message type is the most common one. It sends, surprisingly, an email!
 
 Email sending is done through MODX using PhpMailer, so make sure [MODX is properly set up for email sending](https://docs.modx.com/current/en/building-sites/sending-mail) (in MODX under System > Settings > Email area). It's strongly encouraged to use SMTP with an email delivery service like Mandrill, Postmark, Amazon SES, or others. Make sure that SPF and DKIM are configured properly for optimal delivery.
 
@@ -32,29 +43,29 @@ Email sending is done through MODX using PhpMailer, so make sure [MODX is proper
 
 The formatted email, introduced in v1.2.0, lets you send an email that is wrapped in a nice template so it looks more professional than the standard "raw" email.
 
-The used template, by default, is `emails/message.twig`. You can override its content using [custom Twig templating](../Front-end_Theming), and you can also set a different template to be used with the `commerce.templated_message_template` system setting. You can use all the placeholders in the template as described below, with the addition of the `message_content` block, which will be filled with the content added in the interface (`{% block message_content %}{% endblock %}`).  
+The used template, by default, is `emails/message.twig`. You can override its content using [custom Twig templating](../Front-end_Theming), and you can also set a different template to be used with the `commerce.templated_message_template` system setting. You can use all the placeholders in the template as described below, with the addition of the `message_content` block, which will be filled with the content added in the interface (`{% block message_content %}{% endblock %}`).
 
-The content entered into a formatted message is processed using markdown (specifically, parsedown), to enable easier use of links and basic formatting options.  
+The content entered into a formatted message is processed using markdown (specifically, parsedown), to enable easier use of links and basic formatting options.
 
 ### Internal Note
 
-The internal message type creates an internal note. It is not sent to anyone, but remains available to be checked on the order. 
+The internal message type creates an internal note. It is not sent to anyone, but remains available to be checked on the order.
 
 ## Testing email templates the easy way
 
-If you're working on customising email templates, it's useful to not go through the checkout for each attempt. You can do that by viewing the order detail page, Messages tab, and clicking "View Message". 
-  
+If you're working on customising email templates, it's useful to not go through the checkout for each attempt. You can do that by viewing the order detail page, Messages tab, and clicking "View Message".
+
 In Commerce 1.2+, first disable the `commerce.save_sent_message_content` system setting before creating your test email. Doing so will make sure that the email template is re-rendered each time you view the message in the dashboard.
 
 If you're looking for where the standard emails are defined, go to Configuration > Statuses and click on the status change that corresponds with payment received. That will have the default twig syntax to use in the message content.
 
 ## Available Placeholders
 
-For the Email Message Type, and possibly third party message types, you can use a whole bunch of placeholders in the Subject and Content fields. 
+For the Email Message Type, and possibly third party message types, you can use a whole bunch of placeholders in the Subject and Content fields.
 
-These are parsed as [Twig templates](../Front-end_Theming), so you can use logic in the emails as well. 
+These are parsed as [Twig templates](../Front-end_Theming), so you can use logic in the emails as well.
 
-An example of all placeholders is included at the end of this page. We'll discuss a couple special fields first. 
+An example of all placeholders is included at the end of this page. We'll discuss a couple special fields first.
 
 ### Order Fields
 
@@ -72,17 +83,17 @@ An array of order items is found in the `items` placeholder, which could be used
 </ul>
 ````
 
-_When items are assigned to a product_, you can find the product information in item.product. The exact information you'll find there may depend on the product type. 
+_When items are assigned to a product_, you can find the product information in item.product. The exact information you'll find there may depend on the product type.
 
 For example: `{{ item.product.weight_formatted }}`
 
 ### Addresses
 
-Address information is available with the `billing_address` and `shipping_address` prefixes. For example `{{ billing_address.fullname }}`, `{{ shipping_address.address1 }}` and `{{ shipping_address.email }}`. 
+Address information is available with the `billing_address` and `shipping_address` prefixes. For example `{{ billing_address.fullname }}`, `{{ shipping_address.address1 }}` and `{{ shipping_address.email }}`.
 
-Note that depending on your checkout, it is possible only one or the other is available - build your template accordingly. 
+Note that depending on your checkout, it is possible only one or the other is available - build your template accordingly.
 
-To automatically format the address, use the `format_address` filter like this: `{{ shipping_address|format_address }}`. 
+To automatically format the address, use the `format_address` filter like this: `{{ shipping_address|format_address }}`.
 
 ### Shipments & Shipping Methods
 
@@ -95,9 +106,9 @@ An array of [order shipments](Shipments) is available as `{{ shipments }}`, each
 ```
 
 As of v1.1, the `{{ shipment.total_weight }}`, `{{ shipment.tracking_url }}` and `{{ shipment.email_note }}` placeholders are available.
- 
-- The tracking_url needs to be provided by a custom order shipment implementation and may not be available until an order has been processed. 
-- The total_weight is calculated from each products' configured weight times the quantity. The unit this is in will be based on the weight unit set on the first product that was processed. 
+
+- The tracking_url needs to be provided by a custom order shipment implementation and may not be available until an order has been processed.
+- The total_weight is calculated from each products' configured weight times the quantity. The unit this is in will be based on the weight unit set on the first product that was processed.
 - The email_note is fully-rendered HTML based on the shipping methods' configured email note at the time the email is sent. In v0.12 and 1.0 you can access the email note as `{{ shipping_method_note }}`.
 
 If you're looking to organise your order items by shipment, you will need to combine the iteration and match `item.shipment` to `shipment.id`, like this:
@@ -105,11 +116,11 @@ If you're looking to organise your order items by shipment, you will need to com
 ``` html
 {% for shipment in shipments %}
     <h3>{{ shipment.name }}</h3>
-    
+
     {% if shipment.email_note %}
         {{ shipment.email_note|raw }}
     {% endif %}
-    
+
     <ul>
         {% for item in items %}
             {% if item.shipment == shipment.id %}
@@ -117,9 +128,9 @@ If you're looking to organise your order items by shipment, you will need to com
             {% endif %}
         {% endfor %}
     </ul>
-    
+
     <p>Total {{ shipment.product_quantity }} products, weight: {{ shipment.total_weight }}</p>
-    
+
     {% if shipment.tracking_url %}
         <p><a href="{{ shipment.tracking_url }}" class="button">Track shipment {{ shipment.tracking_reference }}</a></p>
     {% elseif shipment.tracking_reference %}
@@ -132,15 +143,15 @@ If you're looking to organise your order items by shipment, you will need to com
 
 ### Transactions & Payment Methods
 
-Transactions for an order are available in a `{{ transactions }}` array that you can iterate over (as of v0.11.0-rc2). 
+Transactions for an order are available in a `{{ transactions }}` array that you can iterate over (as of v0.11.0-rc2).
 
-Only completed transactions are included in this array, so you don't have to filter out failed/pending transactions. 
+Only completed transactions are included in this array, so you don't have to filter out failed/pending transactions.
 
-Note that a transaction with the [Manual payment gateway](../Payment_Methods/Manual) is considered successful/paid by Commerce, even though may users apply that as a "pay in store"-type payment. 
+Note that a transaction with the [Manual payment gateway](../Payment_Methods/Manual) is considered successful/paid by Commerce, even though may users apply that as a "pay in store"-type payment.
 
 It is technically possible for there to be more than one completed transaction (e.g. partial payments or loyalty cards), though that's uncommon at this time.
 
-Transactions include the payment method as `{{ transaction.method }}. 
+Transactions include the payment method as `{{ transaction.method }}.
 
 An example:
 
@@ -154,9 +165,9 @@ As of v1.1, the payment-method specific email note is also available on the tran
 
 ### Order fields
 
-Custom order fields are available in `order_fields`, already rendered for the customer (as of v0.11). 
- 
-To render a specific order field: 
+Custom order fields are available in `order_fields`, already rendered for the customer (as of v0.11).
+
+To render a specific order field:
 
 ```html
 {{ order_fields.coupon|raw }}
@@ -170,11 +181,11 @@ To render all order fields, iterate over the array:
 {% endfor %}
 ```
 
-Note that we're applying the `raw` filter to the value - this allows custom order fields to output HTML (like a link or . 
+Note that we're applying the `raw` filter to the value - this allows custom order fields to output HTML (like a link or .
 
-### Payment/Shipping notes 
+### Payment/Shipping notes
 
-On payment and shipping methods you can set an _Email Note_ that is automatically included in the email when those methods are selected. This is useful for including method-specific instructions or thank you messages. 
+On payment and shipping methods you can set an _Email Note_ that is automatically included in the email when those methods are selected. This is useful for including method-specific instructions or thank you messages.
 
 In v0.12 and v1.0, use `{{ payment_method_note|raw }}` and `{{ shipping_method_note|raw }}` respectively.
 
@@ -182,9 +193,9 @@ In v1.1+ the email note is also available in the transaction and shipment as `{{
 
 ### Invoices
 
-The last generated PDF invoice for an order is available in the `invoice` order field, like: `{{ order_fields.invoice }}`. That will only contain the invoice reference. 
+The last generated PDF invoice for an order is available in the `invoice` order field, like: `{{ order_fields.invoice }}`. That will only contain the invoice reference.
 
-To attach the PDF invoice to the email, enable "Attach invoice" on the [email status change](../Statuses/Email_Action). 
+To attach the PDF invoice to the email, enable "Attach invoice" on the [email status change](../Statuses/Email_Action).
 
 ## Other message types
 
@@ -192,15 +203,15 @@ To attach the PDF invoice to the email, enable "Attach invoice" on the [email st
 
 ## Example data
 
-This is an example of all the data available in an order message. You can get this data yourself by enabling the `commerce.debug` system setting, and using `{{ dump() }}` or `{{ dump(placeholder name) }}`.  
+This is an example of all the data available in an order message. You can get this data yourself by enabling the `commerce.debug` system setting, and using `{{ dump() }}` or `{{ dump(placeholder name) }}`.
 
-```` 
+````
 array (size=9)
-  'order' => 
+  'order' =>
     array (size=38)
       'id' => int 4072
       'class_key' => string 'comProcessingOrder' (length=18)
-      'properties' => 
+      'properties' =>
         array (size=1)
           'guest_checkout' => boolean true
       'secret' => string '3409....7157a20' (length=64)
@@ -238,9 +249,9 @@ array (size=9)
       'created_on_formatted' => string '2018-04-17 at 15:16:26 CEST' (length=27)
       'last_updated_on_formatted' => string '2018-04-17 at 15:17:34 CEST' (length=27)
       'status_updated_on_formatted' => string '2018-04-17 at 15:17:34 CEST' (length=27)
-  'taxes' => 
+  'taxes' =>
     array (size=1)
-      27 => 
+      27 =>
         array (size=15)
           'id' => int 27
           'class_key' => string 'comTaxRate' (length=10)
@@ -257,15 +268,15 @@ array (size=9)
           'total_taxed_amount_formatted' => string '€52.50' (length=8)
           'total_tax_amount_formatted' => string '€11.03' (length=8)
           'total_formatted' => string '€63.53' (length=8)
-  'items' => 
+  'items' =>
     array (size=1)
-      0 => 
+      0 =>
         array (size=34)
           'id' => int 4541
           'class_key' => string 'comOrderItem' (length=12)
           'properties' => null
           'order' => int 4072
-          'product' => 
+          'product' =>
             array (size=23)
               'id' => int 78
               'class_key' => string 'comProduct' (length=10)
@@ -319,7 +330,7 @@ array (size=9)
           'total_ex_tax_formatted' => string '€50.00' (length=8)
           'tax_formatted' => string '€10.50' (length=8)
           'total_formatted' => string '€60.50' (length=8)
-  'billing_address' => 
+  'billing_address' =>
     array (size=20)
       'id' => int 773
       'class_key' => string 'comAddress' (length=10)
@@ -341,7 +352,7 @@ array (size=9)
       'mobile' => string '' (length=0)
       'email' => string 'email@example.com' (length=21)
       'notes' => string '' (length=0)
-  'shipping_address' => 
+  'shipping_address' =>
     array (size=20)
       'id' => int 773
       'class_key' => string 'comAddress' (length=10)
@@ -363,9 +374,9 @@ array (size=9)
       'mobile' => string '' (length=0)
       'email' => string 'email@example.com' (length=21)
       'notes' => string '' (length=0)
-  'shipments' => 
+  'shipments' =>
     array (size=1)
-      0 => 
+      0 =>
         array (size=30)
           'id' => int 2166
           'class_key' => string 'comOrderShipment' (length=17)
@@ -374,11 +385,11 @@ array (size=9)
           'order' => int 4072
           'delivery_type' => int 2
           'status' => int 0
-          'method' => 
+          'method' =>
             array (size=22)
               'id' => int 56
               'class_key' => string 'comShippingMethodByWeight' (length=25)
-              'properties' => 
+              'properties' =>
                 array (size=4)
                   ...
               'delivery_type' => int 2
@@ -422,19 +433,19 @@ array (size=9)
           'fee_ex_tax_formatted' => string '€2.50' (length=7)
           'tax_amount_formatted' => string '€0.53' (length=7)
           'fee_incl_tax_formatted' => string '€3.03' (length=7)
-  'transactions' => 
+  'transactions' =>
     array (size=1)
-      0 => 
+      0 =>
         array (size=17)
           'id' => int 716
           'class_key' => string 'comTransaction' (length=14)
-          'properties' => 
+          'properties' =>
             array (size=0)
               ...
           'test' => boolean true
           'order' => int 4072
           'status' => int 5
-          'method' => 
+          'method' =>
             array (size=21)
               'id' => int 208
               'class_key' => string 'comPaymentMethod' (length=16)
@@ -467,24 +478,24 @@ array (size=9)
           'fee_formatted' => string '€0.00' (length=7)
           'created_on_formatted' => string '2018-04-17 at 15:17:33 CEST' (length=27)
           'completed_on_formatted' => string '2018-04-17 at 15:17:34 CEST' (length=27)
-  'config' => 
+  'config' =>
     array (size=4)
       'site_url' => string 'https://site.local/' (length=23)
       'site_name' => string 'My Webshop' (length=10)
       'email_header' => string 'https://site.local/assets/email-header.jpg' (length=46)
       'email_footer' => string 'My Webshop &bull; <em>Powered by Commerce</em>' (length=46)
-  'message' => 
+  'message' =>
     array (size=15)
       'id' => int 189
       'class_key' => string 'comOrderEmailMessage' (length=20)
-      'properties' => 
+      'properties' =>
         array (size=3)
           'subject' => string 'Test' (length=4)
           'bcc' => string '' (length=0)
           'send_now' => string '1' (length=1)
       'order' => int 4072
       'content' => string '{{ dump() }}' (length=12)
-      'recipient' => string 'email@example.com' 
+      'recipient' => string 'email@example.com'
       'from' => string 'email@example.com'
       'created_on' => int 1524133740
       'created_by' => int 1

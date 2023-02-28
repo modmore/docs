@@ -12,8 +12,6 @@ For data in Commerce that is translated, you'll find language switches embedded 
 
 ![Screenshot of a product form with the language dropdown showing EN, NL, FR (with Belgian flag) and PL](../images/gettingstarted/multilingual-ex.jpg)
 
-## On this page
-
 [TOC]
 
 ## Supported multilingual options
