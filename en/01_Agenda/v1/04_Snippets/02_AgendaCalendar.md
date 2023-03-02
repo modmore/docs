@@ -7,7 +7,7 @@ It uses the following snippet properties:
 
 | Property           | Description                                                                                                                                                                    | Default                |
 |--------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------|
-| ajax               | **Since 1.5.0:** If set, the snippet output will be directly output as JSON result to the browser when the page is requested with the same value in the ajax request property. | No                     |
+| ajax               | **Since 1.5.0:** If set, the snippet output will be directly output as JSON result to the browser when the page is requested with the same value in the ajax request property. | 0 (No)                 |
 | allowedRequestKeys | Comma-separated list of request keys, that could be used to filter the displayed events. Defaults to all allowed.                                                              | -                      |
 | calendars          | Comma-separated list of aliases of calendars to filter the displayed events.                                                                                                   | -                      |
 | categories         | Comma separated list of aliases of categories to filter the displayed events.                                                                                                  | -                      |
