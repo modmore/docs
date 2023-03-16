@@ -23,6 +23,7 @@ In alphabetical order:
 - [Customers](Admin/Customers)
 - [Default Address](Cart/DefaultAddress)
 - [Digital Product](DigitalProduct)
+- [Donations](Donations)
 - [Dymo Address Label](Shipping/DymoAddressLabel)
 - [Enforce Stock](Cart/EnforceStock)
 - [EU VAT](Taxes/EUVat)
