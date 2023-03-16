@@ -45,3 +45,5 @@ Templating is done through Twig. There are 3 templates, the defaults of which ca
 The `active.twig` is used for active projects to accept donations. The `inactive.twig` is used to show an inactive project which will still show the donations and percentage of the goal reached, but will not allow new donations.
 
 The `donations.twig` is used for the list of donations.
+
+Some more information on the templates, including available values, can [be found here](https://github.com/modmore/Commerce_Donations/#showing-the-donation-widget).
