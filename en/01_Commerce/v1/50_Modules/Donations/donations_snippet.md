@@ -11,4 +11,4 @@ Properties:
 - `&sortdir`: the order to sort donations by, defaulting to `DESC`.
 - `&tpl`: the twig template used to render, defaults to `donations/cause/donations.twig`
 
-Some more information on the templates, including available values, can [be found here](https://github.com/modmore/Commerce_Donations/#showing-the-donation-widget).
+Some more information on the templates, including available values, can [be found here](https://github.com/modmore/Commerce_Donations/#listing-previous-donations).
