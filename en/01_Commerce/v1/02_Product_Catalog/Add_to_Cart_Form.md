@@ -1,10 +1,10 @@
-To add a product to the cart, you'll need to submit the product record ID (not the resource ID) to the cart page. There are two form variations supported, one for multiple products, and the other for single products. 
+To add a product to the cart, you'll need to submit the product record ID (not the resource ID) to the cart page. There are two form variations supported, one for multiple products, and the other for single products.
 
 [TOC]
 
 ## Single Products Form
 
-With the single products form only one product can be added to the cart per request. As the structure of the form is a little easier than the multiple products form, it is easier to use this when providing different products as variations in your catalog. 
+With the single products form only one product can be added to the cart per request. As the structure of the form is a little easier than the multiple products form, it is easier to use this when providing different products as variations in your catalog.
 
 The form includes:
 - an `add_to_cart` hidden input with value 1, this is used to trigger the add to cart logic.
@@ -15,10 +15,10 @@ The form includes:
 <form method="post" action="[[~[[++commerce.cart_resource]]]]">
     <input type="hidden" name="add_to_cart" value="1">
     <input type="hidden" name="product" value="123">
-    
+
     <label for="add-quantity">Quantity:</label>
     <input type="number" name="quantity" value="1">
-    
+
     <input type="submit" value="[[%commerce.add_to_cart? &namespace=`commerce` &topic=`frontend`]]">
 </form>
 ````
@@ -29,15 +29,15 @@ The `[[%commerce.add_to_cart]]` lexicon was added in v0.12; in older versions yo
 
 To add multiple products in a single submit action, you need to provide a `add_to_cart` value and a `products` array. The products array is provided as `product id => [options]`, for example `products[123][quantity] = 5`.
 
-In a form, that looks somewhat like this. Replace `123` with the ID of your product. 
+In a form, that looks somewhat like this. Replace `123` with the ID of your product.
 
 ```` html
 <form method="post" action="[[~[[++commerce.cart_resource]]]]">
     <input type="hidden" name="add_to_cart" value="1">
-    
+
     <label for="add-quantity">Quantity:</label>
     <input type="number" name="products[123][quantity]" value="1">
-    
+
     <input type="submit" value="[[%commerce.add_to_cart? &namespace=`commerce` &topic=`frontend`]]">
 </form>
 ````
@@ -46,15 +46,17 @@ Note that these two form structures cannot be mixed. The `products[id][quantity]
 
 ## Adding custom fields to the order item
 
-Commerce (as of 0.11) supports simple custom fields using the [Item Data Module](../Modules/Cart/ItemData.md). The module allows you to define what field names to accept from the user, and then you can start sending those fields along with the add to cart request. This is great for user comments or simple product variations that have no impact on stock. 
+Commerce (as of 0.11) supports simple custom fields using the [Item Data Module](../Modules/Cart/ItemData.md). The module allows you to define what field names to accept from the user, and then you can start sending those fields along with the add to cart request. This is great for user comments or simple product variations that have no impact on stock.
 
 [See the Item Data Module documentation](../Modules/Cart/ItemData.md) for instructions on how to set that up.
 
 ## AJAX
 
-You can also add products to the cart using AJAX. Just serialize the form values, and POST those values to the cart page with an XMLHttpRequest. Instead of HTML, you'll get JSON back. 
+You can also add products to the cart using AJAX. Just serialize the form values, and POST those values to the cart page with an XMLHttpRequest. Instead of HTML, you'll get JSON back.
 
-For example the following jQuery snippet can be used to progressively enhance add to cart forms with AJAX. 
+> When using `window.fetch` or other ways of sending an ajax request except jQuery, **you must specify either the `X-Requested-With=XMLHttpRequest` or `Accept=application/json` (v1.3+) header** to trigger the JSON mode.
+
+For example the following jQuery snippet can be used to progressively enhance add to cart forms with AJAX.
 
 ```` html
 <script type="text/javascript">
@@ -63,11 +65,11 @@ $(function() {
     $('form.add-to-cart').on('submit', function(e) {
         // Prevent regular submit
         e.preventDefault();
-        
+
         var form = $(this),
             action = form.attr('action'),
             values = form.serialize();
-            
+
         $.ajax({
             url: action,
             method: 'POST',
@@ -154,12 +156,14 @@ The JSON returned by the server will look something like this.
 }
 ````
 
+Make sure to specify either the `X-Requested-With` or `Accept` request headers to toggle into JSON mode.
+
 ### Other AJAX Cart actions
 
 The following cart actions are available and require the mentioned data. This should be `POST`ed to the page.
 
 - Add product to cart: `add_to_cart=1` + `products[123]['quantity']=321` or `product=123` and `quantity=321`.
 - Remove item: `remove_item=123` where `123` is the ID of the order item
-- Update cart quantities: `update_cart=1` + object `items[order_item_id] = quantity` 
+- Update cart quantities: `update_cart=1` + object `items[order_item_id] = quantity`
 - Continue to the checkout (persist order to database and show account step): `checkout=1`
 
