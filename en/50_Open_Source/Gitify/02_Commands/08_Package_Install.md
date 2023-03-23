@@ -19,5 +19,5 @@ Options:
  --help (-h)           Display this help message.
  --verbose (-v|vv|vvv) Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug.
  --version (-V)        Display the Gitify version.
-
+ --packages (-p)       Skip extracting installed packages when set.
 ````
