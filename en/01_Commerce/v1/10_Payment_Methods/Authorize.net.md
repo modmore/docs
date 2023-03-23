@@ -1,6 +1,6 @@
-[Authorize.net](https://www.authorize.net/) is a big payment provider. It provides credit card payments.
+[Authorize.net](https://www.authorize.net/) is a major payment provider with both online and offline payment solutions for credit cards. It is heavily focused on merchants in the United States.
 
-Commerce integrates with Authorize.net with their Accept.js integration, so the customer stays on the website, while you're still clear from PCI-DSS compliance. 
+Commerce integrates with Authorize.net with their Accept.js integration, offering an on-page credit card form with minimal PCI-DSS compliance. It also supports auth/capture payment flows.
 
 This integration does require javascript to be enabled by the customer.
 
@@ -13,5 +13,6 @@ Authorize.net requires the following configuration options:
 - **API Login ID**: Merchant's unique ID.
 - **Transaction Key**: The transaction key is used server-side to create the actual transactions. A new key can be created in the Authorize.net merchant interface by navigating to Account > Settings > Security Settings > API Credentials & Keys.
 - **Client Key**: The public client key that can be used on the client-side. It can be foundor created in the Authorize.net merchant interface by navigating to Account > Settings > Security Settings > General Security Settings > Manage Public Client Key.
-- **Test Mode**: Indicates if these credentials are for the sandbox or the live mode. Make sure to also set the payment method to be available in the appropriate mode only.
-- **Developer Mode**: Test mode is sometimes referred to as developer mode, but configured separately. If you've enabled test mode, also enable developer mode.
+- **Request authorization instead of payment**: Opt-in to use the [Authorize/Capture payment flows](Authorize_Capture_Flow), which means you request a temporary hold on a credit card upfront but only charge that when delivering your products. This was added to Authorize.net in 1.3.0-rc8.
+
+> Prior to Commerce 1.3.0-rc8, there were separate properties for Test and Developer mode. In 1.3.0-rc8, we removed those to bring the Authorize.net gateway in line with other gateways, which toggles production/sandbox based on the mode Commerce is in.  Make sure to set up the Availability accordingly.
