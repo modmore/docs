@@ -4,6 +4,9 @@ title: .gitify file
 
 To define what to export, to where and how, we're using a `.gitify` file formatted in YAML. This file is located in the root of the project. 
 
+| As of Gitify v2.0.0-pl, it's possible to specify a different YAML config file to use with the `--config` option, when used with the `build` or `extract` commands. <br/> e.g. `gitify extract --config=.myconfigfile` |
+|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
 An example `.gitify` may look like this:
 
 ````
