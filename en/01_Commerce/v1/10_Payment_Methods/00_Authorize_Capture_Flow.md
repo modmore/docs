@@ -4,13 +4,15 @@ title: Authorize & Capture Flow
 
 As of Commerce 1.3, you can optionally choose to only request a temporary hold on a customers' payment instrument (a credit card typically), and capture that at a later time (for example when shipping the product, or after manual review).
 
-This is only supported by select gateways and payment methods.
+We refer to this feature as the _Authorize/Capture flow_, but it is also commonly referred to as a _Delayed Capture_.
+
+Only select payment gateways are supported for this functionality.
 
 > As of Commerce v1.3, the supported gateways are Stripe (credit card payments only), Authorize.net, and Manual. We plan to add support  to other gateways in the future.
 
 > The [Klarna](Klarna) gateway also uses authorizations and captures, however that uses its own capture logic. If you use Klarna, make sure to [follow its separate setup instructions](Klarna) to properly capture those payments.
 
-Commerce currently expects a single authorization to have a single capture. It is not supported to do incremental captures.
+Commerce expects a single authorization to have a single capture. It is not supported to do incremental captures.
 
 [TOC]
 
