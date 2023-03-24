@@ -18,5 +18,5 @@ Options:
  --help (-h)           Display this help message.
  --verbose (-v|vv|vvv) Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug.
  --version (-V)        Display the Gitify version.
- --config=CONFIG       Gitify YAML file to use.
+ --dotfile=.filename   Gitify YAML file to use.
 ````
