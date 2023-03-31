@@ -17,7 +17,7 @@ It uses the following snippet properties:
 | tpl            | Name of a chunk that contains the template for iCal download link.                | tplAgendaEventDetailICalLink |
 | usergroups     | Comma separated list of user group names to filter the iCal download.             | -                            |
 | users          | Comma separated list of user IDs to filter the iCal download.                     | -                            |
-| where          | JSON encoded xPDO where clause to filter the ical event.                          | -                            |
+| where          | **Since 1.5.0** JSON encoded xPDO where clause to filter the ical event.          | -                            |
 
 ## Placeholders
 

@@ -7,8 +7,8 @@ It uses the following snippet properties:
 
 | Property           | Description                                                                                                                                                                    | Default                |
 |--------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------|
-| ajax               | **Since 1.5.0:** If set, the snippet output will be directly output as JSON result to the browser when the page is requested with the same value in the ajax request property. | 0 (No)                 |
-| allowedRequestKeys | Comma-separated list of request keys, that could be used to filter the displayed events. Defaults to all allowed.                                                              | -                      |
+| ajax               | **Since 1.4.0** If set, the snippet output will be directly output as JSON result to the browser when the page is requested with the same value in the ajax request property.  | 0 (No)                 |
+| allowedRequestKeys | Comma-separated list of request keys, that can be used to filter the displayed events. Defaults to all allowed.                                                                | -                      |
 | calendars          | Comma-separated list of aliases of calendars to filter the displayed events.                                                                                                   | -                      |
 | categories         | Comma separated list of aliases of categories to filter the displayed events.                                                                                                  | -                      |
 | categoryTpl        | Name of a chunk that contains the template of one category in the category list of an event.                                                                                   | tplAgendaEventCategory |
@@ -17,6 +17,7 @@ It uses the following snippet properties:
 | daterangeSeparator | Separator in the daterange displayed in an event.                                                                                                                              | -                      |
 | detailId           | ID of a resource containing an AgendaDetail snippet call.                                                                                                                      | -                      |
 | durationParts      | Number of detail parts of the event duration output.                                                                                                                           | 1                      |
+| durationRound      | **Since 1.5.0** Rounding type for event duration.                                                                                                                              | ceil                   |
 | end                | The end date to filter the displayed events. Must contain a [supported date and time format](https://www.php.net/manual/de/datetime.formats.php).                              | -                      |
 | excludeEvents      | Comma separated list of event IDs to exclude from the displayed events.                                                                                                        | -                      |
 | excludeRepeats     | Comma separated list of repeating event IDs to exclude from the displayed events.                                                                                              | -                      |
@@ -25,8 +26,8 @@ It uses the following snippet properties:
 | intervalTpl        | Name of a chunk that contains the template for an interval.                                                                                                                    | tplAgendaEventInterval |
 | listId             | ID of a resource containing an AgendaList snippet call.                                                                                                                        | -                      |
 | locale             | The locale for the displayed formatted date. Defaults to the current system/context locale setting.                                                                            | -                      |
-| locations          | Comma separated list of aliases of locations to filter the displayed events.                                                                                                   | -                      |
 | locationTpl        | Name of a chunk that contains the template for the location of an event.                                                                                                       | tplAgendaEventLocation |
+| locations          | Comma separated list of aliases of locations to filter the displayed events.                                                                                                   | -                      |
 | outputSeparator    | An optional string to separate each tpl instance.                                                                                                                              | -                      |
 | resourceTpl        | Name of a chunk that contains the template for the linked resource of a calendar.                                                                                              | -                      |
 | start              | The start date to filter the displayed events. Must contain a [supported date and time format](https://www.php.net/manual/de/datetime.formats.php).                            | -                      |
@@ -35,7 +36,7 @@ It uses the following snippet properties:
 | usergroups         | Comma separated list of user group names to filter the displayed events.                                                                                                       | -                      |
 | users              | Comma separated list of user IDs to filter the displayed events.                                                                                                               | -                      |
 | videoTpl           | Name of a chunk that contains the template for one video in the video list of an event.                                                                                        | tplAgendaEventVideo    |
-| where              | JSON encoded xPDO where clause to filter the calendar events.                                                                                                                  | -                      |
+| where              | **Since 1.5.0** JSON encoded xPDO where clause to filter the calendar events.                                                                                                  | -                      |
 | wrapperTpl         | Name of a chunk that contains the wrapper template for all events.                                                                                                             | tplAgendaEventWrapper  |
 
 ## Placeholders
@@ -76,7 +77,7 @@ during each package update, so please rename the chunks before editing them.
 [Extended fields](../06_Extended_Fields) are available as placeholder with the prefix `extended` in the
 event row template.
 
-### tplAgendaEventWrapper
+### tplAgendaInterval
 
 | Placeholder | Description                                                                                                                                                                                                                                                                                                 |
 |-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -87,7 +88,7 @@ event row template.
 | range       | The formatted date range of the interval. The format is defined with the lexicon entries `agenda.php_format_daterange` and `agenda.php_format_separator` and could be overridden by the `daterangeFormat` snippet property. The [format rules](01_AgendaList#range-placeholder-format) are described below. |
 | idy         | The number of the interval starting with 1.                                                                                                                                                                                                                                                                 |
 
-### tplAgendaIntervalWrapper
+### tplAgendaEventWrapper
 
 | Placeholder | Description                                                                                    |
 |-------------|------------------------------------------------------------------------------------------------|
