@@ -91,7 +91,8 @@ changed or removed during saving the event a warning will be shown.
 In the description tab you could set the description for the current event. In
 the content tab you could set the content for the current event. The editor type
 of the content/description input could be set with the `agenda.editor_type`
-system setting to htmleditor (the system-wide richtext editor) or textarea.
+system setting to htmleditor (the system-wide richtext editor), modx-texteditor
+(the system-wide code editor) or textarea.
 
 ### Images/Videos Tab
 

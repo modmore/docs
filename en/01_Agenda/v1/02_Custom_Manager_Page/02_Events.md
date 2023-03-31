@@ -32,4 +32,4 @@ those extended fields are shown after the `active` column.
 
 The create/edit window for one event has a lot of options, that can be set. The
 information about those options can be found in the [Tab
-Overview](01_Overview#createedit) documentation.
+Overview](01_Overview.md#createedit) documentation.
