@@ -15,14 +15,15 @@ The value xxx has to be filled with the random string in the MODX system setting
 
 ## The cronjob command tasks
 
-The cronjob command will run two different tasks:
+The cronjob command will run three different tasks:
 
 - [refresh the feeds](#refresh-the-feeds-task)
 - [refresh the repeating events](#refresh-the-repeating-events-task)
+- [import events](#import-events-task)
 
-Normally the feeds and the repeating events are refreshed together. To run a
-single task you can use the property `mode=feed` or `mode=repeating` for the
-cronjob:
+Normally the feeds and the repeating events are refreshed together when no
+property is set for the cronjob command. To run a single task you can use the
+property `mode=feed` or `mode=repeating` for the cronjob:
 
 `php /path/to/your/modx/installation/assets/components/agenda/cron.php mode=feed`
 
@@ -45,6 +46,22 @@ the `agenda.repeating_max_occurance` system setting. So there will be no
 inifinite creation of repeats but the repeats will not stay at the limit, when
 the repeating event was created. Only events after the last existing repeating
 event are created and old (maybe edited) repeats are not changed.
+
+### Import events task
+
+With the property `mode=import` new events can be imported into Agenda with a
+cronjob. The cronjob call has to use the full filepath in the file property. 
+
+`php /path/to/your/modx/installation/assets/components/agenda/cron.php mode=import file=/path/to/the/file`
+
+or
+
+`https://your.domain/assets/components/agenda/cron.php?cronjob_id=xxx&mode=import&file=/path/to/the/file`
+
+The import uses the same code as the import events button in the [events
+tab](02_Custom_Manager_Page/02_Events.md) of the custom manager page. The import
+mode is append. The import can be overridden in an [Agenda
+module](02_Custom_Manager_Page/07_Modules.md).
 
 ## Debug the cronjob
 

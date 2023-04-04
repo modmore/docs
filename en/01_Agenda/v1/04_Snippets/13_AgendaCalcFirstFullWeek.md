@@ -1,6 +1,6 @@
 This output filter calculates the startdate of the first full week with the
 given input. This snippet can be used to set the start date of the
-[AgendaCalender](02_AgendaCalendar) snippet. The output filter was introduced
+[AgendaCalender](02_AgendaCalendar.md) snippet. The output filter was introduced
 with Agenda 1.4.0.
 
 ## Output Filter Properties

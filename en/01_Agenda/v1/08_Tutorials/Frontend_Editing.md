@@ -13,8 +13,8 @@ of "userevents" and make sure it's active.
 ## FormIt Call and form code
 
 To render and execute the form, we have to add a FormIt call to a MODX resource.
-This FormIt Call uses the [AgendaEventGet](../04_Snippets/09_AgendaEventGet) and
-the [AgendaEventSet](../04_Snippets/10_AgendaEventSet) hooks.
+This FormIt Call uses the [AgendaEventGet](../04_Snippets/09_AgendaEventGet.md) and
+the [AgendaEventSet](../04_Snippets/10_AgendaEventSet.md) hooks.
 
 Here's our `FormIt` example call; make sure to adjust the `&agendaEvent` property to
 the ID of an existing event, that should be editable in the frontend.
@@ -106,5 +106,5 @@ a restriction in the `AgendaCategories` snippet.
 the start date and end date of the repeating event. The other fields will change
 the event itself.
 - All editable fields are shown on the documentation of the
-[AgendaEventGet](../04_Snippets/09_AgendaEventGet) and the
-[AgendaEventSet](../04_Snippets/10_AgendaEventSet) hooks.
+[AgendaEventGet](../04_Snippets/09_AgendaEventGet.md) and the
+[AgendaEventSet](../04_Snippets/10_AgendaEventSet.md) hooks.
