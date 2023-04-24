@@ -32,10 +32,10 @@ The skeleton uses the ThirdParty namespace by default. Currently, there is no wa
 
 The files that will have to changed are:
 
-- `_bootstrap/index.php` on line 108
+- `_bootstrap/index.php` on line 109
 - `_build/resolvers/loadmodules.resolver.php` on line 20
-- `core/components/commerce_doodleproduct/composer.json` on line 7
-- `core/components/commerce_doodleproduct/src/Modules/Doodleproduct.php` on line 2
+- `core/components/commerce_doodleproduct/composer.json` on line 2
+- `core/components/commerce_doodleproduct/src/Module.php` on line 3
 
 After changing the namespaces in these files, go into the `core/components/commerce_doodleproduct` directory and run `composer dump-autoload` to refresh the namespace in the Composer vendor files.
 
