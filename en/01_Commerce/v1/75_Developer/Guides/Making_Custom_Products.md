@@ -41,7 +41,7 @@ After changing the namespaces in these files, go into the `core/components/comme
 
 ### Module Information
 
-When your module is registered inside Commerce it will include the name of the module, the author's name, and a short description. Inside the module's core folder in `src/Modules/Doodleproduct.php` you can configure the author name in the getAuthor function. 
+When your module is registered inside Commerce it will include the name of the module, the author's name, and a short description. Inside the module file `src/Module.php` you can configure the author name in the getAuthor function. 
 
 To change the name and description of the module, edit the existing lexicons in `lexicon/en/default.inc.php`(as well as creating other lexicons for any other languages you want to support with your module).
 
@@ -63,7 +63,7 @@ Now that you have your module set up, you can extend comProduct. While extending
 
 The schema included with the skeleton has a few examples commented out. For extending comProduct, you will only need to uncomment the line `<!-- <object class="DoodleproductProduct" extends="comProduct" /> -->` and optionally change the name of the class if you wanted. Save the schema file, then run the `build.schema.php` file in your `_build` folder to automatically generate the required files. You will see a new folder, `model/commerce_doodleproduct`, which contains the file `doodleproductproduct.class.php` with an empty class. This file is where you will be adding all your product logic.
 
-Going back to `src/Modules/Doodleproduct.php`, you will need to uncomment these three lines directly underneath "// Add the xPDO package, so Commerce can detect the derivative classes":
+Going back to `src/Module.php`, you will need to uncomment these three lines directly underneath "// Add the xPDO package, so Commerce can detect the derivative classes":
 
 ```PHP
 $root = dirname(dirname(__DIR__));
