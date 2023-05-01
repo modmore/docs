@@ -23,7 +23,7 @@ Line: approx 286
 
 Change the following `setShippingMethod` function from:
 
-````php 
+````php
     public function setShippingMethod(comShippingMethod $method, array $data = [])
     {
         $this->set('method', $method->get('id'));
@@ -40,7 +40,7 @@ to:
     {
         $this->set('method', $method->get('id'));
         $this->set('fee', 0); // Reset the fee so it doesn't affect anything
-        
+
         // Allow the shipping method to receive the data and process things accordingly
         $success = $method->setShippingInformation($this->getOrder(), $this, $data);
 
@@ -57,34 +57,42 @@ We don't normally recommend editing core files, however (1) this module was buil
 
 ## Managing time slots
 
-Managing available slots is a three-step process in Commerce: 
+Managing available slots is a three-step process in Commerce:
 
 1. Create at least one shipping method in Commerce > Configuration of the type "Time Slot Shipping Method". Only need to do this once per type of delivery you want to offer.
-   
-2. Set up "Schedules" that cover your standard opening hours and the time slots customers can choose from. You can also think of Schedules as "blueprints" in that you configure them once, and then reuse them over and over. 
 
-3. Apply a "Schedule" to a specific date for a specific shipping on their planning tab. This copies the slots from the schedule and allows you to make changes to slots on specific dates. If you have multiple shipping methods created of the time slot type, each shipping method will get its own planning tab and therefore can have its own planning, slots, and prices. 
+2. Set up "Schedules" that cover your standard opening hours and the time slots customers can choose from. You can also think of Schedules as "blueprints" in that you configure them once, and then reuse them over and over.
 
-As a suggestion, consider creating a "weekday" and "weekend" schedule and apply those to the next few days before continuing onwards. 
+3. Apply a "Schedule" to a specific date for a specific shipping on their planning tab. This copies the slots from the schedule and allows you to make changes to slots on specific dates. If you have multiple shipping methods created of the time slot type, each shipping method will get its own planning tab and therefore can have its own planning, slots, and prices.
+
+As a suggestion, consider creating a "weekday" and "weekend" schedule and apply those to the next few days before continuing onwards.
 
 ## Create the shipping method
 
-In Commerce > Configuration > Shipping Methods, choose to create a new Time Slot shipping method, assigned to your delivery type. 
+In Commerce > Configuration > Shipping Methods, choose to create a new Time Slot shipping method, assigned to your delivery type.
 
-You can have multiple shipping methods, each with their own planning and slots. 
+You can have multiple shipping methods, each with their own planning and slots.
 
-On the shipping method you can configure the maximum number of days a customer can place an order for ahead of time. That rolls over at midnight (server time) each day. The minimum time between placing an order and the start of a slot is configured on individual slots in the schedule ("Lead time", in minutes) or planning ("Closes after", specific timestamp). 
+On the shipping method you can configure the maximum number of days a customer can place an order for ahead of time. That rolls over at midnight (server time) each day. The minimum time between placing an order and the start of a slot is configured on individual slots in the schedule ("Lead time", in minutes) or planning ("Closes after", specific timestamp).
 
 ## Set-up the status change action
 
 To make sure placing an order reduces the amount of reservations that can be placed within a single slot, go to Commerce > Configuration > Statuses and edit your "Payment Received" status change.
 
-Add the "Reserve Time Slot" status change action. 
+Add the "Reserve Time Slot" status change action.
 
 ## Customising the front-end and emails
 
-By default the available dates and slots are shown in a similar way as different payment gateways show their options, which has some basic styling attached in both the default theme and the Red starter page. 
+By default the available dates and slots are shown in a similar way as different payment gateways show their options, which has some basic styling attached in both the default theme and the Red starter page.
 
 You can apply your own CSS to make it fit your brand, or you can [replace the template to build something completely different](Shipping_Template).
 
 To show the selected time slot in the checkout or emails, [see the instructions for accessing slot information](Accessing_Slot_Information).
+
+## Composite Shipping Methods
+
+Added in 1.3, the ability to have composite shipping methods means that you can use TimeSlots for scheduling, but off-load the availability and pricing for a slot to a different shipping method type.
+
+For example, you can use a TableRates or Google Routes shipping method type to determine the price for a time slot.
+
+
