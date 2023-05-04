@@ -5,7 +5,7 @@ A custom manager page called _ConsentFriend_ is installed within the _Extras_
 menu.
 
 There are some system settings available in the namespace _ConsentFriend_. These
-can also be edited in the [settings](03_Custom_Manager_Page/04_Settings.md) (gear
+can also be edited in the [settings](03_Custom_Manager_Page/05_Settings.md) (gear
 icon) tab of the _ConsentFriend_ custom manager page.
 
 ## Prepare the website

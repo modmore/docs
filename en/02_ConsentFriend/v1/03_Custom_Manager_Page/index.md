@@ -19,5 +19,5 @@ assigned to a service.
 
 #### Settings (gear icon) 
 
-This tab contains a grid view of all ConsentFriend [settings](04_Settings.md),
+This tab contains a grid view of all ConsentFriend [settings](05_Settings.md),
 that are available in [settings](../04_System_Settings.md).
