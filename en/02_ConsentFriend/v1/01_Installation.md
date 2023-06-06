@@ -10,6 +10,10 @@ icon) tab of the _ConsentFriend_ custom manager page.
 
 ## Prepare the website
 
+ConsentFriend installs several [default
+services](02_Functionality/02_Default_Services.md). Some of them use system/context
+settings that you have to create yourself.
+
 After the installation on an existing website, you need to identify the external
 services used, such as Google Analytics, Matomo, Google Fonts, etc. If these
 services are referenced at the end of the Head or Body section, you can [edit an
