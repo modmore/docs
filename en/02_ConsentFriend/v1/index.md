@@ -24,8 +24,8 @@ personal data, the service usage has to be fully transparent and compliant.
 
 ## Recommended Reading
 
-- [Installation](01_Installation)
-- [Functionality](02_Functionality/01_Introduction)
-- [Custom Manager Page](03_Custom_Manager_Page)
-<!-- - [FAQ](04_FAQ) -->
+- [Installation](01_Installation.md)
+- [Functionality](02_Functionality/01_Introduction.md)
+- [Custom Manager Page](03_Custom_Manager_Page/index.md)
+<!-- - [FAQ](04_FAQ.md) -->
 

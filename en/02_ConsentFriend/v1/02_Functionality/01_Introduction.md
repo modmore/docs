@@ -54,13 +54,19 @@ valid for iframe tags, it can be removed there.
 
 ConsentFriend will hide an iframe based service and display a placeholder with
 an activation button in place. This feature is called [Contextual
-Consent](02_Contextual_Consent.md) and is used since ConsentFriend 1.2.0.
+Consent](03_Contextual_Consent.md) and is used since ConsentFriend 1.2.0.
 
 ### link tags
 
 Services with a link tag need an additional `data-href` attribute
 with the original href i.e. `data-href="https://fonts.googleapis.com/css2?family=Open+Sans"`.
 The original href attribute has to be removed. 
+
+## Default Services
+
+ConsentFriend installs several [default
+services](02_Default_Services.md). Some of them use system/context
+settings that you have to create yourself.
 
 ## Examples
 

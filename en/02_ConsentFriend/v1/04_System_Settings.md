@@ -7,7 +7,7 @@ _ConsentFriend_ contains some _system settings_ in the `consentfriend`
 namespace.
 
 These are available in the MODX system settings panel and in the
-[settings](03_Custom_Manager_Page/04_Settings) tab (gear icon) of the
+[settings](03_Custom_Manager_Page/05_Settings.md) tab (gear icon) of the
 _ConsentFriend_ custom manager page.
 
 | Key                                     | Name               | Description                                                                                                                                                                                                                                                                                                                                                                                          | Default       |

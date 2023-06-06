@@ -67,7 +67,7 @@ function(consent, service) {
 }
 ```
 
-**Code for modal window**
+**Code for the modal window**
 
 ```
 <div class="modal fade" id="recaptchaModal" tabindex="-1" aria-labelledby="recaptchaModalLabel" aria-hidden="true">
@@ -127,7 +127,7 @@ function(consent, service) {
 }
 ```
 
-**Code für modales Fenster**
+**Code for the modal window**
 
 ```
 <div id="recaptcha-modal" class="hidden fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
