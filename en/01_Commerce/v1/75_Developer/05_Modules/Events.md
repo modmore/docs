@@ -9,6 +9,10 @@ When an event is fired, it will provide you with an event object in your callbac
 | Constant                                           | Event Class             | Triggered by                                                                                                                               | Use cases                                                                                                                      |
 |----------------------------------------------------|-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------|
 | `\Commerce::EVENT_ADDRESS_VALIDATE`                | `AddressValidation`     | Checkout when the customer submits an address                                                                                              | To validate if an address is allowed or correct.                                                                               |
+| `\Commerce::EVENT_PRODUCT_CREATED`                 | `Product`               | v1.3 - `comProduct` when a new product is created in the dashboard.                                                                        | Process something when a new product is created.                                                                               |
+| `\Commerce::EVENT_PRODUCT_BEFORE_UPDATE`           | `Product`               | v1.3 - `comProduct` just before an updated product is saved in the dashboard.                                                              | Get values submitted by the update product form.                                                                               |
+| `\Commerce::EVENT_PRODUCT_AFTER_UPDATE`            | `Product`               | v1.3 - `comProduct` after an updated product is saved in the dashboard.                                                                    | Create a new version delta for a product with VersionX.                                                                        |
+| `\Commerce::EVENT_PRODUCT_REMOVED`                 | `Product`               | v1.3 - `comProduct` when a product is removed in the dashboard.                                                                            | Process something when a product is removed.                                                                                   |
 | `\Commerce::EVENT_STATE_CART_TO_PROCESSING`        | `OrderState`            | `comCartOrder` class when `markProcessed()` is called by a status change or other code.                                                    | To process something when an order is placed, without relying on status change actions.                                        |
 | `\Commerce::EVENT_STATE_CART_TO_CANCELLED`         | `OrderState`            | `comCartOrder` class when `markCancelled()` is called by a status change or other code.                                                    | To process something when a concept order is cancelled.                                                                        |
 | `\Commerce::EVENT_STATE_PROCESSING_TO_COMPLETED`   | `OrderState`            |                                                                                                                                            |                                                                                                                                |
@@ -174,6 +178,12 @@ FQN: `modmore\Commerce\Events\Payment`
 - `getTransaction()`: returns the comTransaction instance
 - `getOrder()`: returns the comOrder instance
 - `getResponse()`: returns an implementation of `Omnipay\Common\Message\ResponseInterface` that describes the successful payment response. What information this contains depends on the gateway implementation, but usually includes an array in `$response->getData()`. (added in 0.11)
+
+### Product
+
+FQN: `modmore\Commerce\Events\Product`
+
+- `getProduct`: returns an instance of comProduct
 
 ### RateProvider
 
