@@ -9,7 +9,7 @@ These are available in the MODX system settings panel.
 | babeltranslate.translate_duplicate          | Translate Babel Duplicate      | Translate the duplicate Babel resource directly.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | No                            |
 | babeltranslate.translate_resource_cb_fields | Translate ContentBlocks Fields | JSON encoded object of ContentBlocks fields that need to be translated. Each record contains the ContentBlocks field ID as a key, the value contains several options: `type` is optional (it is otherwise set by the ContentBlocks field type) and can be filled with `text`, `single` and `grid`. `nested` is optional (it is otherwise set by the ContentBlocks field type) and it can contain the key of the nested values in the ContentBlocks value. `fields` is optional (it defaults to `["value"]`) and it can be filled with an array of field names which will be translated. Example: `{"1":{"type":"text"},"8":{"type":"single","fields":["title"]},"9":{"type":"grid","nested":"images",fields":["title","description"]}}` | -                             |
 | babeltranslate.translate_resource_fields    | Translate Fields               | Comma-separated list of resource fields that need to be translated.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | pagetitle, longtitle, content |
-| babeltranslate.translate_resource_tvs       | Translate TVs                  | JSON encoded object of template variables that need to be translated. Each record contains the template variable name as a key, the value contains several options: `type` is optional (it is otherwise set by the template variable type) and can be filled with `text`, `single` and `grid`. `fields` is optional (it defaults to `["value"]`) and it can be filled with an array of field names which will be translated. Example: `{"rte":{"type":"text"},"migx":{"type":"grid","fields":["title","description"]},"imageplus":{"type":"single","fields":["title","description"]}}`                                                                                                                                                  | -                             |
+| babeltranslate.translate_resource_tvs       | Translate Template Variables   | JSON encoded object of template variables that need to be translated. Each record contains the template variable name as a key, the value contains several options: `type` is optional (it is otherwise set by the template variable type) and can be filled with `text`, `single`, `grid` and `custom`. `fields` is optional (it defaults to `["value"]`) and it can be filled with an array of field names which will be translated. Example: `{"rte":{"type":"text"},"migx":{"type":"grid","fields":["title","description"]},"imageplus":{"type":"single","fields":["title","description"]}},"special":{"type":"custom"}}`                                                                                                           | -                             |
 
 The settings `babeltranslate.translate_resource_fields`,
 `babeltranslate.translate_resource_tvs` and
@@ -17,3 +17,22 @@ The settings `babeltranslate.translate_resource_fields`,
 bindings. Path placeholders like `{core_path}`, `{base_path}` and
 `{assets_path}` can be used. All paths have to stay inside the MODX base path
 because of security reasons.
+
+## Custom template variable translation type
+
+The custom type of `babeltranslate.translate_resource_tvs` will be handled by a
+plugin in `OnBabelTranslateCustomTV`. There exist a disabled skeleton plugin in
+the BabelTranslate category. Duplicate and edit that plugin to add your own
+translation handling.
+
+The plugin can use the following event
+properties:
+
+| Property    | Content                                                                                                            |
+|-------------|--------------------------------------------------------------------------------------------------------------------|
+| translator  | The translator class. Translating a string is done by `$translator->translate($string, $fromCulture, $toCulture)`. |
+| resource    | The current translated resource.                                                                                   |
+| tvname      | The name of the translated template variable.                                                                      |
+| value       | The value of the translated template variable.                                                                     |
+| fromCulture | The culture the value is translated from.                                                                          |
+| toCulture   | The culture the value is translated to.                                                                            |
