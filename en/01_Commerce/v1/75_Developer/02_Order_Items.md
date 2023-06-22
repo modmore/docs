@@ -75,6 +75,10 @@ Price Adjustment records contain the following values:
 
 - `price_change`: the amount (in cents) that the item should be adjusted by. This can be both negative (lowering the price) and positive (increasing the price).
 
+- `price_change_per_quantity`: when set to true, the price change is applied for each quantity in the item. When set to false, it is only ever applied once. (Added in 1.3)
+
+- `price_change_percentage`: a percentage (provided as a floating number with up to 4 decimals, e.g. 24.99 for 24.99%) price change. (Added in 1.3)
+
 To add a price adjustment, first create a new `comOrderItemShippingAdjustment` or `comOrderItemDiscountAdjustment` instance (don't save it yet!), and call `$item->addPriceAdjustment($adjustmentObject)`. The `addPriceAdjustment` method will set the item and sortorder. It will also use the specified key to see if a price adjustment with the same key was already set, in which case the old one is removed and your new one will take its place.
 
 ## Applying Taxes to Order Items
