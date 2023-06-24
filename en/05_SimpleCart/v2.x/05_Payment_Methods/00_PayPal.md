@@ -29,14 +29,20 @@ The name cannot be changed, as that is tied in with loading and identifying the 
 
 ## Getting Live API Keys
 
-To get your Live API Keys, login to the PayPal dashboard. Go to Tools in the top menu, and choose PayPal Express Checkout under Accept Payments Anywhere.
+> Note: PayPal tends to shuffle around their menus from time to time. [Here's the official guidance for creating the relevant credentials.](https://developer.paypal.com/docs/nvp-soap-api/apiCredentials/#api-signatures)
 
- [ ![](https://assets.modmore.com/uploads/2015/06/Screen_Shot_2015_06_11_at_17.30.33.png)](https://assets.modmore.com/uploads/2015/06/Screen_Shot_2015_06_11_at_17.30.33.png)
+To get your Live API Keys, login to the PayPal dashboard. Hover your name in the top right and choose **Account Settings**. Under **Account Access** click on update for the **API Access** entry.
 
-Under Integrated Carts, find the link that says Request API Signature and follow the instructions until you get the API Username, Password and Signature. Enter those values into the gateway configuration to set up your cart.
+Find the **NVP/SOAP API integration (Classic)** item under Custom checkout experience and click **Manage API credentials**. 
+
+![Finding API Credentials](https://docs.modmore.com/en/Commerce/images/gateways/paypal-nvp.jpg)
+
+Generate the API Signature and copy the username, password, and signature into the payment method.
 
 ## Getting Sandbox API Keys
 
-Login to the [PayPal Developer Site](https://developer.paypal.com/developer/accounts/), and browse to Sandbox > Accounts. Create a new account with type Business (Merchant Account). In the list of accounts, expand the merchant account and click on Profile. In the modal window, you can find the Username, Password and Signature on the _API Credentials_ tab.
+Login to the [PayPal Developer Site](https://developer.paypal.com/developer/accounts/), and browse to Sandbox > Accounts. 
 
-![PayPal Sandbox](../../images/paypal-sandbox.jpg)
+Create a new account with type Business (Merchant Account). In the list of accounts, expand the merchant account and click on Profile. In the modal window, you can find the Username, Password and Signature on the API Credentials tab.
+
+![PayPal Sandbox Credentials](https://docs.modmore.com/en/SimpleCart/images/paypal-sandbox.jpg)
