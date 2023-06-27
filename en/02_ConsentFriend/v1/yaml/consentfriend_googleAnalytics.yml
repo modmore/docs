@@ -1,0 +1,30 @@
+package: consentfriend
+services:
+  - name: googleAnalytics
+    title: ''
+    description: ''
+    code: |
+      <script async src="https://www.googletagmanager.com/gtag/js?id=[[++google_analytics_id]]"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        gtag('config', '[[++google_analytics_id]]');
+      </script>
+    code_section: 0
+    callback: ''
+    active: false
+    default: false
+    required: false
+    opt_out: false
+    only_once: true
+    contextual_consent_only: false
+    cookies:
+      - cookie: _ga
+        path: ''
+        domain: ''
+      - cookie: '/^_ga.*$/'
+        path: ''
+        domain: ''
+    purposes: performance

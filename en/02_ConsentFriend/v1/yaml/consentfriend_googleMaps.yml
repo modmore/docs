@@ -1,0 +1,19 @@
+package: consentfriend
+services:
+  - name: googleMaps
+    title: ''
+    description: ''
+    code: ''
+    code_section: 0
+    callback: null
+    on_accept: null
+    on_init: null
+    on_decline: null
+    active: true
+    default: false
+    required: false
+    opt_out: false
+    only_once: false
+    contextual_consent_only: false
+    cookies: {  }
+    purposes: styling
