@@ -1,0 +1,63 @@
+package: consentfriend
+services:
+  - name: googleTagManager
+    title: ''
+    description: ''
+    code: |
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','[[++google_tag_manager_id]]');</script>
+    code_section: 0
+    callback: ''
+    on_accept: |
+      function (opts) {
+          // we notify the tag manager about all services that were accepted. You can define
+          // a custom event in GTM to load the service if consent was given.
+          for (let k of Object.keys(opts.consents)) {
+              if (opts.consents[k]) {
+                  let eventName = 'consentfriend-' + k + '-accepted';
+                  dataLayer.push({'event': eventName});
+              }
+          }
+          // if consent for Google Analytics was granted we enable analytics storage
+          if (opts.consents['googleAnalytics']) {
+              console.log('Google analytics usage was granted!');
+              gtag('consent', 'update', {'analytics_storage': 'granted'});
+          }
+          // if consent for Google Ads was granted we enable ad storage
+          if (opts.consents['googleAdSense']) {
+              console.log('Google ads usage was granted!');
+              gtag('consent', 'update', {'ad_storage': 'granted'});
+          }
+      }
+    on_init: |
+      function (opts) {
+          // initialization code here (will be executed only once per page-load)
+          window.dataLayer = window.dataLayer || [];
+          window.gtag = function () {
+              dataLayer.push(arguments);
+          }
+          gtag('consent', 'default', {'ad_storage': 'denied', 'analytics_storage': 'denied'});
+          gtag('set', 'ads_data_redaction', true);
+      }
+    on_decline: |
+      function (opts) {
+          // we notify the tag manager about all services that were declined. You can define
+          // a custom event in GTM to unload the service if consent was denied.
+          window.dataLayer = window.dataLayer || [];
+          window.gtag = function () {
+              dataLayer.push(arguments)
+          }
+          gtag('consent', 'default', {'ad_storage': 'denied', 'analytics_storage': 'denied'})
+          gtag('set', 'ads_data_redaction', true)
+      }
+    active: false
+    default: false
+    required: false
+    opt_out: false
+    only_once: false
+    contextual_consent_only: false
+    cookies: {  }
+    purposes: marketing

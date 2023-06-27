@@ -1,4 +1,6 @@
-ConsentFriend installs and uses the following default services:
+ConsentFriend installs and uses the following default services. All services are
+installed by option during the install process or can be imported with the [all
+services YAML file](../yaml/consentfriend_all.yml)
 
 ## Essential Services
 
@@ -14,6 +16,9 @@ ConsentFriend installs and uses the following default services:
 | Contextual Consent Only | No                                              |
 | Cookies                 | Cookie: consentfriend<br>Path: ''<br>Domain: '' |
 
+This service can be imported with the [consentFriend service YAML
+file](../yaml/consentfriend_consentFriend.yml)
+
 ### Session
 
 | Setting                 | Value                                       |
@@ -25,6 +30,9 @@ ConsentFriend installs and uses the following default services:
 | Only Once               | No                                          |
 | Contextual Consent Only | No                                          |
 | Cookies                 | Cookie: PHPSESSID<br>Path: ''<br>Domain: '' |
+
+This service can be imported with the [session service YAML
+file](../yaml/consentfriend_session.yml)
 
 ## Other Services
 
@@ -66,6 +74,9 @@ settings have to be created by yourself:
     <noscript><p><img src="[[++matomo_url]]matomo.php?idsite=[[++matomo_site_id]]&rec=1" style="border:0" alt="" /></p></noscript>
 ```
 
+This service can be imported with the [Matomo service YAML
+file](../yaml/consentfriend_matomo.yml)
+
 ### Google Analytics
 
 | Setting                 | Value                                                                                  |
@@ -99,6 +110,9 @@ setting has to be created by yourself:
     </script>
 ```
 
+This service can be imported with the [Google Analytics service YAML
+file](../yaml/consentfriend_googleAnalytics.yml)
+
 ### Google AdSense
 
 | Setting                 | Value |
@@ -116,6 +130,9 @@ setting has to be created by yourself:
 ```
     <script data-ad-client="[[++google_ad_client_id]]" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 ```
+
+This service can be imported with the [Google AdSense service YAML
+file](../yaml/consentfriend_googleAdSense.yml)
 
 ### Google Fonts
 
@@ -135,6 +152,9 @@ setting has to be created by yourself:
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 ```
 
+This service can be imported with the [Google Fonts service YAML
+file](../yaml/consentfriend_googleFonts.yml)
+
 ### Cloudflare
 
 | Setting                 | Value                                                                                                                                                                                                                                    |
@@ -147,6 +167,9 @@ setting has to be created by yourself:
 | Contextual Consent Only | No                                                                                                                                                                                                                                       |
 | Cookies                 | Cookie: _cflb<br>Path: ''<br>Domain: ''<br>Cookie: _cf_bm<br>Path: ''<br>Domain: ''<br>Cookie: _cfduid<br>Path: ''<br>Domain: ''<br>Cookie: cf_ob_info<br>Path: ''<br>Domain: ''<br>Cookie: 'cf_use_ob cookie'<br>Path: ''<br>Domain: '' |
 
+This service can be imported with the [Cloudflare service YAML
+file](../yaml/consentfriend_cloudflare.yml)
+
 ### YouTube
 
 | Setting                 | Value                                 |
@@ -158,6 +181,9 @@ setting has to be created by yourself:
 | Only Once               | No                                    |
 | Contextual Consent Only | No                                    |
 | Cookies                 | Cookie: abc<br>Path: ''<br>Domain: '' |
+
+This service can be imported with the [YouTube service YAML
+file](../yaml/consentfriend_youtube.yml)
 
 ### Google reCAPTCHA
 
@@ -183,6 +209,9 @@ setting has to be created by yourself:
         }
     }
 ```
+
+This service can be imported with the [Google reCAPTCHA service YAML
+file](../yaml/consentfriend_googleRecaptcha.yml)
 
 ### Facebook Pixel
 
@@ -214,6 +243,9 @@ setting has to be created by yourself:
     </script>
     <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=[[++facebook_pixel_id]]&ev=PageView&noscript=1"/></noscript>
 ```
+
+This service can be imported with the [Facebook Pixel service YAML
+file](../yaml/consentfriend_facebookPixel.yml)
 
 ### Google Tag Manager
 
@@ -293,3 +325,19 @@ setting has to be created by yourself:
     }
 ```
 
+This service can be imported with the [Google Tag Manager service YAML
+file](../yaml/consentfriend_googleTagManager.yml)
+
+### Google Maps
+
+| Setting                 | Value |
+|-------------------------|-------|
+| Active                  | No    |
+| Default                 | No    |
+| Required                | No    |
+| Opt Out                 | No    |
+| Only Once               | No    |
+| Contextual Consent Only | No    |
+
+This service can be imported with the [Google Maps service YAML
+file](../yaml/consentfriend_googleMaps.yml)

@@ -1,0 +1,16 @@
+package: consentfriend
+services:
+  - name: googleFonts
+    title: ''
+    description: ''
+    code: '<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">'
+    code_section: 0
+    callback: ''
+    active: false
+    default: false
+    required: false
+    opt_out: false
+    only_once: false
+    contextual_consent_only: false
+    cookies: { }
+    purposes: styling

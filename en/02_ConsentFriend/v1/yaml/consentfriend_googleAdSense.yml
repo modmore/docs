@@ -1,0 +1,17 @@
+package: consentfriend
+services:
+  - name: googleAdSense
+    title: ''
+    description: ''
+    code: |
+      <script data-ad-client="[[++google_ad_client_id]]" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    code_section: 1
+    callback: ''
+    active: false
+    default: false
+    required: false
+    opt_out: false
+    only_once: false
+    contextual_consent_only: false
+    cookies: { }
+    purposes: advertising
