@@ -2,7 +2,7 @@ To manage data from the Commerce dashboard, you'll need:
 
 - A `Page` class for each action (overview, create, update)
 - A `Grid` class that lists your objects allowing the user to do stuff with it
-- A `FormWidget` instance that defines the fields to use. 
+- A `FormWidget` instance that defines the fields to use.
 - A menu item to point to your overview page
 - A module to tie it all together!
 
@@ -27,7 +27,7 @@ In this example we're using the namespace `MeMyselfAndI\AwesomeExtension\Admin\T
 
 File: `core/components/commerce_awesomeextension/src/Admin/ToDo/Overview.php`
 
-Contents: 
+Contents:
 ```` php
 <?php
 namespace MeMyselfAndI\AwesomeExtension\Admin\ToDo;
@@ -51,7 +51,7 @@ class Overview extends Page {
 }
 ````
 
-We're creating a simple section, giving it a title of `commerce_todo.todos`  (which is expected to be a lexicon), and then add an instance of Grid to it. 
+We're creating a simple section, giving it a title of `commerce_todo.todos`  (which is expected to be a lexicon), and then add an instance of Grid to it.
 
 Let's create the Grid.
 
@@ -73,9 +73,9 @@ class Grid extends GridWidget {
         $items = [];
 
         $c = $this->adapter->newQuery('MyExtTodo');
-        
+
         // If you want to do any filtering, this is the place!
-        
+
         // Get the total count for pagination
         $count = $this->adapter->getCount('MyExtTodo', $c);
         $this->setTotalCount($count);
@@ -149,7 +149,7 @@ class Grid extends GridWidget {
             ->setUrl($editUrl)
             ->setTitle($this->adapter->lexicon('commerce_todos.todo.edit'))
             ->setIcon('icon-edit');
-            
+
         $deleteUrl = $this->adapter->makeAdminUrl('todos/delete', ['id' => $item['id']]);
         $item['actions'][] = (new Action())
             ->setUrl($deleteUrl)
@@ -161,11 +161,18 @@ class Grid extends GridWidget {
 }
 ````
 
-Lots of things are happening in the grid. 
+Lots of things are happening in the grid.
 
-- First we get the items in a way that allows pagination. 
+- First we get the items in a way that allows pagination.
 - We define the columns that are shown in the table. With lexicons for names, and defining if columns are sortable.
 - We define toolbar options. One button, to add a new to do, and the limit field that allows the user to change how many results are shown.
 - We turn our `MyExtTodo` object into an array. This can do all sorts of pre-processing of the data, but in this example we just return the object's data as-is. We also add Actions that will be shown for each row, with links to edit and delete the object.
 
+### Top toolbar filter types
+
+- `textfield`
+- `datefield` (as of 1.4)
+- `select`, provide a `optgroups` array of `[label => [ [value => 'val', label => 'val label'] ]` or `options` array of `[ [value => 'val', label => 'val label'] ]`.
+- `button`, acts as a `link` or a dropdown `menu`
+- anything else will just render the title in the toolbar
 
