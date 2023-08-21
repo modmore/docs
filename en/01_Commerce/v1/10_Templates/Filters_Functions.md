@@ -2,7 +2,7 @@
 title: Filters & Functions
 ---
 
-Twig has a [number of useful filters, functions, and language constructs](https://twig.symfony.com/doc/2.x/). 
+Twig has a [number of useful filters, functions, and language constructs](https://twig.symfony.com/doc/2.x/).
 
 Commerce ships with some more custom twig filters and functions. These can be used both in the [frontend](../Front-end_Theming) and the admin.
 
@@ -17,11 +17,14 @@ Filters are applied to a value. For example: `{{ value|FILTER_NAME(filter, optio
 - `format_address` (since 0.10.0-rc2), call on an array containing an address to get it automatically formatted according to the country formatting rules.
 - `format_currency(currency [optional])` (since 0.12.0-rc2), call on an integer number to format is as currency. Uses the current currency unless you specify the 3-character currency code in the optional parameter
 - `strftime(format)` (since 1.1.0), provided a unix timestamp or strtotime-compatible date/time string, this will format it to a localised date/time string for you using [strftime](https://php.net/strftime). Make sure to set the `locale` system setting in MODX accordingly.
+- `matrix(fld)` (since v1.4.0), used on a matrix ID can be used to access product matrix data such as the `description`, `column_name`, and `row_name`. Example: `{{ item.product.matrix|matrix('column_name') }}`
+- `matrix_column(fld)` (since v1.4.0), used on a matrix column ID to access information about the column, such as the `name`, `description`. Example: `{{ item.product.column|matrix_column('name') }}`
+- `matrix_row(fld)` (since v1.4.0), used on a matrix row ID to access information about the row, such as the `name`, `description`. Example: `{{ item.product.row|matrix_row('name') }}`
 
 ## Functions
 
 Functions are called by itself, provided a value. For example: `{{ functionName(Value1, Value2) }}`
 
-- `lex(lexiconKey)`, returns a string from the lexicon identified by the lexiconKey. 
-- `admin_url(actionKey, {parameter: value})`, returns a URL to the Commerce dashboard, at the action you specify, with the optional parameters. 
-- `country_code_to_name(countryCode)`, returns the localised name for a provided country code. 
+- `lex(lexiconKey)`, returns a string from the lexicon identified by the lexiconKey.
+- `admin_url(actionKey, {parameter: value})`, returns a URL to the Commerce dashboard, at the action you specify, with the optional parameters.
+- `country_code_to_name(countryCode)`, returns the localised name for a provided country code.

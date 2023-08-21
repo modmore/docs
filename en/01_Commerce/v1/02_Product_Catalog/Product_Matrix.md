@@ -2,7 +2,7 @@ Introduced in v0.12, the Commerce Products Matrix allows you to manage products 
 
 The [commerce.get_matrix snippet](../Snippets/get_matrix) is used to output the matrix in the frontend. We'll show some examples of how you can show the products further down on this page.
 
-If you have a simpler shop, you can also use the [Products TV](Products_TV) for a one-dimensional list of products. With both solutions, it's recommended to use [Collections](https://modx.com/extras/package/collections), and optionally [Tagger](https://modx.com/extras/package/tagger), to build up the catalog in your resource tree, and to use the Matrix or Products TV to manage the product information. 
+If you have a simpler shop, you can also use the [Products TV](Products_TV) for a one-dimensional list of products. With both solutions, it's recommended to use [Collections](https://modx.com/extras/package/collections), and optionally [Tagger](https://modx.com/extras/package/tagger), to build up the catalog in your resource tree, and to use the Matrix or Products TV to manage the product information.
 
 [TOC]
 
@@ -15,19 +15,19 @@ The Product Matrix template variable is available with the standard Commerce ins
 There's quite a few to see there.
 
 1. The _Manage Matrix Options_ button allows you to set up basic options that affect the matrix and all products within it. When changing a value that affects the products (like the base price), all products in the matrix are automatically updated.
-2. The top-left most cell contains the labels for the attributes. When you create the template variable, the input properties lets you set the default value that will be used when a matrix is first initialised. After that, you can use the _Manage Matrix Options_ to change them. 
-3. Columns and rows are defined for each matrix. They have a name, SKU, and price, which will all be taken into account for generating the products. When hovering over the column or row headers, you will see a trash button to remove the entire row/column, and you can also click the row/column name to edit its options. Products are automatically updated when changing a row/column. 
-4. You can click a product cell to edit the specific product. Some of the standard fields are hidden, as they are managed automatically through the matrix and rows/columns. 
+2. The top-left most cell contains the labels for the attributes. When you create the template variable, the input properties lets you set the default value that will be used when a matrix is first initialised. After that, you can use the _Manage Matrix Options_ to change them.
+3. Columns and rows are defined for each matrix. They have a name, SKU, and price, which will all be taken into account for generating the products. When hovering over the column or row headers, you will see a trash button to remove the entire row/column, and you can also click the row/column name to edit its options. Products are automatically updated when changing a row/column.
+4. You can click a product cell to edit the specific product. Some of the standard fields are hidden, as they are managed automatically through the matrix and rows/columns.
 5. Rows and columns can be marked as inactive. This means they will not be available in the front-end, and they will show up in a light red in the matrix. In the screenshot above, you can see this on the "Sparkling" row.
-6. When a product has no stock left, its cell is highlighted with a yellow ribbon in the top right corner. 
+6. When a product has no stock left, its cell is highlighted with a yellow ribbon in the top right corner.
 
 ## Setting up the Template Variable
 
-To create a product matrix, you first need to create a template variable. Go to Elements > Template Variables in your MODX installation and create a new TV. Give it the name `product_matrix` and a caption of "Products" (or something similar). 
+To create a product matrix, you first need to create a template variable. Go to Elements > Template Variables in your MODX installation and create a new TV. Give it the name `product_matrix` and a caption of "Products" (or something similar).
 
-On the _Input Options_ tab, set the _Input Type_ to `commerce_matrix`. The input options will load, so set your default Row label, Column label, and the SKU/name template if needed (more on those below). 
+On the _Input Options_ tab, set the _Input Type_ to `commerce_matrix`. The input options will load, so set your default Row label, Column label, and the SKU/name template if needed (more on those below).
 
-Next, on the _Template Access_ tab, give the template you use for products access to the new TV, and save. 
+Next, on the _Template Access_ tab, give the template you use for products access to the new TV, and save.
 
 ## Fill your matrix with data
 
@@ -35,29 +35,29 @@ Open a resource that has your matrix TV. You should see an empty matrix with som
 
 ![An empty product matrix, showing you how to get started](../../images/products/matrix-empty.jpg)
 
-1. Create a column by clicking on the plus button in the top right. 
-2. Create a row by clicking on the plus button in the bottom left. 
+1. Create a column by clicking on the plus button in the top right.
+2. Create a row by clicking on the plus button in the bottom left.
 
-Congratulations, you just created your first matrix product! 
+Congratulations, you just created your first matrix product!
 
 ![An product matrix with a single product in it](../../images/products/matrix-first.jpg)
 
 In our example we gave both the column (whole wheat, €1.50) and the row (roasted chicken €2.00) a price. Combined, these made up the price of the created product (whole wheat chicken, €3.50). You can also set a price on the matrix itself which will then be applied to all products. Click on "Manage Matrix Options", enter a base price, and save. You'll notice the product is also updated.
 
-When setting a price change on a row or column, it doesn't have to be a positive number. You can also set a negative number, which will reduce the price of the product. This is useful if you use base prices, but want to make one option cheaper. 
+When setting a price change on a row or column, it doesn't have to be a positive number. You can also set a negative number, which will reduce the price of the product. This is useful if you use base prices, but want to make one option cheaper.
 
-You may notice that your product is marked as out of stock. Click on the product cell, enter the stock, and save. You can also change the price for a single product this way, but note that when you next edit the matrix or a row/column, that the product price will be re-calculated from that. 
+You may notice that your product is marked as out of stock. Click on the product cell, enter the stock, and save. You can also change the price for a single product this way, but note that when you next edit the matrix or a row/column, that the product price will be re-calculated from that.
 
-Now continue to add more attributes. Whenever you add a new row or column, additional products will be created based on the values you give. 
+Now continue to add more attributes. Whenever you add a new row or column, additional products will be created based on the values you give.
 
 ## Matrix Configuration
 
-At any time you can change the matrix configuration by clicking on the **Manage Matrix Options** button at the top left of the matrix. The options provided there are initially configured base on the input options on the template variable, but can be changed for individual matrices. 
+At any time you can change the matrix configuration by clicking on the **Manage Matrix Options** button at the top left of the matrix. The options provided there are initially configured base on the input options on the template variable, but can be changed for individual matrices.
 
 The available options are explained below.
 
-- **Column Label**: the name for what type of attribute a column is. Primarily used in the manager, but you can also set up your templates to access this in the front-end (`{{ matrix.column_name }}`)  
-- **Row Label**: the name for what type of attribute a row is. Primarily used in the manager, but you can also set up your templates to access this in the front-end (`{{ matrix.row_name }}`)  
+- **Column Label**: the name for what type of attribute a column is. Primarily used in the manager, but you can also set up your templates to access this in the front-end (`{{ matrix.column_name }}`)
+- **Row Label**: the name for what type of attribute a row is. Primarily used in the manager, but you can also set up your templates to access this in the front-end (`{{ matrix.row_name }}`)
 - **Product SKU Template**: an inline [Twig template](../Templates) that is used to generate the SKU for each individual product. This usually includes the SKU from the column (`{{ column.sku }}`) and the SKU from the row (`{{ row.sku }}`), but can also include resource fields (any standard resource field, e.g. `{{ resource.alias }}`) or template variables. For template variables, you need to add a comma separated list of TVs to load the value for in the `commerce.matrix.load_tvs` system setting.
 - **Product Name Template**: similar to the SKU template, the Name template is an inline [Twig template](../Templates) for generating the name for each individual product. This usually includes the name from the column (`{{ column.name }}`) and the name from the row (`{{ row.name}}`), but can also include resource fields (any standard resource field, e.g. `{{ resource.pagetitle }}`) or template variables. For template variables, you need to add a comma separated list of TVs to load the value for in the `commerce.matrix.load_tvs` system setting.
 - **Description**: a description for the matrix itself. Could be used in your front-end to offer additional information about pricing. Is not applied to individual products.
@@ -68,9 +68,9 @@ The available options are explained below.
 
 ## Showing product selection with a matrix
 
-When you place your TV in a template, you'll notice it only outputs an ID. That's the ID of the product matrix. 
+When you place your TV in a template, you'll notice it only outputs an ID. That's the ID of the product matrix.
 
-To output your products, you'll need to provide that ID to the [commerce.get_matrix snippet](../Snippets/get_matrix), which takes care of loading all your rows, columns, and products. It provides those to a twig template, which you can adapt to fit your frontend needs. 
+To output your products, you'll need to provide that ID to the [commerce.get_matrix snippet](../Snippets/get_matrix), which takes care of loading all your rows, columns, and products. It provides those to a twig template, which you can adapt to fit your frontend needs.
 
 ### Matrix Data Structure
 
@@ -105,26 +105,26 @@ When using the get_matrix snippet, you have access to a bunch of data inside a t
     - `stock`
     - `sku`
     - `name`
-    - `description` 
-    - `matrix` the id of the matrix 
-    - `column` the id of the column 
-    - `row` the id of the row 
-- `map` is a map on `row => column => product ID` indicating where products are in the matrix. You'd typically loop over rows and columns, use the map to determine the product ID, and then output that. 
-- `resource` (as of v1.1) contains, if the matrix is associated with a resource, all resource fields like `{{ resource.pagetitle}}` or `{{ resource.publishedon }}`. For template variables, you need to add a comma separated list of TVs to load the value for in the `commerce.matrix.load_tvs` system setting. 
+    - `description`
+    - `matrix` the id of the matrix
+    - `column` the id of the column
+    - `row` the id of the row
+- `map` is a map on `row => column => product ID` indicating where products are in the matrix. You'd typically loop over rows and columns, use the map to determine the product ID, and then output that.
+- `resource` (as of v1.1) contains, if the matrix is associated with a resource, all resource fields like `{{ resource.pagetitle}}` or `{{ resource.publishedon }}`. For template variables, you need to add a comma separated list of TVs to load the value for in the `commerce.matrix.load_tvs` system setting.
 
 Commerce ships with a few (unstyled) templates to get you started. It's likely you'll want to create your own; [learn more about templating in Commerce here](../Front-end_Theming).
 
 ### Tabular template
 
-The tabular template is most suited for use cases where all options are visible at once. Think along the lines of screws or other mechanical parts that are available in different widths and heights. 
+The tabular template is most suited for use cases where all options are visible at once. Think along the lines of screws or other mechanical parts that are available in different widths and heights.
 
 The `frontend/matrix/tabular.twig` template builds a table similar to how the matrix is presented in the back-end. If a product is in stock, it shows an add-to-cart form. If it's out of stock, it shows that message.
 
 To output a table, use the following:
 
 ````html
-[[!commerce.get_matrix? 
-    &matrix=`[[*product_matrix]]` 
+[[!commerce.get_matrix?
+    &matrix=`[[*product_matrix]]`
     &tpl=`frontend/matrix/tabular.twig`
 ]]
 ````
@@ -203,7 +203,7 @@ The referenced template looks like this:
 </table>
 ````
 
-There are plenty of classes for basic styling: 
+There are plenty of classes for basic styling:
 
 - `c-productmatrix-cell` on each cell (including headings)
 - `c-productmatrix-lead-cell` on row heading cells
@@ -225,15 +225,15 @@ For **grouped by row** use the following sample:
 ````html
 <form method="post" action="[[~[[++commerce.cart_resource]]]]">
     <input type="hidden" name="add_to_cart" value="1">
-    
+
     <label for="choose-product">Product:</label>
     <select name="product" id="choose-product">
-        [[!commerce.get_matrix? 
-            &matrix=`[[*product_matrix]]` 
+        [[!commerce.get_matrix?
+            &matrix=`[[*product_matrix]]`
             &tpl=`frontend/matrix/optgroup_row.twig`
         ]]
     </select>
-    
+
     <label for="add-quantity">Quantity:</label>
     <input type="number" name="quantity" value="1">
     <br>
@@ -269,15 +269,15 @@ For **grouped by column**:
 ````html
 <form method="post" action="[[~[[++commerce.cart_resource]]]]">
     <input type="hidden" name="add_to_cart" value="1">
-    
+
     <label for="choose-product">Product:</label>
     <select name="product" id="choose-product">
-        [[!commerce.get_matrix? 
-            &matrix=`[[*product_matrix]]` 
+        [[!commerce.get_matrix?
+            &matrix=`[[*product_matrix]]`
             &tpl=`frontend/matrix/optgroup_column.twig`
         ]]
     </select>
-    
+
     <label for="add-quantity">Quantity:</label>
     <input type="number" name="quantity" value="1">
     <br>
@@ -311,7 +311,7 @@ The template for columns looks like this:
 Other (community) implementations:
 
 -  [Turning optgroup based dropdown into dependent selects](https://forum.modmore.com/t/product-matrix-dropdown-improvement/1828)
-- The [starter pack "red"](https://modmore.com/commerce/extensions/theme-red/) ([preview](http://theme-red.modmore.modxcloud.com/fruit/fruit-shakes.html)) also contains JS-enhanced dependent selects. 
+- The [starter pack "red"](https://modmore.com/commerce/extensions/theme-red/) ([preview](http://theme-red.modmore.modxcloud.com/fruit/fruit-shakes.html)) also contains JS-enhanced dependent selects.
 
 Made a cool product selector with the matrix? [Share it on our forum!](https://forum.modmore.com/c/commerce)
 
@@ -321,13 +321,27 @@ Some examples above include a hidden input with the name `link`, which submits t
 
 It's recommended to include this in your add to cart form when using a matrix, so that your customer can return to the product resource they added the product from. To add additional custom data, view the [Item Data Module documentation](../Modules/Cart/ItemData).
 
+## Rendering rows and columns in checkout
+
+To render the name of rows and columns in the checkout, you can use some twig filters to turn the matrix, row, and column IDs into the respective values.
+
+For example, you might use this in the frontend/checkout/cart/items.twig template:
+
+```
+{% if item.product.matrix > 0 %}
+    {{ item.product.matrix|matrix('column_name') }}: {{ item.product.column|matrix_column('name') }}
+    <br>
+    {{ item.product.matrix|matrix('row_name') }}: {{ item.product.row|matrix_row('name') }}
+{% endif %}
+```
+
 ## Tip: use Form Customization to move the TV
 
 You can move the matrix to the main "Document" tab of a resource using form customization. To do this, go to System (cog icon in the top right) > Manager Customization.
 
-Create a profile, and a set within the profile if you don't already have one. 
+Create a profile, and a set within the profile if you don't already have one.
 
-When editing the form customization set, open the _Template Variables_ tab and find your products TV in the list. Double click the value in the "Region" column, and set it to `modx-resource-main-left`. 
+When editing the form customization set, open the _Template Variables_ tab and find your products TV in the list. Double click the value in the "Region" column, and set it to `modx-resource-main-left`.
 
-Now, open your resource that has the template variable, and voila! 
+Now, open your resource that has the template variable, and voila!
 
