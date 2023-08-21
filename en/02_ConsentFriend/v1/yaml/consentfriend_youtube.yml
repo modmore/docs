@@ -1,0 +1,19 @@
+package: consentfriend
+services:
+  - name: youtube
+    title: ''
+    description: ''
+    code: ''
+    code_section: 1
+    callback: ''
+    active: false
+    default: false
+    required: false
+    opt_out: false
+    only_once: false
+    contextual_consent_only: false
+    cookies:
+      - cookie: abc
+        path: ''
+        domain: ''
+    purposes: marketing

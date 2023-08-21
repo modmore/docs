@@ -8,7 +8,7 @@ and we will be glad to help.
 
 1. Locate the usage of Google Analytics in your template or in the dependent
 chunk calls.
-2. Copy the Google Analytics ID (a string starting with `UA-`) in
+2. Copy the Google Analytics ID (a string starting with `G-`) in
 the template or chunk and create a system setting `google_analytics_id`
 with that value.
 3. Disable that chunk (i.e. by renaming it) or the template

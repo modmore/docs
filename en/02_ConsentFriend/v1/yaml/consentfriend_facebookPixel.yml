@@ -1,0 +1,58 @@
+package: consentfriend
+services:
+  - name: facebookPixel
+    title: ''
+    description: ''
+    code: |
+      <script>
+        !function(f,b,e,v,n,t,s)
+        { if(f.fbq)return;n=f.fbq=function(){ n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments) };
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[ ];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[ 0 ];
+        s.parentNode.insertBefore(t,s) }(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '[[++facebook_pixel_id]]');
+        fbq('track', 'PageView');
+      </script>
+      <noscript>
+        <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=[[++facebook_pixel_id]]&ev=PageView&noscript=1"/>
+      </noscript>
+    code_section: 1
+    callback: ''
+    active: false
+    default: false
+    required: false
+    opt_out: false
+    only_once: false
+    contextual_consent_only: false
+    cookies:
+      - cookie: xs
+        path: ''
+        domain: ''
+      - cookie: wd
+        path: ''
+        domain: ''
+      - cookie: spin
+        path: ''
+        domain: ''
+      - cookie: c_user
+        path: ''
+        domain: ''
+      - cookie: locale
+        path: ''
+        domain: ''
+      - cookie: datr
+        path: ''
+        domain: ''
+      - cookie: fr
+        path: ''
+        domain: ''
+      - cookie: presence
+        path: ''
+        domain: ''
+      - cookie: sb
+        path: ''
+        domain: ''
+    purposes: marketing

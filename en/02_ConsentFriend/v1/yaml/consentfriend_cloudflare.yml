@@ -1,0 +1,31 @@
+package: consentfriend
+services:
+  - name: cloudflare
+    title: ''
+    description: ''
+    code: ''
+    code_section: 1
+    callback: ''
+    active: false
+    default: false
+    required: true
+    opt_out: false
+    only_once: false
+    contextual_consent_only: false
+    cookies:
+      - cookie: _cflb
+        path: ''
+        domain: ''
+      - cookie: _cf_bm
+        path: ''
+        domain: ''
+      - cookie: _cfduid
+        path: ''
+        domain: ''
+      - cookie: cf_ob_info
+        path: ''
+        domain: ''
+      - cookie: 'cf_use_ob cookie'
+        path: ''
+        domain: ''
+    purposes: security

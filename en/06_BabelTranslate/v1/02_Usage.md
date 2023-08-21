@@ -23,13 +23,14 @@ The following source and target languages are currently available:
 ### Source Languages 
 
 `bg`, `cs`, `da`, `de`, `el`, `en`, `es`, `et`, `fi`, `fr`, `hu`, `id`, `it`,
-`ja`, `lt`, `lv`, `nl`, `pl`, `pt`, `ro`, `ru`, `sk`, `sl`, `sv`, `tr`, `zh`
+`ja`, `ko`, `lt`, `lv`, `nb`, `nl`, `pl`, `pt`, `ro`, `ru`, `sk`, `sl`, `sv`,
+`tr`, `zh`
 
 ### Target Languages
 
 `bg`, `cs`, `da`, `de`, `el`, `en-GB`, `en-US`, `es`, `et`, `fi`, `fr`, `hu`,
-`id`, `it`, `ja`, `lt`, `lv`, `nl`, `pl`, `pt-PT`, `pt-BR`, `ro`, `ru`, `sk`,
-`sl`, `sv`, `tr`, `zh`
+`id`, `it`, `ja`, `ko`, `lt`, `lv`, `nb`, `pl`, `pt-PT`, `pt-BR`, `ro`, `ru`,
+`sk`, `sl`, `sv`, `tr`, `zh`
 
 If the target language has multiple dialects, the first dialect in the above
 list is automatically selected. If, for example, translation to `en-US` is

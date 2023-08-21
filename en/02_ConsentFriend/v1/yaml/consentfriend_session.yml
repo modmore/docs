@@ -1,0 +1,19 @@
+package: consentfriend
+services:
+  - name: session
+    title: ''
+    description: ''
+    code: ''
+    code_section: 1
+    callback: ''
+    active: true
+    default: false
+    required: true
+    opt_out: false
+    only_once: false
+    contextual_consent_only: false
+    cookies:
+      - cookie: PHPSESSID
+        path: ''
+        domain: ''
+    purposes: functional

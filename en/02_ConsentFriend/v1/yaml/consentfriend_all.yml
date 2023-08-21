@@ -1,0 +1,368 @@
+package: consentfriend
+services:
+  - name: consentFriend
+    essential: 1
+    title: ''
+    description: ''
+    code: ''
+    code_section: 1
+    callback: ''
+    active: true
+    default: false
+    required: true
+    opt_out: false
+    only_once: false
+    contextual_consent_only: false
+    cookies:
+      - cookie: consentfriend
+        path: ''
+        domain: ''
+    sortindex: 0
+    purposes: functional
+  - name: session
+    essential: 1
+    title: ''
+    description: ''
+    code: ''
+    code_section: 1
+    callback: ''
+    active: true
+    default: false
+    required: true
+    opt_out: false
+    only_once: false
+    contextual_consent_only: false
+    cookies:
+      - cookie: PHPSESSID
+        path: ''
+        domain: ''
+    sortindex: 1
+    purposes: functional
+  - name: matomo
+    essential: 0
+    title: ''
+    description: ''
+    code: |
+      <script type="text/javascript">
+        var _paq = window._paq = window._paq || [];
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function() {
+          var u="[[++matomo_url]]";
+          _paq.push(['setTrackerUrl', u+'matomo.php']);
+          _paq.push(['setSiteId', [[++matomo_site_id]] ]);
+          var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+          g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+        })();
+      </script>
+      <noscript><p><img src="[[++matomo_url]]matomo.php?idsite=[[++matomo_site_id]]&rec=1" style="border:0" alt="" /></p></noscript>
+    code_section: 1
+    callback: ''
+    active: false
+    default: false
+    required: false
+    opt_out: false
+    only_once: true
+    contextual_consent_only: false
+    cookies:
+      - cookie: '/^matomo_.*$/i'
+        path: ''
+        domain: ''
+      - cookie: '/^_pk_.*$/'
+        path: ''
+        domain: ''
+    sortindex: 2
+    purposes: performance
+  - name: googleAnalytics
+    essential: 0
+    title: ''
+    description: ''
+    code: |
+      <script async src="https://www.googletagmanager.com/gtag/js?id=[[++google_analytics_id]]"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        gtag('config', '[[++google_analytics_id]]');
+      </script>
+    code_section: 0
+    callback: ''
+    active: false
+    default: false
+    required: false
+    opt_out: false
+    only_once: true
+    contextual_consent_only: false
+    cookies:
+      - cookie: _ga
+        path: ''
+        domain: ''
+      - cookie: '/^_ga.*$/'
+        path: ''
+        domain: ''
+    sortindex: 3
+    purposes: performance
+  - name: googleAdSense
+    essential: 0
+    title: ''
+    description: ''
+    code: |
+      <script data-ad-client="[[++google_ad_client_id]]" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    code_section: 1
+    callback: ''
+    active: false
+    default: false
+    required: false
+    opt_out: false
+    only_once: false
+    contextual_consent_only: false
+    cookies: { }
+    sortindex: 4
+    purposes: advertising
+  - name: googleFonts
+    essential: 0
+    title: ''
+    description: ''
+    code: '<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">'
+    code_section: 0
+    callback: ''
+    active: false
+    default: false
+    required: false
+    opt_out: false
+    only_once: false
+    contextual_consent_only: false
+    cookies: { }
+    sortindex: 5
+    purposes: styling
+  - name: cloudflare
+    essential: 0
+    title: ''
+    description: ''
+    code: ''
+    code_section: 1
+    callback: ''
+    active: false
+    default: false
+    required: true
+    opt_out: false
+    only_once: false
+    contextual_consent_only: false
+    cookies:
+      - cookie: _cflb
+        path: ''
+        domain: ''
+      - cookie: _cf_bm
+        path: ''
+        domain: ''
+      - cookie: _cfduid
+        path: ''
+        domain: ''
+      - cookie: cf_ob_info
+        path: ''
+        domain: ''
+      - cookie: 'cf_use_ob cookie'
+        path: ''
+        domain: ''
+    sortindex: 6
+    purposes: security
+  - name: youtube
+    essential: 0
+    title: ''
+    description: ''
+    code: ''
+    code_section: 1
+    callback: ''
+    active: false
+    default: false
+    required: false
+    opt_out: false
+    only_once: false
+    contextual_consent_only: false
+    cookies:
+      - cookie: abc
+        path: ''
+        domain: ''
+    sortindex: 7
+    purposes: marketing
+  - name: googleRecaptcha
+    essential: 0
+    title: ''
+    description: ''
+    code: ''
+    code_section: 1
+    callback: |-
+      function(consent, service) {
+          var buttons = document.body.querySelectorAll('input[data-name="' + service.name + '"],button[data-name="' + service.name + '"]'), index;
+          for (index = 0; index < buttons.length; index++) {
+             buttons[index].disabled = !consent;
+          }
+      }
+    active: false
+    default: false
+    required: false
+    opt_out: false
+    only_once: false
+    contextual_consent_only: false
+    cookies:
+      - cookie: IDE
+        path: ''
+        domain: ''
+      - cookie: 1P_JAR
+        path: ''
+        domain: ''
+      - cookie: ANID
+        path: ''
+        domain: ''
+      - cookie: CONSENT
+        path: ''
+        domain: ''
+      - cookie: NID
+        path: ''
+        domain: ''
+      - cookie: DVacd
+        path: ''
+        domain: ''
+    sortindex: 8
+    purposes: security
+  - name: facebookPixel
+    essential: 0
+    title: ''
+    description: ''
+    code: |
+      <script>
+        !function(f,b,e,v,n,t,s)
+        { if(f.fbq)return;n=f.fbq=function(){ n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments) };
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[ ];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[ 0 ];
+        s.parentNode.insertBefore(t,s) }(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '[[++facebook_pixel_id]]');
+        fbq('track', 'PageView');
+      </script>
+      <noscript>
+        <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=[[++facebook_pixel_id]]&ev=PageView&noscript=1"/>
+      </noscript>
+    code_section: 1
+    callback: ''
+    active: false
+    default: false
+    required: false
+    opt_out: false
+    only_once: false
+    contextual_consent_only: false
+    cookies:
+      - cookie: xs
+        path: ''
+        domain: ''
+      - cookie: wd
+        path: ''
+        domain: ''
+      - cookie: spin
+        path: ''
+        domain: ''
+      - cookie: c_user
+        path: ''
+        domain: ''
+      - cookie: locale
+        path: ''
+        domain: ''
+      - cookie: datr
+        path: ''
+        domain: ''
+      - cookie: fr
+        path: ''
+        domain: ''
+      - cookie: presence
+        path: ''
+        domain: ''
+      - cookie: sb
+        path: ''
+        domain: ''
+    sortindex: 9
+    purposes: marketing
+  - name: googleTagManager
+    essential: 0
+    title: ''
+    description: ''
+    code: |
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','[[++google_tag_manager_id]]');</script>
+    code_section: 0
+    callback: ''
+    on_accept: |
+      function (opts) {
+          // we notify the tag manager about all services that were accepted. You can define
+          // a custom event in GTM to load the service if consent was given.
+          for (let k of Object.keys(opts.consents)) {
+              if (opts.consents[k]) {
+                  let eventName = 'consentfriend-' + k + '-accepted';
+                  dataLayer.push({'event': eventName});
+              }
+          }
+          // if consent for Google Analytics was granted we enable analytics storage
+          if (opts.consents['googleAnalytics']) {
+              console.log('Google analytics usage was granted!');
+              gtag('consent', 'update', {'analytics_storage': 'granted'});
+          }
+          // if consent for Google Ads was granted we enable ad storage
+          if (opts.consents['googleAdSense']) {
+              console.log('Google ads usage was granted!');
+              gtag('consent', 'update', {'ad_storage': 'granted'});
+          }
+      }
+    on_init: |
+      function (opts) {
+          // initialization code here (will be executed only once per page-load)
+          window.dataLayer = window.dataLayer || [];
+          window.gtag = function () {
+              dataLayer.push(arguments);
+          }
+          gtag('consent', 'default', {'ad_storage': 'denied', 'analytics_storage': 'denied'});
+          gtag('set', 'ads_data_redaction', true);
+      }
+    on_decline: |
+      function (opts) {
+          // we notify the tag manager about all services that were declined. You can define
+          // a custom event in GTM to unload the service if consent was denied.
+          window.dataLayer = window.dataLayer || [];
+          window.gtag = function () {
+              dataLayer.push(arguments)
+          }
+          gtag('consent', 'default', {'ad_storage': 'denied', 'analytics_storage': 'denied'})
+          gtag('set', 'ads_data_redaction', true)
+      }
+    active: false
+    default: false
+    required: false
+    opt_out: false
+    only_once: false
+    contextual_consent_only: false
+    cookies: {  }
+    sortindex: 10
+    purposes: marketing
+  - name: googleMaps
+    essential: 0
+    title: ''
+    description: ''
+    code: ''
+    code_section: 0
+    callback: null
+    on_accept: null
+    on_init: null
+    on_decline: null
+    active: true
+    default: false
+    required: false
+    opt_out: false
+    only_once: false
+    contextual_consent_only: false
+    cookies: {  }
+    sortindex: 11
+    purposes: styling

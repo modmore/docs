@@ -1,0 +1,40 @@
+package: consentfriend
+services:
+  - name: googleRecaptcha
+    title: ''
+    description: ''
+    code: ''
+    code_section: 1
+    callback: |-
+      function(consent, service) {
+          var buttons = document.body.querySelectorAll('input[data-name="' + service.name + '"],button[data-name="' + service.name + '"]'), index;
+          for (index = 0; index < buttons.length; index++) {
+             buttons[index].disabled = !consent;
+          }
+      }
+    active: false
+    default: false
+    required: false
+    opt_out: false
+    only_once: false
+    contextual_consent_only: false
+    cookies:
+      - cookie: IDE
+        path: ''
+        domain: ''
+      - cookie: 1P_JAR
+        path: ''
+        domain: ''
+      - cookie: ANID
+        path: ''
+        domain: ''
+      - cookie: CONSENT
+        path: ''
+        domain: ''
+      - cookie: NID
+        path: ''
+        domain: ''
+      - cookie: DVacd
+        path: ''
+        domain: ''
+    purposes: security

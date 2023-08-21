@@ -3,6 +3,9 @@ title: ConsentFriend
 description: Documentation for ConsentFriend, a premium consent management platform for MODX by Treehill Studio.
 ---
 
+To read this documentation in german, go to
+https://docs.treehillstudio.de/de/consentfriend/.
+
 [ConsentFriend](https://modmore.com/consentfriend/) is a simple but powerful
 consent management platform for MODX. It acts as a privacy and security tool,
 that controls the usage of third-party services on your website to protect the
@@ -21,8 +24,8 @@ personal data, the service usage has to be fully transparent and compliant.
 
 ## Recommended Reading
 
-- [Installation](01_Installation)
-- [Functionality](02_Functionality/01_Introduction)
-- [Custom Manager Page](03_Custom_Manager_Page)
-<!-- - [FAQ](04_FAQ) -->
+- [Installation](01_Installation.md)
+- [Functionality](02_Functionality/01_Introduction.md)
+- [Custom Manager Page](03_Custom_Manager_Page/index.md)
+<!-- - [FAQ](04_FAQ.md) -->
 
