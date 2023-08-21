@@ -75,3 +75,11 @@ If the media source and/or path is not correct, your front-end will render the f
 The MODX error log will have a more detailed message telling you if the problem was loading the media source or the template file. If it can't find the file, it will log the full path to make debugging easier.
 
 (_This works exactly the same in layout templates._)
+
+## Using pdoTools' @FILE templates (@PDO_FILE)
+
+If you'd like to use Fenom templates, you can use @PDO_FILE in field and layout templates. This works exactly like a @FILE template like you're used to with pdoTools/Fenom, it just has a different prefix to differentiate between the built-in @FILE support.
+
+This was added in ContentBlocks 1.13, with special thanks to Joeke Kloosterman
+
+
