@@ -111,6 +111,8 @@ As of v1.1, the `{{ shipment.total_weight }}`, `{{ shipment.tracking_url }}` and
 - The total_weight is calculated from each products' configured weight times the quantity. The unit this is in will be based on the weight unit set on the first product that was processed.
 - The email_note is fully-rendered HTML based on the shipping methods' configured email note at the time the email is sent. In v0.12 and 1.0 you can access the email note as `{{ shipping_method_note }}`.
 
+Because the `tracking_url` is only available with specific shipment types (like MyParcel), there is also a generic `tracking_reference` that you can manually add to a shipment from the dashboard. Click on the shipment name in the order detail page to add that.
+
 If you're looking to organise your order items by shipment, you will need to combine the iteration and match `item.shipment` to `shipment.id`, like this:
 
 ``` html
