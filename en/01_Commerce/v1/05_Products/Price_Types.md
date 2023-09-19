@@ -29,6 +29,12 @@ Commerce ships with the following price types out of the box:
 
 They are not shown right away; you first need to enable their respective modules at Configuration > Modules.
 
+Other price types that are available as extensions include:
+
+- [Quantity Usergroup](https://modmore.com/commerce/extensions/quantity-usergroup-price-type/), providing a Quantity price type for specific usergroups.
+- [Total Quantity](https://github.com/modmore/Commerce_PriceTypeTotalQuantity), which lets you give a discount to products when a certain quantity is in the cart.
+- [Simple Price Type](https://github.com/modmore/Commerce_SimplePriceType), an example project for developers of how to start building a custom price type as a module.
+
 ## Template integration
 
 The `[[+price]]` and `[[+price_formatted]]` placeholders (and twig equivalent) contain the current best price for a product in the current currency.
