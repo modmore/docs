@@ -35,6 +35,7 @@ In alphabetical order:
 - [MessageBird](Communication/MessageBird)
 - [Minimum Order Amount](Cart/MinOrderAmount)
 - [mPDF Writer](mPDFWriter)
+- [MyParcel](Shipping/MyParcel)
 - [Packing Slip](Shipping/PackingSlip)
 - [PDFCrowd Writer](PDFCrowdWriter)
 - [Table Rates](Shipping/TableRates)
