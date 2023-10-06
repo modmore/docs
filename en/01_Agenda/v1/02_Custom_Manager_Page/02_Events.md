@@ -9,10 +9,11 @@ If the manger user has `agenda_export` or `agend_import` permissions an export
 and import button is displayed right of the create event button. This allows the
 user to [export and import](../07_Export_Import_Events.md) the events.
 
-The grid can be toggled to display past or future events. When the grid shows
-past events, the toggle button is displayed in red. It can be filtered by
-calendar and category. It can also be filtered by a search input on the top
-right above the event grid.
+The grid can be toggled to show past or future events. When the grid shows past
+events, the toggle button is shown in red. It can be filtered by calendar and
+filtered by category. It can also be filtered by the publication status of an
+event and its recurrences. In addition, it can be filtered by a search entry at
+the top right above the event grid.
 
 Each event can be edited by clicking on the edit icon in the event's row. It can
 be duplicated by clicking on the duplicate icon in the row of the event. It can

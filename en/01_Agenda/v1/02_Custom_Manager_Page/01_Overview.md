@@ -7,7 +7,8 @@ number in the month view (or the date/weekday in the week/day view). There is
 also a create event button on the top left of the tab.
 
 The calendar can be filtered by calendar or category dropdown selects and by a
-search input on the top right of the tab.
+search input on the top right of the tab. It can also be filtered by the
+publication status of an event.
 
 The arrow buttons on the top left can be used to switch the event month (in
 the month view). If you click on today, the calendar will show the current day
