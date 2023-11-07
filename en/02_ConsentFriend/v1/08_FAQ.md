@@ -65,3 +65,23 @@ link to the consent management window using the following code:
 ```
 <a onclick="klaro.show(window.consentFriendConfig, { modal: true });return false;">[[%consentfriend.services.change_setting? &namespace=`consentfriend`]]</a>
 ```
+
+## How can I change external html code automatically for consentfriend
+
+It is possible to replace the html code of i.e. YouTube videos in a placeholder
+with the following output filter. Create a snippet FilterConsentFriendVideo with
+the following code and use it on the placeholder with
+`[[+placeholder:FilterConsentFriendVideo]]`
+
+Snippet FilterConsentFriendVideo
+```php
+<?php
+// Replace youtube iframe attributes with consentfriend compatible attributes
+return preg_replace(
+    '~<iframe(.*?)src="https://www\.youtube\.com/embed/(.*?)"(.*?)width="(.*?)"(.*?)</iframe>~m',
+    '<iframe$1data-name="youtube" data-src="https://www.youtube.com/embed/$2"$3></iframe>',
+    $input
+);
+```
+
+Feel free to create your own output filter for other external services.
