@@ -15,6 +15,7 @@ An example `.gitify` may look like this:
 ````
 data_directory: _data/
 backup_directory: _backup/
+category_ids_in_elements: true
 data:
     contexts:
         class: modContext
@@ -150,6 +151,21 @@ data:
 
 As it'll load the package into memory, it's only required to add the package once. For clarify, it can't hurt to add it to each `data` entry that uses it.
 
+As of Gitify 2.1.0-pl, support has been added for the xPDO v3 model structure. [Collections](https://docs.modx.com/3.x/en/extras/collections/index) is one extra that uses the new model structure when installed in MODX 3. 
+
+An example of how to specify the `CollectionSetting` object in the `.gitify` file would be:
+
+````
+    collections_settings:
+        namespace: Collections
+        model: Collections\Model
+        class: Collections\Model\CollectionSetting
+        primary: id
+        package: collections
+````
+
+Note that while the `primary` and `package` fields are the same as the 2.x structure, `class` now uses the fully qualified class name.
+
 ### Dealing with Closures
 
 A Closure is a separate table in the database that a core or third party extra may use to keep information about a hierarchy in a convenient format. These are often automatically generated when creating a new object, which can result in a error messages and other issues when building, especially with the `--force` flag. 
@@ -217,4 +233,8 @@ Alternatively, you can also define the username and api_key directly on the prov
 
 For security, the key file needs to be kept out of the git repository using a .gitignore file, and you will also want to protect direct read access to it with your .htaccess file or keeping it out of the webroot.
 
-To install the packages that you added to the `packages` entry in the .gitify file, simply run the command `Gitify package:install --all`. That will attempt to install all packages that were mentioned, skipping any that are already installed. 
+To install the packages that you added to the `packages` entry in the .gitify file, simply run the command `Gitify package:install --all`. That will attempt to install all packages that were mentioned, skipping any that are already installed.
+
+### Category ids in elements
+
+By default, Gitify refers to an element category by its name field. If you experience issues where categories might have identical names, add `category_ids_in_elements: true` to your `.gitify` file, and categories will instead by specified by their `id`.
