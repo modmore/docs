@@ -1,3 +1,7 @@
+---
+title: Themes 
+---
+
 _ConsentFriend_ has five different default themes that can be activated in the
 [system settings](04_System_Settings.md).
 
@@ -5,23 +9,23 @@ The default themes look like this:
 
 **default (or empty)**
 
-[![](img/default.png)](img/default.png)
+![Default Theme](img/default.png)
 
 **black**
 
-[![](img/black.png)](img/black.png)
+![Black Theme](img/black.png)
 
 **dark**
 
-[![](img/dark.png)](img/dark.png)
+![Dark Theme](img/dark.png)
 
 **light**
 
-[![](img/light.png)](img/light.png)
+![Light Theme](img/light.png)
 
 **white**
 
-[![](img/white.png)](img/white.png)
+![White Theme](img/white.png)
 
 ## Modify the active theme
 

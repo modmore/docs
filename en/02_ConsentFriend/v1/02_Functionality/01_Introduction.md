@@ -1,10 +1,14 @@
+---
+title: Introduction 
+---
+
 ConsentFriend uses the open source script of
 [Klaro!](https://kiprotect.com/klaro) as consent management script on the
 frontend. The Klaro! script automatically activates internal and external
 services on the webpage. ConsentFriend prepares the html code of the page to
 disable the automatic execution or loading of external services.
 
-[![](img/consent-management.png)](img/consent-management.png)
+![Consent Management](img/consent-management.png)
 
 > **The following steps are prepared by ConsentFriend automatically**
 >

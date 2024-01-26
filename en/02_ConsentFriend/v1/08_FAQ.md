@@ -1,3 +1,9 @@
+---
+title: FAQ
+hide:
+    - toc
+---
+
 We're collecting the questions we get most often into a FAQ. If your question is
 not in the list, please reach out to us via treehillstudio-support@modmore.com
 and we will be glad to help.
@@ -66,7 +72,7 @@ link to the consent management window using the following code:
 <a onclick="klaro.show(window.consentFriendConfig, { modal: true });return false;">[[%consentfriend.services.change_setting? &namespace=`consentfriend`]]</a>
 ```
 
-## How can I change external html code automatically for consentfriend
+## How can I change external html code automatically for ConsentFriend
 
 It is possible to replace the html code of i.e. YouTube videos in a placeholder
 with the following output filter. Create a snippet FilterConsentFriendVideo with
@@ -76,7 +82,7 @@ the following code and use it on the placeholder with
 Snippet FilterConsentFriendVideo
 ```php
 <?php
-// Replace youtube iframe attributes with consentfriend compatible attributes
+// Replace youtube iframe attributes with ConsentFriend compatible attributes
 return preg_replace(
     '~<iframe(.*?)src="https://www\.youtube\.com/embed/(.*?)"(.*?)width="(.*?)"(.*?)</iframe>~m',
     '<iframe$1data-name="youtube" data-src="https://www.youtube.com/embed/$2"$3></iframe>',

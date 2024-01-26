@@ -1,4 +1,5 @@
 ---
+title: System Settings
 hide:
   - toc
 ---

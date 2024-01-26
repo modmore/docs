@@ -1,8 +1,12 @@
+---
+title: Tab Purposes 
+---
+
 This tab contains a paginated grid with all purposes. The purposes are used to
 build the consent modal in the frontend, if the [system
 setting](../04_System_Settings.md) `consentfriend.group_by_purpose` is enabled.
 
-[![](img/purposes.png)](img/purposes.png)
+![Tab Purposes](img/purposes.png)
 
 You can create a new purpose with a click on the New Purpose button on the top
 left above the purposes grid.
@@ -17,7 +21,7 @@ appended to the existing purposes in the grid. In the replace mode the existing
 purposes in the grid are replaced with the entries in the file. In the update
 mode the existing purposes in the grid are updated with the entries in the file.
 
-[![](img/purposes-import.png)](img/purposes-import.png)
+![Import Purposes](img/purposes-import.png)
 
 The grid can be filtered by a search input on the top right above the purposes
 grid.
@@ -34,7 +38,7 @@ entry.
 
 The create/edit window allows the user to edit the purpose options.
 
-[![](img/purpose-edit.png)](img/purpose-edit.png)
+![Update Purpose](img/purpose-edit.png)
 
 You can set the purpose name, the purpose alias and you can toggle it to
 inactive.
