@@ -1,6 +1,6 @@
 This tab contains a paginated grid with all modules installed in Agenda.
 
-[![](img/modules.png)](img/modules.png)
+![Tab Modules](img/modules.png)
 
 It is visible only to a user who has enabled the `agenda_modules` permission. A
 module can be added by entering a package name in lowercase. An installed module
