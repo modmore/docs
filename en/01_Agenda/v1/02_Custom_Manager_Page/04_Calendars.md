@@ -1,6 +1,6 @@
 This tab contains a paginated grid with all calendars.
 
-[![](img/calendars.png)](img/calendars.png)
+![Tab Calendars](img/calendars.png)
 
 You can create a new calendar with a click on the create calendar button on the top
 left above the calendars grid.
@@ -20,7 +20,7 @@ a double click on the text.
 
 The create/edit window for one calendar has some options, that can be set.
 
-[![](img/calendar-edit.png)](img/calendar-edit.png)
+![Update Calendar](img/calendar-edit.png)
 
 You can set the calendar name, and you can toggle it to inactive. And you
 can set the calendar text and background color with a color picker.
@@ -32,4 +32,4 @@ the combo field. This combo has a select, a preview and a quickedit button. The
 resource can be edited in a new window with an alt click on the quickedit
 button.
 
-[![](img/calendar-colorpicker.png)](img/calendar-colorpicker.png)
+![Update Calendar Colorpicker](img/calendar-colorpicker.png)

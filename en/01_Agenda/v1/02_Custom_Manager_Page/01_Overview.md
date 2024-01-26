@@ -1,6 +1,6 @@
 This tab contains a calendar view of the current month.
 
-[![](img/overview.png)](img/overview.png)
+![Tab Overview](img/overview.png)
 
 You can create a new event with a click on the plus sign at beneath the day
 number in the month view (or the date/weekday in the week/day view). There is
@@ -23,13 +23,13 @@ can be deleted after a confirmation with a click on the trash icon.
 There is also a hover popup for each event, that shows a short information for
 the hovered event.
 
-[![](img/overview-hover.png)](img/overview-hover.png)
+![Overview Hover](img/overview-hover.png)
 
 ## Create/Edit
 
 The create/edit window for one event has a lot of options, that can be set.
 
-[![](img/event-edit.png)](img/event-edit.png)
+![Update Event](img/event-edit.png)
 
 ### Event Tab
 

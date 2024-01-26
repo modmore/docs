@@ -1,6 +1,6 @@
 This tab contains a paginated grid with all locations.
 
-[![](img/locations.png)](img/locations.png)
+![Tab Locations](img/locations.png)
 
 You can create a new location with a click on the create location button on the top
 left above the locations grid.
@@ -21,7 +21,7 @@ with a double click on the text.
 
 The create/edit window for one location has some options, that can be set.
 
-[![](img/location-edit-location.png)](img/location-edit-location.png)
+![Update Location](img/location-edit-location.png)
 
 ### Location Tab
 
@@ -32,7 +32,7 @@ system settings).
 The fields on the location tab can be extended by the [Extended Repeat
 Fields](../06_Extended_Fields.md) system setting.
 
-[![](img/location-edit-address.png)](img/location-edit-address.png)
+![Update Location Address](img/location-edit-address.png)
 
 ### Address Tab
 

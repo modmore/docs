@@ -1,6 +1,6 @@
 This tab contains a paginated grid with all future (or past) events.
 
-[![](img/events.png)](img/events.png)
+![Tab Events](img/events.png)
 
 You can create a new event with a click on the create event button on the top
 left above the events grid.
