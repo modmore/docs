@@ -1,5 +1,5 @@
 ---
-title: Managerseite 
+title: Custom Manager Page 
 ---
 
 You can create and edit your consent management data on the custom manager page
