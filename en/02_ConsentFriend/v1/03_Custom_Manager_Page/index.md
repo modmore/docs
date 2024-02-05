@@ -1,3 +1,7 @@
+---
+title: Custom Manager Page 
+---
+
 You can create and edit your consent management data on the custom manager page
 of _ConsentFriend_. This page contains three tabs where you can manage different
 elements.

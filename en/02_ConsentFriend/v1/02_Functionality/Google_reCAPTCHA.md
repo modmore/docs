@@ -1,3 +1,7 @@
+---
+title: Google reCAPTCHA 
+---
+
 To disable the automatic loading and execution of the reCAPTCHA script, you need
 to change, i.e. the recaptchav3_html chunk with the following code:
 

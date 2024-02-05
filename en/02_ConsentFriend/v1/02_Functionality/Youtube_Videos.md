@@ -1,3 +1,7 @@
+---
+title: YouTube Videos 
+---
+
 To disable the automatic loading and execution of the YouTube videos, you have
 to modify i.e. the iframe code with the following code:
 

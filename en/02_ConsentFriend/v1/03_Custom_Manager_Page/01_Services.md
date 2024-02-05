@@ -1,3 +1,7 @@
+---
+title: Tab Services 
+---
+
 This tab contains a paginated grid with all internal or third-party services,
 that are able to collect personal data.
 
@@ -5,7 +9,7 @@ With ConsentFriend you can manage inline and external scripts as well as static
 tracking elements like images or stylesheet links. New services can be added
 with just a few lines of code.
 
-[![](img/services.png)](img/services.png)
+![Tab Services](img/services.png)
 
 You can create a new service with a click on the New Service button on the top
 left above the services grid.
@@ -20,7 +24,7 @@ appended to the existing services in the grid. In the replace mode the existing
 services in the grid are replaced with the entries in the file. In the update
 mode the existing services in the grid are updated with the entries in the file.
 
-[![](img/services-import.png)](img/services-import.png)
+![Import Services](img/services-import.png)
 
 The grid can be filtered by a search input on the top right above the services
 grid.
@@ -45,7 +49,7 @@ In the service tab you have to set the name, the title and the descriptions. You
 can select the service purposes and the service options like Active, Default,
 Required, Opt out and Only once.
 
-<a id="service-name"></a>[![](img/service-service.png)](img/service-service.png)
+<a id="service-name"></a>![Update Service](img/service-service.png)
 
 **Name:** (Required) Each service must have a unique name. ConsentFriend will look
 for HTML elements with a matching "data-name" attribute to identify elements
@@ -94,7 +98,7 @@ button is displayed which allows the user to activate the service globally.
 
 In the code tab you can select the code section and enter the service code.
 
-[![](img/service-code.png)](img/service-code.png)
+![Update Service Code](img/service-code.png)
 
 **Code Section:** The section of the page code, where the service code is injected.
 
@@ -111,7 +115,7 @@ service, when the service is disabled.
 Some example cookie settings can be found in the demo data, that are installed
 during the ConsentFriend installation.
 
-[![](img/service-cookies.png)](img/service-cookies.png)
+![Update Service Cookies](img/service-cookies.png)
 
 You can create a new cookie setting with a click on the add button on the top
 right above the cookies grid.
@@ -133,7 +137,7 @@ HTTPOnly attribute. [See the documentation](https://developer.mozilla.org/en-US/
 In the callbacks tab you can enter several service callback codes in the
 textareas of the four callback tabs.
 
-[![](img/service-callbacks.png)](img/service-callbacks.png)
+![Update Service Callbacks](img/service-callbacks.png)
 
 **On Toggle:** This callback code is executed when the service consent is
 changed. It must contain a javascript function with the two properties

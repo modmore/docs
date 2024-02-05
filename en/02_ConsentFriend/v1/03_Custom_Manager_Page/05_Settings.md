@@ -1,7 +1,11 @@
+---
+title: Tab Settings 
+---
+
 This tab contains a paginated grid with all [settings](../04_System_Settings.md) of the consentfriend
 namespace.
 
-[![](img/settings.png)](img/settings.png)
+![Tab Settings](img/settings.png)
 
 It is only visible for a user that has the `setting` or the
 `consentfriend_setting` permission enabled. Each setting can be edited the
@@ -15,7 +19,7 @@ You can import a YAML file with the full ConsentFriend configuration with a
 click on the Import Configuration button above the settings grid. In the import
 window you have to select a file to import.
 
-[![](img/configuration-import.png)](img/configuration-import.png)
+![Import Configuration](img/configuration-import.png)
 
 This ConsentFriend configuration file can be uploaded to
 `{core_path}config/consentfriend/setup.yaml` before installing the ConsentFriend

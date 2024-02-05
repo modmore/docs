@@ -1,3 +1,7 @@
+---
+title: Default Services 
+---
+
 ConsentFriend installs and uses the following default services. All services are
 installed by option during the install process or can be imported with the [all
 services YAML file](../yaml/consentfriend_all.yml)

@@ -1,3 +1,7 @@
+---
+title: Lexicon 
+---
+
 If you want to change the text and the buttons in the consent management window,
 you have to use the MODX lexicon system.
 
@@ -11,5 +15,5 @@ MODX cache** for changes to appear in the front-end.
 The changes made this way will also persist across updates of the ConsentFriend
 package.
 
-The ConsentFriend frontend lexicon can be translated on
-[Weblate](https://hosted.weblate.org/projects/treehillstudio/consentfriend-web/).
+The ConsentFriend lexicon can be translated on
+[Weblate](https://hosted.weblate.org/projects/treehillstudio/consentfriend/).

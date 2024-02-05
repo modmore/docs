@@ -1,6 +1,10 @@
+---
+title: Dashboard Widget 
+---
+
 ConsentFriend contains a Dashboard widget since version 1.4.0.
 
-[![](img/dashboard-widget.png)](img/dashboard-widget.png)
+![Dashboard Widget](img/dashboard-widget.png)
 
 To use this widget you have to enable the `consentfriend.log_usage` system
 setting. After enabling this, the frontend usage of ConsentFriend is logged with

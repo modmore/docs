@@ -1,3 +1,7 @@
+---
+title: Installation 
+---
+
 The MODX installer should install the package automatically from the modmore
 repository.
 

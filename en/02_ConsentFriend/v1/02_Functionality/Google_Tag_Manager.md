@@ -1,3 +1,7 @@
+---
+title: Google Tag Manager 
+---
+
 You can integrate ConsentFriend with the Google Tag Manager (GTM) quite easy and
 control consents for Google Analytics with ConsentFriend via the GTM. The demo
 callback scripts in the googleTagManager service already contain the necessary
