@@ -114,6 +114,44 @@ setting has to be created by yourself:
     </script>
 ```
 
+#### Callbacks
+
+#### On Init
+
+```
+    function (opts) {
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function(){
+            dataLayer.push(arguments);
+        }
+        gtag('consent', 'default', {'ad_storage': 'denied', 'ad_user_data': 'denied', 'ad_personalization': 'denied', 'analytics_storage': 'denied'});
+    }
+```
+
+#### On Accept
+
+```
+    function (opts) {
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function(){
+            dataLayer.push(arguments);
+        }
+        gtag('consent', 'update', {'ad_storage': 'denied', 'ad_user_data': 'denied', 'ad_personalization': 'denied', 'analytics_storage': 'granted'});
+    }
+```
+
+#### On Decline
+
+```
+    function (opts) {
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function(){
+            dataLayer.push(arguments);
+        }
+        gtag('consent', 'update', {'ad_storage': 'denied', 'ad_user_data': 'denied', 'ad_personalization': 'denied', 'analytics_storage': 'denied'});
+    }
+```
+
 This service can be imported with the [Google Analytics service YAML
 file](../yaml/consentfriend_googleAnalytics.yml)
 
@@ -284,7 +322,7 @@ file](../yaml/consentfriend_facebookPixel.yml)
         window.gtag = function () {
             dataLayer.push(arguments);
         }
-        gtag('consent', 'default', {'ad_storage': 'denied', 'analytics_storage': 'denied'});
+        gtag('consent', 'default', {'ad_storage': 'denied', 'ad_user_data': 'denied', 'ad_personalization': 'denied', 'analytics_storage': 'denied'});
         gtag('set', 'ads_data_redaction', true);
     }
 ```
@@ -324,7 +362,7 @@ file](../yaml/consentfriend_facebookPixel.yml)
         window.gtag = function () {
             dataLayer.push(arguments)
         }
-        gtag('consent', 'default', {'ad_storage': 'denied', 'analytics_storage': 'denied'})
+        gtag('consent', 'default', {'ad_storage': 'denied', 'ad_user_data': 'denied', 'ad_personalization': 'denied', 'analytics_storage': 'denied'})
         gtag('set', 'ads_data_redaction', true)
     }
 ```

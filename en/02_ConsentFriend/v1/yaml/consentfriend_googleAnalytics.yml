@@ -14,6 +14,33 @@ services:
       </script>
     code_section: 0
     callback: ''
+    on_accept: |
+      function (opts) {
+          console.log('accept');
+          window.dataLayer = window.dataLayer || [];
+          window.gtag = function(){
+              dataLayer.push(arguments);
+          }
+          gtag('consent', 'update', {'ad_storage': 'denied', 'ad_user_data': 'denied', 'ad_personalization': 'denied', 'analytics_storage': 'granted'});
+      }
+    on_init: |
+      function (opts) {
+          console.log('init');
+          window.dataLayer = window.dataLayer || [];
+          window.gtag = function(){
+              dataLayer.push(arguments);
+          }
+          gtag('consent', 'default', {'ad_storage': 'denied', 'ad_user_data': 'denied', 'ad_personalization': 'denied', 'analytics_storage': 'denied'});
+      }
+    on_decline: |
+      function (opts) {
+          console.log('decline');
+          window.dataLayer = window.dataLayer || [];
+          window.gtag = function(){
+              dataLayer.push(arguments);
+          }
+          gtag('consent', 'update', {'ad_storage': 'denied', 'ad_user_data': 'denied', 'ad_personalization': 'denied', 'analytics_storage': 'denied'});
+      }
     active: false
     default: false
     required: false
