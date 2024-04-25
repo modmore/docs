@@ -12,7 +12,7 @@ Note that these custom fields are not built in a way that they are easily search
 ```` javascript   
 {
     "story":{
-        "label":"Story behind this image",
+        "label":"How this picture was made",
         "type":"richtext"
     },
     "copyright":{
