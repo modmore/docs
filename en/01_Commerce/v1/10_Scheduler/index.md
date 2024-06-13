@@ -66,7 +66,7 @@ Scheduling tasks is easy to do from within modules or custom code.
 There are 2 ways of going about scheduling a task.
 
 1. To run a task at a fixed schedule (every X minutes, nightly, etc), use the `$scheduler->repeat()` method.
-2. To run a task that only runs once, whether that needs to run at the first opportunity or at a specific date/time in the future, use $sche ASAP or
+2. To run a task that only runs once, whether that needs to run at the first opportunity or at a specific date/time in the future, use the `$scheduler->run()` method.
 
 Regardless of approach, access the Scheduler class with Commerce::scheduler(). For example in a module or model class:
 
