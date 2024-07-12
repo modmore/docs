@@ -71,3 +71,7 @@ By default, crops are created at 90% quality. If you'd like smaller file sizes, 
 The extension used is determined from the source image that is cropped.
 
 (_Note:_ These system settings were not automatically created by ContentBlocks until v1.8.2. Before that release, you may need to create the setting manually, but then they will work.)
+
+## Animated Crops
+
+ContentBlocks supports creating crops of animated .gif images. However, note that this will only work if the server has Imagick enabled for PHP.
