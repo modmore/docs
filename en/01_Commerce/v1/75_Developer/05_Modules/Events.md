@@ -9,6 +9,7 @@ When an event is fired, it will provide you with an event object in your callbac
 | Constant                                           | Event Class             | Triggered by                                                                                                                               | Use cases                                                                                                                      |
 |----------------------------------------------------|-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------|
 | `\Commerce::EVENT_ADDRESS_VALIDATE`                | `AddressValidation`     | Checkout when the customer submits an address                                                                                              | To validate if an address is allowed or correct.                                                                               |
+| `\Commerce::EVENT_PRODUCT_FORM`                    | `ProductForm`           | v1.6 - when rendering the product form                                                                                                     | add or otherwise change the fields in the product form                                                                         |
 | `\Commerce::EVENT_PRODUCT_CREATED`                 | `Product`               | v1.3 - `comProduct` when a new product is created in the dashboard.                                                                        | Process something when a new product is created.                                                                               |
 | `\Commerce::EVENT_PRODUCT_BEFORE_UPDATE`           | `Product`               | v1.3 - `comProduct` just before an updated product is saved in the dashboard.                                                              | Get values submitted by the update product form.                                                                               |
 | `\Commerce::EVENT_PRODUCT_AFTER_UPDATE`            | `Product`               | v1.3 - `comProduct` after an updated product is saved in the dashboard.                                                                    | Create a new version delta for a product with VersionX.                                                                        |
@@ -184,6 +185,18 @@ FQN: `modmore\Commerce\Events\Payment`
 FQN: `modmore\Commerce\Events\Product`
 
 - `getProduct`: returns an instance of comProduct
+
+### ProductForm
+
+Added in v1.6.
+
+FQN: `modmore\Commerce\Events\ProductForm`
+
+- `getProduct`: returns an instance of comProduct, might be an empty product record in case of adding a new product
+- `getFields`: returns an array of Field instances on the form currently
+- `setFields(Field[] $fields)`: sets an array of fields onto the form. This fully overrides the form definition, does not merge, so this is for when you've removed or changed fields.
+- `insertField(Field $field, int $index)`: insert a field at the given index
+- `getIndex(string $fieldName)`: get the index of a field in the form. When the field with the given name is not found, this returns **the end of the form** to allow easy chaining like `$event->insertField($field, $event->getIndex('price'))`
 
 ### RateProvider
 
