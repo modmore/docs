@@ -1,3 +1,9 @@
+---
+title: FAQ
+hide:
+    - toc
+---
+
 We're collecting the questions we get most often into a FAQ. If your question is
 not in the list, please reach out to us via treehillstudio-support@modmore.com
 and we will be glad to help.
@@ -65,3 +71,33 @@ link to the consent management window using the following code:
 ```
 <a onclick="klaro.show(window.consentFriendConfig, { modal: true });return false;">[[%consentfriend.services.change_setting? &namespace=`consentfriend`]]</a>
 ```
+
+## How can I change external html code automatically for ConsentFriend?
+
+It is possible to replace the html code of i.e. YouTube videos in a placeholder
+with the following output filter. Create a snippet FilterConsentFriendVideo with
+the following code and use it on the placeholder with
+`[[+placeholder:FilterConsentFriendVideo]]`
+
+Snippet FilterConsentFriendVideo
+```php
+<?php
+// Replace youtube iframe attributes with ConsentFriend compatible attributes
+return preg_replace(
+    '~<iframe(.*?)src="https://www\.youtube\.com/embed/(.*?)"(.*?)width="(.*?)"(.*?)</iframe>~m',
+    '<iframe$1data-name="youtube" data-src="https://www.youtube.com/embed/$2"$3></iframe>',
+    $input
+);
+```
+
+Feel free to create your own output filter for other external services.
+
+## Is it possible to use Google Consent Mode v2 with ConsentFriend?
+
+Yes, the consent mode v2 can be set with ConsentFriend for Google Analytics. It
+is now built into the default Google Analytics service configuration. In already
+existing installations you can install the new code by importing the [Google
+Analytics service YAML file](yaml/consentfriend_googleAnalytics.yml) or just
+add the
+[callbacks](https://docs.treehillstudio.de/en/consentfriend/02_Functionality/02_Default_Services/#callbacks)
+on your own.

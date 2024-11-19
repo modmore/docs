@@ -375,3 +375,18 @@ then the name of the service has to be provided at the first config-object with 
         class: comCouponUsage
         primary: id
 ````
+
+### Duplicate a context and resources
+
+As of Gitify 2.1.0-pl it is possible to duplicate a context with all its resources under a new key. 
+This is especially handy for adding a new language translation to an existing site quickly. 
+To do so, extract a single context that you wish to have duplicated, copy the output and run the extracted content through your favourite translation tool.
+
+Then:
+
+ - Change the `context_key` in your `.gitify` file to the new context key.
+ - Rename the extracted files and folders
+ - Do a find and replace to update all instances of the `context_key` within the extracted content
+ - Finally, run `gitify build` to import the updated data as the new context.
+
+[You can see a video from the author of this feature here.](https://github.com/modmore/Gitify/pull/439)

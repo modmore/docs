@@ -14,7 +14,7 @@ The Payrexx gateway offers a number of configuration options.
 
 Once you've added these three options, save and re-open the payment method edit form to verify they were correct, and to get more options:
 
-- **Webhook**: this is the webhook URL you should add in the Payrexx admin under Integrations > Webhooks. Note you will need to update the webhook when you move to production.
+- **Webhook**: this is the webhook URL **you need to add in the Payrexx admin under Integrations > Webhooks**. Note you will need to update the webhook when you move to production. Make sure to only select "Transaction" events. Type of webhook should be "Normal (PHP-Post). 
 - **Payment Provider** will let you choose from the payment providers you have activated in your Payrexx dashboard under Admin > Payment Service Providers.
 - **Design (look & feel)** lets you choose the design for the hosted payment page. Set these up in the Payrexx dashboard under Configuration > Look & Feel.
 - **Restrict to instance** should only be set up when using Payrexx as a marketplace solution with multiple merchants. **Leave unchecked if you are the only merchant**.

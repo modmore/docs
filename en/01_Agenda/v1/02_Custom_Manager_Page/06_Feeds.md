@@ -1,6 +1,6 @@
 This tab contains a paginated grid with all feeds.
 
-[![](img/feeds.png)](img/feeds.png)
+![Tab Feeds](img/feeds.png)
 
 You can create a new feed with a click on the create feed button on the top
 left above the feeds grid.
@@ -21,7 +21,7 @@ with a double click on the text.
 
 The create/edit window for one feed has some options, that can be set.
 
-[![](img/feed-edit.png)](img/feed-edit.png)
+![Update Feed](img/feed-edit.png)
 
 You can set the feed URL the events are retrieved from. You can select the
 calendar, where the feed events are imported into. You can set the categories,

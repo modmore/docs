@@ -1,3 +1,7 @@
+---
+title: Contextual Consent 
+---
+
 Contextual consent allows the website to obtain the consent of the users on
 place. This is used to hide embedded YouTube videos and display a placeholder
 with a consent button inside.

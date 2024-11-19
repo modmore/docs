@@ -6,6 +6,16 @@ and to include it in modmore's standard support as an official extension.
 
 Digital Product for Commerce is **available as a separate package** and from [GitHub](https://github.com/modmore/Commerce_DigitalProduct).
 
+___
+
+**Product bundles in v2.1+**
+
+As of version 2.1, product bundles can now contain digital products. The bundle itself is not considered to be a digital 
+product and should be created as normal. Any digital products contained within the bundle will make their digital 
+product resource links available to the customer on the thank you and customer orders pages. Be sure to add the 
+necessary markup as [shown here](ThankYou.md).
+
+
 [TOC]
 
 ## A Couple of Common Scenarios

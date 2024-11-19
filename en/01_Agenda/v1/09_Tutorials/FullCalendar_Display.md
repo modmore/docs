@@ -7,9 +7,10 @@ You can use the FullCalendar 3 script in the frontend with the following steps.
 First rename the file assets/components/agenda/_overview.php to overview.php. 
 Afterwards edit it and remove the exit(); in line 12.
 
-The Agenda backend uses FullCalendar 3 for the calendar display. You have to
-create a working FullCalendar script according to the
-[documentation](https://fullcalendar.io/docs/v3/installation)
+The Agenda backend uses FullCalendar for the calendar display. You have to
+create a working FullCalendar script according to the [FullCalendar 3
+documentation](https://fullcalendar.io/docs/v3/installation) or the
+[current FullCalendar documentation](https://fullcalendar.io/docs/getting-started).
 
 ## Restrict the request
 
@@ -21,6 +22,8 @@ the overview connector.
 
 Finally, you have to initialize the FullCalendar script with the following code:
 
+### FullCalendar 3
+
 ```js
 $('#fullcalendar').fullCalendar({
     events: {
@@ -30,9 +33,9 @@ $('#fullcalendar').fullCalendar({
         endParam: 'enddate',
         data: function () {
             return {
-|                //calendars: calendars || 0,|
-|                //categories: categories || 0,|
-|                //query: query || '',|
+                // calendars: calendars || 0,
+                // categories: categories || 0,
+                // query: query || '',
                 limit: 0
             };
         }
@@ -40,5 +43,23 @@ $('#fullcalendar').fullCalendar({
 });
 ```
 
-Maybe it is possble to make this work with FullCalendar 4 or 5, but that's not
-part of this instruction.
+### FullCalendar 4 and later
+
+```js
+$('#fullcalendar').fullCalendar({
+    events: {
+        url: 'assets/components/agenda/overview.php',
+        type: 'POST',
+        startParam: 'startdate',
+        endParam: 'enddate',
+        extraParams: function () {
+            return {
+                // calendars: calendars || 0,
+                // categories: categories || 0,
+                // query: query || '',
+                limit: 0
+            };
+        }
+    }
+});
+```
