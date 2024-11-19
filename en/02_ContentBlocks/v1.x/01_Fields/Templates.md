@@ -18,6 +18,7 @@ All field templates have access to a set of shared placeholders:
 - `[[+layout_column]]`, the string name of the column the field is inserted in.
 - `[[+layout_idx]]`, an incrementing index for the position of the layout on the page.
 - `[[+layout_title]]`, the title of the layout (user-editable by clicking on it in the interface); may be empty.
+- `[[+field_type_idx]]`, an index (starting at 0) of which instance of this particular field. Useful in combination with the cbGetFieldContent snippet. (as of v1.14.0)
 
 It's also possible to access layout settings in field templates (as of v1.8.3). Those are available with the `layout_settings` prefix, for example:
 
