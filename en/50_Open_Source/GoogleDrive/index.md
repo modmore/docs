@@ -82,7 +82,7 @@ The s=2 parameter indicates the **media source ID**, in this example ID 2. Chang
 The **urlPattern** in the media source can then drop the media source ID and be configured to:
 
 ```html
-https://yoursite.com/gdrive/{id}
+https://yoursite.com/drive/{id}
 ```
 
 > **You should run this proxy with a fully qualified URL in the urlPattern, to maximise compatibility with third party tools**. This could be on a (sub)domain, but has to start with https. Make sure all requests are routed to the index file and that the `s` and `id` parameters are properly set from the request or rewrite.
