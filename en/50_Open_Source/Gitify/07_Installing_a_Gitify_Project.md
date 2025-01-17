@@ -21,7 +21,7 @@ Now open `.gitify` and configure it to your liking. If you are using a custom re
 ## Installing MODX
 Now we are ready to tell gitify to install the latest MODX and all needed packages:
 
-    Gitify install:modx
+    Gitify modx:install
 After you've used this command Gitify will ask you some questions, if you didn't create a database yet you can put in the details of a MySQL user who has the rights to create databases.
 
 The result should look like this:
@@ -47,7 +47,7 @@ The result should look like this:
 
 MODX has now been freshly installed and is now ready to have extras installed. But installing them one by one is going to be a hassle so we're just gonna execute this command:
 
-    Gitify install:package --all
+    Gitify package:install --all
 
 This command installs all the packages defined in `.gitify`, the result should look something like this:
 
