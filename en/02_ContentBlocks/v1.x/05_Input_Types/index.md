@@ -116,7 +116,7 @@ As you can see in the image above, there are two template fields that can be cus
 
 While not quite as full featured as MoreGallery, the built-in Gallery input for ContentBlocks is quite nice. It allows you to limit the number of images editors can add and is fully template-able as you would expect.
 
-The template property is used for each individual image (placeholders: `[[+idx]]`, `[[+url]]` and `[[+title]]`), while the wrapper template is used to wrap the images (placeholder: `[[+images]]`).
+The template property is used for each individual image (placeholders: `[[+idx]]`, `[[+total]]`, `[[+url]]`, `[[+description]]` and `[[+title]]`), while the wrapper template is used to wrap the images (placeholder: `[[+images]]`).
 
 
 [![](https://modmore.com/assets/uploads/6b2273fa0b7ea82850c83f94a3e70ef8.png)](https://modmore.com/assets/uploads/6b2273fa0b7ea82850c83f94a3e70ef8.png)
