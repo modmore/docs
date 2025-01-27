@@ -13,6 +13,8 @@ For every specified field the module will make sure that its value is not empty.
 
 - Required Fields (`required_fields`): Provide a comma separated list of fields that need to be validated. Each field will be checked if it is not empty, and for specific fields (like email and country) it will also run additional validations. Available fields: `fullname, firstname, lastname, company, address1, address2, address3, zip, city, state, country, phone, mobile, email, notes`.
 
+> Commerce **ALWAYS** requires a **country** value to work with an order. You can hide the country field from the address template in the checkout if you only sell locally, but it must still be passed as a hidden input and we recommend keeping validation for the country enabled.
+
 ## Testing additional properties (v1.3+)
 
 If you're specifying any additional fields that get stored into the address properties, for example like this:
