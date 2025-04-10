@@ -17,6 +17,7 @@ Some features however, are a bit more powerful or have more complicated configur
 - [Image Styles](Image_Styles)
 - [Inline Styles](Inline_Styles)
 - [Link Styles](Link_Styles)
+- [modAI Support](modAI)
 - [Properties](Properties)
 - [Source mode](Source)
 - [Text Expander](Text_Expander)
