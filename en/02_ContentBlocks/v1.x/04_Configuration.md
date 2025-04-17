@@ -16,7 +16,7 @@ Comma separated list of the resource types ContentBlocks should be enabled on. T
 
 For instructions about using ContentBlocks on custom resource types, please visit the [Custom Resources](Custom_Resources) documentation.
 
-**Default:** `modDocument, mgResource, Article, CollectionContainer, GridContainer, GoodNewsResourceContainer, GoodNewsResourceMailing, scCategoryResource, scProductResource`
+**Default:** `modDocument, MODX\Revolution\modDocument, mgResource, Article, Articles\Model\Article, CollectionContainer, Collections\Model\CollectionContainer, GridContainer, GoodNewsResourceContainer, GoodNewsResourceMailing, scCategoryResource, scProductResource, Location, Bitego\GoodNews\Model\GoodNewsResourceMailing, Bitego\GoodNews\Model\GoodNewsResourceContainer`
 
 ### Clear Cache after Rebuild (`contentblocks.clear_cache_after_rebuild`) 
 
