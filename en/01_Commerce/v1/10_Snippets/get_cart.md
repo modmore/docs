@@ -1,4 +1,4 @@
-The `commerce.get_cart` snippet is used to list cart information outside the actual cart, for example as a sidebar widget or a "You have X items in your cart" link in a header. 
+The `commerce.get_cart` snippet is used to list cart information outside the actual cart, for example as a sidebar widget or a "You have X items in your cart" link in a header.
 
 To display the fully functional cart to allow the customer to checkout, use the [`commerce.cart`](cart) snippet.
 
@@ -32,7 +32,7 @@ Depending on which properties you've provided to the snippet (`&toPlaceholders`,
 1. `&toPlaceholders` will set placeholders with the prefix provided. For example ```&toPlaceholders=`cart` ``` will set placeholders like `[[!+cart.total_quantity]]`, `[[!+cart.total_formatted]]`, etc.
 2. `&tpl` can be set to the name of a chunk. The cart information (without prefix) will be parsed through that chunk. When you also provide `&itemTpl` with a chunk name, the items in the cart will be parsed through that chunk, with the results placed in the `[[+items]]` placeholder in `&tpl`.
 3. `&field` allows to immediately return a single order field. For example ```&field=`total_formatted` ``` to return just the formatted total order price.
-4. If none of the above are provided, all available cart information is dumped to screen in a `<pre>` tag. Useful for debugging. 
+4. If none of the above are provided, all available cart information is dumped to screen in a `<pre>` tag. Useful for debugging.
 
 ## Available placeholders
 
@@ -56,7 +56,7 @@ Array
                     [0] => Array
                         (
                             [created_on] => 1496069083
-                            [public] => 
+                            [public] =>
                             [message] => commerce.log.item_added
                             [properties] => Array
                                 (
@@ -104,23 +104,23 @@ Array
     [total_due_formatted] => €24.20
     [created_on_formatted] => 2017-05-29 at 16:44:43 CEST
     [last_updated_on_formatted] => 2017-05-29 at 16:50:13 CEST
-    [status_updated_on_formatted] => 
+    [status_updated_on_formatted] =>
     [items] => Array
         (
             [0] => Array
                 (
                     [id] => 398
                     [class_key] => comOrderItem
-                    [properties] => 
+                    [properties] =>
                     [order] => 226
                     [product] => Array
                         (
                             [id] => 1
                             [class_key] => comProduct
-                            [properties] => 
+                            [properties] =>
                             [sku] => awesome-product
                             [name] => Product Name
-                            [description] => 
+                            [description] =>
                             [price] => 2000
                             [stock] => 9
                             [weight] => 3
@@ -128,12 +128,12 @@ Array
                             [image] => path/to/image.jpg
                             [tax_group] => 1
                             [target] => 0
-                            [removed] => 
+                            [removed] =>
                             [removed_on] => 0
-                            [removed_by] => 
+                            [removed_by] =>
                             [price_formatted] => €20.00
-                            [removed_on_formatted] => 
-                            [link] => 
+                            [removed_on_formatted] =>
+                            [link] =>
                             [edit_link] => /manager/?namespace=commerce&a=index&ca=product/update&id=1
                         )
 
@@ -143,8 +143,8 @@ Array
                     [allow_update] => 1
                     [sku] => awesome-product
                     [name] => Product Name
-                    [link] => 
-                    [description] => 
+                    [link] =>
+                    [description] =>
                     [price] => 2000
                     [image] => path/to/image.jpg
                     [quantity] => 1
@@ -172,12 +172,27 @@ Array
 
 ## Showing cart in the header?
 
-MODX processes snippets from top to bottom, so if you place a cart  summary in the header of the page, on the cart and checkout pages it may show old data. 
+MODX processes snippets from top to bottom, so if you place a cart summary in the header of the page, on the cart and checkout pages it may show old data because the action the user took is processed later.
 
-One way around this is to add the `get_cart` snippet below the content (so the cart/checkout snippets are executed first), and to use the `&toPlaceholders` property to set placeholders, which you can then add into the header of the page.
+One way around this is to add the `get_cart` snippet **below the content** (so the cart/checkout snippets are executed first), and to use the `&toPlaceholders` property to set placeholders, which you can then add into the header of the page.
 
-For example with 
+For example add this below the content/cart:
+
 ```` html
-[[!commerce.get_cart? &toPlaceholders=`cart`]]
+[[!commerce.get_cart?
+    &toPlaceholders=`cart`
+]]
 ````
-below the content, you can use `[[!+cart.total_quantity]]` and `[[!+cart.total_formatted]]` in the header of your page.
+
+And then in the header, use `[[!+cart.total_quantity]]`, `[[!+cart.total_formatted]]` and other placeholders. MODX skips these at first because they are not set yet, but they will be replaced after the `get_cart` snippet is processed.
+
+Alternatively, you can use the `:toPlaceholder` modifier to use the full get_cart output instead of individual placeholders. Below the content, use this:
+
+````html
+[[!commerce.get_cart:toPlaceholder=`cart`?
+    &tpl=`CartTpl`
+    &itemTpl=`CartItemTpl`
+]]
+````
+
+And in the header, simply place `[[!+cart]]`.
