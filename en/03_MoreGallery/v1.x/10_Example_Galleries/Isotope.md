@@ -43,49 +43,101 @@ On your Gallery template (or where-ever you want the gallery to appear), call th
 Next, create the **gallery-isotope** chunk:
 
 ````html
-
+<div class="grid-item">
+    <a href="[[+file_url]]" title="[[+name]]">
+        <img src="[[+file_url:pthumb=`w=400&h=400&zc=1`]]" alt="[[+name]]">
+    </a>
+</div>
 ````
+
+This uses pthumb to generate a 400x400 pixel thumbnail. You can adjust the size as needed for your design.
 
 And the **gallery-isotope-wrapper** chunk:
 
 ````html
-
+<div class="grid">
+    [[+output]]
+</div>
 ````
 
-If you visit the gallery now, you should see
+If you visit the gallery now, you should see a simple grid of images. They won't be laid out nicely yet - that's what we'll add Isotope for in the next step.
 
 ## Load & initialize Isotope
 
 Regardless of how you've downloaded Isotope, upload it to a location on your server.
 
-In your template or footer/scripts chunk, include the script:
+To initialise the gallery, we'll refer to the [Isotope documentation](https://isotope.metafizzy.co/options.html). In this case we like the [Masonry layout mode](https://isotope.metafizzy.co/layout-modes/masonry.html),  but feel free to choose another one. Just check in the documentation as some modes are not included in the original file.
+
+In your template or footer/scripts chunk, include the Isotope script and initialize it:
 
 ````html
-<script src="[[++zoofari.assets_url]]lib/isotope.pkgd.min.js"></script>
+<script src="[[++assets_url]]lib/isotope.pkgd.min.js"></script>
 <script>
-    /* Initiate the Isotope gallery */
+// Initialize Isotope after images have loaded
+window.addEventListener('load', function() {
+    var grid = document.querySelector('.grid');
+    if (grid) {
+        var iso = new Isotope(grid, {
+            itemSelector: '.grid-item',
+            layoutMode: 'masonry',
+            masonry: {
+                columnWidth: '.grid-item',
+                gutter: 10
+            }
+        });
+    }
+});
 </script>
 ````
 
-If you have a shared template and only want to load it on Gallery resources, wrap it with a condition:
+This script will initialize Isotope with the masonry layout mode after all images have loaded. The `columnWidth` is set to `.grid-item` which means Isotope will use the width of your grid items, and `gutter` adds 10px of spacing between items.
+
+> Note: adjust `[[++assets_url]]lib/isotope.pkgd.min.js` to match the path where you uploaded Isotope on your server.
+
+If you have a shared template and only want to load Isotope on Gallery resources, wrap the script tags with a condition:
 
 ````html
-
 [[*class_key:eq=`mgResource`:then=`
-<script src="[[++zoofari.assets_url]]lib/isotope.pkgd.min.js"></script>
+<script src="[[++assets_url]]lib/isotope.pkgd.min.js"></script>
 <script>
-    /* Initiate the Isotope gallery */
+// Initialize Isotope after images have loaded
+window.addEventListener('load', function() {
+    var grid = document.querySelector('.grid');
+    if (grid) {
+        var iso = new Isotope(grid, {
+            itemSelector: '.grid-item',
+            layoutMode: 'masonry',
+            masonry: {
+                columnWidth: '.grid-item',
+                gutter: 10
+            }
+        });
+    }
+});
 </script>
 `:else=``]]
 ````
 
-To initialise the gallery, we'll refer to the [Isotope documentation](https://isotope.metafizzy.co/options.html). In this case we like the [Masonry layout mode](https://isotope.metafizzy.co/layout-modes/masonry.html),  but feel free to choose another one. Just check in the documentation as some modes are not included in the original file.
+You may want to add some CSS to style your gallery:
 
-Here's what we ended up as an initialisation script:
+````css
+.grid {
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-````html
+.grid-item {
+    width: 30%;
+    margin-bottom: 10px;
+}
 
-
+.grid-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
 ````
+
+For a responsive design, consider using media queries to adjust the grid-item width for different screen sizes.
 
 
