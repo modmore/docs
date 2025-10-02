@@ -8,7 +8,7 @@ The MyParcel integration for Commerce offers powerful fulfillment solutions for 
 
 ## Installation
 
-The MyParcel integration is available [as an official extension](https://modmore.com/commerce/extensions/myparcel/. To offer support and continued maintenance, we charge a one-time license fee for it. It's free to use on development.
+The MyParcel integration is available [as an official extension](https://modmore.com/commerce/extensions/myparcel/). To offer support and continued maintenance, we charge a one-time license fee for it. It's free to use on development.
 
 ## Configuration
 
