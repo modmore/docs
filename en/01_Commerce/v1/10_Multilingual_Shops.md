@@ -98,4 +98,9 @@ For values **that have a translation or have been edited since multiple language
 
 We're planning to add tooling to export and import translations in a future update.
 
+## Multilingual cart and checkout
+
+The cart and checkout are pre-translated through the MODX lexicons and respond to the contexts' cultureKey as well. You may need to set up cart and checkout resources in each context, and connect them with the `commerce.cart_resource` and `commerce.checkout_resource` system settings for things to work as expected.
+
+This also applies to things like your login and account pages.
 
