@@ -12,7 +12,7 @@
     "parallelshell": "2.0.x",
     "rimraf": "latest",
     "svg-sprite": "1.0.x",
-    "watch": "0.x.x"
+    "watch": "1.x.x"
   },
   "scripts": {
     "clean": "rimr4af themes/modmore/dist/*",
