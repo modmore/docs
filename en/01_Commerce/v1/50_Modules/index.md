@@ -31,6 +31,8 @@ In alphabetical order:
 - [Gateways Pack 1](Payments/GatewayPack1)
 - [Hide Products](Admin/HideProducts)
 - [ItemData](Cart/ItemData)
+- [ItemOptions](ItemOptions)
+- [ItemUpload](ItemUpload)
 - [Mailchimp](Mailchimp)
 - [MessageBird](Communication/MessageBird)
 - [Minimum Order Amount](Cart/MinOrderAmount)
