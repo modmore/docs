@@ -33,15 +33,19 @@ UBL invoice generation can be enabled and configured through Commerce system set
 - Set to `Yes` to enable UBL invoice generation
 - When enabled, UBL XML files will be generated alongside PDF invoices
 
-2. **Company ID** (`commerce.invoice_ubl_company_id`)
-- Your company registration or identification number
+2. **Company ID** (`commerce.invoice_ubl_company_id`) + Scheme (`commerce.invoice_ubl_company_id_scheme`)
+- Your company registration or identification number, like the chamber of commerce number.
 - This appears in the UBL invoice as the CompanyID in the PartyLegalEntity section
 - Example: `12345678`
 
-3. **Tax/VAT ID** (`commerce.invoice_ubl_tax_id`)
+The scheme is the type of ID you're using. [Review the list here](https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/) - there are IDs for every country and type of registration.
+
+3. **Tax/VAT ID** (`commerce.invoice_ubl_tax_id`) + Scheme (`commerce.invoice_ubl_party_company_scheme`)
 - Your tax or VAT identification number
 - This appears in the UBL invoice as the CompanyID in the PartyTaxScheme section
 - Example: `BE123456789`
+
+The scheme is the type of ID you're using. [Review the list here](https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/) - there are IDs for every country and type of registration.
 
 4. **Company Country** (`commerce.invoice_ubl_company_country`)
 - Your company's country code (ISO 3166-1 alpha-2)
