@@ -45,7 +45,7 @@ To receive updates from PayPal (for example, when a payment is captured or a dis
 
 ### Authorization and Captures
 
-PayPal Checkout supports the [Authorization and Capture](../../11_Transactions/Authorizations) workflow. When enabled in the payment method settings:
+PayPal Checkout supports the [Authorization and Capture](00_Authorize_Capture_Flow) workflow. When enabled in the payment method settings:
 
 - Commerce will only **Authorize** the payment during checkout. This places a hold on the customer's funds.
 - You can later **Capture** the payment from the Commerce dashboard (e.g. when shipping the order).
@@ -57,7 +57,7 @@ PayPal keeps a hold on the customer's funds for up to 29 days.
 
 ### Payment Tokens
 
-PayPal Checkout supports [Payment Tokens](../../11_Transactions/Payment_Tokens). This allows customers to "Save their PayPal account for future use" and for recurring billing.
+PayPal Checkout supports [Payment Tokens](01_Payment_Tokens). This allows customers to "Save their PayPal account for future use" and for recurring billing.
 
 When a customer opts to save their account, Commerce securely stores a reference (vault ID) via PayPal's Vault. On future orders, the customer can select their saved PayPal account and complete the checkout without being redirected to PayPal for login again.
 
