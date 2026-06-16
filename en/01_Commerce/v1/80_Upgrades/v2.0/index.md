@@ -14,6 +14,10 @@ Commerce 1.x will continue to be supported and receive stability and security fi
 
 - TBA
 
+## Noteworthy changes for merchants
+
+- The Legacy PayPal integration (using NVP/SOAP APIs) will be removed in Commerce 2.0. Migrating to the modern PayPal integration only takes a few minutes to reconfigure your payment method.
+
 ## Noteworthy changes for developers
 
 1. Since v1.3, modules can type-hint against the native `\modmore\Commerce\Dispatcher\EventDispatcher` class (in the `initialize` method of the module class). In v2.0, it is **mandatory** to do so, as the internal classes have been changed and updated. [Learn more about the EventDispatcher changes](EventDispatcher)
