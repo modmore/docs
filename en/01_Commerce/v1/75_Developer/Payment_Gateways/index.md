@@ -41,7 +41,7 @@ The `identifyWebhookTransaction` method returns a `\comTransaction` instance - n
 
 [More about the SharedWebhookGatewayInterface >](SharedWebhookGatewayInterface)
 
-For gateways that can link to a specific payment in the provider's merchant dashboard, the `\modmore\Commerce\Gateways\Interfaces\MerchantUrlGatewayInterface` interface adds:
+For gateways that can link to a specific payment in the provider's merchant dashboard, the `\modmore\Commerce\Gateways\Interfaces\MerchantUrlGatewayInterface` interface adds (as of v1.11.0-rc3):
 
 - `public function getMerchantUrl(comTransaction $transaction): ?string`
 

@@ -28,7 +28,7 @@ Use `GatewayHelper::getDescription(comOrder $order)` to return the payment descr
 
 The description will automatically use either the order ID or the reference if it is already set, and a context-specific site name.
 
-## getMerchantUrl
+## getMerchantUrl (added in v1.11.0-rc3)
 
 Use `GatewayHelper::getMerchantUrl(comTransaction $transaction)` to get a link to view the transaction in the payment provider's merchant dashboard.
 

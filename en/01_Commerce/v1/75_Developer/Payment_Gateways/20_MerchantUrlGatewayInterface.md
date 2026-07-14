@@ -2,6 +2,8 @@ The MerchantUrlGatewayInterface should be implemented by gateways that can provi
 
 This is an **opt-in** interface, similar to [WebhookGatewayInterface](WebhookGatewayInterface). It is not part of [GatewayInterface](GatewayInterface), so existing gateways remain backward compatible until they choose to implement it.
 
+> This interface was added in v1.11.0-rc3. 
+
 When implemented, Commerce automatically shows the link in the merchant dashboard:
 
 - On the **transaction overview** modal, below the payment reference
@@ -96,11 +98,3 @@ The following core gateways implement `MerchantUrlGatewayInterface`:
 | Braintree | Braintree Control Panel transaction page |
 | Authorize.net | Authorize.net transaction detail page |
 | MultiSafePay | MultiSafePay merchant portal transaction page |
-
-Other built-in gateways (such as Manual, legacy PayPal, and SagePay) do not implement this interface.
-
-## Notes
-
-- Do **not** add `getMerchantUrl()` to `GatewayInterface`. Use the opt-in interface so third-party gateways are not forced to implement it.
-- Do **not** store merchant dashboard URLs in `getExtraInformation()`. Those URLs are derived from the reference and gateway configuration, and provider URL patterns may change over time.
-- Third-party modules can also add custom admin actions via the `\Commerce::EVENT_DASHBOARD_TRANSACTION_ACTIONS` event, but implementing `MerchantUrlGatewayInterface` is the recommended approach for a consistent experience.
