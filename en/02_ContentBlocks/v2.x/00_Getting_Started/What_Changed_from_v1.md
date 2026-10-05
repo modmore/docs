@@ -8,7 +8,7 @@ ContentBlocks 2 is a ground-up rewrite. If you are familiar with ContentBlocks 1
 |---|---|
 | Fields, layouts, and templates managed in the ContentBlocks component UI | Blocks, layouts, and canvas settings defined as JSON/JSONC files on disk, with a v2 manager component for browsing, editing, validating, and inspecting usage |
 | Per-field templates in the manager | Template files (`.twig` or `.tpl`) alongside JSON definitions |
-| Template Builder for preset content inserts | No equivalent — editors add blocks and layouts individually |
+| Template Builder for preset content inserts | Optional `blocks` on a layout column, inserted with that layout |
 | Categories in the component | `category` property on block and layout JSON |
 
 ## Terminology

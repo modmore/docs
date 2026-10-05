@@ -12,7 +12,7 @@ ContentBlocks 2 is a complete rewrite, not an in-place upgrade. You should plan 
 ## What was removed
 
 - **Manager field/layout editor** as the source of truth (definitions are files)
-- **Templates** (preset layout+field inserts via Template Builder) — no v2 equivalent yet, but that is something we will be exploring later in the beta.
+- **Templates** (preset layout+field inserts via Template Builder) — use starter blocks on a layout column. See [Templates and Defaults](Templates_and_Defaults).
 - **Default Templates** — no v2 equivalent yet
 - **Categories in the component** — use `category` on JSON definitions instead
 
