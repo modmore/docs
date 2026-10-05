@@ -2,6 +2,8 @@ The `snippet` input type lets editors choose a MODX snippet, configure its prope
 
 When `snippet` is set in the input properties, the dropdown is hidden and only that snippet can be configured. A single value in `snippets` behaves the same way. Use multiple `snippets` values to show a dropdown, and `categories` to filter by MODX element category.
 
+[TOC]
+
 ## Accepted properties
 
 - `snippet`: lock the input to a single snippet by name or numeric ID. No dropdown is shown.

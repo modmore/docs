@@ -7,6 +7,8 @@ description: Documentation for ContentBlocks 2, a premium extra from modmore for
 
 > ContentBlocks is in alpha for supporters only, and not yet available for public use. We're building out this documentation as we go to make sure it's all ready for you when it comes out publicly.
 
+[TOC]
+
 # Main changes from v1
 
 ContentBlocks 2 is a complete rewrite, but many concepts are familiar.

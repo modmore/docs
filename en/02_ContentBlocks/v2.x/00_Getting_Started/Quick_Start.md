@@ -1,5 +1,7 @@
 This walkthrough creates a minimal text block and full-width layout to get you comfortable with how configuration works.
 
+[TOC]
+
 ## 1. Set the config directory
 
 In _System_ → _System Settings_, set `contentblocks.config_directories` to your definitions folder. A portable value:

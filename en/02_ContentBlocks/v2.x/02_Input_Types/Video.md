@@ -2,6 +2,8 @@ The `video` input type lets editors embed a video by searching YouTube via the Y
 
 Selected videos are stored as structured data with a provider-specific ID, a ready-to-use embed URL, and optional metadata.
 
+[TOC]
+
 ## Accepted properties
 
 - `providers`: array of enabled providers. Defaults to all supported providers: `["youtube", "vimeo", "wistia", "loom", "direct"]`. When only one provider is listed, pasting only recognises that provider.

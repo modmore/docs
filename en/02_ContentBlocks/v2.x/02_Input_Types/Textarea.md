@@ -1,5 +1,7 @@
 The `textarea` input type is a visual editable textarea, allowing multiple lines of text with line breaks. This field is useful as a generic text input.
 
+[TOC]
+
 ## Accepted properties
 
 - `styles`: an object of css styles to apply to the text.

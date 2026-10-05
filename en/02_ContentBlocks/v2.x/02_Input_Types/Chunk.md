@@ -2,6 +2,8 @@ The `chunk` input type lets editors choose a MODX chunk, configure its propertie
 
 When a specific `chunk` is set in the input properties, the dropdown is hidden and only that chunk is used. A single value in `chunks` behaves the same way. Use an array of chunk names/IDs in `chunks` values to show a dropdown, and/or `categories` to filter by element category.
 
+[TOC]
+
 ## Accepted properties
 
 - `chunk`: lock the input to a single chunk by name or numeric ID. No dropdown is shown, just the preview.

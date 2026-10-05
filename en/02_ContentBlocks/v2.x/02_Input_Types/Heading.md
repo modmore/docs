@@ -1,5 +1,7 @@
 The `heading` input type defines a visual header with selectable levels, used for breaking content into distinct sections. 
 
+[TOC]
+
 ## Supported properties
 
 - `styles`: an object of css styles to apply to the heading text

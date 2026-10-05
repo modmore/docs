@@ -4,6 +4,8 @@ Instead of manually writing JSON, it's recommended to use this fluid API.
 
 Use `toArray()` / `fromArray($cbCanvas, $data)` on Elements classes, or `cbCanvas::fromElementsCanvas()` / `toElementsCanvas()` to move between PHP objects and the database.
 
+[TOC]
+
 ## Class map
 
 | Layer | Namespace / location | Purpose |

@@ -1,3 +1,5 @@
+[TOC]
+
 ## v2 tables
 
 ContentBlocks 2 stores canvas data in:

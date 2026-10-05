@@ -2,6 +2,8 @@ The canvas is the main container for layouts and blocks on a resource (or other 
 
 Most sites will only have a single canvas configuration, for the resource content.
 
+[TOC]
+
 ## File naming
 
 Canvas configs are matched to principals by filename pattern. For example:

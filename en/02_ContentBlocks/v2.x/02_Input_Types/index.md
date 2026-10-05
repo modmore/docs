@@ -42,4 +42,4 @@ For lightweight formatting on text fields, see [Rich Text Options](../01_Configu
 
 ## Custom input types
 
-To build your own input type, see [Creating Custom Inputs](../Developer/01_Custom_Inputs/Creating_Custom_Inputs).
+To build your own input type, see [Creating Custom Inputs](../Developer/01_Custom_Inputs/Creating_Custom_Inputs). [Input Patterns](../Developer/01_Custom_Inputs/Input_Patterns) shows the approaches used by the core inputs: extra stored keys, modals, the media browser, shared libraries, and options loaded from a connector.

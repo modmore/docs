@@ -1,5 +1,7 @@
 The `link` input type lets editors create links to MODX resources, external URLs, email addresses, and phone numbers. The input normalizes values client-side so templates can use `link` directly in `href` attributes.
 
+[TOC]
+
 ## Supported properties
 
 - `allowed_types`: array of allowed link types. Defaults to all: `resource`, `url`, `email`, `tel`.

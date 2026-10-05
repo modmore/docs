@@ -2,6 +2,8 @@ ContentBlocks loads block, layout, and canvas definitions from directories on di
 
 The default config directory is `{core_path}components/contentblocks/config`. This directory, except the README.md file, is safe from ContentBlocks updates and where we recommend keeping your files.
 
+[TOC]
+
 ## Directory structure
 
 ```

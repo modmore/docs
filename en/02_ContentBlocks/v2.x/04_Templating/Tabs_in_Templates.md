@@ -1,5 +1,7 @@
 Tabs inputs group nested fields into fixed editor tabs. Saved values are stored **flat by nested input name**, not by tab ID.
 
+[TOC]
+
 ## Block configuration
 
 This block stores a `title` text input and a `languages` tabs input. Each tab holds a locked `code` input, `javascript` or `php`, which is the shape used in the examples below.

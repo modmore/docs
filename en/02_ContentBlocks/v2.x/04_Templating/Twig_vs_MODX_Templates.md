@@ -1,5 +1,7 @@
 ContentBlocks supports two template formats out of the box. Choose based on complexity and your team's familiarity.
 
+[TOC]
+
 ## Comparison
 
 | Extension | Parser | Best for |

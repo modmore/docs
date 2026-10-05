@@ -1,5 +1,7 @@
 Repeater inputs store an array of rows. Each row contains the nested input values for that row.
 
+[TOC]
+
 ## Block configuration
 
 This block stores a `teamMembers` repeater. Each row has `name`, `position`, `bio`, and `image` inputs, which is the shape used in the data and Twig examples below.

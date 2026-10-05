@@ -1,5 +1,7 @@
 The `category` property on block and layout definitions groups items in the Add Content modal. You can use a single category, or specify an array of categories.
 
+[TOC]
+
 ## Usage
 
 **Single category:**

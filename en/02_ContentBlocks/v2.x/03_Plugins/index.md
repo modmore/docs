@@ -9,6 +9,7 @@ Plugins add manager-side behavior to blocks, layouts, or the canvas. Add a plugi
 | [Background](Background) | Sets a block background color from an input value |
 | [Color](Color) | Sets block text color from an input value |
 | [Conditional Inputs](Conditional_Inputs) | Shows or hides inputs based on other input values |
+| [Debug](Debug) | Shows the serialized canvas data below the canvas |
 | [Fullscreen](Fullscreen) | Adds a fullscreen editing toolbar button |
 | [Highlight Changed](Highlight_Changed) | Highlights blocks with unsaved changes |
 | [Lockable](Lockable) | Block- and layout-level locking for protected content |

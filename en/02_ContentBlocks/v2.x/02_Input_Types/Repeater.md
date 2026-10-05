@@ -1,5 +1,7 @@
 The `repeater` input type lets editors add, remove, and duplicate rows of nested inputs within a single block. Each row acts like a block with its own input values.
 
+[TOC]
+
 ## Supported properties
 
 - `minimumRows`: the minimum number of rows that must be present (defaults to `1`)

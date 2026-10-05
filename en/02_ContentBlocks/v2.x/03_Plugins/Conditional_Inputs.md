@@ -4,6 +4,8 @@ This plugin applies to a specific block by adding it to its configuration. It wo
 
 When multiple trigger inputs are configured, rules from hidden trigger inputs are skipped on a second evaluation pass. That lets you nest toggles—for example, a “use contact form” toggle that hides a secondary “phone or email” toggle.
 
+[TOC]
+
 ## Accepted options
 
 - `rules`: an object keyed by trigger input. Each trigger maps stored values to `show` and `hide` arrays of input keys.

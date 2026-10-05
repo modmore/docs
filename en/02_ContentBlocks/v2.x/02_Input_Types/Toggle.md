@@ -1,5 +1,7 @@
 The `toggle` input type provides a checkbox-style on/off control with a configurable label and stored values.
 
+[TOC]
+
 ## Supported properties
 
 - `label`: the text shown next to the toggle.

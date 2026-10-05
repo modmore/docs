@@ -1,5 +1,7 @@
 ContentBlocks 2 is a complete rewrite, not an in-place upgrade. You should plan for a migration path, rather than expecting a one-click update.
 
+[TOC]
+
 ## Major changes
 
 1. **File-based configuration** — blocks, layouts, and canvas settings move from the manager component to JSON files on disk.

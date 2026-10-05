@@ -1,5 +1,7 @@
 Most v1 input types have a direct v2 equivalent. Key differences:
 
+[TOC]
+
 ## Rich text
 
 | v1 | v2 |

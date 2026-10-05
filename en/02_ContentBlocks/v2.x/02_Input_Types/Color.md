@@ -1,5 +1,7 @@
 The `color` input type lets content editors pick a color from a pre-defined palette, and optionally choose any custom color via a full color picker.
 
+[TOC]
+
 ## Supported properties
 
 | Property | Type | Default | Description                                                                                                    |

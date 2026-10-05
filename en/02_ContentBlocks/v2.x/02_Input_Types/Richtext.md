@@ -2,6 +2,8 @@ The `richtext` input type loads the site-configured MODX rich text editor (via `
 
 Redactor and TinyMCE RTE are supported.
 
+[TOC]
+
 ## Supported properties
 
 None — the editor configuration comes from MODX.

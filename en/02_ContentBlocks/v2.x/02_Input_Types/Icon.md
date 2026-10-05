@@ -2,6 +2,8 @@ The `icon` input type lets editors pick an icon from the icon font (Font Awesome
 
 > This input type works by parsing the icon font in the manager. You still need to make sure to load Font Awesome in the front-end, of a similar enough version as the one used in the MODX manager.
 
+[TOC]
+
 ## Supported properties
 
 - `styles`: an object of CSS styles to apply to the icon picker button

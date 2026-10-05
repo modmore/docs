@@ -1,5 +1,7 @@
 ContentBlocks offers two approaches for rich text content.
 
+[TOC]
+
 ## Full Richtext input
 
 The [Richtext](../02_Input_Types/Richtext) input loads the full MODX rich text editor (`MODx.loadRTE`). Use when editors need the complete toolbar, media insertion, and familiar MODX editing experience. This supports Redactor and TinyMCE RTE.

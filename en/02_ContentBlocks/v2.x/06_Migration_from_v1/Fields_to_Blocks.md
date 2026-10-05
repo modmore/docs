@@ -2,6 +2,8 @@ In ContentBlocks 1.x, a **field** was a manager-defined configuration of an inpu
 
 An experimental component is provided to offer configuration editing from the manager, but the files remain the source of truth.
 
+[TOC]
+
 ## Mapping
 
 | v1 field property | v2 block JSON |

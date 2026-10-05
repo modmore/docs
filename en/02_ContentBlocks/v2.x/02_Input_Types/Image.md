@@ -2,6 +2,8 @@ The `image` input type opens the MODX media browser so editors can select an ima
 
 > Compared to v1, the image input is still pretty bare bones. It will be expanded upon during beta.
 
+[TOC]
+
 ## Supported properties
 
 - `source`: the media source ID to use when opening the browser (defaults to `MODx.config.default_media_source`)

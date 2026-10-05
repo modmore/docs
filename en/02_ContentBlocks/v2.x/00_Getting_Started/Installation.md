@@ -2,6 +2,9 @@ ContentBlocks 2 is distributed as a premium extra from [modmore](https://modmore
 
 > ContentBlocks 2.0 is currently in private preview. If you've supported the 2.0 development but have not joined our Slack team, please get in touch with us at [support@modmore.com](mailto:support@modmore.com).
 >
+
+[TOC]
+
 ## Requirements
 
 - MODX Revolution 3.x, 3.2+ recommended

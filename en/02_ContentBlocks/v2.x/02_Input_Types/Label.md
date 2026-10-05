@@ -4,6 +4,8 @@ The text in the label is uneditable.
 
 > Generally we recommend using visual elements instead of labeled content to not break the flow content where possible, but labels can be very useful when used right.
 
+[TOC]
+
 ## Supported properties
 
 - `text`: the label text to show

@@ -4,6 +4,8 @@ The [Background](Background) plugin is very similar but affects the background i
 
 This plugin applies to a specific block by adding it to its configuration.
 
+[TOC]
+
 ## Accepted options
 
 - `inputKey`: the key of the input that holds the color to apply. This defaults to `color`.

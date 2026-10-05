@@ -1,5 +1,7 @@
 The `code` input type provides a syntax-highlighted code editor powered by [Ace](https://ace.c9.io/). When multiple languages are available, a language selector is shown in the bottom-right corner of the editor.
 
+[TOC]
+
 ## Accepted properties
 
 - `languages`: controls which Ace language modes are available.

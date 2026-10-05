@@ -1,5 +1,7 @@
 The `spacer` input type offers a utility to space out different input types in the manager. It does not return any values and does not require a template. It's useful to fill up a row of inputs with some blank space where appropriate. 
 
+[TOC]
+
 ## Accepted properties
 
 - `styles`: an object of css styles to apply to the spacer

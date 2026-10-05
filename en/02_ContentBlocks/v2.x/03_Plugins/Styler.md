@@ -2,6 +2,8 @@ The `Styler` plugin lets you add conditional inline styles to a block based on i
 
 This plugin applies to a specific block by adding it to its configuration.
 
+[TOC]
+
 ## Accepted options
 
 - **`triggers`**: an object keyed by input name. Each input key maps option values to CSS property objects applied when that value is selected.

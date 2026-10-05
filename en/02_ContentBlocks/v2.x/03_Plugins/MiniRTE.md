@@ -2,6 +2,8 @@ The `MiniRTE` plugin adds lightweight rich text editing to `text` and `textarea`
 
 This plugin is the v2 replacement for v1's per-field `use_tinyrte` option. Configure it on the **block** instead of on individual inputs.
 
+[TOC]
+
 ## Accepted options
 
 - `inputKeys` (required): array of input keys to enhance, e.g. `["text", "title"]`

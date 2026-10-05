@@ -2,6 +2,8 @@ The `Fullscreen` plugin adds a fullscreen toolbar button to blocks, layouts, or 
 
 The Fullscreen plugin can be applied on blocks, layouts, or the entire canvas.
 
+[TOC]
+
 ## Accepted options
 
 When configured on the **canvas**, the plugin accepts:

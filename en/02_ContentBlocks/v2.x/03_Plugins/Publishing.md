@@ -1,7 +1,6 @@
 The Publishing plugin enabled block-level publishing controls to the manager. Enable it on the whole canvas, or individual block configuration.
 
 > **Editor guide:** [Publishing Blocks](../User_Guide/Publishing_Blocks)
-> **Extension hooks:** [Publishing Hooks](../Developer/02_Custom_Plugins/Publishing_Hooks)
 
 ```json
 {
@@ -12,6 +11,8 @@ The Publishing plugin enabled block-level publishing controls to the manager. En
 ```
 
 On a canvas, the plugin injects a publishing toolbar button on every block. On a block definition, it applies only to blocks of that type.
+
+[TOC]
 
 ## Core fields
 
@@ -49,4 +50,4 @@ ContentBlocks mirrors MODX resource auto-publishing to automatic (un)publish blo
 
 This keeps frontend HTML static without requiring a cron job.
 
-Core fields remain the single source of truth for rendering and auto-publishing, but we hope this system allows extensions to implement more powerful publishing rules on top of it. See also: [Publishing Hooks](../Developer/02_Custom_Plugins/Publishing_Hooks).
+Core fields remain the single source of truth for rendering and auto-publishing, but we hope this system allows extensions to implement more powerful publishing rules on top of it.

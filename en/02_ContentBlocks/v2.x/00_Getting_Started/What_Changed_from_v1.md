@@ -1,5 +1,7 @@
 ContentBlocks 2 is a ground-up rewrite. If you are familiar with ContentBlocks 1.x, these are the most important differences.
 
+[TOC]
+
 ## Configuration model
 
 | v1 | v2 |

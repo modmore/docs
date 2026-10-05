@@ -2,6 +2,8 @@ The `select` input type is used to offer users a dropdown to select from differe
 
 By default only a single selection is allowed; set `multiple: true` to allow selecting multiple options.
 
+[TOC]
+
 ## Accepted properties
 
 - `options`: an array of objects with `value` and `label` keys defining the allowed options.

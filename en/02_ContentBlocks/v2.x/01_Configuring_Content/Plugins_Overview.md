@@ -4,6 +4,8 @@ Where inputs define *content*, plugins define *behavior*.
 
 See the full [Plugins](../03_Plugins/index) reference for per-plugin options and examples.
 
+[TOC]
+
 ## Where to add plugins
 
 | Level | Config file | Scope |

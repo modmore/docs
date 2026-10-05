@@ -1,5 +1,7 @@
 The `number` input lets the editor provide a numeric value. 
 
+[TOC]
+
 ## Supported properties
 
 - `min`: the minimum value that will be accepted

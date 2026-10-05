@@ -2,6 +2,8 @@ The `tabs` input type groups nested inputs into fixed tabs in the editor. Each t
 
 Saved values are stored **flat by input name**, not by tab. Tabs are an editor-only grouping layer. Moving an input from one tab to another in the configuration does not affect stored content.
 
+[TOC]
+
 ## Supported properties
 
 - `tabs`: an object keyed by tab ID. Each tab supports:

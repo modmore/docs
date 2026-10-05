@@ -10,6 +10,8 @@ Also in this section:
 - [Repeaters in Templates](Repeaters_in_Templates)
 - [Tabs in Templates](Tabs_in_Templates)
 
+[TOC]
+
 ## How definitions and templates connect
 
 Each block or layout lives in your config directory (see `contentblocks.config_directories`) and generally has either a `.twig` or `.tpl` file beside it with the same name.

@@ -1,5 +1,7 @@
 The `text` input type is a visual editable text field, allowing a single line of text without line breaks. This input type is especially useful for simple text inputs and when combined with other inputs in a block.
 
+[TOC]
+
 ## Accepted properties
 
 - `styles`: an object of css styles to apply to the text.

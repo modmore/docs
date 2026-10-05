@@ -1,5 +1,7 @@
 The `hr` input type renders a horizontal rule in the manager. It is a visual divider with no editor-facing content; use it when you want a block that outputs a styled `<hr>` on the front end or want to add a visual separator in a complex block.
 
+[TOC]
+
 ## Supported properties
 
 - `styles`: an object of CSS styles to apply to the horizontal rule in the manager preview

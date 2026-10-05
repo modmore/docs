@@ -1,3 +1,5 @@
+[TOC]
+
 ## v1 Templates (removed)
 
 ContentBlocks 1.x **Templates** let you define preset combinations of layouts and fields that editors could insert in one action via the Template Builder.

@@ -25,6 +25,8 @@ On a canvas, the plugin injects a lock toolbar button on every block and layout.
 
 On a block or layout definition, it applies only to that type.
 
+[TOC]
+
 ## Core field
 
 Each block and layout instance stores one core locking field:

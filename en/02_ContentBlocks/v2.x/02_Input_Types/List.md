@@ -1,5 +1,7 @@
 The `list` input type provides a visual nested list editor. Editors work directly in real `<ul>` / `<ol>` markup with keyboard-driven nesting, optional ordered/unordered switching, and an ordered-list start value.
 
+[TOC]
+
 ## Supported properties
 
 | Property | Type | Default | Description |
