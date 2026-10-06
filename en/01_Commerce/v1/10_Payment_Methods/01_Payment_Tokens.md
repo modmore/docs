@@ -10,6 +10,7 @@ Commerce stores **gateway references** (customer ID, mandate ID, payment method 
 |---------|---------------|------------------------------------------------------------------------------------------------------------------------------------|
 | **Mollie** | Fully enabled | Implements `PaymentTokenGatewayInterface`. Uses Mollie Customers and Mandates (`sequenceType: first` / `recurring`).               |
 | **Stripe** | Coming soon   | We've been working on Stripe support but did not want to delay the initial 1.11 release more until this was complete. Coming soon! |
+| **PayPal** | Fully enabled   | The new PayPal integration in 1.11 (replacing the legacy one) supports vaulting and charging on-demand.  |
 
 Only gateways that implement `PaymentTokenGatewayInterface` participate in the checkout UI and automatic token storage. Other gateways continue to work for one-off payments only.
 
