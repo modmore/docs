@@ -2,7 +2,7 @@
 title: cbHasField Snippet
 ---
 
-cbHasField checks whether a block is in use on a resource, and returns one value if it is and another if it is not. Use it to [load block-specific assets](../../Tips_Tricks/Load_Block_Specific_Assets) or to switch template markup based on the canvas.
+cbHasField checks whether a block is in use on a resource, and returns one value if it is and another if it is not. Use it to [load block-specific assets](../Tips_Tricks/Load_Block_Specific_Assets) or to switch template markup based on the canvas.
 
 It checks the current resource unless you pass `&resource`. Call it cached.
 

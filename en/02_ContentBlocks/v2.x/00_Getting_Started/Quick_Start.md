@@ -99,7 +99,13 @@ Create `canvas/modresource.content.json` like this:
 
 See [Canvas Configuration](../01_Configuring_Content/Canvas_Configuration) for more.
 
-## 5. Edit a resource
+## 5. Show the output in your template
+
+ContentBlocks stores HTML in the resource content. Having `[[*content]]` in your template is all you need to render that output on the front end.
+
+ContentBlocks does not require any particular library, design system, or other styles or scripts to function.
+
+## 6. Edit a resource
 
 Open a resource in the manager. Add your layout, then add your Text block to a column. Save the resource. The front-end output is generated from your Twig template when the resource is saved.
 

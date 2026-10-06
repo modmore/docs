@@ -3,7 +3,7 @@ title: Grabbing the First Image
 description: Read the first image on a page for social meta tags.
 ---
 
-Social meta tags need an image URL from the page content. When that image lives in a known block, [cbGetFieldContent](../05_Frontend/Snippets/cbGetFieldContent) can return the URL without rendering the block.
+Social meta tags need an image URL from the page content. When that image lives in a known block, [cbGetFieldContent](../05_Snippets/cbGetFieldContent) can return the URL without rendering the block.
 
 An [image input](../02_Input_Types/Image) stores:
 

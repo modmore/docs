@@ -5,7 +5,7 @@ description: Load CSS and JavaScript only on pages that use a given block.
 
 Some blocks need a large script or stylesheet, such as Prism for a [code block](Displaying_MODX_Code). Load those files only when that block is on the page.
 
-[cbHasField](../05_Frontend/Snippets/cbHasField) checks the canvas for a block key. `blocks/code.json` has the key `code`. `blocks/structure/heading.json` has the key `structure/heading`.
+[cbHasField](../05_Snippets/cbHasField) checks the canvas for a block key. `blocks/code.json` has the key `code`. `blocks/structure/heading.json` has the key `structure/heading`.
 
 Call it cached. Pass `&resource` when the check is for a different page. Unpublished blocks, and blocks outside their publish window, do not count.
 
