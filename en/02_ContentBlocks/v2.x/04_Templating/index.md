@@ -406,6 +406,8 @@ Twig templates use this resolution order for the Twig environment:
 
 The filesystem loader is rooted at your config's base path, so templates can use `{% include 'blocks/partials/wrapper.twig' %}` for shared partials within the config tree.
 
+ContentBlocks registers an `escape_modx` filter on that environment (including the Twig for MODX environment, when that extra is installed). Use it when a value should be shown as text and MODX tags inside it must not be parsed. See [Code](../02_Input_Types/Code).
+
 ## Render errors
 
 If a template file is missing or parsing fails, ContentBlocks outputs an HTML error block (`cb-render-error`) for that element and continues rendering siblings. Check the MODX error log for details (`[ContentBlocks]` prefix).

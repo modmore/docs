@@ -2,27 +2,27 @@
 title: cbFileFormatSize Snippet
 ---
 
-The cbFileFormatSize snippet is a utility snippet that can convert sizes in bytes to a more human readable format. cbFileFormatSize is intended to be used as an output filter in MODX templates.
+cbFileFormatSize converts a size in bytes to a shorter form. Use it as an output filter. `[[+size]]` is a number of bytes:
 
-Here's how to use it, assuming `[[+size]]` is a valid placeholder containing a size in bytes:
-
-```` HTML
+```html
 [[+size:cbFileFormatSize]]
     => "1.15 MB"
-````
+```
 
-To specify the number of decimals that should be used when the number is converted into KB/MB/GB, pass a numeric option to the output filter, like so:
+The option is how many decimals to keep. The default is 2.
 
-```` HTML
-[[+size:cbFileFormatSize=`2`]] // the default
+```html
+[[+size:cbFileFormatSize=`2`]]
     => "1.15 MB"
 [[+size:cbFileFormatSize=`1`]]
     => "1.2 MB"
 [[+size:cbFileFormatSize=`0`]]
     => "1 MB"
-````
+```
 
-## Using the ContentBlocks Service
+In a Twig template, use the `format_bytes` filter. It is registered on the Twig environment ContentBlocks renders with:
 
-The formatSize method available on the ContentBlocks service in 1.x was removed in 2.0.
-
+```twig
+{{ file.size|format_bytes }}
+{{ file.size|format_bytes(0) }}
+```

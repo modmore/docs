@@ -87,9 +87,13 @@ A successful resolve returns a `ResolvedTemplate` with:
 2. `TwigEnvironmentFactory::setExternalEnvironment()` allows an extension to explicitly tell ContentBlocks what Twig Environment to use
 3. Local bundled Twig from `dependencies/twig/` as fallback
 
-Auto-escape is enabled (`html`) on the bundled fallback environment. Layout column HTML is wrapped as `Twig\Markup` in `RenderService`, so placeholders like `{{ main }}` render without encoding. Use `|raw` for other pre-rendered HTML in block templates (e.g. richtext), or `|e` when you need explicit escaping.
+Auto-escape is enabled (`html`) by default.
 
-When the **Twig for MODX** extra is installed, ContentBlocks delegates rendering to its `twigparser` service instead of the bundled environment. That environment also uses Twig’s default `html` autoescape. Cache is disabled on the bundled fallback for development-friendly iteration.
+Layout column HTML is wrapped as `Twig\Markup` in `RenderService`, so those placeholders like `{{ main }}` work right away to insert parsed HTML.
+
+When you want to insert raw HTML, use the `|raw` filter (e.g. richtext).
+
+Use the `|escape_modx` filter when MODX tags should be escaped, for example to show code samples containing MODX tags. That filter escapes HTML and square brackets. See [Code](../../02_Input_Types/Code).
 
 ### ModxParser (`.tpl`)
 

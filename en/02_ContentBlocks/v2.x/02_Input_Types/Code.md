@@ -137,7 +137,7 @@ Twig template with tabbed output with some inline javascript:
             {% if sample.input.value %}
                 {% set isActive = not showTabs or sample.key == defaultKey %}
                 <div class="cb-code-sample__panel cb-code-sample__panel--{{ sample.key }}" role="tabpanel" {% if showTabs and not isActive %}hidden{% endif %}>
-                    <pre class="cb-code"><code class="language-{{ sample.input.language|default(sample.key) }}">{{ sample.input.value }}</code></pre>
+                    <pre class="cb-code"><code class="language-{{ sample.input.language|default(sample.key) }}">{{ sample.input.value|escape_modx }}</code></pre>
                 </div>
             {% endif %}
         {% endfor %}
@@ -168,23 +168,58 @@ Twig template with tabbed output with some inline javascript:
 
 Each locked input stores its own `value` and `language` on the tabs input (e.g. `languages.javascript.value`, `languages.php.language`). A single-item array (`["php"]`) works the same as a string for locking the language.
 
+The sample template uses the `escape_modx` filter so MODX tags in the content are shown as text. The approaches below explain when to use that filter, Twig's default HTML escaping, or raw output.
+
 ## Example template structures
 
-Output the stored code inside a `<pre><code>` element. Use the `language` value as a CSS class for syntax highlighting on the frontend if desired.
+Output the stored code inside a `<pre><code>` element. Use the `language` value as a CSS class for syntax highlighting on the frontend (Prism, highlight.js, and similar tools).
 
-> If you want to insert the entered code as-is, for example as a way to insert raw HTML widgets into a page, make sure to add the `|raw` filter in Twig templates or remove `:htmlent` from a MODX template.
-> Keep in mind **you need to trust your manager users** when allowing this, as they can easily insert scripts through this.
+Which escaping you use depends on whether the page should **show** the code or **run** it.
 
-### Twig
+### Show the code, including MODX tags
+
+Twig escapes HTML by default, so a `<div>` or scripts in the field are shown as text automatically. That does not stop MODX. When the resource is rendered, MODX still parses tags such as `[[*pagetitle]]`, `[[$chunk]]`, and `[[!snippet]]`. A template sample would run instead of being displayed.
+
+`escape_modx` is the v2 equivalent of the v1 Code input **Encode Entities** option. It escapes HTML, then turns `[` and `]` into `&#91;` and `&#93;` so MODX ignores it.
 
 ```twig
 {% if code.value %}
-    <pre><code class="language-{{ code.language|default('plaintext') }}">{{ code.value }}</code></pre>
+    <pre><code class="language-{{ code.language|default('plaintext') }}">
+        {{ code.value|escape_modx }}
+    </code></pre>
 {% endif %}
 ```
 
-### tpl
+In a `.tpl` template, `:htmlent` only escapes HTML. Replace the brackets after that to prevent MODX tags from being processed:
+
+```tpl
+<pre><code class="language-[[+code.language:default=`plaintext`]]">
+    [[+code.value:htmlent:replace=`[==&#91;`:replace=`]==&#93;`]]
+</code></pre>
+```
+
+### Show the code, and let MODX tags run
+
+Leave the value to Twig's HTML auto-escape when the sample should show HTML as text, but MODX tags inside it should still be parsed on the page:
+
+```twig
+<pre><code class="language-{{ code.language|default('plaintext') }}">{{ code.value }}</code></pre>
+```
 
 ```tpl
 <pre><code class="language-[[+code.language:default=`plaintext`]]">[[+code.value:htmlent]]</code></pre>
+```
+
+### Insert the code as HTML
+
+To output the entered code as markup, for example a raw HTML widget, mark it as safe in Twig by adding the `|raw` filter or skip `:htmlent` in a `.tpl` template. MODX tags in that markup are parsed when the page is rendered.
+
+> You need to **trust your manager users** when allowing this. They can insert scripts and other nefarious code.
+
+```twig
+{{ code.value|raw }}
+```
+
+```tpl
+[[+code.value]]
 ```
