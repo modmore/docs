@@ -41,6 +41,14 @@ The `identifyWebhookTransaction` method returns a `\comTransaction` instance - n
 
 [More about the SharedWebhookGatewayInterface >](SharedWebhookGatewayInterface)
 
+For gateways that can link to a specific payment in the provider's merchant dashboard, the `\modmore\Commerce\Gateways\Interfaces\MerchantUrlGatewayInterface` interface adds (as of v1.11.0-rc3):
+
+- `public function getMerchantUrl(comTransaction $transaction): ?string`
+
+When implemented, Commerce shows a link on the transaction overview and in the order transactions grid. Use `GatewayHelper::getMerchantUrl(comTransaction $transaction)` to resolve the URL from anywhere in your code.
+
+[More about the MerchantUrlGatewayInterface >](MerchantUrlGatewayInterface)
+
 ### Transactions
 
 The `\modmore\Commerce\Gateways\Interfaces\TransactionInterface` interface defines a payment attempt, making it clear what is/has happened with the attempt. It defines the following methods:
@@ -136,7 +144,7 @@ After the gateway is selected, the class name is stored on the payment method, a
 
 ## GatewayHelper
 
-The [GatewayHelper](GatewayHelper) class contains useful (static) utility methods for gateways. Most notably, you should use it to generate (customer) return/cancel and (webhook) notification URLs, and the transaction description.
+The [GatewayHelper](GatewayHelper) class contains useful (static) utility methods for gateways. Most notably, you should use it to generate (customer) return/cancel and (webhook) notification URLs, the transaction description, and merchant dashboard links for gateways that implement [MerchantUrlGatewayInterface](MerchantUrlGatewayInterface).
 
 ## Omnipay2Gateway
 

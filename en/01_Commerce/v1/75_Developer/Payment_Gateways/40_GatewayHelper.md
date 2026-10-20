@@ -28,6 +28,23 @@ Use `GatewayHelper::getDescription(comOrder $order)` to return the payment descr
 
 The description will automatically use either the order ID or the reference if it is already set, and a context-specific site name.
 
+## getMerchantUrl (added in v1.11.0-rc3)
+
+Use `GatewayHelper::getMerchantUrl(comTransaction $transaction)` to get a link to view the transaction in the payment provider's merchant dashboard.
+
+This returns a fully qualified URL when the transaction's gateway implements [MerchantUrlGatewayInterface](MerchantUrlGatewayInterface) and a URL can be constructed (typically when the transaction has a `reference`). Otherwise it returns `null`.
+
+Commerce uses this helper automatically in the merchant dashboard transaction overview and order transactions grid. You can also call it from custom modules or admin code:
+
+````php
+$url = \modmore\Commerce\Gateways\Helpers\GatewayHelper::getMerchantUrl($transaction);
+if ($url) {
+    // e.g. add a custom admin action or link
+}
+````
+
+[More about MerchantUrlGatewayInterface >](MerchantUrlGatewayInterface)
+
 ## normalizeNames
 
 Use `normalizeNames(&$firstName, &$lastName, &$fullName)` to normalize the usage of first/last/full names. Commerce supports both split name fields and fullname fields for addresses, and gateways sometimes require different values.

@@ -9,7 +9,8 @@
         } ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php
-    $desc = $params->getCurrentPage()->getAttribute('description');
+    $currentPage = $params->getCurrentPage();
+    $desc = $currentPage ? $currentPage->getAttribute('description') : null;
     if (!empty($desc)) {
         echo '<meta name="description" content="' . htmlentities($desc, ENT_QUOTES, 'UTF-8') . '" />';
     }

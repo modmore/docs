@@ -1,5 +1,41 @@
 #!/usr/bin/env bash
 
+# Daux 0.23+ requires PHP 8.3+. Prefer PHP_BINARY, then php on PATH,
+# then common MAMP locations (zsh aliases are not available in this script).
+resolve_php() {
+    local candidates=()
+    if [ -n "${PHP_BINARY:-}" ]; then
+        candidates+=("$PHP_BINARY")
+    fi
+    if command -v php >/dev/null 2>&1; then
+        candidates+=("$(command -v php)")
+    fi
+    candidates+=(
+        /Applications/MAMP/bin/php/php8.3.0/bin/php
+        /Applications/MAMP/bin/php/php8.4.0/bin/php
+        /opt/homebrew/bin/php
+        /usr/local/bin/php
+    )
+
+    local candidate
+    for candidate in "${candidates[@]}"; do
+        if [ -x "$candidate" ] && "$candidate" -r 'exit(version_compare(PHP_VERSION, "8.3.0", ">=") ? 0 : 1);' 2>/dev/null; then
+            echo "$candidate"
+            return 0
+        fi
+    done
+    return 1
+}
+
+PHP_BIN="$(resolve_php)" || {
+    echo "Daux requires PHP 8.3 or newer."
+    echo "Set PHP_BINARY to a PHP 8.3+ executable, or put one on your PATH."
+    if command -v php >/dev/null 2>&1; then
+        echo "Found: $(command -v php) ($(php -r 'echo PHP_VERSION;'))"
+    fi
+    exit 1
+}
+
 # Remove themes symlink to themes to prevent error messages while building
 rm -rf html/themes;
 
@@ -10,7 +46,7 @@ then
 fi
 
 # Generate the docs using daux.io
-if php vendor/bin/daux generate --source=. --destination=html ; then
+if "$PHP_BIN" vendor/bin/daux generate --source=. --destination=html ; then
 
     # Remove the empty placeholder file from the generated html folder
     if [ -f html/modmore-documentation.zip ];
